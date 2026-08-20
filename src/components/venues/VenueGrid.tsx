@@ -1,11 +1,12 @@
 import { VenueCard } from "@/components/venues/VenueCard";
+import type { UserLocation } from "@/types/location";
 import { Venue } from "@/types/venue";
 
-export function VenueGrid({ venues }: { venues: Venue[] }) {
+export function VenueGrid({ venues, userLocation }: { venues: Venue[]; userLocation?: UserLocation | null }) {
   return (
     <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {venues.map((venue) => (
-        <VenueCard key={venue.id} venue={venue} />
+        <VenueCard key={venue.id} venue={venue} userLocation={userLocation} />
       ))}
     </div>
   );

@@ -2,10 +2,12 @@ import { Heart, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { VenueBadge } from "@/components/venues/VenueBadge";
+import { VenueDistance } from "@/components/venues/VenueDistance";
 import { VenuePrice } from "@/components/venues/VenuePrice";
+import type { UserLocation } from "@/types/location";
 import { Venue } from "@/types/venue";
 
-export function VenueCard({ venue }: { venue: Venue }) {
+export function VenueCard({ venue, userLocation }: { venue: Venue; userLocation?: UserLocation | null }) {
   return (
     <Card className="group overflow-hidden transition duration-200 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-stone-950/5">
       <Link reloadDocument to={`/venues/${venue.slug}`} className="block">
@@ -36,8 +38,9 @@ export function VenueCard({ venue }: { venue: Venue }) {
                 </span>
               ) : null}
             </div>
-            <div className="mt-4">
+            <div className="mt-4 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted-foreground">
               <VenuePrice level={venue.priceLevel} from={venue.priceFrom} />
+              <VenueDistance venue={venue} userLocation={userLocation} />
             </div>
           </div>
           <div className="flex flex-wrap gap-2">

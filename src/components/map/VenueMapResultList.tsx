@@ -1,17 +1,21 @@
 import { Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { VenueDistance } from "@/components/venues/VenueDistance";
 import { VenuePrice } from "@/components/venues/VenuePrice";
 import { cn } from "@/lib/utils";
+import type { UserLocation } from "@/types/location";
 import type { Venue } from "@/types/venue";
 
 export function VenueMapResultList({
   venues,
   selectedVenueId,
+  userLocation,
   onSelectVenue,
 }: {
   venues: Venue[];
   selectedVenueId?: string;
+  userLocation?: UserLocation | null;
   onSelectVenue: (venue: Venue) => void;
 }) {
   return (
@@ -42,8 +46,9 @@ export function VenueMapResultList({
                     </span>
                   ) : null}
                 </div>
-                <div className="mt-4">
+                <div className="mt-4 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted-foreground">
                   <VenuePrice level={venue.priceLevel} from={venue.priceFrom} />
+                  <VenueDistance venue={venue} userLocation={userLocation} />
                 </div>
                 <div className="mt-4">
                   <Button asChild size="sm" variant="outline" onClick={(event) => event.stopPropagation()}>

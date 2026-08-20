@@ -1,4 +1,5 @@
 import type { DiscoverView, FeatureFilterKey, VenueFilterState } from "@/types/filters";
+import type { VenueSortOption } from "@/types/sort";
 import type { PriceLevel, VenueVibe } from "@/types/venue";
 
 export const INITIAL_VENUE_FILTERS: VenueFilterState = {
@@ -94,6 +95,16 @@ export function hasActiveFilters(filters: VenueFilterState) {
 
 export function parseDiscoverView(params: URLSearchParams): DiscoverView {
   return params.get("view") === "map" ? "map" : "list";
+}
+
+export function parseVenueSort(params: URLSearchParams): VenueSortOption {
+  const sort = params.get("sort");
+
+  if (sort === "rating" || sort === "price-asc" || sort === "price-desc" || sort === "nearest") {
+    return sort;
+  }
+
+  return "recommended";
 }
 
 export function formatPriceLevel(level: number) {

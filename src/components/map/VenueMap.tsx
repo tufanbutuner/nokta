@@ -1,17 +1,30 @@
 import { useEffect } from "react";
-import { MapContainer, TileLayer, useMap } from "react-leaflet";
+import type { ReactNode } from "react";
+import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
+import L from "leaflet";
 import { Button } from "@/components/ui/button";
 import { VenueMapMarker } from "@/components/map/VenueMapMarker";
 import { LONDON_CENTER, hasValidCoordinates } from "@/lib/map";
+import type { UserLocation } from "@/types/location";
 import type { Venue } from "@/types/venue";
+
+const userMarkerIcon = L.divIcon({
+  className: "",
+  html: '<div class="h-4 w-4 rounded-full border-2 border-card bg-blue-600 shadow-lg shadow-blue-950/30 ring-4 ring-blue-600/20"></div>',
+  iconSize: [16, 16],
+  iconAnchor: [8, 8],
+  popupAnchor: [0, -10],
+});
 
 export function VenueMap({
   venues,
   selectedVenueId,
+  userLocation,
   onClearFilters,
 }: {
   venues: Venue[];
   selectedVenueId?: string;
+  userLocation?: UserLocation | null;
   onClearFilters?: () => void;
 }) {
   const mappableVenues = venues.filter(hasValidCoordinates);
@@ -45,7 +58,10 @@ export function VenueMap({
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <MapBoundsUpdater venues={mappableVenues} selectedVenue={selectedVenue} />
+        <MapBoundsUpdater venues={mappableVenues} selectedVenue={selectedVenue} userLocation={userLocation} />
+        {userLocation ? (
+          <VenueMapUserMarker userLocation={userLocation} />
+        ) : null}
         {mappableVenues.map((venue) => (
           <VenueMapMarker key={venue.id} venue={venue} selected={venue.id === selectedVenueId} />
         ))}
@@ -54,8 +70,35 @@ export function VenueMap({
   );
 }
 
-function MapBoundsUpdater({ venues, selectedVenue }: { venues: Venue[]; selectedVenue?: Venue }) {
+function VenueMapUserMarker({ userLocation }: { userLocation: UserLocation }) {
+  return (
+    <VenueMapMarkerShell position={[userLocation.latitude, userLocation.longitude]}>
+      You are here
+    </VenueMapMarkerShell>
+  );
+}
+
+function VenueMapMarkerShell({ position, children }: { position: [number, number]; children: ReactNode }) {
+  return (
+    <Marker position={position} icon={userMarkerIcon}>
+      <Popup closeButton={false}>{children}</Popup>
+    </Marker>
+  );
+}
+
+function MapBoundsUpdater({
+  venues,
+  selectedVenue,
+  userLocation,
+}: {
+  venues: Venue[];
+  selectedVenue?: Venue;
+  userLocation?: UserLocation | null;
+}) {
   const map = useMap();
+  const venuesKey = venues.map((venue) => `${venue.id}:${venue.latitude}:${venue.longitude}`).join("|");
+  const selectedVenueKey = selectedVenue ? `${selectedVenue.id}:${selectedVenue.latitude}:${selectedVenue.longitude}` : "";
+  const userLocationKey = userLocation ? `${userLocation.latitude}:${userLocation.longitude}` : "";
 
   useEffect(() => {
     if (selectedVenue) {
@@ -69,8 +112,11 @@ function MapBoundsUpdater({ venues, selectedVenue }: { venues: Venue[]; selected
     }
 
     const bounds = venues.map((venue) => [venue.latitude, venue.longitude] as [number, number]);
+    if (userLocation) {
+      bounds.push([userLocation.latitude, userLocation.longitude]);
+    }
     map.fitBounds(bounds, { padding: [34, 34], maxZoom: 13 });
-  }, [map, venues, selectedVenue]);
+  }, [map, venuesKey, selectedVenueKey, userLocationKey]);
 
   return null;
 }
