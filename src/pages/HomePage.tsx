@@ -31,6 +31,14 @@ export function HomePage() {
                 <Input className="border-0 pl-9 shadow-none focus-visible:ring-0" placeholder="Search venues, areas or vibes..." />
               </div>
             </div>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <p className="text-sm text-muted-foreground">Not sure where to go?</p>
+              <Button asChild>
+                <Link reloadDocument to="/recommend">
+                  Find your spot
+                </Link>
+              </Button>
+            </div>
             <div className="mt-5 flex flex-wrap gap-2">
               {vibes.slice(0, 3).map((vibe) => (
                 <Badge key={vibe} variant="outline" className="bg-card/70">

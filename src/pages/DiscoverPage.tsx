@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { DiscoverViewToggle } from "@/components/discover/DiscoverViewToggle";
 import { SortSelect } from "@/components/discover/SortSelect";
 import { PageContainer } from "@/components/layout/PageContainer";
@@ -140,9 +140,14 @@ function DiscoverEmptyState({ onClear, compact = false }: { onClear: () => void;
     <div className="rounded-lg border bg-card p-10 text-center">
       <h2 className={compact ? "text-xl font-semibold" : "text-2xl font-semibold"}>No venues found</h2>
       <p className="mx-auto mt-3 max-w-md text-muted-foreground">Try removing some filters or searching for another area.</p>
-      <Button className="mt-6" onClick={onClear}>
-        Clear filters
-      </Button>
+      <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
+        <Button onClick={onClear}>Clear filters</Button>
+        <Button asChild variant="outline">
+          <Link reloadDocument to="/recommend">
+            Try recommendations
+          </Link>
+        </Button>
+      </div>
     </div>
   );
 }

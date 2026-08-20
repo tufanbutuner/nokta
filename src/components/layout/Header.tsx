@@ -16,6 +16,9 @@ export function Header() {
           <NavLink reloadDocument to="/discover" className={({ isActive }) => (isActive ? "text-foreground" : "hover:text-foreground")}>
             Discover
           </NavLink>
+          <NavLink reloadDocument to="/recommend" className={({ isActive }) => (isActive ? "text-foreground" : "hover:text-foreground")}>
+            Recommend
+          </NavLink>
           <NavLink reloadDocument to="/saved" className={({ isActive }) => (isActive ? "text-foreground" : "hover:text-foreground")}>
             {savedLabel}
           </NavLink>
