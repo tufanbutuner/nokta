@@ -1,16 +1,26 @@
+import { useEffect } from "react";
 import { ExternalLink, MapPin, Star } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import { PageContainer } from "@/components/layout/PageContainer";
+import { FavouriteButton } from "@/components/venues/FavouriteButton";
 import { VenueBadge } from "@/components/venues/VenueBadge";
 import { VenuePrice } from "@/components/venues/VenuePrice";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { useVenuePreferences } from "@/context/VenuePreferencesContext";
 import { venues } from "@/data/venues";
 import { getGoogleMapsDirectionsUrl } from "@/lib/directions";
 
 export function VenuePage() {
   const { slug } = useParams();
+  const { addRecentlyViewed } = useVenuePreferences();
   const venue = venues.find((item) => item.slug === slug);
+
+  useEffect(() => {
+    if (venue) {
+      addRecentlyViewed(venue.id);
+    }
+  }, [addRecentlyViewed, venue]);
 
   if (!venue) {
     return (
@@ -45,12 +55,15 @@ export function VenuePage() {
               {venue.area}, London
             </p>
           </div>
-          {venue.rating ? (
-            <div className="flex items-center gap-2 text-lg">
-              <Star className="h-5 w-5 fill-foreground" />
-              {venue.rating}
-            </div>
-          ) : null}
+          <div className="flex items-center gap-3">
+            {venue.rating ? (
+              <div className="flex items-center gap-2 text-lg">
+                <Star className="h-5 w-5 fill-foreground" />
+                {venue.rating}
+              </div>
+            ) : null}
+            <FavouriteButton venueId={venue.id} venueName={venue.name} className="h-10 w-10 border" />
+          </div>
         </div>
 
         <div className="overflow-hidden rounded-lg border bg-card">

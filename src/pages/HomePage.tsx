@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Search } from "lucide-react";
 import { PageContainer } from "@/components/layout/PageContainer";
+import { RecentlyViewedVenues } from "@/components/venues/RecentlyViewedVenues";
 import { VenueGrid } from "@/components/venues/VenueGrid";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -64,6 +65,8 @@ export function HomePage() {
           </div>
           <VenueGrid venues={featured} />
         </section>
+
+        <RecentlyViewedVenues />
 
         <section className="grid gap-8 lg:grid-cols-2">
           <div>

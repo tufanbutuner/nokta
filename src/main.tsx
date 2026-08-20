@@ -1,3 +1,4 @@
+import { VenuePreferencesProvider } from "@/context/VenuePreferencesContext";
 import { router } from "@/router/router";
 import "@/styles.css";
 import "leaflet/dist/leaflet.css";
@@ -7,6 +8,8 @@ import { RouterProvider } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <VenuePreferencesProvider>
+      <RouterProvider router={router} />
+    </VenuePreferencesProvider>
   </React.StrictMode>,
 );

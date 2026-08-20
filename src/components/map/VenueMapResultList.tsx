@@ -31,7 +31,18 @@ export function VenueMapResultList({
               selected && "border-foreground shadow-lg shadow-stone-950/5",
             )}
           >
-            <button type="button" className="grid w-full cursor-pointer grid-cols-[104px_1fr] text-left" onClick={() => onSelectVenue(venue)}>
+            <div
+              role="button"
+              tabIndex={0}
+              className="grid w-full cursor-pointer grid-cols-[104px_1fr] text-left"
+              onClick={() => onSelectVenue(venue)}
+              onKeyDown={(event) => {
+                if (event.key === "Enter" || event.key === " ") {
+                  event.preventDefault();
+                  onSelectVenue(venue);
+                }
+              }}
+            >
               <img src={venue.images[0]} alt={`${venue.name} interior`} className="h-full min-h-32 w-full object-cover" />
               <div className="min-w-0 p-4">
                 <div className="flex items-start justify-between gap-3">
@@ -56,7 +67,7 @@ export function VenueMapResultList({
                   </Button>
                 </div>
               </div>
-            </button>
+            </div>
           </Card>
         );
       })}
