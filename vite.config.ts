@@ -4,6 +4,12 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+  server: {
+    watch: {
+      usePolling: true,
+      interval: 250,
+    },
+  },
   resolve: {
     alias: {
       "@": new URL("./src", import.meta.url).pathname,
