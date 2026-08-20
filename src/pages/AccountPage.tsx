@@ -1,15 +1,17 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthError } from "@/components/auth/AuthError";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useAuth } from "@/context/AuthContext";
 import { useVenuePreferences } from "@/context/VenuePreferencesContext";
+import { useIsAdmin } from "@/hooks/useIsAdmin";
 
 export function AccountPage() {
   const navigate = useNavigate();
   const { user, signOut } = useAuth();
+  const { isAdmin } = useIsAdmin();
   const { favouriteVenueIds, recentlyViewedVenueIds, isLoading } = useVenuePreferences();
   const [error, setError] = useState<string | null>(null);
   const [isSigningOut, setIsSigningOut] = useState(false);
@@ -53,6 +55,21 @@ export function AccountPage() {
                 <p className="mt-1 text-3xl font-semibold">{isLoading ? "..." : recentlyViewedVenueIds.length}</p>
               </div>
             </div>
+
+            {isAdmin ? (
+              <div className="rounded-lg border bg-background/60 p-4">
+                <p className="text-sm text-muted-foreground">Admin</p>
+                <h2 className="mt-1 text-xl font-semibold">Venue management</h2>
+                <div className="mt-4 flex flex-col gap-3 sm:flex-row">
+                  <Button asChild variant="outline">
+                    <Link to="/admin/venues">Manage venues</Link>
+                  </Button>
+                  <Button asChild variant="outline">
+                    <Link to="/admin/data-quality">Data quality</Link>
+                  </Button>
+                </div>
+              </div>
+            ) : null}
 
             <AuthError message={error} />
 
