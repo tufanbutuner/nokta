@@ -31,6 +31,7 @@ export interface VenueDataSources {
   foodHygieneSource?: string;
   tripadvisorSource?: string;
   westfieldSource?: string;
+  otherSource?: string;
 }
 
 export interface OpeningHours {

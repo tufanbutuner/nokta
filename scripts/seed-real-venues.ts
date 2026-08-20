@@ -8,6 +8,7 @@ import path from "node:path";
 config({ path: ".env.local", quiet: true });
 config({ quiet: true });
 
+// Warning: this script upserts seeded venue fields and may overwrite manual admin edits.
 const LEGACY_DEMO_VENUE_IDS = ["maya", "huqqa", "hayatt", "tigerbay", "cloud", "garden", "maison", "shore", "terrace", "roof"];
 
 type SeedVenue = {

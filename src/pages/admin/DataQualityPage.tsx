@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { Download } from "lucide-react";
+import { Link } from "react-router-dom";
 import { DataQualityEmptyState } from "@/components/admin/data-quality/DataQualityEmptyState";
 import { DataQualityFilters } from "@/components/admin/data-quality/DataQualityFilters";
 import { DataQualitySummaryCards } from "@/components/admin/data-quality/DataQualitySummaryCards";
@@ -50,10 +51,15 @@ export function DataQualityPage() {
               Audit missing fields, source strength, verification status and coordinate quality before public launch.
             </p>
           </div>
-          <Button type="button" variant="outline" onClick={() => exportQualityCsv(venues)} disabled={!venues.length}>
-            <Download className="mr-2 h-4 w-4" />
-            Export issues CSV
-          </Button>
+          <div className="flex flex-col gap-2 sm:flex-row">
+            <Button asChild variant="outline">
+              <Link to="/admin/venues">Manage venues</Link>
+            </Button>
+            <Button type="button" variant="outline" onClick={() => exportQualityCsv(venues)} disabled={!venues.length}>
+              <Download className="mr-2 h-4 w-4" />
+              Export issues CSV
+            </Button>
+          </div>
         </div>
 
         <DataQualitySummaryCards summary={summary} />

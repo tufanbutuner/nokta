@@ -1,0 +1,32 @@
+import type { BusinessStatus, OpeningHours, PriceLevel, VenueVibe, VerificationStatus } from "@/types/venue";
+
+export interface VenueFormValues {
+  id: string;
+  slug: string;
+  name: string;
+  description: string;
+  area: string;
+  address: string;
+  postcode: string;
+  latitude: number | "";
+  longitude: number | "";
+  rating: number | null;
+  priceFrom: number | null;
+  priceLevel: PriceLevel;
+  indoor: boolean;
+  outdoor: boolean;
+  food: boolean;
+  alcohol: boolean;
+  openLate: boolean;
+  vibes: VenueVibe[];
+  images: string[];
+  openingHours: OpeningHours[];
+  website: string | null;
+  instagram: string | null;
+  phone: string | null;
+  businessStatus: BusinessStatus;
+  verificationStatus: VerificationStatus;
+  lastVerifiedAt: string | null;
+  dataSources: Record<string, string>;
+  sourceNotes: string | null;
+}

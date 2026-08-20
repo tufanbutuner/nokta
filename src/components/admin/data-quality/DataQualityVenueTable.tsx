@@ -68,10 +68,15 @@ export function DataQualityVenueTable({ venues }: { venues: Venue[] }) {
                       </div>
                     </td>
                     <td className="px-4 py-4">
-                      <Link className="inline-flex items-center gap-1 text-sm font-medium hover:underline" to={`/venues/${venue.slug}`}>
-                        View
-                        <ExternalLink className="h-3.5 w-3.5" />
-                      </Link>
+                      <div className="flex flex-wrap gap-3">
+                        <Link className="inline-flex items-center gap-1 text-sm font-medium hover:underline" to={`/admin/venues/${venue.id}/edit`}>
+                          Edit
+                        </Link>
+                        <Link className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground hover:underline" to={`/venues/${venue.slug}`}>
+                          View
+                          <ExternalLink className="h-3.5 w-3.5" />
+                        </Link>
+                      </div>
                     </td>
                   </tr>
                 );

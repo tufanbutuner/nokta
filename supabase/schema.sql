@@ -79,6 +79,65 @@ on public.venues
 for select
 using (true);
 
+create table if not exists public.admin_users (
+  user_id uuid primary key references auth.users(id) on delete cascade,
+  email text not null,
+  created_at timestamp with time zone not null default now()
+);
+
+alter table public.admin_users enable row level security;
+
+drop policy if exists "Admin users can read their own admin record" on public.admin_users;
+
+create policy "Admin users can read their own admin record"
+on public.admin_users
+for select
+using (auth.uid() = user_id);
+
+drop policy if exists "Admins can insert venues" on public.venues;
+drop policy if exists "Admins can update venues" on public.venues;
+drop policy if exists "Admins can delete venues" on public.venues;
+
+create policy "Admins can insert venues"
+on public.venues
+for insert
+with check (
+  exists (
+    select 1
+    from public.admin_users
+    where admin_users.user_id = auth.uid()
+  )
+);
+
+create policy "Admins can update venues"
+on public.venues
+for update
+using (
+  exists (
+    select 1
+    from public.admin_users
+    where admin_users.user_id = auth.uid()
+  )
+)
+with check (
+  exists (
+    select 1
+    from public.admin_users
+    where admin_users.user_id = auth.uid()
+  )
+);
+
+create policy "Admins can delete venues"
+on public.venues
+for delete
+using (
+  exists (
+    select 1
+    from public.admin_users
+    where admin_users.user_id = auth.uid()
+  )
+);
+
 create table if not exists public.user_saved_venues (
   user_id uuid not null references auth.users(id) on delete cascade,
   venue_id text not null references public.venues(id) on delete cascade,
