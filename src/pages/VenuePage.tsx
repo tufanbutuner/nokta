@@ -12,6 +12,7 @@ import { Separator } from "@/components/ui/separator";
 import { useVenuePreferences } from "@/context/VenuePreferencesContext";
 import { useVenue } from "@/hooks/useVenue";
 import { getGoogleMapsDirectionsUrl } from "@/lib/directions";
+import { getVenueImage } from "@/lib/venueImages";
 
 export function VenuePage() {
   const { slug } = useParams();
@@ -89,7 +90,7 @@ export function VenuePage() {
         </div>
 
         <div className="overflow-hidden rounded-lg border bg-card">
-          <img src={venue.images[0]} alt={`${venue.name} interior`} className="aspect-[16/7] w-full object-cover" />
+          <img src={getVenueImage(venue)} alt={`${venue.name} interior`} className="aspect-[16/7] w-full object-cover" />
         </div>
 
         <div className="mt-6 flex flex-wrap gap-2">

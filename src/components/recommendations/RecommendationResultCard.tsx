@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { FavouriteButton } from "@/components/venues/FavouriteButton";
 import { RecommendationReasonList } from "@/components/recommendations/RecommendationReasonList";
 import { VenuePrice } from "@/components/venues/VenuePrice";
+import { getVenueImage } from "@/lib/venueImages";
 import type { RecommendedVenue } from "@/types/recommendations";
 
 export function RecommendationResultCard({ recommendation, rank }: { recommendation: RecommendedVenue; rank: number }) {
@@ -12,7 +13,7 @@ export function RecommendationResultCard({ recommendation, rank }: { recommendat
     <Card className="overflow-hidden">
       <div className="grid gap-0 md:grid-cols-[240px_1fr]">
         <Link reloadDocument to={`/venues/${venue.slug}`} className="block bg-muted">
-          <img src={venue.images[0]} alt={`${venue.name} interior`} className="aspect-[4/3] h-full w-full object-cover" />
+          <img src={getVenueImage(venue)} alt={`${venue.name} interior`} className="aspect-[4/3] h-full w-full object-cover" />
         </Link>
         <CardContent className="space-y-5">
           <div className="flex items-start justify-between gap-4">

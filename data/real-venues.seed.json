@@ -1,0 +1,922 @@
+[
+  {
+    "id": "majesty-lounge",
+    "slug": "majesty-lounge",
+    "name": "Majesty Lounge",
+    "description": "East London shisha lounge in Bow serving shisha, desserts and drinks in a relaxed lounge setting.",
+    "area": "Bow",
+    "address": "75 Burdett Road",
+    "postcode": "E3 4TN",
+    "latitude": 51.522499,
+    "longitude": -0.033769,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://majestylounge.co.uk",
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-08-20T00:00:00.000Z",
+    "dataSources": {
+      "officialWebsite": "https://majestylounge.co.uk",
+      "directorySource": "https://uk.linkedin.com/company/majesty-loungeltd"
+    },
+    "sourceNotes": "Address and website found via LinkedIn. User provided opening hours. Price, alcohol availability, outdoor seating and phone still need verification."
+  },
+  {
+    "id": "sapores",
+    "slug": "sapores",
+    "name": "Sapores",
+    "description": "Camden restaurant and shisha lounge offering food, desserts and a lounge-style shisha experience near Mornington Crescent.",
+    "area": "Camden",
+    "address": "51 Camden High Street",
+    "postcode": "NW1 7JH",
+    "latitude": 51.53562,
+    "longitude": -0.139789,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [],
+    "website": "https://sapores.co.uk/",
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-08-20T00:00:00.000Z",
+    "dataSources": {
+      "officialWebsite": "https://sapores.co.uk/",
+      "menuUrl": "https://sapores.co.uk/en/menu"
+    },
+    "sourceNotes": "Official website confirms address and restaurant/shisha lounge positioning. Alcohol marked false because venue policy suggests alcohol is not served on site. Opening hours and phone still need verification."
+  },
+  {
+    "id": "coco-canary-wharf",
+    "slug": "coco-canary-wharf",
+    "name": "COCO Canary Wharf",
+    "description": "Canary Wharf restaurant and lounge at West India Quay with a premium dining and lounge setting.",
+    "area": "Canary Wharf",
+    "address": "West India Quay, 14 Hertsmere Road",
+    "postcode": "E14 4AF",
+    "latitude": 51.507518,
+    "longitude": -0.022741,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 3,
+    "indoor": true,
+    "outdoor": true,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "luxury",
+      "date-night",
+      "groups",
+      "outdoor"
+    ],
+    "images": [],
+    "openingHours": [],
+    "website": "https://www.coco-restaurants.com/CanaryWharf/index.html",
+    "instagram": null,
+    "phone": "020 7005 0862",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-08-20T00:00:00.000Z",
+    "dataSources": {
+      "officialWebsite": "https://www.coco-restaurants.com/CanaryWharf/index.html",
+      "menuUrl": "https://www.coco-restaurants.com/CanaryWharf/menu.html"
+    },
+    "sourceNotes": "Official COCO Canary Wharf pages confirm the address, phone and restaurant/lounge presence. Shisha availability still needs direct verification before marking fully verified."
+  },
+  {
+    "id": "tigerbay-shisha-lounge-kingsbury",
+    "slug": "tigerbay-shisha-lounge-kingsbury",
+    "name": "Tigerbay Shisha Lounge Kingsbury",
+    "description": "Kingsbury shisha lounge, sports bar and restaurant serving shisha, Indian food, desserts and drinks.",
+    "area": "Kingsbury",
+    "address": "234 Kingsbury Road",
+    "postcode": "NW9 0BH",
+    "latitude": 51.583389,
+    "longitude": -0.263055,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "indoor": true,
+    "outdoor": true,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "football",
+      "party",
+      "outdoor",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [],
+    "website": "https://www.tigerbayshisha.co.uk/",
+    "instagram": null,
+    "phone": "020 8200 5765",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-08-20T00:00:00.000Z",
+    "dataSources": {
+      "officialWebsite": "https://www.tigerbayshisha.co.uk/",
+      "bookingUrl": "https://www.tigerbayshisha.co.uk/reservation.html"
+    },
+    "sourceNotes": "Official website confirms Tigerbay Shisha Lounge in Kingsbury at 234 Kingsbury Road. Opening hours and exact price still need verification."
+  },
+  {
+    "id": "blacklist-lounge-london",
+    "slug": "blacklist-lounge-london",
+    "name": "Blacklist Lounge London",
+    "description": "Lavish Camden dining and shisha lounge offering food, drinks, desserts and a late-night lounge atmosphere.",
+    "area": "Camden",
+    "address": "9 Camden High Street",
+    "postcode": "NW1 7JE",
+    "latitude": 51.535021,
+    "longitude": -0.139297,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 3,
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "luxury",
+      "date-night",
+      "groups",
+      "party",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [],
+    "website": "https://blacklist-lounge.com/",
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-08-20T00:00:00.000Z",
+    "dataSources": {
+      "officialWebsite": "https://blacklist-lounge.com/",
+      "bookingUrl": "https://blacklist-lounge.com/booking/",
+      "menuUrl": "https://blacklist-lounge.com/menu/"
+    },
+    "sourceNotes": "Official website confirms Blacklist Lounge at 9 Camden High Street and describes it as a dining and shisha venue. Opening hours, phone and prices still need verification."
+  },
+  {
+    "id": "brera-lounge",
+    "slug": "brera-lounge",
+    "name": "Brera Lounge",
+    "description": "Canary Wharf restaurant, bar and shisha lounge combining dining, cocktails, live sports, music and late-night social atmosphere.",
+    "area": "Canary Wharf",
+    "address": "15 Cabot Square",
+    "postcode": "E14 4QT",
+    "latitude": 51.505088,
+    "longitude": -0.020931,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 3,
+    "indoor": true,
+    "outdoor": true,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "luxury",
+      "date-night",
+      "groups",
+      "football",
+      "party",
+      "outdoor",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [],
+    "website": "https://breralounge.co.uk/",
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-08-20T00:00:00.000Z",
+    "dataSources": {
+      "officialWebsite": "https://breralounge.co.uk/",
+      "bookingUrl": "https://breralounge.co.uk/reservations/",
+      "menuUrl": "https://breralounge.co.uk/menu/"
+    },
+    "sourceNotes": "Official Brera Lounge pages confirm the Cabot Square address and describe it as a restaurant, bar and shisha lounge. Exact opening hours and prices still need verification."
+  },
+  {
+    "id": "double-apple-kitchen",
+    "slug": "double-apple-kitchen",
+    "name": "Double Apple Kitchen",
+    "description": "Turnpike Lane kitchen and hookah lounge offering food, mocktails and shisha in North London.",
+    "area": "Turnpike Lane",
+    "address": "39 Turnpike Lane",
+    "postcode": "N8 0EP",
+    "latitude": 51.589691,
+    "longitude": -0.105291,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [],
+    "website": "https://doubleapplekitchen.co.uk/",
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-08-20T00:00:00.000Z",
+    "dataSources": {
+      "directorySource": "https://www.opentable.co.uk/r/double-apple-kitchen-london",
+      "companiesHouseSource": "https://find-and-update.company-information.service.gov.uk/company/12006261"
+    },
+    "sourceNotes": "Address is supported by Companies House and restaurant listing sources. OpenTable references Double Apple Kitchen/Hookah Lounge and lists the website. Official site should be checked directly before marking verified."
+  },
+  {
+    "id": "baha-lounge",
+    "slug": "baha-lounge",
+    "name": "Baha Lounge",
+    "description": "East London restaurant and lounge near Whitechapel with food, drinks and an open-air garden lounge setting.",
+    "area": "Whitechapel",
+    "address": "2-6 Deancross Street",
+    "postcode": "E1 2QA",
+    "latitude": 51.513746,
+    "longitude": -0.055203,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "indoor": true,
+    "outdoor": true,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "outdoor",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Sunday",
+        "open": "13:00",
+        "close": "22:00"
+      }
+    ],
+    "website": "https://bahalounge.com/",
+    "instagram": null,
+    "phone": "079 0881 2345",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-08-20T00:00:00.000Z",
+    "dataSources": {
+      "officialWebsite": "https://bahalounge.com/",
+      "bookingUrl": "https://bahalounge.com/reservation",
+      "menuUrl": "https://bahalounge.com/menu"
+    },
+    "sourceNotes": "Official website confirms address, opening hours, phone, food and open-air garden lounge. Shisha availability still needs direct verification before marking fully verified."
+  },
+  {
+    "id": "waterfront-london-vauxhall",
+    "slug": "waterfront-london-vauxhall",
+    "name": "Waterfront London Vauxhall",
+    "description": "Riverside Vauxhall restaurant and bar with food, drinks, outdoor terrace seating and a shisha menu by the Thames.",
+    "area": "Vauxhall",
+    "address": "3 St George Wharf",
+    "postcode": "SW8 2LE",
+    "latitude": 51.485665,
+    "longitude": -0.126152,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 3,
+    "indoor": true,
+    "outdoor": true,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "date-night",
+      "groups",
+      "outdoor",
+      "luxury",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [],
+    "website": "https://thewaterfront.london/",
+    "instagram": "https://www.instagram.com/waterfrontvauxhall/",
+    "phone": "020 7735 3600",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-08-20T00:00:00.000Z",
+    "dataSources": {
+      "officialWebsite": "https://thewaterfront.london/",
+      "menuUrl": "https://www.thewaterfront.london/waterfront-menu-pdfs.html",
+      "shishaMenuUrl": "https://www.thewaterfront.london/photo/menu/Waterfront-Shisha.pdf"
+    },
+    "sourceNotes": "Official Waterfront sources confirm the Vauxhall address and shisha menu. Phone and Instagram appear on official source material. Opening hours and shisha pricing should be checked before full verification."
+  },
+  {
+    "id": "globe-lounge-forest-gate",
+    "slug": "globe-lounge-forest-gate",
+    "name": "Globe Lounge",
+    "description": "Forest Gate lounge and cafe on Woodgrange Road with shisha and casual group-friendly seating.",
+    "area": "Forest Gate",
+    "address": "84 Woodgrange Road",
+    "postcode": "E7 0EW",
+    "latitude": 51.5489,
+    "longitude": 0.0261,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-08-20T00:00:00.000Z",
+    "dataSources": {
+      "companiesHouseSource": "https://find-and-update.company-information.service.gov.uk/company/12976607",
+      "directorySource": "https://restaurantguru.com/Globe-Lounge-Coffee-London"
+    },
+    "sourceNotes": "Companies House confirms Globe Lounge Cafe Ltd at 84 Woodgrange Road, Forest Gate, E7 0EW. Third-party sources describe Globe Lounge as serving shisha, but no strong official website was found. Opening hours, phone, outdoor seating, alcohol status and current shisha details still need verification."
+  },
+  {
+    "id": "noya-london",
+    "slug": "noya-london",
+    "name": "Noya London",
+    "description": "North London Pan-Asian restaurant, bar and shisha lounge on West Green Road with food, cocktails, DJs and live-sports friendly lounge atmosphere.",
+    "area": "Tottenham",
+    "address": "454-460 West Green Road",
+    "postcode": "N15 3PT",
+    "latitude": 51.5876,
+    "longitude": -0.0905,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 3,
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "luxury",
+      "groups",
+      "football",
+      "party",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "23:30"
+      }
+    ],
+    "website": "https://noyalondon.com/",
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-08-20T00:00:00.000Z",
+    "dataSources": {
+      "officialWebsite": "https://noyalondon.com/",
+      "contactUrl": "https://noyalondon.com/contact-us/",
+      "shishaPageUrl": "https://noyalondon.com/our-menus-2/shisha-lounge-north-london/",
+      "bookingSource": "https://www.opentable.co.uk/r/noya-london"
+    },
+    "sourceNotes": "Official Noya pages confirm the address and shisha lounge positioning. OpenTable lists separate shisha lounge hours. Phone, exact shisha prices and outdoor seating still need verification."
+  },
+  {
+    "id": "dubai-nights-lounge",
+    "slug": "dubai-nights-lounge",
+    "name": "Dubai Nights Lounge",
+    "description": "Leyton shisha lounge on Lea Bridge Road serving shisha, food and drinks in a late-night lounge setting.",
+    "area": "Leyton",
+    "address": "652 Lea Bridge Road",
+    "postcode": "E10 6AP",
+    "latitude": 51.5717,
+    "longitude": -0.0094,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "party",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [],
+    "website": "https://dubainightslounge.com/",
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-08-20T00:00:00.000Z",
+    "dataSources": {
+      "officialWebsite": "https://dubainightslounge.com/",
+      "contactUrl": "https://dubainightslounge.com/contact-us/",
+      "shishaMenuUrl": "https://dubainightslounge.com/shisha-menu/",
+      "bookingUrl": "https://dubainightslounge.com/book-a-table/"
+    },
+    "sourceNotes": "Official website confirms Dubai Nights Lounge at 652 Lea Bridge Road, E10 6AP and describes it as a shisha lounge. Opening hours, phone, outdoor seating and exact prices still need verification."
+  },
+  {
+    "id": "amisa-lounge",
+    "slug": "amisa-lounge",
+    "name": "Amisa Lounge",
+    "description": "Acton shisha lounge and bar on Steyne Road with food, drinks and a late-night social setting.",
+    "area": "Acton",
+    "address": "86 Steyne Road",
+    "postcode": "W3 9NU",
+    "latitude": 51.5069,
+    "longitude": -0.2667,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "indoor": true,
+    "outdoor": true,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "football",
+      "outdoor",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Sunday",
+        "open": "17:00",
+        "close": "01:00"
+      }
+    ],
+    "website": "https://amisalounge.co.uk/",
+    "instagram": null,
+    "phone": "020 4542 3009",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-08-20T00:00:00.000Z",
+    "dataSources": {
+      "officialWebsite": "https://amisalounge.co.uk/",
+      "contactUrl": "https://amisalounge.co.uk/contact-us",
+      "directorySource": "https://www.tagvenue.com/venues/london/53812/amisa-lounge"
+    },
+    "sourceNotes": "Official Amisa Lounge contact page confirms the address, phone, booking options and opening hours. Outdoor seating is inferred from sources describing a garden/outdoor shisha area and should be checked before full verification."
+  },
+  {
+    "id": "the-smoke-bureau-soho",
+    "slug": "the-smoke-bureau-soho",
+    "name": "The Smoke Bureau",
+    "description": "Rooftop shisha experience at the Courthouse Hotel Soho Sky Terrace on Great Marlborough Street.",
+    "area": "Soho",
+    "address": "Rooftop Terrace, The Courthouse Hotel Soho, 19-21 Great Marlborough Street",
+    "postcode": "W1F 7HL",
+    "latitude": 51.5145,
+    "longitude": -0.1395,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 4,
+    "indoor": false,
+    "outdoor": true,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "luxury",
+      "date-night",
+      "rooftop",
+      "outdoor",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [],
+    "website": "https://linktr.ee/thesmokebureau",
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-08-20T00:00:00.000Z",
+    "dataSources": {
+      "officialLinktree": "https://linktr.ee/thesmokebureau",
+      "venueHostWebsite": "https://www.courthouse-hotel.com/soho-sky-terrace/",
+      "venueHostAddressSource": "https://www.courthouse-hotel.com/lobby-bar/"
+    },
+    "sourceNotes": "The Smoke Bureau Linktree references shisha and the Rooftop Terrace above The Courthouse Hotel Soho. Courthouse Hotel sources confirm the Soho Sky Terrace and hotel address. Opening hours, direct booking URL, phone and pricing need verification."
+  },
+  {
+    "id": "huqqa-lounge-park-royal",
+    "slug": "huqqa-lounge-park-royal",
+    "name": "Huqqa Lounge",
+    "description": "Park Royal shisha lounge, bar and restaurant on Coronation Road serving shisha and Mediterranean-style food.",
+    "area": "Park Royal",
+    "address": "857 Coronation Road",
+    "postcode": "NW10 7PP",
+    "latitude": 51.5297,
+    "longitude": -0.2776,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [],
+    "website": "https://huqqalounge.co.uk/",
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-08-20T00:00:00.000Z",
+    "dataSources": {
+      "officialWebsite": "https://huqqalounge.co.uk/",
+      "shishaMenuUrl": "https://huqqalounge.co.uk/shisha-menu/",
+      "foodHygieneSource": "https://ratings.food.gov.uk/business/1470420"
+    },
+    "sourceNotes": "Official website confirms Huqqa Lounge as a shisha lounge, bar and restaurant at 857 Coronation Road, Park Royal, NW10 7PP. Opening hours, phone, alcohol status, outdoor seating and prices still need verification."
+  },
+  {
+    "id": "lokma-westfield-stratford",
+    "slug": "lokma-westfield-stratford",
+    "name": "Lokma Westfield Stratford",
+    "description": "Turkish restaurant and bar at Westfield Stratford City with Baba Lounge and a shisha terrace.",
+    "area": "Stratford",
+    "address": "105-106 Westfield Shopping Centre, The Street",
+    "postcode": "E20 1EN",
+    "latitude": 51.5435,
+    "longitude": -0.0062,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 3,
+    "indoor": true,
+    "outdoor": true,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "date-night",
+      "groups",
+      "outdoor",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [],
+    "website": "https://www.lokma-westfield.com/",
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-08-20T00:00:00.000Z",
+    "dataSources": {
+      "officialWebsite": "https://www.lokma-westfield.com/",
+      "shishaPageUrl": "https://www.lokma-westfield.com/shisha/",
+      "contactUrl": "https://www.lokma-westfield.com/contact/",
+      "westfieldSource": "https://www.westfield.com/en/united-kingdom/stratfordcity/restaurants/lokma/75994"
+    },
+    "sourceNotes": "Official Lokma Westfield pages and Westfield listing confirm the Westfield Stratford address and shisha lounge/terrace. Opening hours, phone and shisha prices still need verification."
+  },
+  {
+    "id": "eurika-cambridge-heath",
+    "slug": "eurika-cambridge-heath",
+    "name": "Eurika",
+    "description": "Cambridge Heath cafe and shisha lounge on Hackney Road with coffee, food, desserts and a relaxed lounge setting.",
+    "area": "Cambridge Heath",
+    "address": "519 Hackney Road",
+    "postcode": "E2 9ED",
+    "latitude": 51.5326,
+    "longitude": -0.0619,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "football",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "01:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "020 7739 9897",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-08-20T00:00:00.000Z",
+    "dataSources": {
+      "directorySource": "https://restaurantguru.com/Eurika-London",
+      "foodHygieneSource": "https://hygieneratings.uk/665823-eurika-cafe-cambridge-heath-london"
+    },
+    "sourceNotes": "RestaurantGuru lists Eurika at 519 Hackney Road, describes shisha availability, gives phone number and opening hours. Food hygiene sources confirm Eurika Cafe at the same address. No strong official website found; coordinates should be checked before full verification."
+  },
+  {
+    "id": "shisha-garden-grill",
+    "slug": "shisha-garden-grill",
+    "name": "Shisha Garden Grill",
+    "description": "Hackney Road restaurant and shisha lounge near Cambridge Heath serving Middle Eastern food, grill dishes and shisha until late.",
+    "area": "Cambridge Heath",
+    "address": "388 Hackney Road",
+    "postcode": "E2 7AP",
+    "latitude": 51.5315,
+    "longitude": -0.0671,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "indoor": true,
+    "outdoor": true,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "outdoor",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Monday",
+        "open": "11:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "11:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Sunday",
+        "open": "11:00",
+        "close": "02:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "020 7033 3600",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-08-20T00:00:00.000Z",
+    "dataSources": {
+      "directorySource": "https://www.waze.com/live-map/directions/gb/england/shisha-garden-grill?to=place.ChIJw7IZm8McdkgRIKBX5DvfsjY",
+      "foodHygieneSource": "https://ratings.food.gov.uk/business/1016494/Shisha-Garden-Grill-Restaurant-London",
+      "tripadvisorSource": "https://www.tripadvisor.co.uk/Restaurant_Review-g186338-d5439526-Reviews-Shisha_Garden_Grill-London_England.html"
+    },
+    "sourceNotes": "User provided opening hours. Waze also lists 11:00-02:00 daily and phone number. Food hygiene and TripAdvisor sources confirm Shisha Garden Grill Restaurant at 388 Hackney Road, E2 7AP. Outdoor seating is inferred from venue name and property/source references but should be checked before full verification."
+  }
+]

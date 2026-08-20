@@ -11,6 +11,27 @@ export type VenueVibe =
   | "outdoor";
 
 export type PriceLevel = 1 | 2 | 3 | 4;
+export type BusinessStatus = "open" | "temporarily-closed" | "permanently-closed" | "unknown";
+export type VerificationStatus = "unverified" | "partially-verified" | "verified";
+
+export interface VenueDataSources {
+  officialWebsite?: string;
+  officialLinktree?: string;
+  venueHostWebsite?: string;
+  venueHostAddressSource?: string;
+  bookingUrl?: string;
+  bookingSource?: string;
+  contactUrl?: string;
+  menuUrl?: string;
+  shishaMenuUrl?: string;
+  shishaPageUrl?: string;
+  instagram?: string;
+  directorySource?: string;
+  companiesHouseSource?: string;
+  foodHygieneSource?: string;
+  tripadvisorSource?: string;
+  westfieldSource?: string;
+}
 
 export interface OpeningHours {
   day: string;
@@ -28,8 +49,8 @@ export interface Venue {
   postcode: string;
   latitude: number;
   longitude: number;
-  rating?: number;
-  priceFrom: number;
+  rating?: number | null;
+  priceFrom?: number | null;
   priceLevel: PriceLevel;
   indoor: boolean;
   outdoor: boolean;
@@ -39,7 +60,12 @@ export interface Venue {
   vibes: VenueVibe[];
   images: string[];
   openingHours: OpeningHours[];
-  website?: string;
-  instagram?: string;
-  phone?: string;
+  website?: string | null;
+  instagram?: string | null;
+  phone?: string | null;
+  businessStatus: BusinessStatus;
+  verificationStatus: VerificationStatus;
+  lastVerifiedAt?: string | null;
+  dataSources: VenueDataSources;
+  sourceNotes?: string | null;
 }

@@ -10,7 +10,7 @@ const hours = [
   { day: "Sunday", open: "4pm", close: "1am" },
 ];
 
-export const venues: Venue[] = [
+const demoVenues: Array<Omit<Venue, "businessStatus" | "verificationStatus" | "lastVerifiedAt" | "dataSources" | "sourceNotes">> = [
   {
     id: "maya",
     slug: "maya-lounge",
@@ -234,5 +234,14 @@ export const venues: Venue[] = [
     openingHours: hours,
   },
 ];
+
+export const venues: Venue[] = demoVenues.map((venue) => ({
+  ...venue,
+  businessStatus: "unknown",
+  verificationStatus: "unverified",
+  lastVerifiedAt: null,
+  dataSources: {},
+  sourceNotes: "Legacy demo seed venue.",
+}));
 
 export const areas = Array.from(new Set(venues.map((venue) => venue.area)));

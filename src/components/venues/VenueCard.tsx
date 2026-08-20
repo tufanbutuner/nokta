@@ -5,6 +5,7 @@ import { VenueBadge } from "@/components/venues/VenueBadge";
 import { VenueDistance } from "@/components/venues/VenueDistance";
 import { FavouriteButton } from "@/components/venues/FavouriteButton";
 import { VenuePrice } from "@/components/venues/VenuePrice";
+import { getVenueImage } from "@/lib/venueImages";
 import type { UserLocation } from "@/types/location";
 import { Venue } from "@/types/venue";
 
@@ -14,7 +15,7 @@ export function VenueCard({ venue, userLocation }: { venue: Venue; userLocation?
       <div className="relative aspect-[4/3] overflow-hidden bg-muted">
         <Link reloadDocument to={`/venues/${venue.slug}`} className="block h-full">
           <img
-            src={venue.images[0]}
+            src={getVenueImage(venue)}
             alt={`${venue.name} interior`}
             className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
           />

@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import { VenueDistance } from "@/components/venues/VenueDistance";
 import { VenuePrice } from "@/components/venues/VenuePrice";
 import { cn } from "@/lib/utils";
+import { getVenueImage } from "@/lib/venueImages";
 import type { UserLocation } from "@/types/location";
 import type { Venue } from "@/types/venue";
 
@@ -43,7 +44,7 @@ export function VenueMapResultList({
                 }
               }}
             >
-              <img src={venue.images[0]} alt={`${venue.name} interior`} className="h-full min-h-32 w-full object-cover" />
+              <img src={getVenueImage(venue)} alt={`${venue.name} interior`} className="h-full min-h-32 w-full object-cover" />
               <div className="min-w-0 p-4">
                 <div className="flex items-start justify-between gap-3">
                   <div className="min-w-0">

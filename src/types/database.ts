@@ -9,7 +9,7 @@ export interface VenueRow {
   latitude: number;
   longitude: number;
   rating: number | null;
-  price_from: number;
+  price_from: number | null;
   price_level: 1 | 2 | 3 | 4;
   indoor: boolean;
   outdoor: boolean;
@@ -26,6 +26,11 @@ export interface VenueRow {
   website: string | null;
   instagram: string | null;
   phone: string | null;
+  business_status: "open" | "temporarily-closed" | "permanently-closed" | "unknown";
+  verification_status: "unverified" | "partially-verified" | "verified";
+  last_verified_at: string | null;
+  data_sources: Record<string, string>;
+  source_notes: string | null;
   created_at: string;
   updated_at: string;
 }

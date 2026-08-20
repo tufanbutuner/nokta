@@ -11,10 +11,10 @@ export function sortVenues(venues: Venue[], sortOption: VenueSortOption, userLoc
       return venuesCopy.sort((a, b) => (b.rating ?? 0) - (a.rating ?? 0));
 
     case "price-asc":
-      return venuesCopy.sort((a, b) => a.priceLevel - b.priceLevel || a.priceFrom - b.priceFrom);
+      return venuesCopy.sort((a, b) => a.priceLevel - b.priceLevel || (a.priceFrom ?? Number.MAX_SAFE_INTEGER) - (b.priceFrom ?? Number.MAX_SAFE_INTEGER));
 
     case "price-desc":
-      return venuesCopy.sort((a, b) => b.priceLevel - a.priceLevel || b.priceFrom - a.priceFrom);
+      return venuesCopy.sort((a, b) => b.priceLevel - a.priceLevel || (b.priceFrom ?? 0) - (a.priceFrom ?? 0));
 
     case "nearest":
       if (!userLocation) {

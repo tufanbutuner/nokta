@@ -34,6 +34,42 @@ create table if not exists public.venues (
   updated_at timestamp with time zone not null default now()
 );
 
+alter table public.venues
+alter column price_from drop not null;
+
+alter table public.venues
+add column if not exists business_status text not null default 'unknown',
+add column if not exists verification_status text not null default 'unverified',
+add column if not exists last_verified_at timestamp with time zone,
+add column if not exists data_sources jsonb not null default '{}',
+add column if not exists source_notes text;
+
+do $$
+begin
+  if not exists (
+    select 1
+    from pg_constraint
+    where conname = 'venues_business_status_check'
+  ) then
+    alter table public.venues
+    add constraint venues_business_status_check
+    check (business_status in ('open', 'temporarily-closed', 'permanently-closed', 'unknown'));
+  end if;
+end $$;
+
+do $$
+begin
+  if not exists (
+    select 1
+    from pg_constraint
+    where conname = 'venues_verification_status_check'
+  ) then
+    alter table public.venues
+    add constraint venues_verification_status_check
+    check (verification_status in ('unverified', 'partially-verified', 'verified'));
+  end if;
+end $$;
+
 alter table public.venues enable row level security;
 
 drop policy if exists "Allow public read access to venues" on public.venues;

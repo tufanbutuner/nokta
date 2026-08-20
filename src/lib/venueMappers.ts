@@ -1,5 +1,5 @@
 import type { VenueRow } from "../types/database";
-import type { Venue } from "../types/venue";
+import type { Venue, VenueDataSources } from "../types/venue";
 
 export function mapVenueRowToVenue(row: VenueRow): Venue {
   return {
@@ -12,7 +12,7 @@ export function mapVenueRowToVenue(row: VenueRow): Venue {
     postcode: row.postcode,
     latitude: row.latitude,
     longitude: row.longitude,
-    rating: row.rating ?? undefined,
+    rating: row.rating,
     priceFrom: row.price_from,
     priceLevel: row.price_level,
     indoor: row.indoor,
@@ -23,9 +23,14 @@ export function mapVenueRowToVenue(row: VenueRow): Venue {
     vibes: row.vibes as Venue["vibes"],
     images: row.images,
     openingHours: row.opening_hours,
-    website: row.website ?? undefined,
-    instagram: row.instagram ?? undefined,
-    phone: row.phone ?? undefined,
+    website: row.website,
+    instagram: row.instagram,
+    phone: row.phone,
+    businessStatus: row.business_status,
+    verificationStatus: row.verification_status,
+    lastVerifiedAt: row.last_verified_at,
+    dataSources: row.data_sources,
+    sourceNotes: row.source_notes,
   };
 }
 
@@ -41,7 +46,7 @@ export function mapVenueToVenueRow(venue: Venue): Omit<VenueRow, "created_at" | 
     latitude: venue.latitude,
     longitude: venue.longitude,
     rating: venue.rating ?? null,
-    price_from: venue.priceFrom,
+    price_from: venue.priceFrom ?? null,
     price_level: venue.priceLevel,
     indoor: venue.indoor,
     outdoor: venue.outdoor,
@@ -54,5 +59,14 @@ export function mapVenueToVenueRow(venue: Venue): Omit<VenueRow, "created_at" | 
     website: venue.website ?? null,
     instagram: venue.instagram ?? null,
     phone: venue.phone ?? null,
+    business_status: venue.businessStatus,
+    verification_status: venue.verificationStatus,
+    last_verified_at: venue.lastVerifiedAt ?? null,
+    data_sources: compactDataSources(venue.dataSources),
+    source_notes: venue.sourceNotes ?? null,
   };
+}
+
+function compactDataSources(dataSources: VenueDataSources): Record<string, string> {
+  return Object.fromEntries(Object.entries(dataSources).filter((entry): entry is [string, string] => typeof entry[1] === "string"));
 }
