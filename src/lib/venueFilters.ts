@@ -1,4 +1,4 @@
-import type { FeatureFilterKey, VenueFilterState } from "@/types/filters";
+import type { DiscoverView, FeatureFilterKey, VenueFilterState } from "@/types/filters";
 import type { PriceLevel, VenueVibe } from "@/types/venue";
 
 export const INITIAL_VENUE_FILTERS: VenueFilterState = {
@@ -90,6 +90,10 @@ export function hasActiveFilters(filters: VenueFilterState) {
     filters.vibes.length > 0 ||
     Object.values(filters.features).some(Boolean)
   );
+}
+
+export function parseDiscoverView(params: URLSearchParams): DiscoverView {
+  return params.get("view") === "map" ? "map" : "list";
 }
 
 export function formatPriceLevel(level: number) {

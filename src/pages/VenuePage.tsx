@@ -6,6 +6,7 @@ import { VenuePrice } from "@/components/venues/VenuePrice";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { venues } from "@/data/venues";
+import { getGoogleMapsDirectionsUrl } from "@/lib/directions";
 
 export function VenuePage() {
   const { slug } = useParams();
@@ -113,7 +114,12 @@ export function VenuePage() {
               London {venue.postcode}
             </p>
             <div className="mt-6 grid gap-3">
-              <Button>Get directions</Button>
+              <Button asChild>
+                <a href={getGoogleMapsDirectionsUrl(venue)} target="_blank" rel="noreferrer">
+                  Get directions
+                  <ExternalLink className="ml-2 h-4 w-4" />
+                </a>
+              </Button>
               {venue.website ? (
                 <Button asChild variant="outline">
                   <a href={venue.website} target="_blank" rel="noreferrer">
