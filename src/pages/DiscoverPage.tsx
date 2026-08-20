@@ -17,6 +17,7 @@ import { Button } from "@/components/ui/button";
 import { useVenues } from "@/hooks/useVenues";
 import { filterVenues } from "@/lib/filterVenues";
 import { sortVenues } from "@/lib/sortVenues";
+import { cn } from "@/lib/utils";
 import { filtersToSearchParams, hasActiveFilters, parseDiscoverView, parseVenueFilters, parseVenueSort } from "@/lib/venueFilters";
 import type { DiscoverView, VenueFilterState } from "@/types/filters";
 import type { LocationStatus, UserLocation } from "@/types/location";
@@ -105,6 +106,7 @@ export function DiscoverPage() {
                   variant={filtersOpen || filtersAreActive ? "default" : "outline"}
                   aria-expanded={filtersOpen}
                   onClick={() => setFiltersOpen((open) => !open)}
+                  className="w-full sm:w-36"
                 >
                   <SlidersHorizontal className="mr-2 h-4 w-4" />
                   {filtersOpen ? "Hide filters" : filtersAreActive ? "Filters active" : "Filters"}
@@ -134,29 +136,39 @@ export function DiscoverPage() {
           <>
             <div className="mb-5 text-sm text-muted-foreground">{resultLabel}</div>
 
-            {view === "list" ? (
-              sortedVenues.length ? (
-                <VenueGrid venues={sortedVenues} userLocation={userLocation} />
-              ) : (
-                <DiscoverEmptyState onClear={clearFilters} />
-              )
-            ) : (
-              <div className="grid gap-6 lg:grid-cols-2">
-                <div className="hidden max-h-[620px] overflow-y-auto pr-2 lg:block">
+            <div className="min-h-[620px]">
+              {view === "list" ? (
+                <div className="h-[620px] overflow-y-auto pr-1">
                   {sortedVenues.length ? (
-                    <VenueMapResultList
-                      venues={sortedVenues}
-                      selectedVenueId={selectedVenueId}
-                      userLocation={userLocation}
-                      onSelectVenue={(venue) => setSelectedVenueId(venue.id)}
-                    />
+                    <VenueGrid venues={sortedVenues} userLocation={userLocation} />
                   ) : (
-                    <DiscoverEmptyState onClear={clearFilters} compact />
+                    <DiscoverEmptyState onClear={clearFilters} className="min-h-[620px]" />
                   )}
                 </div>
-                <VenueMap venues={sortedVenues} selectedVenueId={selectedVenueId} userLocation={userLocation} onClearFilters={clearFilters} />
-              </div>
-            )}
+              ) : (
+                <div className="grid h-[620px] gap-6 lg:grid-cols-2">
+                  <div className="hidden overflow-y-auto pr-2 lg:block">
+                    {sortedVenues.length ? (
+                      <VenueMapResultList
+                        venues={sortedVenues}
+                        selectedVenueId={selectedVenueId}
+                        userLocation={userLocation}
+                        onSelectVenue={(venue) => setSelectedVenueId(venue.id)}
+                      />
+                    ) : (
+                      <DiscoverEmptyState onClear={clearFilters} compact className="h-full" />
+                    )}
+                  </div>
+                  <VenueMap
+                    venues={sortedVenues}
+                    selectedVenueId={selectedVenueId}
+                    userLocation={userLocation}
+                    onClearFilters={clearFilters}
+                    className="h-full"
+                  />
+                </div>
+              )}
+            </div>
           </>
         ) : null}
       </PageContainer>
@@ -164,9 +176,9 @@ export function DiscoverPage() {
   );
 }
 
-function DiscoverEmptyState({ onClear, compact = false }: { onClear: () => void; compact?: boolean }) {
+function DiscoverEmptyState({ onClear, compact = false, className }: { onClear: () => void; compact?: boolean; className?: string }) {
   return (
-    <div className="rounded-lg border bg-card p-10 text-center">
+    <div className={cn("flex flex-col items-center justify-center rounded-lg border bg-card p-10 text-center", className)}>
       <h2 className={compact ? "text-xl font-semibold" : "text-2xl font-semibold"}>No venues found</h2>
       <p className="mx-auto mt-3 max-w-md text-muted-foreground">Try removing some filters or searching for another area.</p>
       <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">

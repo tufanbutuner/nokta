@@ -5,6 +5,7 @@ import L from "leaflet";
 import { Button } from "@/components/ui/button";
 import { VenueMapMarker } from "@/components/map/VenueMapMarker";
 import { LONDON_CENTER, hasValidCoordinates } from "@/lib/map";
+import { cn } from "@/lib/utils";
 import type { UserLocation } from "@/types/location";
 import type { Venue } from "@/types/venue";
 
@@ -21,18 +22,20 @@ export function VenueMap({
   selectedVenueId,
   userLocation,
   onClearFilters,
+  className,
 }: {
   venues: Venue[];
   selectedVenueId?: string;
   userLocation?: UserLocation | null;
   onClearFilters?: () => void;
+  className?: string;
 }) {
   const mappableVenues = venues.filter(hasValidCoordinates);
   const selectedVenue = mappableVenues.find((venue) => venue.id === selectedVenueId);
 
   if (venues.length === 0) {
     return (
-      <div className="flex min-h-[420px] items-center justify-center rounded-lg border bg-card p-8 text-center md:min-h-[620px]">
+      <div className={cn("flex min-h-[420px] items-center justify-center rounded-lg border bg-card p-8 text-center md:min-h-[620px]", className)}>
         <div>
           <h2 className="text-2xl font-semibold">No venues to show on the map.</h2>
           <p className="mx-auto mt-3 max-w-sm text-muted-foreground">Try clearing some filters.</p>
@@ -47,12 +50,12 @@ export function VenueMap({
   }
 
   return (
-    <div className="overflow-hidden rounded-lg border bg-card">
+    <div className={cn("overflow-hidden rounded-lg border bg-card", className)}>
       <MapContainer
         center={[LONDON_CENTER.latitude, LONDON_CENTER.longitude]}
         zoom={11}
         scrollWheelZoom={false}
-        className="min-h-[420px] w-full md:min-h-[620px]"
+        className="h-full min-h-[420px] w-full md:min-h-[620px]"
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
