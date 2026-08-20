@@ -47,15 +47,19 @@ export function DiscoverPage() {
             <h1 className="text-4xl font-semibold">Discover shisha in London</h1>
             <p className="mt-2 text-muted-foreground">Image-led venue discovery with just enough detail to choose well.</p>
           </div>
-          <div className="flex flex-col gap-3 sm:items-end">
-            <span className="text-sm text-muted-foreground">{resultLabel}</span>
-            <DiscoverViewToggle value={view} onChange={updateView} />
-          </div>
+          <span className="text-sm text-muted-foreground">{resultLabel}</span>
         </div>
 
         <div className="mb-8 rounded-lg border bg-card p-3 sm:p-4">
           <div className="grid gap-3">
             <VenueSearch value={filters.query} onChange={(query) => updateFilters({ ...filters, query })} />
+            <div className="flex flex-col gap-3 rounded-md border bg-background/60 p-3 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <p className="text-sm font-medium">View</p>
+                <p className="text-xs text-muted-foreground">Switch between venue cards and the London map.</p>
+              </div>
+              <DiscoverViewToggle value={view} onChange={updateView} />
+            </div>
             <MobileFilterSheet filters={filters} onChange={updateFilters} onClear={clearFilters} resultCount={filteredVenues.length} />
             <VenueFilters filters={filters} onChange={updateFilters} onClear={clearFilters} className="hidden sm:block" />
           </div>
