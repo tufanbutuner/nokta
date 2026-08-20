@@ -4,13 +4,16 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetClose, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { VenueFilters } from "@/components/search/VenueFilters";
 import type { VenueFilterState } from "@/types/filters";
+import type { Venue } from "@/types/venue";
 
 export function MobileFilterSheet({
+  venues,
   filters,
   onChange,
   onClear,
   resultCount,
 }: {
+  venues: Venue[];
   filters: VenueFilterState;
   onChange: (filters: VenueFilterState) => void;
   onClear: () => void;
@@ -29,7 +32,7 @@ export function MobileFilterSheet({
           <SheetTitle>Filters</SheetTitle>
           <SheetClose onClick={() => setOpen(false)} />
         </SheetHeader>
-        <VenueFilters filters={filters} onChange={onChange} onClear={onClear} className="grid gap-4" />
+        <VenueFilters venues={venues} filters={filters} onChange={onChange} onClear={onClear} className="grid gap-4" />
         <Button className="mt-6 w-full" onClick={() => setOpen(false)}>
           {resultCount === 1 ? "Show 1 venue" : `Show ${resultCount} venues`}
         </Button>

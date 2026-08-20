@@ -6,13 +6,17 @@ import { VenueGrid } from "@/components/venues/VenueGrid";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
-import { venues } from "@/data/venues";
+import { ErrorState } from "@/components/state/ErrorState";
+import { LoadingState } from "@/components/state/LoadingState";
+import { useVenues } from "@/hooks/useVenues";
 
-const featured = venues.slice(0, 3);
-const neighbourhoods = ["Edgware Road", "Mayfair", "Canary Wharf", "Shoreditch", "Walthamstow"];
 const vibes = ["Outdoor", "Late Night", "Luxury", "Date Night", "Casual"];
 
 export function HomePage() {
+  const { venues, isLoading, error } = useVenues();
+  const featured = venues.slice(0, 3);
+  const neighbourhoods = Array.from(new Set(venues.map((venue) => venue.area))).slice(0, 5);
+
   return (
     <main>
       <section className="border-b">
@@ -71,16 +75,16 @@ export function HomePage() {
               </Link>
             </Button>
           </div>
-          <VenueGrid venues={featured} />
+          {isLoading ? <LoadingState /> : error ? <ErrorState message={error} /> : <VenueGrid venues={featured} />}
         </section>
 
-        <RecentlyViewedVenues />
+        {!isLoading && !error ? <RecentlyViewedVenues venues={venues} /> : null}
 
         <section className="grid gap-8 lg:grid-cols-2">
           <div>
             <p className="mb-3 text-sm text-muted-foreground">Explore London</p>
             <div className="flex flex-wrap gap-2">
-              {neighbourhoods.map((area) => (
+              {(neighbourhoods.length ? neighbourhoods : ["Edgware Road", "Mayfair", "Canary Wharf", "Shoreditch", "Walthamstow"]).map((area) => (
                 <Badge key={area} variant="secondary" className="px-3 py-1.5 text-sm">
                   {area}
                 </Badge>

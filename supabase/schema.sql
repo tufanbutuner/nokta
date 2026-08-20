@@ -1,0 +1,44 @@
+create table if not exists public.venues (
+  id text primary key,
+  slug text not null unique,
+
+  name text not null,
+  description text not null,
+
+  area text not null,
+  address text not null,
+  postcode text not null,
+
+  latitude double precision not null,
+  longitude double precision not null,
+
+  rating numeric,
+  price_from integer not null,
+  price_level integer not null check (price_level between 1 and 4),
+
+  indoor boolean not null default false,
+  outdoor boolean not null default false,
+  food boolean not null default false,
+  alcohol boolean not null default false,
+  open_late boolean not null default false,
+
+  vibes text[] not null default '{}',
+  images text[] not null default '{}',
+  opening_hours jsonb not null default '[]',
+
+  website text,
+  instagram text,
+  phone text,
+
+  created_at timestamp with time zone not null default now(),
+  updated_at timestamp with time zone not null default now()
+);
+
+alter table public.venues enable row level security;
+
+drop policy if exists "Allow public read access to venues" on public.venues;
+
+create policy "Allow public read access to venues"
+on public.venues
+for select
+using (true);

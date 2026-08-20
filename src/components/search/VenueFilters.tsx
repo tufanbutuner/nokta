@@ -1,4 +1,3 @@
-import { areas } from "@/data/venues";
 import { PRICE_OPTIONS, hasActiveFilters } from "@/lib/venueFilters";
 import { FeatureFilter } from "@/components/search/FeatureFilter";
 import { VibeFilter } from "@/components/search/VibeFilter";
@@ -6,18 +5,22 @@ import { Button } from "@/components/ui/button";
 import { Select } from "@/components/ui/select";
 import { Separator } from "@/components/ui/separator";
 import type { VenueFilterState } from "@/types/filters";
+import type { Venue } from "@/types/venue";
 
 export function VenueFilters({
+  venues,
   filters,
   onChange,
   onClear,
   className,
 }: {
+  venues: Venue[];
   filters: VenueFilterState;
   onChange: (filters: VenueFilterState) => void;
   onClear: () => void;
   className?: string;
 }) {
+  const areas = Array.from(new Set(venues.map((venue) => venue.area))).sort((first, second) => first.localeCompare(second));
   const areaOptions = [{ label: "All areas", value: "all" }, ...areas.map((area) => ({ label: area, value: area }))];
 
   return (

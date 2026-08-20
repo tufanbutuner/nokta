@@ -10,9 +10,11 @@ import { VenueMapResultList } from "@/components/map/VenueMapResultList";
 import { MobileFilterSheet } from "@/components/search/MobileFilterSheet";
 import { VenueFilters } from "@/components/search/VenueFilters";
 import { VenueSearch } from "@/components/search/VenueSearch";
+import { ErrorState } from "@/components/state/ErrorState";
+import { LoadingState } from "@/components/state/LoadingState";
 import { VenueGrid } from "@/components/venues/VenueGrid";
 import { Button } from "@/components/ui/button";
-import { venues } from "@/data/venues";
+import { useVenues } from "@/hooks/useVenues";
 import { filterVenues } from "@/lib/filterVenues";
 import { sortVenues } from "@/lib/sortVenues";
 import { filtersToSearchParams, parseDiscoverView, parseVenueFilters, parseVenueSort } from "@/lib/venueFilters";
@@ -21,6 +23,7 @@ import type { LocationStatus, UserLocation } from "@/types/location";
 import type { VenueSortOption } from "@/types/sort";
 
 export function DiscoverPage() {
+  const { venues, isLoading, error } = useVenues();
   const [searchParams, setSearchParams] = useSearchParams();
   const [selectedVenueId, setSelectedVenueId] = useState<string | undefined>();
   const [userLocation, setUserLocation] = useState<UserLocation | null>(null);
@@ -28,7 +31,7 @@ export function DiscoverPage() {
   const filters = useMemo(() => parseVenueFilters(searchParams), [searchParams]);
   const view = parseDiscoverView(searchParams);
   const sortOption = parseVenueSort(searchParams);
-  const filteredVenues = useMemo(() => filterVenues(venues, filters), [filters]);
+  const filteredVenues = useMemo(() => filterVenues(venues, filters), [venues, filters]);
   const sortedVenues = useMemo(() => sortVenues(filteredVenues, sortOption, userLocation), [filteredVenues, sortOption, userLocation]);
   const resultLabel =
     sortedVenues.length === 0 ? "No venues found" : sortedVenues.length === 1 ? "1 venue found" : `${sortedVenues.length} venues found`;
@@ -100,36 +103,48 @@ export function DiscoverPage() {
               </div>
               <LocationStatusMessage status={locationStatus} />
             </div>
-            <MobileFilterSheet filters={filters} onChange={updateFilters} onClear={clearFilters} resultCount={filteredVenues.length} />
-            <VenueFilters filters={filters} onChange={updateFilters} onClear={clearFilters} className="hidden sm:block" />
+            <MobileFilterSheet
+              venues={venues}
+              filters={filters}
+              onChange={updateFilters}
+              onClear={clearFilters}
+              resultCount={filteredVenues.length}
+            />
+            <VenueFilters venues={venues} filters={filters} onChange={updateFilters} onClear={clearFilters} className="hidden sm:block" />
           </div>
         </div>
 
-        <div className="mb-5 text-sm text-muted-foreground">{resultLabel}</div>
+        {isLoading ? <LoadingState /> : error ? <ErrorState message={error} /> : null}
 
-        {view === "list" ? (
-          sortedVenues.length ? (
-            <VenueGrid venues={sortedVenues} userLocation={userLocation} />
-          ) : (
-            <DiscoverEmptyState onClear={clearFilters} />
-          )
-        ) : (
-          <div className="grid gap-6 lg:grid-cols-2">
-            <div className="hidden max-h-[620px] overflow-y-auto pr-2 lg:block">
-              {sortedVenues.length ? (
-                <VenueMapResultList
-                  venues={sortedVenues}
-                  selectedVenueId={selectedVenueId}
-                  userLocation={userLocation}
-                  onSelectVenue={(venue) => setSelectedVenueId(venue.id)}
-                />
+        {!isLoading && !error ? (
+          <>
+            <div className="mb-5 text-sm text-muted-foreground">{resultLabel}</div>
+
+            {view === "list" ? (
+              sortedVenues.length ? (
+                <VenueGrid venues={sortedVenues} userLocation={userLocation} />
               ) : (
-                <DiscoverEmptyState onClear={clearFilters} compact />
-              )}
-            </div>
-            <VenueMap venues={sortedVenues} selectedVenueId={selectedVenueId} userLocation={userLocation} onClearFilters={clearFilters} />
-          </div>
-        )}
+                <DiscoverEmptyState onClear={clearFilters} />
+              )
+            ) : (
+              <div className="grid gap-6 lg:grid-cols-2">
+                <div className="hidden max-h-[620px] overflow-y-auto pr-2 lg:block">
+                  {sortedVenues.length ? (
+                    <VenueMapResultList
+                      venues={sortedVenues}
+                      selectedVenueId={selectedVenueId}
+                      userLocation={userLocation}
+                      onSelectVenue={(venue) => setSelectedVenueId(venue.id)}
+                    />
+                  ) : (
+                    <DiscoverEmptyState onClear={clearFilters} compact />
+                  )}
+                </div>
+                <VenueMap venues={sortedVenues} selectedVenueId={selectedVenueId} userLocation={userLocation} onClearFilters={clearFilters} />
+              </div>
+            )}
+          </>
+        ) : null}
       </PageContainer>
     </main>
   );

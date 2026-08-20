@@ -5,22 +5,44 @@ import { PageContainer } from "@/components/layout/PageContainer";
 import { FavouriteButton } from "@/components/venues/FavouriteButton";
 import { VenueBadge } from "@/components/venues/VenueBadge";
 import { VenuePrice } from "@/components/venues/VenuePrice";
+import { ErrorState } from "@/components/state/ErrorState";
+import { LoadingState } from "@/components/state/LoadingState";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { useVenuePreferences } from "@/context/VenuePreferencesContext";
-import { venues } from "@/data/venues";
+import { useVenue } from "@/hooks/useVenue";
 import { getGoogleMapsDirectionsUrl } from "@/lib/directions";
 
 export function VenuePage() {
   const { slug } = useParams();
   const { addRecentlyViewed } = useVenuePreferences();
-  const venue = venues.find((item) => item.slug === slug);
+  const { venue, isLoading, error } = useVenue(slug);
 
   useEffect(() => {
     if (venue) {
       addRecentlyViewed(venue.id);
     }
   }, [addRecentlyViewed, venue]);
+
+  if (isLoading) {
+    return (
+      <main>
+        <PageContainer className="py-20">
+          <LoadingState message="Loading venue..." />
+        </PageContainer>
+      </main>
+    );
+  }
+
+  if (error) {
+    return (
+      <main>
+        <PageContainer className="py-20">
+          <ErrorState message={error} />
+        </PageContainer>
+      </main>
+    );
+  }
 
   if (!venue) {
     return (

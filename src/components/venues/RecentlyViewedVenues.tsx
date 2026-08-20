@@ -2,13 +2,13 @@ import { Link } from "react-router-dom";
 import { VenueGrid } from "@/components/venues/VenueGrid";
 import { Button } from "@/components/ui/button";
 import { useVenuePreferences } from "@/context/VenuePreferencesContext";
-import { venues } from "@/data/venues";
+import type { Venue } from "@/types/venue";
 
-export function RecentlyViewedVenues() {
+export function RecentlyViewedVenues({ venues }: { venues: Venue[] }) {
   const { recentlyViewedVenueIds } = useVenuePreferences();
   const recentlyViewedVenues = recentlyViewedVenueIds
     .map((id) => venues.find((venue) => venue.id === id))
-    .filter((venue): venue is (typeof venues)[number] => Boolean(venue));
+    .filter((venue): venue is Venue => Boolean(venue));
 
   if (recentlyViewedVenues.length === 0) {
     return null;

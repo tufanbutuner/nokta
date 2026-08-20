@@ -4,13 +4,16 @@ import { LocationStatusMessage } from "@/components/location/LocationStatusMessa
 import { UseLocationButton } from "@/components/location/UseLocationButton";
 import { RecommendationQuiz } from "@/components/recommendations/RecommendationQuiz";
 import { RecommendationResults } from "@/components/recommendations/RecommendationResults";
+import { ErrorState } from "@/components/state/ErrorState";
+import { LoadingState } from "@/components/state/LoadingState";
 import { useVenuePreferences } from "@/context/VenuePreferencesContext";
-import { venues } from "@/data/venues";
+import { useVenues } from "@/hooks/useVenues";
 import { getRecommendedVenues } from "@/lib/recommendations";
 import type { LocationStatus, UserLocation } from "@/types/location";
 import type { RecommendationPreferences, RecommendedVenue } from "@/types/recommendations";
 
 export function RecommendPage() {
+  const { venues, isLoading, error } = useVenues();
   const { favouriteVenueIds } = useVenuePreferences();
   const [userLocation, setUserLocation] = useState<UserLocation | null>(null);
   const [locationStatus, setLocationStatus] = useState<LocationStatus>("idle");
@@ -42,7 +45,11 @@ export function RecommendPage() {
           </div>
         </div>
 
-        {results ? (
+        {isLoading ? (
+          <LoadingState />
+        ) : error ? (
+          <ErrorState message={error} />
+        ) : results ? (
           <RecommendationResults results={results} onRestart={() => setResults(null)} />
         ) : (
           <RecommendationQuiz locationAvailable={Boolean(userLocation)} onSubmit={submitPreferences} />
