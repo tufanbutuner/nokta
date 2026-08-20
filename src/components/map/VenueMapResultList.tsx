@@ -23,11 +23,11 @@ export function VenueMapResultList({
           <Card
             key={venue.id}
             className={cn(
-              "overflow-hidden transition hover:border-foreground/30 hover:shadow-lg hover:shadow-stone-950/5",
+              "cursor-pointer overflow-hidden transition hover:border-foreground/30 hover:shadow-lg hover:shadow-stone-950/5",
               selected && "border-foreground shadow-lg shadow-stone-950/5",
             )}
           >
-            <button type="button" className="grid w-full grid-cols-[104px_1fr] text-left" onClick={() => onSelectVenue(venue)}>
+            <button type="button" className="grid w-full cursor-pointer grid-cols-[104px_1fr] text-left" onClick={() => onSelectVenue(venue)}>
               <img src={venue.images[0]} alt={`${venue.name} interior`} className="h-full min-h-32 w-full object-cover" />
               <div className="min-w-0 p-4">
                 <div className="flex items-start justify-between gap-3">
