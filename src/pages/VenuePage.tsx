@@ -5,6 +5,7 @@ import { PageContainer } from "@/components/layout/PageContainer";
 import { FavouriteButton } from "@/components/venues/FavouriteButton";
 import { VenueBadge } from "@/components/venues/VenueBadge";
 import { VenuePrice } from "@/components/venues/VenuePrice";
+import { VenueVerificationBadge } from "@/components/venues/VenueVerificationBadge";
 import { ErrorState } from "@/components/state/ErrorState";
 import { LoadingState } from "@/components/state/LoadingState";
 import { Button } from "@/components/ui/button";
@@ -138,6 +139,21 @@ export function VenuePage() {
                 ))}
               </div>
             </section>
+            <Separator />
+            <section className="rounded-lg border bg-card p-5">
+              <h2 className="text-2xl font-semibold">Venue information</h2>
+              <div className="mt-5 flex flex-wrap items-center gap-3">
+                <span className="text-sm font-medium text-muted-foreground">Status</span>
+                <VenueVerificationBadge status={venue.verificationStatus} />
+                {venue.lastVerifiedAt ? (
+                  <span className="text-sm text-muted-foreground">Last checked {formatVerifiedDate(venue.lastVerifiedAt)}</span>
+                ) : null}
+              </div>
+              <p className="mt-4 text-sm leading-6 text-muted-foreground">
+                Venue details can change. Always check directly with the venue before travelling or booking.
+              </p>
+              {venue.sourceNotes ? <p className="mt-3 text-sm leading-6 text-muted-foreground">{venue.sourceNotes}</p> : null}
+            </section>
           </article>
 
           <aside className="h-fit rounded-lg border bg-card p-5">
@@ -170,4 +186,12 @@ export function VenuePage() {
       </PageContainer>
     </main>
   );
+}
+
+function formatVerifiedDate(value: string): string {
+  return new Intl.DateTimeFormat("en-GB", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  }).format(new Date(value));
 }

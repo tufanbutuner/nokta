@@ -1,6 +1,7 @@
 import { RequireAuth } from "@/components/auth/RequireAuth";
 import { AppLayout } from "@/components/layout/AppLayout";
 import { AccountPage } from "@/pages/AccountPage";
+import { DataQualityPage } from "@/pages/admin/DataQualityPage";
 import { DiscoverPage } from "@/pages/DiscoverPage";
 import { HomePage } from "@/pages/HomePage";
 import { NotFoundPage } from "@/pages/NotFoundPage";
@@ -30,6 +31,7 @@ export const router = createBrowserRouter([
       { path: "/sign-in", element: <SignInPage /> },
       { path: "/sign-up", element: <SignUpPage /> },
       { path: "/venues/:slug", element: <VenuePage /> },
+      { path: "/admin/data-quality", element: <DataQualityPage /> },
       { path: "*", element: <NotFoundPage /> },
     ],
   },
