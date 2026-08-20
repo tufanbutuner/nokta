@@ -1,4 +1,5 @@
 import L from "leaflet";
+import { useEffect, useRef } from "react";
 import { Marker, Popup } from "react-leaflet";
 import { VenueMapPopup } from "@/components/map/VenueMapPopup";
 import type { Venue } from "@/types/venue";
@@ -11,9 +12,17 @@ const venueMarkerIcon = L.divIcon({
   popupAnchor: [0, -18],
 });
 
-export function VenueMapMarker({ venue }: { venue: Venue }) {
+export function VenueMapMarker({ venue, selected }: { venue: Venue; selected?: boolean }) {
+  const markerRef = useRef<L.Marker>(null);
+
+  useEffect(() => {
+    if (selected) {
+      markerRef.current?.openPopup();
+    }
+  }, [selected]);
+
   return (
-    <Marker position={[venue.latitude, venue.longitude]} icon={venueMarkerIcon}>
+    <Marker ref={markerRef} position={[venue.latitude, venue.longitude]} icon={venueMarkerIcon}>
       <Popup closeButton={false}>
         <VenueMapPopup venue={venue} />
       </Popup>

@@ -1,8 +1,9 @@
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { DiscoverViewToggle } from "@/components/discover/DiscoverViewToggle";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { VenueMap } from "@/components/map/VenueMap";
+import { VenueMapResultList } from "@/components/map/VenueMapResultList";
 import { MobileFilterSheet } from "@/components/search/MobileFilterSheet";
 import { VenueFilters } from "@/components/search/VenueFilters";
 import { VenueSearch } from "@/components/search/VenueSearch";
@@ -15,11 +16,23 @@ import type { DiscoverView, VenueFilterState } from "@/types/filters";
 
 export function DiscoverPage() {
   const [searchParams, setSearchParams] = useSearchParams();
+  const [selectedVenueId, setSelectedVenueId] = useState<string | undefined>();
   const filters = useMemo(() => parseVenueFilters(searchParams), [searchParams]);
   const view = parseDiscoverView(searchParams);
   const filteredVenues = useMemo(() => filterVenues(venues, filters), [filters]);
   const resultLabel =
     filteredVenues.length === 0 ? "No venues found" : filteredVenues.length === 1 ? "1 venue found" : `${filteredVenues.length} venues found`;
+
+  useEffect(() => {
+    if (filteredVenues.length === 0) {
+      setSelectedVenueId(undefined);
+      return;
+    }
+
+    if (!selectedVenueId || !filteredVenues.some((venue) => venue.id === selectedVenueId)) {
+      setSelectedVenueId(filteredVenues[0].id);
+    }
+  }, [filteredVenues, selectedVenueId]);
 
   function updateFilters(nextFilters: VenueFilterState) {
     setSearchParams(withView(filtersToSearchParams(nextFilters), view), { replace: true });
@@ -74,15 +87,19 @@ export function DiscoverPage() {
             <DiscoverEmptyState onClear={clearFilters} />
           )
         ) : (
-          <div className="grid gap-6 lg:grid-cols-[minmax(320px,0.78fr)_minmax(440px,1.22fr)]">
-            <div className="hidden lg:block">
+          <div className="grid gap-6 lg:grid-cols-2">
+            <div className="hidden max-h-[620px] overflow-y-auto pr-2 lg:block">
               {filteredVenues.length ? (
-                <VenueGrid venues={filteredVenues} />
+                <VenueMapResultList
+                  venues={filteredVenues}
+                  selectedVenueId={selectedVenueId}
+                  onSelectVenue={(venue) => setSelectedVenueId(venue.id)}
+                />
               ) : (
                 <DiscoverEmptyState onClear={clearFilters} compact />
               )}
             </div>
-            <VenueMap venues={filteredVenues} onClearFilters={clearFilters} />
+            <VenueMap venues={filteredVenues} selectedVenueId={selectedVenueId} onClearFilters={clearFilters} />
           </div>
         )}
       </PageContainer>

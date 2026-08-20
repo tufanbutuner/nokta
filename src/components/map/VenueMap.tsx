@@ -5,8 +5,17 @@ import { VenueMapMarker } from "@/components/map/VenueMapMarker";
 import { LONDON_CENTER, hasValidCoordinates } from "@/lib/map";
 import type { Venue } from "@/types/venue";
 
-export function VenueMap({ venues, onClearFilters }: { venues: Venue[]; onClearFilters?: () => void }) {
+export function VenueMap({
+  venues,
+  selectedVenueId,
+  onClearFilters,
+}: {
+  venues: Venue[];
+  selectedVenueId?: string;
+  onClearFilters?: () => void;
+}) {
   const mappableVenues = venues.filter(hasValidCoordinates);
+  const selectedVenue = mappableVenues.find((venue) => venue.id === selectedVenueId);
 
   if (venues.length === 0) {
     return (
@@ -36,19 +45,24 @@ export function VenueMap({ venues, onClearFilters }: { venues: Venue[]; onClearF
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <MapBoundsUpdater venues={mappableVenues} />
+        <MapBoundsUpdater venues={mappableVenues} selectedVenue={selectedVenue} />
         {mappableVenues.map((venue) => (
-          <VenueMapMarker key={venue.id} venue={venue} />
+          <VenueMapMarker key={venue.id} venue={venue} selected={venue.id === selectedVenueId} />
         ))}
       </MapContainer>
     </div>
   );
 }
 
-function MapBoundsUpdater({ venues }: { venues: Venue[] }) {
+function MapBoundsUpdater({ venues, selectedVenue }: { venues: Venue[]; selectedVenue?: Venue }) {
   const map = useMap();
 
   useEffect(() => {
+    if (selectedVenue) {
+      map.flyTo([selectedVenue.latitude, selectedVenue.longitude], 14, { duration: 0.55 });
+      return;
+    }
+
     if (venues.length === 0) {
       map.setView([LONDON_CENTER.latitude, LONDON_CENTER.longitude], 11);
       return;
@@ -56,7 +70,7 @@ function MapBoundsUpdater({ venues }: { venues: Venue[] }) {
 
     const bounds = venues.map((venue) => [venue.latitude, venue.longitude] as [number, number]);
     map.fitBounds(bounds, { padding: [34, 34], maxZoom: 13 });
-  }, [map, venues]);
+  }, [map, venues, selectedVenue]);
 
   return null;
 }

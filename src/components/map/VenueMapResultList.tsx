@@ -1,0 +1,60 @@
+import { Star } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { VenuePrice } from "@/components/venues/VenuePrice";
+import { cn } from "@/lib/utils";
+import type { Venue } from "@/types/venue";
+
+export function VenueMapResultList({
+  venues,
+  selectedVenueId,
+  onSelectVenue,
+}: {
+  venues: Venue[];
+  selectedVenueId?: string;
+  onSelectVenue: (venue: Venue) => void;
+}) {
+  return (
+    <div className="space-y-3">
+      {venues.map((venue) => {
+        const selected = venue.id === selectedVenueId;
+
+        return (
+          <Card
+            key={venue.id}
+            className={cn(
+              "overflow-hidden transition hover:border-foreground/30 hover:shadow-lg hover:shadow-stone-950/5",
+              selected && "border-foreground shadow-lg shadow-stone-950/5",
+            )}
+          >
+            <button type="button" className="grid w-full grid-cols-[104px_1fr] text-left" onClick={() => onSelectVenue(venue)}>
+              <img src={venue.images[0]} alt={`${venue.name} interior`} className="h-full min-h-32 w-full object-cover" />
+              <div className="min-w-0 p-4">
+                <div className="flex items-start justify-between gap-3">
+                  <div className="min-w-0">
+                    <h3 className="truncate text-base font-semibold">{venue.name}</h3>
+                    <p className="text-sm text-muted-foreground">{venue.area}</p>
+                  </div>
+                  {venue.rating ? (
+                    <span className="inline-flex shrink-0 items-center gap-1 text-sm">
+                      <Star className="h-4 w-4 fill-foreground" />
+                      {venue.rating}
+                    </span>
+                  ) : null}
+                </div>
+                <div className="mt-4">
+                  <VenuePrice level={venue.priceLevel} from={venue.priceFrom} />
+                </div>
+                <div className="mt-4">
+                  <Button asChild size="sm" variant="outline" onClick={(event) => event.stopPropagation()}>
+                    <a href={`/venues/${venue.slug}`}>View venue</a>
+                  </Button>
+                </div>
+              </div>
+            </button>
+          </Card>
+        );
+      })}
+    </div>
+  );
+}
