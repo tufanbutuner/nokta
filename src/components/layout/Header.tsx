@@ -1,8 +1,10 @@
 import { PageContainer } from "@/components/layout/PageContainer";
+import { useAuth } from "@/context/AuthContext";
 import { useVenuePreferences } from "@/context/VenuePreferencesContext";
 import { Link, NavLink } from "react-router-dom";
 
 export function Header() {
+  const { user } = useAuth();
   const { favouriteVenueIds } = useVenuePreferences();
   const savedLabel = favouriteVenueIds.length > 0 ? `Saved (${favouriteVenueIds.length})` : "Saved";
 
@@ -22,9 +24,15 @@ export function Header() {
           <NavLink reloadDocument to="/saved" className={({ isActive }) => (isActive ? "text-foreground" : "hover:text-foreground")}>
             {savedLabel}
           </NavLink>
-          <a href="#about" className="hover:text-foreground">
-            About
-          </a>
+          {user ? (
+            <NavLink reloadDocument to="/account" className={({ isActive }) => (isActive ? "text-foreground" : "hover:text-foreground")}>
+              Account
+            </NavLink>
+          ) : (
+            <NavLink reloadDocument to="/sign-in" className={({ isActive }) => (isActive ? "text-foreground" : "hover:text-foreground")}>
+              Sign in
+            </NavLink>
+          )}
         </nav>
       </PageContainer>
     </header>

@@ -20,7 +20,7 @@ export function VenuePage() {
 
   useEffect(() => {
     if (venue) {
-      addRecentlyViewed(venue.id);
+      void addRecentlyViewed(venue.id);
     }
   }, [addRecentlyViewed, venue]);
 

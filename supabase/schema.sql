@@ -42,3 +42,68 @@ create policy "Allow public read access to venues"
 on public.venues
 for select
 using (true);
+
+create table if not exists public.user_saved_venues (
+  user_id uuid not null references auth.users(id) on delete cascade,
+  venue_id text not null references public.venues(id) on delete cascade,
+  created_at timestamp with time zone not null default now(),
+
+  primary key (user_id, venue_id)
+);
+
+alter table public.user_saved_venues enable row level security;
+
+drop policy if exists "Users can read their own saved venues" on public.user_saved_venues;
+drop policy if exists "Users can insert their own saved venues" on public.user_saved_venues;
+drop policy if exists "Users can delete their own saved venues" on public.user_saved_venues;
+
+create policy "Users can read their own saved venues"
+on public.user_saved_venues
+for select
+using (auth.uid() = user_id);
+
+create policy "Users can insert their own saved venues"
+on public.user_saved_venues
+for insert
+with check (auth.uid() = user_id);
+
+create policy "Users can delete their own saved venues"
+on public.user_saved_venues
+for delete
+using (auth.uid() = user_id);
+
+create table if not exists public.user_recently_viewed_venues (
+  user_id uuid not null references auth.users(id) on delete cascade,
+  venue_id text not null references public.venues(id) on delete cascade,
+  viewed_at timestamp with time zone not null default now(),
+
+  primary key (user_id, venue_id)
+);
+
+alter table public.user_recently_viewed_venues enable row level security;
+
+drop policy if exists "Users can read their own recently viewed venues" on public.user_recently_viewed_venues;
+drop policy if exists "Users can insert their own recently viewed venues" on public.user_recently_viewed_venues;
+drop policy if exists "Users can update their own recently viewed venues" on public.user_recently_viewed_venues;
+drop policy if exists "Users can delete their own recently viewed venues" on public.user_recently_viewed_venues;
+
+create policy "Users can read their own recently viewed venues"
+on public.user_recently_viewed_venues
+for select
+using (auth.uid() = user_id);
+
+create policy "Users can insert their own recently viewed venues"
+on public.user_recently_viewed_venues
+for insert
+with check (auth.uid() = user_id);
+
+create policy "Users can update their own recently viewed venues"
+on public.user_recently_viewed_venues
+for update
+using (auth.uid() = user_id)
+with check (auth.uid() = user_id);
+
+create policy "Users can delete their own recently viewed venues"
+on public.user_recently_viewed_venues
+for delete
+using (auth.uid() = user_id);

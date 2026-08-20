@@ -10,7 +10,7 @@ interface FavouriteButtonProps {
 }
 
 export function FavouriteButton({ venueId, venueName, className }: FavouriteButtonProps) {
-  const { isFavourite, toggleFavourite } = useVenuePreferences();
+  const { isFavourite, isLoading, toggleFavourite } = useVenuePreferences();
   const saved = isFavourite(venueId);
 
   return (
@@ -20,10 +20,11 @@ export function FavouriteButton({ venueId, venueName, className }: FavouriteButt
       size="icon"
       className={cn("rounded-full bg-card/85 text-foreground backdrop-blur hover:bg-card", className)}
       aria-label={saved ? `Remove ${venueName} from saved venues` : `Save ${venueName}`}
+      disabled={isLoading}
       onClick={(event) => {
         event.preventDefault();
         event.stopPropagation();
-        toggleFavourite(venueId);
+        void toggleFavourite(venueId);
       }}
     >
       <Heart className={cn("h-4 w-4", saved && "fill-foreground")} />

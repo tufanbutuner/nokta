@@ -1,3 +1,4 @@
+import { AuthProvider } from "@/context/AuthContext";
 import { VenuePreferencesProvider } from "@/context/VenuePreferencesContext";
 import { router } from "@/router/router";
 import { VercelAnalytics } from "@/components/analytics/VercelAnalytics";
@@ -9,9 +10,11 @@ import { RouterProvider } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <VenuePreferencesProvider>
-      <RouterProvider router={router} />
-      <VercelAnalytics />
-    </VenuePreferencesProvider>
+    <AuthProvider>
+      <VenuePreferencesProvider>
+        <RouterProvider router={router} />
+        <VercelAnalytics />
+      </VenuePreferencesProvider>
+    </AuthProvider>
   </React.StrictMode>,
 );
