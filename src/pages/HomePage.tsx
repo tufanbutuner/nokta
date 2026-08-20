@@ -22,9 +22,9 @@ export function HomePage() {
       <section className="border-b">
         <PageContainer className="grid gap-10 py-16 lg:grid-cols-[1fr_420px] lg:items-end lg:py-24">
           <div>
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">London shisha guide</p>
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Sheesha guide</p>
             <h1 className="max-w-3xl text-5xl font-semibold leading-[0.98] sm:text-6xl lg:text-7xl">
-              Find your next shisha spot in London.
+              Find your next sheesha spot in London.
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-8 text-muted-foreground">
               A curated discovery app for lounges, terraces and late-night tables across the city.

@@ -80,7 +80,7 @@ export function DiscoverPage() {
       <PageContainer className="py-12">
         <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <h1 className="text-4xl font-semibold">Discover shisha in London</h1>
+            <h1 className="text-4xl font-semibold">Discover sheesha in London</h1>
             <p className="mt-2 text-muted-foreground">Image-led venue discovery with just enough detail to choose well.</p>
           </div>
           <span className="text-sm text-muted-foreground">{resultLabel}</span>

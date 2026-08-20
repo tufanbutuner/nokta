@@ -59,7 +59,7 @@ export function RecommendationQuiz({
         <div>
           <p className="text-sm text-muted-foreground">Find my spot</p>
           <h1 className="mt-2 text-4xl font-semibold">Tell us what tonight needs.</h1>
-          <p className="mt-3 max-w-2xl text-muted-foreground">Answer a few quick questions and we’ll rank venues using the local Shisha London guide.</p>
+          <p className="mt-3 max-w-2xl text-muted-foreground">Answer a few quick questions and we’ll rank venues using the local Sheesha guide.</p>
         </div>
 
         <Separator />

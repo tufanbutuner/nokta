@@ -19,7 +19,7 @@ export function SavedPage() {
       <PageContainer className="py-12">
         <div className="mb-8">
           <h1 className="text-4xl font-semibold">Saved venues</h1>
-          <p className="mt-2 text-muted-foreground">Your shortlist of shisha spots to come back to.</p>
+          <p className="mt-2 text-muted-foreground">Your shortlist of sheesha spots to come back to.</p>
         </div>
         {isLoading ? <LoadingState /> : error ? <ErrorState message={error} /> : savedVenues.length ? <VenueGrid venues={savedVenues} /> : <SavedEmptyState />}
       </PageContainer>

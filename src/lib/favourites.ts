@@ -1,9 +1,21 @@
 import { readJsonFromStorage, writeJsonToStorage } from "@/lib/storage";
 
-const FAVOURITE_VENUE_IDS_KEY = "shisha-london:favourite-venue-ids:v1";
+const FAVOURITE_VENUE_IDS_KEY = "sheesha:favourite-venue-ids:v1";
+const LEGACY_FAVOURITE_VENUE_IDS_KEY = "shisha-london:favourite-venue-ids:v1";
 
 export function getFavouriteVenueIds(): string[] {
-  return readJsonFromStorage<string[]>(FAVOURITE_VENUE_IDS_KEY, []);
+  const favouriteVenueIds = readJsonFromStorage<string[]>(FAVOURITE_VENUE_IDS_KEY, []);
+
+  if (favouriteVenueIds.length > 0) {
+    return favouriteVenueIds;
+  }
+
+  const legacyFavouriteVenueIds = readJsonFromStorage<string[]>(LEGACY_FAVOURITE_VENUE_IDS_KEY, []);
+  if (legacyFavouriteVenueIds.length > 0) {
+    saveFavouriteVenueIds(legacyFavouriteVenueIds);
+  }
+
+  return legacyFavouriteVenueIds;
 }
 
 export function saveFavouriteVenueIds(ids: string[]): void {

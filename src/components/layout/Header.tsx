@@ -10,7 +10,7 @@ export function Header() {
     <header className="border-b bg-background/95 backdrop-blur">
       <PageContainer className="flex h-16 items-center justify-between">
         <Link reloadDocument to="/" className="text-sm font-semibold uppercase tracking-[0.18em]">
-          Shisha London
+          Sheesha
         </Link>
         <nav className="flex items-center gap-6 text-sm text-muted-foreground">
           <NavLink reloadDocument to="/discover" className={({ isActive }) => (isActive ? "text-foreground" : "hover:text-foreground")}>

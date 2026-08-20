@@ -1,10 +1,22 @@
 import { readJsonFromStorage, writeJsonToStorage } from "@/lib/storage";
 
-const RECENTLY_VIEWED_VENUE_IDS_KEY = "shisha-london:recently-viewed-venue-ids:v1";
+const RECENTLY_VIEWED_VENUE_IDS_KEY = "sheesha:recently-viewed-venue-ids:v1";
+const LEGACY_RECENTLY_VIEWED_VENUE_IDS_KEY = "shisha-london:recently-viewed-venue-ids:v1";
 const MAX_RECENTLY_VIEWED = 6;
 
 export function getRecentlyViewedVenueIds(): string[] {
-  return readJsonFromStorage<string[]>(RECENTLY_VIEWED_VENUE_IDS_KEY, []);
+  const recentlyViewedVenueIds = readJsonFromStorage<string[]>(RECENTLY_VIEWED_VENUE_IDS_KEY, []);
+
+  if (recentlyViewedVenueIds.length > 0) {
+    return recentlyViewedVenueIds;
+  }
+
+  const legacyRecentlyViewedVenueIds = readJsonFromStorage<string[]>(LEGACY_RECENTLY_VIEWED_VENUE_IDS_KEY, []);
+  if (legacyRecentlyViewedVenueIds.length > 0) {
+    saveRecentlyViewedVenueIds(legacyRecentlyViewedVenueIds);
+  }
+
+  return legacyRecentlyViewedVenueIds;
 }
 
 export function saveRecentlyViewedVenueIds(ids: string[]): void {
