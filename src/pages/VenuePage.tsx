@@ -13,7 +13,7 @@ import { Separator } from "@/components/ui/separator";
 import { useVenuePreferences } from "@/context/VenuePreferencesContext";
 import { useVenue } from "@/hooks/useVenue";
 import { getGoogleMapsDirectionsUrl } from "@/lib/directions";
-import { formatPriceLevel, formatVibe } from "@/lib/venueFilters";
+import { formatPriceLevel } from "@/lib/venueFilters";
 import { getVenueImage } from "@/lib/venueImages";
 
 export function VenuePage() {
@@ -65,6 +65,13 @@ export function VenuePage() {
     venue.alcohol && "Alcohol",
     venue.openLate && "Open late",
   ].filter((amenity): amenity is string => Boolean(amenity));
+  const headerDetails = [
+    `${venue.area}, London`,
+    venue.priceFrom ? `Shisha from £${venue.priceFrom}` : "Shisha price TBC",
+    formatPriceLevel(venue.priceLevel),
+    venue.outdoor ? "Outdoor seating" : "Indoor seating",
+    venue.openLate ? "Open late" : venue.businessStatus === "open" ? "Open venue" : "Status TBC",
+  ];
 
   return (
     <main>
@@ -75,9 +82,14 @@ export function VenuePage() {
               Back to discover
             </Link>
             <h1 className="text-5xl font-semibold">{venue.name}</h1>
-            <p className="mt-3 flex items-center gap-2 text-muted-foreground">
-              <MapPin className="h-4 w-4" />
-              {venue.area}, London
+            <p className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 text-muted-foreground">
+              <MapPin className="h-4 w-4 shrink-0" />
+              {headerDetails.map((detail, index) => (
+                <span key={detail} className="inline-flex items-center gap-2">
+                  {index > 0 ? <span aria-hidden="true">·</span> : null}
+                  <span>{detail}</span>
+                </span>
+              ))}
             </p>
           </div>
           <div className="flex items-center gap-3">
@@ -90,18 +102,6 @@ export function VenuePage() {
             <FavouriteButton venueId={venue.id} venueName={venue.name} className="h-10 w-10 border" />
           </div>
         </div>
-
-        <section className="mb-6 grid overflow-hidden rounded-lg border bg-card shadow-sm shadow-stone-950/5 sm:grid-cols-2 lg:grid-cols-4">
-          <VenueQuickFact
-            label="Shisha"
-            value={venue.priceFrom ? `From £${venue.priceFrom}` : "Price TBC"}
-            detail={formatPriceLevel(venue.priceLevel)}
-            prominent
-          />
-          <VenueQuickFact label="Best for" value={venue.vibes[0] ? formatVibe(venue.vibes[0]) : "Atmosphere TBC"} detail={venue.vibes.slice(1, 3).map(formatVibe).join(" · ")} />
-          <VenueQuickFact label="Food & drink" value={venue.food ? "Food available" : "Food TBC"} detail={venue.alcohol ? "Alcohol served" : "Alcohol TBC"} />
-          <VenueQuickFact label="Setup" value={venue.outdoor ? "Outdoor seating" : "Indoor seating"} detail={venue.openLate ? "Open late" : venue.businessStatus === "open" ? "Open venue" : "Status TBC"} />
-        </section>
 
         <div className="overflow-hidden rounded-lg border bg-card">
           <img src={getVenueImage(venue)} alt={`${venue.name} interior`} className="aspect-[16/7] w-full object-cover" />
@@ -198,26 +198,6 @@ export function VenuePage() {
         </div>
       </PageContainer>
     </main>
-  );
-}
-
-function VenueQuickFact({
-  label,
-  value,
-  detail,
-  prominent = false,
-}: {
-  label: string;
-  value: string;
-  detail?: string;
-  prominent?: boolean;
-}) {
-  return (
-    <div className="border-b px-4 py-4 last:border-b-0 sm:border-r sm:[&:nth-child(2n)]:border-r-0 lg:border-b-0 lg:[&:nth-child(2n)]:border-r lg:last:border-r-0">
-      <p className="text-xs font-medium uppercase text-muted-foreground">{label}</p>
-      <p className={prominent ? "mt-1 text-2xl font-semibold" : "mt-1 text-lg font-semibold"}>{value}</p>
-      {detail ? <p className="mt-1 text-sm text-muted-foreground">{detail}</p> : null}
-    </div>
   );
 }
 
