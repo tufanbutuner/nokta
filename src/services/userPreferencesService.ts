@@ -25,6 +25,24 @@ export async function getUserSavedVenueIds(userId: string): Promise<string[]> {
   return (data ?? []).map((row) => row.venue_id as string);
 }
 
+export async function getExistingVenueIds(venueIds: string[]): Promise<string[]> {
+  const uniqueVenueIds = Array.from(new Set(venueIds)).filter(Boolean);
+
+  if (!uniqueVenueIds.length) {
+    return [];
+  }
+
+  const client = ensureSupabase();
+  const { data, error } = await client.from("venues").select("id").in("id", uniqueVenueIds);
+
+  if (error) {
+    throw new Error(`Could not validate venues: ${error.message}`);
+  }
+
+  const existingVenueIds = new Set((data ?? []).map((row) => row.id as string));
+  return uniqueVenueIds.filter((venueId) => existingVenueIds.has(venueId));
+}
+
 export async function addUserSavedVenue(userId: string, venueId: string): Promise<void> {
   const client = ensureSupabase();
   const { error } = await client
