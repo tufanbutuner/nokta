@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import { useState, type FormEvent } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { ArrowRight, Search } from "lucide-react";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { RecentlyViewedVenues } from "@/components/venues/RecentlyViewedVenues";
@@ -10,12 +11,31 @@ import { ErrorState } from "@/components/state/ErrorState";
 import { LoadingState } from "@/components/state/LoadingState";
 import { useVenues } from "@/hooks/useVenues";
 
-const vibes = ["Outdoor", "Late Night", "Luxury", "Date Night", "Casual"];
+const vibes = [
+  { label: "Outdoor", value: "outdoor" },
+  { label: "Late Night", value: "late-night" },
+  { label: "Luxury", value: "luxury" },
+  { label: "Date Night", value: "date-night" },
+  { label: "Casual", value: "casual" },
+] as const;
 
 export function HomePage() {
+  const navigate = useNavigate();
+  const [query, setQuery] = useState("");
   const { venues, isLoading, error } = useVenues();
   const featured = venues.slice(0, 3);
   const neighbourhoods = Array.from(new Set(venues.map((venue) => venue.area))).slice(0, 5);
+
+  function handleSearchSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const params = new URLSearchParams();
+
+    if (query.trim()) {
+      params.set("q", query.trim());
+    }
+
+    navigate(params.toString() ? `/discover?${params.toString()}` : "/discover");
+  }
 
   return (
     <main>
@@ -29,12 +49,22 @@ export function HomePage() {
             <p className="mt-6 max-w-xl text-lg leading-8 text-muted-foreground">
               A curated discovery app for lounges, terraces and late-night tables across the city.
             </p>
-            <div className="mt-8 max-w-2xl rounded-lg border bg-card p-2 shadow-xl shadow-stone-950/5">
-              <div className="relative">
-                <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-                <Input className="border-0 pl-9 shadow-none focus-visible:ring-0" placeholder="Search venues, areas or vibes..." />
+            <form className="mt-8 max-w-2xl rounded-lg border bg-card p-2 shadow-xl shadow-stone-950/5" onSubmit={handleSearchSubmit}>
+              <div className="grid gap-2 sm:grid-cols-[1fr_auto]">
+                <div className="relative">
+                  <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+                  <Input
+                    value={query}
+                    onChange={(event) => setQuery(event.target.value)}
+                    className="border-0 pl-9 shadow-none focus-visible:ring-0"
+                    placeholder="Search venues, areas or vibes..."
+                  />
+                </div>
+                <Button type="submit" className="sm:min-w-28">
+                  Search
+                </Button>
               </div>
-            </div>
+            </form>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
               <p className="text-sm text-muted-foreground">Not sure where to go?</p>
               <Button asChild>
@@ -45,9 +75,11 @@ export function HomePage() {
             </div>
             <div className="mt-5 flex flex-wrap gap-2">
               {vibes.slice(0, 3).map((vibe) => (
-                <Badge key={vibe} variant="outline" className="bg-card/70">
-                  {vibe}
-                </Badge>
+                <Link key={vibe.value} reloadDocument to={`/discover?vibes=${vibe.value}`}>
+                  <Badge variant="outline" className="bg-card/70 hover:border-foreground">
+                    {vibe.label}
+                  </Badge>
+                </Link>
               ))}
             </div>
           </div>
@@ -85,9 +117,11 @@ export function HomePage() {
             <p className="mb-3 text-sm text-muted-foreground">Explore London</p>
             <div className="flex flex-wrap gap-2">
               {(neighbourhoods.length ? neighbourhoods : ["Edgware Road", "Mayfair", "Canary Wharf", "Shoreditch", "Walthamstow"]).map((area) => (
-                <Badge key={area} variant="secondary" className="px-3 py-1.5 text-sm">
-                  {area}
-                </Badge>
+                <Link key={area} reloadDocument to={`/discover?area=${encodeURIComponent(area)}`}>
+                  <Badge variant="secondary" className="px-3 py-1.5 text-sm hover:bg-secondary/80">
+                    {area}
+                  </Badge>
+                </Link>
               ))}
             </div>
           </div>
@@ -95,9 +129,14 @@ export function HomePage() {
             <p className="mb-3 text-sm text-muted-foreground">Find your vibe</p>
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
               {vibes.map((vibe) => (
-                <div key={vibe} className="rounded-lg border bg-card p-4 text-sm font-medium">
-                  {vibe}
-                </div>
+                <Link
+                  key={vibe.value}
+                  reloadDocument
+                  to={`/discover?vibes=${vibe.value}`}
+                  className="rounded-lg border bg-card p-4 text-sm font-medium hover:border-foreground"
+                >
+                  {vibe.label}
+                </Link>
               ))}
             </div>
           </div>
