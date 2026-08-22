@@ -39,35 +39,34 @@ export function HomePage() {
 
   return (
     <main>
-      <section className="border-b">
-        <PageContainer className="grid gap-10 py-16 lg:grid-cols-[1fr_420px] lg:items-end lg:py-24">
+      <section className="overflow-hidden border-b">
+        <PageContainer className="grid gap-8 py-10 sm:py-14 lg:grid-cols-[1fr_420px] lg:items-end lg:gap-10 lg:py-24">
           <div>
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Sheesha guide</p>
-            <h1 className="max-w-3xl text-5xl font-semibold leading-[0.98] sm:text-6xl lg:text-7xl">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground sm:mb-4">Sheesha guide</p>
+            <h1 className="max-w-3xl text-4xl font-semibold leading-none sm:text-6xl lg:text-7xl">
               Find your next sheesha spot in London.
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-8 text-muted-foreground">
+            <p className="mt-4 max-w-xl text-base leading-7 text-muted-foreground sm:mt-6 sm:text-lg sm:leading-8">
               A curated discovery app for lounges, terraces and late-night tables across the city.
             </p>
-            <form className="mt-8 max-w-2xl rounded-lg border bg-card p-2 shadow-xl shadow-stone-950/5" onSubmit={handleSearchSubmit}>
-              <div className="grid gap-2 sm:grid-cols-[1fr_auto]">
-                <div className="relative">
-                  <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-                  <Input
-                    value={query}
-                    onChange={(event) => setQuery(event.target.value)}
-                    className="border-0 pl-9 shadow-none focus-visible:ring-0"
-                    placeholder="Search venues, areas or vibes..."
-                  />
-                </div>
-                <Button type="submit" className="sm:min-w-28">
-                  Search
+            <form className="mt-6 max-w-2xl rounded-2xl border bg-card p-1.5 shadow-xl shadow-stone-950/5 sm:mt-8 sm:p-2" onSubmit={handleSearchSubmit}>
+              <div className="relative">
+                <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+                <Input
+                  value={query}
+                  onChange={(event) => setQuery(event.target.value)}
+                  className="min-w-0 border-0 bg-transparent pl-9 pr-14 shadow-none focus-visible:ring-0 sm:pr-28"
+                  placeholder="Search venues, areas or vibes..."
+                />
+                <Button type="submit" className="absolute right-0 top-1/2 h-10 w-10 -translate-y-1/2 px-0 sm:w-auto sm:min-w-24 sm:px-4">
+                  <Search className="h-4 w-4 sm:hidden" />
+                  <span className="sr-only sm:not-sr-only">Search</span>
                 </Button>
               </div>
             </form>
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <div className="mt-5 flex flex-col gap-3 sm:mt-6 sm:flex-row sm:items-center">
               <p className="text-sm text-muted-foreground">Not sure where to go?</p>
-              <Button asChild>
+              <Button asChild className="w-fit">
                 <Link reloadDocument to="/recommend">
                   Find your spot
                 </Link>
@@ -83,24 +82,24 @@ export function HomePage() {
               ))}
             </div>
           </div>
-          <div className="overflow-hidden rounded-lg border bg-card">
+          <div className="-mx-4 h-64 overflow-hidden border-y bg-card sm:mx-0 sm:h-auto sm:rounded-xl sm:border lg:rounded-lg">
             <img
               src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=85"
               alt="Atmospheric lounge interior"
-              className="aspect-[4/5] w-full object-cover"
+              className="h-full w-full object-cover sm:aspect-[16/10] sm:h-auto lg:aspect-[4/5]"
             />
           </div>
         </PageContainer>
       </section>
 
-      <PageContainer className="space-y-16 py-14">
+      <PageContainer className="space-y-12 py-10 sm:space-y-16 sm:py-14">
         <section>
-          <div className="mb-6 flex items-end justify-between gap-4">
+          <div className="mb-6 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
             <div>
               <p className="text-sm text-muted-foreground">Popular right now</p>
-              <h2 className="text-3xl font-semibold">Book-worthy lounges</h2>
+              <h2 className="text-2xl font-semibold sm:text-3xl">Book-worthy lounges</h2>
             </div>
-            <Button asChild variant="outline">
+            <Button asChild variant="outline" className="w-fit">
               <Link reloadDocument to="/discover">
                 Discover all
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -127,13 +126,13 @@ export function HomePage() {
           </div>
           <div id="about">
             <p className="mb-3 text-sm text-muted-foreground">Find your vibe</p>
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+            <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-3">
               {vibes.map((vibe) => (
                 <Link
                   key={vibe.value}
                   reloadDocument
                   to={`/discover?vibes=${vibe.value}`}
-                  className="rounded-lg border bg-card p-4 text-sm font-medium hover:border-foreground"
+                  className="rounded-xl border bg-card p-3 text-sm font-medium hover:border-foreground sm:rounded-lg sm:p-4"
                 >
                   {vibe.label}
                 </Link>
