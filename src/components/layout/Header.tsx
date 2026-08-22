@@ -23,50 +23,52 @@ export function Header() {
     );
 
   return (
-    <header className="sticky top-0 z-40 border-b bg-background/95 backdrop-blur">
-      <PageContainer className="flex h-16 items-center justify-between">
-        <Link reloadDocument to="/" className="text-sm font-semibold uppercase tracking-[0.18em]">
-          Sheesha
-        </Link>
-        <nav className="hidden items-center gap-6 text-sm text-muted-foreground md:flex">
-          <NavLink reloadDocument to="/discover" className={navLinkClass}>
-            Discover
-          </NavLink>
-          <NavLink reloadDocument to="/recommend" className={navLinkClass}>
-            Recommend
-          </NavLink>
-          <NavLink reloadDocument to="/saved" className={navLinkClass}>
-            {savedLabel}
-          </NavLink>
-          {user ? (
-            <>
-              <NavLink reloadDocument to="/account" className={navLinkClass}>
-                Account
-              </NavLink>
-              {isAdmin ? (
-                <NavLink reloadDocument to="/admin/venues" className={navLinkClass}>
-                  Admin
-                </NavLink>
-              ) : null}
-            </>
-          ) : (
-            <NavLink reloadDocument to="/sign-in" className={navLinkClass}>
-              Sign in
+    <>
+      <header className="sticky top-0 z-40 border-b bg-background/95 backdrop-blur">
+        <PageContainer className="flex h-16 items-center justify-between">
+          <Link reloadDocument to="/" className="text-sm font-semibold uppercase tracking-[0.18em]">
+            Sheesha
+          </Link>
+          <nav className="hidden items-center gap-6 text-sm text-muted-foreground md:flex">
+            <NavLink reloadDocument to="/discover" className={navLinkClass}>
+              Discover
             </NavLink>
-          )}
-        </nav>
-        <Button
-          type="button"
-          variant="ghost"
-          size="icon"
-          className="md:hidden"
-          aria-label="Open menu"
-          aria-expanded={mobileMenuOpen}
-          onClick={() => setMobileMenuOpen(true)}
-        >
-          <Menu className="h-5 w-5" />
-        </Button>
-      </PageContainer>
+            <NavLink reloadDocument to="/recommend" className={navLinkClass}>
+              Recommend
+            </NavLink>
+            <NavLink reloadDocument to="/saved" className={navLinkClass}>
+              {savedLabel}
+            </NavLink>
+            {user ? (
+              <>
+                <NavLink reloadDocument to="/account" className={navLinkClass}>
+                  Account
+                </NavLink>
+                {isAdmin ? (
+                  <NavLink reloadDocument to="/admin/venues" className={navLinkClass}>
+                    Admin
+                  </NavLink>
+                ) : null}
+              </>
+            ) : (
+              <NavLink reloadDocument to="/sign-in" className={navLinkClass}>
+                Sign in
+              </NavLink>
+            )}
+          </nav>
+          <Button
+            type="button"
+            variant="ghost"
+            size="icon"
+            className="md:hidden"
+            aria-label="Open menu"
+            aria-expanded={mobileMenuOpen}
+            onClick={() => setMobileMenuOpen(true)}
+          >
+            <Menu className="h-5 w-5" />
+          </Button>
+        </PageContainer>
+      </header>
       <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
         <SheetHeader>
           <SheetTitle>Menu</SheetTitle>
@@ -100,6 +102,6 @@ export function Header() {
           )}
         </nav>
       </Sheet>
-    </header>
+    </>
   );
 }
