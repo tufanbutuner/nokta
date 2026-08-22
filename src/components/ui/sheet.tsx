@@ -31,9 +31,9 @@ function SheetTitle({ className, ...props }: React.HTMLAttributes<HTMLHeadingEle
   return <h2 className={cn("text-lg font-semibold", className)} {...props} />;
 }
 
-function SheetClose({ onClick }: { onClick: () => void }) {
+function SheetClose({ onClick, "aria-label": ariaLabel = "Close panel" }: { onClick: () => void; "aria-label"?: string }) {
   return (
-    <Button variant="ghost" size="icon" onClick={onClick} aria-label="Close filters">
+    <Button variant="ghost" size="icon" onClick={onClick} aria-label={ariaLabel}>
       <X className="h-4 w-4" />
     </Button>
   );
