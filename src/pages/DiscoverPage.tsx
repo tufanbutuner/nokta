@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { SlidersHorizontal, X } from "lucide-react";
-import { DiscoverViewToggle } from "@/components/discover/DiscoverViewToggle";
 import { SortSelect } from "@/components/discover/SortSelect";
 import { LocationStatusMessage } from "@/components/location/LocationStatusMessage";
 import { UseLocationButton } from "@/components/location/UseLocationButton";
@@ -73,16 +72,6 @@ export function DiscoverPage() {
     setSearchParams(withDiscoverState(new URLSearchParams(), view, sortOption), { replace: true });
   }
 
-  function updateView(nextView: DiscoverView) {
-    const nextParams = new URLSearchParams(searchParams);
-    if (nextView === "map") {
-      nextParams.delete("view");
-    } else {
-      nextParams.set("view", nextView);
-    }
-    setSearchParams(nextParams, { replace: true });
-  }
-
   function updateSort(nextSort: VenueSortOption) {
     const nextParams = new URLSearchParams(searchParams);
     if (nextSort === "recommended") {
@@ -98,35 +87,26 @@ export function DiscoverPage() {
       <div className="mx-auto flex min-h-[calc(100vh-4rem)] max-w-none flex-col px-3 py-3 lg:h-[calc(100vh-4rem)]">
         <div className="grid min-h-0 flex-1 gap-4 lg:grid-cols-[420px_minmax(0,1fr)]">
           <aside className="flex min-h-0 flex-col overflow-hidden rounded-2xl border bg-card shadow-xl shadow-stone-950/5">
-            <div className="space-y-4 border-b p-4">
+            <div className="space-y-3 border-b p-4">
               <VenueSearch value={filters.query} onChange={(query) => updateFilters({ ...filters, query })} />
 
-              <DiscoveryFilterChips filters={filters} onChange={updateFilters} />
+              <DiscoveryFilterChips
+                filters={filters}
+                filtersOpen={filtersOpen}
+                onChange={updateFilters}
+                onToggleFilters={() => setFiltersOpen((open) => !open)}
+              />
 
               <ActiveFilterChips filters={filters} onClear={clearFilters} />
 
-              <div className="grid gap-3 sm:grid-cols-[1fr_auto] sm:items-center">
-                <DiscoverViewToggle value={view} onChange={updateView} />
-                <Button
-                  type="button"
-                  variant={filtersOpen || filtersAreActive ? "default" : "outline"}
-                  aria-expanded={filtersOpen}
-                  onClick={() => setFiltersOpen((open) => !open)}
-                  className="w-full sm:w-36"
-                >
-                  <SlidersHorizontal className="mr-2 h-4 w-4" />
-                  More filters
-                </Button>
-              </div>
-
               {filtersOpen ? (
-                <div className="rounded-xl border bg-background/50 p-4">
+                <div className="rounded-xl border bg-background/50 p-3">
                   <VenueFilters venues={venues} filters={filters} onChange={updateFilters} onClear={clearFilters} />
                 </div>
               ) : null}
             </div>
 
-            <div className="space-y-4 border-b p-4">
+            <div className="space-y-3 border-b bg-background/35 p-4">
               <div className="flex items-start justify-between gap-3">
                 <div>
                   <p className="text-sm font-medium">{resultLabel}</p>
@@ -138,7 +118,7 @@ export function DiscoverPage() {
                   </Button>
                 ) : null}
               </div>
-              <div className="grid gap-3">
+              <div className="grid gap-2">
                 <UseLocationButton status={locationStatus} onLocationFound={setUserLocation} onStatusChange={setLocationStatus} />
                 <SortSelect value={sortOption} userLocation={userLocation} onChange={updateSort} />
               </div>
@@ -199,9 +179,19 @@ export function DiscoverPage() {
   );
 }
 
-function DiscoveryFilterChips({ filters, onChange }: { filters: VenueFilterState; onChange: (filters: VenueFilterState) => void }) {
+function DiscoveryFilterChips({
+  filters,
+  filtersOpen,
+  onChange,
+  onToggleFilters,
+}: {
+  filters: VenueFilterState;
+  filtersOpen: boolean;
+  onChange: (filters: VenueFilterState) => void;
+  onToggleFilters: () => void;
+}) {
   return (
-    <div className="flex flex-wrap gap-2">
+    <div className="flex flex-wrap gap-1.5">
       <FilterChip active={filters.openNow} label="Open now" onClick={() => onChange({ ...filters, openNow: !filters.openNow })} />
       <FilterChip
         active={filters.priceLevel === 1}
@@ -228,6 +218,18 @@ function DiscoveryFilterChips({ filters, onChange }: { filters: VenueFilterState
         label="Late night"
         onClick={() => onChange({ ...filters, features: { ...filters.features, openLate: !filters.features.openLate } })}
       />
+      <button
+        type="button"
+        aria-expanded={filtersOpen}
+        onClick={onToggleFilters}
+        className={cn(
+          "inline-flex h-8 items-center gap-1.5 rounded-full px-3 text-xs font-medium transition-colors",
+          filtersOpen ? "bg-foreground text-background hover:bg-foreground/90" : "bg-foreground/5 text-muted-foreground hover:bg-foreground/10 hover:text-foreground",
+        )}
+      >
+        <SlidersHorizontal className="h-3.5 w-3.5" />
+        More
+      </button>
     </div>
   );
 }

@@ -20,8 +20,8 @@ export function SortSelect({
   onChange: (value: VenueSortOption) => void;
 }) {
   return (
-    <div className="space-y-2">
-      <label className="text-sm font-medium" htmlFor="sort-filter">
+    <div className="space-y-1.5">
+      <label className="text-xs font-medium text-muted-foreground" htmlFor="sort-filter">
         Sort
       </label>
       <Select
@@ -32,7 +32,7 @@ export function SortSelect({
           ...option,
           label: option.value === "nearest" && !userLocation ? "Nearest - use location first" : option.label,
         }))}
-        className="w-full sm:w-56"
+        className="w-full"
       />
       {value === "nearest" && !userLocation ? (
         <p className="text-xs text-muted-foreground">Use my location to sort by nearest.</p>
