@@ -25,18 +25,16 @@ export function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-40 border-b bg-background/95 backdrop-blur">
+      <header className="sticky top-0 z-[1200] border-b bg-background/95 backdrop-blur">
         <PageContainer className="flex h-16 items-center justify-between gap-3">
           <Link reloadDocument to="/" className="text-sm font-semibold uppercase tracking-[0.18em]">
             Sheesha
           </Link>
-          <div className="hidden flex-1 justify-center md:flex">
-            <NavLocationControl />
-          </div>
           <nav className="hidden items-center gap-6 text-sm text-muted-foreground md:flex">
             <NavLink reloadDocument to="/discover" className={navLinkClass}>
               Discover
             </NavLink>
+            <NavLocationControl />
             <NavLink reloadDocument to="/recommend" className={navLinkClass}>
               Recommend
             </NavLink>

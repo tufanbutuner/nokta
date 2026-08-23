@@ -63,7 +63,7 @@ export function NavLocationControl({ compact = false }: { compact?: boolean }) {
       </button>
 
       {open ? (
-        <div className="fixed left-3 right-3 top-[4.5rem] z-50 rounded-2xl border bg-card p-3 shadow-2xl shadow-stone-950/15 md:absolute md:left-auto md:right-0 md:top-12 md:w-80">
+        <div className="fixed left-3 right-3 top-[4.5rem] z-[1300] rounded-2xl border bg-card p-3 shadow-2xl shadow-stone-950/15 md:absolute md:left-0 md:right-auto md:top-12 md:w-80">
           <div className="mb-3 flex items-start justify-between gap-3">
             <div>
               <p className="text-sm font-semibold">Your location</p>
