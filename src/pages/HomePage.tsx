@@ -1,8 +1,9 @@
-import { useState, type FormEvent } from "react";
+import { useMemo, useState, type FormEvent } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { ArrowRight, Search } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+import { ArrowRight, BookmarkCheck, ChevronRight, MapPin, MessageCircle, Search, Sparkles, Star } from "lucide-react";
 import { PageContainer } from "@/components/layout/PageContainer";
-import { RecentlyViewedVenues } from "@/components/venues/RecentlyViewedVenues";
+import { FavouriteButton } from "@/components/venues/FavouriteButton";
 import { VenueGrid } from "@/components/venues/VenueGrid";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -10,21 +11,59 @@ import { Input } from "@/components/ui/input";
 import { ErrorState } from "@/components/state/ErrorState";
 import { LoadingState } from "@/components/state/LoadingState";
 import { useVenues } from "@/hooks/useVenues";
+import { getVenueImage } from "@/lib/venueImages";
+import type { Venue } from "@/types/venue";
 
-const vibes = [
-  { label: "Outdoor", value: "outdoor" },
-  { label: "Late Night", value: "late-night" },
-  { label: "Luxury", value: "luxury" },
-  { label: "Date Night", value: "date-night" },
-  { label: "Casual", value: "casual" },
+const quickFilters = [
+  { label: "Near me", to: "/discover?sort=distance" },
+  { label: "Open now", to: "/discover?status=open" },
+  { label: "Under £20", to: "/discover?price=1" },
+  { label: "Top rated", to: "/discover?sort=rating" },
+  { label: "Outdoor seating", to: "/discover?features=outdoor" },
 ] as const;
+
+const steps: { title: string; description: string; Icon: LucideIcon }[] = [
+  {
+    title: "Search",
+    description: "Find lounges by area, vibe, price and the details that matter before you travel.",
+    Icon: Search,
+  },
+  {
+    title: "Save",
+    description: "Keep a shortlist of places you want to try, from late-night lounges to quiet terraces.",
+    Icon: BookmarkCheck,
+  },
+  {
+    title: "Rate",
+    description: "Share what the session was actually like so other Londoners can choose well.",
+    Icon: MessageCircle,
+  },
+];
+
+const testimonials = [
+  {
+    quote: "Finally, a way to compare shisha spots without opening ten different tabs.",
+    name: "Aisha",
+    area: "Bermondsey",
+  },
+  {
+    quote: "The filters are exactly how we pick a place: outdoor, late, decent price.",
+    name: "Rami",
+    area: "Edgware Road",
+  },
+  {
+    quote: "Feels more curated than a directory. The saved list has become our weekend shortlist.",
+    name: "Maya",
+    area: "Shoreditch",
+  },
+];
 
 export function HomePage() {
   const navigate = useNavigate();
   const [query, setQuery] = useState("");
   const { venues, isLoading, error } = useVenues();
-  const featured = venues.slice(0, 3);
-  const neighbourhoods = Array.from(new Set(venues.map((venue) => venue.area))).slice(0, 5);
+  const featured = venues.slice(0, 4);
+  const areaCards = useMemo(() => getAreaCards(venues), [venues]);
 
   function handleSearchSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -40,107 +79,248 @@ export function HomePage() {
   return (
     <main>
       <section className="overflow-hidden border-b">
-        <PageContainer className="grid gap-8 py-10 sm:py-14 lg:grid-cols-[1fr_420px] lg:items-end lg:gap-10 lg:py-24">
-          <div>
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground sm:mb-4">Sheesha guide</p>
-            <h1 className="max-w-3xl text-4xl font-semibold leading-none sm:text-6xl lg:text-7xl">
-              Find your next sheesha spot in London.
+        <PageContainer className="py-12 sm:py-16 lg:py-20">
+          <div className="mx-auto max-w-4xl text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-muted-foreground">London's sheesha guide</p>
+            <h1 className="mx-auto mt-5 max-w-4xl text-5xl font-semibold leading-[0.95] sm:text-6xl lg:text-7xl">
+              Find your perfect <span className="text-clay-accent">sheesha spot</span>
             </h1>
-            <p className="mt-4 max-w-xl text-base leading-7 text-muted-foreground sm:mt-6 sm:text-lg sm:leading-8">
-              A curated discovery app for lounges, terraces and late-night tables across the city.
+            <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
+              Search curated lounges, compare session prices and save the places worth trying across London.
             </p>
-            <form className="mt-6 max-w-2xl rounded-2xl border bg-card p-1.5 shadow-xl shadow-stone-950/5 sm:mt-8 sm:p-2" onSubmit={handleSearchSubmit}>
+
+            <form className="mx-auto mt-8 max-w-3xl rounded-2xl border bg-card p-2 shadow-xl shadow-stone-950/5" onSubmit={handleSearchSubmit}>
               <div className="relative">
                 <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
                 <Input
                   value={query}
                   onChange={(event) => setQuery(event.target.value)}
-                  className="min-w-0 border-0 bg-transparent pl-9 pr-14 shadow-none focus-visible:ring-0 sm:pr-28"
+                  className="min-w-0 border-0 bg-transparent pl-9 pr-14 shadow-none focus-visible:ring-0 sm:pr-56"
                   placeholder="Search venues, areas or vibes..."
                 />
-                <Button type="submit" className="absolute right-0 top-1/2 h-10 w-10 -translate-y-1/2 px-0 sm:w-auto sm:min-w-24 sm:px-4">
+                <div className="absolute right-28 top-1/2 hidden h-8 -translate-y-1/2 items-center gap-2 border-l px-4 text-sm text-muted-foreground sm:flex">
+                  <MapPin className="h-4 w-4" />
+                  All London
+                </div>
+                <Button type="submit" className="absolute right-0 top-1/2 h-10 w-10 -translate-y-1/2 bg-clay-accent px-0 text-white hover:bg-clay-accent-hover sm:w-24 sm:px-4">
                   <Search className="h-4 w-4 sm:hidden" />
                   <span className="sr-only sm:not-sr-only">Search</span>
                 </Button>
               </div>
             </form>
-            <div className="mt-5 flex flex-col gap-3 sm:mt-6 sm:flex-row sm:items-center">
-              <p className="text-sm text-muted-foreground">Not sure where to go?</p>
-              <Button asChild className="w-fit">
-                <Link reloadDocument to="/recommend">
-                  Find your spot
-                </Link>
-              </Button>
-            </div>
-            <div className="mt-5 flex flex-wrap gap-2">
-              {vibes.slice(0, 3).map((vibe) => (
-                <Link key={vibe.value} reloadDocument to={`/discover?vibes=${vibe.value}`}>
-                  <Badge variant="outline" className="bg-card/70 hover:border-foreground">
-                    {vibe.label}
+
+            <div className="mx-auto mt-4 flex max-w-3xl flex-wrap justify-center gap-2">
+              {quickFilters.map((filter) => (
+                <Link key={filter.label} reloadDocument to={filter.to}>
+                  <Badge variant="outline" className="border-transparent bg-foreground/5 px-3 py-1.5 text-xs text-foreground/75 hover:bg-foreground/10">
+                    {filter.label}
                   </Badge>
                 </Link>
               ))}
             </div>
           </div>
-          <div className="-mx-4 h-64 overflow-hidden border-y bg-card sm:mx-0 sm:h-auto sm:rounded-xl sm:border lg:rounded-lg">
+
+          <div className="mt-10 overflow-hidden rounded-2xl border bg-card shadow-2xl shadow-stone-950/5">
             <img
-              src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=85"
-              alt="Atmospheric lounge interior"
-              className="h-full w-full object-cover sm:aspect-[16/10] sm:h-auto lg:aspect-[4/5]"
+              src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1800&q=85"
+              alt="Atmospheric London lounge interior"
+              className="h-[280px] w-full object-cover sm:h-[360px] lg:h-[420px]"
             />
           </div>
         </PageContainer>
       </section>
 
-      <PageContainer className="space-y-12 py-10 sm:space-y-16 sm:py-14">
+      <section className="border-b bg-card/35">
+        <PageContainer className="grid gap-4 py-6 text-center text-sm text-muted-foreground sm:grid-cols-[1fr_auto_auto_auto] sm:items-center sm:text-left">
+          <p className="font-medium text-foreground">Trusted by London sheesha lovers</p>
+          <span className="opacity-60">Late-night lists</span>
+          <span className="opacity-60">Terrace picks</span>
+          <span className="opacity-60">Price checks</span>
+        </PageContainer>
+      </section>
+
+      <PageContainer className="space-y-16 py-12 sm:py-16">
         <section>
           <div className="mb-6 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
             <div>
-              <p className="text-sm text-muted-foreground">Popular right now</p>
-              <h2 className="text-2xl font-semibold sm:text-3xl">Book-worthy lounges</h2>
+              <p className="text-sm text-clay-accent">Popular near you</p>
+              <h2 className="mt-1 text-3xl font-semibold">Book-worthy lounges</h2>
             </div>
             <Button asChild variant="outline" className="w-fit">
               <Link reloadDocument to="/discover">
-                Discover all
+                View all
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
           </div>
-          {isLoading ? <LoadingState /> : error ? <ErrorState message={error} /> : <VenueGrid venues={featured} />}
+          {isLoading ? <LoadingState /> : error ? <ErrorState message={error} /> : <LandingVenueGrid venues={featured} />}
         </section>
 
-        {!isLoading && !error ? <RecentlyViewedVenues venues={venues} /> : null}
-
-        <section className="grid gap-8 lg:grid-cols-2">
-          <div>
-            <p className="mb-3 text-sm text-muted-foreground">Explore London</p>
-            <div className="flex flex-wrap gap-2">
-              {(neighbourhoods.length ? neighbourhoods : ["Edgware Road", "Mayfair", "Canary Wharf", "Shoreditch", "Walthamstow"]).map((area) => (
-                <Link key={area} reloadDocument to={`/discover?area=${encodeURIComponent(area)}`}>
-                  <Badge variant="secondary" className="px-3 py-1.5 text-sm hover:bg-secondary/80">
-                    {area}
-                  </Badge>
-                </Link>
-              ))}
-            </div>
+        <section>
+          <div className="mb-6">
+            <p className="text-sm text-clay-accent">Browse by area</p>
+            <h2 className="mt-1 text-3xl font-semibold">Start with the part of London you know</h2>
           </div>
-          <div id="about">
-            <p className="mb-3 text-sm text-muted-foreground">Find your vibe</p>
-            <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-3">
-              {vibes.map((vibe) => (
-                <Link
-                  key={vibe.value}
-                  reloadDocument
-                  to={`/discover?vibes=${vibe.value}`}
-                  className="rounded-xl border bg-card p-3 text-sm font-medium hover:border-foreground sm:rounded-lg sm:p-4"
-                >
-                  {vibe.label}
-                </Link>
-              ))}
-            </div>
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {areaCards.map((area) => (
+              <Link
+                key={area.name}
+                reloadDocument
+                to={`/discover?area=${encodeURIComponent(area.name)}`}
+                className="group flex items-center justify-between rounded-xl border bg-card p-5 transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-stone-950/5"
+              >
+                <span>
+                  <span className="block font-semibold">{area.name}</span>
+                  <span className="mt-1 block text-sm text-muted-foreground">{area.count} venues</span>
+                </span>
+                <ChevronRight className="h-4 w-4 text-muted-foreground transition group-hover:translate-x-0.5 group-hover:text-foreground" />
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        <section className="rounded-2xl bg-card px-5 py-10 sm:px-8 lg:px-10">
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="text-sm font-medium uppercase tracking-[0.18em] text-clay-accent">How it works</p>
+            <h2 className="mt-3 text-3xl font-semibold">Three steps to your next session</h2>
+          </div>
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {steps.map(({ title, description, Icon }) => (
+              <div key={title} className="rounded-xl border bg-background p-5">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-clay-accent/10 text-clay-accent">
+                  <Icon className="h-5 w-5" />
+                </div>
+                <h3 className="mt-5 text-lg font-semibold">{title}</h3>
+                <p className="mt-2 text-sm leading-6 text-muted-foreground">{description}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section>
+          <div className="mb-6">
+            <p className="text-sm text-clay-accent">Word around town</p>
+            <h2 className="mt-1 text-3xl font-semibold">Built for how people actually choose</h2>
+          </div>
+          <div className="grid gap-4 md:grid-cols-3">
+            {testimonials.map((testimonial) => (
+              <div key={testimonial.name} className="rounded-xl border bg-card p-5">
+                <div className="flex gap-1 text-clay-accent" aria-label="5 star review">
+                  {Array.from({ length: 5 }).map((_, index) => (
+                    <Star key={index} className="h-4 w-4 fill-current" />
+                  ))}
+                </div>
+                <p className="mt-4 leading-7 text-foreground/85">"{testimonial.quote}"</p>
+                <div className="mt-5 flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-clay-accent/10 text-sm font-semibold text-clay-accent">
+                    {testimonial.name.charAt(0)}
+                  </div>
+                  <div>
+                    <p className="font-medium">{testimonial.name}</p>
+                    <p className="text-sm text-muted-foreground">{testimonial.area}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="overflow-hidden rounded-3xl bg-foreground px-6 py-12 text-center text-background sm:px-10">
+          <Sparkles className="mx-auto h-8 w-8 text-clay-accent" />
+          <h2 className="mx-auto mt-4 max-w-xl text-3xl font-semibold sm:text-4xl">Ready to find your spot?</h2>
+          <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-background/70">
+            Explore venues, save your shortlist and keep the next session easy to choose.
+          </p>
+          <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
+            <Button asChild className="bg-clay-accent text-white hover:bg-clay-accent-hover">
+              <Link reloadDocument to="/discover">Get started free</Link>
+            </Button>
+            <Button asChild variant="outline" className="border-background/25 text-background hover:bg-background/10">
+              <Link reloadDocument to="/recommend">Find a recommendation</Link>
+            </Button>
           </div>
         </section>
       </PageContainer>
     </main>
   );
+}
+
+function LandingVenueGrid({ venues }: { venues: Venue[] }) {
+  if (!venues.length) {
+    return <VenueGrid venues={venues} />;
+  }
+
+  return (
+    <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      {venues.map((venue) => (
+        <LandingVenueCard key={venue.id} venue={venue} />
+      ))}
+    </div>
+  );
+}
+
+function LandingVenueCard({ venue }: { venue: Venue }) {
+  const isOpen = venue.businessStatus === "open" || venue.businessStatus === "unknown";
+
+  return (
+    <article className="group overflow-hidden rounded-xl border bg-card transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-stone-950/5">
+      <div className="relative h-[190px] overflow-hidden bg-muted">
+        <Link reloadDocument to={`/venues/${venue.slug}`} className="block h-full">
+          <img
+            src={getVenueImage(venue)}
+            alt={`${venue.name} interior`}
+            className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+          />
+        </Link>
+        {venue.rating ? (
+          <span className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full bg-card/90 px-2.5 py-1 text-xs font-medium backdrop-blur">
+            <Star className="h-3.5 w-3.5 fill-clay-accent text-clay-accent" />
+            {venue.rating}
+          </span>
+        ) : null}
+        <FavouriteButton venueId={venue.id} venueName={venue.name} className="absolute right-3 top-3 h-8 w-8 text-clay-accent" />
+      </div>
+      <div className="p-4">
+        <Link reloadDocument to={`/venues/${venue.slug}`} className="block">
+          <h3 className="line-clamp-1 font-semibold">{venue.name}</h3>
+          <p className="mt-1 line-clamp-1 text-sm text-muted-foreground">{venue.area}</p>
+        </Link>
+        <div className="mt-4 flex items-center justify-between gap-3">
+          <span className="text-sm text-muted-foreground">{venue.priceFrom ? `£${venue.priceFrom}+` : "Price TBC"}</span>
+          <span
+            className={
+              isOpen
+                ? "rounded-full bg-clay-accent/10 px-2 py-1 text-xs font-medium text-clay-accent"
+                : "rounded-full bg-muted px-2 py-1 text-xs font-medium text-muted-foreground"
+            }
+          >
+            {isOpen ? "Open" : "Closed"}
+          </span>
+        </div>
+      </div>
+    </article>
+  );
+}
+
+function getAreaCards(venues: Venue[]) {
+  const counts = venues.reduce<Record<string, number>>((areas, venue) => {
+    areas[venue.area] = (areas[venue.area] ?? 0) + 1;
+    return areas;
+  }, {});
+
+  const areaCards = Object.entries(counts)
+    .sort(([, aCount], [, bCount]) => bCount - aCount)
+    .slice(0, 6)
+    .map(([name, count]) => ({ name, count }));
+
+  return areaCards.length
+    ? areaCards
+    : [
+        { name: "Edgware Road", count: 8 },
+        { name: "Mayfair", count: 5 },
+        { name: "Shoreditch", count: 7 },
+        { name: "Canary Wharf", count: 4 },
+        { name: "Walthamstow", count: 3 },
+        { name: "Bermondsey", count: 6 },
+      ];
 }
