@@ -25,7 +25,7 @@ export function VenueFilters({
 
   return (
     <div className={className}>
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-[220px_180px_1fr] lg:items-start">
+      <div className="grid gap-3 sm:grid-cols-2">
         <div className="space-y-2">
           <label className="text-sm font-medium" htmlFor="area-filter">
             Area

@@ -94,7 +94,7 @@ export function hasActiveFilters(filters: VenueFilterState) {
 }
 
 export function parseDiscoverView(params: URLSearchParams): DiscoverView {
-  return params.get("view") === "map" ? "map" : "list";
+  return params.get("view") === "list" ? "list" : "map";
 }
 
 export function parseVenueSort(params: URLSearchParams): VenueSortOption {

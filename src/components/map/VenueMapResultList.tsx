@@ -28,14 +28,14 @@ export function VenueMapResultList({
           <Card
             key={venue.id}
             className={cn(
-              "cursor-pointer overflow-hidden transition hover:border-foreground/30 hover:shadow-lg hover:shadow-stone-950/5",
-              selected && "border-foreground shadow-lg shadow-stone-950/5",
+              "cursor-pointer overflow-hidden rounded-xl transition hover:border-clay-accent/40 hover:shadow-lg hover:shadow-stone-950/5",
+              selected && "border-clay-accent shadow-lg shadow-clay-accent/10",
             )}
           >
             <div
               role="button"
               tabIndex={0}
-              className="grid w-full cursor-pointer grid-cols-[104px_1fr] text-left"
+              className="grid w-full cursor-pointer grid-cols-[88px_1fr] text-left"
               onClick={() => onSelectVenue(venue)}
               onKeyDown={(event) => {
                 if (event.key === "Enter" || event.key === " ") {
@@ -44,8 +44,8 @@ export function VenueMapResultList({
                 }
               }}
             >
-              <img src={getVenueImage(venue)} alt={`${venue.name} interior`} className="h-full min-h-32 w-full object-cover" />
-              <div className="min-w-0 p-4">
+              <img src={getVenueImage(venue)} alt={`${venue.name} interior`} className="h-full min-h-28 w-full object-cover" />
+              <div className="min-w-0 p-3">
                 <div className="flex items-start justify-between gap-3">
                   <div className="min-w-0">
                     <h3 className="truncate text-base font-semibold">{venue.name}</h3>
@@ -53,16 +53,16 @@ export function VenueMapResultList({
                   </div>
                   {venue.rating ? (
                     <span className="inline-flex shrink-0 items-center gap-1 text-sm">
-                      <Star className="h-4 w-4 fill-foreground" />
+                      <Star className="h-4 w-4 fill-clay-accent text-clay-accent" />
                       {venue.rating}
                     </span>
                   ) : null}
                 </div>
-                <div className="mt-4 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted-foreground">
+                <div className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted-foreground">
                   <VenuePrice level={venue.priceLevel} from={venue.priceFrom} />
                   <VenueDistance venue={venue} userLocation={userLocation} />
                 </div>
-                <div className="mt-4">
+                <div className="mt-3">
                   <Button asChild size="sm" variant="outline" onClick={(event) => event.stopPropagation()}>
                     <a href={`/venues/${venue.slug}`}>View venue</a>
                   </Button>
