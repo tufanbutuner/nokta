@@ -19,8 +19,6 @@ import { filterVenues } from "@/lib/filterVenues";
 import { sortVenues } from "@/lib/sortVenues";
 import { cn } from "@/lib/utils";
 import {
-  FEATURE_OPTIONS,
-  PRICE_OPTIONS,
   filtersToSearchParams,
   formatVibe,
   hasActiveFilters,
@@ -28,7 +26,7 @@ import {
   parseVenueFilters,
   parseVenueSort,
 } from "@/lib/venueFilters";
-import type { DiscoverView, FeatureFilterKey, VenueFilterState } from "@/types/filters";
+import type { DiscoverView, VenueFilterState } from "@/types/filters";
 import type { LocationStatus, UserLocation } from "@/types/location";
 import type { VenueSortOption } from "@/types/sort";
 
@@ -95,55 +93,17 @@ export function DiscoverPage() {
     setSearchParams(nextParams, { replace: true });
   }
 
-  function dismissFeature(feature: FeatureFilterKey) {
-    updateFilters({ ...filters, features: { ...filters.features, [feature]: false } });
-  }
-
   return (
     <main className="bg-background">
-      <div className="mx-auto flex min-h-[calc(100vh-4rem)] max-w-[1440px] flex-col gap-4 px-4 py-5 lg:h-[calc(100vh-4rem)]">
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-clay-accent">Discover</p>
-            <h1 className="mt-2 text-3xl font-semibold sm:text-4xl">Find sheesha across London</h1>
-            <p className="mt-2 text-sm text-muted-foreground">Search, filter, compare, then pick it on the map.</p>
-          </div>
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <span>{openVenueCount} open</span>
-            <span aria-hidden="true">·</span>
-            <span>{closedVenueCount} closed</span>
-          </div>
-        </div>
-
+      <div className="mx-auto flex min-h-[calc(100vh-4rem)] max-w-none flex-col px-3 py-3 lg:h-[calc(100vh-4rem)]">
         <div className="grid min-h-0 flex-1 gap-4 lg:grid-cols-[420px_minmax(0,1fr)]">
           <aside className="flex min-h-0 flex-col overflow-hidden rounded-2xl border bg-card shadow-xl shadow-stone-950/5">
             <div className="space-y-4 border-b p-4">
               <VenueSearch value={filters.query} onChange={(query) => updateFilters({ ...filters, query })} />
 
-              <div className="flex flex-wrap gap-2">
-                <QuickFilterChip
-                  active={filters.features.openLate}
-                  label="Late night"
-                  onClick={() => updateFilters({ ...filters, features: { ...filters.features, openLate: !filters.features.openLate } })}
-                />
-                <QuickFilterChip
-                  active={filters.priceLevel === 1}
-                  label="£ Budget"
-                  onClick={() => updateFilters({ ...filters, priceLevel: filters.priceLevel === 1 ? "all" : 1 })}
-                />
-                <QuickFilterChip
-                  active={filters.features.outdoor}
-                  label="Outdoor"
-                  onClick={() => updateFilters({ ...filters, features: { ...filters.features, outdoor: !filters.features.outdoor } })}
-                />
-                <QuickFilterChip
-                  active={filters.features.food}
-                  label="Food menu"
-                  onClick={() => updateFilters({ ...filters, features: { ...filters.features, food: !filters.features.food } })}
-                />
-              </div>
+              <DiscoveryFilterChips filters={filters} onChange={updateFilters} />
 
-              <ActiveFilterChips filters={filters} onClear={clearFilters} onDismissFeature={dismissFeature} />
+              <ActiveFilterChips filters={filters} onClear={clearFilters} />
 
               <div className="grid gap-3 sm:grid-cols-[1fr_auto] sm:items-center">
                 <DiscoverViewToggle value={view} onChange={updateView} />
@@ -155,7 +115,7 @@ export function DiscoverPage() {
                   className="w-full sm:w-36"
                 >
                   <SlidersHorizontal className="mr-2 h-4 w-4" />
-                  Filters
+                  More filters
                 </Button>
               </div>
 
@@ -239,33 +199,64 @@ export function DiscoverPage() {
   );
 }
 
-function QuickFilterChip({ active, label, onClick }: { active: boolean; label: string; onClick: () => void }) {
+function DiscoveryFilterChips({ filters, onChange }: { filters: VenueFilterState; onChange: (filters: VenueFilterState) => void }) {
   return (
-    <Button
+    <div className="flex flex-wrap gap-2">
+      <FilterChip active={filters.openNow} label="Open now" onClick={() => onChange({ ...filters, openNow: !filters.openNow })} />
+      <FilterChip
+        active={filters.priceLevel === 1}
+        label="£ Budget"
+        onClick={() => onChange({ ...filters, priceLevel: filters.priceLevel === 1 ? "all" : 1 })}
+      />
+      <FilterChip
+        active={filters.minRating === 4}
+        label="Rating 4+"
+        onClick={() => onChange({ ...filters, minRating: filters.minRating === 4 ? "all" : 4 })}
+      />
+      <FilterChip
+        active={filters.features.outdoor}
+        label="Outdoor"
+        onClick={() => onChange({ ...filters, features: { ...filters.features, outdoor: !filters.features.outdoor } })}
+      />
+      <FilterChip
+        active={filters.features.food}
+        label="Food menu"
+        onClick={() => onChange({ ...filters, features: { ...filters.features, food: !filters.features.food } })}
+      />
+      <FilterChip
+        active={filters.features.openLate}
+        label="Late night"
+        onClick={() => onChange({ ...filters, features: { ...filters.features, openLate: !filters.features.openLate } })}
+      />
+    </div>
+  );
+}
+
+function FilterChip({ active, label, onClick }: { active: boolean; label: string; onClick: () => void }) {
+  return (
+    <button
       type="button"
-      variant={active ? "default" : "outline"}
-      size="sm"
       aria-pressed={active}
       onClick={onClick}
-      className={cn("rounded-full", active && "bg-clay-accent text-white hover:bg-clay-accent-hover")}
+      className={cn(
+        "inline-flex h-8 items-center gap-1.5 rounded-full px-3 text-xs font-medium transition-colors",
+        active ? "bg-clay-accent/10 text-clay-accent hover:bg-clay-accent/15" : "bg-foreground/5 text-muted-foreground hover:bg-foreground/10 hover:text-foreground",
+      )}
     >
       {label}
-    </Button>
+      {active ? <X className="h-3 w-3" /> : null}
+    </button>
   );
 }
 
 function ActiveFilterChips({
   filters,
   onClear,
-  onDismissFeature,
 }: {
   filters: VenueFilterState;
   onClear: () => void;
-  onDismissFeature: (feature: FeatureFilterKey) => void;
 }) {
-  const activeFeatures = FEATURE_OPTIONS.filter((option) => filters.features[option.value]);
-  const priceLabel = PRICE_OPTIONS.find((option) => option.value === String(filters.priceLevel))?.label;
-  const showChips = filters.query.trim() || filters.area !== "all" || filters.priceLevel !== "all" || filters.vibes.length || activeFeatures.length;
+  const showChips = filters.query.trim() || filters.area !== "all" || filters.vibes.length;
 
   if (!showChips) {
     return null;
@@ -275,22 +266,10 @@ function ActiveFilterChips({
     <div className="flex flex-wrap gap-2">
       {filters.query.trim() ? <Badge className="bg-clay-accent/10 text-clay-accent">Search: {filters.query.trim()}</Badge> : null}
       {filters.area !== "all" ? <Badge className="bg-clay-accent/10 text-clay-accent">{filters.area}</Badge> : null}
-      {filters.priceLevel !== "all" ? <Badge className="bg-clay-accent/10 text-clay-accent">{priceLabel}</Badge> : null}
       {filters.vibes.map((vibe) => (
         <Badge key={vibe} className="bg-clay-accent/10 text-clay-accent">
           {formatVibe(vibe)}
         </Badge>
-      ))}
-      {activeFeatures.map((feature) => (
-        <button
-          key={feature.value}
-          type="button"
-          onClick={() => onDismissFeature(feature.value)}
-          className="inline-flex items-center gap-1 rounded-full bg-clay-accent/10 px-2.5 py-1 text-xs font-medium text-clay-accent"
-        >
-          {feature.label}
-          <X className="h-3 w-3" />
-        </button>
       ))}
       <Button type="button" variant="ghost" size="sm" onClick={onClear} className="h-7 rounded-full px-2 text-xs">
         Clear all

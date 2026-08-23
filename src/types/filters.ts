@@ -7,6 +7,8 @@ export interface VenueFilterState {
   query: string;
   area: string;
   priceLevel: PriceLevel | "all";
+  openNow: boolean;
+  minRating: 4 | "all";
   vibes: VenueVibe[];
   features: Record<FeatureFilterKey, boolean>;
 }

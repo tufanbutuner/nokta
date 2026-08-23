@@ -6,6 +6,8 @@ export const INITIAL_VENUE_FILTERS: VenueFilterState = {
   query: "",
   area: "all",
   priceLevel: "all",
+  openNow: false,
+  minRating: "all",
   vibes: [],
   features: {
     indoor: false,
@@ -59,6 +61,8 @@ export function parseVenueFilters(params: URLSearchParams): VenueFilterState {
     query: params.get("q") ?? "",
     area: params.get("area") || "all",
     priceLevel: isPriceLevel(price) ? price : "all",
+    openNow: params.get("status") === "open",
+    minRating: params.get("rating") === "4" ? 4 : "all",
     vibes,
     features: {
       indoor: features.includes("indoor"),
@@ -77,6 +81,8 @@ export function filtersToSearchParams(filters: VenueFilterState) {
   if (filters.query.trim()) params.set("q", filters.query.trim());
   if (filters.area !== "all") params.set("area", filters.area);
   if (filters.priceLevel !== "all") params.set("price", String(filters.priceLevel));
+  if (filters.openNow) params.set("status", "open");
+  if (filters.minRating !== "all") params.set("rating", String(filters.minRating));
   if (filters.vibes.length) params.set("vibes", filters.vibes.join(","));
   if (features.length) params.set("features", features.join(","));
 
@@ -88,6 +94,8 @@ export function hasActiveFilters(filters: VenueFilterState) {
     Boolean(filters.query.trim()) ||
     filters.area !== "all" ||
     filters.priceLevel !== "all" ||
+    filters.openNow ||
+    filters.minRating !== "all" ||
     filters.vibes.length > 0 ||
     Object.values(filters.features).some(Boolean)
   );

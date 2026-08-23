@@ -15,10 +15,10 @@ import { getVenueImage } from "@/lib/venueImages";
 import type { Venue } from "@/types/venue";
 
 const quickFilters = [
-  { label: "Near me", to: "/discover?sort=distance" },
+  { label: "Near me", to: "/discover?sort=nearest" },
   { label: "Open now", to: "/discover?status=open" },
   { label: "Under £20", to: "/discover?price=1" },
-  { label: "Top rated", to: "/discover?sort=rating" },
+  { label: "Top rated", to: "/discover?rating=4" },
   { label: "Outdoor seating", to: "/discover?features=outdoor" },
 ] as const;
 
