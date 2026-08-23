@@ -78,7 +78,7 @@ export function HomePage() {
 
   return (
     <main>
-      <section className="overflow-hidden border-b">
+      <section className="border-b">
         <PageContainer className="py-12 sm:py-16 lg:py-20">
           <div className="mx-auto max-w-4xl text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-muted-foreground">London's sheesha guide</p>
@@ -120,13 +120,6 @@ export function HomePage() {
             </div>
           </div>
 
-          <div className="mt-10 overflow-hidden rounded-2xl border bg-card shadow-2xl shadow-stone-950/5">
-            <img
-              src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1800&q=85"
-              alt="Atmospheric London lounge interior"
-              className="h-[280px] w-full object-cover sm:h-[360px] lg:h-[420px]"
-            />
-          </div>
         </PageContainer>
       </section>
 
