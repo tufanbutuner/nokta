@@ -12,6 +12,7 @@ import { ErrorState } from "@/components/state/ErrorState";
 import { LoadingState } from "@/components/state/LoadingState";
 import { useVenues } from "@/hooks/useVenues";
 import { getVenueImage } from "@/lib/venueImages";
+import { getVenueCurrentStatus } from "@/lib/openingHours";
 import type { Venue } from "@/types/venue";
 
 const quickFilters = [
@@ -253,7 +254,7 @@ function LandingVenueGrid({ venues }: { venues: Venue[] }) {
 }
 
 function LandingVenueCard({ venue }: { venue: Venue }) {
-  const isOpen = venue.businessStatus === "open" || venue.businessStatus === "unknown";
+  const currentStatus = getVenueCurrentStatus(venue);
 
   return (
     <article className="group overflow-hidden rounded-xl border bg-card transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-stone-950/5">
@@ -282,17 +283,31 @@ function LandingVenueCard({ venue }: { venue: Venue }) {
           <span className="text-sm text-muted-foreground">{venue.priceFrom ? `£${venue.priceFrom}+` : "Price TBC"}</span>
           <span
             className={
-              isOpen
+              currentStatus === "open"
                 ? "rounded-full bg-clay-accent/10 px-2 py-1 text-xs font-medium text-clay-accent"
-                : "rounded-full bg-muted px-2 py-1 text-xs font-medium text-muted-foreground"
+                : currentStatus === "closed"
+                  ? "rounded-full bg-red-950/10 px-2 py-1 text-xs font-medium text-red-700"
+                  : "rounded-full bg-muted px-2 py-1 text-xs font-medium text-muted-foreground"
             }
           >
-            {isOpen ? "Open" : "Closed"}
+            {formatLandingStatus(currentStatus)}
           </span>
         </div>
       </div>
     </article>
   );
+}
+
+function formatLandingStatus(status: ReturnType<typeof getVenueCurrentStatus>) {
+  if (status === "open") {
+    return "Open";
+  }
+
+  if (status === "closed") {
+    return "Closed";
+  }
+
+  return "Hours TBC";
 }
 
 function getAreaCards(venues: Venue[]) {

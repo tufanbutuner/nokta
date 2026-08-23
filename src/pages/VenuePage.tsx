@@ -13,6 +13,7 @@ import { Separator } from "@/components/ui/separator";
 import { useVenuePreferences } from "@/context/VenuePreferencesContext";
 import { useVenue } from "@/hooks/useVenue";
 import { getGoogleMapsDirectionsUrl } from "@/lib/directions";
+import { getVenueCurrentStatus } from "@/lib/openingHours";
 import { formatPriceLevel } from "@/lib/venueFilters";
 import { getVenueImage } from "@/lib/venueImages";
 
@@ -65,12 +66,13 @@ export function VenuePage() {
     venue.alcohol && "Alcohol",
     venue.openLate && "Open late",
   ].filter((amenity): amenity is string => Boolean(amenity));
+  const currentStatus = getVenueCurrentStatus(venue);
   const headerDetails = [
     `${venue.area}, London`,
     venue.priceFrom ? `Shisha from £${venue.priceFrom}` : "Shisha price TBC",
     formatPriceLevel(venue.priceLevel),
     venue.outdoor ? "Outdoor seating" : "Indoor seating",
-    venue.openLate ? "Open late" : venue.businessStatus === "open" ? "Open venue" : "Status TBC",
+    formatCurrentStatus(currentStatus),
   ];
 
   return (
@@ -207,4 +209,16 @@ function formatVerifiedDate(value: string): string {
     month: "short",
     year: "numeric",
   }).format(new Date(value));
+}
+
+function formatCurrentStatus(status: ReturnType<typeof getVenueCurrentStatus>) {
+  if (status === "open") {
+    return "Open now";
+  }
+
+  if (status === "closed") {
+    return "Closed now";
+  }
+
+  return "Hours TBC";
 }

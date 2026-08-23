@@ -14,6 +14,7 @@ import { Button } from "@/components/ui/button";
 import { useAppLocation } from "@/context/AppLocationContext";
 import { useVenues } from "@/hooks/useVenues";
 import { filterVenues } from "@/lib/filterVenues";
+import { getVenueCurrentStatus, isVenueOpenNow } from "@/lib/openingHours";
 import { sortVenues } from "@/lib/sortVenues";
 import { cn } from "@/lib/utils";
 import {
@@ -43,8 +44,21 @@ export function DiscoverPage() {
   const resultLabel =
     sortedVenues.length === 0 ? "No venues" : sortedVenues.length === 1 ? "1 venue" : `${sortedVenues.length} venues`;
   const resultContextLabel = savedLocation ? `${resultLabel} near ${savedLocation.label}` : resultLabel;
-  const openVenueCount = sortedVenues.filter((venue) => venue.businessStatus === "open" || venue.businessStatus === "unknown").length;
-  const closedVenueCount = Math.max(sortedVenues.length - openVenueCount, 0);
+  const venueStatusCounts = sortedVenues.reduce(
+    (counts, venue) => {
+      const currentStatus = getVenueCurrentStatus(venue);
+      counts[currentStatus] += 1;
+      return counts;
+    },
+    { open: 0, closed: 0, unknown: 0 },
+  );
+  const statusCountLabel = [
+    `${venueStatusCounts.open} open`,
+    `${venueStatusCounts.closed} closed`,
+    venueStatusCounts.unknown ? `${venueStatusCounts.unknown} TBC` : null,
+  ]
+    .filter((item): item is string => Boolean(item))
+    .join(" · ");
 
   useEffect(() => {
     if (sortedVenues.length === 0) {
@@ -166,7 +180,7 @@ export function DiscoverPage() {
                   className="h-full rounded-none border-0"
                 />
                 <div className="absolute bottom-4 left-4 rounded-full border bg-card/90 px-3 py-2 text-xs font-medium shadow-lg shadow-stone-950/10 backdrop-blur">
-                  {openVenueCount} open · {closedVenueCount} closed
+                  {statusCountLabel}
                 </div>
               </div>
             ) : sortedVenues.length ? (

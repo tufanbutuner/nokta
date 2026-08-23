@@ -1,5 +1,6 @@
 import type { Venue } from "@/types/venue";
 import type { VenueFilterState } from "@/types/filters";
+import { isVenueOpenNow } from "@/lib/openingHours";
 
 export function filterVenues(venues: Venue[], filters: VenueFilterState): Venue[] {
   return venues.filter((venue) => {
@@ -10,7 +11,7 @@ export function filterVenues(venues: Venue[], filters: VenueFilterState): Venue[
     const matchesQuery = !query || haystack.includes(query);
     const matchesArea = filters.area === "all" || venue.area === filters.area;
     const matchesPrice = filters.priceLevel === "all" || venue.priceLevel === filters.priceLevel;
-    const matchesOpenNow = !filters.openNow || venue.businessStatus === "open" || venue.businessStatus === "unknown";
+    const matchesOpenNow = !filters.openNow || isVenueOpenNow(venue);
     const matchesRating = filters.minRating === "all" || (venue.rating ?? 0) >= filters.minRating;
     const matchesVibes = filters.vibes.length === 0 || filters.vibes.every((vibe) => venue.vibes.includes(vibe));
     const matchesFeatures =

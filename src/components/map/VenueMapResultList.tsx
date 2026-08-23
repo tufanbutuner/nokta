@@ -3,10 +3,11 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { VenuePrice } from "@/components/venues/VenuePrice";
 import { formatDistanceMiles, getVenueDistanceMiles } from "@/lib/location";
+import { getVenueCurrentStatus } from "@/lib/openingHours";
 import { cn } from "@/lib/utils";
 import { getVenueImage } from "@/lib/venueImages";
 import type { UserLocation } from "@/types/location";
-import type { BusinessStatus, Venue } from "@/types/venue";
+import type { Venue } from "@/types/venue";
 
 export function VenueMapResultList({
   venues,
@@ -55,7 +56,7 @@ export function VenueMapResultList({
                         {venue.area}
                         {distanceLabel ? <span> • {distanceLabel}</span> : null}
                       </p>
-                      <BusinessStatusBadge status={venue.businessStatus} />
+                      <CurrentStatusBadge status={getVenueCurrentStatus(venue)} />
                     </div>
                   </div>
                   {venue.rating ? (
@@ -82,31 +83,29 @@ export function VenueMapResultList({
   );
 }
 
-function BusinessStatusBadge({ status }: { status: BusinessStatus }) {
-  const label = getBusinessStatusLabel(status);
-
+function CurrentStatusBadge({ status }: { status: ReturnType<typeof getVenueCurrentStatus> }) {
   return (
     <span
       className={cn(
         "inline-flex h-5 shrink-0 items-center rounded-full px-2 text-[11px] font-medium",
         status === "open" && "bg-emerald-950/10 text-emerald-700",
-        (status === "temporarily-closed" || status === "permanently-closed") && "bg-red-950/10 text-red-700",
+        status === "closed" && "bg-red-950/10 text-red-700",
         status === "unknown" && "bg-foreground/5 text-muted-foreground",
       )}
     >
-      {label}
+      {getCurrentStatusLabel(status)}
     </span>
   );
 }
 
-function getBusinessStatusLabel(status: BusinessStatus) {
+function getCurrentStatusLabel(status: ReturnType<typeof getVenueCurrentStatus>) {
   if (status === "open") {
     return "Open";
   }
 
-  if (status === "temporarily-closed" || status === "permanently-closed") {
+  if (status === "closed") {
     return "Closed";
   }
 
-  return "Check status";
+  return "Hours TBC";
 }
