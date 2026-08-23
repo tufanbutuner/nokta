@@ -1,4 +1,3 @@
-import { PageContainer } from "@/components/layout/PageContainer";
 import { NavLocationControl } from "@/components/location/NavLocationControl";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetClose, SheetHeader, SheetTitle } from "@/components/ui/sheet";
@@ -26,15 +25,19 @@ export function Header() {
   return (
     <>
       <header className="sticky top-0 z-[1200] border-b bg-background/95 backdrop-blur">
-        <PageContainer className="flex h-16 items-center justify-between gap-3">
-          <Link reloadDocument to="/" className="text-sm font-semibold uppercase tracking-[0.18em]">
-            Sheesha
-          </Link>
+        <div className="flex h-16 w-full items-center justify-between gap-4 px-4 sm:px-6">
+          <div className="flex min-w-0 items-center gap-6">
+            <Link reloadDocument to="/" className="shrink-0 text-sm font-semibold uppercase tracking-[0.18em]">
+              Sheesha
+            </Link>
+            <div className="hidden items-center gap-6 text-sm text-muted-foreground md:flex">
+              <NavLink reloadDocument to="/discover" className={navLinkClass}>
+                Discover
+              </NavLink>
+              <NavLocationControl />
+            </div>
+          </div>
           <nav className="hidden items-center gap-6 text-sm text-muted-foreground md:flex">
-            <NavLink reloadDocument to="/discover" className={navLinkClass}>
-              Discover
-            </NavLink>
-            <NavLocationControl />
             <NavLink reloadDocument to="/recommend" className={navLinkClass}>
               Recommend
             </NavLink>
@@ -42,7 +45,7 @@ export function Header() {
               {savedLabel}
             </NavLink>
             {user ? (
-              <>
+              <div className="flex items-center gap-4 border-l pl-5">
                 <NavLink reloadDocument to="/account" className={navLinkClass}>
                   Account
                 </NavLink>
@@ -51,7 +54,7 @@ export function Header() {
                     Admin
                   </NavLink>
                 ) : null}
-              </>
+              </div>
             ) : (
               <NavLink reloadDocument to="/sign-in" className={navLinkClass}>
                 Sign in
@@ -71,7 +74,7 @@ export function Header() {
               <Menu className="h-5 w-5" />
             </Button>
           </div>
-        </PageContainer>
+        </div>
       </header>
       <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
         <SheetHeader>

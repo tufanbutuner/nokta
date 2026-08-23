@@ -34,7 +34,8 @@ export function DiscoverPage() {
   const [selectedVenueId, setSelectedVenueId] = useState<string | undefined>();
   const filters = useMemo(() => parseVenueFilters(searchParams), [searchParams]);
   const view = parseDiscoverView(searchParams);
-  const sortOption = parseVenueSort(searchParams);
+  const requestedSortOption = parseVenueSort(searchParams);
+  const sortOption = !searchParams.has("sort") && userLocation ? "nearest" : requestedSortOption;
   const filtersAreActive = hasActiveFilters(filters);
   const [filtersOpen, setFiltersOpen] = useState(filtersAreActive);
   const filteredVenues = useMemo(() => filterVenues(venues, filters), [venues, filters]);
@@ -62,21 +63,27 @@ export function DiscoverPage() {
     }
   }, [filtersAreActive]);
 
+  useEffect(() => {
+    if (!userLocation || searchParams.has("sort")) {
+      return;
+    }
+
+    const nextParams = new URLSearchParams(searchParams);
+    nextParams.set("sort", "nearest");
+    setSearchParams(nextParams, { replace: true });
+  }, [searchParams, setSearchParams, userLocation]);
+
   function updateFilters(nextFilters: VenueFilterState) {
-    setSearchParams(withDiscoverState(filtersToSearchParams(nextFilters), view, sortOption), { replace: true });
+    setSearchParams(withDiscoverState(filtersToSearchParams(nextFilters), view, requestedSortOption, searchParams.has("sort")), { replace: true });
   }
 
   function clearFilters() {
-    setSearchParams(withDiscoverState(new URLSearchParams(), view, sortOption), { replace: true });
+    setSearchParams(withDiscoverState(new URLSearchParams(), view, requestedSortOption, searchParams.has("sort")), { replace: true });
   }
 
   function updateSort(nextSort: VenueSortOption) {
     const nextParams = new URLSearchParams(searchParams);
-    if (nextSort === "recommended") {
-      nextParams.delete("sort");
-    } else {
-      nextParams.set("sort", nextSort);
-    }
+    nextParams.set("sort", nextSort);
     setSearchParams(nextParams, { replace: true });
   }
 
@@ -294,14 +301,14 @@ function DiscoverEmptyState({ onClear, compact = false, className }: { onClear: 
   );
 }
 
-function withDiscoverState(params: URLSearchParams, view: DiscoverView, sortOption: VenueSortOption) {
+function withDiscoverState(params: URLSearchParams, view: DiscoverView, sortOption: VenueSortOption, hasExplicitSort: boolean) {
   if (view === "list") {
     params.set("view", "list");
   } else {
     params.delete("view");
   }
 
-  if (sortOption === "recommended") {
+  if (!hasExplicitSort) {
     params.delete("sort");
   } else {
     params.set("sort", sortOption);
