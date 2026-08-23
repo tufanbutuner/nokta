@@ -1,8 +1,8 @@
 import { Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { VenueDistance } from "@/components/venues/VenueDistance";
 import { VenuePrice } from "@/components/venues/VenuePrice";
+import { formatDistanceMiles, getVenueDistanceMiles } from "@/lib/location";
 import { cn } from "@/lib/utils";
 import { getVenueImage } from "@/lib/venueImages";
 import type { UserLocation } from "@/types/location";
@@ -23,6 +23,7 @@ export function VenueMapResultList({
     <div className="space-y-3">
       {venues.map((venue) => {
         const selected = venue.id === selectedVenueId;
+        const distanceLabel = userLocation ? formatDistanceMiles(getVenueDistanceMiles(venue, userLocation)).replace(" away", "") : null;
 
         return (
           <Card
@@ -49,7 +50,10 @@ export function VenueMapResultList({
                 <div className="flex items-start justify-between gap-3">
                   <div className="min-w-0">
                     <h3 className="truncate text-base font-semibold">{venue.name}</h3>
-                    <p className="text-sm text-muted-foreground">{venue.area}</p>
+                    <p className="truncate text-sm text-muted-foreground">
+                      {venue.area}
+                      {distanceLabel ? <span> • {distanceLabel}</span> : null}
+                    </p>
                   </div>
                   {venue.rating ? (
                     <span className="inline-flex shrink-0 items-center gap-1 text-sm">
@@ -60,7 +64,6 @@ export function VenueMapResultList({
                 </div>
                 <div className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted-foreground">
                   <VenuePrice level={venue.priceLevel} from={venue.priceFrom} />
-                  <VenueDistance venue={venue} userLocation={userLocation} />
                 </div>
                 <div className="mt-3">
                   <Button asChild size="sm" variant="outline" onClick={(event) => event.stopPropagation()}>
