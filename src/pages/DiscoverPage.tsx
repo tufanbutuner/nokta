@@ -40,7 +40,8 @@ export function DiscoverPage() {
   const filteredVenues = useMemo(() => filterVenues(venues, filters), [venues, filters]);
   const sortedVenues = useMemo(() => sortVenues(filteredVenues, sortOption, userLocation), [filteredVenues, sortOption, userLocation]);
   const resultLabel =
-    sortedVenues.length === 0 ? "No venues found" : sortedVenues.length === 1 ? "1 venue found" : `${sortedVenues.length} venues found`;
+    sortedVenues.length === 0 ? "No venues" : sortedVenues.length === 1 ? "1 venue" : `${sortedVenues.length} venues`;
+  const resultContextLabel = savedLocation ? `${resultLabel} near ${savedLocation.label}` : resultLabel;
   const openVenueCount = sortedVenues.filter((venue) => venue.businessStatus === "open" || venue.businessStatus === "unknown").length;
   const closedVenueCount = Math.max(sortedVenues.length - openVenueCount, 0);
 
@@ -103,11 +104,12 @@ export function DiscoverPage() {
               ) : null}
             </div>
 
-            <div className="space-y-3 border-b bg-background/35 p-4">
-              <div className="flex items-start justify-between gap-3">
-                <div>
-                  <p className="text-sm font-medium">{resultLabel}</p>
-                  <p className="mt-1 text-xs text-muted-foreground">Tap a venue to focus it on the map.</p>
+            <div className="space-y-2 border-b bg-background/35 p-4">
+              <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
+                <div className="flex min-w-0 flex-wrap items-center gap-x-2 gap-y-1 text-sm">
+                  <p className="font-medium">{resultContextLabel}</p>
+                  <span className="text-muted-foreground">·</span>
+                  <SortSelect value={sortOption} userLocation={userLocation} onChange={updateSort} inline />
                 </div>
                 {filtersAreActive ? (
                   <Button type="button" variant="ghost" size="sm" onClick={clearFilters}>
@@ -115,11 +117,8 @@ export function DiscoverPage() {
                   </Button>
                 ) : null}
               </div>
-              <div className="grid gap-2">
-                <SortSelect value={sortOption} userLocation={userLocation} onChange={updateSort} />
-              </div>
               <p className="text-xs text-muted-foreground">
-                {savedLocation ? `Using ${savedLocation.label} as your location context.` : "Set your location in the navbar for nearest sorting."}
+                {savedLocation ? "Tap a venue to focus it on the map." : "Set your location in the navbar for nearest sorting."}
               </p>
             </div>
 

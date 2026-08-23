@@ -1,4 +1,5 @@
 import { Select } from "@/components/ui/select";
+import { cn } from "@/lib/utils";
 import type { UserLocation } from "@/types/location";
 import type { VenueSortOption } from "@/types/sort";
 
@@ -7,22 +8,24 @@ const SORT_OPTIONS: { label: string; value: VenueSortOption }[] = [
   { label: "Highest rated", value: "rating" },
   { label: "Price: low to high", value: "price-asc" },
   { label: "Price: high to low", value: "price-desc" },
-  { label: "Nearest", value: "nearest" },
+  { label: "Distance", value: "nearest" },
 ];
 
 export function SortSelect({
   value,
   userLocation,
+  inline = false,
   onChange,
 }: {
   value: VenueSortOption;
   userLocation?: UserLocation | null;
+  inline?: boolean;
   onChange: (value: VenueSortOption) => void;
 }) {
   return (
-    <div className="space-y-1.5">
-      <label className="text-xs font-medium text-muted-foreground" htmlFor="sort-filter">
-        Sort
+    <div className={cn(inline ? "flex items-center gap-1.5" : "space-y-1.5")}>
+      <label className={cn("font-medium text-muted-foreground", inline ? "text-sm" : "text-xs")} htmlFor="sort-filter">
+        Sort{inline ? ":" : ""}
       </label>
       <Select
         id="sort-filter"
@@ -30,11 +33,11 @@ export function SortSelect({
         onChange={(event) => onChange(event.target.value as VenueSortOption)}
         options={SORT_OPTIONS.map((option) => ({
           ...option,
-          label: option.value === "nearest" && !userLocation ? "Nearest - use location first" : option.label,
+          label: option.value === "nearest" && !userLocation && !inline ? "Distance - set location first" : option.label,
         }))}
-        className="w-full"
+        className={cn(inline ? "h-8 w-auto min-w-28 border-0 bg-transparent px-0 text-sm font-medium shadow-none focus-visible:ring-0" : "w-full")}
       />
-      {value === "nearest" && !userLocation ? (
+      {!inline && value === "nearest" && !userLocation ? (
         <p className="text-xs text-muted-foreground">Use my location to sort by nearest.</p>
       ) : null}
     </div>

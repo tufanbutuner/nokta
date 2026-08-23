@@ -1,4 +1,4 @@
-import { createContext, useContext, useMemo, useState } from "react";
+import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import { resolveManualLocation } from "@/lib/manualLocation";
 import { readJsonFromStorage, writeJsonToStorage } from "@/lib/storage";
 import type { LocationStatus, SavedUserLocation, UserLocation } from "@/types/location";
@@ -22,6 +22,35 @@ export function AppLocationProvider({ children }: { children: React.ReactNode })
 
   const userLocation = savedLocation?.coordinates ?? null;
   const hasCoordinates = Boolean(userLocation);
+
+  useEffect(() => {
+    if (!savedLocation || savedLocation.coordinates || savedLocation.source !== "manual") {
+      return;
+    }
+
+    let active = true;
+    const locationToUpgrade = savedLocation;
+
+    async function upgradeManualLocation() {
+      const coordinates = await resolveManualLocation(locationToUpgrade.label);
+      if (!active || !coordinates) {
+        return;
+      }
+
+      persistLocation({
+        ...locationToUpgrade,
+        label: coordinates.label ?? locationToUpgrade.label,
+        coordinates,
+        updatedAt: new Date().toISOString(),
+      });
+    }
+
+    void upgradeManualLocation();
+
+    return () => {
+      active = false;
+    };
+  }, [savedLocation]);
 
   function persistLocation(location: SavedUserLocation | null) {
     setSavedLocationState(location);

@@ -3,8 +3,10 @@ import type { UserLocation } from "@/types/location";
 const FULL_UK_POSTCODE_PATTERN = /^[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}$/i;
 
 const LONDON_AREAS: Record<string, UserLocation> = {
+  bermondsey: { latitude: 51.4979, longitude: -0.0637 },
   "canary wharf": { latitude: 51.5054, longitude: -0.0235 },
   chelsea: { latitude: 51.4875, longitude: -0.1687 },
+  dalston: { latitude: 51.545, longitude: -0.0744 },
   ealing: { latitude: 51.513, longitude: -0.3089 },
   "edgware road": { latitude: 51.5195, longitude: -0.1661 },
   hackney: { latitude: 51.545, longitude: -0.0553 },
