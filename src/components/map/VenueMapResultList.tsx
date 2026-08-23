@@ -6,7 +6,7 @@ import { formatDistanceMiles, getVenueDistanceMiles } from "@/lib/location";
 import { cn } from "@/lib/utils";
 import { getVenueImage } from "@/lib/venueImages";
 import type { UserLocation } from "@/types/location";
-import type { Venue } from "@/types/venue";
+import type { BusinessStatus, Venue } from "@/types/venue";
 
 export function VenueMapResultList({
   venues,
@@ -50,10 +50,13 @@ export function VenueMapResultList({
                 <div className="flex items-start justify-between gap-3">
                   <div className="min-w-0">
                     <h3 className="truncate text-base font-semibold">{venue.name}</h3>
-                    <p className="truncate text-sm text-muted-foreground">
-                      {venue.area}
-                      {distanceLabel ? <span> • {distanceLabel}</span> : null}
-                    </p>
+                    <div className="mt-0.5 flex min-w-0 flex-wrap items-center gap-x-2 gap-y-1">
+                      <p className="truncate text-sm text-muted-foreground">
+                        {venue.area}
+                        {distanceLabel ? <span> • {distanceLabel}</span> : null}
+                      </p>
+                      <BusinessStatusBadge status={venue.businessStatus} />
+                    </div>
                   </div>
                   {venue.rating ? (
                     <span className="inline-flex shrink-0 items-center gap-1 text-sm">
@@ -77,4 +80,33 @@ export function VenueMapResultList({
       })}
     </div>
   );
+}
+
+function BusinessStatusBadge({ status }: { status: BusinessStatus }) {
+  const label = getBusinessStatusLabel(status);
+
+  return (
+    <span
+      className={cn(
+        "inline-flex h-5 shrink-0 items-center rounded-full px-2 text-[11px] font-medium",
+        status === "open" && "bg-emerald-950/10 text-emerald-700",
+        (status === "temporarily-closed" || status === "permanently-closed") && "bg-red-950/10 text-red-700",
+        status === "unknown" && "bg-foreground/5 text-muted-foreground",
+      )}
+    >
+      {label}
+    </span>
+  );
+}
+
+function getBusinessStatusLabel(status: BusinessStatus) {
+  if (status === "open") {
+    return "Open";
+  }
+
+  if (status === "temporarily-closed" || status === "permanently-closed") {
+    return "Closed";
+  }
+
+  return "Check status";
 }
