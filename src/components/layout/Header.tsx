@@ -1,4 +1,5 @@
 import { PageContainer } from "@/components/layout/PageContainer";
+import { NavLocationControl } from "@/components/location/NavLocationControl";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetClose, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { useAuth } from "@/context/AuthContext";
@@ -25,10 +26,13 @@ export function Header() {
   return (
     <>
       <header className="sticky top-0 z-40 border-b bg-background/95 backdrop-blur">
-        <PageContainer className="flex h-16 items-center justify-between">
+        <PageContainer className="flex h-16 items-center justify-between gap-3">
           <Link reloadDocument to="/" className="text-sm font-semibold uppercase tracking-[0.18em]">
             Sheesha
           </Link>
+          <div className="hidden flex-1 justify-center md:flex">
+            <NavLocationControl />
+          </div>
           <nav className="hidden items-center gap-6 text-sm text-muted-foreground md:flex">
             <NavLink reloadDocument to="/discover" className={navLinkClass}>
               Discover
@@ -56,17 +60,19 @@ export function Header() {
               </NavLink>
             )}
           </nav>
-          <Button
-            type="button"
-            variant="ghost"
-            size="icon"
-            className="md:hidden"
-            aria-label="Open menu"
-            aria-expanded={mobileMenuOpen}
-            onClick={() => setMobileMenuOpen(true)}
-          >
-            <Menu className="h-5 w-5" />
-          </Button>
+          <div className="flex items-center gap-2 md:hidden">
+            <NavLocationControl compact />
+            <Button
+              type="button"
+              variant="ghost"
+              size="icon"
+              aria-label="Open menu"
+              aria-expanded={mobileMenuOpen}
+              onClick={() => setMobileMenuOpen(true)}
+            >
+              <Menu className="h-5 w-5" />
+            </Button>
+          </div>
         </PageContainer>
       </header>
       <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>

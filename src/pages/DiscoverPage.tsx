@@ -2,8 +2,6 @@ import { useEffect, useMemo, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { SlidersHorizontal, X } from "lucide-react";
 import { SortSelect } from "@/components/discover/SortSelect";
-import { LocationStatusMessage } from "@/components/location/LocationStatusMessage";
-import { UseLocationButton } from "@/components/location/UseLocationButton";
 import { VenueMap } from "@/components/map/VenueMap";
 import { VenueMapResultList } from "@/components/map/VenueMapResultList";
 import { VenueFilters } from "@/components/search/VenueFilters";
@@ -13,6 +11,7 @@ import { LoadingState } from "@/components/state/LoadingState";
 import { VenueGrid } from "@/components/venues/VenueGrid";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { useAppLocation } from "@/context/AppLocationContext";
 import { useVenues } from "@/hooks/useVenues";
 import { filterVenues } from "@/lib/filterVenues";
 import { sortVenues } from "@/lib/sortVenues";
@@ -26,15 +25,13 @@ import {
   parseVenueSort,
 } from "@/lib/venueFilters";
 import type { DiscoverView, VenueFilterState } from "@/types/filters";
-import type { LocationStatus, UserLocation } from "@/types/location";
 import type { VenueSortOption } from "@/types/sort";
 
 export function DiscoverPage() {
   const { venues, isLoading, error } = useVenues();
+  const { userLocation, savedLocation } = useAppLocation();
   const [searchParams, setSearchParams] = useSearchParams();
   const [selectedVenueId, setSelectedVenueId] = useState<string | undefined>();
-  const [userLocation, setUserLocation] = useState<UserLocation | null>(null);
-  const [locationStatus, setLocationStatus] = useState<LocationStatus>("idle");
   const filters = useMemo(() => parseVenueFilters(searchParams), [searchParams]);
   const view = parseDiscoverView(searchParams);
   const sortOption = parseVenueSort(searchParams);
@@ -119,10 +116,11 @@ export function DiscoverPage() {
                 ) : null}
               </div>
               <div className="grid gap-2">
-                <UseLocationButton status={locationStatus} onLocationFound={setUserLocation} onStatusChange={setLocationStatus} />
                 <SortSelect value={sortOption} userLocation={userLocation} onChange={updateSort} />
               </div>
-              <LocationStatusMessage status={locationStatus} />
+              <p className="text-xs text-muted-foreground">
+                {savedLocation ? `Using ${savedLocation.label} as your location context.` : "Set your location in the navbar for nearest sorting."}
+              </p>
             </div>
 
             <div className={cn("min-h-[420px] flex-1 overflow-y-auto p-3", view === "map" ? "hidden lg:block" : "block lg:hidden")}>
