@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import {
   Camera,
+  ChevronLeft,
+  ChevronRight,
   Clock,
   ExternalLink,
   Flag,
@@ -11,6 +13,7 @@ import {
   Sofa,
   Star,
   Utensils,
+  X,
 } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import { PageContainer } from "@/components/layout/PageContainer";
@@ -54,6 +57,7 @@ export function VenuePage() {
   const { userLocation } = useAppLocation();
   const [activeTab, setActiveTab] = useState<VenueDetailTab>("overview");
   const [shareLabel, setShareLabel] = useState("Share");
+  const [activeImageIndex, setActiveImageIndex] = useState<number | null>(null);
 
   useEffect(() => {
     if (venue) {
@@ -135,7 +139,7 @@ export function VenuePage() {
           Back to discover
         </Link>
 
-        <PhotoGallery venue={venue} images={galleryImages} />
+        <PhotoGallery venue={venue} images={galleryImages} onOpenImage={setActiveImageIndex} />
 
         <section className="mt-6 grid gap-6 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
           <div className="min-w-0">
@@ -202,21 +206,33 @@ export function VenuePage() {
           ) : null}
           {activeTab === "menu" ? <MenuTab venue={venue} /> : null}
           {activeTab === "reviews" ? <ReviewsTab venue={venue} /> : null}
-          {activeTab === "photos" ? <PhotosTab venue={venue} images={galleryImages} /> : null}
+          {activeTab === "photos" ? <PhotosTab venue={venue} images={galleryImages} onOpenImage={setActiveImageIndex} /> : null}
         </div>
       </PageContainer>
+
+      {activeImageIndex !== null ? (
+        <PhotoLightbox
+          venue={venue}
+          images={galleryImages}
+          activeIndex={activeImageIndex}
+          onChange={setActiveImageIndex}
+          onClose={() => setActiveImageIndex(null)}
+        />
+      ) : null}
     </main>
   );
 }
 
-function PhotoGallery({ venue, images }: { venue: Venue; images: string[] }) {
+function PhotoGallery({ venue, images, onOpenImage }: { venue: Venue; images: string[]; onOpenImage: (index: number) => void }) {
   const primaryImage = images[0] ?? getVenueImage(venue);
   const secondaryImages = images.slice(1, 5);
 
   if (!secondaryImages.length) {
     return (
       <section className="overflow-hidden rounded-xl border bg-card">
-        <img src={primaryImage} alt={`${venue.name} main gallery`} className="aspect-[16/7] w-full object-cover" />
+        <button type="button" className="block w-full overflow-hidden text-left" onClick={() => onOpenImage(0)}>
+          <img src={primaryImage} alt={`${venue.name} main gallery`} className="aspect-[16/7] w-full object-cover transition duration-500 hover:scale-[1.02]" />
+        </button>
       </section>
     );
   }
@@ -224,12 +240,16 @@ function PhotoGallery({ venue, images }: { venue: Venue; images: string[] }) {
   return (
     <section className="grid gap-3 lg:grid-cols-[minmax(0,1.6fr)_minmax(280px,0.9fr)]">
       <div className="overflow-hidden rounded-xl border bg-card">
-        <img src={primaryImage} alt={`${venue.name} main gallery`} className="aspect-[16/9] h-full w-full object-cover lg:aspect-[16/8]" />
+        <button type="button" className="block h-full w-full overflow-hidden text-left" onClick={() => onOpenImage(0)}>
+          <img src={primaryImage} alt={`${venue.name} main gallery`} className="aspect-[16/9] h-full w-full object-cover transition duration-500 hover:scale-[1.02] lg:aspect-[16/8]" />
+        </button>
       </div>
       <div className="grid grid-cols-2 gap-3 overflow-x-auto lg:grid-cols-2">
         {secondaryImages.slice(0, 4).map((image, index) => (
           <div key={`${image}-${index}`} className="min-w-40 overflow-hidden rounded-xl border bg-card">
-            <img src={image} alt={`${venue.name} gallery ${index + 2}`} className="aspect-[4/3] h-full w-full object-cover" />
+            <button type="button" className="block h-full w-full overflow-hidden text-left" onClick={() => onOpenImage(index + 1)}>
+              <img src={image} alt={`${venue.name} gallery ${index + 2}`} className="aspect-[4/3] h-full w-full object-cover transition duration-500 hover:scale-[1.04]" />
+            </button>
           </div>
         ))}
       </div>
@@ -462,7 +482,7 @@ function ReviewsTab({ venue }: { venue: Venue }) {
   );
 }
 
-function PhotosTab({ venue, images }: { venue: Venue; images: string[] }) {
+function PhotosTab({ venue, images, onOpenImage }: { venue: Venue; images: string[]; onOpenImage: (index: number) => void }) {
   return (
     <section>
       <div className="mb-5 flex items-center gap-2">
@@ -471,16 +491,143 @@ function PhotosTab({ venue, images }: { venue: Venue; images: string[] }) {
       </div>
       <div className="columns-1 gap-4 sm:columns-2 lg:columns-3">
         {images.map((image, index) => (
-          <img
+          <button
             key={`${image}-${index}`}
-            src={image}
-            alt={`${venue.name} photo ${index + 1}`}
-            className="mb-4 w-full break-inside-avoid rounded-xl border object-cover"
-          />
+            type="button"
+            className="mb-4 block w-full break-inside-avoid overflow-hidden rounded-xl border bg-card text-left"
+            onClick={() => onOpenImage(index)}
+          >
+            <img
+              src={image}
+              alt={`${venue.name} photo ${index + 1}`}
+              className="w-full object-cover transition duration-500 hover:scale-[1.03]"
+            />
+          </button>
         ))}
       </div>
     </section>
   );
+}
+
+function PhotoLightbox({
+  venue,
+  images,
+  activeIndex,
+  onChange,
+  onClose,
+}: {
+  venue: Venue;
+  images: string[];
+  activeIndex: number;
+  onChange: (index: number) => void;
+  onClose: () => void;
+}) {
+  const activeImage = images[activeIndex] ?? images[0] ?? getVenueImage(venue);
+  const hasMultipleImages = images.length > 1;
+
+  useEffect(() => {
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        onClose();
+      }
+
+      if (event.key === "ArrowLeft" && hasMultipleImages) {
+        onChange(getPreviousImageIndex(activeIndex, images.length));
+      }
+
+      if (event.key === "ArrowRight" && hasMultipleImages) {
+        onChange(getNextImageIndex(activeIndex, images.length));
+      }
+    }
+
+    document.addEventListener("keydown", handleKeyDown);
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "";
+    };
+  }, [activeIndex, hasMultipleImages, images.length, onChange, onClose]);
+
+  return (
+    <div className="fixed inset-0 z-[1500] bg-stone-950/90 p-3 text-background sm:p-6" role="dialog" aria-modal="true" aria-label={`${venue.name} photo viewer`}>
+      <button type="button" className="absolute inset-0 cursor-default" aria-label="Close photo viewer" onClick={onClose} />
+      <div className="relative z-10 flex h-full flex-col">
+        <div className="mb-3 flex items-center justify-between gap-3">
+          <div>
+            <p className="text-sm font-semibold">{venue.name}</p>
+            <p className="text-xs text-background/65">
+              Photo {activeIndex + 1} of {images.length}
+            </p>
+          </div>
+          <Button type="button" variant="secondary" size="icon" className="bg-background/10 text-background hover:bg-background/20" aria-label="Close photo viewer" onClick={onClose}>
+            <X className="h-5 w-5" />
+          </Button>
+        </div>
+
+        <div className="relative flex min-h-0 flex-1 items-center justify-center">
+          {hasMultipleImages ? (
+            <Button
+              type="button"
+              variant="secondary"
+              size="icon"
+              className="absolute left-0 z-20 bg-background/10 text-background hover:bg-background/20 sm:left-3"
+              aria-label="Previous photo"
+              onClick={() => onChange(getPreviousImageIndex(activeIndex, images.length))}
+            >
+              <ChevronLeft className="h-6 w-6" />
+            </Button>
+          ) : null}
+
+          <img
+            src={activeImage}
+            alt={`${venue.name} expanded photo ${activeIndex + 1}`}
+            className="max-h-full max-w-full rounded-xl object-contain shadow-2xl shadow-stone-950/40"
+          />
+
+          {hasMultipleImages ? (
+            <Button
+              type="button"
+              variant="secondary"
+              size="icon"
+              className="absolute right-0 z-20 bg-background/10 text-background hover:bg-background/20 sm:right-3"
+              aria-label="Next photo"
+              onClick={() => onChange(getNextImageIndex(activeIndex, images.length))}
+            >
+              <ChevronRight className="h-6 w-6" />
+            </Button>
+          ) : null}
+        </div>
+
+        {hasMultipleImages ? (
+          <div className="mt-3 flex gap-2 overflow-x-auto pb-1">
+            {images.map((image, index) => (
+              <button
+                key={`${image}-thumb-${index}`}
+                type="button"
+                className={cn(
+                  "h-16 w-24 shrink-0 overflow-hidden rounded-lg border transition",
+                  index === activeIndex ? "border-background" : "border-background/20 opacity-65 hover:opacity-100",
+                )}
+                aria-label={`Open photo ${index + 1}`}
+                onClick={() => onChange(index)}
+              >
+                <img src={image} alt={`${venue.name} thumbnail ${index + 1}`} className="h-full w-full object-cover" />
+              </button>
+            ))}
+          </div>
+        ) : null}
+      </div>
+    </div>
+  );
+}
+
+function getPreviousImageIndex(activeIndex: number, imageCount: number) {
+  return (activeIndex - 1 + imageCount) % imageCount;
+}
+
+function getNextImageIndex(activeIndex: number, imageCount: number) {
+  return (activeIndex + 1) % imageCount;
 }
 
 function SimilarVenueCarousel({ venues }: { venues: Venue[] }) {
