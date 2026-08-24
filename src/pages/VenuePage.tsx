@@ -139,9 +139,7 @@ export function VenuePage() {
           Back to discover
         </Link>
 
-        <PhotoGallery venue={venue} images={galleryImages} onOpenImage={setActiveImageIndex} />
-
-        <section className="mt-6 grid gap-6 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
+        <section className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
           <div className="min-w-0">
             <div className="mb-3 flex flex-wrap gap-2">
               {venue.vibes.slice(0, 5).map((vibe) => (
@@ -179,6 +177,10 @@ export function VenuePage() {
             <FavouriteButton venueId={venue.id} venueName={venue.name} className="h-11 w-11 border" />
           </div>
         </section>
+
+        <div className="mt-6">
+          <PhotoGallery venue={venue} images={galleryImages} onOpenImage={setActiveImageIndex} />
+        </div>
 
         <ActionBar venue={venue} shareLabel={shareLabel} onShare={shareVenue} />
 
