@@ -12,6 +12,7 @@ import { VenueGrid } from "@/components/venues/VenueGrid";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { useAppLocation } from "@/context/AppLocationContext";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { useVenues } from "@/hooks/useVenues";
 import { filterVenues } from "@/lib/filterVenues";
 import { getVenueCurrentStatus, isVenueOpenNow } from "@/lib/openingHours";
@@ -39,6 +40,7 @@ export function DiscoverPage() {
   const sortOption = !searchParams.has("sort") && userLocation ? "nearest" : requestedSortOption;
   const filtersAreActive = hasActiveFilters(filters);
   const [filtersOpen, setFiltersOpen] = useState(filtersAreActive);
+  const showDesktopMapArea = useMediaQuery("(min-width: 1024px)");
   const filteredVenues = useMemo(() => filterVenues(venues, filters), [venues, filters]);
   const sortedVenues = useMemo(() => sortVenues(filteredVenues, sortOption, userLocation), [filteredVenues, sortOption, userLocation]);
   const resultLabel =
@@ -166,36 +168,38 @@ export function DiscoverPage() {
             </div>
           </aside>
 
-          <section className="hidden min-h-[560px] overflow-hidden rounded-2xl border bg-card shadow-xl shadow-stone-950/5 lg:block lg:min-h-0">
-            {isLoading ? (
-              <div className="flex h-full min-h-[560px] items-center justify-center">
-                <LoadingState />
-              </div>
-            ) : error ? (
-              <div className="flex h-full min-h-[560px] items-center justify-center p-6">
-                <ErrorState message={error} />
-              </div>
-            ) : view === "map" ? (
-              <div className="relative h-full min-h-[560px]">
-                <VenueMap
-                  venues={sortedVenues}
-                  selectedVenueId={selectedVenueId}
-                  userLocation={userLocation}
-                  onClearFilters={clearFilters}
-                  className="h-full rounded-none border-0"
-                />
-                <div className="absolute bottom-4 left-4 rounded-full border bg-card/90 px-3 py-2 text-xs font-medium shadow-lg shadow-stone-950/10 backdrop-blur">
-                  {statusCountLabel}
+          {showDesktopMapArea ? (
+            <section className="min-h-[560px] overflow-hidden rounded-2xl border bg-card shadow-xl shadow-stone-950/5 lg:min-h-0">
+              {isLoading ? (
+                <div className="flex h-full min-h-[560px] items-center justify-center">
+                  <LoadingState />
                 </div>
-              </div>
-            ) : sortedVenues.length ? (
-              <div className="h-full overflow-y-auto p-5">
-                <VenueGrid venues={sortedVenues} userLocation={userLocation} />
-              </div>
-            ) : (
-              <DiscoverEmptyState onClear={clearFilters} className="h-full min-h-[560px]" />
-            )}
-          </section>
+              ) : error ? (
+                <div className="flex h-full min-h-[560px] items-center justify-center p-6">
+                  <ErrorState message={error} />
+                </div>
+              ) : view === "map" ? (
+                <div className="relative h-full min-h-[560px]">
+                  <VenueMap
+                    venues={sortedVenues}
+                    selectedVenueId={selectedVenueId}
+                    userLocation={userLocation}
+                    onClearFilters={clearFilters}
+                    className="h-full rounded-none border-0"
+                  />
+                  <div className="absolute bottom-4 left-4 rounded-full border bg-card/90 px-3 py-2 text-xs font-medium shadow-lg shadow-stone-950/10 backdrop-blur">
+                    {statusCountLabel}
+                  </div>
+                </div>
+              ) : sortedVenues.length ? (
+                <div className="h-full overflow-y-auto p-5">
+                  <VenueGrid venues={sortedVenues} userLocation={userLocation} />
+                </div>
+              ) : (
+                <DiscoverEmptyState onClear={clearFilters} className="h-full min-h-[560px]" />
+              )}
+            </section>
+          ) : null}
         </div>
       </div>
     </main>

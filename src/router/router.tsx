@@ -5,6 +5,7 @@ import { AccountPage } from "@/pages/AccountPage";
 import { DataQualityPage } from "@/pages/admin/DataQualityPage";
 import { AdminVenuesPage } from "@/pages/admin/AdminVenuesPage";
 import { VenueFormPage } from "@/pages/admin/VenueFormPage";
+import { AppErrorPage } from "@/pages/AppErrorPage";
 import { DiscoverPage } from "@/pages/DiscoverPage";
 import { HomePage } from "@/pages/HomePage";
 import { NotFoundPage } from "@/pages/NotFoundPage";
@@ -18,6 +19,7 @@ import { createBrowserRouter } from "react-router-dom";
 export const router = createBrowserRouter([
   {
     element: <AppLayout />,
+    errorElement: <AppErrorPage />,
     children: [
       { path: "/", element: <HomePage /> },
       { path: "/discover", element: <DiscoverPage /> },
