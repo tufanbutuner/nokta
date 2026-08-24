@@ -36,3 +36,15 @@ export interface VenueRow {
 }
 
 export type VenueRowInput = Omit<VenueRow, "created_at" | "updated_at">;
+
+export interface VenueReviewRow {
+  id: string;
+  venue_id: string;
+  user_id: string;
+  rating: 1 | 2 | 3 | 4 | 5;
+  title: string | null;
+  body: string;
+  visit_date: string | null;
+  created_at: string;
+  updated_at: string;
+}

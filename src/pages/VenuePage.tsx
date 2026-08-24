@@ -18,6 +18,7 @@ import {
 import { Link, useParams } from "react-router-dom";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { VenueMap } from "@/components/map/VenueMap";
+import { ReviewSection } from "@/components/reviews/ReviewSection";
 import { FavouriteButton } from "@/components/venues/FavouriteButton";
 import { VenueBadge } from "@/components/venues/VenueBadge";
 import { VenuePrice } from "@/components/venues/VenuePrice";
@@ -26,7 +27,6 @@ import { ErrorState } from "@/components/state/ErrorState";
 import { LoadingState } from "@/components/state/LoadingState";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { useAppLocation } from "@/context/AppLocationContext";
 import { useVenuePreferences } from "@/context/VenuePreferencesContext";
@@ -160,7 +160,7 @@ export function VenuePage() {
                   {venue.rating}
                 </span>
               ) : null}
-              <span>Reviews coming soon</span>
+              <span>User reviews</span>
               <span className="hidden sm:inline" aria-hidden="true">
                 -
               </span>
@@ -481,34 +481,7 @@ function MenuTab({ venue }: { venue: Venue }) {
 }
 
 function ReviewsTab({ venue }: { venue: Venue }) {
-  return (
-    <section className="grid gap-6 lg:grid-cols-[320px_1fr]">
-      <Card className="h-fit p-5">
-        <p className="text-sm text-muted-foreground">Average rating</p>
-        <div className="mt-3 flex items-end gap-2">
-          <span className="text-5xl font-semibold">{venue.rating ?? "-"}</span>
-          <span className="pb-1 text-muted-foreground">/ 5</span>
-        </div>
-        <div className="mt-5 space-y-2">
-          {[5, 4, 3, 2, 1].map((rating) => (
-            <div key={rating} className="grid grid-cols-[24px_1fr] items-center gap-3 text-sm text-muted-foreground">
-              <span>{rating}</span>
-              <div className="h-2 rounded-full bg-secondary">
-                <div className="h-full rounded-full bg-clay-accent" style={{ width: venue.rating && Math.round(venue.rating) === rating ? "72%" : "8%" }} />
-              </div>
-            </div>
-          ))}
-        </div>
-      </Card>
-      <Card className="flex min-h-64 flex-col items-start justify-center p-6">
-        <h2 className="text-2xl font-semibold">Reviews coming soon</h2>
-        <p className="mt-3 max-w-lg text-muted-foreground">We have the rating summary, but individual user reviews are not connected yet.</p>
-        <Button className="mt-5" disabled>
-          Write a review
-        </Button>
-      </Card>
-    </section>
-  );
+  return <ReviewSection venue={venue} />;
 }
 
 function PhotosTab({ venue, images, onOpenImage }: { venue: Venue; images: string[]; onOpenImage: (index: number) => void }) {
