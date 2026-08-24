@@ -50,9 +50,14 @@ export function Header() {
                   Account
                 </NavLink>
                 {isAdmin ? (
-                  <NavLink reloadDocument to="/admin/venues" className={navLinkClass}>
-                    Admin
-                  </NavLink>
+                  <>
+                    <NavLink reloadDocument to="/admin/venues" className={navLinkClass}>
+                      Admin
+                    </NavLink>
+                    <NavLink reloadDocument to="/admin/reviews" className={navLinkClass}>
+                      Reviews
+                    </NavLink>
+                  </>
                 ) : null}
               </div>
             ) : (
@@ -97,9 +102,14 @@ export function Header() {
                 Account
               </NavLink>
               {isAdmin ? (
-                <NavLink reloadDocument to="/admin/venues" className={mobileNavLinkClass}>
-                  Admin
-                </NavLink>
+                <>
+                  <NavLink reloadDocument to="/admin/venues" className={mobileNavLinkClass}>
+                    Admin
+                  </NavLink>
+                  <NavLink reloadDocument to="/admin/reviews" className={mobileNavLinkClass}>
+                    Reviews
+                  </NavLink>
+                </>
               ) : null}
             </>
           ) : (

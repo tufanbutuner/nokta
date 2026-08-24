@@ -17,6 +17,8 @@ export async function getVenueReviews(venueId: string): Promise<VenueReview[]> {
     .from("venue_reviews")
     .select("*")
     .eq("venue_id", venueId)
+    .eq("status", "published")
+    .is("deleted_at", null)
     .order("created_at", { ascending: false });
 
   if (error) {
@@ -34,7 +36,12 @@ export async function getVenueReviewSummaries(venueIds: string[]): Promise<Recor
   }
 
   const client = ensureSupabase();
-  const { data, error } = await client.from("venue_reviews").select("venue_id, rating").in("venue_id", uniqueVenueIds);
+  const { data, error } = await client
+    .from("venue_reviews")
+    .select("venue_id, rating")
+    .in("venue_id", uniqueVenueIds)
+    .eq("status", "published")
+    .is("deleted_at", null);
 
   if (error) {
     throw new Error(`Could not load review summaries: ${error.message}`);
@@ -69,6 +76,7 @@ export async function getUserReviewForVenue(venueId: string, userId: string): Pr
     .select("*")
     .eq("venue_id", venueId)
     .eq("user_id", userId)
+    .is("deleted_at", null)
     .maybeSingle();
 
   if (error) {

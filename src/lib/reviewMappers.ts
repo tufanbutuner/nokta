@@ -10,6 +10,11 @@ export function mapReviewRowToReview(row: VenueReviewRow): VenueReview {
     title: row.title,
     body: row.body,
     visitDate: row.visit_date,
+    status: row.status,
+    moderationNotes: row.moderation_notes,
+    hiddenAt: row.hidden_at,
+    hiddenBy: row.hidden_by,
+    deletedAt: row.deleted_at,
     createdAt: row.created_at,
     updatedAt: row.updated_at,
   };

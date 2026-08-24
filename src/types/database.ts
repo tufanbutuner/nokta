@@ -45,6 +45,11 @@ export interface VenueReviewRow {
   title: string | null;
   body: string;
   visit_date: string | null;
+  status: "published" | "hidden" | "flagged" | "deleted";
+  moderation_notes: string | null;
+  hidden_at: string | null;
+  hidden_by: string | null;
+  deleted_at: string | null;
   created_at: string;
   updated_at: string;
 }

@@ -55,6 +55,9 @@ export function DataQualityPage() {
             <Button asChild variant="outline">
               <Link to="/admin/venues">Manage venues</Link>
             </Button>
+            <Button asChild variant="outline">
+              <Link to="/admin/reviews">Reviews</Link>
+            </Button>
             <Button type="button" variant="outline" onClick={() => exportQualityCsv(venues)} disabled={!venues.length}>
               <Download className="mr-2 h-4 w-4" />
               Export issues CSV
