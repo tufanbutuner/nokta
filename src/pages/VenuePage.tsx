@@ -31,10 +31,12 @@ import { Separator } from "@/components/ui/separator";
 import { useAppLocation } from "@/context/AppLocationContext";
 import { useVenuePreferences } from "@/context/VenuePreferencesContext";
 import { useVenue } from "@/hooks/useVenue";
+import { useVenueReviews } from "@/hooks/useVenueReviews";
 import { useVenues } from "@/hooks/useVenues";
 import { getGoogleMapsDirectionsUrl } from "@/lib/directions";
 import { formatDistanceMiles, getVenueDistanceMiles } from "@/lib/location";
 import { getVenueCurrentStatus } from "@/lib/openingHours";
+import { getVenueRatingSummary } from "@/services/reviewService";
 import { cn } from "@/lib/utils";
 import { formatPriceLevel } from "@/lib/venueFilters";
 import { getVenueImage, getVenueImages } from "@/lib/venueImages";
@@ -153,27 +155,7 @@ export function VenuePage() {
               </div>
               <FavouriteButton venueId={venue.id} venueName={venue.name} className="h-11 w-11 shrink-0 border lg:hidden" />
             </div>
-            <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-muted-foreground">
-              {venue.rating ? (
-                <span className="inline-flex items-center gap-1.5 font-medium text-foreground">
-                  <Star className="h-4 w-4 fill-clay-accent text-clay-accent" />
-                  {venue.rating}
-                </span>
-              ) : null}
-              <span>User reviews</span>
-              <span className="hidden sm:inline" aria-hidden="true">
-                -
-              </span>
-              <span className="inline-flex items-center gap-1.5">
-                <MapPin className="h-4 w-4" />
-                {venue.area}
-                {distanceLabel ? ` - ${distanceLabel}` : null}
-              </span>
-              <span className="hidden sm:inline" aria-hidden="true">
-                -
-              </span>
-              <span>{venue.priceFrom ? `Shisha from £${venue.priceFrom}` : "Shisha price TBC"}</span>
-            </div>
+            <VenueHeaderMeta venue={venue} distanceLabel={distanceLabel} />
           </div>
 
           <div className="hidden items-center gap-2 lg:flex">
@@ -225,6 +207,45 @@ export function VenuePage() {
         />
       ) : null}
     </main>
+  );
+}
+
+function VenueHeaderMeta({ venue, distanceLabel }: { venue: Venue; distanceLabel: string | null }) {
+  const { reviews } = useVenueReviews(venue.id);
+  const summary = getVenueRatingSummary(reviews);
+  const displayRating = summary.averageRating ?? venue.rating ?? null;
+  const reviewLabel =
+    summary.reviewCount > 0
+      ? `${summary.reviewCount} user review${summary.reviewCount === 1 ? "" : "s"}`
+      : "No user reviews yet";
+
+  return (
+    <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-muted-foreground">
+      {displayRating ? (
+        <>
+          <span className="inline-flex items-center gap-1.5 font-medium text-foreground">
+            <Star className="h-4 w-4 fill-clay-accent text-clay-accent" />
+            {displayRating}
+          </span>
+          <span className="text-muted-foreground" aria-hidden="true">
+            •
+          </span>
+        </>
+      ) : null}
+      <span>{reviewLabel}</span>
+      <span className="text-muted-foreground" aria-hidden="true">
+        •
+      </span>
+      <span className="inline-flex items-center gap-1.5">
+        <MapPin className="h-4 w-4" />
+        {venue.area}
+        {distanceLabel ? ` • ${distanceLabel}` : null}
+      </span>
+      <span className="text-muted-foreground" aria-hidden="true">
+        •
+      </span>
+      <span>{venue.priceFrom ? `Shisha from £${venue.priceFrom}` : "Shisha price TBC"}</span>
+    </div>
   );
 }
 
