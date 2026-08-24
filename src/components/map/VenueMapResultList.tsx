@@ -7,17 +7,20 @@ import { getVenueCurrentStatus } from "@/lib/openingHours";
 import { cn } from "@/lib/utils";
 import { getVenueImage } from "@/lib/venueImages";
 import type { UserLocation } from "@/types/location";
+import type { VenueRatingSummary } from "@/types/reviews";
 import type { Venue } from "@/types/venue";
 
 export function VenueMapResultList({
   venues,
   selectedVenueId,
   userLocation,
+  reviewSummaries = {},
   onSelectVenue,
 }: {
   venues: Venue[];
   selectedVenueId?: string;
   userLocation?: UserLocation | null;
+  reviewSummaries?: Record<string, VenueRatingSummary>;
   onSelectVenue: (venue: Venue) => void;
 }) {
   return (
@@ -25,6 +28,9 @@ export function VenueMapResultList({
       {venues.map((venue) => {
         const selected = venue.id === selectedVenueId;
         const distanceLabel = userLocation ? formatDistanceMiles(getVenueDistanceMiles(venue, userLocation)).replace(" away", "") : null;
+        const reviewSummary = reviewSummaries[venue.id];
+        const rating = reviewSummary?.averageRating ?? venue.rating ?? null;
+        const ratingLabel = reviewSummary?.reviewCount ? `${rating} (${reviewSummary.reviewCount})` : rating;
 
         return (
           <Card
@@ -59,10 +65,10 @@ export function VenueMapResultList({
                       <CurrentStatusBadge status={getVenueCurrentStatus(venue)} />
                     </div>
                   </div>
-                  {venue.rating ? (
+                  {rating ? (
                     <span className="inline-flex shrink-0 items-center gap-1 text-sm">
                       <Star className="h-4 w-4 fill-clay-accent text-clay-accent" />
-                      {venue.rating}
+                      {ratingLabel}
                     </span>
                   ) : null}
                 </div>

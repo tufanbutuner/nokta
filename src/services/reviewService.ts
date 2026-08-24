@@ -26,6 +26,42 @@ export async function getVenueReviews(venueId: string): Promise<VenueReview[]> {
   return ((data ?? []) as VenueReviewRow[]).map(mapReviewRowToReview);
 }
 
+export async function getVenueReviewSummaries(venueIds: string[]): Promise<Record<string, VenueRatingSummary>> {
+  const uniqueVenueIds = Array.from(new Set(venueIds)).filter(Boolean);
+
+  if (!uniqueVenueIds.length) {
+    return {};
+  }
+
+  const client = ensureSupabase();
+  const { data, error } = await client.from("venue_reviews").select("venue_id, rating").in("venue_id", uniqueVenueIds);
+
+  if (error) {
+    throw new Error(`Could not load review summaries: ${error.message}`);
+  }
+
+  const ratingsByVenue = (data ?? []).reduce<Record<string, number[]>>((groups, row) => {
+    const venueId = row.venue_id as string;
+    const rating = row.rating as number;
+    groups[venueId] = [...(groups[venueId] ?? []), rating];
+    return groups;
+  }, {});
+
+  return Object.fromEntries(
+    Object.entries(ratingsByVenue).map(([venueId, ratings]) => {
+      const total = ratings.reduce((sum, rating) => sum + rating, 0);
+
+      return [
+        venueId,
+        {
+          averageRating: Number((total / ratings.length).toFixed(1)),
+          reviewCount: ratings.length,
+        },
+      ];
+    }),
+  );
+}
+
 export async function getUserReviewForVenue(venueId: string, userId: string): Promise<VenueReview | null> {
   const client = ensureSupabase();
   const { data, error } = await client

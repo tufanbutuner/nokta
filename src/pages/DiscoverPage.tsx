@@ -13,6 +13,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { useAppLocation } from "@/context/AppLocationContext";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
+import { useVenueReviewSummaries } from "@/hooks/useVenueReviewSummaries";
 import { useVenues } from "@/hooks/useVenues";
 import { filterVenues } from "@/lib/filterVenues";
 import { getVenueCurrentStatus, isVenueOpenNow } from "@/lib/openingHours";
@@ -44,6 +45,8 @@ export function DiscoverPage() {
   const showDesktopMapArea = useMediaQuery("(min-width: 1024px)");
   const filteredVenues = useMemo(() => filterVenues(venues, filters), [venues, filters]);
   const sortedVenues = useMemo(() => sortVenues(filteredVenues, sortOption, userLocation), [filteredVenues, sortOption, userLocation]);
+  const venueIds = useMemo(() => sortedVenues.map((venue) => venue.id), [sortedVenues]);
+  const { summaries: reviewSummaries } = useVenueReviewSummaries(venueIds);
   const resultLabel =
     sortedVenues.length === 0 ? "No venues" : sortedVenues.length === 1 ? "1 venue" : `${sortedVenues.length} venues`;
   const resultContextLabel = savedLocation ? `${resultLabel} near ${savedLocation.label}` : resultLabel;
@@ -161,6 +164,7 @@ export function DiscoverPage() {
                   venues={sortedVenues}
                   selectedVenueId={selectedVenueId}
                   userLocation={userLocation}
+                  reviewSummaries={reviewSummaries}
                   onSelectVenue={(venue) => setSelectedVenueId(venue.id)}
                 />
               ) : (
