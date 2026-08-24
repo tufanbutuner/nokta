@@ -110,7 +110,7 @@ export function DiscoverPage() {
   return (
     <main className="bg-background">
       <div className="mx-auto flex min-h-[calc(100vh-4rem)] max-w-none flex-col px-3 py-3 lg:h-[calc(100vh-4rem)]">
-        <div className="grid min-h-0 flex-1 gap-4 lg:grid-cols-[420px_minmax(0,1fr)]">
+        <div className="grid min-h-0 flex-1 gap-4 lg:grid-cols-[460px_minmax(0,1fr)]">
           <aside className="flex min-h-0 flex-col overflow-hidden rounded-2xl border bg-card shadow-xl shadow-stone-950/5">
             <div className="space-y-3 border-b p-4">
               <VenueSearch value={filters.query} onChange={(query) => updateFilters({ ...filters, query })} />
