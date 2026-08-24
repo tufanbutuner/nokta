@@ -918,5 +918,85 @@
       "tripadvisorSource": "https://www.tripadvisor.co.uk/Restaurant_Review-g186338-d5439526-Reviews-Shisha_Garden_Grill-London_England.html"
     },
     "sourceNotes": "User provided opening hours. Waze also lists 11:00-02:00 daily and phone number. Food hygiene and TripAdvisor sources confirm Shisha Garden Grill Restaurant at 388 Hackney Road, E2 7AP. Outdoor seating is inferred from venue name and property/source references but should be checked before full verification."
+  },
+  {
+    "id": "broski-lounge",
+    "slug": "broski-lounge",
+    "name": "Broski Lounge",
+    "description": "Fitzrovia shisha lounge and Middle Eastern restaurant on Whitfield Street serving shisha, mocktails, coffee, desserts and casual food near Warren Street.",
+    "area": "Fitzrovia",
+    "address": "112 Whitfield Street",
+    "postcode": "W1T 5EE",
+    "latitude": 51.5232178,
+    "longitude": -0.1380631,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "indoor": true,
+    "outdoor": true,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "football",
+      "outdoor",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "00:00"
+      }
+    ],
+    "website": "https://broskilounge.com/",
+    "instagram": "https://www.instagram.com/broski_lounge/",
+    "phone": "020 3686 9668",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-08-24T00:00:00.000Z",
+    "dataSources": {
+      "officialWebsite": "https://broskilounge.com/",
+      "instagram": "https://www.instagram.com/broski_lounge/",
+      "directorySource": "https://thatsup.co.uk/london/restaurant/broski-lounge/",
+      "tripadvisorSource": "https://www.tripadvisor.co.uk/Restaurant_Review-g186338-d18931268-Reviews-Broski_Lounge-London_England.html",
+      "foodHygieneSource": "https://ratings.food.gov.uk/business/1316490/broski-lounge",
+      "menuUrl": "https://deliveroo.co.uk/menu/london/fitzrovia/broski-lounge-112-whitfield-street",
+      "otherSource": "https://restaurantguru.com/Broski-Lounge-London"
+    },
+    "sourceNotes": "Address, Fitzrovia area, phone, website, Instagram, outdoor seating, food and shisha positioning are supported by public directory and review sources. Food Standards Agency data confirms Broski Lounge at 112 Whitfield Street, W1T 5EE. Opening hours conflict across sources: ThatSup lists 08:00-00:00 daily, Tripadvisor lists mixed older hours, while Waze, RestaurantGuru and Uber Eats list 12:00-00:00 daily; seed uses 12:00-00:00 to avoid overstating morning opening. Alcohol is marked false because sources emphasise mocktails/non-alcoholic drinks and no clear alcohol listing was found. Third-party ratings are intentionally not stored."
   }
 ]
