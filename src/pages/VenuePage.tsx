@@ -226,34 +226,58 @@ export function VenuePage() {
 function PhotoGallery({ venue, images, onOpenImage }: { venue: Venue; images: string[]; onOpenImage: (index: number) => void }) {
   const primaryImage = images[0] ?? getVenueImage(venue);
   const secondaryImages = images.slice(1, 5);
+  const galleryCount = images.length;
 
   if (!secondaryImages.length) {
     return (
-      <section className="overflow-hidden rounded-xl border bg-card">
+      <section className="relative overflow-hidden rounded-xl border bg-card">
         <button type="button" className="block w-full overflow-hidden text-left" onClick={() => onOpenImage(0)}>
           <img src={primaryImage} alt={`${venue.name} main gallery`} className="aspect-[16/7] w-full object-cover transition duration-500 hover:scale-[1.02]" />
         </button>
+        <PhotoCountBadge current={1} total={galleryCount} />
       </section>
     );
   }
 
   return (
-    <section className="grid gap-3 lg:grid-cols-[minmax(0,1.6fr)_minmax(280px,0.9fr)]">
-      <div className="overflow-hidden rounded-xl border bg-card">
-        <button type="button" className="block h-full w-full overflow-hidden text-left" onClick={() => onOpenImage(0)}>
-          <img src={primaryImage} alt={`${venue.name} main gallery`} className="aspect-[16/9] h-full w-full object-cover transition duration-500 hover:scale-[1.02] lg:aspect-[16/8]" />
-        </button>
-      </div>
-      <div className="grid grid-cols-2 gap-3 overflow-x-auto lg:grid-cols-2">
-        {secondaryImages.slice(0, 4).map((image, index) => (
-          <div key={`${image}-${index}`} className="min-w-40 overflow-hidden rounded-xl border bg-card">
-            <button type="button" className="block h-full w-full overflow-hidden text-left" onClick={() => onOpenImage(index + 1)}>
-              <img src={image} alt={`${venue.name} gallery ${index + 2}`} className="aspect-[4/3] h-full w-full object-cover transition duration-500 hover:scale-[1.04]" />
+    <>
+      <section className="overflow-hidden rounded-xl border bg-card lg:hidden">
+        <div className="flex snap-x snap-mandatory overflow-x-auto">
+          {images.map((image, index) => (
+            <button key={`${image}-mobile-${index}`} type="button" className="relative block min-w-full snap-center overflow-hidden text-left" onClick={() => onOpenImage(index)}>
+              <img src={image} alt={`${venue.name} gallery ${index + 1}`} className="aspect-[4/3] w-full object-cover" />
+              <PhotoCountBadge current={index + 1} total={galleryCount} />
             </button>
-          </div>
-        ))}
-      </div>
-    </section>
+          ))}
+        </div>
+      </section>
+
+      <section className="hidden gap-3 lg:grid lg:grid-cols-[minmax(0,1.6fr)_minmax(280px,0.9fr)]">
+        <div className="relative overflow-hidden rounded-xl border bg-card">
+          <button type="button" className="block h-full w-full overflow-hidden text-left" onClick={() => onOpenImage(0)}>
+            <img src={primaryImage} alt={`${venue.name} main gallery`} className="aspect-[16/9] h-full w-full object-cover transition duration-500 hover:scale-[1.02] lg:aspect-[16/8]" />
+          </button>
+          <PhotoCountBadge current={1} total={galleryCount} />
+        </div>
+        <div className="grid grid-cols-2 gap-3 overflow-x-auto lg:grid-cols-2">
+          {secondaryImages.slice(0, 4).map((image, index) => (
+            <div key={`${image}-${index}`} className="overflow-hidden rounded-xl border bg-card">
+              <button type="button" className="block h-full w-full overflow-hidden text-left" onClick={() => onOpenImage(index + 1)}>
+                <img src={image} alt={`${venue.name} gallery ${index + 2}`} className="aspect-[4/3] h-full w-full object-cover transition duration-500 hover:scale-[1.04]" />
+              </button>
+            </div>
+          ))}
+        </div>
+      </section>
+    </>
+  );
+}
+
+function PhotoCountBadge({ current, total }: { current: number; total: number }) {
+  return (
+    <span className="absolute bottom-3 right-3 inline-flex items-center rounded-full bg-stone-950/75 px-2.5 py-1 text-xs font-medium text-white shadow-lg backdrop-blur">
+      {current} / {total}
+    </span>
   );
 }
 
@@ -303,8 +327,8 @@ function ActionBar({ venue, shareLabel, onShare }: { venue: Venue; shareLabel: s
 
 function OverviewTab({ venue, amenities, similarVenues }: { venue: Venue; amenities: string[]; similarVenues: Venue[] }) {
   return (
-    <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_360px]">
-      <article className="space-y-8">
+    <div className="grid min-w-0 gap-8 lg:grid-cols-[minmax(0,1fr)_360px]">
+      <article className="min-w-0 space-y-8">
         <section>
           <h2 className="text-2xl font-semibold">About</h2>
           <p className="mt-4 max-w-3xl text-lg leading-8 text-muted-foreground">{venue.description}</p>
@@ -333,7 +357,7 @@ function OverviewTab({ venue, amenities, similarVenues }: { venue: Venue; amenit
         </section>
       </article>
 
-      <aside className="space-y-4">
+      <aside className="min-w-0 space-y-4">
         <section className="rounded-xl border bg-card p-4">
           <h2 className="font-semibold">Opening hours</h2>
           <div className="mt-4 grid gap-2">
@@ -636,7 +660,7 @@ function SimilarVenueCarousel({ venues }: { venues: Venue[] }) {
   }
 
   return (
-    <div className="mt-4 flex gap-4 overflow-x-auto pb-2">
+    <div className="mt-4 flex max-w-full gap-4 overflow-x-auto pb-2">
       {venues.map((venue) => (
         <Link key={venue.id} reloadDocument to={`/venues/${venue.slug}`} className="w-64 shrink-0 overflow-hidden rounded-xl border bg-card transition hover:border-clay-accent/40">
           <img src={getVenueImage(venue)} alt={`${venue.name} interior`} className="h-32 w-full object-cover" />
