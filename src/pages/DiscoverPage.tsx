@@ -138,12 +138,17 @@ export function DiscoverPage() {
                   </Button>
                 ) : null}
               </div>
-              <p className="text-xs text-muted-foreground">
-                {savedLocation ? "Tap a venue to focus it on the map." : "Set your location in the navbar for nearest sorting."}
-              </p>
+              {savedLocation ? (
+                <>
+                  <p className="text-xs text-muted-foreground lg:hidden">Use View venue to open details.</p>
+                  <p className="hidden text-xs text-muted-foreground lg:block">Tap a venue to focus it on the map.</p>
+                </>
+              ) : (
+                <p className="text-xs text-muted-foreground">Set your location in the navbar for nearest sorting.</p>
+              )}
             </div>
 
-            <div className={cn("min-h-[420px] flex-1 overflow-y-auto p-3", view === "map" ? "hidden lg:block" : "block lg:hidden")}>
+            <div className={cn("block min-h-[420px] flex-1 overflow-y-auto p-3", view === "list" && "lg:hidden")}>
               {isLoading ? (
                 <LoadingState />
               ) : error ? (
@@ -161,7 +166,7 @@ export function DiscoverPage() {
             </div>
           </aside>
 
-          <section className={cn("min-h-[560px] overflow-hidden rounded-2xl border bg-card shadow-xl shadow-stone-950/5 lg:min-h-0", view === "list" && "hidden lg:block")}>
+          <section className="hidden min-h-[560px] overflow-hidden rounded-2xl border bg-card shadow-xl shadow-stone-950/5 lg:block lg:min-h-0">
             {isLoading ? (
               <div className="flex h-full min-h-[560px] items-center justify-center">
                 <LoadingState />
