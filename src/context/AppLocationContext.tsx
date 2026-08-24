@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import { resolveManualLocation } from "@/lib/manualLocation";
+import { hasValidUserLocation } from "@/lib/map";
 import { readJsonFromStorage, writeJsonToStorage } from "@/lib/storage";
 import type { LocationStatus, SavedUserLocation, UserLocation } from "@/types/location";
 
@@ -20,7 +21,7 @@ export function AppLocationProvider({ children }: { children: React.ReactNode })
   const [savedLocation, setSavedLocationState] = useState<SavedUserLocation | null>(() => readJsonFromStorage<SavedUserLocation | null>(STORAGE_KEY, null));
   const [locationStatus, setLocationStatus] = useState<LocationStatus>(savedLocation ? "success" : "idle");
 
-  const userLocation = savedLocation?.coordinates ?? null;
+  const userLocation = hasValidUserLocation(savedLocation?.coordinates) ? savedLocation.coordinates : null;
   const hasCoordinates = Boolean(userLocation);
 
   useEffect(() => {

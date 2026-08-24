@@ -1,4 +1,5 @@
 import type { Venue } from "@/types/venue";
+import type { UserLocation } from "@/types/location";
 
 export const LONDON_CENTER = {
   latitude: 51.5072,
@@ -6,10 +7,22 @@ export const LONDON_CENTER = {
 };
 
 export function hasValidCoordinates(venue: Venue): boolean {
+  return hasValidLatLng(venue.latitude, venue.longitude);
+}
+
+export function hasValidUserLocation(userLocation?: UserLocation | null): userLocation is UserLocation {
+  return Boolean(userLocation && hasValidLatLng(userLocation.latitude, userLocation.longitude));
+}
+
+function hasValidLatLng(latitude: unknown, longitude: unknown): boolean {
   return (
-    typeof venue.latitude === "number" &&
-    typeof venue.longitude === "number" &&
-    !Number.isNaN(venue.latitude) &&
-    !Number.isNaN(venue.longitude)
+    typeof latitude === "number" &&
+    typeof longitude === "number" &&
+    Number.isFinite(latitude) &&
+    Number.isFinite(longitude) &&
+    latitude >= -90 &&
+    latitude <= 90 &&
+    longitude >= -180 &&
+    longitude <= 180
   );
 }

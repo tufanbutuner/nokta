@@ -61,7 +61,7 @@ export async function resolveManualLocation(input: string): Promise<UserLocation
     const latitude = data.result?.latitude;
     const longitude = data.result?.longitude;
 
-    if (typeof latitude !== "number" || typeof longitude !== "number") {
+    if (typeof latitude !== "number" || typeof longitude !== "number" || !Number.isFinite(latitude) || !Number.isFinite(longitude)) {
       return null;
     }
 

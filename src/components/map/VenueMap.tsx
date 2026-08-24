@@ -4,7 +4,7 @@ import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
 import L from "leaflet";
 import { Button } from "@/components/ui/button";
 import { VenueMapMarker } from "@/components/map/VenueMapMarker";
-import { LONDON_CENTER, hasValidCoordinates } from "@/lib/map";
+import { LONDON_CENTER, hasValidCoordinates, hasValidUserLocation } from "@/lib/map";
 import { cn } from "@/lib/utils";
 import type { UserLocation } from "@/types/location";
 import type { Venue } from "@/types/venue";
@@ -32,6 +32,7 @@ export function VenueMap({
 }) {
   const mappableVenues = venues.filter(hasValidCoordinates);
   const selectedVenue = mappableVenues.find((venue) => venue.id === selectedVenueId);
+  const mappableUserLocation = hasValidUserLocation(userLocation) ? userLocation : null;
 
   if (venues.length === 0) {
     return (
@@ -61,9 +62,9 @@ export function VenueMap({
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <MapBoundsUpdater venues={mappableVenues} selectedVenue={selectedVenue} userLocation={userLocation} />
-        {userLocation ? (
-          <VenueMapUserMarker userLocation={userLocation} />
+        <MapBoundsUpdater venues={mappableVenues} selectedVenue={selectedVenue} userLocation={mappableUserLocation} />
+        {mappableUserLocation ? (
+          <VenueMapUserMarker userLocation={mappableUserLocation} />
         ) : null}
         {mappableVenues.map((venue) => (
           <VenueMapMarker key={venue.id} venue={venue} selected={venue.id === selectedVenueId} />
