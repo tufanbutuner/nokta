@@ -34,7 +34,7 @@ import { formatDistanceMiles, getVenueDistanceMiles } from "@/lib/location";
 import { getVenueCurrentStatus } from "@/lib/openingHours";
 import { cn } from "@/lib/utils";
 import { formatPriceLevel } from "@/lib/venueFilters";
-import { getVenueImage } from "@/lib/venueImages";
+import { getVenueImage, getVenueImages } from "@/lib/venueImages";
 import type { Venue } from "@/types/venue";
 
 type VenueDetailTab = "overview" | "menu" | "reviews" | "photos";
@@ -101,7 +101,7 @@ export function VenuePage() {
     venue.alcohol && "Alcohol",
     venue.openLate && "Open late",
   ].filter((amenity): amenity is string => Boolean(amenity));
-  const galleryImages = venue.images.length ? venue.images : [getVenueImage(venue)];
+  const galleryImages = getVenueImages(venue);
   const similarVenues = venues
     .filter((candidate) => candidate.id !== venue.id && (candidate.area === venue.area || candidate.vibes.some((vibe) => venue.vibes.includes(vibe))))
     .slice(0, 6);
