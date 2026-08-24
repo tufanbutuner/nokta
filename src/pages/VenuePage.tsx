@@ -146,9 +146,12 @@ export function VenuePage() {
                 <VenueBadge key={vibe} label={vibe} />
               ))}
             </div>
-            <div className="flex flex-wrap items-center gap-3">
-              <h1 className="text-4xl font-semibold leading-tight sm:text-5xl">{venue.name}</h1>
-              <CurrentStatusBadge status={currentStatus} />
+            <div className="flex items-start justify-between gap-3">
+              <div className="min-w-0 flex flex-wrap items-center gap-3">
+                <h1 className="text-4xl font-semibold leading-tight sm:text-5xl">{venue.name}</h1>
+                <CurrentStatusBadge status={currentStatus} />
+              </div>
+              <FavouriteButton venueId={venue.id} venueName={venue.name} className="h-11 w-11 shrink-0 border lg:hidden" />
             </div>
             <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-muted-foreground">
               {venue.rating ? (
@@ -173,7 +176,7 @@ export function VenuePage() {
             </div>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="hidden items-center gap-2 lg:flex">
             <FavouriteButton venueId={venue.id} venueName={venue.name} className="h-11 w-11 border" />
           </div>
         </section>
