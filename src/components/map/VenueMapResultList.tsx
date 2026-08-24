@@ -30,7 +30,6 @@ export function VenueMapResultList({
         const distanceLabel = userLocation ? formatDistanceMiles(getVenueDistanceMiles(venue, userLocation)).replace(" away", "") : null;
         const reviewSummary = reviewSummaries[venue.id];
         const rating = reviewSummary?.averageRating ?? venue.rating ?? null;
-        const ratingLabel = reviewSummary?.reviewCount ? `${rating} (${reviewSummary.reviewCount})` : rating;
 
         return (
           <Card
@@ -68,7 +67,7 @@ export function VenueMapResultList({
                   {rating ? (
                     <span className="inline-flex shrink-0 items-center gap-1 text-sm">
                       <Star className="h-4 w-4 fill-clay-accent text-clay-accent" />
-                      {ratingLabel}
+                      {rating}
                     </span>
                   ) : null}
                 </div>
