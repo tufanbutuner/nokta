@@ -53,3 +53,22 @@ export interface VenueReviewRow {
   created_at: string;
   updated_at: string;
 }
+
+export interface VenueSuggestionRow {
+  id: string;
+  submitted_by: string | null;
+  venue_name: string;
+  area: string | null;
+  address: string | null;
+  postcode: string | null;
+  website: string | null;
+  instagram: string | null;
+  phone: string | null;
+  notes: string | null;
+  status: "pending" | "approved" | "rejected" | "converted";
+  admin_notes: string | null;
+  reviewed_by: string | null;
+  reviewed_at: string | null;
+  created_at: string;
+  updated_at: string;
+}

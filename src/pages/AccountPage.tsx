@@ -70,6 +70,9 @@ export function AccountPage() {
                   <Button asChild variant="outline">
                     <Link to="/admin/reviews">Reviews</Link>
                   </Button>
+                  <Button asChild variant="outline">
+                    <Link to="/admin/suggestions">Suggestions</Link>
+                  </Button>
                 </div>
               </div>
             ) : null}

@@ -161,6 +161,9 @@ export function AdminReviewsPage() {
             <Button asChild variant="outline">
               <Link to="/admin/data-quality">Data quality</Link>
             </Button>
+            <Button asChild variant="outline">
+              <Link to="/admin/suggestions">Suggestions</Link>
+            </Button>
           </div>
         </div>
 

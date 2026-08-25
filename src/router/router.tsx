@@ -4,6 +4,7 @@ import { AppLayout } from "@/components/layout/AppLayout";
 import { AccountPage } from "@/pages/AccountPage";
 import { DataQualityPage } from "@/pages/admin/DataQualityPage";
 import { AdminReviewsPage } from "@/pages/admin/AdminReviewsPage";
+import { AdminVenueSuggestionsPage } from "@/pages/admin/AdminVenueSuggestionsPage";
 import { AdminVenuesPage } from "@/pages/admin/AdminVenuesPage";
 import { VenueFormPage } from "@/pages/admin/VenueFormPage";
 import { AppErrorPage } from "@/pages/AppErrorPage";
@@ -15,6 +16,7 @@ import { RecommendPage } from "@/pages/RecommendPage";
 import { SavedPage } from "@/pages/SavedPage";
 import { SignInPage } from "@/pages/SignInPage";
 import { SignUpPage } from "@/pages/SignUpPage";
+import { SuggestVenuePage } from "@/pages/SuggestVenuePage";
 import { VenuePage } from "@/pages/VenuePage";
 import { createBrowserRouter } from "react-router-dom";
 
@@ -27,6 +29,7 @@ export const router = createBrowserRouter([
       { path: "/discover", element: <DiscoverPage /> },
       { path: "/recommend", element: <RecommendPage /> },
       { path: "/saved", element: <SavedPage /> },
+      { path: "/suggest", element: <SuggestVenuePage /> },
       {
         path: "/account",
         element: (
@@ -60,6 +63,14 @@ export const router = createBrowserRouter([
         element: (
           <RequireAdmin>
             <AdminReviewsPage />
+          </RequireAdmin>
+        ),
+      },
+      {
+        path: "/admin/suggestions",
+        element: (
+          <RequireAdmin>
+            <AdminVenueSuggestionsPage />
           </RequireAdmin>
         ),
       },

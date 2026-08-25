@@ -66,6 +66,9 @@ export function AdminVenuesPage() {
             <Button asChild variant="outline">
               <Link to="/admin/reviews">Reviews</Link>
             </Button>
+            <Button asChild variant="outline">
+              <Link to="/admin/suggestions">Suggestions</Link>
+            </Button>
             <Button asChild>
               <Link to="/admin/venues/new">New venue</Link>
             </Button>

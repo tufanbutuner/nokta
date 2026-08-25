@@ -34,16 +34,19 @@ export function Header() {
               <NavLink reloadDocument to="/discover" className={navLinkClass}>
                 Discover
               </NavLink>
+              <NavLink reloadDocument to="/recommend" className={navLinkClass}>
+                Recommend
+              </NavLink>
+              <NavLink reloadDocument to="/saved" className={navLinkClass}>
+                {savedLabel}
+              </NavLink>
+              <NavLink reloadDocument to="/suggest" className={navLinkClass}>
+                Suggest
+              </NavLink>
               <NavLocationControl />
             </div>
           </div>
           <nav className="hidden items-center gap-6 text-sm text-muted-foreground md:flex">
-            <NavLink reloadDocument to="/recommend" className={navLinkClass}>
-              Recommend
-            </NavLink>
-            <NavLink reloadDocument to="/saved" className={navLinkClass}>
-              {savedLabel}
-            </NavLink>
             {user ? (
               <div className="flex items-center gap-4 border-l pl-5">
                 <NavLink reloadDocument to="/account" className={navLinkClass}>
@@ -56,6 +59,9 @@ export function Header() {
                     </NavLink>
                     <NavLink reloadDocument to="/admin/reviews" className={navLinkClass}>
                       Reviews
+                    </NavLink>
+                    <NavLink reloadDocument to="/admin/suggestions" className={navLinkClass}>
+                      Suggestions
                     </NavLink>
                   </>
                 ) : null}
@@ -96,6 +102,9 @@ export function Header() {
           <NavLink reloadDocument to="/saved" className={mobileNavLinkClass}>
             {savedLabel}
           </NavLink>
+          <NavLink reloadDocument to="/suggest" className={mobileNavLinkClass}>
+            Suggest
+          </NavLink>
           {user ? (
             <>
               <NavLink reloadDocument to="/account" className={mobileNavLinkClass}>
@@ -108,6 +117,9 @@ export function Header() {
                   </NavLink>
                   <NavLink reloadDocument to="/admin/reviews" className={mobileNavLinkClass}>
                     Reviews
+                  </NavLink>
+                  <NavLink reloadDocument to="/admin/suggestions" className={mobileNavLinkClass}>
+                    Suggestions
                   </NavLink>
                 </>
               ) : null}

@@ -1,0 +1,118 @@
+import { useState } from "react";
+import { Alert } from "@/components/ui/alert";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { validateVenueSuggestionInput } from "@/lib/venueSuggestionValidation";
+import type { VenueSuggestionInput } from "@/types/venueSuggestions";
+
+const INITIAL_VALUES: VenueSuggestionInput = {
+  venueName: "",
+  area: "",
+  address: "",
+  postcode: "",
+  website: "",
+  instagram: "",
+  phone: "",
+  notes: "",
+};
+
+export function SuggestVenueForm({
+  existingVenueNames,
+  isSubmitting,
+  onSubmit,
+}: {
+  existingVenueNames: string[];
+  isSubmitting?: boolean;
+  onSubmit: (input: VenueSuggestionInput) => Promise<void>;
+}) {
+  const [values, setValues] = useState<VenueSuggestionInput>(INITIAL_VALUES);
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const normalizedVenueName = values.venueName.trim().toLowerCase();
+  const mayAlreadyExist = Boolean(normalizedVenueName && existingVenueNames.some((name) => name.trim().toLowerCase() === normalizedVenueName));
+
+  function update<Key extends keyof VenueSuggestionInput>(key: Key, value: VenueSuggestionInput[Key]) {
+    setValues((currentValues) => ({ ...currentValues, [key]: value }));
+  }
+
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const validation = validateVenueSuggestionInput(values);
+    setErrors(validation.errors);
+
+    if (!validation.isValid) {
+      return;
+    }
+
+    await onSubmit(values);
+    setValues(INITIAL_VALUES);
+  }
+
+  return (
+    <Card>
+      <CardContent className="p-5">
+        <form className="space-y-5" onSubmit={handleSubmit}>
+          {mayAlreadyExist ? (
+            <Alert className="border-amber-200 bg-amber-50 text-amber-900">
+              This venue may already be listed. Please check Discover before submitting.
+            </Alert>
+          ) : null}
+
+          <Field label="Venue name" error={errors.venueName}>
+            <Input value={values.venueName} onChange={(event) => update("venueName", event.target.value)} placeholder="Broski Lounge" />
+          </Field>
+
+          <div className="grid gap-4 sm:grid-cols-2">
+            <Field label="Area" error={errors.area}>
+              <Input value={values.area ?? ""} onChange={(event) => update("area", event.target.value)} placeholder="Fitzrovia" />
+            </Field>
+            <Field label="Postcode" error={errors.postcode}>
+              <Input value={values.postcode ?? ""} onChange={(event) => update("postcode", event.target.value)} placeholder="W1T 5EE" />
+            </Field>
+          </div>
+
+          <Field label="Address" error={errors.address}>
+            <Input value={values.address ?? ""} onChange={(event) => update("address", event.target.value)} placeholder="Street address if you know it" />
+          </Field>
+
+          <div className="grid gap-4 sm:grid-cols-2">
+            <Field label="Website" error={errors.website}>
+              <Input value={values.website ?? ""} onChange={(event) => update("website", event.target.value)} placeholder="https://" />
+            </Field>
+            <Field label="Instagram" error={errors.instagram}>
+              <Input value={values.instagram ?? ""} onChange={(event) => update("instagram", event.target.value)} placeholder="https://instagram.com/..." />
+            </Field>
+          </div>
+
+          <Field label="Phone" error={errors.phone}>
+            <Input value={values.phone ?? ""} onChange={(event) => update("phone", event.target.value)} placeholder="Optional" />
+          </Field>
+
+          <Field label="Notes" error={errors.notes}>
+            <Textarea
+              value={values.notes ?? ""}
+              maxLength={1000}
+              onChange={(event) => update("notes", event.target.value)}
+              placeholder="Anything useful for review: opening hours, shisha area, menu links, whether it is still active..."
+            />
+          </Field>
+
+          <Button type="submit" disabled={isSubmitting}>
+            {isSubmitting ? "Submitting..." : "Submit suggestion"}
+          </Button>
+        </form>
+      </CardContent>
+    </Card>
+  );
+}
+
+function Field({ label, error, children }: { label: string; error?: string; children: React.ReactNode }) {
+  return (
+    <label className="block">
+      <span className="mb-2 block text-sm font-medium">{label}</span>
+      {children}
+      {error ? <span className="mt-2 block text-xs text-destructive">{error}</span> : null}
+    </label>
+  );
+}
