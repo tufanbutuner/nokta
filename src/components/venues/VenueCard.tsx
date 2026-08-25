@@ -20,7 +20,7 @@ export function VenueCard({ venue, userLocation }: { venue: Venue; userLocation?
             className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
           />
         </Link>
-        <FavouriteButton venueId={venue.id} venueName={venue.name} className="absolute right-3 top-3 h-9 w-9" />
+        <FavouriteButton venueId={venue.id} venueName={venue.name} venue={venue} className="absolute right-3 top-3 h-9 w-9" />
       </div>
       <CardContent className="space-y-4">
         <Link reloadDocument to={`/venues/${venue.slug}`} className="block">

@@ -5,6 +5,7 @@ import { AdminVenueTable } from "@/components/admin/venues/AdminVenueTable";
 import type { AdminVenueQualityFilter, AdminVenueVerificationFilter } from "@/components/admin/venues/AdminVenueFilters";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { ErrorState } from "@/components/state/ErrorState";
+import { EmptyState } from "@/components/state/EmptyState";
 import { LoadingState } from "@/components/state/LoadingState";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -69,6 +70,9 @@ export function AdminVenuesPage() {
             <Button asChild variant="outline">
               <Link to="/admin/suggestions">Suggestions</Link>
             </Button>
+            <Button asChild variant="outline">
+              <Link to="/admin/monetisation">Monetisation</Link>
+            </Button>
             <Button asChild>
               <Link to="/admin/venues/new">New venue</Link>
             </Button>
@@ -95,12 +99,7 @@ export function AdminVenuesPage() {
         {filteredVenues.length ? (
           <AdminVenueTable venues={filteredVenues} />
         ) : (
-          <Card>
-            <CardContent className="py-12 text-center">
-              <h2 className="text-xl font-semibold">No venues match these filters</h2>
-              <p className="mt-2 text-muted-foreground">Adjust the search or filters to continue managing venues.</p>
-            </CardContent>
-          </Card>
+          <EmptyState title="No venues match these filters" description="Adjust the search or filters to continue managing venues." />
         )}
       </PageContainer>
     </main>

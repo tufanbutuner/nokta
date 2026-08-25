@@ -28,7 +28,7 @@ export function AdminSuggestionActions({
         Notes
       </Button>
       <Button asChild variant="ghost" size="sm">
-        <Link to="/admin/venues/new">Create venue</Link>
+        <Link to={`/admin/venues/new?suggestion=${suggestion.id}`}>Create venue</Link>
       </Button>
     </div>
   );

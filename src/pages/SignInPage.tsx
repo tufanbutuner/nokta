@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthForm } from "@/components/auth/AuthForm";
 import { PageContainer } from "@/components/layout/PageContainer";
+import { PageMeta } from "@/components/seo/PageMeta";
 import { useAuth } from "@/context/AuthContext";
 
 export function SignInPage() {
@@ -40,6 +41,7 @@ export function SignInPage() {
 
   return (
     <main>
+      <PageMeta title="Sign in | Sheesha" description="Sign in to Sheesha to sync saved venues, reviews and suggestions." canonicalPath="/sign-in" />
       <PageContainer className="py-12">
         <AuthForm
           mode="sign-in"

@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import type { LucideIcon } from "lucide-react";
 import { ArrowRight, BookmarkCheck, ChevronRight, MapPin, MessageCircle, Search, Sparkles, Star } from "lucide-react";
 import { PageContainer } from "@/components/layout/PageContainer";
+import { PageMeta } from "@/components/seo/PageMeta";
 import { FavouriteButton } from "@/components/venues/FavouriteButton";
 import { VenueGrid } from "@/components/venues/VenueGrid";
 import { Button } from "@/components/ui/button";
@@ -79,6 +80,11 @@ export function HomePage() {
 
   return (
     <main>
+      <PageMeta
+        title="Sheesha | Discover the best shisha lounges in London"
+        description="Find shisha lounges across London by area, vibe, price, features and distance."
+        canonicalPath="/"
+      />
       <section className="border-b">
         <PageContainer className="py-12 sm:py-16 lg:py-20">
           <div className="mx-auto max-w-4xl text-center">
@@ -272,7 +278,7 @@ function LandingVenueCard({ venue }: { venue: Venue }) {
             {venue.rating}
           </span>
         ) : null}
-        <FavouriteButton venueId={venue.id} venueName={venue.name} className="absolute right-3 top-3 h-8 w-8 text-clay-accent" />
+        <FavouriteButton venueId={venue.id} venueName={venue.name} venue={venue} className="absolute right-3 top-3 h-8 w-8 text-clay-accent" />
       </div>
       <div className="p-4">
         <Link reloadDocument to={`/venues/${venue.slug}`} className="block">

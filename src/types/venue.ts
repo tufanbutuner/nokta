@@ -1,3 +1,5 @@
+import type { MonetisationStatus, PartnerTier } from "@/types/monetisation";
+
 export type VenueVibe =
   | "casual"
   | "luxury"
@@ -69,4 +71,14 @@ export interface Venue {
   lastVerifiedAt?: string | null;
   dataSources: VenueDataSources;
   sourceNotes?: string | null;
+  isClaimed: boolean;
+  claimedBy: string | null;
+  claimedAt: string | null;
+  partnerTier: PartnerTier;
+  monetisationStatus: MonetisationStatus;
+  monetisationNotes: string | null;
+  featuredEligible: boolean;
+  featuredBlockedReason: string | null;
+  createdAt: string | null;
+  updatedAt: string | null;
 }

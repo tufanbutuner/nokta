@@ -1,15 +1,18 @@
 import { Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useVenuePreferences } from "@/context/VenuePreferencesContext";
+import { trackEvent } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
+import type { Venue } from "@/types/venue";
 
 interface FavouriteButtonProps {
   venueId: string;
   venueName: string;
+  venue?: Venue;
   className?: string;
 }
 
-export function FavouriteButton({ venueId, venueName, className }: FavouriteButtonProps) {
+export function FavouriteButton({ venueId, venueName, venue, className }: FavouriteButtonProps) {
   const { isFavourite, isLoading, toggleFavourite } = useVenuePreferences();
   const saved = isFavourite(venueId);
 
@@ -24,10 +27,20 @@ export function FavouriteButton({ venueId, venueName, className }: FavouriteButt
       onClick={(event) => {
         event.preventDefault();
         event.stopPropagation();
+        trackEvent(saved ? "venue_unsaved" : "venue_saved", getFavouriteAnalyticsProperties(venueId, venueName, venue));
         void toggleFavourite(venueId);
       }}
     >
       <Heart className={cn("h-4 w-4", saved && "fill-foreground")} />
     </Button>
   );
+}
+
+function getFavouriteAnalyticsProperties(venueId: string, venueName: string, venue?: Venue) {
+  return {
+    venueId,
+    venueSlug: venue?.slug,
+    venueName,
+    area: venue?.area,
+  };
 }

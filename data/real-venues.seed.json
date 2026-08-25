@@ -998,5 +998,159 @@
       "otherSource": "https://restaurantguru.com/Broski-Lounge-London"
     },
     "sourceNotes": "Address, Fitzrovia area, phone, website, Instagram, outdoor seating, food and shisha positioning are supported by public directory and review sources. Food Standards Agency data confirms Broski Lounge at 112 Whitfield Street, W1T 5EE. Opening hours conflict across sources: ThatSup lists 08:00-00:00 daily, Tripadvisor lists mixed older hours, while Waze, RestaurantGuru and Uber Eats list 12:00-00:00 daily; seed uses 12:00-00:00 to avoid overstating morning opening. Alcohol is marked false because sources emphasise mocktails/non-alcoholic drinks and no clear alcohol listing was found. Third-party ratings are intentionally not stored."
+  },
+  {
+    "id": "table-11-hounslow",
+    "slug": "table-11-hounslow",
+    "name": "Table 11",
+    "description": "Hounslow High Street hookah lounge listed publicly as a shisha bar, with daily afternoon-to-midnight opening and a central Hounslow location.",
+    "area": "Hounslow",
+    "address": "142 High Street",
+    "postcode": "TW3 1LR",
+    "latitude": 51.469469,
+    "longitude": -0.360073,
+    "rating": null,
+    "priceFrom": 12,
+    "priceLevel": 1,
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "00:00"
+      }
+    ],
+    "website": "https://table11.co.uk/",
+    "instagram": null,
+    "phone": "07771 819555",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-08-25T00:00:00.000Z",
+    "dataSources": {
+      "officialWebsite": "https://table11.co.uk/",
+      "menuUrl": "https://table11.co.uk/table11-shisha-lounge-menu/",
+      "directorySource": "https://hounslow.cylex-uk.co.uk/company/table-11-28308227.html",
+      "foodHygieneSource": "https://ratings.food.gov.uk/business/1535436/table11-hounslow/online-ratings",
+      "otherSource": "https://firmania.co.uk/hounslow/table-11-4708551"
+    },
+    "sourceNotes": "Cylex and Firmania list Table 11 as a hookah/shisha lounge at 142 High St, Hounslow TW3 1LR, with website, phone and 12:00-00:00 daily opening hours. Food Standards Agency data confirms TABLE 11 as a restaurant/cafe/canteen at 144 High Street, Hounslow TW3 1LR with FHRS ID 1535436 and inspection date 25 July 2022; address formatting differs across sources, likely due to the 142-144 High Street premises. 192.com lists Table 11 Hounslow Ltd at First Floor, 142-144 High Street. User provided official menu URL and confirmed shisha prices start from £12. Alcohol policy, photos, Instagram and full food/menu details still need direct verification. Third-party ratings are intentionally not stored."
+  },
+  {
+    "id": "patchi-park-royal",
+    "slug": "patchi-park-royal",
+    "name": "Patchi",
+    "description": "Park Royal Lebanese patisserie and Restaurant 28 venue with a shisha terrace, mocktails, desserts and Mediterranean food on Abbey Road.",
+    "area": "Park Royal",
+    "address": "28 Abbey Road",
+    "postcode": "NW10 7SB",
+    "latitude": 51.532812,
+    "longitude": -0.274906,
+    "rating": null,
+    "priceFrom": 15,
+    "priceLevel": 1,
+    "indoor": true,
+    "outdoor": true,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "outdoor",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Monday",
+        "open": "09:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "09:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "09:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "09:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "09:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "00:00"
+      }
+    ],
+    "website": "https://www.patchi.co.uk/",
+    "instagram": "https://www.instagram.com/_patchi_/",
+    "phone": "020 8961 3443",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-08-25T00:00:00.000Z",
+    "dataSources": {
+      "officialWebsite": "https://www.patchi.co.uk/",
+      "shishaPageUrl": "https://www.patchi.co.uk/restaurant/",
+      "instagram": "https://www.instagram.com/_patchi_/",
+      "directorySource": "https://restaurantguru.com/Patchi-London",
+      "foodHygieneSource": "https://ratings.food.gov.uk/business/930162/patisserie-patchi-ltd/online-ratings",
+      "otherSource": "https://www.doogal.co.uk/ShowMap?postcode=NW10+7SB"
+    },
+    "sourceNotes": "Official Patchi website describes the business as a patisserie, restaurant, banqueting venue and shisha lounge, and its Restaurant 28 page references the terrace section with mocktails and desserts. Official site confirms 28 Abbey Rd, Park Royal, London NW10 7SB, phone 020 8961 3443 and daily 09:00-midnight opening. Food Standards Agency data confirms Patisserie Patchi Ltd at 28 Abbey Road, NW10 7SB with inspection date 24 July 2025. Doogal postcode data provides coordinates for NW10 7SB. Restaurant Guru lists outdoor seating and Instagram @_patchi_. User provided that shisha pricing starts from £15; direct shisha menu verification is still needed. Alcohol policy and photos still need direct verification. Third-party ratings are intentionally not stored."
   }
 ]

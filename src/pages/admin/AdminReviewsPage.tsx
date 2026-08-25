@@ -7,6 +7,7 @@ import { ModerationNotesDialog } from "@/components/admin/reviews/ModerationNote
 import type { ModerationAction } from "@/components/admin/reviews/AdminReviewActions";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { ErrorState } from "@/components/state/ErrorState";
+import { EmptyState } from "@/components/state/EmptyState";
 import { LoadingState } from "@/components/state/LoadingState";
 import { Alert } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
@@ -164,6 +165,9 @@ export function AdminReviewsPage() {
             <Button asChild variant="outline">
               <Link to="/admin/suggestions">Suggestions</Link>
             </Button>
+            <Button asChild variant="outline">
+              <Link to="/admin/monetisation">Monetisation</Link>
+            </Button>
           </div>
         </div>
 
@@ -189,12 +193,7 @@ export function AdminReviewsPage() {
             onAction={openActionDialog}
           />
         ) : (
-          <Card>
-            <CardContent className="py-12 text-center">
-              <h2 className="text-xl font-semibold">No reviews match these filters</h2>
-              <p className="mt-2 text-muted-foreground">Adjust the search or status filter to continue moderation.</p>
-            </CardContent>
-          </Card>
+          <EmptyState title="No reviews match these filters" description="Adjust the search or status filter to continue moderation." />
         )}
       </PageContainer>
 

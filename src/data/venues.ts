@@ -10,7 +10,26 @@ const hours = [
   { day: "Sunday", open: "4pm", close: "1am" },
 ];
 
-const demoVenues: Array<Omit<Venue, "businessStatus" | "verificationStatus" | "lastVerifiedAt" | "dataSources" | "sourceNotes">> = [
+const demoVenues: Array<
+  Omit<
+    Venue,
+    | "businessStatus"
+    | "verificationStatus"
+    | "lastVerifiedAt"
+    | "dataSources"
+    | "sourceNotes"
+    | "isClaimed"
+    | "claimedBy"
+    | "claimedAt"
+    | "partnerTier"
+    | "monetisationStatus"
+    | "monetisationNotes"
+    | "featuredEligible"
+    | "featuredBlockedReason"
+    | "createdAt"
+    | "updatedAt"
+  >
+> = [
   {
     id: "maya",
     slug: "maya-lounge",
@@ -242,6 +261,16 @@ export const venues: Venue[] = demoVenues.map((venue) => ({
   lastVerifiedAt: null,
   dataSources: {},
   sourceNotes: "Legacy demo seed venue.",
+  isClaimed: false,
+  claimedBy: null,
+  claimedAt: null,
+  partnerTier: "none",
+  monetisationStatus: "not-contacted",
+  monetisationNotes: null,
+  featuredEligible: false,
+  featuredBlockedReason: null,
+  createdAt: null,
+  updatedAt: null,
 }));
 
 export const areas = Array.from(new Set(venues.map((venue) => venue.area)));

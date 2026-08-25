@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthError } from "@/components/auth/AuthError";
 import { PageContainer } from "@/components/layout/PageContainer";
+import { PageMeta } from "@/components/seo/PageMeta";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useAuth } from "@/context/AuthContext";
@@ -32,6 +33,7 @@ export function AccountPage() {
 
   return (
     <main>
+      <PageMeta title="Account | Sheesha" description="Manage your Sheesha account, saved venues and recently viewed venues." canonicalPath="/account" />
       <PageContainer className="py-12">
         <Card className="mx-auto max-w-2xl">
           <CardContent className="space-y-6 p-6">
@@ -72,6 +74,9 @@ export function AccountPage() {
                   </Button>
                   <Button asChild variant="outline">
                     <Link to="/admin/suggestions">Suggestions</Link>
+                  </Button>
+                  <Button asChild variant="outline">
+                    <Link to="/admin/monetisation">Monetisation</Link>
                   </Button>
                 </div>
               </div>

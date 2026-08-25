@@ -3,12 +3,14 @@ import { Link } from "react-router-dom";
 import { ReviewForm } from "@/components/reviews/ReviewForm";
 import { ReviewList } from "@/components/reviews/ReviewList";
 import { VenueRatingSummary } from "@/components/reviews/VenueRatingSummary";
+import { InlineLoadingState } from "@/components/state/InlineLoadingState";
 import { Alert } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { useAuth } from "@/context/AuthContext";
 import { useUserVenueReview } from "@/hooks/useUserVenueReview";
 import { useVenueReviews } from "@/hooks/useVenueReviews";
+import { trackEvent } from "@/lib/analytics";
 import { createVenueReview, deleteVenueReview, getVenueRatingSummary, updateVenueReview } from "@/services/reviewService";
 import type { VenueReview, VenueReviewInput } from "@/types/reviews";
 import type { Venue } from "@/types/venue";
@@ -46,9 +48,17 @@ export function ReviewSection({ venue }: { venue: Venue }) {
 
       if (existingReview) {
         await updateVenueReview(existingReview.id, input);
+        trackEvent("review_updated", {
+          venueId: venue.id,
+          rating: input.rating,
+        });
         setEditingReview(null);
       } else {
         await createVenueReview(user.id, input);
+        trackEvent("review_created", {
+          venueId: venue.id,
+          rating: input.rating,
+        });
       }
 
       await refreshReviews();
@@ -122,7 +132,7 @@ export function ReviewSection({ venue }: { venue: Venue }) {
         ) : null}
 
         {isLoading ? (
-          <Card className="p-6 text-sm text-muted-foreground">Loading reviews...</Card>
+          <InlineLoadingState message="Loading reviews..." />
         ) : (
           <ReviewList
             reviews={reviews}

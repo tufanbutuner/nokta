@@ -22,7 +22,7 @@ export function RecommendationResultCard({ recommendation, rank }: { recommendat
               <h3 className="mt-2 text-2xl font-semibold">{venue.name}</h3>
               <p className="text-muted-foreground">{venue.area}</p>
             </div>
-            <FavouriteButton venueId={venue.id} venueName={venue.name} className="h-10 w-10 border" />
+            <FavouriteButton venueId={venue.id} venueName={venue.name} venue={venue} className="h-10 w-10 border" />
           </div>
           <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
             <strong className="text-lg text-foreground">{recommendation.matchPercentage}% match</strong>

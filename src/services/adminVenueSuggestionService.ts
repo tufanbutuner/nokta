@@ -37,6 +37,17 @@ export async function getAdminVenueSuggestionsByStatus(status: VenueSuggestionSt
   return ((data ?? []) as VenueSuggestionRow[]).map(mapVenueSuggestionRowToSuggestion);
 }
 
+export async function getAdminVenueSuggestionById(suggestionId: string): Promise<VenueSuggestion | null> {
+  const client = ensureSupabase();
+  const { data, error } = await client.from("venue_suggestions").select("*").eq("id", suggestionId).maybeSingle();
+
+  if (error) {
+    throw new Error(`Could not load venue suggestion: ${error.message}`);
+  }
+
+  return data ? mapVenueSuggestionRowToSuggestion(data as VenueSuggestionRow) : null;
+}
+
 export async function updateVenueSuggestionStatus(input: {
   suggestionId: string;
   status: VenueSuggestionStatus;

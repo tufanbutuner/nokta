@@ -12,7 +12,7 @@ export function VenueMapPopup({ venue }: { venue: Venue }) {
           <h3 className="text-base font-semibold text-foreground">{venue.name}</h3>
           <p className="text-sm text-muted-foreground">{venue.area}</p>
         </div>
-        <FavouriteButton venueId={venue.id} venueName={venue.name} className="h-8 w-8 border" />
+        <FavouriteButton venueId={venue.id} venueName={venue.name} venue={venue} className="h-8 w-8 border" />
       </div>
       <p className="text-sm text-muted-foreground">
         {formatPriceLevel(venue.priceLevel)}

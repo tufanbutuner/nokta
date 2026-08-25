@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { EmptyState } from "@/components/state/EmptyState";
 import { cn } from "@/lib/utils";
 import type { VenueSuggestion, VenueSuggestionStatus } from "@/types/venueSuggestions";
 
@@ -19,14 +20,7 @@ const STATUS_CLASSES: Record<VenueSuggestionStatus, string> = {
 
 export function MySuggestionsList({ suggestions }: { suggestions: VenueSuggestion[] }) {
   if (!suggestions.length) {
-    return (
-      <Card>
-        <CardContent className="p-5">
-          <h2 className="text-lg font-semibold">No suggestions yet</h2>
-          <p className="mt-2 text-sm text-muted-foreground">Your submitted venues will appear here.</p>
-        </CardContent>
-      </Card>
-    );
+    return <EmptyState title="No suggestions yet" description="Your submitted venues will appear here." className="p-5" />;
   }
 
   return (

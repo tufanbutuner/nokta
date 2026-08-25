@@ -1,6 +1,7 @@
 import type { VenueRowInput } from "@/types/database";
 import type { Venue } from "@/types/venue";
 import type { VenueFormValues } from "@/types/venueForm";
+import type { VenueSuggestion } from "@/types/venueSuggestions";
 
 const WEEK_DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 
@@ -34,6 +35,14 @@ export function mapVenueToFormValues(venue: Venue): VenueFormValues {
     lastVerifiedAt: formatDateInputValue(venue.lastVerifiedAt),
     dataSources: Object.fromEntries(Object.entries(venue.dataSources).filter(([, value]) => typeof value === "string")),
     sourceNotes: venue.sourceNotes ?? null,
+    isClaimed: venue.isClaimed,
+    claimedBy: venue.claimedBy,
+    claimedAt: formatDateInputValue(venue.claimedAt),
+    partnerTier: venue.partnerTier,
+    monetisationStatus: venue.monetisationStatus,
+    monetisationNotes: venue.monetisationNotes,
+    featuredEligible: venue.featuredEligible,
+    featuredBlockedReason: venue.featuredBlockedReason,
   };
 }
 
@@ -67,6 +76,14 @@ export function mapFormValuesToVenueRow(values: VenueFormValues): VenueRowInput 
     last_verified_at: values.lastVerifiedAt ? new Date(values.lastVerifiedAt).toISOString() : null,
     data_sources: compactDataSources(values.dataSources),
     source_notes: nullableString(values.sourceNotes),
+    is_claimed: values.isClaimed,
+    claimed_by: values.isClaimed ? nullableString(values.claimedBy) : null,
+    claimed_at: values.isClaimed && values.claimedAt ? new Date(values.claimedAt).toISOString() : null,
+    partner_tier: values.partnerTier,
+    monetisation_status: values.monetisationStatus,
+    monetisation_notes: nullableString(values.monetisationNotes),
+    featured_eligible: values.featuredEligible,
+    featured_blocked_reason: values.featuredEligible ? null : nullableString(values.featuredBlockedReason),
   };
 }
 
@@ -100,6 +117,43 @@ export function createEmptyVenueFormValues(): VenueFormValues {
     lastVerifiedAt: null,
     dataSources: {},
     sourceNotes: null,
+    isClaimed: false,
+    claimedBy: null,
+    claimedAt: null,
+    partnerTier: "none",
+    monetisationStatus: "not-contacted",
+    monetisationNotes: null,
+    featuredEligible: false,
+    featuredBlockedReason: null,
+  };
+}
+
+export function createVenueFormValuesFromSuggestion(suggestion: VenueSuggestion): VenueFormValues {
+  const generatedSlug = generateVenueSlug(suggestion.venueName);
+  const dataSources: Record<string, string> = {};
+
+  if (suggestion.website) {
+    dataSources.officialWebsite = suggestion.website;
+  }
+
+  if (suggestion.instagram) {
+    dataSources.instagram = suggestion.instagram;
+  }
+
+  return {
+    ...createEmptyVenueFormValues(),
+    id: generatedSlug,
+    slug: generatedSlug,
+    name: suggestion.venueName,
+    description: createSuggestionDescription(suggestion),
+    area: suggestion.area ?? "",
+    address: suggestion.address ?? "",
+    postcode: suggestion.postcode ?? "",
+    website: suggestion.website,
+    instagram: suggestion.instagram,
+    phone: suggestion.phone,
+    dataSources,
+    sourceNotes: createSuggestionSourceNotes(suggestion),
   };
 }
 
@@ -135,4 +189,22 @@ function formatDateInputValue(value?: string | null): string | null {
   }
 
   return value.slice(0, 10);
+}
+
+function createSuggestionDescription(suggestion: VenueSuggestion): string {
+  if (suggestion.area) {
+    return `${suggestion.venueName} is a suggested sheesha venue in ${suggestion.area}. Review and complete this draft before publishing.`;
+  }
+
+  return `${suggestion.venueName} is a suggested sheesha venue. Review and complete this draft before publishing.`;
+}
+
+function createSuggestionSourceNotes(suggestion: VenueSuggestion): string {
+  const notes = ["Created from a user-submitted venue suggestion."];
+
+  if (suggestion.notes) {
+    notes.push(`Suggestion notes: ${suggestion.notes}`);
+  }
+
+  return notes.join(" ");
 }

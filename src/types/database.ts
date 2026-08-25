@@ -31,6 +31,14 @@ export interface VenueRow {
   last_verified_at: string | null;
   data_sources: Record<string, string>;
   source_notes: string | null;
+  is_claimed: boolean;
+  claimed_by: string | null;
+  claimed_at: string | null;
+  partner_tier: "none" | "starter" | "growth" | "pro";
+  monetisation_status: "not-contacted" | "contacted" | "interested" | "trial" | "paying" | "churned" | "not-fit";
+  monetisation_notes: string | null;
+  featured_eligible: boolean;
+  featured_blocked_reason: string | null;
   created_at: string;
   updated_at: string;
 }

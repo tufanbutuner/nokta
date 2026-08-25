@@ -11,12 +11,15 @@ import { AppErrorPage } from "@/pages/AppErrorPage";
 import { AppErrorPreviewPage } from "@/pages/AppErrorPreviewPage";
 import { DiscoverPage } from "@/pages/DiscoverPage";
 import { HomePage } from "@/pages/HomePage";
+import { MonetisationDashboardPage } from "@/pages/admin/MonetisationDashboardPage";
 import { NotFoundPage } from "@/pages/NotFoundPage";
+import { PrivacyPage } from "@/pages/PrivacyPage";
 import { RecommendPage } from "@/pages/RecommendPage";
 import { SavedPage } from "@/pages/SavedPage";
 import { SignInPage } from "@/pages/SignInPage";
 import { SignUpPage } from "@/pages/SignUpPage";
 import { SuggestVenuePage } from "@/pages/SuggestVenuePage";
+import { TermsPage } from "@/pages/TermsPage";
 import { VenuePage } from "@/pages/VenuePage";
 import { createBrowserRouter } from "react-router-dom";
 
@@ -30,6 +33,8 @@ export const router = createBrowserRouter([
       { path: "/recommend", element: <RecommendPage /> },
       { path: "/saved", element: <SavedPage /> },
       { path: "/suggest", element: <SuggestVenuePage /> },
+      { path: "/privacy", element: <PrivacyPage /> },
+      { path: "/terms", element: <TermsPage /> },
       {
         path: "/account",
         element: (
@@ -71,6 +76,14 @@ export const router = createBrowserRouter([
         element: (
           <RequireAdmin>
             <AdminVenueSuggestionsPage />
+          </RequireAdmin>
+        ),
+      },
+      {
+        path: "/admin/monetisation",
+        element: (
+          <RequireAdmin>
+            <MonetisationDashboardPage />
           </RequireAdmin>
         ),
       },

@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
+import { trackEvent } from "@/lib/analytics";
 import { resolveManualLocation } from "@/lib/manualLocation";
 import { hasValidUserLocation } from "@/lib/map";
 import { readJsonFromStorage, writeJsonToStorage } from "@/lib/storage";
@@ -73,6 +74,10 @@ export function AppLocationProvider({ children }: { children: React.ReactNode })
       source: "manual",
       updatedAt: new Date().toISOString(),
     });
+    trackEvent("location_enabled", {
+      source: "manual",
+      hasCoordinates: Boolean(coordinates),
+    });
     setLocationStatus("success");
   }
 
@@ -95,6 +100,10 @@ export function AppLocationProvider({ children }: { children: React.ReactNode })
           },
           source: "browser",
           updatedAt: new Date().toISOString(),
+        });
+        trackEvent("location_enabled", {
+          source: "browser",
+          hasCoordinates: true,
         });
         setLocationStatus("success");
       },

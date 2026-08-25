@@ -1,3 +1,4 @@
+import type { MonetisationStatus, PartnerTier } from "@/types/monetisation";
 import type { BusinessStatus, OpeningHours, PriceLevel, VenueVibe, VerificationStatus } from "@/types/venue";
 
 export interface VenueFormValues {
@@ -29,4 +30,12 @@ export interface VenueFormValues {
   lastVerifiedAt: string | null;
   dataSources: Record<string, string>;
   sourceNotes: string | null;
+  isClaimed: boolean;
+  claimedBy: string | null;
+  claimedAt: string | null;
+  partnerTier: PartnerTier;
+  monetisationStatus: MonetisationStatus;
+  monetisationNotes: string | null;
+  featuredEligible: boolean;
+  featuredBlockedReason: string | null;
 }

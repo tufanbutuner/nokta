@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthForm } from "@/components/auth/AuthForm";
 import { PageContainer } from "@/components/layout/PageContainer";
+import { PageMeta } from "@/components/seo/PageMeta";
 import { useAuth } from "@/context/AuthContext";
 
 export function SignUpPage() {
@@ -51,6 +52,7 @@ export function SignUpPage() {
 
   return (
     <main>
+      <PageMeta title="Create account | Sheesha" description="Create a Sheesha account to save venues, write reviews and suggest missing shisha lounges." canonicalPath="/sign-up" />
       <PageContainer className="py-12">
         <AuthForm
           mode="sign-up"

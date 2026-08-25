@@ -14,6 +14,7 @@ import { Select } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { generateVenueSlug } from "@/lib/venueFormMappers";
 import { validateVenueForm } from "@/lib/venueFormValidation";
+import type { MonetisationStatus, PartnerTier } from "@/types/monetisation";
 import type { BusinessStatus, PriceLevel, VerificationStatus } from "@/types/venue";
 import type { VenueFormValues } from "@/types/venueForm";
 
@@ -24,6 +25,23 @@ const FEATURE_FIELDS = [
   ["alcohol", "Alcohol"],
   ["openLate", "Open late"],
 ] as const;
+
+const PARTNER_TIER_OPTIONS: { label: string; value: PartnerTier }[] = [
+  { label: "None", value: "none" },
+  { label: "Starter", value: "starter" },
+  { label: "Growth", value: "growth" },
+  { label: "Pro", value: "pro" },
+];
+
+const MONETISATION_STATUS_OPTIONS: { label: string; value: MonetisationStatus }[] = [
+  { label: "Not contacted", value: "not-contacted" },
+  { label: "Contacted", value: "contacted" },
+  { label: "Interested", value: "interested" },
+  { label: "Trial", value: "trial" },
+  { label: "Paying", value: "paying" },
+  { label: "Churned", value: "churned" },
+  { label: "Not a fit", value: "not-fit" },
+];
 
 export function VenueForm({
   initialValues,
@@ -63,6 +81,15 @@ export function VenueForm({
       }
       return nextValues;
     });
+  }
+
+  function updateClaimedStatus(isClaimed: boolean) {
+    setValues((currentValues) => ({
+      ...currentValues,
+      isClaimed,
+      claimedBy: isClaimed ? currentValues.claimedBy : null,
+      claimedAt: isClaimed ? currentValues.claimedAt ?? new Date().toISOString().slice(0, 10) : null,
+    }));
   }
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -236,6 +263,66 @@ export function VenueForm({
         <Button type="button" variant="outline" className="w-fit" onClick={() => update("lastVerifiedAt", new Date().toISOString().slice(0, 10))}>
           Set last verified to today
         </Button>
+      </VenueFormSection>
+
+      <VenueFormSection title="Commercial">
+        <div className="grid gap-4 md:grid-cols-2">
+          <label className="flex items-center gap-2 rounded-md border bg-background px-3 py-2 text-sm font-medium">
+            <Checkbox checked={values.isClaimed} onChange={(event) => updateClaimedStatus(event.target.checked)} />
+            Claimed profile
+          </label>
+          <label className="flex items-center gap-2 rounded-md border bg-background px-3 py-2 text-sm font-medium">
+            <Checkbox checked={values.featuredEligible} onChange={(event) => update("featuredEligible", event.target.checked)} />
+            Featured eligible
+          </label>
+          <Field label="Claimed by">
+            <Input
+              value={values.claimedBy ?? ""}
+              onChange={(event) => update("claimedBy", nullableString(event.target.value))}
+              placeholder="Auth user ID"
+              disabled={!values.isClaimed}
+            />
+          </Field>
+          <Field label="Claimed at">
+            <Input
+              type="date"
+              value={values.claimedAt ?? ""}
+              onChange={(event) => update("claimedAt", nullableString(event.target.value))}
+              disabled={!values.isClaimed}
+            />
+          </Field>
+          <Field label="Partner tier">
+            <Select
+              value={values.partnerTier}
+              onChange={(event) => update("partnerTier", event.target.value as PartnerTier)}
+              options={PARTNER_TIER_OPTIONS}
+            />
+          </Field>
+          <Field label="Monetisation status">
+            <Select
+              value={values.monetisationStatus}
+              onChange={(event) => update("monetisationStatus", event.target.value as MonetisationStatus)}
+              options={MONETISATION_STATUS_OPTIONS}
+            />
+          </Field>
+        </div>
+        <Field label="Featured blocked reason">
+          <Input
+            value={values.featuredBlockedReason ?? ""}
+            onChange={(event) => update("featuredBlockedReason", nullableString(event.target.value))}
+            placeholder="Why this venue should not be featured"
+            disabled={values.featuredEligible}
+          />
+        </Field>
+        <Field label="Monetisation notes">
+          <Textarea
+            id="monetisationNotes"
+            name="monetisationNotes"
+            value={values.monetisationNotes ?? ""}
+            onChange={(event) => update("monetisationNotes", nullableString(event.target.value))}
+            placeholder="2026-08-25 - Contacted via Instagram. Follow up with manager."
+          />
+        </Field>
       </VenueFormSection>
 
       <div className="sticky bottom-0 flex flex-col gap-3 border-t bg-background/95 py-4 backdrop-blur sm:flex-row sm:justify-between">

@@ -2,11 +2,13 @@ import { useState } from "react";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { RecommendationQuiz } from "@/components/recommendations/RecommendationQuiz";
 import { RecommendationResults } from "@/components/recommendations/RecommendationResults";
+import { PageMeta } from "@/components/seo/PageMeta";
 import { ErrorState } from "@/components/state/ErrorState";
 import { LoadingState } from "@/components/state/LoadingState";
 import { useAppLocation } from "@/context/AppLocationContext";
 import { useVenuePreferences } from "@/context/VenuePreferencesContext";
 import { useVenues } from "@/hooks/useVenues";
+import { trackEvent } from "@/lib/analytics";
 import { getRecommendedVenues } from "@/lib/recommendations";
 import type { RecommendationPreferences, RecommendedVenue } from "@/types/recommendations";
 
@@ -17,16 +19,27 @@ export function RecommendPage() {
   const [results, setResults] = useState<RecommendedVenue[] | null>(null);
 
   function submitPreferences(preferences: RecommendationPreferences) {
-    setResults(
-      getRecommendedVenues(venues, preferences, {
-        userLocation,
-        favouriteVenueIds,
-      }),
-    );
+    const nextResults = getRecommendedVenues(venues, preferences, {
+      userLocation,
+      favouriteVenueIds,
+    });
+    const analyticsProperties = getRecommendationAnalyticsProperties(preferences);
+
+    trackEvent("recommendation_started", analyticsProperties);
+    trackEvent("recommendation_completed", {
+      ...analyticsProperties,
+      resultCount: nextResults.filter((result) => result.score > 0).length,
+    });
+    setResults(nextResults);
   }
 
   return (
     <main>
+      <PageMeta
+        title="Find Your Perfect Sheesha Spot | Sheesha"
+        description="Answer a few quick questions and get matched with shisha lounges in London."
+        canonicalPath="/recommend"
+      />
       <PageContainer className="py-12">
         <div className="mb-8">
           <div>
@@ -53,4 +66,12 @@ export function RecommendPage() {
       </PageContainer>
     </main>
   );
+}
+
+function getRecommendationAnalyticsProperties(preferences: RecommendationPreferences) {
+  return {
+    selectedVibes: preferences.vibes.join(",") || null,
+    priceLevel: preferences.priceLevel === "any" ? null : preferences.priceLevel,
+    occasion: preferences.occasion,
+  };
 }

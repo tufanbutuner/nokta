@@ -19,7 +19,9 @@ import { Link, useParams } from "react-router-dom";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { VenueMap } from "@/components/map/VenueMap";
 import { ReviewSection } from "@/components/reviews/ReviewSection";
+import { PageMeta } from "@/components/seo/PageMeta";
 import { FavouriteButton } from "@/components/venues/FavouriteButton";
+import { ClaimedVenueBadge } from "@/components/venues/ClaimedVenueBadge";
 import { VenueBadge } from "@/components/venues/VenueBadge";
 import { VenuePrice } from "@/components/venues/VenuePrice";
 import { VenueVerificationBadge } from "@/components/venues/VenueVerificationBadge";
@@ -34,6 +36,7 @@ import { useVenue } from "@/hooks/useVenue";
 import { useVenueReviews } from "@/hooks/useVenueReviews";
 import { useVenues } from "@/hooks/useVenues";
 import { getGoogleMapsDirectionsUrl } from "@/lib/directions";
+import { trackEvent } from "@/lib/analytics";
 import { formatDistanceMiles, getVenueDistanceMiles } from "@/lib/location";
 import { getVenueCurrentStatus } from "@/lib/openingHours";
 import { getVenueRatingSummary } from "@/services/reviewService";
@@ -64,12 +67,17 @@ export function VenuePage() {
   useEffect(() => {
     if (venue) {
       void addRecentlyViewed(venue.id);
+      trackEvent("venue_viewed", getVenueAnalyticsProperties(venue));
     }
   }, [addRecentlyViewed, venue]);
 
   if (isLoading) {
     return (
       <main>
+        <PageMeta
+          title="Venue | Sheesha"
+          description="View opening hours, features, address, reviews and verification details for a Sheesha venue."
+        />
         <PageContainer className="py-20">
           <LoadingState message="Loading venue..." />
         </PageContainer>
@@ -80,6 +88,7 @@ export function VenuePage() {
   if (error) {
     return (
       <main>
+        <PageMeta title="Venue unavailable | Sheesha" description="We could not load this venue right now." />
         <PageContainer className="py-20">
           <ErrorState message={error} />
         </PageContainer>
@@ -90,6 +99,7 @@ export function VenuePage() {
   if (!venue) {
     return (
       <PageContainer className="py-20">
+        <PageMeta title="Venue not found | Sheesha" description="This Sheesha venue could not be found." />
         <h1 className="text-3xl font-semibold">Venue not found</h1>
         <Button asChild className="mt-6">
           <Link reloadDocument to="/discover">Back to discover</Link>
@@ -136,6 +146,12 @@ export function VenuePage() {
 
   return (
     <main className="bg-background">
+      <PageMeta
+        title={`${venue.name} | Sheesha`}
+        description={`View opening hours, features, address, reviews and verification details for ${venue.name}.`}
+        canonicalPath={`/venues/${venue.slug}`}
+        imageUrl={galleryImages[0] ?? getVenueImage(venue)}
+      />
       <PageContainer className="py-6 sm:py-8">
         <Link reloadDocument to="/discover" className="mb-4 inline-flex text-sm font-medium text-muted-foreground hover:text-foreground">
           Back to discover
@@ -144,6 +160,7 @@ export function VenuePage() {
         <section className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
           <div className="min-w-0">
             <div className="mb-3 flex flex-wrap gap-2">
+              {venue.isClaimed ? <ClaimedVenueBadge /> : null}
               {venue.vibes.slice(0, 5).map((vibe) => (
                 <VenueBadge key={vibe} label={vibe} />
               ))}
@@ -153,13 +170,13 @@ export function VenuePage() {
                 <h1 className="text-4xl font-semibold leading-tight sm:text-5xl">{venue.name}</h1>
                 <CurrentStatusBadge status={currentStatus} />
               </div>
-              <FavouriteButton venueId={venue.id} venueName={venue.name} className="h-11 w-11 shrink-0 border lg:hidden" />
+              <FavouriteButton venueId={venue.id} venueName={venue.name} venue={venue} className="h-11 w-11 shrink-0 border lg:hidden" />
             </div>
             <VenueHeaderMeta venue={venue} distanceLabel={distanceLabel} />
           </div>
 
           <div className="hidden items-center gap-2 lg:flex">
-            <FavouriteButton venueId={venue.id} venueName={venue.name} className="h-11 w-11 border" />
+            <FavouriteButton venueId={venue.id} venueName={venue.name} venue={venue} className="h-11 w-11 border" />
           </div>
         </section>
 
@@ -308,10 +325,12 @@ function PhotoCountBadge({ current, total }: { current: number; total: number })
 }
 
 function ActionBar({ venue, shareLabel, onShare }: { venue: Venue; shareLabel: string; onShare: () => void }) {
+  const analyticsProperties = getVenueAnalyticsProperties(venue);
+
   return (
     <section className="mt-6 flex flex-wrap gap-2 rounded-xl border bg-card p-2">
       <Button asChild>
-        <a href={getGoogleMapsDirectionsUrl(venue)} target="_blank" rel="noreferrer">
+        <a href={getGoogleMapsDirectionsUrl(venue)} target="_blank" rel="noreferrer" onClick={() => trackEvent("directions_clicked", analyticsProperties)}>
           <Navigation className="mr-2 h-4 w-4" />
           Get directions
         </a>
@@ -341,14 +360,31 @@ function ActionBar({ venue, shareLabel, onShare }: { venue: Venue; shareLabel: s
       </Button>
       {venue.website ? (
         <Button asChild variant="outline" className="ml-0 lg:ml-auto">
-          <a href={venue.website} target="_blank" rel="noreferrer">
+          <a href={venue.website} target="_blank" rel="noreferrer" onClick={() => trackEvent("website_clicked", analyticsProperties)}>
             Website
+            <ExternalLink className="ml-2 h-4 w-4" />
+          </a>
+        </Button>
+      ) : null}
+      {venue.instagram ? (
+        <Button asChild variant="outline">
+          <a href={venue.instagram} target="_blank" rel="noreferrer" onClick={() => trackEvent("instagram_clicked", analyticsProperties)}>
+            Instagram
             <ExternalLink className="ml-2 h-4 w-4" />
           </a>
         </Button>
       ) : null}
     </section>
   );
+}
+
+function getVenueAnalyticsProperties(venue: Venue) {
+  return {
+    venueId: venue.id,
+    venueSlug: venue.slug,
+    venueName: venue.name,
+    area: venue.area,
+  };
 }
 
 function OverviewTab({ venue, amenities, similarVenues }: { venue: Venue; amenities: string[]; similarVenues: Venue[] }) {

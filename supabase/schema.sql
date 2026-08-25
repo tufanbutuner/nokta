@@ -42,7 +42,15 @@ add column if not exists business_status text not null default 'unknown',
 add column if not exists verification_status text not null default 'unverified',
 add column if not exists last_verified_at timestamp with time zone,
 add column if not exists data_sources jsonb not null default '{}',
-add column if not exists source_notes text;
+add column if not exists source_notes text,
+add column if not exists is_claimed boolean not null default false,
+add column if not exists claimed_by uuid references auth.users(id),
+add column if not exists claimed_at timestamp with time zone,
+add column if not exists partner_tier text not null default 'none',
+add column if not exists monetisation_status text not null default 'not-contacted',
+add column if not exists monetisation_notes text,
+add column if not exists featured_eligible boolean not null default false,
+add column if not exists featured_blocked_reason text;
 
 do $$
 begin
@@ -67,6 +75,32 @@ begin
     alter table public.venues
     add constraint venues_verification_status_check
     check (verification_status in ('unverified', 'partially-verified', 'verified'));
+  end if;
+end $$;
+
+do $$
+begin
+  if not exists (
+    select 1
+    from pg_constraint
+    where conname = 'venues_partner_tier_check'
+  ) then
+    alter table public.venues
+    add constraint venues_partner_tier_check
+    check (partner_tier in ('none', 'starter', 'growth', 'pro'));
+  end if;
+end $$;
+
+do $$
+begin
+  if not exists (
+    select 1
+    from pg_constraint
+    where conname = 'venues_monetisation_status_check'
+  ) then
+    alter table public.venues
+    add constraint venues_monetisation_status_check
+    check (monetisation_status in ('not-contacted', 'contacted', 'interested', 'trial', 'paying', 'churned', 'not-fit'));
   end if;
 end $$;
 

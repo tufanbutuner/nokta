@@ -1,7 +1,10 @@
 import type { VenueRow } from "../types/database";
 import type { Venue, VenueDataSources } from "../types/venue";
+import type { MonetisationStatus, PartnerTier } from "@/types/monetisation";
 
 export function mapVenueRowToVenue(row: VenueRow): Venue {
+  const commercialRow = row as Partial<VenueRow>;
+
   return {
     id: row.id,
     slug: row.slug,
@@ -31,6 +34,16 @@ export function mapVenueRowToVenue(row: VenueRow): Venue {
     lastVerifiedAt: row.last_verified_at,
     dataSources: row.data_sources,
     sourceNotes: row.source_notes,
+    isClaimed: commercialRow.is_claimed ?? false,
+    claimedBy: commercialRow.claimed_by ?? null,
+    claimedAt: commercialRow.claimed_at ?? null,
+    partnerTier: (commercialRow.partner_tier ?? "none") as PartnerTier,
+    monetisationStatus: (commercialRow.monetisation_status ?? "not-contacted") as MonetisationStatus,
+    monetisationNotes: commercialRow.monetisation_notes ?? null,
+    featuredEligible: commercialRow.featured_eligible ?? false,
+    featuredBlockedReason: commercialRow.featured_blocked_reason ?? null,
+    createdAt: row.created_at,
+    updatedAt: row.updated_at,
   };
 }
 
@@ -64,6 +77,14 @@ export function mapVenueToVenueRow(venue: Venue): Omit<VenueRow, "created_at" | 
     last_verified_at: venue.lastVerifiedAt ?? null,
     data_sources: compactDataSources(venue.dataSources),
     source_notes: venue.sourceNotes ?? null,
+    is_claimed: venue.isClaimed,
+    claimed_by: venue.claimedBy,
+    claimed_at: venue.claimedAt,
+    partner_tier: venue.partnerTier,
+    monetisation_status: venue.monetisationStatus,
+    monetisation_notes: venue.monetisationNotes,
+    featured_eligible: venue.featuredEligible,
+    featured_blocked_reason: venue.featuredBlockedReason,
   };
 }
 

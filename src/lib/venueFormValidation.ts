@@ -119,5 +119,15 @@ function mapValuesToValidationVenue(values: VenueFormValues): Venue {
     lastVerifiedAt: values.lastVerifiedAt,
     dataSources: values.dataSources,
     sourceNotes: values.sourceNotes,
+    isClaimed: values.isClaimed,
+    claimedBy: values.claimedBy,
+    claimedAt: values.claimedAt,
+    partnerTier: values.partnerTier,
+    monetisationStatus: values.monetisationStatus,
+    monetisationNotes: values.monetisationNotes,
+    featuredEligible: values.featuredEligible,
+    featuredBlockedReason: values.featuredBlockedReason,
+    createdAt: null,
+    updatedAt: null,
   };
 }

@@ -1,5 +1,8 @@
 import { ExternalLink, Pencil } from "lucide-react";
 import { Link } from "react-router-dom";
+import { ClaimedVenueBadge } from "@/components/admin/monetisation/ClaimedVenueBadge";
+import { MonetisationStatusBadge } from "@/components/admin/monetisation/MonetisationStatusBadge";
+import { PartnerTierBadge } from "@/components/admin/monetisation/PartnerTierBadge";
 import { Card, CardContent } from "@/components/ui/card";
 import { VenueVerificationBadge } from "@/components/venues/VenueVerificationBadge";
 import { getVenueQuality } from "@/lib/venueQuality";
@@ -16,13 +19,16 @@ export function AdminVenueTable({ venues }: { venues: Venue[] }) {
     <Card className="overflow-hidden">
       <CardContent className="p-0">
         <div className="overflow-x-auto">
-          <table className="w-full min-w-[860px] border-collapse text-sm">
+          <table className="w-full min-w-[1080px] border-collapse text-sm">
             <thead className="bg-muted/60 text-left text-xs uppercase text-muted-foreground">
               <tr>
                 <th className="px-4 py-3 font-medium">Venue</th>
                 <th className="px-4 py-3 font-medium">Area</th>
                 <th className="px-4 py-3 font-medium">Postcode</th>
                 <th className="px-4 py-3 font-medium">Verification</th>
+                <th className="px-4 py-3 font-medium">Claimed</th>
+                <th className="px-4 py-3 font-medium">Tier</th>
+                <th className="px-4 py-3 font-medium">Commercial</th>
                 <th className="px-4 py-3 font-medium">Quality</th>
                 <th className="px-4 py-3 font-medium">Actions</th>
               </tr>
@@ -41,6 +47,15 @@ export function AdminVenueTable({ venues }: { venues: Venue[] }) {
                     <td className="px-4 py-4 text-muted-foreground">{venue.postcode}</td>
                     <td className="px-4 py-4">
                       <VenueVerificationBadge status={venue.verificationStatus} />
+                    </td>
+                    <td className="px-4 py-4">
+                      <ClaimedVenueBadge claimed={venue.isClaimed} />
+                    </td>
+                    <td className="px-4 py-4">
+                      <PartnerTierBadge tier={venue.partnerTier} />
+                    </td>
+                    <td className="px-4 py-4">
+                      <MonetisationStatusBadge status={venue.monetisationStatus} />
                     </td>
                     <td className="px-4 py-4">
                       <div className="font-semibold">{quality.score}</div>

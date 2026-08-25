@@ -7,6 +7,7 @@ import { AdminSuggestionNotesDialog } from "@/components/admin/suggestions/Admin
 import type { SuggestionAction } from "@/components/admin/suggestions/AdminSuggestionActions";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { ErrorState } from "@/components/state/ErrorState";
+import { EmptyState } from "@/components/state/EmptyState";
 import { LoadingState } from "@/components/state/LoadingState";
 import { Alert } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
@@ -159,6 +160,9 @@ export function AdminVenueSuggestionsPage() {
             <Button asChild variant="outline">
               <Link to="/admin/reviews">Reviews</Link>
             </Button>
+            <Button asChild variant="outline">
+              <Link to="/admin/monetisation">Monetisation</Link>
+            </Button>
             <Button asChild>
               <Link to="/admin/venues/new">New venue</Link>
             </Button>
@@ -186,12 +190,7 @@ export function AdminVenueSuggestionsPage() {
             onAction={openActionDialog}
           />
         ) : (
-          <Card>
-            <CardContent className="py-12 text-center">
-              <h2 className="text-xl font-semibold">No suggestions match these filters</h2>
-              <p className="mt-2 text-muted-foreground">Adjust the search or status filter to continue review.</p>
-            </CardContent>
-          </Card>
+          <EmptyState title="No suggestions match these filters" description="Adjust the search or status filter to continue review." />
         )}
       </PageContainer>
 

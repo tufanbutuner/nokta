@@ -142,8 +142,8 @@ async function main() {
   const rawSeed = fs.readFileSync(seedPath, "utf-8");
   const venues = JSON.parse(rawSeed) as SeedVenue[];
 
-  if (venues.length !== 19) {
-    throw new Error(`Expected 19 real venues, found ${venues.length}.`);
+  if (venues.length !== 21) {
+    throw new Error(`Expected 21 real venues, found ${venues.length}.`);
   }
 
   const validationErrors = venues.flatMap((venue) => validateVenue(venue).map((error) => `${venue.id || "unknown"}: ${error}`));

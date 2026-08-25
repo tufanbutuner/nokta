@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { MySuggestionsList } from "@/components/suggestions/MySuggestionsList";
 import { SuggestVenueForm } from "@/components/suggestions/SuggestVenueForm";
 import { PageContainer } from "@/components/layout/PageContainer";
+import { PageMeta } from "@/components/seo/PageMeta";
 import { ErrorState } from "@/components/state/ErrorState";
 import { LoadingState } from "@/components/state/LoadingState";
 import { Alert } from "@/components/ui/alert";
@@ -10,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useAuth } from "@/context/AuthContext";
 import { useVenues } from "@/hooks/useVenues";
+import { trackEvent } from "@/lib/analytics";
 import { createVenueSuggestion, getMyVenueSuggestions } from "@/services/venueSuggestionService";
 import type { VenueSuggestion, VenueSuggestionInput } from "@/types/venueSuggestions";
 
@@ -71,6 +73,11 @@ export function SuggestVenuePage() {
       const nextSuggestion = await createVenueSuggestion({ userId: user.id, suggestion });
       setSuggestions((currentSuggestions) => [nextSuggestion, ...currentSuggestions]);
       setSuccessMessage("Thanks — your suggestion has been submitted for review.");
+      trackEvent("suggestion_submitted", {
+        hasWebsite: Boolean(suggestion.website?.trim()),
+        hasInstagram: Boolean(suggestion.instagram?.trim()),
+        hasAddress: Boolean(suggestion.address?.trim()),
+      });
     } catch (caughtError) {
       setError(caughtError instanceof Error ? caughtError.message : "Could not submit suggestion.");
     } finally {
@@ -90,6 +97,11 @@ export function SuggestVenuePage() {
 
   return (
     <main>
+      <PageMeta
+        title="Suggest a Sheesha Venue | Sheesha"
+        description="Know a London shisha spot we are missing? Suggest it for review."
+        canonicalPath="/suggest"
+      />
       <PageContainer className="py-10">
         <div className="mb-8 max-w-3xl">
           <p className="text-sm font-medium text-muted-foreground">Suggest</p>

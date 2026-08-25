@@ -4,8 +4,10 @@ import { SlidersHorizontal, X } from "lucide-react";
 import { SortSelect } from "@/components/discover/SortSelect";
 import { VenueMap } from "@/components/map/VenueMap";
 import { VenueMapResultList } from "@/components/map/VenueMapResultList";
+import { PageMeta } from "@/components/seo/PageMeta";
 import { VenueFilters } from "@/components/search/VenueFilters";
 import { VenueSearch } from "@/components/search/VenueSearch";
+import { EmptyState } from "@/components/state/EmptyState";
 import { ErrorState } from "@/components/state/ErrorState";
 import { LoadingState } from "@/components/state/LoadingState";
 import { VenueGrid } from "@/components/venues/VenueGrid";
@@ -16,6 +18,7 @@ import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { useVenueReviewSummaries } from "@/hooks/useVenueReviewSummaries";
 import { useVenues } from "@/hooks/useVenues";
 import { filterVenues } from "@/lib/filterVenues";
+import { trackEvent } from "@/lib/analytics";
 import { getVenueCurrentStatus, isVenueOpenNow } from "@/lib/openingHours";
 import { sortVenues } from "@/lib/sortVenues";
 import { cn } from "@/lib/utils";
@@ -94,6 +97,7 @@ export function DiscoverPage() {
   }, [searchParams, setSearchParams, userLocation]);
 
   function updateFilters(nextFilters: VenueFilterState) {
+    trackDiscoverFilterChange(filters, nextFilters, sortOption, view);
     setSearchParams(withDiscoverState(filtersToSearchParams(nextFilters), view, requestedSortOption, searchParams.has("sort")), { replace: true });
   }
 
@@ -104,11 +108,17 @@ export function DiscoverPage() {
   function updateSort(nextSort: VenueSortOption) {
     const nextParams = new URLSearchParams(searchParams);
     nextParams.set("sort", nextSort);
+    trackEvent("discover_filter_changed", getDiscoverAnalyticsProperties(filters, nextSort, view));
     setSearchParams(nextParams, { replace: true });
   }
 
   return (
     <main className="bg-background">
+      <PageMeta
+        title="Discover Sheesha Lounges in London | Sheesha"
+        description="Search and filter shisha lounges across London with map view, saved venues and location-aware sorting."
+        canonicalPath="/discover"
+      />
       <div className="mx-auto flex min-h-[calc(100vh-4rem)] max-w-none flex-col px-3 py-3 lg:h-[calc(100vh-4rem)]">
         <div className="grid min-h-0 flex-1 gap-4 lg:grid-cols-[460px_minmax(0,1fr)]">
           <aside className="flex min-h-0 flex-col overflow-hidden rounded-2xl border bg-card shadow-xl shadow-stone-950/5">
@@ -314,9 +324,11 @@ function ActiveFilterChips({
 
 function DiscoverEmptyState({ onClear, compact = false, className }: { onClear: () => void; compact?: boolean; className?: string }) {
   return (
-    <div className={cn("flex flex-col items-center justify-center rounded-lg border bg-card p-10 text-center", className)}>
-      <h2 className={compact ? "text-xl font-semibold" : "text-2xl font-semibold"}>No venues found</h2>
-      <p className="mx-auto mt-3 max-w-md text-muted-foreground">Try removing some filters or searching for another area.</p>
+    <EmptyState
+      title="No venues found"
+      description="Try removing some filters or searching for another area."
+      className={cn("flex flex-col items-center justify-center", compact && "[&_h2]:text-xl", className)}
+    >
       <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
         <Button onClick={onClear}>Clear filters</Button>
         <Button asChild variant="outline">
@@ -325,7 +337,7 @@ function DiscoverEmptyState({ onClear, compact = false, className }: { onClear: 
           </Link>
         </Button>
       </div>
-    </div>
+    </EmptyState>
   );
 }
 
@@ -343,6 +355,26 @@ function withDiscoverState(params: URLSearchParams, view: DiscoverView, sortOpti
   }
 
   return params;
+}
+
+function trackDiscoverFilterChange(
+  currentFilters: VenueFilterState,
+  nextFilters: VenueFilterState,
+  sortOption: VenueSortOption,
+  view: DiscoverView,
+) {
+  const event = currentFilters.query !== nextFilters.query ? "discover_search_used" : "discover_filter_changed";
+  trackEvent(event, getDiscoverAnalyticsProperties(nextFilters, sortOption, view));
+}
+
+function getDiscoverAnalyticsProperties(filters: VenueFilterState, sort: VenueSortOption, view: DiscoverView) {
+  return {
+    query: filters.query.trim() || null,
+    area: filters.area,
+    price: filters.priceLevel === "all" ? null : filters.priceLevel,
+    sort,
+    view,
+  };
 }
 
 function hasActiveAdvancedFilters(filters: VenueFilterState) {

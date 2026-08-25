@@ -1,4 +1,5 @@
 import { PageContainer } from "@/components/layout/PageContainer";
+import { PageMeta } from "@/components/seo/PageMeta";
 import { SavedEmptyState } from "@/components/saved/SavedEmptyState";
 import { ErrorState } from "@/components/state/ErrorState";
 import { LoadingState } from "@/components/state/LoadingState";
@@ -20,6 +21,11 @@ export function SavedPage() {
 
   return (
     <main>
+      <PageMeta
+        title="Saved Venues | Sheesha"
+        description="View your saved Sheesha venues and keep a shortlist of shisha lounges to try in London."
+        canonicalPath="/saved"
+      />
       <PageContainer className="py-12">
         <div className="mb-8">
           <h1 className="text-4xl font-semibold">Saved venues</h1>
