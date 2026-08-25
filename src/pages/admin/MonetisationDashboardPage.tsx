@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { AdminSidebar } from "@/components/admin/AdminSidebar";
+import { AdminPageShell } from "@/components/admin/AdminPageShell";
 import { MonetisationFilters, type MonetisationFilter } from "@/components/admin/monetisation/MonetisationFilters";
 import { MonetisationHeader } from "@/components/admin/monetisation/MonetisationHeader";
 import { MonetisationPipelineFunnel } from "@/components/admin/monetisation/MonetisationPipelineFunnel";
@@ -58,47 +58,42 @@ export function MonetisationDashboardPage() {
   }
 
   return (
-    <main className="min-h-[calc(100vh-4rem)] bg-clay-50 font-['Outfit'] text-clay-600">
-      <div className="flex min-h-[calc(100vh-4rem)]">
-        <AdminSidebar activePath="/admin/monetisation" />
-        <section className="min-w-0 flex-1 px-4 py-5 sm:px-6 lg:px-8">
-          {isLoading ? (
-            <div className="py-20">
-              <LoadingState message="Loading monetisation dashboard..." />
+    <AdminPageShell activePath="/admin/monetisation">
+      {isLoading ? (
+        <div className="py-20">
+          <LoadingState message="Loading monetisation dashboard..." />
+        </div>
+      ) : error ? (
+        <div className="py-20">
+          <ErrorState message={error} />
+        </div>
+      ) : (
+        <div className="grid gap-5 py-5">
+          <MonetisationHeader venueCount={dashboardVenues.length} noteVenueId={filteredVenues[0]?.id} onExport={handleExport} />
+          {actionError ? <Alert className="border-clay-400/20 bg-clay-400/10 text-clay-600">{actionError}</Alert> : null}
+          <MonetisationSummaryCards summary={summary} />
+          <MonetisationPipelineFunnel summary={summary} />
+          <section className="grid gap-4">
+            <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+              <div>
+                <h2 className="font-primary text-xs font-semibold text-clay-600">Commercial pipeline</h2>
+                <p className="mt-1 text-[13px] text-[#8a7e72]">
+                  Showing {filteredVenues.length} of {dashboardVenues.length} venues
+                </p>
+              </div>
+              <MonetisationFilters activeFilter={activeFilter} onChange={setActiveFilter} />
             </div>
-          ) : error ? (
-            <div className="py-20">
-              <ErrorState message={error} />
-            </div>
-          ) : (
-            <div className="mx-auto grid max-w-[1440px] gap-5">
-              <MonetisationHeader venueCount={dashboardVenues.length} noteVenueId={filteredVenues[0]?.id} onExport={handleExport} />
-              {actionError ? <Alert className="border-clay-400/20 bg-clay-400/10 text-clay-600">{actionError}</Alert> : null}
-              <MonetisationSummaryCards summary={summary} />
-              <MonetisationPipelineFunnel summary={summary} />
-              <section className="grid gap-4">
-                <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-                  <div>
-                    <h2 className="font-['Outfit'] text-xs font-semibold text-clay-600">Commercial pipeline</h2>
-                    <p className="mt-1 text-[13px] text-[#8a7e72]">
-                      Showing {filteredVenues.length} of {dashboardVenues.length} venues
-                    </p>
-                  </div>
-                  <MonetisationFilters activeFilter={activeFilter} onChange={setActiveFilter} />
-                </div>
-                {filteredVenues.length ? (
-                  <MonetisationVenueTable venues={filteredVenues} updatingAction={updatingAction} onStatusChange={handleStatusChange} />
-                ) : (
-                  <div className="rounded-xl border border-black/[0.04] bg-white">
-                    <EmptyState title="No venues match this commercial filter" description="Adjust the filter to continue reviewing venue opportunities." />
-                  </div>
-                )}
-              </section>
-            </div>
-          )}
-        </section>
-      </div>
-    </main>
+            {filteredVenues.length ? (
+              <MonetisationVenueTable venues={filteredVenues} updatingAction={updatingAction} onStatusChange={handleStatusChange} />
+            ) : (
+              <div className="rounded-xl border border-black/[0.04] bg-white">
+                <EmptyState title="No venues match this commercial filter" description="Adjust the filter to continue reviewing venue opportunities." />
+              </div>
+            )}
+          </section>
+        </div>
+      )}
+    </AdminPageShell>
   );
 }
 

@@ -1,9 +1,9 @@
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
+import { AdminPageShell } from "@/components/admin/AdminPageShell";
 import { AdminVenueFilters } from "@/components/admin/venues/AdminVenueFilters";
 import { AdminVenueTable } from "@/components/admin/venues/AdminVenueTable";
 import type { AdminVenueQualityFilter, AdminVenueVerificationFilter } from "@/components/admin/venues/AdminVenueFilters";
-import { PageContainer } from "@/components/layout/PageContainer";
 import { ErrorState } from "@/components/state/ErrorState";
 import { EmptyState } from "@/components/state/EmptyState";
 import { LoadingState } from "@/components/state/LoadingState";
@@ -33,27 +33,27 @@ export function AdminVenuesPage() {
 
   if (isLoading) {
     return (
-      <main>
-        <PageContainer className="py-20">
+      <AdminPageShell activePath="/admin/venues">
+        <div className="py-20">
           <LoadingState message="Loading admin venues..." />
-        </PageContainer>
-      </main>
+        </div>
+      </AdminPageShell>
     );
   }
 
   if (error) {
     return (
-      <main>
-        <PageContainer className="py-20">
+      <AdminPageShell activePath="/admin/venues">
+        <div className="py-20">
           <ErrorState message={error} />
-        </PageContainer>
-      </main>
+        </div>
+      </AdminPageShell>
     );
   }
 
   return (
-    <main>
-      <PageContainer className="py-10">
+    <AdminPageShell activePath="/admin/venues">
+      <div className="py-5">
         <div className="mb-8 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
           <div>
             <p className="text-sm font-medium text-muted-foreground">Internal</p>
@@ -61,18 +61,6 @@ export function AdminVenuesPage() {
             <p className="mt-3 max-w-2xl text-muted-foreground">Create venues, edit catalogue details and maintain verification data.</p>
           </div>
           <div className="flex flex-col gap-2 sm:flex-row">
-            <Button asChild variant="outline">
-              <Link to="/admin/data-quality">Data quality</Link>
-            </Button>
-            <Button asChild variant="outline">
-              <Link to="/admin/reviews">Reviews</Link>
-            </Button>
-            <Button asChild variant="outline">
-              <Link to="/admin/suggestions">Suggestions</Link>
-            </Button>
-            <Button asChild variant="outline">
-              <Link to="/admin/monetisation">Monetisation</Link>
-            </Button>
             <Button asChild>
               <Link to="/admin/venues/new">New venue</Link>
             </Button>
@@ -101,7 +89,7 @@ export function AdminVenuesPage() {
         ) : (
           <EmptyState title="No venues match these filters" description="Adjust the search or filters to continue managing venues." />
         )}
-      </PageContainer>
-    </main>
+      </div>
+    </AdminPageShell>
   );
 }

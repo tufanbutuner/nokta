@@ -1,11 +1,10 @@
 import { useMemo, useState } from "react";
 import { Download } from "lucide-react";
-import { Link } from "react-router-dom";
+import { AdminPageShell } from "@/components/admin/AdminPageShell";
 import { DataQualityEmptyState } from "@/components/admin/data-quality/DataQualityEmptyState";
 import { DataQualityFilters } from "@/components/admin/data-quality/DataQualityFilters";
 import { DataQualitySummaryCards } from "@/components/admin/data-quality/DataQualitySummaryCards";
 import { DataQualityVenueTable } from "@/components/admin/data-quality/DataQualityVenueTable";
-import { PageContainer } from "@/components/layout/PageContainer";
 import { ErrorState } from "@/components/state/ErrorState";
 import { LoadingState } from "@/components/state/LoadingState";
 import { Button } from "@/components/ui/button";
@@ -22,27 +21,27 @@ export function DataQualityPage() {
 
   if (isLoading) {
     return (
-      <main>
-        <PageContainer className="py-20">
+      <AdminPageShell activePath="/admin/data-quality">
+        <div className="py-20">
           <LoadingState message="Loading data quality..." />
-        </PageContainer>
-      </main>
+        </div>
+      </AdminPageShell>
     );
   }
 
   if (error) {
     return (
-      <main>
-        <PageContainer className="py-20">
+      <AdminPageShell activePath="/admin/data-quality">
+        <div className="py-20">
           <ErrorState message={error} />
-        </PageContainer>
-      </main>
+        </div>
+      </AdminPageShell>
     );
   }
 
   return (
-    <main>
-      <PageContainer className="py-10">
+    <AdminPageShell activePath="/admin/data-quality">
+      <div className="py-5">
         <div className="mb-8 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
           <div>
             <p className="text-sm font-medium text-muted-foreground">Internal</p>
@@ -52,18 +51,6 @@ export function DataQualityPage() {
             </p>
           </div>
           <div className="flex flex-col gap-2 sm:flex-row">
-            <Button asChild variant="outline">
-              <Link to="/admin/venues">Manage venues</Link>
-            </Button>
-            <Button asChild variant="outline">
-              <Link to="/admin/reviews">Reviews</Link>
-            </Button>
-            <Button asChild variant="outline">
-              <Link to="/admin/suggestions">Suggestions</Link>
-            </Button>
-            <Button asChild variant="outline">
-              <Link to="/admin/monetisation">Monetisation</Link>
-            </Button>
             <Button type="button" variant="outline" onClick={() => exportQualityCsv(venues)} disabled={!venues.length}>
               <Download className="mr-2 h-4 w-4" />
               Export issues CSV
@@ -86,8 +73,8 @@ export function DataQualityPage() {
 
           {filteredVenues.length ? <DataQualityVenueTable venues={filteredVenues} /> : <DataQualityEmptyState />}
         </section>
-      </PageContainer>
-    </main>
+      </div>
+    </AdminPageShell>
   );
 }
 

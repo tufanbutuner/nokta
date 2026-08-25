@@ -1,11 +1,11 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
+import { AdminPageShell } from "@/components/admin/AdminPageShell";
 import { AdminSuggestionFilters, type AdminSuggestionStatusFilter } from "@/components/admin/suggestions/AdminSuggestionFilters";
 import { AdminSuggestionSummaryCards } from "@/components/admin/suggestions/AdminSuggestionSummaryCards";
 import { AdminSuggestionTable } from "@/components/admin/suggestions/AdminSuggestionTable";
 import { AdminSuggestionNotesDialog } from "@/components/admin/suggestions/AdminSuggestionNotesDialog";
 import type { SuggestionAction } from "@/components/admin/suggestions/AdminSuggestionActions";
-import { PageContainer } from "@/components/layout/PageContainer";
 import { ErrorState } from "@/components/state/ErrorState";
 import { EmptyState } from "@/components/state/EmptyState";
 import { LoadingState } from "@/components/state/LoadingState";
@@ -126,27 +126,27 @@ export function AdminVenueSuggestionsPage() {
 
   if (isLoading) {
     return (
-      <main>
-        <PageContainer className="py-20">
+      <AdminPageShell activePath="/admin/suggestions">
+        <div className="py-20">
           <LoadingState message="Loading venue suggestions..." />
-        </PageContainer>
-      </main>
+        </div>
+      </AdminPageShell>
     );
   }
 
   if (error) {
     return (
-      <main>
-        <PageContainer className="py-20">
+      <AdminPageShell activePath="/admin/suggestions">
+        <div className="py-20">
           <ErrorState message={error} />
-        </PageContainer>
-      </main>
+        </div>
+      </AdminPageShell>
     );
   }
 
   return (
-    <main>
-      <PageContainer className="py-10">
+    <AdminPageShell activePath="/admin/suggestions">
+      <div className="py-5">
         <div className="mb-8 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
           <div>
             <p className="text-sm font-medium text-muted-foreground">Internal</p>
@@ -154,15 +154,6 @@ export function AdminVenueSuggestionsPage() {
             <p className="mt-3 max-w-2xl text-muted-foreground">Review missing venues submitted by signed-in users before adding them to Sheesha.</p>
           </div>
           <div className="flex flex-col gap-2 sm:flex-row">
-            <Button asChild variant="outline">
-              <Link to="/admin/venues">Manage venues</Link>
-            </Button>
-            <Button asChild variant="outline">
-              <Link to="/admin/reviews">Reviews</Link>
-            </Button>
-            <Button asChild variant="outline">
-              <Link to="/admin/monetisation">Monetisation</Link>
-            </Button>
             <Button asChild>
               <Link to="/admin/venues/new">New venue</Link>
             </Button>
@@ -192,7 +183,7 @@ export function AdminVenueSuggestionsPage() {
         ) : (
           <EmptyState title="No suggestions match these filters" description="Adjust the search or status filter to continue review." />
         )}
-      </PageContainer>
+      </div>
 
       <AdminSuggestionNotesDialog
         open={Boolean(pendingAction && pendingSuggestion)}
@@ -206,6 +197,6 @@ export function AdminVenueSuggestionsPage() {
         }}
         onSubmit={handleSuggestionSubmit}
       />
-    </main>
+    </AdminPageShell>
   );
 }

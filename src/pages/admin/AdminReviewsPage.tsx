@@ -1,16 +1,14 @@
 import { useEffect, useMemo, useState } from "react";
-import { Link } from "react-router-dom";
+import { AdminPageShell } from "@/components/admin/AdminPageShell";
 import { AdminReviewFilters, type AdminReviewStatusFilter } from "@/components/admin/reviews/AdminReviewFilters";
 import { AdminReviewSummaryCards } from "@/components/admin/reviews/AdminReviewSummaryCards";
 import { AdminReviewTable } from "@/components/admin/reviews/AdminReviewTable";
 import { ModerationNotesDialog } from "@/components/admin/reviews/ModerationNotesDialog";
 import type { ModerationAction } from "@/components/admin/reviews/AdminReviewActions";
-import { PageContainer } from "@/components/layout/PageContainer";
 import { ErrorState } from "@/components/state/ErrorState";
 import { EmptyState } from "@/components/state/EmptyState";
 import { LoadingState } from "@/components/state/LoadingState";
 import { Alert } from "@/components/ui/alert";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useAuth } from "@/context/AuthContext";
 import { useVenues } from "@/hooks/useVenues";
@@ -128,46 +126,32 @@ export function AdminReviewsPage() {
 
   if (isLoading || venuesLoading) {
     return (
-      <main>
-        <PageContainer className="py-20">
+      <AdminPageShell activePath="/admin/reviews">
+        <div className="py-20">
           <LoadingState message="Loading review moderation..." />
-        </PageContainer>
-      </main>
+        </div>
+      </AdminPageShell>
     );
   }
 
   if (error || venuesError) {
     return (
-      <main>
-        <PageContainer className="py-20">
+      <AdminPageShell activePath="/admin/reviews">
+        <div className="py-20">
           <ErrorState message={error ?? venuesError ?? undefined} />
-        </PageContainer>
-      </main>
+        </div>
+      </AdminPageShell>
     );
   }
 
   return (
-    <main>
-      <PageContainer className="py-10">
+    <AdminPageShell activePath="/admin/reviews">
+      <div className="py-5">
         <div className="mb-8 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
           <div>
             <p className="text-sm font-medium text-muted-foreground">Internal</p>
             <h1 className="mt-2 text-4xl font-semibold">Review moderation</h1>
             <p className="mt-3 max-w-2xl text-muted-foreground">Hide, republish, flag and soft-delete user reviews without losing the record.</p>
-          </div>
-          <div className="flex flex-col gap-2 sm:flex-row">
-            <Button asChild variant="outline">
-              <Link to="/admin/venues">Manage venues</Link>
-            </Button>
-            <Button asChild variant="outline">
-              <Link to="/admin/data-quality">Data quality</Link>
-            </Button>
-            <Button asChild variant="outline">
-              <Link to="/admin/suggestions">Suggestions</Link>
-            </Button>
-            <Button asChild variant="outline">
-              <Link to="/admin/monetisation">Monetisation</Link>
-            </Button>
           </div>
         </div>
 
@@ -195,7 +179,7 @@ export function AdminReviewsPage() {
         ) : (
           <EmptyState title="No reviews match these filters" description="Adjust the search or status filter to continue moderation." />
         )}
-      </PageContainer>
+      </div>
 
       <ModerationNotesDialog
         open={Boolean(pendingAction && pendingReview)}
@@ -209,6 +193,6 @@ export function AdminReviewsPage() {
         }}
         onSubmit={handleModerationSubmit}
       />
-    </main>
+    </AdminPageShell>
   );
 }

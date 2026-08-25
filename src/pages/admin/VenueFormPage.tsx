@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link, useNavigate, useParams, useSearchParams } from "react-router-dom";
+import { AdminPageShell } from "@/components/admin/AdminPageShell";
 import { VenueForm } from "@/components/admin/venues/VenueForm";
-import { PageContainer } from "@/components/layout/PageContainer";
 import { ErrorState } from "@/components/state/ErrorState";
 import { LoadingState } from "@/components/state/LoadingState";
 import { Alert } from "@/components/ui/alert";
@@ -161,30 +161,30 @@ export function VenueFormPage({ mode }: { mode: "new" | "edit" }) {
 
   if (isLoading) {
     return (
-      <main>
-        <PageContainer className="py-20">
+      <AdminPageShell activePath="/admin/venues">
+        <div className="py-20">
           <LoadingState message="Loading venue form..." />
-        </PageContainer>
-      </main>
+        </div>
+      </AdminPageShell>
     );
   }
 
   if (loadError || !initialValues) {
     return (
-      <main>
-        <PageContainer className="py-20">
+      <AdminPageShell activePath="/admin/venues">
+        <div className="py-20">
           <ErrorState message={loadError ?? "Could not load venue form."} />
           <Button asChild className="mt-6">
             <Link to="/admin/venues">Back to venues</Link>
           </Button>
-        </PageContainer>
-      </main>
+        </div>
+      </AdminPageShell>
     );
   }
 
   return (
-    <main>
-      <PageContainer className="py-10">
+    <AdminPageShell activePath="/admin/venues">
+      <div className="py-5">
         <div className="mb-8">
           <p className="text-sm font-medium text-muted-foreground">Internal</p>
           <h1 className="mt-2 text-4xl font-semibold">{title}</h1>
@@ -206,7 +206,7 @@ export function VenueFormPage({ mode }: { mode: "new" | "edit" }) {
           saveError={saveError}
           onSubmit={handleSubmit}
         />
-      </PageContainer>
-    </main>
+      </div>
+    </AdminPageShell>
   );
 }

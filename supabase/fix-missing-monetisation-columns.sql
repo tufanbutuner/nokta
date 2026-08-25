@@ -22,8 +22,6 @@ begin
   end if;
 end $$;
 
-notify pgrst, 'reload schema';
-
 do $$
 begin
   if not exists (
@@ -47,3 +45,21 @@ begin
     );
   end if;
 end $$;
+
+notify pgrst, 'reload schema';
+
+select column_name
+from information_schema.columns
+where table_schema = 'public'
+  and table_name = 'venues'
+  and column_name in (
+    'is_claimed',
+    'claimed_by',
+    'claimed_at',
+    'partner_tier',
+    'monetisation_status',
+    'monetisation_notes',
+    'featured_eligible',
+    'featured_blocked_reason'
+  )
+order by column_name;
