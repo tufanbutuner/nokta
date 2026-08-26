@@ -2,9 +2,28 @@
 
 Use this before making a city active in Sheesha.
 
+## Launch status
+
+Launched cities:
+
+- London
+- Birmingham
+- Manchester
+- Leicester
+
+Coming soon:
+
+- Bradford
+- Leeds
+- Liverpool
+- Sheffield
+- Nottingham
+- Glasgow
+
 ## Minimum launch bar
 
-- At least 8 venues
+- Target at least 8 venues
+- Minimum 6 strong venues for smaller cities, with data gaps documented
 - All venues have `country` and `city`
 - All venues have address and postcode
 - All venues have valid coordinates

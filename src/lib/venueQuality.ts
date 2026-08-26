@@ -40,8 +40,10 @@ export interface VenueQualitySummaryByCity {
   city: string;
   totalVenues: number;
   verifiedCount: number;
+  partiallyVerifiedCount: number;
   missingOpeningHoursCount: number;
   missingImagesCount: number;
+  missingOfficialSourceCount: number;
   poorQualityCount: number;
 }
 
@@ -227,15 +229,19 @@ export function getVenueQualitySummaryByCity(venues: Venue[]): VenueQualitySumma
         city: venue.city,
         totalVenues: 0,
         verifiedCount: 0,
+        partiallyVerifiedCount: 0,
         missingOpeningHoursCount: 0,
         missingImagesCount: 0,
+        missingOfficialSourceCount: 0,
         poorQualityCount: 0,
       };
 
     summary.totalVenues += 1;
     summary.verifiedCount += venue.verificationStatus === "verified" ? 1 : 0;
+    summary.partiallyVerifiedCount += venue.verificationStatus === "partially-verified" ? 1 : 0;
     summary.missingOpeningHoursCount += hasOpeningHours(venue) ? 0 : 1;
     summary.missingImagesCount += venue.images.length ? 0 : 1;
+    summary.missingOfficialSourceCount += hasOfficialSource(venue) ? 0 : 1;
     summary.poorQualityCount += quality.level === "poor" ? 1 : 0;
     summaries.set(venue.city, summary);
   }

@@ -24,7 +24,7 @@ export function RecommendationResults({ results, city, onRestart }: { results: R
       </div>
       {visibleResults.length < 3 ? (
         <Alert className="mb-5">
-          We found fewer matches in {city}. Try removing a few filters or exploring all {city} venues.
+          We found fewer matches in this city. Try removing a few filters or exploring all venues nearby.
         </Alert>
       ) : null}
       <div className="space-y-5">

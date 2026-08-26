@@ -62,8 +62,10 @@ const testimonials = [
 ];
 
 const CITY_DESCRIPTIONS: Record<string, string> = {
-  London: "Explore shisha lounges across London, from central late-night spots to neighbourhood terraces.",
-  Birmingham: "Explore shisha lounges across Birmingham, from central spots to neighbourhood lounges.",
+  London: "Explore shisha lounges across London by area, vibe, price and distance.",
+  Birmingham: "Find shisha lounges across Birmingham, from central spots to neighbourhood lounges.",
+  Manchester: "Discover shisha lounges across Manchester for casual nights, groups and late plans.",
+  Leicester: "Browse shisha lounges across Leicester by vibe, features and location.",
 };
 
 export function HomePage() {
@@ -95,7 +97,7 @@ export function HomePage() {
       <section className="border-b">
         <PageContainer className="py-12 sm:py-16 lg:py-20">
           <div className="mx-auto max-w-4xl text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-muted-foreground">London and Birmingham live</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-muted-foreground">Four UK cities live</p>
             <h1 className="mx-auto mt-5 max-w-4xl text-5xl font-semibold leading-[0.95] sm:text-6xl lg:text-7xl">
               Find your perfect <span className="text-clay-accent">sheesha spot</span>
             </h1>

@@ -6,7 +6,7 @@ Sheesha is expanding from a London-first product into a UK-wide shisha venue dis
 
 - Use transition copy: "Discover shisha lounges in London and across the UK."
 - Avoid claiming full UK coverage until venue depth exists outside London.
-- Keep London and Birmingham active, with other cities marked as coming soon until verified venue coverage is ready.
+- Keep London, Birmingham, Manchester and Leicester active, with other cities marked as coming soon until verified venue coverage is ready.
 
 ## Initial target cities
 

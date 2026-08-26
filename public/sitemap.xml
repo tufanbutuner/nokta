@@ -34,13 +34,25 @@
     <loc>https://sheesha-lovat.vercel.app/cities/birmingham</loc>
   </url>
   <url>
+    <loc>https://sheesha-lovat.vercel.app/cities/manchester</loc>
+  </url>
+  <url>
+    <loc>https://sheesha-lovat.vercel.app/cities/leicester</loc>
+  </url>
+  <url>
     <loc>https://sheesha-lovat.vercel.app/venues/after-hours</loc>
+  </url>
+  <url>
+    <loc>https://sheesha-lovat.vercel.app/venues/al-feena-leicester</loc>
   </url>
   <url>
     <loc>https://sheesha-lovat.vercel.app/venues/amisa-lounge</loc>
   </url>
   <url>
     <loc>https://sheesha-lovat.vercel.app/venues/argeela</loc>
+  </url>
+  <url>
+    <loc>https://sheesha-lovat.vercel.app/venues/avan-lounge-manchester</loc>
   </url>
   <url>
     <loc>https://sheesha-lovat.vercel.app/venues/baha-lounge</loc>
@@ -56,6 +68,9 @@
   </url>
   <url>
     <loc>https://sheesha-lovat.vercel.app/venues/broski-lounge</loc>
+  </url>
+  <url>
+    <loc>https://sheesha-lovat.vercel.app/venues/cascade-leicester</loc>
   </url>
   <url>
     <loc>https://sheesha-lovat.vercel.app/venues/coco-canary-wharf</loc>
@@ -79,6 +94,9 @@
     <loc>https://sheesha-lovat.vercel.app/venues/globe-lounge-forest-gate</loc>
   </url>
   <url>
+    <loc>https://sheesha-lovat.vercel.app/venues/habbibi-manchester</loc>
+  </url>
+  <url>
     <loc>https://sheesha-lovat.vercel.app/venues/huqqa-lounge-park-royal</loc>
   </url>
   <url>
@@ -88,7 +106,16 @@
     <loc>https://sheesha-lovat.vercel.app/venues/luxor-lounge-birmingham</loc>
   </url>
   <url>
+    <loc>https://sheesha-lovat.vercel.app/venues/mabel-leicester</loc>
+  </url>
+  <url>
+    <loc>https://sheesha-lovat.vercel.app/venues/mabrouk-manchester</loc>
+  </url>
+  <url>
     <loc>https://sheesha-lovat.vercel.app/venues/majesty-lounge</loc>
+  </url>
+  <url>
+    <loc>https://sheesha-lovat.vercel.app/venues/majlis-leicester</loc>
   </url>
   <url>
     <loc>https://sheesha-lovat.vercel.app/venues/noya-london</loc>
@@ -98,6 +125,9 @@
   </url>
   <url>
     <loc>https://sheesha-lovat.vercel.app/venues/rotana-shisha-lounge</loc>
+  </url>
+  <url>
+    <loc>https://sheesha-lovat.vercel.app/venues/rozana-manchester</loc>
   </url>
   <url>
     <loc>https://sheesha-lovat.vercel.app/venues/sapores</loc>
@@ -112,6 +142,15 @@
     <loc>https://sheesha-lovat.vercel.app/venues/shishko-lounge</loc>
   </url>
   <url>
+    <loc>https://sheesha-lovat.vercel.app/venues/sky-175-manchester</loc>
+  </url>
+  <url>
+    <loc>https://sheesha-lovat.vercel.app/venues/sky-lounge-leicester</loc>
+  </url>
+  <url>
+    <loc>https://sheesha-lovat.vercel.app/venues/smouk-leicester</loc>
+  </url>
+  <url>
     <loc>https://sheesha-lovat.vercel.app/venues/table-11-hounslow</loc>
   </url>
   <url>
@@ -124,9 +163,18 @@
     <loc>https://sheesha-lovat.vercel.app/venues/triumph-resto-lounge</loc>
   </url>
   <url>
+    <loc>https://sheesha-lovat.vercel.app/venues/two-apples-shisha-manchester</loc>
+  </url>
+  <url>
     <loc>https://sheesha-lovat.vercel.app/venues/u-wish-lounge</loc>
   </url>
   <url>
     <loc>https://sheesha-lovat.vercel.app/venues/waterfront-london-vauxhall</loc>
+  </url>
+  <url>
+    <loc>https://sheesha-lovat.vercel.app/venues/z-lounge-manchester</loc>
+  </url>
+  <url>
+    <loc>https://sheesha-lovat.vercel.app/venues/zouk-manchester</loc>
   </url>
 </urlset>

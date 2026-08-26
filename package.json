@@ -10,7 +10,9 @@
     "generate:sitemap": "tsx scripts/generate-sitemap.ts",
     "seed:demo-venues": "tsx scripts/seed-venues.ts",
     "seed:venues": "tsx scripts/seed-real-venues.ts",
-    "seed:venues:birmingham": "tsx scripts/seed-real-venues.ts data/birmingham-venues.seed.json"
+    "seed:venues:birmingham": "tsx scripts/seed-real-venues.ts data/birmingham-venues.seed.json",
+    "seed:venues:manchester": "tsx scripts/seed-real-venues.ts data/manchester-venues.seed.json",
+    "seed:venues:leicester": "tsx scripts/seed-real-venues.ts data/leicester-venues.seed.json"
   },
   "dependencies": {
     "@radix-ui/react-slot": "1.3.3",

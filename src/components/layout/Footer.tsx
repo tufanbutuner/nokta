@@ -8,7 +8,7 @@ export function Footer() {
         <div className="max-w-2xl">
           <p className="font-brand text-xl font-bold tracking-[-0.5px] text-foreground">sheesh.</p>
           <p className="mt-3 leading-6">
-            Sheesha helps people discover shisha lounges across London and Birmingham, with more UK cities coming next. Venue details can change, so always check directly before travelling or booking.
+            Sheesha helps people discover shisha lounges across London, Birmingham, Manchester and Leicester, with more UK cities coming next. Venue details can change, so always check directly before travelling or booking.
           </p>
         </div>
         <nav className="flex flex-wrap gap-x-5 gap-y-2 lg:justify-end" aria-label="Footer">

@@ -81,6 +81,10 @@ export function DataQualityPage() {
                 <div className="font-semibold">{item.city}</div>
                 <div className="mt-2 text-muted-foreground">{item.totalVenues} venues</div>
                 <div className="mt-1 text-muted-foreground">{item.verifiedCount} verified</div>
+                <div className="mt-1 text-muted-foreground">{item.partiallyVerifiedCount} partially verified</div>
+                <div className="mt-1 text-muted-foreground">{item.missingOpeningHoursCount} missing hours</div>
+                <div className="mt-1 text-muted-foreground">{item.missingImagesCount} missing images</div>
+                <div className="mt-1 text-muted-foreground">{item.missingOfficialSourceCount} missing official source</div>
                 <div className="mt-1 text-muted-foreground">{item.poorQualityCount} poor quality</div>
               </div>
             ))}

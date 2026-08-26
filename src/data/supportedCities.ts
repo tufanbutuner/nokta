@@ -26,7 +26,7 @@ export const SUPPORTED_CITIES: SupportedCity[] = [
     latitude: 53.4808,
     longitude: -2.2426,
     defaultZoom: 11,
-    isActive: false,
+    isActive: true,
   },
   {
     name: "Leicester",
@@ -35,7 +35,7 @@ export const SUPPORTED_CITIES: SupportedCity[] = [
     latitude: 52.6369,
     longitude: -1.1398,
     defaultZoom: 12,
-    isActive: false,
+    isActive: true,
   },
   {
     name: "Bradford",
