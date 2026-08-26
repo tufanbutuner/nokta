@@ -17,7 +17,7 @@ export const SUPPORTED_CITIES: SupportedCity[] = [
     latitude: 52.4862,
     longitude: -1.8904,
     defaultZoom: 11,
-    isActive: false,
+    isActive: true,
   },
   {
     name: "Manchester",

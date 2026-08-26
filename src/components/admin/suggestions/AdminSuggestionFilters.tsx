@@ -1,3 +1,4 @@
+import { CitySelector } from "@/components/search/CitySelector";
 import { Input } from "@/components/ui/input";
 import { Select } from "@/components/ui/select";
 import type { VenueSuggestionStatus } from "@/types/venueSuggestions";
@@ -6,23 +7,28 @@ export type AdminSuggestionStatusFilter = "all" | VenueSuggestionStatus;
 
 export function AdminSuggestionFilters({
   query,
+  city,
   status,
   onQueryChange,
+  onCityChange,
   onStatusChange,
 }: {
   query: string;
+  city: string;
   status: AdminSuggestionStatusFilter;
   onQueryChange: (query: string) => void;
+  onCityChange: (city: string) => void;
   onStatusChange: (status: AdminSuggestionStatusFilter) => void;
 }) {
   return (
-    <div className="grid gap-3 lg:grid-cols-[1fr_220px]">
+    <div className="grid gap-3 lg:grid-cols-[1fr_200px_220px]">
       <Input
         value={query}
         onChange={(event) => onQueryChange(event.target.value)}
-        placeholder="Search by venue name, area, address or notes"
+        placeholder="Search by venue name, city, area, address or notes"
         aria-label="Search suggestions"
       />
+      <CitySelector id="admin-suggestions-city-filter" value={city} onChange={onCityChange} />
       <Select
         value={status}
         onChange={(event) => onStatusChange(event.target.value as AdminSuggestionStatusFilter)}

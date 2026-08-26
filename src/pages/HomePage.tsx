@@ -12,6 +12,7 @@ import { Input } from "@/components/ui/input";
 import { ErrorState } from "@/components/state/ErrorState";
 import { LoadingState } from "@/components/state/LoadingState";
 import { useVenues } from "@/hooks/useVenues";
+import { DEFAULT_CITY, getActiveCities } from "@/lib/cities";
 import { getVenueImage } from "@/lib/venueImages";
 import { getVenueCurrentStatus } from "@/lib/openingHours";
 import type { Venue } from "@/types/venue";
@@ -60,12 +61,18 @@ const testimonials = [
   },
 ];
 
+const CITY_DESCRIPTIONS: Record<string, string> = {
+  London: "Explore shisha lounges across London, from central late-night spots to neighbourhood terraces.",
+  Birmingham: "Explore shisha lounges across Birmingham, from central spots to neighbourhood lounges.",
+};
+
 export function HomePage() {
   const navigate = useNavigate();
   const [query, setQuery] = useState("");
   const { venues, isLoading, error } = useVenues();
   const featured = venues.slice(0, 4);
-  const areaCards = useMemo(() => getAreaCards(venues), [venues]);
+  const areaCards = useMemo(() => getAreaCards(venues, DEFAULT_CITY), [venues]);
+  const cityCards = useMemo(() => getCityCards(venues), [venues]);
 
   function handleSearchSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -88,7 +95,7 @@ export function HomePage() {
       <section className="border-b">
         <PageContainer className="py-12 sm:py-16 lg:py-20">
           <div className="mx-auto max-w-4xl text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-muted-foreground">London first, UK next</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-muted-foreground">London and Birmingham live</p>
             <h1 className="mx-auto mt-5 max-w-4xl text-5xl font-semibold leading-[0.95] sm:text-6xl lg:text-7xl">
               Find your perfect <span className="text-clay-accent">sheesha spot</span>
             </h1>
@@ -182,23 +189,29 @@ export function HomePage() {
         <section>
           <div className="mb-6">
             <p className="text-sm text-clay-accent">Explore by city</p>
-            <h2 className="mt-1 text-3xl font-semibold">Starting in London, expanding city by city</h2>
+            <h2 className="mt-1 text-3xl font-semibold">Explore city by city</h2>
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
-            <Link
-              to="/cities/london"
-              className="group flex items-center justify-between rounded-xl border bg-card p-5 transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-stone-950/5"
-            >
-              <span>
-                <span className="block font-semibold">London</span>
-                <span className="mt-1 block text-sm text-muted-foreground">{venues.length} venues listed</span>
-              </span>
-              <ChevronRight className="h-4 w-4 text-muted-foreground transition group-hover:translate-x-0.5 group-hover:text-foreground" />
-            </Link>
-            <div className="rounded-xl border bg-card p-5">
-              <span className="block font-semibold">More UK cities coming soon</span>
-              <span className="mt-1 block text-sm text-muted-foreground">Birmingham, Manchester, Leicester and more are being prepared.</span>
-            </div>
+            {cityCards.map((city) => (
+              <article key={city.slug} className="rounded-xl border bg-card p-5 transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-stone-950/5">
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <h3 className="font-semibold">{city.name}</h3>
+                    <p className="mt-1 text-sm text-muted-foreground">{city.count === 1 ? "1 venue listed" : `${city.count} venues listed`}</p>
+                  </div>
+                  <ChevronRight className="mt-1 h-4 w-4 text-muted-foreground" />
+                </div>
+                <p className="mt-4 text-sm leading-6 text-muted-foreground">{city.description}</p>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  <Button asChild variant="outline" size="sm">
+                    <Link to={`/cities/${city.slug}`}>City page</Link>
+                  </Button>
+                  <Button asChild size="sm">
+                    <Link to={`/discover?city=${encodeURIComponent(city.name)}`}>Discover</Link>
+                  </Button>
+                </div>
+              </article>
+            ))}
           </div>
         </section>
 
@@ -339,8 +352,8 @@ function formatLandingStatus(status: ReturnType<typeof getVenueCurrentStatus>) {
   return "Hours TBC";
 }
 
-function getAreaCards(venues: Venue[]) {
-  const counts = venues.reduce<Record<string, number>>((areas, venue) => {
+function getAreaCards(venues: Venue[], city: string) {
+  const counts = venues.filter((venue) => venue.city === city).reduce<Record<string, number>>((areas, venue) => {
     areas[venue.area] = (areas[venue.area] ?? 0) + 1;
     return areas;
   }, {});
@@ -360,4 +373,16 @@ function getAreaCards(venues: Venue[]) {
         { name: "Walthamstow", count: 3 },
         { name: "Bermondsey", count: 6 },
       ];
+}
+
+function getCityCards(venues: Venue[]) {
+  return getActiveCities().map((city) => {
+    const count = venues.filter((venue) => venue.country === city.country && venue.city === city.name).length;
+
+    return {
+      ...city,
+      count,
+      description: CITY_DESCRIPTIONS[city.name] ?? `Explore shisha lounges across ${city.name}.`,
+    };
+  });
 }

@@ -1,13 +1,14 @@
 import { RecommendationEmptyState } from "@/components/recommendations/RecommendationEmptyState";
 import { RecommendationResultCard } from "@/components/recommendations/RecommendationResultCard";
+import { Alert } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import type { RecommendedVenue } from "@/types/recommendations";
 
-export function RecommendationResults({ results, onRestart }: { results: RecommendedVenue[]; onRestart: () => void }) {
+export function RecommendationResults({ results, city, onRestart }: { results: RecommendedVenue[]; city: string; onRestart: () => void }) {
   const visibleResults = results.filter((result) => result.score > 0).slice(0, 6);
 
   if (visibleResults.length === 0) {
-    return <RecommendationEmptyState onRestart={onRestart} />;
+    return <RecommendationEmptyState city={city} onRestart={onRestart} />;
   }
 
   return (
@@ -21,6 +22,11 @@ export function RecommendationResults({ results, onRestart }: { results: Recomme
           Edit preferences
         </Button>
       </div>
+      {visibleResults.length < 3 ? (
+        <Alert className="mb-5">
+          We found fewer matches in {city}. Try removing a few filters or exploring all {city} venues.
+        </Alert>
+      ) : null}
       <div className="space-y-5">
         {visibleResults.map((recommendation, index) => (
           <RecommendationResultCard key={recommendation.venue.id} recommendation={recommendation} rank={index + 1} />

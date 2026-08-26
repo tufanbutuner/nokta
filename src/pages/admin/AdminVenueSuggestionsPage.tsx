@@ -13,6 +13,7 @@ import { Alert } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useAuth } from "@/context/AuthContext";
+import { DEFAULT_CITY } from "@/lib/cities";
 import { getAdminVenueSuggestions, updateVenueSuggestionStatus } from "@/services/adminVenueSuggestionService";
 import type { VenueSuggestion, VenueSuggestionStatus } from "@/types/venueSuggestions";
 
@@ -28,6 +29,7 @@ export function AdminVenueSuggestionsPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [query, setQuery] = useState("");
+  const [city, setCity] = useState(DEFAULT_CITY);
   const [status, setStatus] = useState<AdminSuggestionStatusFilter>("all");
   const [pendingSuggestionId, setPendingSuggestionId] = useState<string | null>(null);
   const [pendingAction, setPendingAction] = useState<SuggestionAction | null>(null);
@@ -37,6 +39,7 @@ export function AdminVenueSuggestionsPage() {
     const normalizedQuery = query.trim().toLowerCase();
 
     return suggestions.filter((suggestion) => {
+      const matchesCity = suggestion.city === city;
       const matchesStatus = status === "all" || suggestion.status === status;
       const matchesQuery =
         !normalizedQuery ||
@@ -57,9 +60,9 @@ export function AdminVenueSuggestionsPage() {
           .toLowerCase()
           .includes(normalizedQuery);
 
-      return matchesStatus && matchesQuery;
+      return matchesCity && matchesStatus && matchesQuery;
     });
-  }, [query, status, suggestions]);
+  }, [city, query, status, suggestions]);
 
   useEffect(() => {
     let cancelled = false;
@@ -166,14 +169,21 @@ export function AdminVenueSuggestionsPage() {
 
         <Card className="mb-5 mt-8">
           <CardContent>
-            <AdminSuggestionFilters query={query} status={status} onQueryChange={setQuery} onStatusChange={setStatus} />
+            <AdminSuggestionFilters
+              query={query}
+              city={city}
+              status={status}
+              onQueryChange={setQuery}
+              onCityChange={setCity}
+              onStatusChange={setStatus}
+            />
           </CardContent>
         </Card>
 
         {mutationError ? <Alert className="mb-5 border-destructive/30 text-destructive">{mutationError}</Alert> : null}
 
         <div className="mb-4 text-sm text-muted-foreground">
-          Showing {filteredSuggestions.length} of {suggestions.length} suggestions
+          Showing {filteredSuggestions.length} of {suggestions.filter((suggestion) => suggestion.city === city).length} suggestions in {city}
         </div>
 
         {filteredSuggestions.length ? (

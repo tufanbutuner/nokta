@@ -31,13 +31,22 @@
     <loc>https://sheesha-lovat.vercel.app/cities/london</loc>
   </url>
   <url>
+    <loc>https://sheesha-lovat.vercel.app/cities/birmingham</loc>
+  </url>
+  <url>
     <loc>https://sheesha-lovat.vercel.app/venues/after-hours</loc>
   </url>
   <url>
     <loc>https://sheesha-lovat.vercel.app/venues/amisa-lounge</loc>
   </url>
   <url>
+    <loc>https://sheesha-lovat.vercel.app/venues/argeela</loc>
+  </url>
+  <url>
     <loc>https://sheesha-lovat.vercel.app/venues/baha-lounge</loc>
+  </url>
+  <url>
+    <loc>https://sheesha-lovat.vercel.app/venues/blac-restaurant-birmingham</loc>
   </url>
   <url>
     <loc>https://sheesha-lovat.vercel.app/venues/blacklist-lounge-london</loc>
@@ -58,6 +67,12 @@
     <loc>https://sheesha-lovat.vercel.app/venues/dubai-nights-lounge</loc>
   </url>
   <url>
+    <loc>https://sheesha-lovat.vercel.app/venues/dubai-shisha-lounge-birmingham</loc>
+  </url>
+  <url>
+    <loc>https://sheesha-lovat.vercel.app/venues/emperors-shisha-lounge-birmingham</loc>
+  </url>
+  <url>
     <loc>https://sheesha-lovat.vercel.app/venues/eurika-cambridge-heath</loc>
   </url>
   <url>
@@ -70,6 +85,9 @@
     <loc>https://sheesha-lovat.vercel.app/venues/lokma-westfield-stratford</loc>
   </url>
   <url>
+    <loc>https://sheesha-lovat.vercel.app/venues/luxor-lounge-birmingham</loc>
+  </url>
+  <url>
     <loc>https://sheesha-lovat.vercel.app/venues/majesty-lounge</loc>
   </url>
   <url>
@@ -79,10 +97,19 @@
     <loc>https://sheesha-lovat.vercel.app/venues/patchi-park-royal</loc>
   </url>
   <url>
+    <loc>https://sheesha-lovat.vercel.app/venues/rotana-shisha-lounge</loc>
+  </url>
+  <url>
     <loc>https://sheesha-lovat.vercel.app/venues/sapores</loc>
   </url>
   <url>
     <loc>https://sheesha-lovat.vercel.app/venues/shisha-garden-grill</loc>
+  </url>
+  <url>
+    <loc>https://sheesha-lovat.vercel.app/venues/shisha-wala</loc>
+  </url>
+  <url>
+    <loc>https://sheesha-lovat.vercel.app/venues/shishko-lounge</loc>
   </url>
   <url>
     <loc>https://sheesha-lovat.vercel.app/venues/table-11-hounslow</loc>
@@ -95,6 +122,9 @@
   </url>
   <url>
     <loc>https://sheesha-lovat.vercel.app/venues/triumph-resto-lounge</loc>
+  </url>
+  <url>
+    <loc>https://sheesha-lovat.vercel.app/venues/u-wish-lounge</loc>
   </url>
   <url>
     <loc>https://sheesha-lovat.vercel.app/venues/waterfront-london-vauxhall</loc>

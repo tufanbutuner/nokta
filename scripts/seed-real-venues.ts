@@ -16,6 +16,8 @@ type SeedVenue = {
   slug: string;
   name: string;
   description: string;
+  country?: string;
+  city?: string;
   area: string;
   address: string;
   postcode: string;
@@ -52,8 +54,8 @@ function toVenueRow(venue: SeedVenue) {
     slug: venue.slug,
     name: venue.name,
     description: venue.description,
-    country: "United Kingdom",
-    city: "London",
+    country: getSeedCountry(venue),
+    city: getSeedCity(venue),
     area: venue.area,
     address: venue.address,
     postcode: venue.postcode,
@@ -84,11 +86,15 @@ function toVenueRow(venue: SeedVenue) {
 
 function validateVenue(venue: SeedVenue): string[] {
   const errors: string[] = [];
+  const country = getSeedCountry(venue);
+  const city = getSeedCity(venue);
 
   if (!venue.id) errors.push("missing id");
   if (!venue.slug) errors.push("missing slug");
   if (!venue.name) errors.push("missing name");
   if (!venue.description) errors.push("missing description");
+  if (!country) errors.push("missing country");
+  if (!city) errors.push("missing city");
   if (!venue.area) errors.push("missing area");
   if (!venue.address) errors.push("missing address");
   if (!venue.postcode) errors.push("missing postcode");
@@ -133,18 +139,12 @@ function validateVenue(venue: SeedVenue): string[] {
 }
 
 async function main() {
-  const supabaseUrl = process.env.SUPABASE_URL;
-  const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
-
-  if (!supabaseUrl || !serviceRoleKey) {
-    throw new Error("Missing SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY. Add them to your .env.local file.");
-  }
-
-  const seedPath = path.resolve(process.cwd(), "data/real-venues.seed.json");
+  const seedPath = path.resolve(process.cwd(), getSeedPathArg());
+  const isDefaultSeed = path.basename(seedPath) === "real-venues.seed.json";
   const rawSeed = fs.readFileSync(seedPath, "utf-8");
   const venues = JSON.parse(rawSeed) as SeedVenue[];
 
-  if (venues.length !== 21) {
+  if (isDefaultSeed && venues.length !== 21) {
     throw new Error(`Expected 21 real venues, found ${venues.length}.`);
   }
 
@@ -159,8 +159,15 @@ async function main() {
   }
 
   if (process.argv.includes("--validate-only")) {
-    console.log(`Validated ${venues.length} real venues.`);
+    console.log(`Validated ${venues.length} venues from ${path.relative(process.cwd(), seedPath)}.`);
     return;
+  }
+
+  const supabaseUrl = process.env.SUPABASE_URL;
+  const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+  if (!supabaseUrl || !serviceRoleKey) {
+    throw new Error("Missing SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY. Add them to your .env.local file.");
   }
 
   const supabase = createClient(supabaseUrl, serviceRoleKey, {
@@ -177,13 +184,27 @@ async function main() {
     throw new Error(error.message);
   }
 
-  const { error: deleteLegacyError } = await supabase.from("venues").delete().in("id", LEGACY_DEMO_VENUE_IDS);
+  if (isDefaultSeed) {
+    const { error: deleteLegacyError } = await supabase.from("venues").delete().in("id", LEGACY_DEMO_VENUE_IDS);
 
-  if (deleteLegacyError) {
-    throw new Error(deleteLegacyError.message);
+    if (deleteLegacyError) {
+      throw new Error(deleteLegacyError.message);
+    }
   }
 
   console.log(`Seeded ${rows.length} venues into Supabase.`);
+}
+
+function getSeedPathArg() {
+  return process.argv.slice(2).find((arg) => !arg.startsWith("--")) ?? "data/real-venues.seed.json";
+}
+
+function getSeedCountry(venue: SeedVenue) {
+  return venue.country?.trim() || "United Kingdom";
+}
+
+function getSeedCity(venue: SeedVenue) {
+  return venue.city?.trim() || "London";
 }
 
 main().catch((error) => {

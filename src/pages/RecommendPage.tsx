@@ -16,7 +16,7 @@ export function RecommendPage() {
   const { venues, isLoading, error } = useVenues();
   const { favouriteVenueIds } = useVenuePreferences();
   const { userLocation, savedLocation } = useAppLocation();
-  const [results, setResults] = useState<RecommendedVenue[] | null>(null);
+  const [resultState, setResultState] = useState<{ results: RecommendedVenue[]; city: string } | null>(null);
 
   function submitPreferences(preferences: RecommendationPreferences) {
     const nextResults = getRecommendedVenues(venues, preferences, {
@@ -30,7 +30,7 @@ export function RecommendPage() {
       ...analyticsProperties,
       resultCount: nextResults.filter((result) => result.score > 0).length,
     });
-    setResults(nextResults);
+    setResultState({ results: nextResults, city: preferences.city });
   }
 
   return (
@@ -58,8 +58,8 @@ export function RecommendPage() {
           <LoadingState />
         ) : error ? (
           <ErrorState message={error} />
-        ) : results ? (
-          <RecommendationResults results={results} onRestart={() => setResults(null)} />
+        ) : resultState ? (
+          <RecommendationResults results={resultState.results} city={resultState.city} onRestart={() => setResultState(null)} />
         ) : (
           <RecommendationQuiz locationAvailable={Boolean(userLocation)} onSubmit={submitPreferences} />
         )}

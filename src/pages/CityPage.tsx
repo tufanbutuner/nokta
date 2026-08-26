@@ -54,7 +54,7 @@ export function CityPage() {
     <main>
       <PageMeta
         title={`Shisha lounges in ${city.name} | Sheesha`}
-        description={`Discover verified shisha lounges in ${city.name}, compare areas, vibes, prices and venue details.`}
+        description={`Discover shisha lounges in ${city.name} by area, vibe, price, features and distance. Check venue details, opening hours, reviews and directions.`}
         canonicalPath={`/cities/${city.slug}`}
       />
       <PageContainer className="py-12">
@@ -63,7 +63,7 @@ export function CityPage() {
             <p className="text-sm text-clay-accent">{city.country}</p>
             <h1 className="mt-2 text-5xl font-semibold">Shisha lounges in {city.name}</h1>
             <p className="mt-3 max-w-2xl text-muted-foreground">
-              Browse verified venues in {city.name} by area, vibe, price and distance.
+              Explore shisha lounges across {city.name} by area, vibe, price and features. Venue details are checked where possible, but always confirm directly before travelling or booking.
             </p>
           </div>
           <Button asChild>

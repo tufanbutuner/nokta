@@ -6,6 +6,7 @@ import { OpeningHoursEditor } from "@/components/admin/venues/OpeningHoursEditor
 import { VenueFormSection } from "@/components/admin/venues/VenueFormSection";
 import { VenueFormWarnings } from "@/components/admin/venues/VenueFormWarnings";
 import { VibeSelector } from "@/components/admin/venues/VibeSelector";
+import { CitySelector } from "@/components/search/CitySelector";
 import { Alert } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -141,7 +142,7 @@ export function VenueForm({
             <Input value={values.country} onChange={(event) => update("country", event.target.value)} />
           </Field>
           <Field label="City" error={showErrors ? validation.errors.city : undefined}>
-            <Input value={values.city} onChange={(event) => update("city", event.target.value)} />
+            <CitySelector id="admin-venue-city" value={values.city} onChange={(city) => update("city", city)} />
           </Field>
           <Field label="Area" error={showErrors ? validation.errors.area : undefined}>
             <Input value={values.area} onChange={(event) => update("area", event.target.value)} />

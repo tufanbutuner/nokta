@@ -116,8 +116,8 @@ export function DiscoverPage() {
   return (
     <main className="bg-background">
       <PageMeta
-        title="Discover shisha lounges by city | Sheesha"
-        description="Search shisha lounges across supported UK cities with filters, map view and location-aware sorting."
+        title={`Discover shisha lounges in ${filters.city} | Sheesha`}
+        description={`Search shisha lounges in ${filters.city} with filters, map view and location-aware sorting.`}
         canonicalPath="/discover"
       />
       <div className="mx-auto flex min-h-[calc(100vh-4rem)] max-w-none flex-col px-3 py-3 lg:h-[calc(100vh-4rem)]">
