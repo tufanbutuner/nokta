@@ -4,11 +4,13 @@ import { AppLayout } from "@/components/layout/AppLayout";
 import { AccountPage } from "@/pages/AccountPage";
 import { DataQualityPage } from "@/pages/admin/DataQualityPage";
 import { AdminReviewsPage } from "@/pages/admin/AdminReviewsPage";
+import { AdminVenueClaimsPage } from "@/pages/admin/AdminVenueClaimsPage";
 import { AdminVenueSuggestionsPage } from "@/pages/admin/AdminVenueSuggestionsPage";
 import { AdminVenuesPage } from "@/pages/admin/AdminVenuesPage";
 import { VenueFormPage } from "@/pages/admin/VenueFormPage";
 import { AppErrorPage } from "@/pages/AppErrorPage";
 import { AppErrorPreviewPage } from "@/pages/AppErrorPreviewPage";
+import { ClaimVenuePage } from "@/pages/ClaimVenuePage";
 import { CityPage } from "@/pages/CityPage";
 import { DiscoverPage } from "@/pages/DiscoverPage";
 import { HomePage } from "@/pages/HomePage";
@@ -47,6 +49,7 @@ export const router = createBrowserRouter([
       },
       { path: "/sign-in", element: <SignInPage /> },
       { path: "/sign-up", element: <SignUpPage /> },
+      { path: "/venues/:slug/claim", element: <ClaimVenuePage /> },
       { path: "/venues/:slug", element: <VenuePage /> },
       ...(import.meta.env.DEV ? [{ path: "/error-boundary-preview", element: <AppErrorPreviewPage /> }] : []),
       {
@@ -78,6 +81,14 @@ export const router = createBrowserRouter([
         element: (
           <RequireAdmin>
             <AdminVenueSuggestionsPage />
+          </RequireAdmin>
+        ),
+      },
+      {
+        path: "/admin/claims",
+        element: (
+          <RequireAdmin>
+            <AdminVenueClaimsPage />
           </RequireAdmin>
         ),
       },

@@ -180,6 +180,20 @@ export function VenuePage() {
           </div>
         </section>
 
+        {!venue.isClaimed ? (
+          <section className="mt-6 rounded-xl border bg-card p-4">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <h2 className="font-semibold">Own or manage this venue?</h2>
+                <p className="mt-1 text-sm text-muted-foreground">Claim this profile to keep your venue details accurate.</p>
+              </div>
+              <Button asChild>
+                <Link to={`/venues/${venue.slug}/claim`}>Claim this venue</Link>
+              </Button>
+            </div>
+          </section>
+        ) : null}
+
         <div className="mt-6">
           <PhotoGallery venue={venue} images={galleryImages} onOpenImage={setActiveImageIndex} />
         </div>

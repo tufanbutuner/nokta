@@ -84,3 +84,23 @@ export interface VenueSuggestionRow {
   created_at: string;
   updated_at: string;
 }
+
+export interface VenueClaimRequestRow {
+  id: string;
+  venue_id: string;
+  submitted_by: string;
+  claimant_name: string;
+  claimant_email: string;
+  claimant_phone: string | null;
+  claimant_role: "owner" | "manager" | "employee" | "marketing" | "other";
+  business_email: string | null;
+  business_phone: string | null;
+  proof_notes: string | null;
+  proof_url: string | null;
+  status: "pending" | "approved" | "rejected" | "cancelled";
+  admin_notes: string | null;
+  reviewed_by: string | null;
+  reviewed_at: string | null;
+  created_at: string;
+  updated_at: string;
+}

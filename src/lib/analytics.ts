@@ -12,7 +12,12 @@ export type AnalyticsEvent =
   | "recommendation_completed"
   | "review_created"
   | "review_updated"
-  | "suggestion_submitted";
+  | "suggestion_submitted"
+  | "venue_claim_started"
+  | "venue_claim_submitted"
+  | "venue_claim_cancelled"
+  | "venue_claim_approved"
+  | "venue_claim_rejected";
 
 export type AnalyticsProperties = Record<string, string | number | boolean | null | undefined>;
 

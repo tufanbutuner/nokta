@@ -1,21 +1,68 @@
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthError } from "@/components/auth/AuthError";
+import { MyClaimRequests } from "@/components/claims/MyClaimRequests";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { PageMeta } from "@/components/seo/PageMeta";
+import { Alert } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useAuth } from "@/context/AuthContext";
 import { useVenuePreferences } from "@/context/VenuePreferencesContext";
 import { useIsAdmin } from "@/hooks/useIsAdmin";
+import { useVenues } from "@/hooks/useVenues";
+import { getMyVenueClaimRequests } from "@/services/venueClaimService";
+import type { Venue } from "@/types/venue";
+import type { VenueClaimRequest } from "@/types/venueClaims";
 
 export function AccountPage() {
   const navigate = useNavigate();
   const { user, signOut } = useAuth();
   const { isAdmin } = useIsAdmin();
   const { favouriteVenueIds, recentlyViewedVenueIds, isLoading } = useVenuePreferences();
+  const { venues } = useVenues();
+  const [claims, setClaims] = useState<VenueClaimRequest[]>([]);
+  const [isLoadingClaims, setIsLoadingClaims] = useState(false);
+  const [claimError, setClaimError] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [isSigningOut, setIsSigningOut] = useState(false);
+
+  useEffect(() => {
+    if (!user) {
+      setClaims([]);
+      return;
+    }
+
+    let cancelled = false;
+    setIsLoadingClaims(true);
+    setClaimError(null);
+
+    getMyVenueClaimRequests(user.id)
+      .then((nextClaims) => {
+        if (!cancelled) {
+          setClaims(nextClaims);
+        }
+      })
+      .catch((caughtError) => {
+        if (!cancelled) {
+          setClaimError(caughtError instanceof Error ? caughtError.message : "Could not load venue claim requests.");
+        }
+      })
+      .finally(() => {
+        if (!cancelled) {
+          setIsLoadingClaims(false);
+        }
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [user]);
+
+  const venuesById = useMemo<Record<string, Venue | undefined>>(
+    () => Object.fromEntries(venues.map((venue) => [venue.id, venue])),
+    [venues],
+  );
 
   async function handleSignOut() {
     setError(null);
@@ -58,6 +105,20 @@ export function AccountPage() {
               </div>
             </div>
 
+            <div className="rounded-lg border bg-background/60 p-4">
+              <p className="text-sm text-muted-foreground">Venue claims</p>
+              <h2 className="mt-1 text-xl font-semibold">Claim requests</h2>
+              <div className="mt-4">
+                {claimError ? (
+                  <Alert className="border-destructive/30 text-destructive">{claimError}</Alert>
+                ) : isLoadingClaims ? (
+                  <p className="text-sm text-muted-foreground">Loading claim requests...</p>
+                ) : (
+                  <MyClaimRequests claims={claims} venuesById={venuesById} />
+                )}
+              </div>
+            </div>
+
             {isAdmin ? (
               <div className="rounded-lg border bg-background/60 p-4">
                 <p className="text-sm text-muted-foreground">Admin</p>
@@ -74,6 +135,9 @@ export function AccountPage() {
                   </Button>
                   <Button asChild variant="outline">
                     <Link to="/admin/suggestions">Suggestions</Link>
+                  </Button>
+                  <Button asChild variant="outline">
+                    <Link to="/admin/claims">Claims</Link>
                   </Button>
                   <Button asChild variant="outline">
                     <Link to="/admin/monetisation">Monetisation</Link>

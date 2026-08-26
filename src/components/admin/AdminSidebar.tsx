@@ -1,14 +1,15 @@
-import { Activity, DollarSign, GitBranch, MapPin, PenLine } from "lucide-react";
+import { Activity, BadgeCheck, DollarSign, GitBranch, MapPin, PenLine } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { useAuth } from "@/context/AuthContext";
 import { cn } from "@/lib/utils";
 
 const ADMIN_NAV_ITEMS = [
   { label: "Venues", to: "/admin/venues", icon: MapPin },
-  { label: "Reviews", to: "/admin/reviews", icon: PenLine },
-  { label: "Suggestions", to: "/admin/suggestions", icon: GitBranch },
-  { label: "Monetisation", to: "/admin/monetisation", icon: DollarSign },
   { label: "Data Quality", to: "/admin/data-quality", icon: Activity },
+  { label: "Suggestions", to: "/admin/suggestions", icon: GitBranch },
+  { label: "Reviews", to: "/admin/reviews", icon: PenLine },
+  { label: "Claims", to: "/admin/claims", icon: BadgeCheck },
+  { label: "Monetisation", to: "/admin/monetisation", icon: DollarSign },
 ] as const;
 
 export function AdminSidebar({ activePath = "/admin/monetisation" }: { activePath?: string }) {

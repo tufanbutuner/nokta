@@ -16,7 +16,9 @@ export function TermsPage() {
           <p>This is placeholder terms copy for launch preparation and is not final legal text.</p>
           <p>Venue details, opening hours, pricing, menus and availability may change. Always check directly with the venue before travelling or booking.</p>
           <p>Reviews are user-submitted and reflect individual experiences.</p>
-          <p>Users must not submit abusive, misleading, unlawful or intentionally inaccurate content in reviews or venue suggestions.</p>
+          <p>Users must not submit abusive, misleading, unlawful or intentionally inaccurate content in reviews, venue suggestions or venue claim requests.</p>
+          <p>Venue claim requests may be approved, rejected or cancelled at our discretion. Submitting a claim does not guarantee access to manage a venue profile.</p>
+          <p>Claimants must provide accurate information and must not claim a venue they do not own, manage or have permission to represent.</p>
           <p>Sheesha is not responsible for venue availability, pricing changes, booking outcomes or changes made by venues.</p>
         </div>
       </PageContainer>
