@@ -117,9 +117,6 @@ export function VenueForm({
           <Field label="Name" error={showErrors ? validation.errors.name : undefined}>
             <Input value={values.name} onChange={(event) => updateName(event.target.value)} />
           </Field>
-          <Field label="Area" error={showErrors ? validation.errors.area : undefined}>
-            <Input value={values.area} onChange={(event) => update("area", event.target.value)} />
-          </Field>
           <Field label="ID" error={showErrors ? validation.errors.id : undefined}>
             <Input value={values.id} onChange={(event) => update("id", event.target.value)} disabled={mode === "edit"} />
           </Field>
@@ -140,6 +137,15 @@ export function VenueForm({
 
       <VenueFormSection title="Location">
         <div className="grid gap-4 md:grid-cols-2">
+          <Field label="Country" error={showErrors ? validation.errors.country : undefined}>
+            <Input value={values.country} onChange={(event) => update("country", event.target.value)} />
+          </Field>
+          <Field label="City" error={showErrors ? validation.errors.city : undefined}>
+            <Input value={values.city} onChange={(event) => update("city", event.target.value)} />
+          </Field>
+          <Field label="Area" error={showErrors ? validation.errors.area : undefined}>
+            <Input value={values.area} onChange={(event) => update("area", event.target.value)} />
+          </Field>
           <Field label="Address" error={showErrors ? validation.errors.address : undefined}>
             <Input value={values.address} onChange={(event) => update("address", event.target.value)} />
           </Field>

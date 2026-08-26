@@ -15,20 +15,18 @@ export function validateVenueForm(values: VenueFormValues): VenueFormValidationR
   requireValue(errors, "slug", values.slug, "Slug is required.");
   requireValue(errors, "name", values.name, "Name is required.");
   requireValue(errors, "description", values.description, "Description is required.");
+  requireValue(errors, "country", values.country, "Country is required.");
+  requireValue(errors, "city", values.city, "City is required.");
   requireValue(errors, "area", values.area, "Area is required.");
   requireValue(errors, "address", values.address, "Address is required.");
   requireValue(errors, "postcode", values.postcode, "Postcode is required.");
 
   if (values.latitude === "" || !Number.isFinite(Number(values.latitude))) {
     errors.latitude = "Latitude must be a number.";
-  } else if (Number(values.latitude) < 51.25 || Number(values.latitude) > 51.75) {
-    errors.latitude = "Latitude should be within the London area.";
   }
 
   if (values.longitude === "" || !Number.isFinite(Number(values.longitude))) {
     errors.longitude = "Longitude must be a number.";
-  } else if (Number(values.longitude) < -0.55 || Number(values.longitude) > 0.35) {
-    errors.longitude = "Longitude should be within the London area.";
   }
 
   if (![1, 2, 3, 4].includes(values.priceLevel)) {
@@ -95,6 +93,8 @@ function mapValuesToValidationVenue(values: VenueFormValues): Venue {
     slug: values.slug,
     name: values.name,
     description: values.description,
+    country: values.country,
+    city: values.city,
     area: values.area,
     address: values.address,
     postcode: values.postcode,

@@ -17,17 +17,17 @@ import { getVenueCurrentStatus } from "@/lib/openingHours";
 import type { Venue } from "@/types/venue";
 
 const quickFilters = [
-  { label: "Near me", to: "/discover?sort=nearest" },
-  { label: "Open now", to: "/discover?status=open" },
-  { label: "Under £20", to: "/discover?price=1" },
-  { label: "Top rated", to: "/discover?rating=4" },
-  { label: "Outdoor seating", to: "/discover?features=outdoor" },
+  { label: "London", to: "/discover?city=London" },
+  { label: "Near me", to: "/discover?city=London&sort=nearest" },
+  { label: "Open now", to: "/discover?city=London&status=open" },
+  { label: "Under £20", to: "/discover?city=London&price=1" },
+  { label: "Top rated", to: "/discover?city=London&rating=4" },
 ] as const;
 
 const steps: { title: string; description: string; Icon: LucideIcon }[] = [
   {
     title: "Search",
-    description: "Find lounges by area, vibe, price and the details that matter before you travel.",
+    description: "Find lounges by city, area, vibe, price and the details that matter before you travel.",
     Icon: Search,
   },
   {
@@ -37,7 +37,7 @@ const steps: { title: string; description: string; Icon: LucideIcon }[] = [
   },
   {
     title: "Rate",
-    description: "Share what the session was actually like so other Londoners can choose well.",
+    description: "Share what the session was actually like so other people can choose well.",
     Icon: MessageCircle,
   },
 ];
@@ -81,19 +81,19 @@ export function HomePage() {
   return (
     <main>
       <PageMeta
-        title="Sheesha | Discover the best shisha lounges in London"
-        description="Find shisha lounges across London by area, vibe, price, features and distance."
+        title="Sheesha | Discover shisha lounges across the UK"
+        description="Find shisha lounges by city, area, vibe, price, features and distance."
         canonicalPath="/"
       />
       <section className="border-b">
         <PageContainer className="py-12 sm:py-16 lg:py-20">
           <div className="mx-auto max-w-4xl text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-muted-foreground">London's sheesha guide</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-muted-foreground">London first, UK next</p>
             <h1 className="mx-auto mt-5 max-w-4xl text-5xl font-semibold leading-[0.95] sm:text-6xl lg:text-7xl">
               Find your perfect <span className="text-clay-accent">sheesha spot</span>
             </h1>
             <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
-              Search curated lounges, compare session prices and save the places worth trying across London.
+              Discover verified shisha lounges, compare features, save your favourites and find the right spot for your next night out.
             </p>
 
             <form className="mx-auto mt-8 max-w-3xl rounded-2xl border bg-card p-2 shadow-xl shadow-stone-950/5" onSubmit={handleSearchSubmit}>
@@ -107,7 +107,7 @@ export function HomePage() {
                 />
                 <div className="absolute right-28 top-1/2 hidden h-8 -translate-y-1/2 items-center gap-2 border-l px-4 text-sm text-muted-foreground sm:flex">
                   <MapPin className="h-4 w-4" />
-                  All London
+                  London
                 </div>
                 <Button type="submit" className="absolute right-0 top-1/2 h-10 w-10 -translate-y-1/2 bg-clay-accent px-0 text-white hover:bg-clay-accent-hover sm:w-24 sm:px-4">
                   <Search className="h-4 w-4 sm:hidden" />
@@ -132,7 +132,7 @@ export function HomePage() {
 
       <section className="border-b bg-card/35">
         <PageContainer className="grid gap-4 py-6 text-center text-sm text-muted-foreground sm:grid-cols-[1fr_auto_auto_auto] sm:items-center sm:text-left">
-          <p className="font-medium text-foreground">Trusted by London sheesha lovers</p>
+          <p className="font-medium text-foreground">Find shisha lounges by city, area, vibe and distance</p>
           <span className="opacity-60">Late-night lists</span>
           <span className="opacity-60">Terrace picks</span>
           <span className="opacity-60">Price checks</span>
@@ -176,6 +176,29 @@ export function HomePage() {
                 <ChevronRight className="h-4 w-4 text-muted-foreground transition group-hover:translate-x-0.5 group-hover:text-foreground" />
               </Link>
             ))}
+          </div>
+        </section>
+
+        <section>
+          <div className="mb-6">
+            <p className="text-sm text-clay-accent">Explore by city</p>
+            <h2 className="mt-1 text-3xl font-semibold">Starting in London, expanding city by city</h2>
+          </div>
+          <div className="grid gap-3 sm:grid-cols-2">
+            <Link
+              to="/cities/london"
+              className="group flex items-center justify-between rounded-xl border bg-card p-5 transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-stone-950/5"
+            >
+              <span>
+                <span className="block font-semibold">London</span>
+                <span className="mt-1 block text-sm text-muted-foreground">{venues.length} venues listed</span>
+              </span>
+              <ChevronRight className="h-4 w-4 text-muted-foreground transition group-hover:translate-x-0.5 group-hover:text-foreground" />
+            </Link>
+            <div className="rounded-xl border bg-card p-5">
+              <span className="block font-semibold">More UK cities coming soon</span>
+              <span className="mt-1 block text-sm text-muted-foreground">Birmingham, Manchester, Leicester and more are being prepared.</span>
+            </div>
           </div>
         </section>
 

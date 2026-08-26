@@ -43,6 +43,8 @@ export function AdminVenueSuggestionsPage() {
         [
           suggestion.venueName,
           suggestion.area ?? "",
+          suggestion.city,
+          suggestion.country,
           suggestion.address ?? "",
           suggestion.postcode ?? "",
           suggestion.website ?? "",

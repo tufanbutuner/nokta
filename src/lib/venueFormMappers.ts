@@ -1,4 +1,5 @@
 import type { VenueRowInput } from "@/types/database";
+import { DEFAULT_CITY, DEFAULT_COUNTRY } from "@/lib/cities";
 import type { Venue } from "@/types/venue";
 import type { VenueFormValues } from "@/types/venueForm";
 import type { VenueSuggestion } from "@/types/venueSuggestions";
@@ -11,6 +12,8 @@ export function mapVenueToFormValues(venue: Venue): VenueFormValues {
     slug: venue.slug,
     name: venue.name,
     description: venue.description,
+    country: venue.country,
+    city: venue.city,
     area: venue.area,
     address: venue.address,
     postcode: venue.postcode,
@@ -52,6 +55,8 @@ export function mapFormValuesToVenueRow(values: VenueFormValues): VenueRowInput 
     slug: values.slug.trim(),
     name: values.name.trim(),
     description: values.description.trim(),
+    country: values.country.trim(),
+    city: values.city.trim(),
     area: values.area.trim(),
     address: values.address.trim(),
     postcode: values.postcode.trim(),
@@ -93,6 +98,8 @@ export function createEmptyVenueFormValues(): VenueFormValues {
     slug: "",
     name: "",
     description: "",
+    country: DEFAULT_COUNTRY,
+    city: DEFAULT_CITY,
     area: "",
     address: "",
     postcode: "",
@@ -146,6 +153,8 @@ export function createVenueFormValuesFromSuggestion(suggestion: VenueSuggestion)
     slug: generatedSlug,
     name: suggestion.venueName,
     description: createSuggestionDescription(suggestion),
+    country: suggestion.country,
+    city: suggestion.city,
     area: suggestion.area ?? "",
     address: suggestion.address ?? "",
     postcode: suggestion.postcode ?? "",

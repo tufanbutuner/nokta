@@ -47,6 +47,8 @@ export interface Venue {
   slug: string;
   name: string;
   description: string;
+  country: string;
+  city: string;
   area: string;
   address: string;
   postcode: string;

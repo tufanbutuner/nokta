@@ -36,8 +36,8 @@ export function RecommendPage() {
   return (
     <main>
       <PageMeta
-        title="Find Your Perfect Sheesha Spot | Sheesha"
-        description="Answer a few quick questions and get matched with shisha lounges in London."
+        title="Find your perfect shisha spot | Sheesha"
+        description="Answer a few quick questions and get matched with shisha lounges in your selected city."
         canonicalPath="/recommend"
       />
       <PageContainer className="py-12">
@@ -71,6 +71,7 @@ export function RecommendPage() {
 function getRecommendationAnalyticsProperties(preferences: RecommendationPreferences) {
   return {
     selectedVibes: preferences.vibes.join(",") || null,
+    city: preferences.city,
     priceLevel: preferences.priceLevel === "any" ? null : preferences.priceLevel,
     occasion: preferences.occasion,
   };

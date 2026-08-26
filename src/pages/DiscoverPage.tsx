@@ -19,6 +19,7 @@ import { useVenueReviewSummaries } from "@/hooks/useVenueReviewSummaries";
 import { useVenues } from "@/hooks/useVenues";
 import { filterVenues } from "@/lib/filterVenues";
 import { trackEvent } from "@/lib/analytics";
+import { DEFAULT_CITY } from "@/lib/cities";
 import { getVenueCurrentStatus, isVenueOpenNow } from "@/lib/openingHours";
 import { sortVenues } from "@/lib/sortVenues";
 import { cn } from "@/lib/utils";
@@ -115,8 +116,8 @@ export function DiscoverPage() {
   return (
     <main className="bg-background">
       <PageMeta
-        title="Discover Sheesha Lounges in London | Sheesha"
-        description="Search and filter shisha lounges across London with map view, saved venues and location-aware sorting."
+        title="Discover shisha lounges by city | Sheesha"
+        description="Search shisha lounges across supported UK cities with filters, map view and location-aware sorting."
         canonicalPath="/discover"
       />
       <div className="mx-auto flex min-h-[calc(100vh-4rem)] max-w-none flex-col px-3 py-3 lg:h-[calc(100vh-4rem)]">
@@ -199,6 +200,7 @@ export function DiscoverPage() {
                     venues={sortedVenues}
                     selectedVenueId={selectedVenueId}
                     userLocation={userLocation}
+                    city={filters.city}
                     onClearFilters={clearFilters}
                     className="h-full rounded-none border-0"
                   />
@@ -300,7 +302,7 @@ function ActiveFilterChips({
   filters: VenueFilterState;
   onClear: () => void;
 }) {
-  const showChips = filters.query.trim() || filters.area !== "all" || filters.vibes.length;
+  const showChips = filters.query.trim() || filters.city !== DEFAULT_CITY || filters.area !== "all" || filters.vibes.length;
 
   if (!showChips) {
     return null;
@@ -309,6 +311,7 @@ function ActiveFilterChips({
   return (
     <div className="flex flex-wrap gap-2">
       {filters.query.trim() ? <Badge className="bg-clay-accent/10 text-clay-accent">Search: {filters.query.trim()}</Badge> : null}
+      {filters.city !== DEFAULT_CITY ? <Badge className="bg-clay-accent/10 text-clay-accent">{filters.city}</Badge> : null}
       {filters.area !== "all" ? <Badge className="bg-clay-accent/10 text-clay-accent">{filters.area}</Badge> : null}
       {filters.vibes.map((vibe) => (
         <Badge key={vibe} className="bg-clay-accent/10 text-clay-accent">
@@ -370,6 +373,8 @@ function trackDiscoverFilterChange(
 function getDiscoverAnalyticsProperties(filters: VenueFilterState, sort: VenueSortOption, view: DiscoverView) {
   return {
     query: filters.query.trim() || null,
+    country: filters.country,
+    city: filters.city,
     area: filters.area,
     price: filters.priceLevel === "all" ? null : filters.priceLevel,
     sort,

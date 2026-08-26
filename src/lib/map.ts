@@ -1,10 +1,26 @@
 import type { Venue } from "@/types/venue";
 import type { UserLocation } from "@/types/location";
+import { getCityByName } from "@/lib/cities";
 
 export const LONDON_CENTER = {
   latitude: 51.5072,
   longitude: -0.1276,
+  defaultZoom: 11,
 };
+
+export function getMapCenterForCity(cityName: string) {
+  const city = getCityByName(cityName);
+
+  if (!city) {
+    return LONDON_CENTER;
+  }
+
+  return {
+    latitude: city.latitude,
+    longitude: city.longitude,
+    defaultZoom: city.defaultZoom,
+  };
+}
 
 export function hasValidCoordinates(venue: Venue): boolean {
   return hasValidLatLng(venue.latitude, venue.longitude);

@@ -5,19 +5,24 @@ import { DataQualityEmptyState } from "@/components/admin/data-quality/DataQuali
 import { DataQualityFilters } from "@/components/admin/data-quality/DataQualityFilters";
 import { DataQualitySummaryCards } from "@/components/admin/data-quality/DataQualitySummaryCards";
 import { DataQualityVenueTable } from "@/components/admin/data-quality/DataQualityVenueTable";
+import { CitySelector } from "@/components/search/CitySelector";
 import { ErrorState } from "@/components/state/ErrorState";
 import { LoadingState } from "@/components/state/LoadingState";
 import { Button } from "@/components/ui/button";
 import { useVenues } from "@/hooks/useVenues";
-import { filterVenuesByQualityIssue, getVenueQuality, getVenueQualitySummary } from "@/lib/venueQuality";
+import { DEFAULT_CITY } from "@/lib/cities";
+import { filterVenuesByQualityIssue, getVenueQuality, getVenueQualitySummary, getVenueQualitySummaryByCity } from "@/lib/venueQuality";
 import type { DataQualityFilter } from "@/lib/venueQuality";
 import type { Venue } from "@/types/venue";
 
 export function DataQualityPage() {
   const { venues, isLoading, error } = useVenues();
   const [activeFilter, setActiveFilter] = useState<DataQualityFilter>("all");
-  const summary = useMemo(() => getVenueQualitySummary(venues), [venues]);
-  const filteredVenues = useMemo(() => filterVenuesByQualityIssue(venues, activeFilter), [activeFilter, venues]);
+  const [city, setCity] = useState(DEFAULT_CITY);
+  const cityVenues = useMemo(() => venues.filter((venue) => venue.city === city), [city, venues]);
+  const summary = useMemo(() => getVenueQualitySummary(cityVenues), [cityVenues]);
+  const summaryByCity = useMemo(() => getVenueQualitySummaryByCity(venues), [venues]);
+  const filteredVenues = useMemo(() => filterVenuesByQualityIssue(cityVenues, activeFilter), [activeFilter, cityVenues]);
 
   if (isLoading) {
     return (
@@ -60,12 +65,34 @@ export function DataQualityPage() {
 
         <DataQualitySummaryCards summary={summary} />
 
+        <section className="mt-6 rounded-xl border bg-card p-4">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <h2 className="text-sm font-semibold">City readiness</h2>
+              <p className="mt-1 text-sm text-muted-foreground">Filter the audit by city and compare catalogue health.</p>
+            </div>
+            <div className="w-full sm:w-56">
+              <CitySelector id="data-quality-city-filter" value={city} onChange={setCity} />
+            </div>
+          </div>
+          <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+            {summaryByCity.map((item) => (
+              <div key={item.city} className="rounded-lg border bg-background p-3 text-sm">
+                <div className="font-semibold">{item.city}</div>
+                <div className="mt-2 text-muted-foreground">{item.totalVenues} venues</div>
+                <div className="mt-1 text-muted-foreground">{item.verifiedCount} verified</div>
+                <div className="mt-1 text-muted-foreground">{item.poorQualityCount} poor quality</div>
+              </div>
+            ))}
+          </div>
+        </section>
+
         <section className="mt-8">
           <div className="mb-4 flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
             <div>
               <h2 className="text-2xl font-semibold">Venue audit</h2>
               <p className="mt-1 text-sm text-muted-foreground">
-                Showing {filteredVenues.length} of {venues.length} venues
+                Showing {filteredVenues.length} of {cityVenues.length} venues in {city}
               </p>
             </div>
             <DataQualityFilters activeFilter={activeFilter} onChange={setActiveFilter} />
@@ -85,6 +112,8 @@ function exportQualityCsv(venues: Venue[]) {
     return [
       venue.id,
       venue.name,
+      venue.country,
+      venue.city,
       venue.area,
       venue.verificationStatus,
       venue.businessStatus,
@@ -93,7 +122,7 @@ function exportQualityCsv(venues: Venue[]) {
       quality.issues.map((issue) => issue.label).join("; "),
     ];
   });
-  const csv = [["id", "name", "area", "verificationStatus", "businessStatus", "qualityScore", "qualityLevel", "issues"], ...rows]
+  const csv = [["id", "name", "country", "city", "area", "verificationStatus", "businessStatus", "qualityScore", "qualityLevel", "issues"], ...rows]
     .map((row) => row.map(escapeCsvCell).join(","))
     .join("\n");
   const blob = new Blob([csv], { type: "text/csv;charset=utf-8" });

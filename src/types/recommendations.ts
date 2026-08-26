@@ -5,6 +5,7 @@ export type RecommendationOccasion = "solo" | "date" | "small-group" | "big-grou
 export type DistancePreference = "none" | "nearby" | "nearest";
 
 export interface RecommendationPreferences {
+  city: string;
   vibes: VenueVibe[];
   priceLevel: PriceLevel | "any";
   occasion: RecommendationOccasion | "any";

@@ -20,7 +20,7 @@ export function AdminSuggestionTable({
             <thead className="bg-muted/60 text-left text-xs uppercase text-muted-foreground">
               <tr>
                 <th className="px-4 py-3 font-medium">Venue</th>
-                <th className="px-4 py-3 font-medium">Area</th>
+                <th className="px-4 py-3 font-medium">Location</th>
                 <th className="px-4 py-3 font-medium">Contact/source</th>
                 <th className="px-4 py-3 font-medium">Status</th>
                 <th className="px-4 py-3 font-medium">Submitted</th>
@@ -39,7 +39,7 @@ export function AdminSuggestionTable({
                     ) : null}
                   </td>
                   <td className="px-4 py-4 text-muted-foreground">
-                    {[suggestion.area, suggestion.postcode].filter(Boolean).join(" • ") || "TBC"}
+                    {[suggestion.city, suggestion.area, suggestion.postcode].filter(Boolean).join(" • ") || "TBC"}
                   </td>
                   <td className="px-4 py-4">
                     <ContactList suggestion={suggestion} />

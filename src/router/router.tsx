@@ -9,6 +9,7 @@ import { AdminVenuesPage } from "@/pages/admin/AdminVenuesPage";
 import { VenueFormPage } from "@/pages/admin/VenueFormPage";
 import { AppErrorPage } from "@/pages/AppErrorPage";
 import { AppErrorPreviewPage } from "@/pages/AppErrorPreviewPage";
+import { CityPage } from "@/pages/CityPage";
 import { DiscoverPage } from "@/pages/DiscoverPage";
 import { HomePage } from "@/pages/HomePage";
 import { MonetisationDashboardPage } from "@/pages/admin/MonetisationDashboardPage";
@@ -30,6 +31,7 @@ export const router = createBrowserRouter([
     children: [
       { path: "/", element: <HomePage /> },
       { path: "/discover", element: <DiscoverPage /> },
+      { path: "/cities/:citySlug", element: <CityPage /> },
       { path: "/recommend", element: <RecommendPage /> },
       { path: "/saved", element: <SavedPage /> },
       { path: "/suggest", element: <SuggestVenuePage /> },

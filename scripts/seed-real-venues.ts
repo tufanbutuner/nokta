@@ -52,6 +52,8 @@ function toVenueRow(venue: SeedVenue) {
     slug: venue.slug,
     name: venue.name,
     description: venue.description,
+    country: "United Kingdom",
+    city: "London",
     area: venue.area,
     address: venue.address,
     postcode: venue.postcode,

@@ -6,8 +6,10 @@ export function filterVenues(venues: Venue[], filters: VenueFilterState): Venue[
   return venues.filter((venue) => {
     const query = filters.query.trim().toLowerCase();
     const searchableVibes = venue.vibes.map((vibe) => vibe.replace("-", " ")).join(" ");
-    const haystack = `${venue.name} ${venue.area} ${venue.description} ${searchableVibes}`.toLowerCase();
+    const haystack = `${venue.name} ${venue.city} ${venue.area} ${venue.description} ${searchableVibes}`.toLowerCase();
 
+    const matchesCountry = venue.country === filters.country;
+    const matchesCity = venue.city === filters.city;
     const matchesQuery = !query || haystack.includes(query);
     const matchesArea = filters.area === "all" || venue.area === filters.area;
     const matchesPrice = filters.priceLevel === "all" || venue.priceLevel === filters.priceLevel;
@@ -21,6 +23,6 @@ export function filterVenues(venues: Venue[], filters: VenueFilterState): Venue[
       (!filters.features.alcohol || venue.alcohol) &&
       (!filters.features.openLate || venue.openLate);
 
-    return matchesQuery && matchesArea && matchesPrice && matchesOpenNow && matchesRating && matchesVibes && matchesFeatures;
+    return matchesCountry && matchesCity && matchesArea && matchesQuery && matchesPrice && matchesOpenNow && matchesRating && matchesVibes && matchesFeatures;
   });
 }

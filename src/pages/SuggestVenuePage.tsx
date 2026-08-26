@@ -99,7 +99,7 @@ export function SuggestVenuePage() {
     <main>
       <PageMeta
         title="Suggest a Sheesha Venue | Sheesha"
-        description="Know a London shisha spot we are missing? Suggest it for review."
+        description="Know a shisha spot we are missing? Suggest it for review."
         canonicalPath="/suggest"
       />
       <PageContainer className="py-10">

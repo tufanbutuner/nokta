@@ -147,8 +147,8 @@ export function VenuePage() {
   return (
     <main className="bg-background">
       <PageMeta
-        title={`${venue.name} | Sheesha`}
-        description={`View opening hours, features, address, reviews and verification details for ${venue.name}.`}
+        title={`${venue.name} in ${venue.city} | Sheesha`}
+        description={`View opening hours, features, address, reviews and verification details for ${venue.name} in ${venue.city}.`}
         canonicalPath={`/venues/${venue.slug}`}
         imageUrl={galleryImages[0] ?? getVenueImage(venue)}
       />
@@ -445,12 +445,13 @@ function OverviewTab({ venue, amenities, similarVenues }: { venue: Venue; amenit
             <br />
             {venue.area}
             <br />
-            London {venue.postcode}
+            {venue.city} {venue.postcode}
           </p>
           <div className="mt-4 overflow-hidden rounded-xl border">
             <VenueMap
               venues={[venue]}
               selectedVenueId={venue.id}
+              city={venue.city}
               className="h-72 rounded-none border-0 [&_.leaflet-container]:!min-h-72 md:[&_.leaflet-container]:!min-h-72"
             />
           </div>

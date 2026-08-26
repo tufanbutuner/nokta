@@ -1,9 +1,12 @@
 import type { DiscoverView, FeatureFilterKey, VenueFilterState } from "@/types/filters";
+import { DEFAULT_CITY, DEFAULT_COUNTRY } from "@/lib/cities";
 import type { VenueSortOption } from "@/types/sort";
 import type { PriceLevel, VenueVibe } from "@/types/venue";
 
 export const INITIAL_VENUE_FILTERS: VenueFilterState = {
   query: "",
+  country: DEFAULT_COUNTRY,
+  city: DEFAULT_CITY,
   area: "all",
   priceLevel: "all",
   openNow: false,
@@ -59,6 +62,8 @@ export function parseVenueFilters(params: URLSearchParams): VenueFilterState {
 
   return {
     query: params.get("q") ?? "",
+    country: params.get("country") || DEFAULT_COUNTRY,
+    city: params.get("city") || DEFAULT_CITY,
     area: params.get("area") || "all",
     priceLevel: isPriceLevel(price) ? price : "all",
     openNow: params.get("status") === "open",
@@ -79,6 +84,8 @@ export function filtersToSearchParams(filters: VenueFilterState) {
   const features = FEATURE_OPTIONS.filter((option) => filters.features[option.value]).map((option) => option.value);
 
   if (filters.query.trim()) params.set("q", filters.query.trim());
+  if (filters.country !== DEFAULT_COUNTRY) params.set("country", filters.country);
+  if (filters.city !== DEFAULT_CITY) params.set("city", filters.city);
   if (filters.area !== "all") params.set("area", filters.area);
   if (filters.priceLevel !== "all") params.set("price", String(filters.priceLevel));
   if (filters.openNow) params.set("status", "open");
@@ -92,6 +99,8 @@ export function filtersToSearchParams(filters: VenueFilterState) {
 export function hasActiveFilters(filters: VenueFilterState) {
   return (
     Boolean(filters.query.trim()) ||
+    filters.country !== DEFAULT_COUNTRY ||
+    filters.city !== DEFAULT_CITY ||
     filters.area !== "all" ||
     filters.priceLevel !== "all" ||
     filters.openNow ||

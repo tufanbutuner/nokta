@@ -31,7 +31,7 @@ export function MySuggestionsList({ suggestions }: { suggestions: VenueSuggestio
             <div>
               <h3 className="font-semibold">{suggestion.venueName}</h3>
               <p className="mt-1 text-sm text-muted-foreground">
-                {[suggestion.area, suggestion.postcode].filter(Boolean).join(" • ") || "Location TBC"}
+                {[suggestion.city, suggestion.area, suggestion.postcode].filter(Boolean).join(" • ") || "Location TBC"}
               </p>
               <p className="mt-2 text-xs text-muted-foreground">Submitted {formatDate(suggestion.createdAt)}</p>
             </div>

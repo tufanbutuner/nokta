@@ -22,6 +22,8 @@ export async function createVenueSuggestion(input: {
     .insert({
       submitted_by: input.userId,
       venue_name: suggestion.venueName.trim(),
+      country: suggestion.country.trim(),
+      city: suggestion.city.trim(),
       area: nullableText(suggestion.area),
       address: nullableText(suggestion.address),
       postcode: nullableText(suggestion.postcode),

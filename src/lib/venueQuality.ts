@@ -1,4 +1,5 @@
 import type { Venue } from "@/types/venue";
+import { getCityByName } from "@/lib/cities";
 
 export type VenueQualityLevel = "good" | "needs-work" | "poor";
 
@@ -35,6 +36,15 @@ export interface VenueQualitySummary {
   poorQualityCount: number;
 }
 
+export interface VenueQualitySummaryByCity {
+  city: string;
+  totalVenues: number;
+  verifiedCount: number;
+  missingOpeningHoursCount: number;
+  missingImagesCount: number;
+  poorQualityCount: number;
+}
+
 export type DataQualityFilter =
   | "all"
   | "poor"
@@ -46,13 +56,6 @@ export type DataQualityFilter =
   | "missing-official-source"
   | "third-party-only"
   | "questionable-coordinates";
-
-const LONDON_BOUNDS = {
-  minLatitude: 51.25,
-  maxLatitude: 51.75,
-  minLongitude: -0.55,
-  maxLongitude: 0.35,
-};
 
 const OFFICIAL_SOURCE_KEYS = new Set(["officialWebsite", "officialLinktree", "instagram", "venueHostWebsite", "westfieldSource"]);
 const THIRD_PARTY_SOURCE_KEYS = new Set([
@@ -213,6 +216,33 @@ export function getVenueQualitySummary(venues: Venue[]): VenueQualitySummary {
   );
 }
 
+export function getVenueQualitySummaryByCity(venues: Venue[]): VenueQualitySummaryByCity[] {
+  const summaries = new Map<string, VenueQualitySummaryByCity>();
+
+  for (const venue of venues) {
+    const quality = getVenueQuality(venue);
+    const summary =
+      summaries.get(venue.city) ??
+      {
+        city: venue.city,
+        totalVenues: 0,
+        verifiedCount: 0,
+        missingOpeningHoursCount: 0,
+        missingImagesCount: 0,
+        poorQualityCount: 0,
+      };
+
+    summary.totalVenues += 1;
+    summary.verifiedCount += venue.verificationStatus === "verified" ? 1 : 0;
+    summary.missingOpeningHoursCount += hasOpeningHours(venue) ? 0 : 1;
+    summary.missingImagesCount += venue.images.length ? 0 : 1;
+    summary.poorQualityCount += quality.level === "poor" ? 1 : 0;
+    summaries.set(venue.city, summary);
+  }
+
+  return Array.from(summaries.values()).sort((first, second) => first.city.localeCompare(second.city));
+}
+
 export function hasOfficialSource(venue: Venue): boolean {
   return Object.entries(venue.dataSources).some(([key, value]) => OFFICIAL_SOURCE_KEYS.has(key) && hasValue(value));
 }
@@ -246,12 +276,13 @@ export function hasQuestionableCoordinates(venue: Venue): boolean {
     return true;
   }
 
-  return (
-    venue.latitude < LONDON_BOUNDS.minLatitude ||
-    venue.latitude > LONDON_BOUNDS.maxLatitude ||
-    venue.longitude < LONDON_BOUNDS.minLongitude ||
-    venue.longitude > LONDON_BOUNDS.maxLongitude
-  );
+  const city = getCityByName(venue.city);
+
+  if (!city) {
+    return false;
+  }
+
+  return Math.abs(venue.latitude - city.latitude) > 0.5 || Math.abs(venue.longitude - city.longitude) > 0.7;
 }
 
 export function filterVenuesByQualityIssue(venues: Venue[], filter: DataQualityFilter): Venue[] {

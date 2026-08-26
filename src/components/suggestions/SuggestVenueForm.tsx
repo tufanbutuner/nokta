@@ -3,12 +3,16 @@ import { Alert } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import { Select } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
+import { getCityOptions, DEFAULT_CITY, DEFAULT_COUNTRY } from "@/lib/cities";
 import { validateVenueSuggestionInput } from "@/lib/venueSuggestionValidation";
 import type { VenueSuggestionInput } from "@/types/venueSuggestions";
 
 const INITIAL_VALUES: VenueSuggestionInput = {
   venueName: "",
+  country: DEFAULT_COUNTRY,
+  city: DEFAULT_CITY,
   area: "",
   address: "",
   postcode: "",
@@ -64,6 +68,17 @@ export function SuggestVenueForm({
           </Field>
 
           <div className="grid gap-4 sm:grid-cols-2">
+            <Field label="Country" error={errors.country}>
+              <Input value={values.country} onChange={(event) => update("country", event.target.value)} />
+            </Field>
+            <Field label="City" error={errors.city}>
+              <Select
+                value={values.city}
+                onChange={(event) => update("city", event.target.value)}
+                options={getCityOptions({ activeOnly: true })}
+                className="w-full"
+              />
+            </Field>
             <Field label="Area" error={errors.area}>
               <Input value={values.area ?? ""} onChange={(event) => update("area", event.target.value)} placeholder="Fitzrovia" />
             </Field>

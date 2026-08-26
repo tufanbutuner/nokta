@@ -3,6 +3,8 @@ export interface VenueRow {
   slug: string;
   name: string;
   description: string;
+  country: string;
+  city: string;
   area: string;
   address: string;
   postcode: string;
@@ -66,6 +68,8 @@ export interface VenueSuggestionRow {
   id: string;
   submitted_by: string | null;
   venue_name: string;
+  country: string;
+  city: string;
   area: string | null;
   address: string | null;
   postcode: string | null;

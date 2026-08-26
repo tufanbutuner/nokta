@@ -1,5 +1,6 @@
 import type { VenueRow } from "../types/database";
 import type { Venue, VenueDataSources } from "../types/venue";
+import { DEFAULT_CITY, DEFAULT_COUNTRY } from "@/lib/cities";
 import type { MonetisationStatus, PartnerTier } from "@/types/monetisation";
 
 export function mapVenueRowToVenue(row: VenueRow): Venue {
@@ -10,6 +11,8 @@ export function mapVenueRowToVenue(row: VenueRow): Venue {
     slug: row.slug,
     name: row.name,
     description: row.description,
+    country: row.country ?? DEFAULT_COUNTRY,
+    city: row.city ?? DEFAULT_CITY,
     area: row.area,
     address: row.address,
     postcode: row.postcode,
@@ -53,6 +56,8 @@ export function mapVenueToVenueRow(venue: Venue): Omit<VenueRow, "created_at" | 
     slug: venue.slug,
     name: venue.name,
     description: venue.description,
+    country: venue.country,
+    city: venue.city,
     area: venue.area,
     address: venue.address,
     postcode: venue.postcode,

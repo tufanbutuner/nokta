@@ -5,11 +5,13 @@ import { MonetisationHeader } from "@/components/admin/monetisation/Monetisation
 import { MonetisationPipelineFunnel } from "@/components/admin/monetisation/MonetisationPipelineFunnel";
 import { MonetisationSummaryCards } from "@/components/admin/monetisation/MonetisationSummaryCards";
 import { MonetisationVenueTable } from "@/components/admin/monetisation/MonetisationVenueTable";
+import { CitySelector } from "@/components/search/CitySelector";
 import { EmptyState } from "@/components/state/EmptyState";
 import { ErrorState } from "@/components/state/ErrorState";
 import { LoadingState } from "@/components/state/LoadingState";
 import { Alert } from "@/components/ui/alert";
 import { getFeaturedEligibilityRecommendation } from "@/lib/commercialEligibility";
+import { DEFAULT_CITY } from "@/lib/cities";
 import { formatPartnerTier, formatMonetisationStatus } from "@/lib/monetisationLabels";
 import { getMonetisationSummary } from "@/lib/monetisationSummary";
 import { updateVenueMonetisationStatus } from "@/services/adminMonetisationService";
@@ -21,6 +23,7 @@ export function MonetisationDashboardPage() {
   const { venues, isLoading, error } = useVenues();
   const [dashboardVenues, setDashboardVenues] = useState<Venue[]>([]);
   const [activeFilter, setActiveFilter] = useState<MonetisationFilter>("all");
+  const [city, setCity] = useState(DEFAULT_CITY);
   const [updatingAction, setUpdatingAction] = useState<string | null>(null);
   const [actionError, setActionError] = useState<string | null>(null);
 
@@ -28,8 +31,10 @@ export function MonetisationDashboardPage() {
     setDashboardVenues(venues);
   }, [venues]);
 
-  const summary = useMemo(() => getMonetisationSummary(dashboardVenues), [dashboardVenues]);
-  const filteredVenues = useMemo(() => filterVenuesByMonetisation(dashboardVenues, activeFilter), [activeFilter, dashboardVenues]);
+  const cityVenues = useMemo(() => dashboardVenues.filter((venue) => venue.city === city), [city, dashboardVenues]);
+  const summary = useMemo(() => getMonetisationSummary(cityVenues), [cityVenues]);
+  const summaryByCity = useMemo(() => getMonetisationSummaryByCity(dashboardVenues), [dashboardVenues]);
+  const filteredVenues = useMemo(() => filterVenuesByMonetisation(cityVenues, activeFilter), [activeFilter, cityVenues]);
 
   async function handleStatusChange(venue: Venue, status: MonetisationStatus) {
     const actionKey = `${venue.id}:${status}`;
@@ -69,16 +74,39 @@ export function MonetisationDashboardPage() {
         </div>
       ) : (
         <div className="grid gap-5 py-5">
-          <MonetisationHeader venueCount={dashboardVenues.length} noteVenueId={filteredVenues[0]?.id} onExport={handleExport} />
+          <MonetisationHeader venueCount={cityVenues.length} noteVenueId={filteredVenues[0]?.id} onExport={handleExport} />
           {actionError ? <Alert className="border-clay-400/20 bg-clay-400/10 text-clay-600">{actionError}</Alert> : null}
           <MonetisationSummaryCards summary={summary} />
+          <section className="rounded-xl border border-black/[0.04] bg-white p-4">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <h2 className="font-primary text-xs font-semibold text-clay-600">City pipeline</h2>
+                <p className="mt-1 text-[13px] text-[#8a7e72]">Review monetisation by city.</p>
+              </div>
+              <div className="w-full sm:w-56">
+                <CitySelector id="monetisation-city-filter" value={city} onChange={setCity} />
+              </div>
+            </div>
+            <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+              {summaryByCity.map((item) => (
+                <div key={item.city} className="rounded-lg border bg-clay-50 p-3 text-sm">
+                  <div className="font-semibold text-clay-600">{item.city}</div>
+                  <div className="mt-2 text-[#8a7e72]">{item.totalVenues} venues</div>
+                  <div className="mt-1 text-[#8a7e72]">{item.claimedCount} claimed</div>
+                  <div className="mt-1 text-[#8a7e72]">
+                    {item.payingCount} paying · {item.interestedCount} interested
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
           <MonetisationPipelineFunnel summary={summary} />
           <section className="grid gap-4">
             <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
               <div>
                 <h2 className="font-primary text-xs font-semibold text-clay-600">Commercial pipeline</h2>
                 <p className="mt-1 text-[13px] text-[#8a7e72]">
-                  Showing {filteredVenues.length} of {dashboardVenues.length} venues
+                  Showing {filteredVenues.length} of {cityVenues.length} venues in {city}
                 </p>
               </div>
               <MonetisationFilters activeFilter={activeFilter} onChange={setActiveFilter} />
@@ -111,13 +139,37 @@ function filterVenuesByMonetisation(venues: Venue[], filter: MonetisationFilter)
   });
 }
 
+function getMonetisationSummaryByCity(venues: Venue[]) {
+  const summaries = new Map<string, { city: string; totalVenues: number; claimedCount: number; payingCount: number; interestedCount: number }>();
+
+  for (const venue of venues) {
+    const summary = summaries.get(venue.city) ?? {
+      city: venue.city,
+      totalVenues: 0,
+      claimedCount: 0,
+      payingCount: 0,
+      interestedCount: 0,
+    };
+
+    summary.totalVenues += 1;
+    summary.claimedCount += venue.isClaimed ? 1 : 0;
+    summary.payingCount += venue.monetisationStatus === "paying" ? 1 : 0;
+    summary.interestedCount += venue.monetisationStatus === "interested" ? 1 : 0;
+    summaries.set(venue.city, summary);
+  }
+
+  return Array.from(summaries.values()).sort((first, second) => first.city.localeCompare(second.city));
+}
+
 function exportVenuesToCsv(venues: Venue[]) {
-  const headers = ["Venue", "Area", "Claimed", "Tier", "Status", "Featured eligible", "Featured recommendation", "Notes"];
+  const headers = ["Venue", "Country", "City", "Area", "Claimed", "Tier", "Status", "Featured eligible", "Featured recommendation", "Notes"];
   const rows = venues.map((venue) => {
     const recommendation = getFeaturedEligibilityRecommendation(venue);
 
     return [
       venue.name,
+      venue.country,
+      venue.city,
       venue.area,
       venue.isClaimed ? "Yes" : "No",
       formatPartnerTier(venue.partnerTier),

@@ -14,6 +14,8 @@ const demoVenues: Array<
   Omit<
     Venue,
     | "businessStatus"
+    | "country"
+    | "city"
     | "verificationStatus"
     | "lastVerifiedAt"
     | "dataSources"
@@ -256,6 +258,8 @@ const demoVenues: Array<
 
 export const venues: Venue[] = demoVenues.map((venue) => ({
   ...venue,
+  country: "United Kingdom",
+  city: "London",
   businessStatus: "unknown",
   verificationStatus: "unverified",
   lastVerifiedAt: null,

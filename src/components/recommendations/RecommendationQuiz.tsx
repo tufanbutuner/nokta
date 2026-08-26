@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Select } from "@/components/ui/select";
+import { DEFAULT_CITY, getCityOptions } from "@/lib/cities";
 import { Separator } from "@/components/ui/separator";
 import { FEATURE_OPTIONS, PRICE_OPTIONS, VIBE_OPTIONS } from "@/lib/venueFilters";
 import type { RecommendationOccasion, RecommendationPreferences } from "@/types/recommendations";
@@ -24,6 +25,7 @@ const DISTANCE_OPTIONS = [
 ] as const;
 
 const INITIAL_PREFERENCES: RecommendationPreferences = {
+  city: DEFAULT_CITY,
   vibes: [],
   priceLevel: "any",
   occasion: "any",
@@ -63,6 +65,19 @@ export function RecommendationQuiz({
         </div>
 
         <Separator />
+
+        <section className="space-y-2">
+          <label className="text-sm font-medium" htmlFor="recommend-city">
+            Where are you looking?
+          </label>
+          <Select
+            id="recommend-city"
+            value={preferences.city}
+            onChange={(event) => setPreferences({ ...preferences, city: event.target.value })}
+            options={getCityOptions({ activeOnly: true })}
+            className="w-full md:max-w-xs"
+          />
+        </section>
 
         <section className="space-y-3">
           <h2 className="font-semibold">What kind of vibe do you want?</h2>

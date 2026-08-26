@@ -3,6 +3,7 @@ import { dirname, join } from "node:path";
 import process from "node:process";
 import { createClient } from "@supabase/supabase-js";
 import { config } from "dotenv";
+import { SUPPORTED_CITIES } from "../src/data/supportedCities";
 
 config({ path: ".env.local" });
 config();
@@ -12,7 +13,8 @@ const STATIC_ROUTES = ["/", "/discover", "/recommend", "/saved", "/suggest", "/s
 
 async function main() {
   const venueSlugs = await getVenueSlugs();
-  const routes = [...STATIC_ROUTES, ...venueSlugs.map((slug) => `/venues/${slug}`)];
+  const cityRoutes = SUPPORTED_CITIES.filter((city) => city.isActive).map((city) => `/cities/${city.slug}`);
+  const routes = [...STATIC_ROUTES, ...cityRoutes, ...venueSlugs.map((slug) => `/venues/${slug}`)];
   const xml = createSitemapXml(routes);
   const outputPath = join(process.cwd(), "public", "sitemap.xml");
 

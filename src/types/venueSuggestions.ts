@@ -4,6 +4,8 @@ export interface VenueSuggestion {
   id: string;
   submittedBy: string | null;
   venueName: string;
+  country: string;
+  city: string;
   area: string | null;
   address: string | null;
   postcode: string | null;
@@ -21,6 +23,8 @@ export interface VenueSuggestion {
 
 export interface VenueSuggestionInput {
   venueName: string;
+  country: string;
+  city: string;
   area?: string | null;
   address?: string | null;
   postcode?: string | null;

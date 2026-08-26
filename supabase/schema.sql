@@ -5,6 +5,8 @@ create table if not exists public.venues (
   name text not null,
   description text not null,
 
+  country text not null default 'United Kingdom',
+  city text not null default 'London',
   area text not null,
   address text not null,
   postcode text not null,
@@ -39,6 +41,8 @@ alter column price_from drop not null;
 
 alter table public.venues
 add column if not exists business_status text not null default 'unknown',
+add column if not exists country text not null default 'United Kingdom',
+add column if not exists city text not null default 'London',
 add column if not exists verification_status text not null default 'unverified',
 add column if not exists last_verified_at timestamp with time zone,
 add column if not exists data_sources jsonb not null default '{}',
@@ -103,6 +107,10 @@ begin
     check (monetisation_status in ('not-contacted', 'contacted', 'interested', 'trial', 'paying', 'churned', 'not-fit'));
   end if;
 end $$;
+
+create index if not exists venues_country_idx on public.venues (country);
+create index if not exists venues_city_idx on public.venues (city);
+create index if not exists venues_country_city_idx on public.venues (country, city);
 
 alter table public.venues enable row level security;
 
@@ -370,6 +378,8 @@ create table if not exists public.venue_suggestions (
   submitted_by uuid references auth.users(id) on delete set null,
 
   venue_name text not null,
+  country text not null default 'United Kingdom',
+  city text not null default 'London',
   area text,
   address text,
   postcode text,
@@ -401,6 +411,9 @@ begin
     check (status in ('pending', 'approved', 'rejected', 'converted'));
   end if;
 end $$;
+
+create index if not exists venue_suggestions_country_idx on public.venue_suggestions (country);
+create index if not exists venue_suggestions_city_idx on public.venue_suggestions (city);
 
 drop trigger if exists set_venue_suggestions_updated_at on public.venue_suggestions;
 

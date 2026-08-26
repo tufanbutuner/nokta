@@ -1,3 +1,4 @@
+import { DEFAULT_CITY, DEFAULT_COUNTRY } from "@/lib/cities";
 import type { VenueSuggestionRow } from "@/types/database";
 import type { VenueSuggestion } from "@/types/venueSuggestions";
 
@@ -6,6 +7,8 @@ export function mapVenueSuggestionRowToSuggestion(row: VenueSuggestionRow): Venu
     id: row.id,
     submittedBy: row.submitted_by,
     venueName: row.venue_name,
+    country: row.country ?? DEFAULT_COUNTRY,
+    city: row.city ?? DEFAULT_CITY,
     area: row.area,
     address: row.address,
     postcode: row.postcode,

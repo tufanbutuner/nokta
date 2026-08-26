@@ -17,7 +17,8 @@ export function getRecommendedVenues(
   preferences: RecommendationPreferences,
   options: RecommendationOptions = {},
 ): RecommendedVenue[] {
-  const recommended = venues.map((venue) => scoreVenue(venue, preferences, options));
+  const cityVenues = venues.filter((venue) => venue.city === preferences.city);
+  const recommended = cityVenues.map((venue) => scoreVenue(venue, preferences, options));
   const topScore = Math.max(...recommended.map((item) => item.score), 1);
 
   return recommended

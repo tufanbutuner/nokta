@@ -15,6 +15,16 @@ export function validateVenueSuggestionInput(input: VenueSuggestionInput): Venue
     errors.venueName = "Venue name must be 120 characters or fewer.";
   }
 
+  if (!input.country.trim()) {
+    errors.country = "Country is required.";
+  }
+
+  if (!input.city.trim()) {
+    errors.city = "City is required.";
+  }
+
+  validateMaxLength(errors, "country", input.country, 80, "Country");
+  validateMaxLength(errors, "city", input.city, 80, "City");
   validateMaxLength(errors, "area", input.area, 80, "Area");
   validateMaxLength(errors, "address", input.address, 200, "Address");
   validateMaxLength(errors, "postcode", input.postcode, 20, "Postcode");

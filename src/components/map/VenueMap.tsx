@@ -4,7 +4,8 @@ import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
 import L from "leaflet";
 import { Button } from "@/components/ui/button";
 import { VenueMapMarker } from "@/components/map/VenueMapMarker";
-import { LONDON_CENTER, hasValidCoordinates, hasValidUserLocation } from "@/lib/map";
+import { DEFAULT_CITY } from "@/lib/cities";
+import { getMapCenterForCity, hasValidCoordinates, hasValidUserLocation } from "@/lib/map";
 import { cn } from "@/lib/utils";
 import type { UserLocation } from "@/types/location";
 import type { Venue } from "@/types/venue";
@@ -23,38 +24,25 @@ export function VenueMap({
   userLocation,
   onClearFilters,
   className,
+  city = DEFAULT_CITY,
 }: {
   venues: Venue[];
   selectedVenueId?: string;
   userLocation?: UserLocation | null;
   onClearFilters?: () => void;
   className?: string;
+  city?: string;
 }) {
   const mappableVenues = venues.filter(hasValidCoordinates);
   const selectedVenue = mappableVenues.find((venue) => venue.id === selectedVenueId);
   const mappableUserLocation = hasValidUserLocation(userLocation) ? userLocation : null;
-
-  if (venues.length === 0) {
-    return (
-      <div className={cn("flex min-h-[420px] items-center justify-center rounded-lg border bg-card p-8 text-center md:min-h-[620px]", className)}>
-        <div>
-          <h2 className="text-2xl font-semibold">No venues to show on the map.</h2>
-          <p className="mx-auto mt-3 max-w-sm text-muted-foreground">Try clearing some filters.</p>
-          {onClearFilters ? (
-            <Button className="mt-6" onClick={onClearFilters}>
-              Clear filters
-            </Button>
-          ) : null}
-        </div>
-      </div>
-    );
-  }
+  const cityCenter = getMapCenterForCity(city);
 
   return (
-    <div className={cn("overflow-hidden rounded-lg border bg-card", className)}>
+    <div className={cn("relative overflow-hidden rounded-lg border bg-card", className)}>
       <MapContainer
-        center={[LONDON_CENTER.latitude, LONDON_CENTER.longitude]}
-        zoom={11}
+        center={[cityCenter.latitude, cityCenter.longitude]}
+        zoom={cityCenter.defaultZoom}
         scrollWheelZoom={false}
         className="h-full min-h-[420px] w-full md:min-h-[620px]"
       >
@@ -62,7 +50,7 @@ export function VenueMap({
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <MapBoundsUpdater venues={mappableVenues} selectedVenue={selectedVenue} userLocation={mappableUserLocation} />
+        <MapBoundsUpdater venues={mappableVenues} selectedVenue={selectedVenue} userLocation={mappableUserLocation} city={city} />
         {mappableUserLocation ? (
           <VenueMapUserMarker userLocation={mappableUserLocation} />
         ) : null}
@@ -70,6 +58,17 @@ export function VenueMap({
           <VenueMapMarker key={venue.id} venue={venue} selected={venue.id === selectedVenueId} />
         ))}
       </MapContainer>
+      {venues.length === 0 ? (
+        <div className="absolute inset-x-4 top-4 z-[500] rounded-xl border bg-card/95 p-4 text-sm shadow-lg shadow-stone-950/10 backdrop-blur">
+          <h2 className="font-semibold">No venues to show on the map.</h2>
+          <p className="mt-1 text-muted-foreground">Try clearing some filters or choosing another city.</p>
+          {onClearFilters ? (
+            <Button className="mt-3" size="sm" onClick={onClearFilters}>
+              Clear filters
+            </Button>
+          ) : null}
+        </div>
+      ) : null}
     </div>
   );
 }
@@ -94,12 +93,15 @@ function MapBoundsUpdater({
   venues,
   selectedVenue,
   userLocation,
+  city,
 }: {
   venues: Venue[];
   selectedVenue?: Venue;
   userLocation?: UserLocation | null;
+  city: string;
 }) {
   const map = useMap();
+  const cityCenter = getMapCenterForCity(city);
   const venuesKey = venues.map((venue) => `${venue.id}:${venue.latitude}:${venue.longitude}`).join("|");
   const selectedVenueKey = selectedVenue ? `${selectedVenue.id}:${selectedVenue.latitude}:${selectedVenue.longitude}` : "";
   const userLocationKey = userLocation ? `${userLocation.latitude}:${userLocation.longitude}` : "";
@@ -111,7 +113,7 @@ function MapBoundsUpdater({
     }
 
     if (venues.length === 0) {
-      map.setView([LONDON_CENTER.latitude, LONDON_CENTER.longitude], 11);
+      map.setView([cityCenter.latitude, cityCenter.longitude], cityCenter.defaultZoom);
       return;
     }
 
@@ -120,7 +122,7 @@ function MapBoundsUpdater({
       bounds.push([userLocation.latitude, userLocation.longitude]);
     }
     map.fitBounds(bounds, { padding: [34, 34], maxZoom: 13 });
-  }, [map, venuesKey, selectedVenueKey, userLocationKey]);
+  }, [map, venuesKey, selectedVenueKey, userLocationKey, cityCenter.latitude, cityCenter.longitude, cityCenter.defaultZoom]);
 
   return null;
 }

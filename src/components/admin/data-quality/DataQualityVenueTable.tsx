@@ -28,6 +28,7 @@ export function DataQualityVenueTable({ venues }: { venues: Venue[] }) {
             <thead className="bg-muted/60 text-left text-xs uppercase text-muted-foreground">
               <tr>
                 <th className="px-4 py-3 font-medium">Venue</th>
+                <th className="px-4 py-3 font-medium">City</th>
                 <th className="px-4 py-3 font-medium">Area</th>
                 <th className="px-4 py-3 font-medium">Verification</th>
                 <th className="px-4 py-3 font-medium">Business status</th>
@@ -47,6 +48,7 @@ export function DataQualityVenueTable({ venues }: { venues: Venue[] }) {
                       <div className="font-medium">{venue.name}</div>
                       <div className="mt-1 max-w-xs truncate text-xs text-muted-foreground">{venue.address}</div>
                     </td>
+                    <td className="px-4 py-4 text-muted-foreground">{venue.city}</td>
                     <td className="px-4 py-4 text-muted-foreground">{venue.area}</td>
                     <td className="px-4 py-4">
                       <VenueVerificationBadge status={venue.verificationStatus} />

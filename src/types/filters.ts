@@ -5,6 +5,8 @@ export type DiscoverView = "list" | "map";
 
 export interface VenueFilterState {
   query: string;
+  country: string;
+  city: string;
   area: string;
   priceLevel: PriceLevel | "all";
   openNow: boolean;

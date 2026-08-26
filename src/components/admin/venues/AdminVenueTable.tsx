@@ -23,6 +23,7 @@ export function AdminVenueTable({ venues }: { venues: Venue[] }) {
             <thead className="bg-muted/60 text-left text-xs uppercase text-muted-foreground">
               <tr>
                 <th className="px-4 py-3 font-medium">Venue</th>
+                <th className="px-4 py-3 font-medium">City</th>
                 <th className="px-4 py-3 font-medium">Area</th>
                 <th className="px-4 py-3 font-medium">Postcode</th>
                 <th className="px-4 py-3 font-medium">Verification</th>
@@ -43,6 +44,7 @@ export function AdminVenueTable({ venues }: { venues: Venue[] }) {
                       <div className="font-medium">{venue.name}</div>
                       <div className="mt-1 text-xs text-muted-foreground">{venue.id}</div>
                     </td>
+                    <td className="px-4 py-4 text-muted-foreground">{venue.city}</td>
                     <td className="px-4 py-4 text-muted-foreground">{venue.area}</td>
                     <td className="px-4 py-4 text-muted-foreground">{venue.postcode}</td>
                     <td className="px-4 py-4">

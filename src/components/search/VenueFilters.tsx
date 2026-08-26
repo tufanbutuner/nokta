@@ -1,4 +1,5 @@
 import { PRICE_OPTIONS, hasActiveFilters } from "@/lib/venueFilters";
+import { CitySelector } from "@/components/search/CitySelector";
 import { FeatureFilter } from "@/components/search/FeatureFilter";
 import { VibeFilter } from "@/components/search/VibeFilter";
 import { Button } from "@/components/ui/button";
@@ -20,12 +21,20 @@ export function VenueFilters({
   onClear: () => void;
   className?: string;
 }) {
-  const areas = Array.from(new Set(venues.map((venue) => venue.area))).sort((first, second) => first.localeCompare(second));
+  const areas = Array.from(new Set(venues.filter((venue) => venue.country === filters.country && venue.city === filters.city).map((venue) => venue.area))).sort(
+    (first, second) => first.localeCompare(second),
+  );
   const areaOptions = [{ label: "All areas", value: "all" }, ...areas.map((area) => ({ label: area, value: area }))];
 
   return (
     <div className={className}>
       <div className="grid gap-3 sm:grid-cols-2">
+        <div className="space-y-2">
+          <label className="text-sm font-medium" htmlFor="city-filter">
+            City
+          </label>
+          <CitySelector value={filters.city} onChange={(city) => onChange({ ...filters, city, area: "all" })} />
+        </div>
         <div className="space-y-2">
           <label className="text-sm font-medium" htmlFor="area-filter">
             Area

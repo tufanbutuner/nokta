@@ -10,11 +10,13 @@ import { LoadingState } from "@/components/state/LoadingState";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useVenues } from "@/hooks/useVenues";
+import { DEFAULT_CITY } from "@/lib/cities";
 import { getVenueQuality } from "@/lib/venueQuality";
 
 export function AdminVenuesPage() {
   const { venues, isLoading, error } = useVenues();
   const [query, setQuery] = useState("");
+  const [city, setCity] = useState(DEFAULT_CITY);
   const [verificationStatus, setVerificationStatus] = useState<AdminVenueVerificationFilter>("all");
   const [qualityLevel, setQualityLevel] = useState<AdminVenueQualityFilter>("all");
   const filteredVenues = useMemo(() => {
@@ -23,13 +25,14 @@ export function AdminVenuesPage() {
     return venues.filter((venue) => {
       const matchesQuery =
         !normalizedQuery ||
-        [venue.name, venue.area, venue.postcode, venue.address].some((value) => value.toLowerCase().includes(normalizedQuery));
+        [venue.name, venue.country, venue.city, venue.area, venue.postcode, venue.address].some((value) => value.toLowerCase().includes(normalizedQuery));
       const matchesVerification = verificationStatus === "all" || venue.verificationStatus === verificationStatus;
       const matchesQuality = qualityLevel === "all" || getVenueQuality(venue).level === qualityLevel;
+      const matchesCity = venue.city === city;
 
-      return matchesQuery && matchesVerification && matchesQuality;
+      return matchesCity && matchesQuery && matchesVerification && matchesQuality;
     });
-  }, [qualityLevel, query, venues, verificationStatus]);
+  }, [city, qualityLevel, query, venues, verificationStatus]);
 
   if (isLoading) {
     return (
@@ -71,9 +74,11 @@ export function AdminVenuesPage() {
           <CardContent>
             <AdminVenueFilters
               query={query}
+              city={city}
               verificationStatus={verificationStatus}
               qualityLevel={qualityLevel}
               onQueryChange={setQuery}
+              onCityChange={setCity}
               onVerificationStatusChange={setVerificationStatus}
               onQualityLevelChange={setQualityLevel}
             />
