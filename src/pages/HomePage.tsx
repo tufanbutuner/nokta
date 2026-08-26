@@ -97,9 +97,9 @@ export function HomePage() {
       <section className="border-b">
         <PageContainer className="py-12 sm:py-16 lg:py-20">
           <div className="mx-auto max-w-4xl text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-muted-foreground">Four UK cities live</p>
-            <h1 className="mx-auto mt-5 max-w-4xl text-5xl font-semibold leading-[0.95] sm:text-6xl lg:text-7xl">
-              Find your perfect <span className="text-clay-accent">sheesha spot</span>
+            <h1 className="mx-auto max-w-4xl text-5xl font-semibold leading-[0.95] sm:text-6xl lg:text-7xl">
+              Find your perfect
+              <span className="mt-1 block text-clay-accent">sheesha spot</span>
             </h1>
             <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
               Discover verified shisha lounges, compare features, save your favourites and find the right spot for your next night out.
