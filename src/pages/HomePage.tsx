@@ -4,6 +4,7 @@ import type { LucideIcon } from "lucide-react";
 import { ArrowRight, BookmarkCheck, ChevronRight, MapPin, MessageCircle, Search, Sparkles, Star } from "lucide-react";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { PageMeta } from "@/components/seo/PageMeta";
+import { ClaimedVenueBadge } from "@/components/venues/ClaimedVenueBadge";
 import { FavouriteButton } from "@/components/venues/FavouriteButton";
 import { VenueGrid } from "@/components/venues/VenueGrid";
 import { Button } from "@/components/ui/button";
@@ -320,7 +321,10 @@ function LandingVenueCard({ venue }: { venue: Venue }) {
       </div>
       <div className="p-4">
         <Link reloadDocument to={`/venues/${venue.slug}`} className="block">
-          <h3 className="line-clamp-1 font-semibold">{venue.name}</h3>
+          <div className="flex min-w-0 flex-wrap items-center gap-2">
+            <h3 className="line-clamp-1 min-w-0 font-semibold">{venue.name}</h3>
+            {venue.isClaimed ? <ClaimedVenueBadge compact /> : null}
+          </div>
           <p className="mt-1 line-clamp-1 text-sm text-muted-foreground">{venue.area}</p>
         </Link>
         <div className="mt-4 flex items-center justify-between gap-3">

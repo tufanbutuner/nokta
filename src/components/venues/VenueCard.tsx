@@ -1,6 +1,7 @@
 import { Star } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
+import { ClaimedVenueBadge } from "@/components/venues/ClaimedVenueBadge";
 import { VenueBadge } from "@/components/venues/VenueBadge";
 import { VenueDistance } from "@/components/venues/VenueDistance";
 import { FavouriteButton } from "@/components/venues/FavouriteButton";
@@ -38,6 +39,7 @@ export function VenueCard({ venue, userLocation }: { venue: Venue; userLocation?
               ) : null}
             </div>
             <div className="mt-4 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted-foreground">
+              {venue.isClaimed ? <ClaimedVenueBadge compact /> : null}
               <VenuePrice level={venue.priceLevel} from={venue.priceFrom} />
               <VenueDistance venue={venue} userLocation={userLocation} />
             </div>

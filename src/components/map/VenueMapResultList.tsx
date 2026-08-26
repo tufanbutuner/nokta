@@ -1,6 +1,7 @@
 import { Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { ClaimedVenueBadge } from "@/components/venues/ClaimedVenueBadge";
 import { VenuePrice } from "@/components/venues/VenuePrice";
 import { formatDistanceMiles, getVenueDistanceMiles } from "@/lib/location";
 import { getVenueCurrentStatus } from "@/lib/openingHours";
@@ -72,6 +73,7 @@ export function VenueMapResultList({
                   ) : null}
                 </div>
                 <div className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted-foreground">
+                  {venue.isClaimed ? <ClaimedVenueBadge compact /> : null}
                   <VenuePrice level={venue.priceLevel} from={venue.priceFrom} />
                 </div>
                 <div className="mt-3">
