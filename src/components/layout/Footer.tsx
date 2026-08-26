@@ -6,7 +6,7 @@ export function Footer() {
     <footer className="mt-20 border-t bg-card/30 py-10 text-sm text-muted-foreground">
       <PageContainer className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-start">
         <div className="max-w-2xl">
-          <p className="font-brand text-sm font-semibold uppercase tracking-[0.18em] text-foreground">Sheesha</p>
+          <p className="font-brand text-xl font-bold tracking-[-0.5px] text-foreground">sheesh.</p>
           <p className="mt-3 leading-6">
             Sheesha helps people discover shisha lounges across London. Venue details can change, so always check directly before travelling or booking.
           </p>
