@@ -3,6 +3,7 @@ import { RequireAdmin } from "@/components/auth/RequireAdmin";
 import { AppLayout } from "@/components/layout/AppLayout";
 import { AccountPage } from "@/pages/AccountPage";
 import { DataQualityPage } from "@/pages/admin/DataQualityPage";
+import { AdminFeaturedPlacementsPage } from "@/pages/admin/AdminFeaturedPlacementsPage";
 import { AdminReviewsPage } from "@/pages/admin/AdminReviewsPage";
 import { AdminVenueClaimsPage } from "@/pages/admin/AdminVenueClaimsPage";
 import { AdminVenueSuggestionsPage } from "@/pages/admin/AdminVenueSuggestionsPage";
@@ -89,6 +90,14 @@ export const router = createBrowserRouter([
         element: (
           <RequireAdmin>
             <AdminVenueClaimsPage />
+          </RequireAdmin>
+        ),
+      },
+      {
+        path: "/admin/featured",
+        element: (
+          <RequireAdmin>
+            <AdminFeaturedPlacementsPage />
           </RequireAdmin>
         ),
       },

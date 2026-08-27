@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { SlidersHorizontal, X } from "lucide-react";
 import { SortSelect } from "@/components/discover/SortSelect";
+import { DiscoverFeaturedVenues } from "@/components/featured/DiscoverFeaturedVenues";
 import { VenueMap } from "@/components/map/VenueMap";
 import { VenueMapResultList } from "@/components/map/VenueMapResultList";
 import { PageMeta } from "@/components/seo/PageMeta";
@@ -171,13 +172,16 @@ export function DiscoverPage() {
               ) : error ? (
                 <ErrorState message={error} />
               ) : sortedVenues.length ? (
-                <VenueMapResultList
-                  venues={sortedVenues}
-                  selectedVenueId={selectedVenueId}
-                  userLocation={userLocation}
-                  reviewSummaries={reviewSummaries}
-                  onSelectVenue={(venue) => setSelectedVenueId(venue.id)}
-                />
+                <>
+                  <DiscoverFeaturedVenues city={filters.city} area={filters.area} venues={sortedVenues} />
+                  <VenueMapResultList
+                    venues={sortedVenues}
+                    selectedVenueId={selectedVenueId}
+                    userLocation={userLocation}
+                    reviewSummaries={reviewSummaries}
+                    onSelectVenue={(venue) => setSelectedVenueId(venue.id)}
+                  />
+                </>
               ) : (
                 <DiscoverEmptyState onClear={clearFilters} compact className="h-full min-h-[360px]" />
               )}

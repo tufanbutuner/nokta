@@ -1,4 +1,4 @@
-import { Activity, BadgeCheck, DollarSign, GitBranch, MapPin, PenLine } from "lucide-react";
+import { Activity, BadgeCheck, DollarSign, GitBranch, MapPin, PenLine, Sparkles } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { useAuth } from "@/context/AuthContext";
 import { cn } from "@/lib/utils";
@@ -9,6 +9,7 @@ const ADMIN_NAV_ITEMS = [
   { label: "Suggestions", to: "/admin/suggestions", icon: GitBranch },
   { label: "Reviews", to: "/admin/reviews", icon: PenLine },
   { label: "Claims", to: "/admin/claims", icon: BadgeCheck },
+  { label: "Featured", to: "/admin/featured", icon: Sparkles },
   { label: "Monetisation", to: "/admin/monetisation", icon: DollarSign },
 ] as const;
 

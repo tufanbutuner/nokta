@@ -17,7 +17,9 @@ export type AnalyticsEvent =
   | "venue_claim_submitted"
   | "venue_claim_cancelled"
   | "venue_claim_approved"
-  | "venue_claim_rejected";
+  | "venue_claim_rejected"
+  | "featured_placement_viewed"
+  | "featured_placement_clicked";
 
 export type AnalyticsProperties = Record<string, string | number | boolean | null | undefined>;
 

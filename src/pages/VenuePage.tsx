@@ -1,49 +1,35 @@
-import { useEffect, useState } from "react";
-import {
-  Camera,
-  ChevronLeft,
-  ChevronRight,
-  Clock,
-  ExternalLink,
-  Flag,
-  MapPin,
-  Navigation,
-  Phone,
-  Share2,
-  Sofa,
-  Star,
-  Utensils,
-  X,
-} from "lucide-react";
-import { Link, useParams } from "react-router-dom";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { VenueMap } from "@/components/map/VenueMap";
 import { ReviewSection } from "@/components/reviews/ReviewSection";
 import { PageMeta } from "@/components/seo/PageMeta";
-import { FavouriteButton } from "@/components/venues/FavouriteButton";
-import { ClaimedVenueBadge } from "@/components/venues/ClaimedVenueBadge";
-import { VenueBadge } from "@/components/venues/VenueBadge";
-import { VenuePrice } from "@/components/venues/VenuePrice";
-import { VenueVerificationBadge } from "@/components/venues/VenueVerificationBadge";
 import { ErrorState } from "@/components/state/ErrorState";
 import { LoadingState } from "@/components/state/LoadingState";
 import { Badge } from "@/components/ui/badge";
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
+import { ClaimedVenueBadge } from "@/components/venues/ClaimedVenueBadge";
+import { FavouriteButton } from "@/components/venues/FavouriteButton";
+import { VenueBadge } from "@/components/venues/VenueBadge";
+import { VenuePrice } from "@/components/venues/VenuePrice";
+import { VenueVerificationBadge } from "@/components/venues/VenueVerificationBadge";
 import { useAppLocation } from "@/context/AppLocationContext";
 import { useVenuePreferences } from "@/context/VenuePreferencesContext";
 import { useVenue } from "@/hooks/useVenue";
 import { useVenueReviews } from "@/hooks/useVenueReviews";
 import { useVenues } from "@/hooks/useVenues";
-import { getGoogleMapsDirectionsUrl } from "@/lib/directions";
 import { trackEvent } from "@/lib/analytics";
+import { getCityByName } from "@/lib/cities";
+import { getGoogleMapsDirectionsUrl } from "@/lib/directions";
 import { formatDistanceMiles, getVenueDistanceMiles } from "@/lib/location";
 import { getVenueCurrentStatus } from "@/lib/openingHours";
-import { getVenueRatingSummary } from "@/services/reviewService";
 import { cn } from "@/lib/utils";
 import { formatPriceLevel } from "@/lib/venueFilters";
 import { getVenueImage, getVenueImages } from "@/lib/venueImages";
+import { getVenueRatingSummary } from "@/services/reviewService";
 import type { Venue } from "@/types/venue";
+import { Camera, ChevronLeft, ChevronRight, Clock, ExternalLink, Flag, MapPin, Navigation, Phone, Share2, Sofa, Star, Utensils, X } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 
 type VenueDetailTab = "overview" | "menu" | "reviews" | "photos";
 
@@ -74,10 +60,7 @@ export function VenuePage() {
   if (isLoading) {
     return (
       <main>
-        <PageMeta
-          title="Venue | Sheesha"
-          description="View opening hours, features, address, reviews and verification details for a Sheesha venue."
-        />
+        <PageMeta title="Venue | Sheesha" description="View opening hours, features, address, reviews and verification details for a Sheesha venue." />
         <PageContainer className="py-20">
           <LoadingState message="Loading venue..." />
         </PageContainer>
@@ -102,25 +85,20 @@ export function VenuePage() {
         <PageMeta title="Venue not found | Sheesha" description="This Sheesha venue could not be found." />
         <h1 className="text-3xl font-semibold">Venue not found</h1>
         <Button asChild className="mt-6">
-          <Link reloadDocument to="/discover">Back to discover</Link>
+          <Link reloadDocument to="/discover">
+            Back to discover
+          </Link>
         </Button>
       </PageContainer>
     );
   }
 
   const currentStatus = getVenueCurrentStatus(venue);
+  const city = getCityByName(venue.city);
   const distanceLabel = userLocation ? formatDistanceMiles(getVenueDistanceMiles(venue, userLocation)).replace(" away", "") : null;
-  const amenities = [
-    venue.food && "Food",
-    venue.outdoor && "Outdoor seating",
-    venue.indoor && "Indoor seating",
-    venue.alcohol && "Alcohol",
-    venue.openLate && "Open late",
-  ].filter((amenity): amenity is string => Boolean(amenity));
+  const amenities = [venue.food && "Food", venue.outdoor && "Outdoor seating", venue.indoor && "Indoor seating", venue.alcohol && "Alcohol", venue.openLate && "Open late"].filter((amenity): amenity is string => Boolean(amenity));
   const galleryImages = getVenueImages(venue);
-  const similarVenues = venues
-    .filter((candidate) => candidate.id !== venue.id && (candidate.area === venue.area || candidate.vibes.some((vibe) => venue.vibes.includes(vibe))))
-    .slice(0, 6);
+  const similarVenues = venues.filter((candidate) => candidate.id !== venue.id && (candidate.area === venue.area || candidate.vibes.some((vibe) => venue.vibes.includes(vibe)))).slice(0, 6);
 
   async function shareVenue() {
     if (!venue) {
@@ -146,16 +124,35 @@ export function VenuePage() {
 
   return (
     <main className="bg-background">
-      <PageMeta
-        title={`${venue.name} in ${venue.city} | Sheesha`}
-        description={`View opening hours, features, address, reviews and verification details for ${venue.name} in ${venue.city}.`}
-        canonicalPath={`/venues/${venue.slug}`}
-        imageUrl={galleryImages[0] ?? getVenueImage(venue)}
-      />
+      <PageMeta title={`${venue.name} in ${venue.city} | Sheesha`} description={`View opening hours, features, address, reviews and verification details for ${venue.name} in ${venue.city}.`} canonicalPath={`/venues/${venue.slug}`} imageUrl={galleryImages[0] ?? getVenueImage(venue)} />
       <PageContainer className="py-6 sm:py-8">
-        <Link reloadDocument to="/discover" className="mb-4 inline-flex text-sm font-medium text-muted-foreground hover:text-foreground">
-          Back to discover
-        </Link>
+        <Breadcrumb className="mb-4">
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link reloadDocument to="/discover">
+                  Discover
+                </Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            {city?.isActive ? (
+              <>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbLink asChild>
+                    <Link reloadDocument to={`/cities/${city.slug}`}>
+                      {city.name}
+                    </Link>
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+              </>
+            ) : null}
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage>{venue.name}</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
 
         <section className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
           <div className="min-w-0">
@@ -203,15 +200,7 @@ export function VenuePage() {
         <div className="sticky top-16 z-30 mt-6 border-b bg-background/95 backdrop-blur">
           <div className="flex gap-2 overflow-x-auto py-2">
             {VENUE_TABS.map((tab) => (
-              <button
-                key={tab.value}
-                type="button"
-                className={cn(
-                  "h-9 shrink-0 rounded-lg px-3 text-sm font-medium transition-colors",
-                  activeTab === tab.value ? "bg-foreground text-background" : "text-muted-foreground hover:bg-secondary hover:text-foreground",
-                )}
-                onClick={() => setActiveTab(tab.value)}
-              >
+              <button key={tab.value} type="button" className={cn("h-9 shrink-0 rounded-lg px-3 text-sm font-medium transition-colors", activeTab === tab.value ? "bg-foreground text-background" : "text-muted-foreground hover:bg-secondary hover:text-foreground")} onClick={() => setActiveTab(tab.value)}>
                 {tab.label}
               </button>
             ))}
@@ -219,24 +208,14 @@ export function VenuePage() {
         </div>
 
         <div className="mt-8">
-          {activeTab === "overview" ? (
-            <OverviewTab venue={venue} amenities={amenities} similarVenues={similarVenues} />
-          ) : null}
+          {activeTab === "overview" ? <OverviewTab venue={venue} amenities={amenities} similarVenues={similarVenues} /> : null}
           {activeTab === "menu" ? <MenuTab venue={venue} /> : null}
           {activeTab === "reviews" ? <ReviewsTab venue={venue} /> : null}
           {activeTab === "photos" ? <PhotosTab venue={venue} images={galleryImages} onOpenImage={setActiveImageIndex} /> : null}
         </div>
       </PageContainer>
 
-      {activeImageIndex !== null ? (
-        <PhotoLightbox
-          venue={venue}
-          images={galleryImages}
-          activeIndex={activeImageIndex}
-          onChange={setActiveImageIndex}
-          onClose={() => setActiveImageIndex(null)}
-        />
-      ) : null}
+      {activeImageIndex !== null ? <PhotoLightbox venue={venue} images={galleryImages} activeIndex={activeImageIndex} onChange={setActiveImageIndex} onClose={() => setActiveImageIndex(null)} /> : null}
     </main>
   );
 }
@@ -245,10 +224,7 @@ function VenueHeaderMeta({ venue, distanceLabel }: { venue: Venue; distanceLabel
   const { reviews } = useVenueReviews(venue.id);
   const summary = getVenueRatingSummary(reviews);
   const displayRating = summary.averageRating ?? venue.rating ?? null;
-  const reviewLabel =
-    summary.reviewCount > 0
-      ? `${summary.reviewCount} user review${summary.reviewCount === 1 ? "" : "s"}`
-      : "No user reviews yet";
+  const reviewLabel = summary.reviewCount > 0 ? `${summary.reviewCount} user review${summary.reviewCount === 1 ? "" : "s"}` : "No user reviews yet";
 
   return (
     <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-muted-foreground">
@@ -422,9 +398,7 @@ function OverviewTab({ venue, amenities, similarVenues }: { venue: Venue; amenit
 
         <section>
           <h2 className="text-2xl font-semibold">Amenities</h2>
-          <div className="mt-4 flex flex-wrap gap-2">
-            {amenities.length ? amenities.map((amenity) => <Badge key={amenity}>{amenity}</Badge>) : <p className="text-muted-foreground">Amenities TBC</p>}
-          </div>
+          <div className="mt-4 flex flex-wrap gap-2">{amenities.length ? amenities.map((amenity) => <Badge key={amenity}>{amenity}</Badge>) : <p className="text-muted-foreground">Amenities TBC</p>}</div>
         </section>
 
         <section>
@@ -462,12 +436,7 @@ function OverviewTab({ venue, amenities, similarVenues }: { venue: Venue; amenit
             {venue.city} {venue.postcode}
           </p>
           <div className="mt-4 overflow-hidden rounded-xl border">
-            <VenueMap
-              venues={[venue]}
-              selectedVenueId={venue.id}
-              city={venue.city}
-              className="h-72 rounded-none border-0 [&_.leaflet-container]:!min-h-72 md:[&_.leaflet-container]:!min-h-72"
-            />
+            <VenueMap venues={[venue]} selectedVenueId={venue.id} city={venue.city} className="h-72 rounded-none border-0 [&_.leaflet-container]:!min-h-72 md:[&_.leaflet-container]:!min-h-72" />
           </div>
         </section>
 
@@ -498,18 +467,7 @@ function DetailTile({ icon, label, value }: { icon: React.ReactNode; label: stri
 }
 
 function CurrentStatusBadge({ status }: { status: ReturnType<typeof getVenueCurrentStatus> }) {
-  return (
-    <span
-      className={cn(
-        "inline-flex h-7 items-center rounded-full px-3 text-xs font-semibold",
-        status === "open" && "bg-clay-accent/10 text-clay-accent",
-        status === "closed" && "bg-red-950/10 text-red-700",
-        status === "unknown" && "bg-foreground/5 text-muted-foreground",
-      )}
-    >
-      {formatCurrentStatus(status)}
-    </span>
-  );
+  return <span className={cn("inline-flex h-7 items-center rounded-full px-3 text-xs font-semibold", status === "open" && "bg-clay-accent/10 text-clay-accent", status === "closed" && "bg-red-950/10 text-red-700", status === "unknown" && "bg-foreground/5 text-muted-foreground")}>{formatCurrentStatus(status)}</span>;
 }
 
 function formatFoodDrinks(venue: Venue) {
@@ -565,17 +523,8 @@ function PhotosTab({ venue, images, onOpenImage }: { venue: Venue; images: strin
       </div>
       <div className="columns-1 gap-4 sm:columns-2 lg:columns-3">
         {images.map((image, index) => (
-          <button
-            key={`${image}-${index}`}
-            type="button"
-            className="mb-4 block w-full break-inside-avoid overflow-hidden rounded-xl border bg-card text-left"
-            onClick={() => onOpenImage(index)}
-          >
-            <img
-              src={image}
-              alt={`${venue.name} photo ${index + 1}`}
-              className="w-full object-cover transition duration-500 hover:scale-[1.03]"
-            />
+          <button key={`${image}-${index}`} type="button" className="mb-4 block w-full break-inside-avoid overflow-hidden rounded-xl border bg-card text-left" onClick={() => onOpenImage(index)}>
+            <img src={image} alt={`${venue.name} photo ${index + 1}`} className="w-full object-cover transition duration-500 hover:scale-[1.03]" />
           </button>
         ))}
       </div>
@@ -583,19 +532,7 @@ function PhotosTab({ venue, images, onOpenImage }: { venue: Venue; images: strin
   );
 }
 
-function PhotoLightbox({
-  venue,
-  images,
-  activeIndex,
-  onChange,
-  onClose,
-}: {
-  venue: Venue;
-  images: string[];
-  activeIndex: number;
-  onChange: (index: number) => void;
-  onClose: () => void;
-}) {
+function PhotoLightbox({ venue, images, activeIndex, onChange, onClose }: { venue: Venue; images: string[]; activeIndex: number; onChange: (index: number) => void; onClose: () => void }) {
   const activeImage = images[activeIndex] ?? images[0] ?? getVenueImage(venue);
   const hasMultipleImages = images.length > 1;
 
@@ -641,33 +578,15 @@ function PhotoLightbox({
 
         <div className="relative flex min-h-0 flex-1 items-center justify-center">
           {hasMultipleImages ? (
-            <Button
-              type="button"
-              variant="secondary"
-              size="icon"
-              className="absolute left-0 z-20 bg-background/10 text-background hover:bg-background/20 sm:left-3"
-              aria-label="Previous photo"
-              onClick={() => onChange(getPreviousImageIndex(activeIndex, images.length))}
-            >
+            <Button type="button" variant="secondary" size="icon" className="absolute left-0 z-20 bg-background/10 text-background hover:bg-background/20 sm:left-3" aria-label="Previous photo" onClick={() => onChange(getPreviousImageIndex(activeIndex, images.length))}>
               <ChevronLeft className="h-6 w-6" />
             </Button>
           ) : null}
 
-          <img
-            src={activeImage}
-            alt={`${venue.name} expanded photo ${activeIndex + 1}`}
-            className="max-h-full max-w-full rounded-xl object-contain shadow-2xl shadow-stone-950/40"
-          />
+          <img src={activeImage} alt={`${venue.name} expanded photo ${activeIndex + 1}`} className="max-h-full max-w-full rounded-xl object-contain shadow-2xl shadow-stone-950/40" />
 
           {hasMultipleImages ? (
-            <Button
-              type="button"
-              variant="secondary"
-              size="icon"
-              className="absolute right-0 z-20 bg-background/10 text-background hover:bg-background/20 sm:right-3"
-              aria-label="Next photo"
-              onClick={() => onChange(getNextImageIndex(activeIndex, images.length))}
-            >
+            <Button type="button" variant="secondary" size="icon" className="absolute right-0 z-20 bg-background/10 text-background hover:bg-background/20 sm:right-3" aria-label="Next photo" onClick={() => onChange(getNextImageIndex(activeIndex, images.length))}>
               <ChevronRight className="h-6 w-6" />
             </Button>
           ) : null}
@@ -676,16 +595,7 @@ function PhotoLightbox({
         {hasMultipleImages ? (
           <div className="mt-3 flex gap-2 overflow-x-auto pb-1">
             {images.map((image, index) => (
-              <button
-                key={`${image}-thumb-${index}`}
-                type="button"
-                className={cn(
-                  "h-16 w-24 shrink-0 overflow-hidden rounded-lg border transition",
-                  index === activeIndex ? "border-background" : "border-background/20 opacity-65 hover:opacity-100",
-                )}
-                aria-label={`Open photo ${index + 1}`}
-                onClick={() => onChange(index)}
-              >
+              <button key={`${image}-thumb-${index}`} type="button" className={cn("h-16 w-24 shrink-0 overflow-hidden rounded-lg border transition", index === activeIndex ? "border-background" : "border-background/20 opacity-65 hover:opacity-100")} aria-label={`Open photo ${index + 1}`} onClick={() => onChange(index)}>
                 <img src={image} alt={`${venue.name} thumbnail ${index + 1}`} className="h-full w-full object-cover" />
               </button>
             ))}

@@ -104,3 +104,21 @@ export interface VenueClaimRequestRow {
   created_at: string;
   updated_at: string;
 }
+
+export interface FeaturedPlacementRow {
+  id: string;
+  venue_id: string;
+  placement_type: "homepage" | "city" | "area" | "discover" | "recommendation";
+  city: string | null;
+  area: string | null;
+  title: string | null;
+  description: string | null;
+  starts_at: string;
+  ends_at: string;
+  status: "draft" | "active" | "paused" | "expired" | "cancelled";
+  priority: number;
+  created_by: string | null;
+  updated_by: string | null;
+  created_at: string;
+  updated_at: string;
+}

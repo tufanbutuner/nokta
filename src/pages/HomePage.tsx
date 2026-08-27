@@ -2,6 +2,7 @@ import { useMemo, useState, type FormEvent } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import type { LucideIcon } from "lucide-react";
 import { ArrowRight, BookmarkCheck, ChevronRight, MapPin, MessageCircle, Search, Sparkles, Star } from "lucide-react";
+import { HomepageFeaturedVenues } from "@/components/featured/HomepageFeaturedVenues";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { PageMeta } from "@/components/seo/PageMeta";
 import { ClaimedVenueBadge } from "@/components/venues/ClaimedVenueBadge";
@@ -150,6 +151,8 @@ export function HomePage() {
       </section>
 
       <PageContainer className="space-y-16 py-12 sm:py-16">
+        {!isLoading && !error ? <HomepageFeaturedVenues venues={venues} /> : null}
+
         <section>
           <div className="mb-6 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
             <div>

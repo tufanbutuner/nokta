@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import { AdminPageShell } from "@/components/admin/AdminPageShell";
 import { MonetisationFilters, type MonetisationFilter } from "@/components/admin/monetisation/MonetisationFilters";
 import { MonetisationHeader } from "@/components/admin/monetisation/MonetisationHeader";
@@ -75,6 +76,17 @@ export function MonetisationDashboardPage() {
       ) : (
         <div className="grid gap-5 py-5">
           <MonetisationHeader venueCount={cityVenues.length} noteVenueId={filteredVenues[0]?.id} onExport={handleExport} />
+          <section className="rounded-xl border border-black/[0.04] bg-white p-4">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <h2 className="font-primary text-xs font-semibold text-clay-600">Featured placements</h2>
+                <p className="mt-1 text-[13px] text-[#8a7e72]">Manage promoted homepage, city and discover placements.</p>
+              </div>
+              <Link to="/admin/featured" className="text-sm font-medium text-clay-600 hover:text-sheesh-ink">
+                Open featured manager
+              </Link>
+            </div>
+          </section>
           {actionError ? <Alert className="border-clay-400/20 bg-clay-400/10 text-clay-600">{actionError}</Alert> : null}
           <MonetisationSummaryCards summary={summary} />
           <section className="rounded-xl border border-black/[0.04] bg-white p-4">
