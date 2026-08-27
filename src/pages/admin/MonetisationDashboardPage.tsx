@@ -88,6 +88,9 @@ export function MonetisationDashboardPage() {
               <Link to="/admin/enquiries" className="text-sm font-medium text-clay-600 hover:text-sheesh-ink">
                 Open enquiries
               </Link>
+              <Link to="/admin/offers" className="text-sm font-medium text-clay-600 hover:text-sheesh-ink">
+                Open offers
+              </Link>
             </div>
           </section>
           {actionError ? <Alert className="border-clay-400/20 bg-clay-400/10 text-clay-600">{actionError}</Alert> : null}

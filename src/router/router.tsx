@@ -5,6 +5,7 @@ import { AccountPage } from "@/pages/AccountPage";
 import { DataQualityPage } from "@/pages/admin/DataQualityPage";
 import { AdminFeaturedPlacementsPage } from "@/pages/admin/AdminFeaturedPlacementsPage";
 import { AdminReviewsPage } from "@/pages/admin/AdminReviewsPage";
+import { AdminPromotedOffersPage } from "@/pages/admin/AdminPromotedOffersPage";
 import { AdminVenueEnquiriesPage } from "@/pages/admin/AdminVenueEnquiriesPage";
 import { AdminVenueClaimsPage } from "@/pages/admin/AdminVenueClaimsPage";
 import { AdminVenueSuggestionsPage } from "@/pages/admin/AdminVenueSuggestionsPage";
@@ -19,6 +20,7 @@ import { HomePage } from "@/pages/HomePage";
 import { MonetisationDashboardPage } from "@/pages/admin/MonetisationDashboardPage";
 import { NotFoundPage } from "@/pages/NotFoundPage";
 import { PrivacyPage } from "@/pages/PrivacyPage";
+import { PromotedOfferPreviewPage } from "@/pages/PromotedOfferPreviewPage";
 import { RecommendPage } from "@/pages/RecommendPage";
 import { SavedPage } from "@/pages/SavedPage";
 import { SignInPage } from "@/pages/SignInPage";
@@ -55,7 +57,12 @@ export const router = createBrowserRouter([
       { path: "/venues/:slug/claim", element: <ClaimVenuePage /> },
       { path: "/venues/:slug/enquire", element: <VenueEnquiryPage /> },
       { path: "/venues/:slug", element: <VenuePage /> },
-      ...(import.meta.env.DEV ? [{ path: "/error-boundary-preview", element: <AppErrorPreviewPage /> }] : []),
+      ...(import.meta.env.DEV
+        ? [
+            { path: "/error-boundary-preview", element: <AppErrorPreviewPage /> },
+            { path: "/promoted-offer-preview", element: <PromotedOfferPreviewPage /> },
+          ]
+        : []),
       {
         path: "/admin/data-quality",
         element: (
@@ -109,6 +116,14 @@ export const router = createBrowserRouter([
         element: (
           <RequireAdmin>
             <AdminVenueEnquiriesPage />
+          </RequireAdmin>
+        ),
+      },
+      {
+        path: "/admin/offers",
+        element: (
+          <RequireAdmin>
+            <AdminPromotedOffersPage />
           </RequireAdmin>
         ),
       },

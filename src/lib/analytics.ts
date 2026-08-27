@@ -20,6 +20,8 @@ export type AnalyticsEvent =
   | "venue_claim_rejected"
   | "featured_placement_viewed"
   | "featured_placement_clicked"
+  | "promoted_offer_viewed"
+  | "promoted_offer_clicked"
   | "enquiry_cta_clicked"
   | "venue_enquiry_submitted"
   | "venue_enquiry_status_updated";

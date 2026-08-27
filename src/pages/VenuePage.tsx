@@ -1,5 +1,6 @@
 import { PageContainer } from "@/components/layout/PageContainer";
 import { VenueMap } from "@/components/map/VenueMap";
+import { VenueOffersSection } from "@/components/offers/VenueOffersSection";
 import { ReviewSection } from "@/components/reviews/ReviewSection";
 import { PageMeta } from "@/components/seo/PageMeta";
 import { ErrorState } from "@/components/state/ErrorState";
@@ -211,6 +212,8 @@ export function VenuePage() {
         </div>
 
         <ActionBar venue={venue} shareLabel={shareLabel} onShare={shareVenue} />
+
+        <VenueOffersSection venue={venue} />
 
         <div className="sticky top-16 z-30 mt-6 border-b bg-background/95 backdrop-blur">
           <div className="flex gap-2 overflow-x-auto py-2">

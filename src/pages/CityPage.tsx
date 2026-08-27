@@ -1,6 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import { CityFeaturedVenues } from "@/components/featured/CityFeaturedVenues";
 import { PageContainer } from "@/components/layout/PageContainer";
+import { CityOffersSection } from "@/components/offers/CityOffersSection";
 import { PageMeta } from "@/components/seo/PageMeta";
 import { EmptyState } from "@/components/state/EmptyState";
 import { ErrorState } from "@/components/state/ErrorState";
@@ -81,6 +82,7 @@ export function CityPage() {
         ) : cityVenues.length ? (
           <>
             <CityFeaturedVenues city={city.name} venues={cityVenues} />
+            <CityOffersSection city={city.name} venues={cityVenues} />
             <p className="mb-4 text-sm text-muted-foreground">
               {cityVenues.length === 1 ? "1 venue" : `${cityVenues.length} venues`} in {city.name}
             </p>

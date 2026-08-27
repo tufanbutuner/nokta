@@ -123,6 +123,27 @@ export interface FeaturedPlacementRow {
   updated_at: string;
 }
 
+export interface PromotedOfferRow {
+  id: string;
+  venue_id: string;
+  title: string;
+  description: string | null;
+  terms: string | null;
+  offer_type: "food" | "drink" | "birthday" | "group" | "football" | "student" | "private-hire" | "event" | "other";
+  city: string | null;
+  area: string | null;
+  starts_at: string;
+  ends_at: string;
+  status: "draft" | "active" | "paused" | "expired" | "cancelled";
+  priority: number;
+  cta_label: string | null;
+  cta_url: string | null;
+  created_by: string | null;
+  updated_by: string | null;
+  created_at: string;
+  updated_at: string;
+}
+
 export interface VenueEnquiryRow {
   id: string;
   venue_id: string;
