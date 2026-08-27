@@ -14,6 +14,7 @@ import { useIsAdmin } from "@/hooks/useIsAdmin";
 import { useVenues } from "@/hooks/useVenues";
 import { getMyVenueClaimRequests } from "@/services/venueClaimService";
 import { getMyVenueEnquiries } from "@/services/venueEnquiryService";
+import { getMyClaimedVenues } from "@/services/ownerVenueService";
 import type { Venue } from "@/types/venue";
 import type { VenueClaimRequest } from "@/types/venueClaims";
 import type { VenueEnquiry } from "@/types/venueEnquiries";
@@ -26,6 +27,7 @@ export function AccountPage() {
   const { venues } = useVenues();
   const [claims, setClaims] = useState<VenueClaimRequest[]>([]);
   const [enquiries, setEnquiries] = useState<VenueEnquiry[]>([]);
+  const [claimedVenues, setClaimedVenues] = useState<Venue[]>([]);
   const [isLoadingClaims, setIsLoadingClaims] = useState(false);
   const [isLoadingEnquiries, setIsLoadingEnquiries] = useState(false);
   const [claimError, setClaimError] = useState<string | null>(null);
@@ -60,6 +62,24 @@ export function AccountPage() {
         }
       });
 
+    return () => {
+      cancelled = true;
+    };
+  }, [user]);
+
+  useEffect(() => {
+    if (!user) {
+      setClaimedVenues([]);
+      return;
+    }
+    let cancelled = false;
+    getMyClaimedVenues(user.id)
+      .then((nextVenues) => {
+        if (!cancelled) setClaimedVenues(nextVenues);
+      })
+      .catch(() => {
+        if (!cancelled) setClaimedVenues([]);
+      });
     return () => {
       cancelled = true;
     };
@@ -144,6 +164,21 @@ export function AccountPage() {
                   <p className="text-sm text-muted-foreground">Loading claim requests...</p>
                 ) : (
                   <MyClaimRequests claims={claims} venuesById={venuesById} />
+                )}
+              </div>
+            </div>
+
+            <div className="rounded-lg border bg-background/60 p-4">
+              <p className="text-sm text-muted-foreground">Venue owner tools</p>
+              <h2 className="mt-1 text-xl font-semibold">{claimedVenues.length ? `You manage ${claimedVenues.length} venue profile${claimedVenues.length === 1 ? "" : "s"}.` : "Own or manage a venue?"}</h2>
+              <p className="mt-2 text-sm text-muted-foreground">
+                {claimedVenues.length ? "Open your owner dashboard to view profile performance, enquiry activity and commercial status." : "Claim your venue profile to access owner tools."}
+              </p>
+              <div className="mt-4 flex flex-col gap-3 sm:flex-row">
+                {claimedVenues.length ? (
+                  <Button asChild><Link to="/owner">Open owner dashboard</Link></Button>
+                ) : (
+                  <Button asChild><Link to="/discover">Find your venue</Link></Button>
                 )}
               </div>
             </div>

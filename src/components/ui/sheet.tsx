@@ -12,7 +12,7 @@ interface SheetProps {
 function Sheet({ open, onOpenChange, children }: SheetProps) {
   if (!open) return null;
   return (
-    <div className="fixed inset-0 z-50 bg-black/35" onClick={() => onOpenChange(false)}>
+    <div className="fixed inset-0 z-[1600] bg-black/35" onClick={() => onOpenChange(false)}>
       <div
         className="fixed inset-y-0 right-0 w-full max-w-sm overflow-y-auto bg-card p-5 shadow-2xl"
         onClick={(event) => event.stopPropagation()}

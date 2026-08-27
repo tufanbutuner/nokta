@@ -20,6 +20,8 @@ import { DiscoverPage } from "@/pages/DiscoverPage";
 import { HomePage } from "@/pages/HomePage";
 import { MonetisationDashboardPage } from "@/pages/admin/MonetisationDashboardPage";
 import { NotFoundPage } from "@/pages/NotFoundPage";
+import { OwnerDashboardPage } from "@/pages/owner/OwnerDashboardPage";
+import { OwnerVenueDashboardPage } from "@/pages/owner/OwnerVenueDashboardPage";
 import { PrivacyPage } from "@/pages/PrivacyPage";
 import { PromotedOfferPreviewPage } from "@/pages/PromotedOfferPreviewPage";
 import { RecommendPage } from "@/pages/RecommendPage";
@@ -50,6 +52,30 @@ export const router = createBrowserRouter([
         element: (
           <RequireAuth>
             <AccountPage />
+          </RequireAuth>
+        ),
+      },
+      {
+        path: "/owner",
+        element: (
+          <RequireAuth>
+            <OwnerDashboardPage />
+          </RequireAuth>
+        ),
+      },
+      {
+        path: "/owner/venues",
+        element: (
+          <RequireAuth>
+            <OwnerDashboardPage />
+          </RequireAuth>
+        ),
+      },
+      {
+        path: "/owner/venues/:venueId",
+        element: (
+          <RequireAuth>
+            <OwnerVenueDashboardPage />
           </RequireAuth>
         ),
       },
