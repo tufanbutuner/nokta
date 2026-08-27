@@ -6,6 +6,7 @@ import { DataQualityPage } from "@/pages/admin/DataQualityPage";
 import { AdminFeaturedPlacementsPage } from "@/pages/admin/AdminFeaturedPlacementsPage";
 import { AdminReviewsPage } from "@/pages/admin/AdminReviewsPage";
 import { AdminPromotedOffersPage } from "@/pages/admin/AdminPromotedOffersPage";
+import { AdminVenueAnalyticsPage } from "@/pages/admin/AdminVenueAnalyticsPage";
 import { AdminVenueEnquiriesPage } from "@/pages/admin/AdminVenueEnquiriesPage";
 import { AdminVenueClaimsPage } from "@/pages/admin/AdminVenueClaimsPage";
 import { AdminVenueSuggestionsPage } from "@/pages/admin/AdminVenueSuggestionsPage";
@@ -124,6 +125,14 @@ export const router = createBrowserRouter([
         element: (
           <RequireAdmin>
             <AdminPromotedOffersPage />
+          </RequireAdmin>
+        ),
+      },
+      {
+        path: "/admin/analytics",
+        element: (
+          <RequireAdmin>
+            <AdminVenueAnalyticsPage />
           </RequireAdmin>
         ),
       },

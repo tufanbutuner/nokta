@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { FeaturedBadge } from "@/components/featured/FeaturedBadge";
 import { VenuePrice } from "@/components/venues/VenuePrice";
-import { trackEvent } from "@/lib/analytics";
+import { trackEvent, trackVenueAnalyticsEvent } from "@/lib/analytics";
 import { getVenueImage } from "@/lib/venueImages";
 import type { FeaturedPlacement } from "@/types/featuredPlacements";
 import type { Venue } from "@/types/venue";
@@ -23,6 +23,15 @@ export function FeaturedVenueCard({
       city: placement.city ?? venue.city,
       area: placement.area ?? venue.area,
       surface: variant,
+    });
+    trackVenueAnalyticsEvent({
+      venueId: venue.id,
+      eventName: "featured_placement_clicked",
+      city: placement.city ?? venue.city,
+      area: placement.area ?? venue.area,
+      sourceSurface: getSourceSurface(variant),
+      placementId: placement.id,
+      metadata: { placementType: placement.placementType },
     });
   }
 
@@ -47,4 +56,10 @@ export function FeaturedVenueCard({
       </div>
     </Link>
   );
+}
+
+function getSourceSurface(variant: "homepage" | "discover" | "city") {
+  if (variant === "city") return "city_page";
+  if (variant === "discover") return "discover";
+  return "homepage";
 }

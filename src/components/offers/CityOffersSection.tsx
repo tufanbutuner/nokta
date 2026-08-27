@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { PromotedOfferCard } from "@/components/offers/PromotedOfferCard";
-import { trackEvent } from "@/lib/analytics";
+import { trackEvent, trackVenueAnalyticsEvent } from "@/lib/analytics";
 import { getActiveCityOffers } from "@/services/promotedOfferService";
 import type { PromotedOffer } from "@/types/promotedOffers";
 import type { Venue } from "@/types/venue";
@@ -27,6 +27,15 @@ export function CityOffersSection({ city, venues }: { city: string; venues: Venu
   useEffect(() => {
     promoted.forEach(({ offer, venue }) => {
       trackEvent("promoted_offer_viewed", { offerId: offer.id, venueId: venue.id, offerType: offer.offerType, city, area: offer.area ?? venue.area, surface: "city" });
+      trackVenueAnalyticsEvent({
+        venueId: venue.id,
+        eventName: "promoted_offer_viewed",
+        city,
+        area: offer.area ?? venue.area,
+        sourceSurface: "city_page",
+        offerId: offer.id,
+        metadata: { offerType: offer.offerType },
+      });
     });
   }, [city, promoted]);
 
@@ -45,7 +54,10 @@ export function CityOffersSection({ city, venues }: { city: string; venues: Venu
             offer={offer}
             venue={venue}
             variant="city"
-            onClick={() => trackEvent("promoted_offer_clicked", { offerId: offer.id, venueId: venue.id, offerType: offer.offerType, city, area: offer.area ?? venue.area, surface: "city" })}
+            onClick={() => {
+              trackEvent("promoted_offer_clicked", { offerId: offer.id, venueId: venue.id, offerType: offer.offerType, city, area: offer.area ?? venue.area, surface: "city" });
+              trackVenueAnalyticsEvent({ venueId: venue.id, eventName: "promoted_offer_clicked", city, area: offer.area ?? venue.area, sourceSurface: "city_page", offerId: offer.id, metadata: { offerType: offer.offerType } });
+            }}
           />
         ))}
       </div>

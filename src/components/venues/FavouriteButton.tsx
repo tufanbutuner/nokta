@@ -1,7 +1,7 @@
 import { Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useVenuePreferences } from "@/context/VenuePreferencesContext";
-import { trackEvent } from "@/lib/analytics";
+import { trackEvent, trackVenueAnalyticsEvent } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 import type { Venue } from "@/types/venue";
 
@@ -28,6 +28,13 @@ export function FavouriteButton({ venueId, venueName, venue, className }: Favour
         event.preventDefault();
         event.stopPropagation();
         trackEvent(saved ? "venue_unsaved" : "venue_saved", getFavouriteAnalyticsProperties(venueId, venueName, venue));
+        trackVenueAnalyticsEvent({
+          venueId,
+          eventName: saved ? "venue_unsaved" : "venue_saved",
+          city: venue?.city,
+          area: venue?.area,
+          sourceSurface: "venue_page",
+        });
         void toggleFavourite(venueId);
       }}
     >

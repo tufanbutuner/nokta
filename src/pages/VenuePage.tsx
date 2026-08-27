@@ -18,7 +18,7 @@ import { useVenuePreferences } from "@/context/VenuePreferencesContext";
 import { useVenue } from "@/hooks/useVenue";
 import { useVenueReviews } from "@/hooks/useVenueReviews";
 import { useVenues } from "@/hooks/useVenues";
-import { trackEvent } from "@/lib/analytics";
+import { trackEvent, trackVenueAnalyticsEvent } from "@/lib/analytics";
 import { getCityByName } from "@/lib/cities";
 import { getGoogleMapsDirectionsUrl } from "@/lib/directions";
 import { formatDistanceMiles, getVenueDistanceMiles } from "@/lib/location";
@@ -55,6 +55,13 @@ export function VenuePage() {
     if (venue) {
       void addRecentlyViewed(venue.id);
       trackEvent("venue_viewed", getVenueAnalyticsProperties(venue));
+      trackVenueAnalyticsEvent({
+        venueId: venue.id,
+        eventName: "venue_profile_viewed",
+        city: venue.city,
+        area: venue.area,
+        sourceSurface: "venue_page",
+      });
     }
   }, [addRecentlyViewed, venue]);
 
@@ -174,7 +181,7 @@ export function VenuePage() {
           </div>
 
           <div className="hidden items-center gap-2 lg:flex">
-            <Button asChild onClick={() => trackEvent("enquiry_cta_clicked", getVenueAnalyticsProperties(venue))}>
+            <Button asChild onClick={() => trackEnquiryCta(venue)}>
               <Link to={`/venues/${venue.slug}/enquire`}>Send enquiry</Link>
             </Button>
             <FavouriteButton venueId={venue.id} venueName={venue.name} venue={venue} className="h-11 w-11 border" />
@@ -187,7 +194,7 @@ export function VenuePage() {
               <h2 className="font-semibold">Planning a visit or group booking?</h2>
               <p className="mt-1 text-sm text-muted-foreground">Send an enquiry to get started. This is not a confirmed booking.</p>
             </div>
-            <Button asChild variant="outline" onClick={() => trackEvent("enquiry_cta_clicked", getVenueAnalyticsProperties(venue))}>
+            <Button asChild variant="outline" onClick={() => trackEnquiryCta(venue)}>
               <Link to={`/venues/${venue.slug}/enquire`}>Send enquiry</Link>
             </Button>
           </div>
@@ -338,7 +345,7 @@ function ActionBar({ venue, shareLabel, onShare }: { venue: Venue; shareLabel: s
   return (
     <section className="mt-6 flex flex-wrap gap-2 rounded-xl border bg-card p-2">
       <Button asChild>
-        <a href={getGoogleMapsDirectionsUrl(venue)} target="_blank" rel="noreferrer" onClick={() => trackEvent("directions_clicked", analyticsProperties)}>
+        <a href={getGoogleMapsDirectionsUrl(venue)} target="_blank" rel="noreferrer" onClick={() => trackVenueAction(venue, "directions_clicked", "venue_directions_clicked", analyticsProperties)}>
           <Navigation className="mr-2 h-4 w-4" />
           Get directions
         </a>
@@ -368,7 +375,7 @@ function ActionBar({ venue, shareLabel, onShare }: { venue: Venue; shareLabel: s
       </Button>
       {venue.website ? (
         <Button asChild variant="outline" className="ml-0 lg:ml-auto">
-          <a href={venue.website} target="_blank" rel="noreferrer" onClick={() => trackEvent("website_clicked", analyticsProperties)}>
+          <a href={venue.website} target="_blank" rel="noreferrer" onClick={() => trackVenueAction(venue, "website_clicked", "venue_website_clicked", analyticsProperties)}>
             Website
             <ExternalLink className="ml-2 h-4 w-4" />
           </a>
@@ -376,7 +383,7 @@ function ActionBar({ venue, shareLabel, onShare }: { venue: Venue; shareLabel: s
       ) : null}
       {venue.instagram ? (
         <Button asChild variant="outline">
-          <a href={venue.instagram} target="_blank" rel="noreferrer" onClick={() => trackEvent("instagram_clicked", analyticsProperties)}>
+          <a href={venue.instagram} target="_blank" rel="noreferrer" onClick={() => trackVenueAction(venue, "instagram_clicked", "venue_instagram_clicked", analyticsProperties)}>
             Instagram
             <ExternalLink className="ml-2 h-4 w-4" />
           </a>
@@ -393,6 +400,28 @@ function getVenueAnalyticsProperties(venue: Venue) {
     venueName: venue.name,
     area: venue.area,
   };
+}
+
+function trackEnquiryCta(venue: Venue) {
+  trackEvent("enquiry_cta_clicked", getVenueAnalyticsProperties(venue));
+  trackVenueAnalyticsEvent({
+    venueId: venue.id,
+    eventName: "venue_enquiry_cta_clicked",
+    city: venue.city,
+    area: venue.area,
+    sourceSurface: "venue_page",
+  });
+}
+
+function trackVenueAction(venue: Venue, productEvent: "directions_clicked" | "website_clicked" | "instagram_clicked", venueEvent: "venue_directions_clicked" | "venue_website_clicked" | "venue_instagram_clicked", properties: ReturnType<typeof getVenueAnalyticsProperties>) {
+  trackEvent(productEvent, properties);
+  trackVenueAnalyticsEvent({
+    venueId: venue.id,
+    eventName: venueEvent,
+    city: venue.city,
+    area: venue.area,
+    sourceSurface: "venue_page",
+  });
 }
 
 function OverviewTab({ venue, amenities, similarVenues }: { venue: Venue; amenities: string[]; similarVenues: Venue[] }) {

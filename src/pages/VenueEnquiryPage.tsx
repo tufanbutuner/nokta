@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useAuth } from "@/context/AuthContext";
 import { useVenues } from "@/hooks/useVenues";
-import { trackEvent } from "@/lib/analytics";
+import { trackEvent, trackVenueAnalyticsEvent } from "@/lib/analytics";
 import { createVenueEnquiry, getMyVenueEnquiriesForVenue } from "@/services/venueEnquiryService";
 import type { VenueEnquiry, VenueEnquiryInput } from "@/types/venueEnquiries";
 
@@ -56,6 +56,22 @@ export function VenueEnquiryPage() {
         hasPreferredTime: Boolean(input.preferredTime),
         hasPhone: Boolean(input.customerPhone),
         hasMessage: Boolean(input.message),
+      });
+      trackVenueAnalyticsEvent({
+        venueId: venue.id,
+        eventName: "venue_enquiry_submitted",
+        city: venue.city,
+        area: venue.area,
+        sourceSurface: "venue_page",
+        enquiryId: enquiry.id,
+        metadata: {
+          enquiryType: enquiry.enquiryType,
+          partySize: enquiry.partySize,
+          hasPreferredDate: Boolean(enquiry.preferredDate),
+          hasPreferredTime: Boolean(enquiry.preferredTime),
+          hasPhone: Boolean(enquiry.customerPhone),
+          hasMessage: Boolean(enquiry.message),
+        },
       });
     } catch (caughtError) {
       setMutationError(caughtError instanceof Error ? caughtError.message : "Could not send enquiry.");

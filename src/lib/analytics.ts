@@ -1,3 +1,7 @@
+import { capturePostHogEvent, capturePostHogPageView } from "@/lib/posthogClient";
+import { insertVenueAnalyticsEvent } from "@/services/venueAnalyticsEventService";
+import type { VenueAnalyticsEventInput } from "@/types/analytics";
+
 export type AnalyticsEvent =
   | "venue_viewed"
   | "venue_saved"
@@ -29,9 +33,34 @@ export type AnalyticsEvent =
 export type AnalyticsProperties = Record<string, string | number | boolean | null | undefined>;
 
 export function trackEvent(event: AnalyticsEvent, properties?: AnalyticsProperties): void {
-  if (import.meta.env.DEV) {
-    console.info("[analytics]", event, compactProperties(properties));
+  try {
+    const nextProperties = compactProperties(properties);
+    capturePostHogEvent(event, nextProperties);
+    if (import.meta.env.DEV) {
+      console.info("[analytics]", event, nextProperties);
+    }
+  } catch {
+    return;
   }
+}
+
+export function trackPageView(path: string): void {
+  try {
+    capturePostHogPageView(path);
+    if (import.meta.env.DEV) {
+      console.info("[pageview]", path);
+    }
+  } catch {
+    return;
+  }
+}
+
+export function trackVenueAnalyticsEvent(input: VenueAnalyticsEventInput): void {
+  void insertVenueAnalyticsEvent(input).catch((error) => {
+    if (import.meta.env.DEV) {
+      console.info("[venue analytics]", error instanceof Error ? error.message : "Could not insert venue analytics event.");
+    }
+  });
 }
 
 function compactProperties(properties?: AnalyticsProperties): AnalyticsProperties | undefined {

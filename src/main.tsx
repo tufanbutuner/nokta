@@ -4,12 +4,15 @@ import { VenuePreferencesProvider } from "@/context/VenuePreferencesContext";
 import { router } from "@/router/router";
 import { VercelAnalytics } from "@/components/analytics/VercelAnalytics";
 import { AppErrorBoundary } from "@/components/state/AppErrorBoundary";
+import { initPostHog } from "@/lib/posthogClient";
 import "@/styles.css";
 import "leaflet/dist/leaflet.css";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { HelmetProvider } from "react-helmet-async";
 import { RouterProvider } from "react-router-dom";
+
+initPostHog();
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>

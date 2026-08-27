@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { FeaturedVenueCard } from "@/components/featured/FeaturedVenueCard";
-import { trackEvent } from "@/lib/analytics";
+import { trackEvent, trackVenueAnalyticsEvent } from "@/lib/analytics";
 import { getActiveHomepagePlacements } from "@/services/featuredPlacementService";
 import type { FeaturedPlacement } from "@/types/featuredPlacements";
 import type { Venue } from "@/types/venue";
@@ -33,6 +33,15 @@ export function HomepageFeaturedVenues({ venues }: { venues: Venue[] }) {
         city: placement.city ?? venue.city,
         area: placement.area ?? venue.area,
         surface: "homepage",
+      });
+      trackVenueAnalyticsEvent({
+        venueId: venue.id,
+        eventName: "featured_placement_viewed",
+        city: placement.city ?? venue.city,
+        area: placement.area ?? venue.area,
+        sourceSurface: "homepage",
+        placementId: placement.id,
+        metadata: { placementType: placement.placementType },
       });
     });
   }, [featured]);
