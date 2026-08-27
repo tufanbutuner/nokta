@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthError } from "@/components/auth/AuthError";
 import { MyClaimRequests } from "@/components/claims/MyClaimRequests";
+import { MyVenueEnquiries } from "@/components/enquiries/MyVenueEnquiries";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { PageMeta } from "@/components/seo/PageMeta";
 import { Alert } from "@/components/ui/alert";
@@ -12,8 +13,10 @@ import { useVenuePreferences } from "@/context/VenuePreferencesContext";
 import { useIsAdmin } from "@/hooks/useIsAdmin";
 import { useVenues } from "@/hooks/useVenues";
 import { getMyVenueClaimRequests } from "@/services/venueClaimService";
+import { getMyVenueEnquiries } from "@/services/venueEnquiryService";
 import type { Venue } from "@/types/venue";
 import type { VenueClaimRequest } from "@/types/venueClaims";
+import type { VenueEnquiry } from "@/types/venueEnquiries";
 
 export function AccountPage() {
   const navigate = useNavigate();
@@ -22,8 +25,11 @@ export function AccountPage() {
   const { favouriteVenueIds, recentlyViewedVenueIds, isLoading } = useVenuePreferences();
   const { venues } = useVenues();
   const [claims, setClaims] = useState<VenueClaimRequest[]>([]);
+  const [enquiries, setEnquiries] = useState<VenueEnquiry[]>([]);
   const [isLoadingClaims, setIsLoadingClaims] = useState(false);
+  const [isLoadingEnquiries, setIsLoadingEnquiries] = useState(false);
   const [claimError, setClaimError] = useState<string | null>(null);
+  const [enquiryError, setEnquiryError] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [isSigningOut, setIsSigningOut] = useState(false);
 
@@ -54,6 +60,29 @@ export function AccountPage() {
         }
       });
 
+    return () => {
+      cancelled = true;
+    };
+  }, [user]);
+
+  useEffect(() => {
+    if (!user) {
+      setEnquiries([]);
+      return;
+    }
+    let cancelled = false;
+    setIsLoadingEnquiries(true);
+    setEnquiryError(null);
+    getMyVenueEnquiries(user.id)
+      .then((nextEnquiries) => {
+        if (!cancelled) setEnquiries(nextEnquiries);
+      })
+      .catch((caughtError) => {
+        if (!cancelled) setEnquiryError(caughtError instanceof Error ? caughtError.message : "Could not load enquiries.");
+      })
+      .finally(() => {
+        if (!cancelled) setIsLoadingEnquiries(false);
+      });
     return () => {
       cancelled = true;
     };
@@ -119,6 +148,20 @@ export function AccountPage() {
               </div>
             </div>
 
+            <div className="rounded-lg border bg-background/60 p-4">
+              <p className="text-sm text-muted-foreground">My enquiries</p>
+              <h2 className="mt-1 text-xl font-semibold">Recent enquiries</h2>
+              <div className="mt-4">
+                {enquiryError ? (
+                  <Alert className="border-destructive/30 text-destructive">{enquiryError}</Alert>
+                ) : isLoadingEnquiries ? (
+                  <p className="text-sm text-muted-foreground">Loading enquiries...</p>
+                ) : (
+                  <MyVenueEnquiries enquiries={enquiries} venuesById={venuesById} />
+                )}
+              </div>
+            </div>
+
             {isAdmin ? (
               <div className="rounded-lg border bg-background/60 p-4">
                 <p className="text-sm text-muted-foreground">Admin</p>
@@ -138,6 +181,9 @@ export function AccountPage() {
                   </Button>
                   <Button asChild variant="outline">
                     <Link to="/admin/claims">Claims</Link>
+                  </Button>
+                  <Button asChild variant="outline">
+                    <Link to="/admin/enquiries">Enquiries</Link>
                   </Button>
                   <Button asChild variant="outline">
                     <Link to="/admin/monetisation">Monetisation</Link>

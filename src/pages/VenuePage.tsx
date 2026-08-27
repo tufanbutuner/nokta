@@ -173,7 +173,22 @@ export function VenuePage() {
           </div>
 
           <div className="hidden items-center gap-2 lg:flex">
+            <Button asChild onClick={() => trackEvent("enquiry_cta_clicked", getVenueAnalyticsProperties(venue))}>
+              <Link to={`/venues/${venue.slug}/enquire`}>Send enquiry</Link>
+            </Button>
             <FavouriteButton venueId={venue.id} venueName={venue.name} venue={venue} className="h-11 w-11 border" />
+          </div>
+        </section>
+
+        <section className="mt-6 rounded-xl border bg-card p-4">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <h2 className="font-semibold">Planning a visit or group booking?</h2>
+              <p className="mt-1 text-sm text-muted-foreground">Send an enquiry to get started. This is not a confirmed booking.</p>
+            </div>
+            <Button asChild variant="outline" onClick={() => trackEvent("enquiry_cta_clicked", getVenueAnalyticsProperties(venue))}>
+              <Link to={`/venues/${venue.slug}/enquire`}>Send enquiry</Link>
+            </Button>
           </div>
         </section>
 

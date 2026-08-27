@@ -122,3 +122,25 @@ export interface FeaturedPlacementRow {
   created_at: string;
   updated_at: string;
 }
+
+export interface VenueEnquiryRow {
+  id: string;
+  venue_id: string;
+  submitted_by: string | null;
+  enquiry_type: "general" | "birthday" | "group" | "football" | "late-night" | "private-hire";
+  party_size: number | null;
+  preferred_date: string | null;
+  preferred_time: string | null;
+  customer_name: string;
+  customer_email: string;
+  customer_phone: string | null;
+  message: string | null;
+  status: "new" | "contacted" | "responded" | "converted" | "closed" | "spam";
+  admin_notes: string | null;
+  assigned_to: string | null;
+  contacted_venue_at: string | null;
+  venue_response: string | null;
+  resolved_at: string | null;
+  created_at: string;
+  updated_at: string;
+}

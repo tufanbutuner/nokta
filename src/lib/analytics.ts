@@ -19,7 +19,10 @@ export type AnalyticsEvent =
   | "venue_claim_approved"
   | "venue_claim_rejected"
   | "featured_placement_viewed"
-  | "featured_placement_clicked";
+  | "featured_placement_clicked"
+  | "enquiry_cta_clicked"
+  | "venue_enquiry_submitted"
+  | "venue_enquiry_status_updated";
 
 export type AnalyticsProperties = Record<string, string | number | boolean | null | undefined>;
 

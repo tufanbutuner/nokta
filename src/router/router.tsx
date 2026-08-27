@@ -5,6 +5,7 @@ import { AccountPage } from "@/pages/AccountPage";
 import { DataQualityPage } from "@/pages/admin/DataQualityPage";
 import { AdminFeaturedPlacementsPage } from "@/pages/admin/AdminFeaturedPlacementsPage";
 import { AdminReviewsPage } from "@/pages/admin/AdminReviewsPage";
+import { AdminVenueEnquiriesPage } from "@/pages/admin/AdminVenueEnquiriesPage";
 import { AdminVenueClaimsPage } from "@/pages/admin/AdminVenueClaimsPage";
 import { AdminVenueSuggestionsPage } from "@/pages/admin/AdminVenueSuggestionsPage";
 import { AdminVenuesPage } from "@/pages/admin/AdminVenuesPage";
@@ -24,6 +25,7 @@ import { SignInPage } from "@/pages/SignInPage";
 import { SignUpPage } from "@/pages/SignUpPage";
 import { SuggestVenuePage } from "@/pages/SuggestVenuePage";
 import { TermsPage } from "@/pages/TermsPage";
+import { VenueEnquiryPage } from "@/pages/VenueEnquiryPage";
 import { VenuePage } from "@/pages/VenuePage";
 import { createBrowserRouter } from "react-router-dom";
 
@@ -51,6 +53,7 @@ export const router = createBrowserRouter([
       { path: "/sign-in", element: <SignInPage /> },
       { path: "/sign-up", element: <SignUpPage /> },
       { path: "/venues/:slug/claim", element: <ClaimVenuePage /> },
+      { path: "/venues/:slug/enquire", element: <VenueEnquiryPage /> },
       { path: "/venues/:slug", element: <VenuePage /> },
       ...(import.meta.env.DEV ? [{ path: "/error-boundary-preview", element: <AppErrorPreviewPage /> }] : []),
       {
@@ -98,6 +101,14 @@ export const router = createBrowserRouter([
         element: (
           <RequireAdmin>
             <AdminFeaturedPlacementsPage />
+          </RequireAdmin>
+        ),
+      },
+      {
+        path: "/admin/enquiries",
+        element: (
+          <RequireAdmin>
+            <AdminVenueEnquiriesPage />
           </RequireAdmin>
         ),
       },
