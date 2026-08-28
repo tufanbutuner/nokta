@@ -20,6 +20,9 @@ export function mapVenueEnquiryRowToEnquiry(row: VenueEnquiryRow): VenueEnquiry 
     contactedVenueAt: row.contacted_venue_at,
     venueResponse: row.venue_response,
     resolvedAt: row.resolved_at,
+    ownerLastUpdatedBy: row.owner_last_updated_by ?? null,
+    ownerLastUpdatedAt: row.owner_last_updated_at ?? null,
+    ownerNotes: row.owner_notes ?? null,
     createdAt: row.created_at,
     updatedAt: row.updated_at,
   };

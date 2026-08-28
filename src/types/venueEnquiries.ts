@@ -20,6 +20,9 @@ export interface VenueEnquiry {
   contactedVenueAt: string | null;
   venueResponse: string | null;
   resolvedAt: string | null;
+  ownerLastUpdatedBy: string | null;
+  ownerLastUpdatedAt: string | null;
+  ownerNotes: string | null;
   createdAt: string;
   updatedAt: string;
 }

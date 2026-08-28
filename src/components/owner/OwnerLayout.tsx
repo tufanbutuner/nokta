@@ -5,12 +5,13 @@ import { cn } from "@/lib/utils";
 export function OwnerLayout({ children }: { children: React.ReactNode }) {
   return (
     <main className="bg-background">
-      <div className="mx-auto flex min-h-[calc(100vh-180px)] w-full max-w-7xl gap-6 px-4 py-8 sm:px-6 lg:px-8">
+      <div className="flex min-h-[calc(100vh-180px)] w-full gap-6 px-4 py-8 sm:px-6 lg:px-8">
         <aside className="hidden w-[220px] shrink-0 rounded-xl border bg-card p-4 lg:block">
           <Link to="/owner" className="font-brand text-xl font-bold tracking-[-0.5px] text-sheesh-ink">Owner dashboard</Link>
           <nav className="mt-6 grid gap-1">
             <OwnerNavLink to="/owner" label="Dashboard" />
             <OwnerNavLink to="/owner/venues" label="My venues" />
+            <OwnerNavLink to="/owner/enquiries" label="Enquiries" />
             <OwnerNavLink to="/owner/pricing" label="Pricing" />
             <OwnerNavLink to="/account" label="Account" />
           </nav>

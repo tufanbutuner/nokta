@@ -40,4 +40,5 @@ export interface VenueFormValues {
   monetisationNotes: string | null;
   featuredEligible: boolean;
   featuredBlockedReason: string | null;
+  isTest: boolean;
 }

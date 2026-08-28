@@ -176,7 +176,10 @@ export function AccountPage() {
               </p>
               <div className="mt-4 flex flex-col gap-3 sm:flex-row">
                 {claimedVenues.length ? (
-                  <Button asChild><Link to="/owner">Open owner dashboard</Link></Button>
+                  <>
+                    <Button asChild><Link to="/owner">Open owner dashboard</Link></Button>
+                    <Button asChild variant="outline"><Link to="/owner/enquiries">Enquiry inbox</Link></Button>
+                  </>
                 ) : (
                   <Button asChild><Link to="/discover">Find your venue</Link></Button>
                 )}

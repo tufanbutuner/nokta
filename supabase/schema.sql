@@ -54,7 +54,8 @@ add column if not exists partner_tier text not null default 'none',
 add column if not exists monetisation_status text not null default 'not-contacted',
 add column if not exists monetisation_notes text,
 add column if not exists featured_eligible boolean not null default false,
-add column if not exists featured_blocked_reason text;
+add column if not exists featured_blocked_reason text,
+add column if not exists is_test boolean not null default false;
 
 do $$
 begin
@@ -111,15 +112,23 @@ end $$;
 create index if not exists venues_country_idx on public.venues (country);
 create index if not exists venues_city_idx on public.venues (city);
 create index if not exists venues_country_city_idx on public.venues (country, city);
+create index if not exists venues_is_test_idx on public.venues (is_test);
 
 alter table public.venues enable row level security;
 
 drop policy if exists "Allow public read access to venues" on public.venues;
+drop policy if exists "Public can read non-test venues" on public.venues;
+drop policy if exists "Admins can read all venues" on public.venues;
 
-create policy "Allow public read access to venues"
+create policy "Public can read non-test venues"
 on public.venues
 for select
-using (true);
+using (is_test = false);
+
+create policy "Admins can read all venues"
+on public.venues
+for select
+using (exists (select 1 from public.admin_users where admin_users.user_id = auth.uid()));
 
 create table if not exists public.admin_users (
   user_id uuid primary key references auth.users(id) on delete cascade,
@@ -1180,5 +1189,86 @@ with check (
     and venues.claimed_by = auth.uid()
     and venue_subscriptions.plan in ('starter', 'growth', 'pro')
     and venue_subscriptions.status in ('trial', 'active', 'past_due')
+  )
+);
+
+-- Sprint 29 owner enquiry inbox
+alter table public.venue_enquiries
+add column if not exists owner_last_updated_by uuid references auth.users(id),
+add column if not exists owner_last_updated_at timestamp with time zone,
+add column if not exists owner_notes text;
+
+create index if not exists venue_enquiries_owner_last_updated_by_idx
+on public.venue_enquiries (owner_last_updated_by);
+
+drop policy if exists "Growth and Pro owners can read enquiries for claimed venues" on public.venue_enquiries;
+create policy "Growth and Pro owners can read enquiries for claimed venues"
+on public.venue_enquiries
+for select
+using (
+  exists (
+    select 1
+    from public.venues
+    join public.venue_subscriptions
+      on venue_subscriptions.venue_id = venues.id
+    where venues.id = venue_enquiries.venue_id
+      and venues.is_claimed = true
+      and venues.claimed_by = auth.uid()
+      and venue_subscriptions.plan in ('growth', 'pro')
+      and venue_subscriptions.status in ('trial', 'active', 'past_due')
+  )
+);
+
+drop policy if exists "Growth and Pro owners can update enquiries for claimed venues" on public.venue_enquiries;
+create policy "Growth and Pro owners can update enquiries for claimed venues"
+on public.venue_enquiries
+for update
+using (
+  exists (
+    select 1
+    from public.venues
+    join public.venue_subscriptions
+      on venue_subscriptions.venue_id = venues.id
+    where venues.id = venue_enquiries.venue_id
+      and venues.is_claimed = true
+      and venues.claimed_by = auth.uid()
+      and venue_subscriptions.plan in ('growth', 'pro')
+      and venue_subscriptions.status in ('trial', 'active', 'past_due')
+  )
+)
+with check (
+  exists (
+    select 1
+    from public.venues
+    join public.venue_subscriptions
+      on venue_subscriptions.venue_id = venues.id
+    where venues.id = venue_enquiries.venue_id
+      and venues.is_claimed = true
+      and venues.claimed_by = auth.uid()
+      and venue_subscriptions.plan in ('growth', 'pro')
+      and venue_subscriptions.status in ('trial', 'active', 'past_due')
+  )
+);
+
+alter table public.venue_analytics_events
+drop constraint if exists venue_analytics_events_event_name_check;
+
+alter table public.venue_analytics_events
+add constraint venue_analytics_events_event_name_check
+check (
+  event_name in (
+    'venue_profile_viewed',
+    'venue_directions_clicked',
+    'venue_website_clicked',
+    'venue_instagram_clicked',
+    'venue_saved',
+    'venue_unsaved',
+    'venue_enquiry_cta_clicked',
+    'venue_enquiry_submitted',
+    'venue_enquiry_converted',
+    'featured_placement_viewed',
+    'featured_placement_clicked',
+    'promoted_offer_viewed',
+    'promoted_offer_clicked'
   )
 );

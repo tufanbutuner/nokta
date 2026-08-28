@@ -1,4 +1,4 @@
-import { Activity, BadgeCheck, BarChart3, ClipboardPenLine, CreditCard, DollarSign, GitBranch, Inbox, MapPin, PenLine, Sparkles, Tag } from "lucide-react";
+import { Activity, BadgeCheck, BarChart3, ClipboardPenLine, CreditCard, DollarSign, GitBranch, Inbox, LayoutDashboard, MapPin, PenLine, Sparkles, Tag } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { useAuth } from "@/context/AuthContext";
 import { cn } from "@/lib/utils";
@@ -50,11 +50,20 @@ export function AdminSidebar({ activePath = "/admin/monetisation" }: { activePat
           );
         })}
       </nav>
-      <div className="mt-auto flex items-center gap-3 border-t border-white/10 pt-4">
+      <div className="mt-auto border-t border-white/10 pt-4">
+        <NavLink
+          to="/owner"
+          className="mb-4 flex items-center gap-3 rounded-lg bg-clay-400/10 px-3 py-[9px] text-[13px] font-medium text-clay-200 transition-colors hover:bg-clay-400/15"
+        >
+          <LayoutDashboard className="h-[15px] w-[15px]" />
+          Owner dashboard
+        </NavLink>
+        <div className="flex items-center gap-3">
         <div className="flex h-7 w-7 items-center justify-center rounded-full bg-clay-400 text-[11px] font-bold text-white">{initials}</div>
         <div className="min-w-0">
           <div className="truncate text-xs font-medium text-clay-50">Admin</div>
           <div className="truncate text-[11px] text-clay-50/50">{user?.email ?? "Signed in"}</div>
+        </div>
         </div>
       </div>
     </aside>

@@ -82,6 +82,21 @@ export function OwnerVenueEnquirySummary({ enquiries }: { enquiries: OwnerVenueE
   );
 }
 
+export function OwnerVenueEnquiryInboxCta({ venue, subscription }: { venue: Venue; subscription?: VenueSubscription | null }) {
+  const canViewInbox = subscriptionHasPlanAccess(subscription ?? null, "owner_enquiry_inbox");
+  return (
+    <section className="rounded-xl border bg-card p-5">
+      <h2 className="text-xl font-semibold">Enquiry inbox</h2>
+      <p className="mt-1 text-sm text-muted-foreground">{canViewInbox ? "View customer enquiries and manage lead outcomes." : "Full customer enquiry details are available on Growth."}</p>
+      {canViewInbox ? (
+        <Button asChild variant="outline" className="mt-5"><Link to={`/owner/venues/${venue.slug}/enquiries`}>View enquiry inbox</Link></Button>
+      ) : (
+        <div className="mt-5"><UpgradePrompt feature="owner_enquiry_inbox" requiredPlan="growth" currentPlan={subscription?.plan ?? "free"} venueId={venue.id} /></div>
+      )}
+    </section>
+  );
+}
+
 export function OwnerVenueCommercialSummary({ commercial }: { commercial: OwnerVenueCommercialSummary }) {
   return (
     <section className="rounded-xl border bg-card p-5">

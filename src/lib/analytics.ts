@@ -44,7 +44,13 @@ export type AnalyticsEvent =
   | "promoted_offer_clicked"
   | "enquiry_cta_clicked"
   | "venue_enquiry_submitted"
-  | "venue_enquiry_status_updated";
+  | "venue_enquiry_status_updated"
+  | "owner_enquiry_inbox_viewed"
+  | "owner_enquiry_viewed"
+  | "owner_enquiry_status_updated"
+  | "owner_enquiry_marked_converted"
+  | "owner_enquiry_upgrade_prompt_viewed"
+  | "owner_enquiry_upgrade_prompt_clicked";
 
 export type AnalyticsProperties = Record<string, string | number | boolean | null | undefined>;
 

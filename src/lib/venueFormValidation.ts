@@ -127,6 +127,7 @@ function mapValuesToValidationVenue(values: VenueFormValues): Venue {
     monetisationNotes: values.monetisationNotes,
     featuredEligible: values.featuredEligible,
     featuredBlockedReason: values.featuredBlockedReason,
+    isTest: values.isTest,
     createdAt: null,
     updatedAt: null,
   };

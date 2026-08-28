@@ -28,6 +28,7 @@ const demoVenues: Array<
     | "monetisationNotes"
     | "featuredEligible"
     | "featuredBlockedReason"
+    | "isTest"
     | "createdAt"
     | "updatedAt"
   >
@@ -273,6 +274,7 @@ export const venues: Venue[] = demoVenues.map((venue) => ({
   monetisationNotes: null,
   featuredEligible: false,
   featuredBlockedReason: null,
+  isTest: false,
   createdAt: null,
   updatedAt: null,
 }));

@@ -23,7 +23,9 @@ import { HomePage } from "@/pages/HomePage";
 import { MonetisationDashboardPage } from "@/pages/admin/MonetisationDashboardPage";
 import { NotFoundPage } from "@/pages/NotFoundPage";
 import { OwnerDashboardPage } from "@/pages/owner/OwnerDashboardPage";
+import { OwnerEnquiriesPage } from "@/pages/owner/OwnerEnquiriesPage";
 import { OwnerVenueDashboardPage } from "@/pages/owner/OwnerVenueDashboardPage";
+import { OwnerVenueEnquiriesPage } from "@/pages/owner/OwnerVenueEnquiriesPage";
 import { OwnerVenueUpdateRequestPage } from "@/pages/owner/OwnerVenueUpdateRequestPage";
 import { OwnerPricingPage } from "@/pages/owner/OwnerPricingPage";
 import { PrivacyPage } from "@/pages/PrivacyPage";
@@ -76,10 +78,26 @@ export const router = createBrowserRouter([
         ),
       },
       {
+        path: "/owner/enquiries",
+        element: (
+          <RequireAuth>
+            <OwnerEnquiriesPage />
+          </RequireAuth>
+        ),
+      },
+      {
         path: "/owner/venues/:venueId",
         element: (
           <RequireAuth>
             <OwnerVenueDashboardPage />
+          </RequireAuth>
+        ),
+      },
+      {
+        path: "/owner/venues/:venueId/enquiries",
+        element: (
+          <RequireAuth>
+            <OwnerVenueEnquiriesPage />
           </RequireAuth>
         ),
       },

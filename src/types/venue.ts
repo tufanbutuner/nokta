@@ -81,6 +81,7 @@ export interface Venue {
   monetisationNotes: string | null;
   featuredEligible: boolean;
   featuredBlockedReason: string | null;
+  isTest: boolean;
   createdAt: string | null;
   updatedAt: string | null;
 }

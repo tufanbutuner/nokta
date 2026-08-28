@@ -46,6 +46,7 @@ export function mapVenueToFormValues(venue: Venue): VenueFormValues {
     monetisationNotes: venue.monetisationNotes,
     featuredEligible: venue.featuredEligible,
     featuredBlockedReason: venue.featuredBlockedReason,
+    isTest: venue.isTest,
   };
 }
 
@@ -89,6 +90,7 @@ export function mapFormValuesToVenueRow(values: VenueFormValues): VenueRowInput 
     monetisation_notes: nullableString(values.monetisationNotes),
     featured_eligible: values.featuredEligible,
     featured_blocked_reason: values.featuredEligible ? null : nullableString(values.featuredBlockedReason),
+    is_test: values.isTest,
   };
 }
 
@@ -132,6 +134,7 @@ export function createEmptyVenueFormValues(): VenueFormValues {
     monetisationNotes: null,
     featuredEligible: false,
     featuredBlockedReason: null,
+    isTest: false,
   };
 }
 

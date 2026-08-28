@@ -41,6 +41,7 @@ export interface VenueRow {
   monetisation_notes: string | null;
   featured_eligible: boolean;
   featured_blocked_reason: string | null;
+  is_test: boolean;
   created_at: string;
   updated_at: string;
 }
@@ -182,6 +183,9 @@ export interface VenueEnquiryRow {
   contacted_venue_at: string | null;
   venue_response: string | null;
   resolved_at: string | null;
+  owner_last_updated_by: string | null;
+  owner_last_updated_at: string | null;
+  owner_notes: string | null;
   created_at: string;
   updated_at: string;
 }

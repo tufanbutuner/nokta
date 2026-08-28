@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useParams } from "react-router-dom";
 import { OwnerLayout } from "@/components/owner/OwnerLayout";
-import { OwnerNextStepsCard, OwnerVenueAnalyticsCards, OwnerVenueCommercialSummary as OwnerVenueCommercialSummarySection, OwnerVenueEnquirySummary as OwnerVenueEnquirySummarySection, OwnerVenueHeader, OwnerVenueProfilePreview, OwnerVenueStatusCards } from "@/components/owner/OwnerVenueSections";
+import { OwnerNextStepsCard, OwnerVenueAnalyticsCards, OwnerVenueCommercialSummary as OwnerVenueCommercialSummarySection, OwnerVenueEnquiryInboxCta, OwnerVenueEnquirySummary as OwnerVenueEnquirySummarySection, OwnerVenueHeader, OwnerVenueProfilePreview, OwnerVenueStatusCards } from "@/components/owner/OwnerVenueSections";
 import { PageMeta } from "@/components/seo/PageMeta";
 import { ErrorState } from "@/components/state/ErrorState";
 import { LoadingState } from "@/components/state/LoadingState";
@@ -70,6 +70,7 @@ export function OwnerVenueDashboardPage() {
           <OwnerVenueStatusCards venue={venue} subscription={subscription} />
           <OwnerVenueAnalyticsCards analytics={analytics} />
           <OwnerVenueEnquirySummarySection enquiries={enquiries} />
+          <OwnerVenueEnquiryInboxCta venue={venue} subscription={subscription} />
           <OwnerVenueCommercialSummarySection commercial={commercial} />
           <div className="grid gap-6 lg:grid-cols-2">
             <OwnerVenueProfilePreview venue={venue} subscription={subscription} />

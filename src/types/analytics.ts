@@ -7,6 +7,7 @@ export type VenueAnalyticsEventName =
   | "venue_unsaved"
   | "venue_enquiry_cta_clicked"
   | "venue_enquiry_submitted"
+  | "venue_enquiry_converted"
   | "featured_placement_viewed"
   | "featured_placement_clicked"
   | "promoted_offer_viewed"

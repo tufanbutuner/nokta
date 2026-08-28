@@ -45,6 +45,7 @@ export function mapVenueRowToVenue(row: VenueRow): Venue {
     monetisationNotes: commercialRow.monetisation_notes ?? null,
     featuredEligible: commercialRow.featured_eligible ?? false,
     featuredBlockedReason: commercialRow.featured_blocked_reason ?? null,
+    isTest: commercialRow.is_test ?? false,
     createdAt: row.created_at,
     updatedAt: row.updated_at,
   };
@@ -90,6 +91,7 @@ export function mapVenueToVenueRow(venue: Venue): Omit<VenueRow, "created_at" | 
     monetisation_notes: venue.monetisationNotes,
     featured_eligible: venue.featuredEligible,
     featured_blocked_reason: venue.featuredBlockedReason,
+    is_test: venue.isTest,
   };
 }
 

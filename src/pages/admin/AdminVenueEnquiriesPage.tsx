@@ -114,6 +114,9 @@ export function AdminVenueEnquiriesPage() {
               <p><strong>Party/date:</strong> {formatPartyDate(selected)}</p>
               <p><strong>Phone:</strong> {selected.customerPhone ?? "Not provided"}</p>
               <p><strong>Message:</strong> {selected.message ?? "No message"}</p>
+              <p><strong>Venue response:</strong> {selected.venueResponse ?? "Not recorded"}</p>
+              <p><strong>Owner notes:</strong> {selected.ownerNotes ?? "Not recorded"}</p>
+              <p><strong>Owner updated:</strong> {selected.ownerLastUpdatedAt ? new Date(selected.ownerLastUpdatedAt).toLocaleString("en-GB") : "Not recorded"}</p>
               <label className="block space-y-2"><span className="font-medium">Admin notes</span><Textarea value={adminNotes} onChange={(event) => setAdminNotes(event.target.value)} /></label>
             </div>
             <div className="mt-5 flex flex-wrap justify-end gap-2">
@@ -129,7 +132,7 @@ export function AdminVenueEnquiriesPage() {
 function EnquiryTable({ enquiries, venuesById, onSelect, onStatus }: { enquiries: VenueEnquiry[]; venuesById: Record<string, Venue | undefined>; onSelect: (enquiry: VenueEnquiry) => void; onStatus: (enquiry: VenueEnquiry, status: VenueEnquiryStatus) => void }) {
   if (!enquiries.length) return <div className="rounded-xl border bg-card p-8 text-sm text-muted-foreground">No enquiries match these filters.</div>;
   return (
-    <div className="overflow-hidden rounded-xl border bg-card"><div className="overflow-x-auto"><table className="w-full min-w-[960px] text-sm"><thead className="bg-muted/60 text-left text-xs uppercase text-muted-foreground"><tr><th className="px-4 py-3">Venue</th><th className="px-4 py-3">Customer</th><th className="px-4 py-3">Type</th><th className="px-4 py-3">Party/date</th><th className="px-4 py-3">Status</th><th className="px-4 py-3">Submitted</th><th className="px-4 py-3 text-right">Actions</th></tr></thead><tbody className="divide-y">{enquiries.map((enquiry) => { const venue = venuesById[enquiry.venueId]; return <tr key={enquiry.id}><td className="px-4 py-4"><div className="font-medium">{venue?.name ?? enquiry.venueId}</div><div className="mt-1 text-xs text-muted-foreground">{venue ? `${venue.city} · ${venue.area}` : enquiry.venueId}</div></td><td className="px-4 py-4"><div className="font-medium">{enquiry.customerName}</div><div className="mt-1 text-xs text-muted-foreground">{enquiry.customerEmail}</div>{enquiry.customerPhone ? <div className="mt-1 text-xs text-muted-foreground">{enquiry.customerPhone}</div> : null}</td><td className="px-4 py-4">{formatVenueEnquiryType(enquiry.enquiryType)}</td><td className="px-4 py-4 text-muted-foreground">{formatPartyDate(enquiry)}</td><td className="px-4 py-4"><StatusBadge status={enquiry.status} /></td><td className="px-4 py-4 text-muted-foreground">{formatDate(enquiry.createdAt)}</td><td className="px-4 py-4"><div className="flex flex-wrap justify-end gap-2"><Button size="sm" variant="outline" onClick={() => onSelect(enquiry)}>View details</Button><Button size="sm" variant="ghost" onClick={() => onStatus(enquiry, "contacted")}>Mark contacted</Button>{venue ? <Button asChild size="sm" variant="ghost"><Link to={`/venues/${venue.slug}`}>View venue</Link></Button> : null}</div></td></tr>; })}</tbody></table></div></div>
+    <div className="overflow-hidden rounded-xl border bg-card"><div className="overflow-x-auto"><table className="w-full min-w-[1040px] text-sm"><thead className="bg-muted/60 text-left text-xs uppercase text-muted-foreground"><tr><th className="px-4 py-3">Venue</th><th className="px-4 py-3">Customer</th><th className="px-4 py-3">Type</th><th className="px-4 py-3">Party/date</th><th className="px-4 py-3">Status</th><th className="px-4 py-3">Owner handling</th><th className="px-4 py-3">Submitted</th><th className="px-4 py-3 text-right">Actions</th></tr></thead><tbody className="divide-y">{enquiries.map((enquiry) => { const venue = venuesById[enquiry.venueId]; return <tr key={enquiry.id}><td className="px-4 py-4"><div className="font-medium">{venue?.name ?? enquiry.venueId}</div><div className="mt-1 text-xs text-muted-foreground">{venue ? `${venue.city} · ${venue.area}` : enquiry.venueId}</div></td><td className="px-4 py-4"><div className="font-medium">{enquiry.customerName}</div><div className="mt-1 text-xs text-muted-foreground">{enquiry.customerEmail}</div>{enquiry.customerPhone ? <div className="mt-1 text-xs text-muted-foreground">{enquiry.customerPhone}</div> : null}</td><td className="px-4 py-4">{formatVenueEnquiryType(enquiry.enquiryType)}</td><td className="px-4 py-4 text-muted-foreground">{formatPartyDate(enquiry)}</td><td className="px-4 py-4"><StatusBadge status={enquiry.status} /></td><td className="px-4 py-4 text-xs text-muted-foreground">{formatOwnerHandling(enquiry)}</td><td className="px-4 py-4 text-muted-foreground">{formatDate(enquiry.createdAt)}</td><td className="px-4 py-4"><div className="flex flex-wrap justify-end gap-2"><Button size="sm" variant="outline" onClick={() => onSelect(enquiry)}>View details</Button><Button size="sm" variant="ghost" onClick={() => onStatus(enquiry, "contacted")}>Mark contacted</Button>{venue ? <Button asChild size="sm" variant="ghost"><Link to={`/venues/${venue.slug}`}>View venue</Link></Button> : null}</div></td></tr>; })}</tbody></table></div></div>
   );
 }
 
@@ -146,6 +149,14 @@ function Metric({ label, value }: { label: string; value: number }) {
 
 function StatusBadge({ status }: { status: VenueEnquiryStatus }) {
   return <span className={cn("inline-flex rounded-full border px-2 py-1 text-xs font-medium", status === "new" && "bg-purple-50 text-purple-950", status === "converted" && "bg-emerald-50 text-emerald-800")}>{formatAdminVenueEnquiryStatus(status)}</span>;
+}
+
+function formatOwnerHandling(enquiry: VenueEnquiry) {
+  return [
+    enquiry.ownerLastUpdatedAt ? `Updated ${formatDate(enquiry.ownerLastUpdatedAt)}` : null,
+    enquiry.ownerNotes ? "Owner notes" : null,
+    enquiry.venueResponse ? "Venue response" : null,
+  ].filter(Boolean).join(" · ") || "No owner activity";
 }
 
 function formatPartyDate(enquiry: VenueEnquiry) {

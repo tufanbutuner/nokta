@@ -49,6 +49,11 @@ export function OwnerVenueCard({ venue, analytics, enquiries, commercial, subscr
           <Link to="/owner/pricing">View plans</Link>
         </Button>
       )}
+      {subscriptionHasPlanAccess(subscription ?? null, "owner_enquiry_inbox") ? (
+        <Button asChild variant="outline" className="ml-2 mt-4">
+          <Link to={`/owner/venues/${venue.slug}/enquiries`}>View enquiries</Link>
+        </Button>
+      ) : null}
     </article>
   );
 }

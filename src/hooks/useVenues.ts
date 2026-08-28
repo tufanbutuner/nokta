@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { useAuth } from "@/context/AuthContext";
+import { isAdminUser } from "@/lib/admin";
 import { getVenues } from "@/services/venueService";
 import type { Venue } from "@/types/venue";
 
@@ -9,6 +11,8 @@ interface UseVenuesResult {
 }
 
 export function useVenues(): UseVenuesResult {
+  const { user, isLoading: isLoadingAuth } = useAuth();
+  const canSeeTestVenues = isAdminUser(user);
   const [venues, setVenues] = useState<Venue[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -23,7 +27,7 @@ export function useVenues(): UseVenuesResult {
       try {
         const nextVenues = await getVenues();
         if (!cancelled) {
-          setVenues(nextVenues);
+          setVenues(canSeeTestVenues ? nextVenues : nextVenues.filter((venue) => !venue.isTest));
         }
       } catch (caughtError) {
         if (!cancelled) {
@@ -37,12 +41,12 @@ export function useVenues(): UseVenuesResult {
       }
     }
 
-    void loadVenues();
+    if (!isLoadingAuth) void loadVenues();
 
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [canSeeTestVenues, isLoadingAuth]);
 
   return { venues, isLoading, error };
 }

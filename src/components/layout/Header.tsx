@@ -5,7 +5,7 @@ import { useAuth } from "@/context/AuthContext";
 import { useVenuePreferences } from "@/context/VenuePreferencesContext";
 import { useIsAdmin } from "@/hooks/useIsAdmin";
 import { cn } from "@/lib/utils";
-import { ChevronDown, Menu, ShieldCheck, UserCircle } from "lucide-react";
+import { ChevronDown, LayoutDashboard, Menu, ShieldCheck, UserCircle } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 
@@ -113,6 +113,33 @@ export function Header() {
                       <>
                         <div className="my-2 border-t" />
                         <div className="flex items-center gap-2 px-3 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+                          <LayoutDashboard className="h-3.5 w-3.5" />
+                          Owner
+                        </div>
+                        <NavLink
+                          reloadDocument
+                          to="/owner"
+                          className={accountMenuLinkClass}
+                          role="menuitem"
+                          onClick={() => setAccountMenuOpen(false)}
+                        >
+                          Owner dashboard
+                        </NavLink>
+                        <NavLink
+                          reloadDocument
+                          to="/owner/enquiries"
+                          className={accountMenuLinkClass}
+                          role="menuitem"
+                          onClick={() => setAccountMenuOpen(false)}
+                        >
+                          Owner enquiries
+                        </NavLink>
+                      </>
+                    ) : null}
+                    {isAdmin ? (
+                      <>
+                        <div className="my-2 border-t" />
+                        <div className="flex items-center gap-2 px-3 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
                           <ShieldCheck className="h-3.5 w-3.5" />
                           Admin
                         </div>
@@ -212,6 +239,12 @@ export function Header() {
               </NavLink>
               {isAdmin ? (
                 <>
+                  <NavLink reloadDocument to="/owner" className={mobileNavLinkClass}>
+                    Owner dashboard
+                  </NavLink>
+                  <NavLink reloadDocument to="/owner/enquiries" className={mobileNavLinkClass}>
+                    Owner enquiries
+                  </NavLink>
                   <NavLink reloadDocument to="/admin/venues" className={mobileNavLinkClass}>
                     Admin
                   </NavLink>
