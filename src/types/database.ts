@@ -47,6 +47,26 @@ export interface VenueRow {
 
 export type VenueRowInput = Omit<VenueRow, "created_at" | "updated_at">;
 
+export interface VenueSubscriptionRow {
+  id: string;
+  venue_id: string;
+  plan: "free" | "starter" | "growth" | "pro";
+  status: "inactive" | "trial" | "active" | "past_due" | "cancelled";
+  billing_provider: "manual" | "stripe" | null;
+  billing_customer_id: string | null;
+  billing_subscription_id: string | null;
+  current_period_start: string | null;
+  current_period_end: string | null;
+  trial_started_at: string | null;
+  trial_ends_at: string | null;
+  cancelled_at: string | null;
+  admin_notes: string | null;
+  created_by: string | null;
+  updated_by: string | null;
+  created_at: string;
+  updated_at: string;
+}
+
 export interface VenueReviewRow {
   id: string;
   venue_id: string;

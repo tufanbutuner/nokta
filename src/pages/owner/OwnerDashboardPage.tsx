@@ -11,6 +11,8 @@ import { getMyClaimedVenues } from "@/services/ownerVenueService";
 import { getOwnerVenueAnalyticsSummary, type OwnerVenueAnalyticsSummary } from "@/services/ownerVenueAnalyticsService";
 import { getOwnerVenueCommercialSummary, type OwnerVenueCommercialSummary } from "@/services/ownerCommercialSummaryService";
 import { getOwnerVenueEnquirySummary, type OwnerVenueEnquirySummary } from "@/services/ownerVenueEnquirySummaryService";
+import { getOwnerVenueSubscriptions } from "@/services/ownerSubscriptionService";
+import type { VenueSubscription } from "@/types/subscriptions";
 import type { Venue } from "@/types/venue";
 
 export function OwnerDashboardPage() {
@@ -19,6 +21,7 @@ export function OwnerDashboardPage() {
   const [analytics, setAnalytics] = useState<Record<string, OwnerVenueAnalyticsSummary>>({});
   const [enquiries, setEnquiries] = useState<Record<string, OwnerVenueEnquirySummary>>({});
   const [commercial, setCommercial] = useState<Record<string, OwnerVenueCommercialSummary>>({});
+  const [subscriptions, setSubscriptions] = useState<Record<string, VenueSubscription>>({});
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const range = useMemo(last30Days, []);
@@ -33,18 +36,22 @@ export function OwnerDashboardPage() {
         if (cancelled) return;
         setVenues(nextVenues);
         trackEvent("owner_dashboard_viewed", { ownedVenueCount: nextVenues.length });
-        const results = await Promise.all(nextVenues.map(async (venue) => {
+        const [nextSubscriptions, results] = await Promise.all([
+          getOwnerVenueSubscriptions(user.id).catch(() => []),
+          Promise.all(nextVenues.map(async (venue) => {
           const [venueAnalytics, venueEnquiries, venueCommercial] = await Promise.all([
             getOwnerVenueAnalyticsSummary({ userId: user.id, venueId: venue.id, from: range.from, to: range.to }).catch(() => null),
             getOwnerVenueEnquirySummary({ userId: user.id, venueId: venue.id }).catch(() => null),
             getOwnerVenueCommercialSummary({ userId: user.id, venueId: venue.id }).catch(() => null),
           ]);
           return { venue, venueAnalytics, venueEnquiries, venueCommercial };
-        }));
+          })),
+        ]);
         if (cancelled) return;
         setAnalytics(Object.fromEntries(results.flatMap((item) => item.venueAnalytics ? [[item.venue.id, item.venueAnalytics]] : [])));
         setEnquiries(Object.fromEntries(results.flatMap((item) => item.venueEnquiries ? [[item.venue.id, item.venueEnquiries]] : [])));
         setCommercial(Object.fromEntries(results.flatMap((item) => item.venueCommercial ? [[item.venue.id, item.venueCommercial]] : [])));
+        setSubscriptions(Object.fromEntries(nextSubscriptions.map((subscription) => [subscription.venueId, subscription])));
       })
       .catch((caughtError) => {
         if (!cancelled) setError(caughtError instanceof Error ? caughtError.message : "Could not load owner dashboard.");
@@ -85,7 +92,7 @@ export function OwnerDashboardPage() {
               <Metric label="Active promotions" value={totals.activeOffers + totals.activeFeatured} />
             </div>
             <div className="grid gap-4">
-              {venues.map((venue) => <OwnerVenueCard key={venue.id} venue={venue} analytics={analytics[venue.id]} enquiries={enquiries[venue.id]} commercial={commercial[venue.id]} />)}
+              {venues.map((venue) => <OwnerVenueCard key={venue.id} venue={venue} analytics={analytics[venue.id]} enquiries={enquiries[venue.id]} commercial={commercial[venue.id]} subscription={subscriptions[venue.id]} />)}
             </div>
           </>
         )}

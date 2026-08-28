@@ -1,13 +1,18 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { ClaimedVenueBadge } from "@/components/venues/ClaimedVenueBadge";
+import { PlanBadge } from "@/components/subscriptions/PlanBadge";
 import { Button } from "@/components/ui/button";
+import { subscriptionHasPlanAccess } from "@/lib/planFeatureAccess";
 import type { OwnerVenueAnalyticsSummary } from "@/services/ownerVenueAnalyticsService";
 import type { OwnerVenueCommercialSummary } from "@/services/ownerCommercialSummaryService";
 import type { OwnerVenueEnquirySummary } from "@/services/ownerVenueEnquirySummaryService";
+import type { VenueSubscription } from "@/types/subscriptions";
 import type { Venue } from "@/types/venue";
 
-export function OwnerVenueCard({ venue, analytics, enquiries, commercial }: { venue: Venue; analytics?: OwnerVenueAnalyticsSummary; enquiries?: OwnerVenueEnquirySummary; commercial?: OwnerVenueCommercialSummary }) {
+export function OwnerVenueCard({ venue, analytics, enquiries, commercial, subscription }: { venue: Venue; analytics?: OwnerVenueAnalyticsSummary; enquiries?: OwnerVenueEnquirySummary; commercial?: OwnerVenueCommercialSummary; subscription?: VenueSubscription }) {
+  const canRequestUpdate = subscriptionHasPlanAccess(subscription ?? null, "profile_update_requests");
+
   return (
     <article className="rounded-xl border bg-card p-5">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
@@ -17,10 +22,13 @@ export function OwnerVenueCard({ venue, analytics, enquiries, commercial }: { ve
             <ClaimedVenueBadge compact />
           </div>
           <p className="mt-1 text-sm text-muted-foreground">{venue.city} · {venue.area}</p>
-          <p className="mt-2 text-xs text-muted-foreground">Partner tier: {venue.partnerTier}</p>
+          <div className="mt-2 flex flex-wrap items-center gap-2">
+            <PlanBadge plan={subscription?.plan ?? "free"} status={subscription?.status ?? "inactive"} compact />
+            <span className="text-xs capitalize text-muted-foreground">Status: {(subscription?.status ?? "inactive").replace("_", " ")}</span>
+          </div>
         </div>
         <Button asChild>
-          <Link to={`/owner/venues/${venue.id}`}>View dashboard<ArrowRight className="ml-2 h-4 w-4" /></Link>
+          <Link to={`/owner/venues/${venue.slug}`}>View dashboard<ArrowRight className="ml-2 h-4 w-4" /></Link>
         </Button>
       </div>
       <div className="mt-5 grid gap-3 sm:grid-cols-4">
@@ -32,6 +40,15 @@ export function OwnerVenueCard({ venue, analytics, enquiries, commercial }: { ve
       <Button asChild variant="outline" className="mt-4">
         <Link to={`/venues/${venue.slug}`}>View public page</Link>
       </Button>
+      {canRequestUpdate ? (
+        <Button asChild variant="outline" className="ml-2 mt-4">
+          <Link to={`/owner/venues/${venue.slug}/update`}>Request profile update</Link>
+        </Button>
+      ) : (
+        <Button asChild variant="outline" className="ml-2 mt-4">
+          <Link to="/owner/pricing">View plans</Link>
+        </Button>
+      )}
     </article>
   );
 }

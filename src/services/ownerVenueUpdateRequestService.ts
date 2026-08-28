@@ -2,6 +2,7 @@ import { trackEvent } from "@/lib/analytics";
 import { filterOwnerEditableVenueChanges, validateVenueUpdateRequestInput } from "@/lib/venueUpdateRequestValidation";
 import { mapVenueUpdateRequestRowToRequest } from "@/lib/venueUpdateRequestMappers";
 import { supabase, supabaseConfigError } from "@/lib/supabase";
+import { ownerVenueHasFeatureAccess } from "@/services/ownerSubscriptionService";
 import type { VenueUpdateRequestRow } from "@/types/database";
 import type { VenueUpdateRequest, VenueUpdateRequestInput } from "@/types/venueUpdateRequests";
 
@@ -13,6 +14,8 @@ function ensureSupabase() {
 export async function createOwnerVenueUpdateRequest(input: { userId: string; request: VenueUpdateRequestInput }): Promise<VenueUpdateRequest> {
   const validation = validateVenueUpdateRequestInput(input.request);
   if (!validation.isValid) throw new Error(Object.values(validation.errors)[0] ?? "Could not create update request.");
+  const hasAccess = await ownerVenueHasFeatureAccess({ userId: input.userId, venueId: input.request.venueId, feature: "profile_update_requests" });
+  if (!hasAccess) throw new Error("Profile update requests are available on the Starter plan.");
 
   const client = ensureSupabase();
   const requestedChanges = filterOwnerEditableVenueChanges(input.request.requestedChanges);

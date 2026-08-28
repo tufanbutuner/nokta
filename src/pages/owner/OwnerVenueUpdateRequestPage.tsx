@@ -4,23 +4,26 @@ import { OwnerLayout } from "@/components/owner/OwnerLayout";
 import { OwnerVenueUpdateForm } from "@/components/owner/updates/OwnerVenueUpdateForm";
 import { OwnerVenueUpdateRequestsList } from "@/components/owner/updates/OwnerVenueUpdateRequestsList";
 import { PageMeta } from "@/components/seo/PageMeta";
+import { UpgradePrompt } from "@/components/subscriptions/UpgradePrompt";
 import { ErrorState } from "@/components/state/ErrorState";
 import { LoadingState } from "@/components/state/LoadingState";
 import { Alert } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/context/AuthContext";
 import { trackEvent } from "@/lib/analytics";
+import { subscriptionHasPlanAccess } from "@/lib/planFeatureAccess";
+import { getOwnerVenueSubscription } from "@/services/ownerSubscriptionService";
 import { getMyClaimedVenue } from "@/services/ownerVenueService";
 import { createOwnerVenueUpdateRequest, getMyVenueUpdateRequestsForVenue, cancelOwnerVenueUpdateRequest } from "@/services/ownerVenueUpdateRequestService";
+import type { VenueSubscription } from "@/types/subscriptions";
 import type { Venue } from "@/types/venue";
 import type { VenueUpdateRequest, VenueUpdateRequestInput } from "@/types/venueUpdateRequests";
-
-const UPDATE_ENABLED_TIERS = new Set(["starter", "growth", "pro"]);
 
 export function OwnerVenueUpdateRequestPage() {
   const { venueId = "" } = useParams();
   const { user } = useAuth();
   const [venue, setVenue] = useState<Venue | null>(null);
+  const [subscription, setSubscription] = useState<VenueSubscription | null>(null);
   const [requests, setRequests] = useState<VenueUpdateRequest[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -33,13 +36,17 @@ export function OwnerVenueUpdateRequestPage() {
     getMyClaimedVenue({ userId: user.id, venueId })
       .then(async (nextVenue) => {
         if (!nextVenue) throw new Error("Venue dashboard not found.");
-        const nextRequests = await getMyVenueUpdateRequestsForVenue({ userId: user.id, venueId: nextVenue.id });
-        return { nextVenue, nextRequests };
+        const [nextRequests, nextSubscription] = await Promise.all([
+          getMyVenueUpdateRequestsForVenue({ userId: user.id, venueId: nextVenue.id }),
+          getOwnerVenueSubscription({ userId: user.id, venueId: nextVenue.id }),
+        ]);
+        return { nextVenue, nextRequests, nextSubscription };
       })
-      .then(({ nextVenue, nextRequests }) => {
+      .then(({ nextVenue, nextRequests, nextSubscription }) => {
         if (cancelled) return;
         setVenue(nextVenue);
         setRequests(nextRequests);
+        setSubscription(nextSubscription);
         trackEvent("owner_profile_update_started", { venueId: nextVenue.id, city: nextVenue.city, area: nextVenue.area, partnerTier: nextVenue.partnerTier });
       })
       .catch((caughtError) => {
@@ -87,11 +94,8 @@ export function OwnerVenueUpdateRequestPage() {
             </div>
             <Button asChild variant="outline"><Link to={`/owner/venues/${venue.slug}`}>Back to dashboard</Link></Button>
           </div>
-          {!UPDATE_ENABLED_TIERS.has(venue.partnerTier) ? (
-            <Alert>
-              <strong>Profile management is part of the Starter plan.</strong>
-              <span className="mt-1 block">Contact Sheesha about upgrading to request structured profile updates from your dashboard.</span>
-            </Alert>
+          {!subscriptionHasPlanAccess(subscription, "profile_update_requests") ? (
+            <UpgradePrompt feature="profile_update_requests" requiredPlan="starter" currentPlan={subscription?.plan ?? "free"} venueId={venue.id} />
           ) : success ? (
             <Alert className="border-emerald-200 bg-emerald-50 text-emerald-900">Your update request has been submitted for admin review.</Alert>
           ) : (

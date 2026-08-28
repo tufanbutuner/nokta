@@ -11,6 +11,7 @@ export function OwnerLayout({ children }: { children: React.ReactNode }) {
           <nav className="mt-6 grid gap-1">
             <OwnerNavLink to="/owner" label="Dashboard" />
             <OwnerNavLink to="/owner/venues" label="My venues" />
+            <OwnerNavLink to="/owner/pricing" label="Pricing" />
             <OwnerNavLink to="/account" label="Account" />
           </nav>
           <Button asChild variant="outline" className="mt-6 w-full">

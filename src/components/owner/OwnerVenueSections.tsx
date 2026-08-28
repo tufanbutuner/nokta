@@ -1,10 +1,14 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { PlanBadge } from "@/components/subscriptions/PlanBadge";
+import { UpgradePrompt } from "@/components/subscriptions/UpgradePrompt";
 import { ClaimedVenueBadge } from "@/components/venues/ClaimedVenueBadge";
+import { subscriptionHasPlanAccess } from "@/lib/planFeatureAccess";
 import { formatPriceLevel } from "@/lib/venueFilters";
 import type { OwnerVenueAnalyticsSummary } from "@/services/ownerVenueAnalyticsService";
 import type { OwnerVenueCommercialSummary } from "@/services/ownerCommercialSummaryService";
 import type { OwnerVenueEnquirySummary } from "@/services/ownerVenueEnquirySummaryService";
+import type { VenueSubscription } from "@/types/subscriptions";
 import type { Venue } from "@/types/venue";
 
 export function OwnerVenueHeader({ venue }: { venue: Venue }) {
@@ -23,12 +27,15 @@ export function OwnerVenueHeader({ venue }: { venue: Venue }) {
   );
 }
 
-export function OwnerVenueStatusCards({ venue }: { venue: Venue }) {
+export function OwnerVenueStatusCards({ venue, subscription }: { venue: Venue; subscription?: VenueSubscription | null }) {
   return (
     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
       <Metric label="Claimed status" value={venue.isClaimed ? "Claimed" : "Not claimed"} />
       <Metric label="Verification" value={venue.verificationStatus} />
-      <Metric label="Partner tier" value={venue.partnerTier} />
+      <div className="rounded-lg border bg-background/60 p-4">
+        <p className="text-sm text-muted-foreground">Current plan</p>
+        <div className="mt-2"><PlanBadge plan={subscription?.plan ?? "free"} status={subscription?.status ?? "inactive"} /></div>
+      </div>
       <Metric label="Profile health" value={getProfileHealth(venue)} />
     </div>
   );
@@ -92,8 +99,8 @@ export function OwnerVenueCommercialSummary({ commercial }: { commercial: OwnerV
   );
 }
 
-export function OwnerVenueProfilePreview({ venue }: { venue: Venue }) {
-  const canRequestUpdate = venue.partnerTier !== "none";
+export function OwnerVenueProfilePreview({ venue, subscription }: { venue: Venue; subscription?: VenueSubscription | null }) {
+  const canRequestUpdate = subscriptionHasPlanAccess(subscription ?? null, "profile_update_requests");
   return (
     <section className="rounded-xl border bg-card p-5">
       <h2 className="text-xl font-semibold">Profile preview</h2>
@@ -111,10 +118,7 @@ export function OwnerVenueProfilePreview({ venue }: { venue: Venue }) {
       {canRequestUpdate ? (
         <Button asChild variant="outline" className="mt-5"><Link to={`/owner/venues/${venue.slug}/update`}>Request a profile update</Link></Button>
       ) : (
-        <div className="mt-5 rounded-lg border bg-background/60 p-4 text-sm text-muted-foreground">
-          Profile management is part of the Starter plan.
-          <Button asChild variant="outline" className="mt-3"><Link to="/account">Contact Sheesha about upgrading</Link></Button>
-        </div>
+        <div className="mt-5"><UpgradePrompt feature="profile_update_requests" requiredPlan="starter" currentPlan={subscription?.plan ?? "free"} venueId={venue.id} /></div>
       )}
     </section>
   );

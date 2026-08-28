@@ -8,6 +8,7 @@ import { AdminReviewsPage } from "@/pages/admin/AdminReviewsPage";
 import { AdminPromotedOffersPage } from "@/pages/admin/AdminPromotedOffersPage";
 import { AdminVenueAnalyticsPage } from "@/pages/admin/AdminVenueAnalyticsPage";
 import { AdminVenueUpdateRequestsPage } from "@/pages/admin/AdminVenueUpdateRequestsPage";
+import { AdminSubscriptionsPage } from "@/pages/admin/AdminSubscriptionsPage";
 import { AdminVenueEnquiriesPage } from "@/pages/admin/AdminVenueEnquiriesPage";
 import { AdminVenueClaimsPage } from "@/pages/admin/AdminVenueClaimsPage";
 import { AdminVenueSuggestionsPage } from "@/pages/admin/AdminVenueSuggestionsPage";
@@ -24,6 +25,7 @@ import { NotFoundPage } from "@/pages/NotFoundPage";
 import { OwnerDashboardPage } from "@/pages/owner/OwnerDashboardPage";
 import { OwnerVenueDashboardPage } from "@/pages/owner/OwnerVenueDashboardPage";
 import { OwnerVenueUpdateRequestPage } from "@/pages/owner/OwnerVenueUpdateRequestPage";
+import { OwnerPricingPage } from "@/pages/owner/OwnerPricingPage";
 import { PrivacyPage } from "@/pages/PrivacyPage";
 import { PromotedOfferPreviewPage } from "@/pages/PromotedOfferPreviewPage";
 import { RecommendPage } from "@/pages/RecommendPage";
@@ -89,6 +91,14 @@ export const router = createBrowserRouter([
           </RequireAuth>
         ),
       },
+      {
+        path: "/owner/pricing",
+        element: (
+          <RequireAuth>
+            <OwnerPricingPage />
+          </RequireAuth>
+        ),
+      },
       { path: "/sign-in", element: <SignInPage /> },
       { path: "/sign-up", element: <SignUpPage /> },
       { path: "/venues/:slug/claim", element: <ClaimVenuePage /> },
@@ -113,6 +123,14 @@ export const router = createBrowserRouter([
         element: (
           <RequireAdmin>
             <AdminVenueUpdateRequestsPage />
+          </RequireAdmin>
+        ),
+      },
+      {
+        path: "/admin/subscriptions",
+        element: (
+          <RequireAdmin>
+            <AdminSubscriptionsPage />
           </RequireAdmin>
         ),
       },

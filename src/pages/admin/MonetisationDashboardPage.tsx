@@ -15,8 +15,11 @@ import { getFeaturedEligibilityRecommendation } from "@/lib/commercialEligibilit
 import { DEFAULT_CITY } from "@/lib/cities";
 import { formatPartnerTier, formatMonetisationStatus } from "@/lib/monetisationLabels";
 import { getMonetisationSummary } from "@/lib/monetisationSummary";
+import { PLAN_CONFIG } from "@/lib/planConfig";
+import { getAdminVenueSubscriptions } from "@/services/adminSubscriptionService";
 import { updateVenueMonetisationStatus } from "@/services/adminMonetisationService";
 import type { MonetisationStatus } from "@/types/monetisation";
+import type { VenueSubscription } from "@/types/subscriptions";
 import type { Venue } from "@/types/venue";
 import { useVenues } from "@/hooks/useVenues";
 
@@ -25,12 +28,17 @@ export function MonetisationDashboardPage() {
   const [dashboardVenues, setDashboardVenues] = useState<Venue[]>([]);
   const [activeFilter, setActiveFilter] = useState<MonetisationFilter>("all");
   const [city, setCity] = useState(DEFAULT_CITY);
+  const [subscriptions, setSubscriptions] = useState<VenueSubscription[]>([]);
   const [updatingAction, setUpdatingAction] = useState<string | null>(null);
   const [actionError, setActionError] = useState<string | null>(null);
 
   useEffect(() => {
     setDashboardVenues(venues);
   }, [venues]);
+
+  useEffect(() => {
+    getAdminVenueSubscriptions().then(setSubscriptions).catch(() => setSubscriptions([]));
+  }, []);
 
   const cityVenues = useMemo(() => dashboardVenues.filter((venue) => venue.city === city), [city, dashboardVenues]);
   const summary = useMemo(() => getMonetisationSummary(cityVenues), [cityVenues]);
@@ -98,6 +106,7 @@ export function MonetisationDashboardPage() {
           </section>
           {actionError ? <Alert className="border-clay-400/20 bg-clay-400/10 text-clay-600">{actionError}</Alert> : null}
           <MonetisationSummaryCards summary={summary} />
+          <ManualSubscriptionSummary subscriptions={subscriptions} />
           <section className="rounded-xl border border-black/[0.04] bg-white p-4">
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <div>
@@ -143,6 +152,35 @@ export function MonetisationDashboardPage() {
         </div>
       )}
     </AdminPageShell>
+  );
+}
+
+function ManualSubscriptionSummary({ subscriptions }: { subscriptions: VenueSubscription[] }) {
+  const activeSubscriptions = subscriptions.filter((subscription) => ["active", "trial"].includes(subscription.status));
+  const estimatedMrr = activeSubscriptions.reduce((total, subscription) => total + PLAN_CONFIG[subscription.plan].monthlyPrice, 0);
+  const cards = [
+    { label: "Free venues", value: subscriptions.filter((subscription) => subscription.plan === "free").length },
+    { label: "Starter venues", value: subscriptions.filter((subscription) => subscription.plan === "starter").length },
+    { label: "Growth venues", value: subscriptions.filter((subscription) => subscription.plan === "growth").length },
+    { label: "Pro venues", value: subscriptions.filter((subscription) => subscription.plan === "pro").length },
+    { label: "Estimated manual MRR", value: `£${estimatedMrr}` },
+  ];
+
+  return (
+    <section className="rounded-xl border border-black/[0.04] bg-white p-4">
+      <div className="flex flex-col gap-1">
+        <h2 className="font-primary text-xs font-semibold text-clay-600">Subscription access</h2>
+        <p className="text-[13px] text-[#8a7e72]">Manual plan assignments only. These numbers are not Stripe-verified.</p>
+      </div>
+      <div className="mt-4 grid gap-3 sm:grid-cols-2 xl:grid-cols-5">
+        {cards.map((card) => (
+          <div key={card.label} className="rounded-lg border bg-clay-50 p-3">
+            <p className="text-xs text-[#8a7e72]">{card.label}</p>
+            <p className="mt-1 text-2xl font-semibold text-clay-600">{card.value}</p>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 }
 
