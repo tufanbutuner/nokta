@@ -103,6 +103,7 @@ function toRowInput(subscription: VenueSubscriptionInput, adminUserId: string) {
     billing_subscription_id: subscription.billingSubscriptionId ?? null,
     stripe_price_id: subscription.stripePriceId ?? null,
     stripe_product_id: subscription.stripeProductId ?? null,
+    stripe_mode: subscription.stripeMode ?? null,
     cancel_at_period_end: subscription.cancelAtPeriodEnd ?? false,
     last_stripe_event_id: subscription.lastStripeEventId ?? null,
     last_synced_at: subscription.lastSyncedAt ?? null,

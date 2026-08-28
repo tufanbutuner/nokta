@@ -8,6 +8,7 @@ const corsHeaders = {
 };
 
 type PaidVenuePlan = "starter" | "growth" | "pro";
+type StripeMode = "test" | "live";
 
 function jsonResponse(body: unknown, init: ResponseInit = {}) {
   return new Response(JSON.stringify(body), {
@@ -25,13 +26,31 @@ function isPaidVenuePlan(plan: string): plan is PaidVenuePlan {
 }
 
 function getStripePriceIdForPlan(plan: PaidVenuePlan) {
-  const envName = {
-    starter: "STRIPE_STARTER_PRICE_ID",
-    growth: "STRIPE_GROWTH_PRICE_ID",
-    pro: "STRIPE_PRO_PRICE_ID",
-  }[plan];
+  return getStripePriceIdForPlanAndMode(plan, "live");
+}
 
-  return Deno.env.get(envName) ?? null;
+function getStripePriceIdForPlanAndMode(plan: PaidVenuePlan, mode: StripeMode) {
+  const prefix = mode === "test" ? "STRIPE_TEST" : "STRIPE_LIVE";
+  const envName = `${prefix}_${plan.toUpperCase()}_PRICE_ID`;
+
+  return Deno.env.get(envName) ?? (mode === "live" ? Deno.env.get(`STRIPE_${plan.toUpperCase()}_PRICE_ID`) : null);
+}
+
+function getStripeSecretKey(mode: StripeMode) {
+  return Deno.env.get(mode === "test" ? "STRIPE_TEST_SECRET_KEY" : "STRIPE_LIVE_SECRET_KEY") ?? (mode === "live" ? Deno.env.get("STRIPE_SECRET_KEY") : null);
+}
+
+function getStripeModeForRequest(request: Request): StripeMode {
+  const origin = request.headers.get("origin") ?? "";
+  const referer = request.headers.get("referer") ?? "";
+  const source = `${origin} ${referer}`;
+  return source.includes("localhost") || source.includes("127.0.0.1") ? "test" : "live";
+}
+
+function getAppUrlForRequest(request: Request, mode: StripeMode) {
+  const origin = request.headers.get("origin");
+  if (mode === "test" && origin && (origin.includes("localhost") || origin.includes("127.0.0.1"))) return origin;
+  return Deno.env.get(mode === "test" ? "TEST_APP_URL" : "LIVE_APP_URL") ?? Deno.env.get("APP_URL") ?? Deno.env.get("VITE_APP_URL");
 }
 
 function createAdminClient() {
@@ -85,11 +104,12 @@ Deno.serve(async (request) => {
     if (venueError) throw venueError;
     if (!venue) return jsonResponse({ error: "You can only upgrade venues you own." }, { status: 403 });
 
-    const priceId = getStripePriceIdForPlan(plan);
+    const stripeMode = getStripeModeForRequest(request);
+    const priceId = getStripePriceIdForPlanAndMode(plan, stripeMode);
     if (!priceId) return jsonResponse({ error: "Stripe price ID is not configured for this plan." }, { status: 500 });
 
-    const stripeSecretKey = Deno.env.get("STRIPE_SECRET_KEY");
-    const appUrl = Deno.env.get("APP_URL") ?? Deno.env.get("VITE_APP_URL");
+    const stripeSecretKey = getStripeSecretKey(stripeMode);
+    const appUrl = getAppUrlForRequest(request, stripeMode);
     if (!stripeSecretKey || !appUrl) return jsonResponse({ error: "Stripe checkout is not configured." }, { status: 500 });
 
     const stripe = new Stripe(stripeSecretKey, { apiVersion: "2026-08-26.dahlia" });
@@ -106,8 +126,8 @@ Deno.serve(async (request) => {
       line_items: [{ price: priceId, quantity: 1 }],
       success_url: `${appUrl}/owner/billing/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${appUrl}/owner/pricing?cancelled=true`,
-      metadata: { venueId: venue.id, userId: user.id, plan },
-      subscription_data: { metadata: { venueId: venue.id, userId: user.id, plan } },
+      metadata: { venueId: venue.id, userId: user.id, plan, stripeMode },
+      subscription_data: { metadata: { venueId: venue.id, userId: user.id, plan, stripeMode } },
       allow_promotion_codes: true,
     });
 
@@ -118,6 +138,7 @@ Deno.serve(async (request) => {
       stripe_checkout_session_id: session.id,
       stripe_customer_id: typeof session.customer === "string" ? session.customer : null,
       stripe_subscription_id: typeof session.subscription === "string" ? session.subscription : null,
+      stripe_mode: stripeMode,
       status: "created",
     });
 

@@ -58,6 +58,7 @@ export interface VenueSubscriptionRow {
   billing_subscription_id: string | null;
   stripe_price_id: string | null;
   stripe_product_id: string | null;
+  stripe_mode: "test" | "live" | null;
   cancel_at_period_end: boolean;
   last_stripe_event_id: string | null;
   last_synced_at: string | null;

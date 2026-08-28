@@ -169,6 +169,7 @@ set
   billing_subscription_id = null,
   stripe_price_id = null,
   stripe_product_id = null,
+  stripe_mode = null,
   cancel_at_period_end = false,
   current_period_start = excluded.current_period_start,
   current_period_end = excluded.current_period_end,

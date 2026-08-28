@@ -104,7 +104,13 @@ export function OwnerPricingPage() {
                 </div>
               </div>
             )}
-            <PricingPlansTable onChoosePlan={handleChoosePlan} isChoosingPlan={choosingPlan} disabled={!selectedVenueId || !venues.length} />
+            <PricingPlansTable
+              onChoosePlan={handleChoosePlan}
+              isChoosingPlan={choosingPlan}
+              disabled={!selectedVenueId || !venues.length}
+              currentPlan={selectedSubscription?.plan ?? "free"}
+              currentStatus={selectedSubscription?.status ?? "inactive"}
+            />
           </>
         )}
       </div>

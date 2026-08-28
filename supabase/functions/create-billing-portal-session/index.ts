@@ -31,6 +31,25 @@ function createAdminClient() {
   });
 }
 
+type StripeMode = "test" | "live";
+
+function getStripeSecretKey(mode: StripeMode) {
+  return Deno.env.get(mode === "test" ? "STRIPE_TEST_SECRET_KEY" : "STRIPE_LIVE_SECRET_KEY") ?? (mode === "live" ? Deno.env.get("STRIPE_SECRET_KEY") : null);
+}
+
+function getStripeModeForRequest(request: Request): StripeMode {
+  const origin = request.headers.get("origin") ?? "";
+  const referer = request.headers.get("referer") ?? "";
+  const source = `${origin} ${referer}`;
+  return source.includes("localhost") || source.includes("127.0.0.1") ? "test" : "live";
+}
+
+function getAppUrlForRequest(request: Request, mode: StripeMode) {
+  const origin = request.headers.get("origin");
+  if (mode === "test" && origin && (origin.includes("localhost") || origin.includes("127.0.0.1"))) return origin;
+  return Deno.env.get(mode === "test" ? "TEST_APP_URL" : "LIVE_APP_URL") ?? Deno.env.get("APP_URL") ?? Deno.env.get("VITE_APP_URL");
+}
+
 async function getUserFromRequest(request: Request) {
   const supabase = createAdminClient();
   const token = request.headers.get("Authorization")?.replace("Bearer ", "");
@@ -71,7 +90,7 @@ Deno.serve(async (request) => {
 
     const { data: subscription, error: subscriptionError } = await supabase
       .from("venue_subscriptions")
-      .select("billing_provider,billing_customer_id")
+      .select("billing_provider,billing_customer_id,stripe_mode")
       .eq("venue_id", venue.id)
       .maybeSingle();
 
@@ -80,8 +99,9 @@ Deno.serve(async (request) => {
       return jsonResponse({ error: "This venue does not have Stripe billing yet." }, { status: 400 });
     }
 
-    const stripeSecretKey = Deno.env.get("STRIPE_SECRET_KEY");
-    const appUrl = Deno.env.get("APP_URL") ?? Deno.env.get("VITE_APP_URL");
+    const stripeMode = (subscription.stripe_mode as StripeMode | null) ?? getStripeModeForRequest(request);
+    const stripeSecretKey = getStripeSecretKey(stripeMode);
+    const appUrl = getAppUrlForRequest(request, stripeMode);
     if (!stripeSecretKey || !appUrl) return jsonResponse({ error: "Stripe billing portal is not configured." }, { status: 500 });
 
     const stripe = new Stripe(stripeSecretKey, { apiVersion: "2026-08-26.dahlia" });

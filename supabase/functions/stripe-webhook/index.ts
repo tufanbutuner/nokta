@@ -31,12 +31,41 @@ function createAdminClient() {
   });
 }
 
-function getPlanFromStripePriceId(priceId: string | null | undefined) {
+type StripeMode = "test" | "live";
+
+function getPlanFromStripePriceId(priceId: string | null | undefined, mode: StripeMode) {
   if (!priceId) return null;
-  if (priceId === Deno.env.get("STRIPE_STARTER_PRICE_ID")) return "starter";
-  if (priceId === Deno.env.get("STRIPE_GROWTH_PRICE_ID")) return "growth";
-  if (priceId === Deno.env.get("STRIPE_PRO_PRICE_ID")) return "pro";
+  const prefix = mode === "test" ? "STRIPE_TEST" : "STRIPE_LIVE";
+  if (priceId === Deno.env.get(`${prefix}_STARTER_PRICE_ID`) || (mode === "live" && priceId === Deno.env.get("STRIPE_STARTER_PRICE_ID"))) return "starter";
+  if (priceId === Deno.env.get(`${prefix}_GROWTH_PRICE_ID`) || (mode === "live" && priceId === Deno.env.get("STRIPE_GROWTH_PRICE_ID"))) return "growth";
+  if (priceId === Deno.env.get(`${prefix}_PRO_PRICE_ID`) || (mode === "live" && priceId === Deno.env.get("STRIPE_PRO_PRICE_ID"))) return "pro";
   return null;
+}
+
+function getStripeSecretKey(mode: StripeMode) {
+  return Deno.env.get(mode === "test" ? "STRIPE_TEST_SECRET_KEY" : "STRIPE_LIVE_SECRET_KEY") ?? (mode === "live" ? Deno.env.get("STRIPE_SECRET_KEY") : null);
+}
+
+function getWebhookSecret(mode: StripeMode) {
+  return Deno.env.get(mode === "test" ? "STRIPE_TEST_WEBHOOK_SECRET" : "STRIPE_LIVE_WEBHOOK_SECRET") ?? (mode === "live" ? Deno.env.get("STRIPE_WEBHOOK_SECRET") : null);
+}
+
+async function constructStripeEvent(input: { body: string; signature: string }) {
+  for (const mode of ["test", "live"] as StripeMode[]) {
+    const stripeSecretKey = getStripeSecretKey(mode);
+    const webhookSecret = getWebhookSecret(mode);
+    if (!stripeSecretKey || !webhookSecret) continue;
+
+    const stripe = new Stripe(stripeSecretKey, { apiVersion: "2026-08-26.dahlia" });
+    try {
+      const event = await stripe.webhooks.constructEventAsync(input.body, input.signature, webhookSecret);
+      return { event, stripe, stripeMode: mode };
+    } catch {
+      continue;
+    }
+  }
+
+  throw new Error("Could not verify Stripe webhook signature.");
 }
 
 function mapStripeSubscriptionStatusToSheeshaStatus(status: string) {
@@ -62,22 +91,17 @@ function unixToIso(value: number | null | undefined) {
 Deno.serve(async (request) => {
   if (request.method === "OPTIONS") return new Response("ok", { headers: corsHeaders });
 
-  const stripeSecretKey = Deno.env.get("STRIPE_SECRET_KEY");
-  const webhookSecret = Deno.env.get("STRIPE_WEBHOOK_SECRET");
-  if (!stripeSecretKey || !webhookSecret) return jsonResponse({ error: "Stripe webhook is not configured." }, { status: 500 });
-
-  const stripe = new Stripe(stripeSecretKey, { apiVersion: "2026-08-26.dahlia" });
   const signature = request.headers.get("stripe-signature");
   if (!signature) return jsonResponse({ error: "Missing Stripe signature." }, { status: 400 });
 
   try {
     const body = await request.text();
-    const event = await stripe.webhooks.constructEventAsync(body, signature, webhookSecret);
+    const { event, stripe, stripeMode } = await constructStripeEvent({ body, signature });
     const supabase = createAdminClient();
 
     if (event.type === "checkout.session.completed") {
       const session = event.data.object as Stripe.Checkout.Session;
-      await handleCheckoutCompleted({ supabase, stripe, eventId: event.id, session });
+      await handleCheckoutCompleted({ supabase, stripe, stripeMode, eventId: event.id, session });
     }
 
     if (event.type === "checkout.session.expired") {
@@ -127,6 +151,7 @@ Deno.serve(async (request) => {
 async function handleCheckoutCompleted(input: {
   supabase: ReturnType<typeof createAdminClient>;
   stripe: Stripe;
+  stripeMode: StripeMode;
   eventId: string;
   session: Stripe.Checkout.Session;
 }) {
@@ -140,13 +165,14 @@ async function handleCheckoutCompleted(input: {
       status: "completed",
       stripe_customer_id: customerId ?? null,
       stripe_subscription_id: subscriptionId ?? null,
+      stripe_mode: input.stripeMode,
       completed_at: new Date().toISOString(),
     })
     .eq("stripe_checkout_session_id", input.session.id);
 
   if (!subscriptionId || !venueId) return;
   const subscription = await input.stripe.subscriptions.retrieve(subscriptionId);
-  await syncSubscription({ supabase: input.supabase, eventId: input.eventId, subscription, fallbackVenueId: venueId });
+  await syncSubscription({ supabase: input.supabase, eventId: input.eventId, subscription, fallbackVenueId: venueId, stripeMode: input.stripeMode });
 }
 
 async function syncSubscription(input: {
@@ -154,11 +180,13 @@ async function syncSubscription(input: {
   eventId: string;
   subscription: Stripe.Subscription;
   fallbackVenueId?: string;
+  stripeMode?: StripeMode;
 }) {
   const item = input.subscription.items.data[0];
   const priceId = item?.price.id ?? null;
   const productId = typeof item?.price.product === "string" ? item.price.product : item?.price.product?.id ?? null;
-  const plan = getPlanFromStripePriceId(priceId);
+  const stripeMode = input.stripeMode ?? (input.subscription.metadata.stripeMode === "test" ? "test" : "live");
+  const plan = getPlanFromStripePriceId(priceId, stripeMode);
   const venueId = input.subscription.metadata.venueId ?? input.fallbackVenueId;
 
   if (!plan || !venueId) return;
@@ -166,17 +194,20 @@ async function syncSubscription(input: {
   const customerId = typeof input.subscription.customer === "string" ? input.subscription.customer : input.subscription.customer.id;
   const periodStart = item?.current_period_start ?? input.subscription.current_period_start;
   const periodEnd = item?.current_period_end ?? input.subscription.current_period_end;
+  const sheeshaStatus = mapStripeSubscriptionStatusToSheeshaStatus(input.subscription.status);
+  const hasPaidAccess = sheeshaStatus === "active" || sheeshaStatus === "trial" || sheeshaStatus === "past_due";
 
   await input.supabase.from("venue_subscriptions").upsert(
     {
       venue_id: venueId,
       plan,
-      status: mapStripeSubscriptionStatusToSheeshaStatus(input.subscription.status),
+      status: sheeshaStatus,
       billing_provider: "stripe",
       billing_customer_id: customerId,
       billing_subscription_id: input.subscription.id,
       stripe_price_id: priceId,
       stripe_product_id: productId,
+      stripe_mode: stripeMode,
       current_period_start: unixToIso(periodStart),
       current_period_end: unixToIso(periodEnd),
       cancel_at_period_end: input.subscription.cancel_at_period_end,
@@ -187,4 +218,13 @@ async function syncSubscription(input: {
     },
     { onConflict: "venue_id" },
   );
+
+  await input.supabase
+    .from("venues")
+    .update({
+      partner_tier: hasPaidAccess ? plan : "none",
+      monetisation_status: sheeshaStatus === "cancelled" ? "churned" : hasPaidAccess ? "paying" : "not-contacted",
+      updated_at: new Date().toISOString(),
+    })
+    .eq("id", venueId);
 }

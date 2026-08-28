@@ -14,6 +14,7 @@ export interface VenueSubscription {
   billingSubscriptionId: string | null;
   stripePriceId: string | null;
   stripeProductId: string | null;
+  stripeMode: "test" | "live" | null;
   cancelAtPeriodEnd: boolean;
   lastStripeEventId: string | null;
   lastSyncedAt: string | null;
@@ -38,6 +39,7 @@ export interface VenueSubscriptionInput {
   billingSubscriptionId?: string | null;
   stripePriceId?: string | null;
   stripeProductId?: string | null;
+  stripeMode?: "test" | "live" | null;
   cancelAtPeriodEnd?: boolean;
   lastStripeEventId?: string | null;
   lastSyncedAt?: string | null;

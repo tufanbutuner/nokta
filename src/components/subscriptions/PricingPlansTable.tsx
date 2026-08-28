@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { PLAN_CONFIG } from "@/lib/planConfig";
 import { isPaidPlan, type PaidVenuePlan } from "@/lib/stripePlanConfig";
 import { cn } from "@/lib/utils";
+import type { VenuePlan, VenueSubscriptionStatus } from "@/types/subscriptions";
 
 const FEATURE_ROWS = [
   "Claimed venue badge",
@@ -26,13 +27,28 @@ const PLAN_FEATURES: Record<keyof typeof PLAN_CONFIG, string[]> = {
   pro: FEATURE_ROWS,
 };
 
-export function PricingPlansTable({ onChoosePlan, isChoosingPlan, disabled }: { onChoosePlan?: (plan: PaidVenuePlan) => void; isChoosingPlan?: PaidVenuePlan | null; disabled?: boolean }) {
+export function PricingPlansTable({
+  onChoosePlan,
+  isChoosingPlan,
+  disabled,
+  currentPlan = "free",
+  currentStatus = "inactive",
+}: {
+  onChoosePlan?: (plan: PaidVenuePlan) => void;
+  isChoosingPlan?: PaidVenuePlan | null;
+  disabled?: boolean;
+  currentPlan?: VenuePlan;
+  currentStatus?: VenueSubscriptionStatus;
+}) {
   const plans = Object.values(PLAN_CONFIG);
+  const hasCurrentAccess = currentStatus === "active" || currentStatus === "trial" || currentStatus === "past_due";
 
   return (
     <section className="grid gap-4 lg:grid-cols-4">
-      {plans.map((plan) => (
-        <article key={plan.plan} className={cn("rounded-xl border bg-card p-5", plan.plan === "starter" ? "border-clay-400 shadow-sm" : "")}>
+      {plans.map((plan) => {
+        const isCurrentPlan = plan.plan === currentPlan && (plan.plan === "free" || hasCurrentAccess);
+        return (
+          <article key={plan.plan} className={cn("rounded-xl border bg-card p-5", plan.plan === "starter" ? "border-clay-400 shadow-sm" : "", isCurrentPlan ? "ring-2 ring-clay-400/30" : "")}>
           <p className="font-brand text-xl font-bold tracking-[-0.5px]">{plan.name}</p>
           <div className="mt-3 flex items-end gap-1">
             <span className="text-3xl font-semibold">£{plan.monthlyPrice}</span>
@@ -42,12 +58,12 @@ export function PricingPlansTable({ onChoosePlan, isChoosingPlan, disabled }: { 
           <Button
             variant={plan.plan === "starter" ? "default" : "outline"}
             className="mt-5 w-full"
-            disabled={!isPaidPlan(plan.plan) || disabled || isChoosingPlan === plan.plan}
+            disabled={!isPaidPlan(plan.plan) || disabled || isChoosingPlan === plan.plan || isCurrentPlan}
             onClick={() => {
               if (isPaidPlan(plan.plan)) onChoosePlan?.(plan.plan);
             }}
           >
-            {plan.plan === "free" ? "Current free plan" : isChoosingPlan === plan.plan ? "Opening checkout..." : `Choose ${plan.name}`}
+            {isCurrentPlan ? "Current plan" : plan.plan === "free" ? "Free plan" : isChoosingPlan === plan.plan ? "Opening checkout..." : `Choose ${plan.name}`}
           </Button>
           <ul className="mt-5 space-y-2 text-sm">
             {FEATURE_ROWS.map((feature) => {
@@ -60,8 +76,9 @@ export function PricingPlansTable({ onChoosePlan, isChoosingPlan, disabled }: { 
               );
             })}
           </ul>
-        </article>
-      ))}
+          </article>
+        );
+      })}
     </section>
   );
 }
