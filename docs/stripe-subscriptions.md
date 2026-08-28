@@ -50,6 +50,8 @@ Do not expose Stripe secret keys, webhook secrets or `SUPABASE_SERVICE_ROLE_KEY`
 
 The success page never activates access by itself.
 
+When a user returns from Stripe Billing Portal, `/owner/billing` calls the authenticated `refresh-owner-subscription` function. This pulls the latest subscription directly from Stripe so cancellation copy updates immediately even if the webhook is still processing.
+
 ## Plans
 
 Free has no Stripe subscription.
@@ -78,6 +80,7 @@ Deploy:
 ```bash
 supabase functions deploy create-checkout-session
 supabase functions deploy create-billing-portal-session
+supabase functions deploy refresh-owner-subscription
 supabase functions deploy stripe-webhook
 ```
 

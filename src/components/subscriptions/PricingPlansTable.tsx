@@ -48,7 +48,7 @@ export function PricingPlansTable({
       {plans.map((plan) => {
         const isCurrentPlan = plan.plan === currentPlan && (plan.plan === "free" || hasCurrentAccess);
         return (
-          <article key={plan.plan} className={cn("rounded-xl border bg-card p-5", plan.plan === "starter" ? "border-clay-400 shadow-sm" : "", isCurrentPlan ? "ring-2 ring-clay-400/30" : "")}>
+          <article key={plan.plan} className={cn("rounded-xl border bg-card p-5", isCurrentPlan ? "ring-2 ring-clay-400/30" : "")}>
           <p className="font-brand text-xl font-bold tracking-[-0.5px]">{plan.name}</p>
           <div className="mt-3 flex items-end gap-1">
             <span className="text-3xl font-semibold">£{plan.monthlyPrice}</span>
@@ -56,7 +56,7 @@ export function PricingPlansTable({
           </div>
           <p className="mt-3 min-h-10 text-sm text-muted-foreground">{plan.description}</p>
           <Button
-            variant={plan.plan === "starter" ? "default" : "outline"}
+            variant="outline"
             className="mt-5 w-full"
             disabled={!isPaidPlan(plan.plan) || disabled || isChoosingPlan === plan.plan || isCurrentPlan}
             onClick={() => {

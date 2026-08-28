@@ -113,11 +113,12 @@ Deno.serve(async (request) => {
     }
 
     if (event.type === "customer.subscription.created" || event.type === "customer.subscription.updated") {
-      await syncSubscription({ supabase, eventId: event.id, subscription: event.data.object as Stripe.Subscription });
+      await syncSubscription({ supabase, eventId: event.id, subscription: event.data.object as Stripe.Subscription, stripeMode });
     }
 
     if (event.type === "customer.subscription.deleted") {
       const subscription = event.data.object as Stripe.Subscription;
+      const venueId = subscription.metadata.venueId;
       await supabase
         .from("venue_subscriptions")
         .update({
@@ -128,6 +129,17 @@ Deno.serve(async (request) => {
           last_synced_at: new Date().toISOString(),
         })
         .eq("billing_subscription_id", subscription.id);
+
+      if (venueId) {
+        await supabase
+          .from("venues")
+          .update({
+            partner_tier: "none",
+            monetisation_status: "churned",
+            updated_at: new Date().toISOString(),
+          })
+          .eq("id", venueId);
+      }
     }
 
     if (event.type === "invoice.payment_failed") {
@@ -185,7 +197,7 @@ async function syncSubscription(input: {
   const item = input.subscription.items.data[0];
   const priceId = item?.price.id ?? null;
   const productId = typeof item?.price.product === "string" ? item.price.product : item?.price.product?.id ?? null;
-  const stripeMode = input.stripeMode ?? (input.subscription.metadata.stripeMode === "test" ? "test" : "live");
+  const stripeMode = input.stripeMode ?? (input.subscription.livemode ? "live" : "test");
   const plan = getPlanFromStripePriceId(priceId, stripeMode);
   const venueId = input.subscription.metadata.venueId ?? input.fallbackVenueId;
 

@@ -107,7 +107,7 @@ Deno.serve(async (request) => {
     const stripe = new Stripe(stripeSecretKey, { apiVersion: "2026-08-26.dahlia" });
     const portalSession = await stripe.billingPortal.sessions.create({
       customer: subscription.billing_customer_id,
-      return_url: `${appUrl}/owner/billing`,
+      return_url: `${appUrl}/owner/billing?portal_return=1`,
     });
 
     return jsonResponse({ url: portalSession.url });

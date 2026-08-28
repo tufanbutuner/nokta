@@ -23,3 +23,7 @@ export async function createOwnerCheckoutSession(input: { venueId: string; plan:
 export async function createOwnerBillingPortalSession(input: { venueId: string }): Promise<{ url: string }> {
   return invokeBillingFunction("create-billing-portal-session", input);
 }
+
+export async function refreshOwnerSubscription(input: { venueId: string }): Promise<{ refreshed: boolean; reason?: string }> {
+  return invokeBillingFunction("refresh-owner-subscription", input);
+}

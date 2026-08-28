@@ -1,0 +1,11 @@
+[functions.create-checkout-session]
+verify_jwt = true
+
+[functions.create-billing-portal-session]
+verify_jwt = true
+
+[functions.refresh-owner-subscription]
+verify_jwt = true
+
+[functions.stripe-webhook]
+verify_jwt = false
