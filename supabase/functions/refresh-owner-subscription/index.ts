@@ -106,6 +106,7 @@ Deno.serve(async (request) => {
     const hasPaidAccess = status === "active" || status === "trial" || status === "past_due";
     const customerId = typeof stripeSubscription.customer === "string" ? stripeSubscription.customer : stripeSubscription.customer.id;
     const productId = typeof item?.price.product === "string" ? item.price.product : item?.price.product?.id ?? null;
+    const cancelsAtPeriodEnd = stripeSubscription.cancel_at_period_end || Boolean(stripeSubscription.cancel_at);
 
     await supabase.from("venue_subscriptions").update({
       plan,
@@ -117,7 +118,7 @@ Deno.serve(async (request) => {
       stripe_mode: stripeMode,
       current_period_start: unixToIso(item?.current_period_start ?? stripeSubscription.current_period_start),
       current_period_end: unixToIso(item?.current_period_end ?? stripeSubscription.current_period_end),
-      cancel_at_period_end: stripeSubscription.cancel_at_period_end,
+      cancel_at_period_end: cancelsAtPeriodEnd,
       cancelled_at: stripeSubscription.status === "canceled" ? new Date().toISOString() : null,
       last_synced_at: new Date().toISOString(),
       updated_at: new Date().toISOString(),

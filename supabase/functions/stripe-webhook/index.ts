@@ -208,6 +208,7 @@ async function syncSubscription(input: {
   const periodEnd = item?.current_period_end ?? input.subscription.current_period_end;
   const sheeshaStatus = mapStripeSubscriptionStatusToSheeshaStatus(input.subscription.status);
   const hasPaidAccess = sheeshaStatus === "active" || sheeshaStatus === "trial" || sheeshaStatus === "past_due";
+  const cancelsAtPeriodEnd = input.subscription.cancel_at_period_end || Boolean(input.subscription.cancel_at);
 
   await input.supabase.from("venue_subscriptions").upsert(
     {
@@ -222,7 +223,7 @@ async function syncSubscription(input: {
       stripe_mode: stripeMode,
       current_period_start: unixToIso(periodStart),
       current_period_end: unixToIso(periodEnd),
-      cancel_at_period_end: input.subscription.cancel_at_period_end,
+      cancel_at_period_end: cancelsAtPeriodEnd,
       cancelled_at: input.subscription.status === "canceled" ? new Date().toISOString() : null,
       last_stripe_event_id: input.eventId,
       last_synced_at: new Date().toISOString(),
