@@ -93,6 +93,7 @@ export function OwnerVenueCommercialSummary({ commercial }: { commercial: OwnerV
 }
 
 export function OwnerVenueProfilePreview({ venue }: { venue: Venue }) {
+  const canRequestUpdate = venue.partnerTier !== "none";
   return (
     <section className="rounded-xl border bg-card p-5">
       <h2 className="text-xl font-semibold">Profile preview</h2>
@@ -107,7 +108,14 @@ export function OwnerVenueProfilePreview({ venue }: { venue: Venue }) {
         <Detail label="Features" value={[venue.food && "Food", venue.indoor && "Indoor", venue.outdoor && "Outdoor", venue.alcohol && "Alcohol", venue.openLate && "Open late"].filter(Boolean).join(", ") || "Not listed"} />
         <Detail label="Vibes" value={venue.vibes.join(", ")} />
       </dl>
-      <Button asChild variant="outline" className="mt-5"><Link to="/account">Request a profile update</Link></Button>
+      {canRequestUpdate ? (
+        <Button asChild variant="outline" className="mt-5"><Link to={`/owner/venues/${venue.slug}/update`}>Request a profile update</Link></Button>
+      ) : (
+        <div className="mt-5 rounded-lg border bg-background/60 p-4 text-sm text-muted-foreground">
+          Profile management is part of the Starter plan.
+          <Button asChild variant="outline" className="mt-3"><Link to="/account">Contact Sheesha about upgrading</Link></Button>
+        </div>
+      )}
     </section>
   );
 }

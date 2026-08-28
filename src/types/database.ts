@@ -165,3 +165,19 @@ export interface VenueEnquiryRow {
   created_at: string;
   updated_at: string;
 }
+
+export interface VenueUpdateRequestRow {
+  id: string;
+  venue_id: string;
+  submitted_by: string;
+  status: "pending" | "approved" | "rejected" | "cancelled" | "applied";
+  requested_changes: Record<string, unknown>;
+  original_snapshot: Record<string, unknown>;
+  request_notes: string | null;
+  admin_notes: string | null;
+  reviewed_by: string | null;
+  reviewed_at: string | null;
+  applied_at: string | null;
+  created_at: string;
+  updated_at: string;
+}

@@ -26,7 +26,7 @@ export async function getMyClaimedVenue(input: { userId: string; venueId: string
   const { data, error } = await client
     .from("venues")
     .select("*")
-    .eq("id", input.venueId)
+    .or(`id.eq.${input.venueId},slug.eq.${input.venueId}`)
     .eq("is_claimed", true)
     .eq("claimed_by", input.userId)
     .maybeSingle();

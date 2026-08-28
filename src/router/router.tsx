@@ -7,6 +7,7 @@ import { AdminFeaturedPlacementsPage } from "@/pages/admin/AdminFeaturedPlacemen
 import { AdminReviewsPage } from "@/pages/admin/AdminReviewsPage";
 import { AdminPromotedOffersPage } from "@/pages/admin/AdminPromotedOffersPage";
 import { AdminVenueAnalyticsPage } from "@/pages/admin/AdminVenueAnalyticsPage";
+import { AdminVenueUpdateRequestsPage } from "@/pages/admin/AdminVenueUpdateRequestsPage";
 import { AdminVenueEnquiriesPage } from "@/pages/admin/AdminVenueEnquiriesPage";
 import { AdminVenueClaimsPage } from "@/pages/admin/AdminVenueClaimsPage";
 import { AdminVenueSuggestionsPage } from "@/pages/admin/AdminVenueSuggestionsPage";
@@ -22,6 +23,7 @@ import { MonetisationDashboardPage } from "@/pages/admin/MonetisationDashboardPa
 import { NotFoundPage } from "@/pages/NotFoundPage";
 import { OwnerDashboardPage } from "@/pages/owner/OwnerDashboardPage";
 import { OwnerVenueDashboardPage } from "@/pages/owner/OwnerVenueDashboardPage";
+import { OwnerVenueUpdateRequestPage } from "@/pages/owner/OwnerVenueUpdateRequestPage";
 import { PrivacyPage } from "@/pages/PrivacyPage";
 import { PromotedOfferPreviewPage } from "@/pages/PromotedOfferPreviewPage";
 import { RecommendPage } from "@/pages/RecommendPage";
@@ -79,6 +81,14 @@ export const router = createBrowserRouter([
           </RequireAuth>
         ),
       },
+      {
+        path: "/owner/venues/:venueId/update",
+        element: (
+          <RequireAuth>
+            <OwnerVenueUpdateRequestPage />
+          </RequireAuth>
+        ),
+      },
       { path: "/sign-in", element: <SignInPage /> },
       { path: "/sign-up", element: <SignUpPage /> },
       { path: "/venues/:slug/claim", element: <ClaimVenuePage /> },
@@ -95,6 +105,14 @@ export const router = createBrowserRouter([
         element: (
           <RequireAdmin>
             <DataQualityPage />
+          </RequireAdmin>
+        ),
+      },
+      {
+        path: "/admin/venue-updates",
+        element: (
+          <RequireAdmin>
+            <AdminVenueUpdateRequestsPage />
           </RequireAdmin>
         ),
       },
