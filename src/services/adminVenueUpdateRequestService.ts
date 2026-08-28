@@ -1,4 +1,5 @@
 import { trackEvent } from "@/lib/analytics";
+import { getVenueUpdateDiffLabels } from "@/lib/venueUpdateDiff";
 import { filterOwnerEditableVenueChanges } from "@/lib/venueUpdateRequestValidation";
 import { mapVenueUpdateRequestRowToRequest } from "@/lib/venueUpdateRequestMappers";
 import { supabase, supabaseConfigError } from "@/lib/supabase";
@@ -19,13 +20,13 @@ export async function getAdminVenueUpdateRequests(): Promise<VenueUpdateRequest[
 
 export async function approveVenueUpdateRequest(input: { requestId: string; adminUserId: string; adminNotes?: string | null }): Promise<VenueUpdateRequest> {
   const request = await updateRequest(input.requestId, { status: "approved", admin_notes: nullableText(input.adminNotes), reviewed_by: input.adminUserId, reviewed_at: new Date().toISOString() });
-  trackEvent("admin_profile_update_approved", { venueId: request.venueId, changedFields: Object.keys(request.requestedChanges).join(","), status: request.status });
+  trackEvent("admin_profile_update_approved", { venueId: request.venueId, changedFields: getVenueUpdateDiffLabels(request).join(","), status: request.status });
   return request;
 }
 
 export async function rejectVenueUpdateRequest(input: { requestId: string; adminUserId: string; adminNotes?: string | null }): Promise<VenueUpdateRequest> {
   const request = await updateRequest(input.requestId, { status: "rejected", admin_notes: nullableText(input.adminNotes), reviewed_by: input.adminUserId, reviewed_at: new Date().toISOString() });
-  trackEvent("admin_profile_update_rejected", { venueId: request.venueId, changedFields: Object.keys(request.requestedChanges).join(","), status: request.status });
+  trackEvent("admin_profile_update_rejected", { venueId: request.venueId, changedFields: getVenueUpdateDiffLabels(request).join(","), status: request.status });
   return request;
 }
 
@@ -45,7 +46,7 @@ export async function applyVenueUpdateRequest(input: { requestId: string; adminU
     reviewed_at: request.reviewedAt ?? new Date().toISOString(),
     applied_at: new Date().toISOString(),
   });
-  trackEvent("admin_profile_update_applied", { venueId: updated.venueId, changedFields: Object.keys(changes).join(","), status: updated.status });
+  trackEvent("admin_profile_update_applied", { venueId: updated.venueId, changedFields: getVenueUpdateDiffLabels(updated).join(","), status: updated.status });
   return updated;
 }
 

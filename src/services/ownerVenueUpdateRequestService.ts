@@ -1,4 +1,5 @@
 import { trackEvent } from "@/lib/analytics";
+import { getVenueUpdateDiffLabels } from "@/lib/venueUpdateDiff";
 import { filterOwnerEditableVenueChanges, validateVenueUpdateRequestInput } from "@/lib/venueUpdateRequestValidation";
 import { mapVenueUpdateRequestRowToRequest } from "@/lib/venueUpdateRequestMappers";
 import { supabase, supabaseConfigError } from "@/lib/supabase";
@@ -34,7 +35,7 @@ export async function createOwnerVenueUpdateRequest(input: { userId: string; req
 
   if (error) throw new Error(`Could not submit update request: ${error.message}`);
   const request = mapVenueUpdateRequestRowToRequest(data as VenueUpdateRequestRow);
-  trackEvent("owner_profile_update_submitted", { venueId: request.venueId, changedFields: Object.keys(request.requestedChanges).join(","), status: request.status });
+  trackEvent("owner_profile_update_submitted", { venueId: request.venueId, changedFields: getVenueUpdateDiffLabels(request).join(","), status: request.status });
   return request;
 }
 
@@ -69,7 +70,7 @@ export async function cancelOwnerVenueUpdateRequest(input: { userId: string; req
     .single();
   if (error) throw new Error(`Could not cancel update request: ${error.message}`);
   const request = mapVenueUpdateRequestRowToRequest(data as VenueUpdateRequestRow);
-  trackEvent("owner_profile_update_cancelled", { venueId: request.venueId, changedFields: Object.keys(request.requestedChanges).join(","), status: request.status });
+  trackEvent("owner_profile_update_cancelled", { venueId: request.venueId, changedFields: getVenueUpdateDiffLabels(request).join(","), status: request.status });
   return request;
 }
 

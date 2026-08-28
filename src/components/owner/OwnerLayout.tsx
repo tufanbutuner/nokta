@@ -25,8 +25,10 @@ export function OwnerLayout({ children }: { children: React.ReactNode }) {
 }
 
 function OwnerNavLink({ to, label }: { to: string; label: string }) {
+  const end = to === "/owner";
+
   return (
-    <NavLink to={to} className={({ isActive }) => cn("rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary hover:text-foreground", isActive ? "bg-foreground text-background hover:bg-foreground hover:text-background" : "")}>
+    <NavLink end={end} to={to} className={({ isActive }) => cn("rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary hover:text-foreground", isActive ? "bg-foreground text-background hover:bg-foreground hover:text-background" : "")}>
       {label}
     </NavLink>
   );

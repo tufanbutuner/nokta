@@ -11,7 +11,7 @@ import { Select } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { useAuth } from "@/context/AuthContext";
 import { useVenues } from "@/hooks/useVenues";
-import { formatDiffValue, getVenueUpdateDiff } from "@/lib/venueUpdateDiff";
+import { formatDiffValue, getVenueUpdateDiff, getVenueUpdateDiffLabels } from "@/lib/venueUpdateDiff";
 import { formatVenueUpdateRequestStatus } from "@/lib/venueUpdateRequestLabels";
 import { approveVenueUpdateRequest, applyVenueUpdateRequest, getAdminVenueUpdateRequests, rejectVenueUpdateRequest } from "@/services/adminVenueUpdateRequestService";
 import type { VenueUpdateRequest, VenueUpdateRequestStatus } from "@/types/venueUpdateRequests";
@@ -46,7 +46,7 @@ export function AdminVenueUpdateRequestsPage() {
       const venue = venuesById.get(request.venueId);
       if (statusFilter !== "all" && request.status !== statusFilter) return false;
       if (!normalized) return true;
-      return [venue?.name, venue?.city, venue?.area, request.submittedBy, Object.keys(request.requestedChanges).join(" ")].filter(Boolean).join(" ").toLowerCase().includes(normalized);
+      return [venue?.name, venue?.city, venue?.area, request.submittedBy, getVenueUpdateDiffLabels(request).join(" ")].filter(Boolean).join(" ").toLowerCase().includes(normalized);
     });
   }, [query, requests, statusFilter, venuesById]);
 
@@ -126,7 +126,7 @@ function SummaryCards({ requests }: { requests: VenueUpdateRequest[] }) {
 
 function RequestsTable({ requests, venuesById, onSelect }: { requests: VenueUpdateRequest[]; venuesById: Map<string, { name: string; city: string; area: string; slug: string }>; onSelect: (request: VenueUpdateRequest) => void }) {
   return (
-    <div className="overflow-hidden rounded-xl border bg-card"><div className="overflow-x-auto"><table className="w-full min-w-[920px] text-sm"><thead className="bg-muted/60 text-left text-xs uppercase text-muted-foreground"><tr><th className="px-4 py-3">Venue</th><th className="px-4 py-3">Submitted by</th><th className="px-4 py-3">Changed fields</th><th className="px-4 py-3">Status</th><th className="px-4 py-3">Date</th><th className="px-4 py-3 text-right">Actions</th></tr></thead><tbody className="divide-y">{requests.map((request) => { const venue = venuesById.get(request.venueId); return <tr key={request.id}><td className="px-4 py-4"><div className="font-medium">{venue?.name ?? request.venueId}</div><div className="mt-1 text-xs text-muted-foreground">{venue ? `${venue.city} · ${venue.area}` : request.venueId}</div></td><td className="px-4 py-4 text-muted-foreground">{request.submittedBy}</td><td className="px-4 py-4">{Object.keys(request.requestedChanges).join(", ")}</td><td className="px-4 py-4">{formatVenueUpdateRequestStatus(request.status)}</td><td className="px-4 py-4 text-muted-foreground">{new Date(request.createdAt).toLocaleDateString("en-GB")}</td><td className="px-4 py-4"><div className="flex justify-end gap-2"><Button size="sm" variant="outline" onClick={() => onSelect(request)}>View diff</Button>{venue ? <Button asChild size="sm" variant="ghost"><Link to={`/venues/${venue.slug}`}>Public</Link></Button> : null}</div></td></tr>; })}</tbody></table></div></div>
+    <div className="overflow-hidden rounded-xl border bg-card"><div className="overflow-x-auto"><table className="w-full min-w-[920px] text-sm"><thead className="bg-muted/60 text-left text-xs uppercase text-muted-foreground"><tr><th className="px-4 py-3">Venue</th><th className="px-4 py-3">Submitted by</th><th className="px-4 py-3">Changed fields</th><th className="px-4 py-3">Status</th><th className="px-4 py-3">Date</th><th className="px-4 py-3 text-right">Actions</th></tr></thead><tbody className="divide-y">{requests.map((request) => { const venue = venuesById.get(request.venueId); const changedFields = getVenueUpdateDiffLabels(request); return <tr key={request.id}><td className="px-4 py-4"><div className="font-medium">{venue?.name ?? request.venueId}</div><div className="mt-1 text-xs text-muted-foreground">{venue ? `${venue.city} · ${venue.area}` : request.venueId}</div></td><td className="px-4 py-4 text-muted-foreground">{request.submittedBy}</td><td className="px-4 py-4">{changedFields.length ? changedFields.join(", ") : "No value changes"}</td><td className="px-4 py-4">{formatVenueUpdateRequestStatus(request.status)}</td><td className="px-4 py-4 text-muted-foreground">{new Date(request.createdAt).toLocaleDateString("en-GB")}</td><td className="px-4 py-4"><div className="flex justify-end gap-2"><Button size="sm" variant="outline" onClick={() => onSelect(request)}>View diff</Button>{venue ? <Button asChild size="sm" variant="ghost"><Link to={`/venues/${venue.slug}`}>Public</Link></Button> : null}</div></td></tr>; })}</tbody></table></div></div>
   );
 }
 
