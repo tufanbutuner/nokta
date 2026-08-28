@@ -23,6 +23,8 @@ import { HomePage } from "@/pages/HomePage";
 import { MonetisationDashboardPage } from "@/pages/admin/MonetisationDashboardPage";
 import { NotFoundPage } from "@/pages/NotFoundPage";
 import { OwnerDashboardPage } from "@/pages/owner/OwnerDashboardPage";
+import { OwnerBillingPage } from "@/pages/owner/OwnerBillingPage";
+import { OwnerBillingSuccessPage } from "@/pages/owner/OwnerBillingSuccessPage";
 import { OwnerEnquiriesPage } from "@/pages/owner/OwnerEnquiriesPage";
 import { OwnerVenueDashboardPage } from "@/pages/owner/OwnerVenueDashboardPage";
 import { OwnerVenueEnquiriesPage } from "@/pages/owner/OwnerVenueEnquiriesPage";
@@ -114,6 +116,22 @@ export const router = createBrowserRouter([
         element: (
           <RequireAuth>
             <OwnerPricingPage />
+          </RequireAuth>
+        ),
+      },
+      {
+        path: "/owner/billing",
+        element: (
+          <RequireAuth>
+            <OwnerBillingPage />
+          </RequireAuth>
+        ),
+      },
+      {
+        path: "/owner/billing/success",
+        element: (
+          <RequireAuth>
+            <OwnerBillingSuccessPage />
           </RequireAuth>
         ),
       },

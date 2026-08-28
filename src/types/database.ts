@@ -56,6 +56,11 @@ export interface VenueSubscriptionRow {
   billing_provider: "manual" | "stripe" | null;
   billing_customer_id: string | null;
   billing_subscription_id: string | null;
+  stripe_price_id: string | null;
+  stripe_product_id: string | null;
+  cancel_at_period_end: boolean;
+  last_stripe_event_id: string | null;
+  last_synced_at: string | null;
   current_period_start: string | null;
   current_period_end: string | null;
   trial_started_at: string | null;

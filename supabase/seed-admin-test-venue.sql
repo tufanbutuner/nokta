@@ -118,8 +118,8 @@ select
   true,
   (select id from auth.users where lower(email) = 'tufanbutuner@gmail.com' limit 1),
   now(),
-  'pro',
-  'paying',
+  'none',
+  'not-contacted',
   'Internal QA test account.',
   true,
   null,
@@ -131,8 +131,8 @@ set
   is_claimed = true,
   claimed_by = excluded.claimed_by,
   claimed_at = coalesce(public.venues.claimed_at, now()),
-  partner_tier = 'pro',
-  monetisation_status = 'paying',
+  partner_tier = 'none',
+  monetisation_status = 'not-contacted',
   featured_eligible = true,
   is_test = true,
   updated_at = now();
@@ -150,23 +150,33 @@ insert into public.venue_subscriptions (
 )
 select
   'sheesha-test-lounge',
-  'pro',
-  'active',
+  'free',
+  'inactive',
   'manual',
-  now(),
-  now() + interval '30 days',
-  'Seeded Pro subscription for admin-only testing.',
+  null,
+  null,
+  'Seeded Free subscription for admin-only testing. Upgrade through Stripe to test paid plans.',
   id,
   id
 from auth.users
 where lower(email) = 'tufanbutuner@gmail.com'
 on conflict (venue_id) do update
 set
-  plan = 'pro',
-  status = 'active',
+  plan = 'free',
+  status = 'inactive',
   billing_provider = 'manual',
+  billing_customer_id = null,
+  billing_subscription_id = null,
+  stripe_price_id = null,
+  stripe_product_id = null,
+  cancel_at_period_end = false,
   current_period_start = excluded.current_period_start,
   current_period_end = excluded.current_period_end,
+  trial_started_at = null,
+  trial_ends_at = null,
+  cancelled_at = null,
+  last_stripe_event_id = null,
+  last_synced_at = null,
   admin_notes = excluded.admin_notes,
   updated_by = excluded.updated_by,
   updated_at = now();

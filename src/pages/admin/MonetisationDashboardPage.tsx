@@ -157,20 +157,23 @@ export function MonetisationDashboardPage() {
 
 function ManualSubscriptionSummary({ subscriptions }: { subscriptions: VenueSubscription[] }) {
   const activeSubscriptions = subscriptions.filter((subscription) => ["active", "trial"].includes(subscription.status));
-  const estimatedMrr = activeSubscriptions.reduce((total, subscription) => total + PLAN_CONFIG[subscription.plan].monthlyPrice, 0);
+  const stripeActiveSubscriptions = activeSubscriptions.filter((subscription) => subscription.billingProvider === "stripe");
+  const manualActiveSubscriptions = activeSubscriptions.filter((subscription) => subscription.billingProvider !== "stripe");
+  const stripeMrr = stripeActiveSubscriptions.reduce((total, subscription) => total + PLAN_CONFIG[subscription.plan].monthlyPrice, 0);
+  const manualMrr = manualActiveSubscriptions.reduce((total, subscription) => total + PLAN_CONFIG[subscription.plan].monthlyPrice, 0);
   const cards = [
-    { label: "Free venues", value: subscriptions.filter((subscription) => subscription.plan === "free").length },
-    { label: "Starter venues", value: subscriptions.filter((subscription) => subscription.plan === "starter").length },
-    { label: "Growth venues", value: subscriptions.filter((subscription) => subscription.plan === "growth").length },
-    { label: "Pro venues", value: subscriptions.filter((subscription) => subscription.plan === "pro").length },
-    { label: "Estimated manual MRR", value: `£${estimatedMrr}` },
+    { label: "Stripe active", value: stripeActiveSubscriptions.length },
+    { label: "Manual active", value: manualActiveSubscriptions.length },
+    { label: "Trials", value: subscriptions.filter((subscription) => subscription.status === "trial").length },
+    { label: "Past due", value: subscriptions.filter((subscription) => subscription.status === "past_due").length },
+    { label: "Total estimated MRR", value: `£${stripeMrr + manualMrr}` },
   ];
 
   return (
     <section className="rounded-xl border border-black/[0.04] bg-white p-4">
       <div className="flex flex-col gap-1">
         <h2 className="font-primary text-xs font-semibold text-clay-600">Subscription access</h2>
-        <p className="text-[13px] text-[#8a7e72]">Manual plan assignments only. These numbers are not Stripe-verified.</p>
+        <p className="text-[13px] text-[#8a7e72]">Estimated MRR from Stripe-synced and manual subscription access.</p>
       </div>
       <div className="mt-4 grid gap-3 sm:grid-cols-2 xl:grid-cols-5">
         {cards.map((card) => (

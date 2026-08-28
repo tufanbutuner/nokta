@@ -42,7 +42,16 @@ export function AdminSubscriptionTable({
                 <td className="px-4 py-4"><SubscriptionPlanBadge plan={row.subscription.plan} status={row.subscription.status} /></td>
                 <td className="px-4 py-4"><SubscriptionStatusBadge status={row.subscription.status} /></td>
                 <td className="px-4 py-4 text-muted-foreground">{formatPeriod(row.subscription)}</td>
-                <td className="px-4 py-4 capitalize text-muted-foreground">{row.subscription.billingProvider ?? "manual"}</td>
+                <td className="px-4 py-4 text-muted-foreground">
+                  <span className="capitalize">{row.subscription.billingProvider ?? "manual"}</span>
+                  {row.subscription.billingProvider === "stripe" ? (
+                    <span className="mt-1 block max-w-[180px] truncate text-xs" title={row.subscription.billingSubscriptionId ?? undefined}>
+                      {row.subscription.billingSubscriptionId ?? "No Stripe subscription ID"}
+                    </span>
+                  ) : null}
+                  {row.subscription.cancelAtPeriodEnd ? <span className="mt-1 block text-xs text-clay-accent">Cancels at period end</span> : null}
+                  {row.subscription.lastSyncedAt ? <span className="mt-1 block text-xs">Synced {formatDate(row.subscription.lastSyncedAt)}</span> : null}
+                </td>
                 <td className="px-4 py-4">
                   <AdminSubscriptionActions
                     venue={row.venue}

@@ -12,6 +12,11 @@ export interface VenueSubscription {
   billingProvider: BillingProvider | null;
   billingCustomerId: string | null;
   billingSubscriptionId: string | null;
+  stripePriceId: string | null;
+  stripeProductId: string | null;
+  cancelAtPeriodEnd: boolean;
+  lastStripeEventId: string | null;
+  lastSyncedAt: string | null;
   currentPeriodStart: string | null;
   currentPeriodEnd: string | null;
   trialStartedAt: string | null;
@@ -29,6 +34,13 @@ export interface VenueSubscriptionInput {
   plan: VenuePlan;
   status: VenueSubscriptionStatus;
   billingProvider?: BillingProvider | null;
+  billingCustomerId?: string | null;
+  billingSubscriptionId?: string | null;
+  stripePriceId?: string | null;
+  stripeProductId?: string | null;
+  cancelAtPeriodEnd?: boolean;
+  lastStripeEventId?: string | null;
+  lastSyncedAt?: string | null;
   currentPeriodStart?: string | null;
   currentPeriodEnd?: string | null;
   trialStartedAt?: string | null;

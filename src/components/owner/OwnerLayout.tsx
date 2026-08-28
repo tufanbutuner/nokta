@@ -13,6 +13,7 @@ export function OwnerLayout({ children }: { children: React.ReactNode }) {
             <OwnerNavLink to="/owner/venues" label="My venues" />
             <OwnerNavLink to="/owner/enquiries" label="Enquiries" />
             <OwnerNavLink to="/owner/pricing" label="Pricing" />
+            <OwnerNavLink to="/owner/billing" label="Billing" />
             <OwnerNavLink to="/account" label="Account" />
           </nav>
           <Button asChild variant="outline" className="mt-6 w-full">

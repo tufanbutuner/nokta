@@ -1,6 +1,7 @@
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PLAN_CONFIG } from "@/lib/planConfig";
+import { isPaidPlan, type PaidVenuePlan } from "@/lib/stripePlanConfig";
 import { cn } from "@/lib/utils";
 
 const FEATURE_ROWS = [
@@ -25,7 +26,7 @@ const PLAN_FEATURES: Record<keyof typeof PLAN_CONFIG, string[]> = {
   pro: FEATURE_ROWS,
 };
 
-export function PricingPlansTable() {
+export function PricingPlansTable({ onChoosePlan, isChoosingPlan, disabled }: { onChoosePlan?: (plan: PaidVenuePlan) => void; isChoosingPlan?: PaidVenuePlan | null; disabled?: boolean }) {
   const plans = Object.values(PLAN_CONFIG);
 
   return (
@@ -38,8 +39,15 @@ export function PricingPlansTable() {
             <span className="pb-1 text-sm text-muted-foreground">/month</span>
           </div>
           <p className="mt-3 min-h-10 text-sm text-muted-foreground">{plan.description}</p>
-          <Button asChild variant={plan.plan === "starter" ? "default" : "outline"} className="mt-5 w-full">
-            <a href="mailto:hello@sheesh.app?subject=Sheesha venue plan upgrade">Contact Sheesha</a>
+          <Button
+            variant={plan.plan === "starter" ? "default" : "outline"}
+            className="mt-5 w-full"
+            disabled={!isPaidPlan(plan.plan) || disabled || isChoosingPlan === plan.plan}
+            onClick={() => {
+              if (isPaidPlan(plan.plan)) onChoosePlan?.(plan.plan);
+            }}
+          >
+            {plan.plan === "free" ? "Current free plan" : isChoosingPlan === plan.plan ? "Opening checkout..." : `Choose ${plan.name}`}
           </Button>
           <ul className="mt-5 space-y-2 text-sm">
             {FEATURE_ROWS.map((feature) => {
