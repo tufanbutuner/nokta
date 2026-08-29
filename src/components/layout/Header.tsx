@@ -5,7 +5,7 @@ import { useAuth } from "@/context/AuthContext";
 import { useVenuePreferences } from "@/context/VenuePreferencesContext";
 import { useIsAdmin } from "@/hooks/useIsAdmin";
 import { cn } from "@/lib/utils";
-import { ChevronDown, LayoutDashboard, Menu, ShieldCheck, UserCircle } from "lucide-react";
+import { Activity, BadgeCheck, BarChart3, Building2, ChevronDown, CreditCard, GitBranch, Inbox, LayoutDashboard, Menu, PenLine, ShieldCheck, Sparkles, Tag, UserCircle } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 
@@ -20,7 +20,7 @@ export function Header() {
   const navLinkClass = ({ isActive }: { isActive: boolean }) => (isActive ? "text-foreground" : "hover:text-foreground");
   const accountMenuLinkClass = ({ isActive }: { isActive: boolean }) =>
     cn(
-      "flex items-center justify-between rounded-lg px-3 py-2 text-sm font-medium transition-colors",
+      "flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-colors",
       isActive ? "bg-muted text-foreground" : "text-muted-foreground hover:bg-muted hover:text-foreground",
     );
   const mobileNavLinkClass = ({ isActive }: { isActive: boolean }) =>
@@ -100,42 +100,27 @@ export function Header() {
                     role="menu"
                     className="absolute right-0 top-12 z-[1400] w-64 rounded-xl border bg-card p-2 text-card-foreground shadow-xl"
                   >
-                    <NavLink
-                      reloadDocument
-                      to="/account"
-                      className={accountMenuLinkClass}
-                      role="menuitem"
-                      onClick={() => setAccountMenuOpen(false)}
-                    >
+                    <NavLink reloadDocument to="/account" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
+                      <UserCircle className="h-4 w-4" />
                       Account settings
                     </NavLink>
-                    {isAdmin ? (
-                      <>
-                        <div className="my-2 border-t" />
-                        <div className="flex items-center gap-2 px-3 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-                          <LayoutDashboard className="h-3.5 w-3.5" />
-                          Owner
-                        </div>
-                        <NavLink
-                          reloadDocument
-                          to="/owner"
-                          className={accountMenuLinkClass}
-                          role="menuitem"
-                          onClick={() => setAccountMenuOpen(false)}
-                        >
-                          Owner dashboard
-                        </NavLink>
-                        <NavLink
-                          reloadDocument
-                          to="/owner/enquiries"
-                          className={accountMenuLinkClass}
-                          role="menuitem"
-                          onClick={() => setAccountMenuOpen(false)}
-                        >
-                          Owner enquiries
-                        </NavLink>
-                      </>
-                    ) : null}
+                    <div className="my-2 border-t" />
+                    <div className="flex items-center gap-2 px-3 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+                      <LayoutDashboard className="h-3.5 w-3.5" />
+                      Owner
+                    </div>
+                    <NavLink reloadDocument to="/owner" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
+                      <LayoutDashboard className="h-4 w-4" />
+                      Owner dashboard
+                    </NavLink>
+                    <NavLink reloadDocument to="/owner/enquiries" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
+                      <Inbox className="h-4 w-4" />
+                      Owner enquiries
+                    </NavLink>
+                    <NavLink reloadDocument to="/owner/billing" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
+                      <CreditCard className="h-4 w-4" />
+                      Billing
+                    </NavLink>
                     {isAdmin ? (
                       <>
                         <div className="my-2 border-t" />
@@ -143,49 +128,40 @@ export function Header() {
                           <ShieldCheck className="h-3.5 w-3.5" />
                           Admin
                         </div>
-                        <NavLink
-                          reloadDocument
-                          to="/admin/venues"
-                          className={accountMenuLinkClass}
-                          role="menuitem"
-                          onClick={() => setAccountMenuOpen(false)}
-                        >
+                        <NavLink reloadDocument to="/admin/venues" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
+                          <Building2 className="h-4 w-4" />
                           Manage venues
                         </NavLink>
-                        <NavLink
-                          reloadDocument
-                          to="/admin/data-quality"
-                          className={accountMenuLinkClass}
-                          role="menuitem"
-                          onClick={() => setAccountMenuOpen(false)}
-                        >
+                        <NavLink reloadDocument to="/admin/data-quality" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
+                          <Activity className="h-4 w-4" />
                           Data quality
                         </NavLink>
-                        <NavLink
-                          reloadDocument
-                          to="/admin/reviews"
-                          className={accountMenuLinkClass}
-                          role="menuitem"
-                          onClick={() => setAccountMenuOpen(false)}
-                        >
+                        <NavLink reloadDocument to="/admin/reviews" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
+                          <PenLine className="h-4 w-4" />
                           Reviews
                         </NavLink>
-                        <NavLink
-                          reloadDocument
-                          to="/admin/suggestions"
-                          className={accountMenuLinkClass}
-                          role="menuitem"
-                          onClick={() => setAccountMenuOpen(false)}
-                        >
+                        <NavLink reloadDocument to="/admin/suggestions" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
+                          <GitBranch className="h-4 w-4" />
                           Suggestions
                         </NavLink>
-                        <NavLink
-                          reloadDocument
-                          to="/admin/monetisation"
-                          className={accountMenuLinkClass}
-                          role="menuitem"
-                          onClick={() => setAccountMenuOpen(false)}
-                        >
+                        <NavLink reloadDocument to="/admin/claims" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
+                          <BadgeCheck className="h-4 w-4" />
+                          Claims
+                        </NavLink>
+                        <NavLink reloadDocument to="/admin/featured" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
+                          <Sparkles className="h-4 w-4" />
+                          Featured
+                        </NavLink>
+                        <NavLink reloadDocument to="/admin/offers" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
+                          <Tag className="h-4 w-4" />
+                          Offers
+                        </NavLink>
+                        <NavLink reloadDocument to="/admin/analytics" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
+                          <BarChart3 className="h-4 w-4" />
+                          Analytics
+                        </NavLink>
+                        <NavLink reloadDocument to="/admin/monetisation" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
+                          <CreditCard className="h-4 w-4" />
                           Monetisation
                         </NavLink>
                       </>
@@ -237,14 +213,17 @@ export function Header() {
               <NavLink reloadDocument to="/account" className={mobileNavLinkClass}>
                 Account
               </NavLink>
+              <NavLink reloadDocument to="/owner" className={mobileNavLinkClass}>
+                Owner dashboard
+              </NavLink>
+              <NavLink reloadDocument to="/owner/enquiries" className={mobileNavLinkClass}>
+                Owner enquiries
+              </NavLink>
+              <NavLink reloadDocument to="/owner/billing" className={mobileNavLinkClass}>
+                Billing
+              </NavLink>
               {isAdmin ? (
                 <>
-                  <NavLink reloadDocument to="/owner" className={mobileNavLinkClass}>
-                    Owner dashboard
-                  </NavLink>
-                  <NavLink reloadDocument to="/owner/enquiries" className={mobileNavLinkClass}>
-                    Owner enquiries
-                  </NavLink>
                   <NavLink reloadDocument to="/admin/venues" className={mobileNavLinkClass}>
                     Admin
                   </NavLink>
