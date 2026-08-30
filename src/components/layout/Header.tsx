@@ -5,7 +5,7 @@ import { useAuth } from "@/context/AuthContext";
 import { useVenuePreferences } from "@/context/VenuePreferencesContext";
 import { useIsAdmin } from "@/hooks/useIsAdmin";
 import { cn } from "@/lib/utils";
-import { Activity, BadgeCheck, BarChart3, Building2, ChevronDown, CreditCard, GitBranch, Inbox, LayoutDashboard, Menu, PenLine, ShieldCheck, Sparkles, Tag, UserCircle } from "lucide-react";
+import { Activity, BadgeCheck, BarChart3, Building2, ChevronDown, CreditCard, GitBranch, Inbox, LayoutDashboard, Megaphone, Menu, PenLine, ShieldCheck, Sparkles, Tag, UserCircle } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 
@@ -98,7 +98,7 @@ export function Header() {
                 {accountMenuOpen ? (
                   <div
                     role="menu"
-                    className="absolute right-0 top-12 z-[1400] w-64 rounded-xl border bg-card p-2 text-card-foreground shadow-xl"
+                    className="absolute right-0 top-12 z-[1400] max-h-[calc(100vh-5rem)] w-64 overflow-y-auto rounded-xl border bg-card p-2 text-card-foreground shadow-xl"
                   >
                     <NavLink reloadDocument to="/account" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
                       <UserCircle className="h-4 w-4" />
@@ -116,6 +116,10 @@ export function Header() {
                     <NavLink reloadDocument to="/owner/enquiries" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
                       <Inbox className="h-4 w-4" />
                       Owner enquiries
+                    </NavLink>
+                    <NavLink reloadDocument to="/owner/promotions" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
+                      <Megaphone className="h-4 w-4" />
+                      Promotions
                     </NavLink>
                     <NavLink reloadDocument to="/owner/billing" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
                       <CreditCard className="h-4 w-4" />
@@ -143,6 +147,10 @@ export function Header() {
                         <NavLink reloadDocument to="/admin/suggestions" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
                           <GitBranch className="h-4 w-4" />
                           Suggestions
+                        </NavLink>
+                        <NavLink reloadDocument to="/admin/promotion-requests" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
+                          <Megaphone className="h-4 w-4" />
+                          Promotion requests
                         </NavLink>
                         <NavLink reloadDocument to="/admin/claims" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
                           <BadgeCheck className="h-4 w-4" />
@@ -219,6 +227,9 @@ export function Header() {
               <NavLink reloadDocument to="/owner/enquiries" className={mobileNavLinkClass}>
                 Owner enquiries
               </NavLink>
+              <NavLink reloadDocument to="/owner/promotions" className={mobileNavLinkClass}>
+                Promotions
+              </NavLink>
               <NavLink reloadDocument to="/owner/billing" className={mobileNavLinkClass}>
                 Billing
               </NavLink>
@@ -235,6 +246,9 @@ export function Header() {
                   </NavLink>
                   <NavLink reloadDocument to="/admin/suggestions" className={mobileNavLinkClass}>
                     Suggestions
+                  </NavLink>
+                  <NavLink reloadDocument to="/admin/promotion-requests" className={mobileNavLinkClass}>
+                    Promotion requests
                   </NavLink>
                   <NavLink reloadDocument to="/admin/monetisation" className={mobileNavLinkClass}>
                     Monetisation

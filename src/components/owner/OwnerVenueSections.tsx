@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { PlanBadge } from "@/components/subscriptions/PlanBadge";
 import { UpgradePrompt } from "@/components/subscriptions/UpgradePrompt";
 import { ClaimedVenueBadge } from "@/components/venues/ClaimedVenueBadge";
+import { canRequestFeaturedPlacement, canRequestPromotedOffer } from "@/lib/ownerPromotionAccess";
 import { subscriptionHasPlanAccess } from "@/lib/planFeatureAccess";
 import { formatPriceLevel } from "@/lib/venueFilters";
 import type { OwnerVenueAnalyticsSummary } from "@/services/ownerVenueAnalyticsService";
@@ -97,7 +98,10 @@ export function OwnerVenueEnquiryInboxCta({ venue, subscription }: { venue: Venu
   );
 }
 
-export function OwnerVenueCommercialSummary({ commercial }: { commercial: OwnerVenueCommercialSummary }) {
+export function OwnerVenueCommercialSummary({ commercial, venue, subscription }: { commercial: OwnerVenueCommercialSummary; venue: Venue; subscription?: VenueSubscription | null }) {
+  const canOffer = canRequestPromotedOffer(subscription ?? null);
+  const canFeatured = canRequestFeaturedPlacement(subscription ?? null);
+
   return (
     <section className="rounded-xl border bg-card p-5">
       <h2 className="text-xl font-semibold">Commercial status</h2>
@@ -109,7 +113,11 @@ export function OwnerVenueCommercialSummary({ commercial }: { commercial: OwnerV
       </div>
       {!commercial.hasActiveFeaturedPlacement ? <p className="mt-4 text-sm text-muted-foreground">You do not currently have any active featured placements.</p> : null}
       {!commercial.hasActivePromotedOffer ? <p className="mt-2 text-sm text-muted-foreground">You do not currently have any active promoted offers.</p> : null}
-      <Button asChild variant="outline" className="mt-5"><Link to="/account">Contact Sheesha about promotion</Link></Button>
+      <div className="mt-5 flex flex-wrap gap-2">
+        <Button asChild variant="outline"><Link to="/owner/promotions">Manage promotions</Link></Button>
+        {canOffer ? <Button asChild><Link to={`/owner/venues/${venue.slug}/promotions/offers/new`}>Request promoted offer</Link></Button> : null}
+        {canFeatured ? <Button asChild variant="outline"><Link to={`/owner/venues/${venue.slug}/promotions/featured/new`}>Request featured placement</Link></Button> : null}
+      </div>
     </section>
   );
 }
@@ -142,7 +150,7 @@ export function OwnerVenueProfilePreview({ venue, subscription }: { venue: Venue
 export function OwnerNextStepsCard({ venue, commercial, enquiries }: { venue: Venue; commercial: OwnerVenueCommercialSummary; enquiries: OwnerVenueEnquirySummary }) {
   const steps = [
     !venue.website && "Add an official website link",
-    !commercial.hasActivePromotedOffer && "Create a promoted offer",
+    !commercial.hasActivePromotedOffer && "Request a promoted offer",
     !commercial.hasActiveFeaturedPlacement && "Promote your venue in your city",
     enquiries.totalEnquiries === 0 && "Improve your profile and add more photos",
   ].filter(Boolean);

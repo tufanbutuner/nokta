@@ -71,7 +71,7 @@ export function OwnerVenueDashboardPage() {
           <OwnerVenueAnalyticsCards analytics={analytics} />
           <OwnerVenueEnquirySummarySection enquiries={enquiries} />
           <OwnerVenueEnquiryInboxCta venue={venue} subscription={subscription} />
-          <OwnerVenueCommercialSummarySection commercial={commercial} />
+          <OwnerVenueCommercialSummarySection commercial={commercial} venue={venue} subscription={subscription} />
           <div className="grid gap-6 lg:grid-cols-2">
             <OwnerVenueProfilePreview venue={venue} subscription={subscription} />
             <OwnerNextStepsCard venue={venue} commercial={commercial} enquiries={enquiries} />

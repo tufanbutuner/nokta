@@ -6,6 +6,7 @@ import { DataQualityPage } from "@/pages/admin/DataQualityPage";
 import { AdminFeaturedPlacementsPage } from "@/pages/admin/AdminFeaturedPlacementsPage";
 import { AdminReviewsPage } from "@/pages/admin/AdminReviewsPage";
 import { AdminPromotedOffersPage } from "@/pages/admin/AdminPromotedOffersPage";
+import { AdminPromotionRequestsPage } from "@/pages/admin/AdminPromotionRequestsPage";
 import { AdminVenueAnalyticsPage } from "@/pages/admin/AdminVenueAnalyticsPage";
 import { AdminVenueUpdateRequestsPage } from "@/pages/admin/AdminVenueUpdateRequestsPage";
 import { AdminSubscriptionsPage } from "@/pages/admin/AdminSubscriptionsPage";
@@ -30,6 +31,9 @@ import { OwnerVenueDashboardPage } from "@/pages/owner/OwnerVenueDashboardPage";
 import { OwnerVenueEnquiriesPage } from "@/pages/owner/OwnerVenueEnquiriesPage";
 import { OwnerVenueUpdateRequestPage } from "@/pages/owner/OwnerVenueUpdateRequestPage";
 import { OwnerPricingPage } from "@/pages/owner/OwnerPricingPage";
+import { OwnerPromotionsPage } from "@/pages/owner/OwnerPromotionsPage";
+import { OwnerRequestFeaturedPlacementPage } from "@/pages/owner/OwnerRequestFeaturedPlacementPage";
+import { OwnerRequestPromotedOfferPage } from "@/pages/owner/OwnerRequestPromotedOfferPage";
 import { PrivacyPage } from "@/pages/PrivacyPage";
 import { PromotedOfferPreviewPage } from "@/pages/PromotedOfferPreviewPage";
 import { RecommendPage } from "@/pages/RecommendPage";
@@ -88,6 +92,14 @@ export const router = createBrowserRouter([
         ),
       },
       {
+        path: "/owner/promotions",
+        element: (
+          <RequireAuth>
+            <OwnerPromotionsPage />
+          </RequireAuth>
+        ),
+      },
+      {
         path: "/owner/venues/:venueId",
         element: (
           <RequireAuth>
@@ -108,6 +120,22 @@ export const router = createBrowserRouter([
         element: (
           <RequireAuth>
             <OwnerVenueUpdateRequestPage />
+          </RequireAuth>
+        ),
+      },
+      {
+        path: "/owner/venues/:venueId/promotions/offers/new",
+        element: (
+          <RequireAuth>
+            <OwnerRequestPromotedOfferPage />
+          </RequireAuth>
+        ),
+      },
+      {
+        path: "/owner/venues/:venueId/promotions/featured/new",
+        element: (
+          <RequireAuth>
+            <OwnerRequestFeaturedPlacementPage />
           </RequireAuth>
         ),
       },
@@ -167,6 +195,14 @@ export const router = createBrowserRouter([
         element: (
           <RequireAdmin>
             <AdminSubscriptionsPage />
+          </RequireAdmin>
+        ),
+      },
+      {
+        path: "/admin/promotion-requests",
+        element: (
+          <RequireAdmin>
+            <AdminPromotionRequestsPage />
           </RequireAdmin>
         ),
       },

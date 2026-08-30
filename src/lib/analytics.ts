@@ -59,7 +59,16 @@ export type AnalyticsEvent =
   | "owner_enquiry_status_updated"
   | "owner_enquiry_marked_converted"
   | "owner_enquiry_upgrade_prompt_viewed"
-  | "owner_enquiry_upgrade_prompt_clicked";
+  | "owner_enquiry_upgrade_prompt_clicked"
+  | "owner_promotions_viewed"
+  | "owner_promotion_request_started"
+  | "owner_promotion_request_submitted"
+  | "owner_promotion_request_cancelled"
+  | "owner_promotion_upgrade_prompt_viewed"
+  | "owner_promotion_upgrade_prompt_clicked"
+  | "admin_promotion_request_approved"
+  | "admin_promotion_request_rejected"
+  | "admin_promotion_request_converted";
 
 export type AnalyticsProperties = Record<string, string | number | boolean | null | undefined>;
 

@@ -171,6 +171,34 @@ export interface PromotedOfferRow {
   updated_at: string;
 }
 
+export interface OwnerPromotionRequestRow {
+  id: string;
+  venue_id: string;
+  submitted_by: string;
+  request_type: "promoted_offer" | "featured_placement";
+  status: "pending" | "approved" | "rejected" | "cancelled" | "converted";
+  title: string;
+  description: string | null;
+  terms: string | null;
+  offer_type: "food" | "drink" | "birthday" | "group" | "football" | "student" | "private-hire" | "event" | "other" | null;
+  placement_type: "homepage" | "city" | "area" | "discover" | "recommendation" | null;
+  requested_city: string | null;
+  requested_area: string | null;
+  requested_starts_at: string | null;
+  requested_ends_at: string | null;
+  requested_priority: number;
+  cta_label: string | null;
+  cta_url: string | null;
+  owner_notes: string | null;
+  admin_notes: string | null;
+  reviewed_by: string | null;
+  reviewed_at: string | null;
+  created_offer_id: string | null;
+  created_featured_placement_id: string | null;
+  created_at: string;
+  updated_at: string;
+}
+
 export interface VenueEnquiryRow {
   id: string;
   venue_id: string;
