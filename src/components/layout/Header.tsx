@@ -5,7 +5,7 @@ import { useAuth } from "@/context/AuthContext";
 import { useVenuePreferences } from "@/context/VenuePreferencesContext";
 import { useIsAdmin } from "@/hooks/useIsAdmin";
 import { cn } from "@/lib/utils";
-import { Activity, BadgeCheck, BarChart3, Building2, ChevronDown, CreditCard, GitBranch, Inbox, LayoutDashboard, Megaphone, Menu, PenLine, ShieldCheck, Sparkles, Tag, UserCircle } from "lucide-react";
+import { Activity, BadgeCheck, BarChart3, Building2, Camera, ChevronDown, CreditCard, GitBranch, Inbox, LayoutDashboard, Megaphone, Menu, PenLine, ShieldCheck, Sparkles, Tag, UserCircle } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 
@@ -140,6 +140,10 @@ export function Header() {
                           <Activity className="h-4 w-4" />
                           Data quality
                         </NavLink>
+                        <NavLink reloadDocument to="/admin/media-review" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
+                          <Camera className="h-4 w-4" />
+                          Media review
+                        </NavLink>
                         <NavLink reloadDocument to="/admin/reviews" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
                           <PenLine className="h-4 w-4" />
                           Reviews
@@ -240,6 +244,9 @@ export function Header() {
                   </NavLink>
                   <NavLink reloadDocument to="/admin/data-quality" className={mobileNavLinkClass}>
                     Data quality
+                  </NavLink>
+                  <NavLink reloadDocument to="/admin/media-review" className={mobileNavLinkClass}>
+                    Media review
                   </NavLink>
                   <NavLink reloadDocument to="/admin/reviews" className={mobileNavLinkClass}>
                     Reviews

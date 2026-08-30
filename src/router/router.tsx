@@ -4,6 +4,7 @@ import { AppLayout } from "@/components/layout/AppLayout";
 import { AccountPage } from "@/pages/AccountPage";
 import { DataQualityPage } from "@/pages/admin/DataQualityPage";
 import { AdminFeaturedPlacementsPage } from "@/pages/admin/AdminFeaturedPlacementsPage";
+import { AdminMediaReviewPage } from "@/pages/admin/AdminMediaReviewPage";
 import { AdminReviewsPage } from "@/pages/admin/AdminReviewsPage";
 import { AdminPromotedOffersPage } from "@/pages/admin/AdminPromotedOffersPage";
 import { AdminPromotionRequestsPage } from "@/pages/admin/AdminPromotionRequestsPage";
@@ -29,6 +30,7 @@ import { OwnerBillingSuccessPage } from "@/pages/owner/OwnerBillingSuccessPage";
 import { OwnerEnquiriesPage } from "@/pages/owner/OwnerEnquiriesPage";
 import { OwnerVenueDashboardPage } from "@/pages/owner/OwnerVenueDashboardPage";
 import { OwnerVenueEnquiriesPage } from "@/pages/owner/OwnerVenueEnquiriesPage";
+import { OwnerVenueMediaPage } from "@/pages/owner/OwnerVenueMediaPage";
 import { OwnerVenueUpdateRequestPage } from "@/pages/owner/OwnerVenueUpdateRequestPage";
 import { OwnerPricingPage } from "@/pages/owner/OwnerPricingPage";
 import { OwnerPromotionsPage } from "@/pages/owner/OwnerPromotionsPage";
@@ -116,6 +118,14 @@ export const router = createBrowserRouter([
         ),
       },
       {
+        path: "/owner/venues/:venueId/media",
+        element: (
+          <RequireAuth>
+            <OwnerVenueMediaPage />
+          </RequireAuth>
+        ),
+      },
+      {
         path: "/owner/venues/:venueId/update",
         element: (
           <RequireAuth>
@@ -187,6 +197,14 @@ export const router = createBrowserRouter([
         element: (
           <RequireAdmin>
             <AdminVenueUpdateRequestsPage />
+          </RequireAdmin>
+        ),
+      },
+      {
+        path: "/admin/media-review",
+        element: (
+          <RequireAdmin>
+            <AdminMediaReviewPage />
           </RequireAdmin>
         ),
       },

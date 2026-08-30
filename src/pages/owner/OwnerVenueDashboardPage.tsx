@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useParams } from "react-router-dom";
 import { OwnerLayout } from "@/components/owner/OwnerLayout";
-import { OwnerNextStepsCard, OwnerVenueAnalyticsCards, OwnerVenueCommercialSummary as OwnerVenueCommercialSummarySection, OwnerVenueEnquiryInboxCta, OwnerVenueEnquirySummary as OwnerVenueEnquirySummarySection, OwnerVenueHeader, OwnerVenueProfilePreview, OwnerVenueStatusCards } from "@/components/owner/OwnerVenueSections";
+import { OwnerNextStepsCard, OwnerVenueAnalyticsCards, OwnerVenueCommercialSummary as OwnerVenueCommercialSummarySection, OwnerVenueEnquiryInboxCta, OwnerVenueEnquirySummary as OwnerVenueEnquirySummarySection, OwnerVenueHeader, OwnerVenueMediaSummary, OwnerVenueProfilePreview, OwnerVenueStatusCards } from "@/components/owner/OwnerVenueSections";
 import { PageMeta } from "@/components/seo/PageMeta";
 import { ErrorState } from "@/components/state/ErrorState";
 import { LoadingState } from "@/components/state/LoadingState";
@@ -11,9 +11,11 @@ import { getMyClaimedVenue } from "@/services/ownerVenueService";
 import { getOwnerVenueAnalyticsSummary, type OwnerVenueAnalyticsSummary } from "@/services/ownerVenueAnalyticsService";
 import { getOwnerVenueCommercialSummary, type OwnerVenueCommercialSummary as OwnerVenueCommercialSummaryData } from "@/services/ownerCommercialSummaryService";
 import { getOwnerVenueEnquirySummary, type OwnerVenueEnquirySummary as OwnerVenueEnquirySummaryData } from "@/services/ownerVenueEnquirySummaryService";
+import { getOwnerVenueMedia } from "@/services/ownerVenueMediaService";
 import { getOwnerVenueSubscription } from "@/services/ownerSubscriptionService";
 import type { VenueSubscription } from "@/types/subscriptions";
 import type { Venue } from "@/types/venue";
+import type { VenueMedia } from "@/types/venueMedia";
 
 export function OwnerVenueDashboardPage() {
   const { venueId = "" } = useParams();
@@ -23,6 +25,7 @@ export function OwnerVenueDashboardPage() {
   const [enquiries, setEnquiries] = useState<OwnerVenueEnquirySummaryData | null>(null);
   const [commercial, setCommercial] = useState<OwnerVenueCommercialSummaryData | null>(null);
   const [subscription, setSubscription] = useState<VenueSubscription | null>(null);
+  const [media, setMedia] = useState<VenueMedia[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const range = useMemo(last30Days, []);
@@ -38,17 +41,19 @@ export function OwnerVenueDashboardPage() {
         if (cancelled) return;
         setVenue(nextVenue);
         trackEvent("owner_venue_dashboard_viewed", { venueId: nextVenue.id, city: nextVenue.city, area: nextVenue.area, partnerTier: nextVenue.partnerTier });
-        const [nextAnalytics, nextEnquiries, nextCommercial, nextSubscription] = await Promise.all([
+        const [nextAnalytics, nextEnquiries, nextCommercial, nextSubscription, nextMedia] = await Promise.all([
           getOwnerVenueAnalyticsSummary({ userId: user.id, venueId: nextVenue.id, from: range.from, to: range.to }),
           getOwnerVenueEnquirySummary({ userId: user.id, venueId: nextVenue.id }),
           getOwnerVenueCommercialSummary({ userId: user.id, venueId: nextVenue.id }),
           getOwnerVenueSubscription({ userId: user.id, venueId: nextVenue.id }),
+          getOwnerVenueMedia({ userId: user.id, venueId: nextVenue.id }).catch(() => []),
         ]);
         if (cancelled) return;
         setAnalytics(nextAnalytics);
         setEnquiries(nextEnquiries);
         setCommercial(nextCommercial);
         setSubscription(nextSubscription);
+        setMedia(nextMedia);
       })
       .catch((caughtError) => {
         if (!cancelled) setError(caughtError instanceof Error ? caughtError.message : "Venue dashboard not found.");
@@ -68,6 +73,7 @@ export function OwnerVenueDashboardPage() {
         <div className="space-y-6">
           <OwnerVenueHeader venue={venue} />
           <OwnerVenueStatusCards venue={venue} subscription={subscription} />
+          <OwnerVenueMediaSummary venue={venue} media={media} />
           <OwnerVenueAnalyticsCards analytics={analytics} />
           <OwnerVenueEnquirySummarySection enquiries={enquiries} />
           <OwnerVenueEnquiryInboxCta venue={venue} subscription={subscription} />

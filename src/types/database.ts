@@ -171,6 +171,34 @@ export interface PromotedOfferRow {
   updated_at: string;
 }
 
+export interface VenueMediaRow {
+  id: string;
+  venue_id: string;
+  url: string;
+  alt_text: string | null;
+  caption: string | null;
+  media_type: "image";
+  source_type: "manual" | "venue-owned" | "stock" | "admin-uploaded" | "owner-uploaded";
+  source_url: string | null;
+  is_primary: boolean;
+  sort_order: number;
+  verification_status: "unverified" | "partially-verified" | "verified";
+  uploaded_by: string | null;
+  uploaded_by_role: "admin" | "owner" | null;
+  review_status: "pending" | "approved" | "rejected";
+  reviewed_by: string | null;
+  reviewed_at: string | null;
+  review_notes: string | null;
+  storage_path: string | null;
+  file_name: string | null;
+  file_size_bytes: number | null;
+  mime_type: string | null;
+  width: number | null;
+  height: number | null;
+  created_at: string;
+  updated_at: string;
+}
+
 export interface OwnerPromotionRequestRow {
   id: string;
   venue_id: string;

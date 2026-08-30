@@ -1,4 +1,4 @@
-import { Activity, BadgeCheck, BarChart3, ClipboardPenLine, CreditCard, DollarSign, GitBranch, Inbox, LayoutDashboard, MapPin, Megaphone, PenLine, Sparkles, Tag } from "lucide-react";
+import { Activity, BadgeCheck, BarChart3, Camera, ClipboardPenLine, CreditCard, DollarSign, GitBranch, Inbox, LayoutDashboard, MapPin, Megaphone, PenLine, Sparkles, Tag } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { useAuth } from "@/context/AuthContext";
 import { cn } from "@/lib/utils";
@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 const ADMIN_NAV_ITEMS = [
   { label: "Venues", to: "/admin/venues", icon: MapPin },
   { label: "Data Quality", to: "/admin/data-quality", icon: Activity },
+  { label: "Media Review", to: "/admin/media-review", icon: Camera },
   { label: "Venue Updates", to: "/admin/venue-updates", icon: ClipboardPenLine },
   { label: "Subscriptions", to: "/admin/subscriptions", icon: CreditCard },
   { label: "Promotion Requests", to: "/admin/promotion-requests", icon: Megaphone },

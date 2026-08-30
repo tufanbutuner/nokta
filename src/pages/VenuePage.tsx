@@ -27,6 +27,7 @@ import { cn } from "@/lib/utils";
 import { formatPriceLevel } from "@/lib/venueFilters";
 import { getVenueImage, getVenueImages } from "@/lib/venueImages";
 import { getVenueRatingSummary } from "@/services/reviewService";
+import { getApprovedVenueMedia } from "@/services/ownerVenueMediaService";
 import type { Venue } from "@/types/venue";
 import { Camera, ChevronLeft, ChevronRight, Clock, ExternalLink, Flag, MapPin, Navigation, Phone, Share2, Sofa, Star, Utensils, X } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -50,6 +51,7 @@ export function VenuePage() {
   const [activeTab, setActiveTab] = useState<VenueDetailTab>("overview");
   const [shareLabel, setShareLabel] = useState("Share");
   const [activeImageIndex, setActiveImageIndex] = useState<number | null>(null);
+  const [approvedMediaImages, setApprovedMediaImages] = useState<string[]>([]);
 
   useEffect(() => {
     if (venue) {
@@ -64,6 +66,25 @@ export function VenuePage() {
       });
     }
   }, [addRecentlyViewed, venue]);
+
+  useEffect(() => {
+    if (!venue) {
+      setApprovedMediaImages([]);
+      return;
+    }
+
+    let cancelled = false;
+    getApprovedVenueMedia(venue.id)
+      .then((media) => {
+        if (!cancelled) setApprovedMediaImages(media.map((item) => item.url));
+      })
+      .catch(() => {
+        if (!cancelled) setApprovedMediaImages([]);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [venue]);
 
   if (isLoading) {
     return (
@@ -105,7 +126,7 @@ export function VenuePage() {
   const city = getCityByName(venue.city);
   const distanceLabel = userLocation ? formatDistanceMiles(getVenueDistanceMiles(venue, userLocation)).replace(" away", "") : null;
   const amenities = [venue.food && "Food", venue.outdoor && "Outdoor seating", venue.indoor && "Indoor seating", venue.alcohol && "Alcohol", venue.openLate && "Open late"].filter((amenity): amenity is string => Boolean(amenity));
-  const galleryImages = getVenueImages(venue);
+  const galleryImages = approvedMediaImages.length ? approvedMediaImages : getVenueImages(venue);
   const similarVenues = venues.filter((candidate) => candidate.id !== venue.id && (candidate.area === venue.area || candidate.vibes.some((vibe) => venue.vibes.includes(vibe)))).slice(0, 6);
 
   async function shareVenue() {
@@ -222,7 +243,7 @@ export function VenuePage() {
 
         <VenueOffersSection venue={venue} />
 
-        <div className="sticky top-16 z-30 mt-6 border-b bg-background/95 backdrop-blur">
+        <div className="sticky top-16 z-[1100] mt-6 border-b bg-background/95 backdrop-blur">
           <div className="flex gap-2 overflow-x-auto py-2">
             {VENUE_TABS.map((tab) => (
               <button key={tab.value} type="button" className={cn("h-9 shrink-0 rounded-lg px-3 text-sm font-medium transition-colors", activeTab === tab.value ? "bg-foreground text-background" : "text-muted-foreground hover:bg-secondary hover:text-foreground")} onClick={() => setActiveTab(tab.value)}>

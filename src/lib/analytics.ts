@@ -68,7 +68,16 @@ export type AnalyticsEvent =
   | "owner_promotion_upgrade_prompt_clicked"
   | "admin_promotion_request_approved"
   | "admin_promotion_request_rejected"
-  | "admin_promotion_request_converted";
+  | "admin_promotion_request_converted"
+  | "owner_media_page_viewed"
+  | "owner_media_upload_started"
+  | "owner_media_upload_completed"
+  | "owner_media_upload_failed"
+  | "owner_media_metadata_updated"
+  | "owner_media_pending_deleted"
+  | "admin_media_review_viewed"
+  | "admin_media_approved"
+  | "admin_media_rejected";
 
 export type AnalyticsProperties = Record<string, string | number | boolean | null | undefined>;
 

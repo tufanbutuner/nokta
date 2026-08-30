@@ -11,6 +11,7 @@ import type { OwnerVenueCommercialSummary } from "@/services/ownerCommercialSumm
 import type { OwnerVenueEnquirySummary } from "@/services/ownerVenueEnquirySummaryService";
 import type { VenueSubscription } from "@/types/subscriptions";
 import type { Venue } from "@/types/venue";
+import type { VenueMedia } from "@/types/venueMedia";
 
 export function OwnerVenueHeader({ venue }: { venue: Venue }) {
   return (
@@ -61,6 +62,33 @@ export function OwnerVenueAnalyticsCards({ analytics }: { analytics: OwnerVenueA
         <Metric label="Directions rate" value={`${analytics.directionsClickRate}%`} />
         <Metric label="Enquiry conversion" value={`${analytics.enquiryConversionRate}%`} />
         <Metric label="Offer click rate" value={`${analytics.offerClickRate}%`} />
+      </div>
+    </section>
+  );
+}
+
+export function OwnerVenueMediaSummary({ venue, media }: { venue: Venue; media: VenueMedia[] }) {
+  const approved = media.filter((item) => item.reviewStatus === "approved").length;
+  const pending = media.filter((item) => item.reviewStatus === "pending").length;
+  const rejected = media.filter((item) => item.reviewStatus === "rejected").length;
+  const legacyImages = venue.images.length;
+
+  return (
+    <section className="rounded-xl border bg-card p-5">
+      <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+        <div>
+          <h2 className="text-xl font-semibold">Photos</h2>
+          <p className="mt-1 text-sm text-muted-foreground">Upload original venue photos and track admin review status.</p>
+        </div>
+        <Button asChild>
+          <Link to={`/owner/venues/${venue.slug}/media`}>Manage photos</Link>
+        </Button>
+      </div>
+      <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <Metric label="Approved" value={approved} />
+        <Metric label="Pending review" value={pending} />
+        <Metric label="Rejected" value={rejected} />
+        <Metric label="Legacy images" value={legacyImages} />
       </div>
     </section>
   );
@@ -139,9 +167,15 @@ export function OwnerVenueProfilePreview({ venue, subscription }: { venue: Venue
         <Detail label="Vibes" value={venue.vibes.join(", ")} />
       </dl>
       {canRequestUpdate ? (
-        <Button asChild variant="outline" className="mt-5"><Link to={`/owner/venues/${venue.slug}/update`}>Request a profile update</Link></Button>
+        <div className="mt-5 flex flex-wrap gap-2">
+          <Button asChild variant="outline"><Link to={`/owner/venues/${venue.slug}/update`}>Request a profile update</Link></Button>
+          <Button asChild variant="outline"><Link to={`/owner/venues/${venue.slug}/media`}>Manage photos</Link></Button>
+        </div>
       ) : (
-        <div className="mt-5"><UpgradePrompt feature="profile_update_requests" requiredPlan="starter" currentPlan={subscription?.plan ?? "free"} venueId={venue.id} /></div>
+        <div className="mt-5 space-y-3">
+          <Button asChild variant="outline"><Link to={`/owner/venues/${venue.slug}/media`}>Manage photos</Link></Button>
+          <UpgradePrompt feature="profile_update_requests" requiredPlan="starter" currentPlan={subscription?.plan ?? "free"} venueId={venue.id} />
+        </div>
       )}
     </section>
   );
@@ -150,6 +184,7 @@ export function OwnerVenueProfilePreview({ venue, subscription }: { venue: Venue
 export function OwnerNextStepsCard({ venue, commercial, enquiries }: { venue: Venue; commercial: OwnerVenueCommercialSummary; enquiries: OwnerVenueEnquirySummary }) {
   const steps = [
     !venue.website && "Add an official website link",
+    !venue.images.length && "Upload original venue photos",
     !commercial.hasActivePromotedOffer && "Request a promoted offer",
     !commercial.hasActiveFeaturedPlacement && "Promote your venue in your city",
     enquiries.totalEnquiries === 0 && "Improve your profile and add more photos",
