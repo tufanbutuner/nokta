@@ -8,12 +8,17 @@ export type VenueAnalyticsEventName =
   | "venue_enquiry_cta_clicked"
   | "venue_enquiry_submitted"
   | "venue_enquiry_converted"
+  | "venue_booking_cta_clicked"
+  | "venue_booking_request_submitted"
+  | "venue_booking_request_accepted"
+  | "venue_booking_request_declined"
+  | "venue_booking_alternative_proposed"
   | "featured_placement_viewed"
   | "featured_placement_clicked"
   | "promoted_offer_viewed"
   | "promoted_offer_clicked";
 
-export type AnalyticsSourceSurface = "homepage" | "city_page" | "discover" | "venue_page" | "recommendations" | "saved_venues" | "account" | "admin_preview";
+export type AnalyticsSourceSurface = "homepage" | "city_page" | "discover" | "venue_page" | "recommendations" | "saved_venues" | "account" | "owner_preview" | "admin_preview";
 
 export interface VenueAnalyticsEventInput {
   venueId?: string | null;

@@ -199,6 +199,35 @@ export interface VenueMediaRow {
   updated_at: string;
 }
 
+export interface BookingRequestRow {
+  id: string;
+  venue_id: string;
+  submitted_by: string | null;
+  customer_name: string;
+  customer_email: string;
+  customer_phone: string | null;
+  party_size: number;
+  requested_date: string;
+  requested_time: string;
+  occasion: string | null;
+  message: string | null;
+  status: "pending" | "accepted" | "declined" | "alternative_proposed" | "customer_accepted_alternative" | "customer_declined_alternative" | "cancelled" | "completed" | "no_show" | "spam";
+  owner_response_message: string | null;
+  proposed_date: string | null;
+  proposed_time: string | null;
+  proposed_message: string | null;
+  accepted_at: string | null;
+  declined_at: string | null;
+  proposed_at: string | null;
+  cancelled_at: string | null;
+  owner_last_updated_by: string | null;
+  owner_last_updated_at: string | null;
+  admin_notes: string | null;
+  source_surface: "venue_page" | "discover" | "city_page" | "saved_venues" | "recommendations" | "owner_preview" | "admin_preview" | null;
+  created_at: string;
+  updated_at: string;
+}
+
 export interface OwnerPromotionRequestRow {
   id: string;
   venue_id: string;

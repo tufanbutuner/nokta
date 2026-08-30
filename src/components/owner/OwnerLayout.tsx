@@ -1,4 +1,4 @@
-import { ArrowLeft, Building2, CreditCard, Home, Inbox, LayoutDashboard, Megaphone, PanelLeftClose, PanelLeftOpen, UserCircle } from "lucide-react";
+import { ArrowLeft, BookOpenCheck, Building2, CreditCard, Home, Inbox, LayoutDashboard, Megaphone, Menu, PanelLeftClose, PanelLeftOpen, UserCircle, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 const OWNER_NAV_ITEMS = [
   { label: "Dashboard", compactLabel: "Dashboard", to: "/owner", icon: LayoutDashboard },
   { label: "My venues", compactLabel: "Venues", to: "/owner/venues", icon: Building2 },
+  { label: "Bookings", compactLabel: "Bookings", to: "/owner/bookings", icon: BookOpenCheck },
   { label: "Enquiries", compactLabel: "Enquiries", to: "/owner/enquiries", icon: Inbox },
   { label: "Promotions", compactLabel: "Promotions", to: "/owner/promotions", icon: Megaphone },
   { label: "Pricing", compactLabel: "Pricing", to: "/owner/pricing", icon: CreditCard },
@@ -18,6 +19,7 @@ const OWNER_NAV_ITEMS = [
 export function OwnerLayout({ children }: { children: React.ReactNode }) {
   const { user } = useAuth();
   const [isCollapsed, setIsCollapsed] = useState(() => localStorage.getItem("sheesh-owner-sidebar-collapsed") === "true");
+  const [isMobileOpen, setIsMobileOpen] = useState(false);
   const initials = getInitials(user?.email);
 
   useEffect(() => {
@@ -28,18 +30,28 @@ export function OwnerLayout({ children }: { children: React.ReactNode }) {
     <main className="h-screen overflow-hidden bg-clay-50 font-primary text-sheesh-ink">
       <div className="flex h-full min-h-0 flex-col lg:flex-row">
         <div className="shrink-0 lg:hidden">
-          <div className="border-b bg-card/95 p-3 shadow-sm">
-            <div className="flex items-center justify-between gap-3">
-              <Link to="/owner" className="font-brand text-lg font-bold tracking-[-0.5px] text-sheesh-ink">Owner</Link>
-              <Button asChild variant="ghost" size="sm" className="gap-2 text-muted-foreground">
-                <Link to="/"><Home className="h-4 w-4" /> Sheesha</Link>
+          <div className="border-b bg-sheesh-ink text-clay-50 shadow-sm">
+            <div className="flex h-14 items-center justify-between gap-3 px-4">
+              <Link to="/" className="font-brand text-xl font-bold tracking-[-0.5px] text-clay-400">sheesh.</Link>
+              <Button type="button" variant="ghost" size="icon" className="text-clay-50/80 hover:bg-clay-400/10 hover:text-clay-200" aria-label={isMobileOpen ? "Close owner menu" : "Open owner menu"} onClick={() => setIsMobileOpen((next) => !next)}>
+                {isMobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
               </Button>
             </div>
-            <nav className="-mx-1 mt-3 flex gap-1 overflow-x-auto px-1 pb-1">
-              {OWNER_NAV_ITEMS.map((item) => (
-                <OwnerNavLink key={item.to} to={item.to} label={item.compactLabel} icon={item.icon} compact />
-              ))}
-            </nav>
+            {isMobileOpen ? (
+              <div className="max-h-[calc(100vh-3.5rem)] overflow-y-auto border-t border-white/10 px-3 py-3">
+                <div className="px-2 pb-2 text-[10px] font-semibold uppercase tracking-[2px] text-clay-50/40">Owner</div>
+                <nav className="grid gap-1">
+                  {OWNER_NAV_ITEMS.map((item) => (
+                    <OwnerNavLink key={item.to} to={item.to} label={item.label} icon={item.icon} compact onClick={() => setIsMobileOpen(false)} />
+                  ))}
+                </nav>
+                <NavLink to="/" onClick={() => setIsMobileOpen(false)} className="mt-4 flex items-center gap-3 rounded-lg bg-clay-400/10 px-3 py-3 text-sm font-medium text-clay-200">
+                  <Home className="h-4 w-4" />
+                  Back to Sheesha
+                </NavLink>
+                <div className="mt-4 border-t border-white/10 px-3 pt-4 text-xs text-clay-50/50">{user?.email ?? "Signed in"}</div>
+              </div>
+            ) : null}
           </div>
         </div>
         <aside className={cn("hidden shrink-0 flex-col bg-sheesh-ink px-4 py-5 text-clay-50 transition-[width] duration-200 lg:flex", isCollapsed ? "w-[76px]" : "w-[220px]")}>
@@ -93,20 +105,21 @@ export function OwnerLayout({ children }: { children: React.ReactNode }) {
   );
 }
 
-function OwnerNavLink({ to, label, icon: Icon, compact = false, collapsed = false }: { to: string; label: string; icon: React.ComponentType<{ className?: string }>; compact?: boolean; collapsed?: boolean }) {
+function OwnerNavLink({ to, label, icon: Icon, compact = false, collapsed = false, onClick }: { to: string; label: string; icon: React.ComponentType<{ className?: string }>; compact?: boolean; collapsed?: boolean; onClick?: () => void }) {
   const end = to === "/owner";
 
   return (
     <NavLink
       end={end}
       to={to}
+      onClick={onClick}
       className={({ isActive }) =>
         cn(
           "flex items-center gap-3 rounded-lg px-3 py-[9px] text-[13px] font-normal transition-colors",
-          compact ? "shrink-0 whitespace-nowrap border bg-background/70 px-3 py-2" : "",
-          compact ? "text-muted-foreground hover:bg-secondary hover:text-foreground" : "text-clay-50/80 hover:bg-clay-400/10 hover:text-clay-200",
+          compact ? "py-3 text-sm text-clay-50/80 hover:bg-clay-400/10 hover:text-clay-200" : "",
+          !compact ? "text-clay-50/80 hover:bg-clay-400/10 hover:text-clay-200" : "",
           collapsed && !compact ? "justify-center px-0" : "",
-          isActive && compact ? "bg-sheesh-ink text-clay-50 hover:bg-sheesh-ink hover:text-clay-50" : "",
+          isActive && compact ? "bg-clay-400/15 font-medium text-clay-200" : "",
           isActive && !compact ? "bg-clay-400/15 font-medium text-clay-200" : "",
         )
       }

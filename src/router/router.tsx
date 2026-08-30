@@ -11,6 +11,7 @@ import { AdminPromotionRequestsPage } from "@/pages/admin/AdminPromotionRequests
 import { AdminVenueAnalyticsPage } from "@/pages/admin/AdminVenueAnalyticsPage";
 import { AdminVenueUpdateRequestsPage } from "@/pages/admin/AdminVenueUpdateRequestsPage";
 import { AdminSubscriptionsPage } from "@/pages/admin/AdminSubscriptionsPage";
+import { AdminBookingRequestsPage } from "@/pages/admin/AdminBookingRequestsPage";
 import { AdminVenueEnquiriesPage } from "@/pages/admin/AdminVenueEnquiriesPage";
 import { AdminVenueClaimsPage } from "@/pages/admin/AdminVenueClaimsPage";
 import { AdminVenueSuggestionsPage } from "@/pages/admin/AdminVenueSuggestionsPage";
@@ -27,6 +28,7 @@ import { NotFoundPage } from "@/pages/NotFoundPage";
 import { OwnerDashboardPage } from "@/pages/owner/OwnerDashboardPage";
 import { OwnerBillingPage } from "@/pages/owner/OwnerBillingPage";
 import { OwnerBillingSuccessPage } from "@/pages/owner/OwnerBillingSuccessPage";
+import { OwnerBookingsPage } from "@/pages/owner/OwnerBookingsPage";
 import { OwnerEnquiriesPage } from "@/pages/owner/OwnerEnquiriesPage";
 import { OwnerVenueDashboardPage } from "@/pages/owner/OwnerVenueDashboardPage";
 import { OwnerVenueEnquiriesPage } from "@/pages/owner/OwnerVenueEnquiriesPage";
@@ -39,6 +41,7 @@ import { OwnerRequestPromotedOfferPage } from "@/pages/owner/OwnerRequestPromote
 import { PrivacyPage } from "@/pages/PrivacyPage";
 import { PromotedOfferPreviewPage } from "@/pages/PromotedOfferPreviewPage";
 import { RecommendPage } from "@/pages/RecommendPage";
+import { RequestBookingPage } from "@/pages/RequestBookingPage";
 import { SavedPage } from "@/pages/SavedPage";
 import { SignInPage } from "@/pages/SignInPage";
 import { SignUpPage } from "@/pages/SignUpPage";
@@ -62,10 +65,26 @@ export const router = createBrowserRouter([
       { path: "/privacy", element: <PrivacyPage /> },
       { path: "/terms", element: <TermsPage /> },
       {
+        path: "/owner/bookings",
+        element: (
+          <RequireAuth>
+            <OwnerBookingsPage />
+          </RequireAuth>
+        ),
+      },
+      {
         path: "/account",
         element: (
           <RequireAuth>
             <AccountPage />
+          </RequireAuth>
+        ),
+      },
+      {
+        path: "/owner/venues/:venueId/bookings",
+        element: (
+          <RequireAuth>
+            <OwnerBookingsPage />
           </RequireAuth>
         ),
       },
@@ -176,6 +195,7 @@ export const router = createBrowserRouter([
       { path: "/sign-in", element: <SignInPage /> },
       { path: "/sign-up", element: <SignUpPage /> },
       { path: "/venues/:slug/claim", element: <ClaimVenuePage /> },
+      { path: "/venues/:slug/request-booking", element: <RequestBookingPage /> },
       { path: "/venues/:slug/enquire", element: <VenueEnquiryPage /> },
       { path: "/venues/:slug", element: <VenuePage /> },
       ...(import.meta.env.DEV
@@ -184,6 +204,14 @@ export const router = createBrowserRouter([
             { path: "/promoted-offer-preview", element: <PromotedOfferPreviewPage /> },
           ]
         : []),
+      {
+        path: "/admin/bookings",
+        element: (
+          <RequireAdmin>
+            <AdminBookingRequestsPage />
+          </RequireAdmin>
+        ),
+      },
       {
         path: "/admin/data-quality",
         element: (

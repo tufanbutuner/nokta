@@ -202,7 +202,10 @@ export function VenuePage() {
           </div>
 
           <div className="hidden items-center gap-2 lg:flex">
-            <Button asChild onClick={() => trackEnquiryCta(venue)}>
+            <Button asChild onClick={() => trackBookingCta(venue)}>
+              <Link to={`/venues/${venue.slug}/request-booking`}>Request booking</Link>
+            </Button>
+            <Button asChild variant="outline" onClick={() => trackEnquiryCta(venue)}>
               <Link to={`/venues/${venue.slug}/enquire`}>Send enquiry</Link>
             </Button>
             <FavouriteButton venueId={venue.id} venueName={venue.name} venue={venue} className="h-11 w-11 border" />
@@ -212,12 +215,17 @@ export function VenuePage() {
         <section className="mt-6 rounded-xl border bg-card p-4">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div>
-              <h2 className="font-semibold">Planning a visit or group booking?</h2>
-              <p className="mt-1 text-sm text-muted-foreground">Send an enquiry to get started. This is not a confirmed booking.</p>
+                <h2 className="font-semibold">Planning a visit or group booking?</h2>
+                <p className="mt-1 text-sm text-muted-foreground">Send a booking request with your date, time and party size. It is not confirmed until the venue accepts.</p>
             </div>
-            <Button asChild variant="outline" onClick={() => trackEnquiryCta(venue)}>
-              <Link to={`/venues/${venue.slug}/enquire`}>Send enquiry</Link>
-            </Button>
+            <div className="flex flex-col gap-2 sm:flex-row">
+              <Button asChild onClick={() => trackBookingCta(venue)}>
+                <Link to={`/venues/${venue.slug}/request-booking`}>Request booking</Link>
+              </Button>
+              <Button asChild variant="outline" onClick={() => trackEnquiryCta(venue)}>
+                <Link to={`/venues/${venue.slug}/enquire`}>Send enquiry</Link>
+              </Button>
+            </div>
           </div>
         </section>
 
@@ -428,6 +436,17 @@ function trackEnquiryCta(venue: Venue) {
   trackVenueAnalyticsEvent({
     venueId: venue.id,
     eventName: "venue_enquiry_cta_clicked",
+    city: venue.city,
+    area: venue.area,
+    sourceSurface: "venue_page",
+  });
+}
+
+function trackBookingCta(venue: Venue) {
+  trackEvent("booking_request_started", { ...getVenueAnalyticsProperties(venue), city: venue.city, sourceSurface: "venue_page" });
+  trackVenueAnalyticsEvent({
+    venueId: venue.id,
+    eventName: "venue_booking_cta_clicked",
     city: venue.city,
     area: venue.area,
     sourceSurface: "venue_page",
