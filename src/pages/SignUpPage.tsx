@@ -42,7 +42,7 @@ export function SignUpPage() {
     setIsSubmitting(true);
     try {
       await signUp(email.trim(), password);
-      navigate("/account");
+      navigate(`/account?checkEmail=${encodeURIComponent(email.trim())}`);
     } catch (caughtError) {
       setError(caughtError instanceof Error ? caughtError.message : "Something went wrong. Please try again.");
     } finally {

@@ -1,6 +1,7 @@
 import { RequireAuth } from "@/components/auth/RequireAuth";
 import { RequireAdmin } from "@/components/auth/RequireAdmin";
 import { AppLayout } from "@/components/layout/AppLayout";
+import { AccountConfirmationPage } from "@/pages/AccountConfirmationPage";
 import { AccountPage } from "@/pages/AccountPage";
 import { MyBookingsPage } from "@/pages/account/MyBookingsPage";
 import { NotificationsPage } from "@/pages/account/NotificationsPage";
@@ -53,7 +54,7 @@ import { SuggestVenuePage } from "@/pages/SuggestVenuePage";
 import { TermsPage } from "@/pages/TermsPage";
 import { VenueEnquiryPage } from "@/pages/VenueEnquiryPage";
 import { VenuePage } from "@/pages/VenuePage";
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, useSearchParams } from "react-router-dom";
 
 export const router = createBrowserRouter([
   {
@@ -78,11 +79,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/account",
-        element: (
-          <RequireAuth>
-            <AccountPage />
-          </RequireAuth>
-        ),
+        element: <AccountRoute />,
       },
       {
         path: "/account/bookings",
@@ -373,3 +370,13 @@ export const router = createBrowserRouter([
     ],
   },
 ]);
+
+function AccountRoute() {
+  const [searchParams] = useSearchParams();
+  if (searchParams.has("checkEmail")) return <AccountConfirmationPage />;
+  return (
+    <RequireAuth>
+      <AccountPage />
+    </RequireAuth>
+  );
+}

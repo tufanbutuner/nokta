@@ -89,6 +89,9 @@ async function getTargetNotifications(supabase: ReturnType<typeof createAdminCli
     if (error) throw error;
     notificationIds = (data ?? []).map((notification) => notification.id);
     console.log("send-notification-email notification ids", { count: notificationIds.length, bookingRequestId: input.bookingRequestId, enquiryId: input.enquiryId });
+    if (notificationIds.length === 0 && typeof input.bookingRequestId === "string") {
+      notificationIds = await createMissingBookingSubmittedNotifications(supabase, input.bookingRequestId);
+    }
     if (notificationIds.length === 0) return [];
   }
 
@@ -105,7 +108,78 @@ async function getTargetNotifications(supabase: ReturnType<typeof createAdminCli
 
   const { data, error } = await query.limit(10);
   if (error) throw error;
-  return ((data ?? []) as { notifications: NotificationRow | null }[]).map((row) => row.notifications).filter(Boolean) as NotificationRow[];
+  const notifications = ((data ?? []) as { notifications: NotificationRow | null }[]).map((row) => row.notifications).filter(Boolean) as NotificationRow[];
+  if (notifications.length > 0 || !notificationIds) return notifications;
+
+  const fallback = await supabase.from("notifications").select("*").in("id", notificationIds);
+  if (fallback.error) throw fallback.error;
+  console.log("send-notification-email fallback notifications", { count: fallback.data?.length ?? 0 });
+  return (fallback.data ?? []) as NotificationRow[];
+}
+
+async function createMissingBookingSubmittedNotifications(supabase: ReturnType<typeof createAdminClient>, bookingRequestId: string) {
+  const { data: booking, error } = await supabase
+    .from("booking_requests")
+    .select("id,venue_id,submitted_by,customer_email,customer_access_token,venues(name,claimed_by)")
+    .eq("id", bookingRequestId)
+    .single();
+  if (error) throw error;
+  if (!booking) return [];
+
+  const venue = Array.isArray(booking.venues) ? booking.venues[0] : booking.venues;
+  const venueName = clean(venue?.name ?? "this venue");
+  const customerActionUrl = booking.customer_access_token ? `/booking-status/${booking.customer_access_token}` : null;
+  const notificationsToCreate = [
+    {
+      recipient_user_id: booking.submitted_by,
+      recipient_email: booking.customer_email,
+      recipient_type: "customer",
+      notification_type: "booking_request_submitted",
+      title: "Your booking request has been sent",
+      body: `Your booking request for ${venueName} has been sent.`,
+      action_label: "View booking status",
+      action_url: customerActionUrl,
+      related_entity_type: "booking_request",
+      related_entity_id: booking.id,
+      venue_id: booking.venue_id,
+      booking_request_id: booking.id,
+      delivery_channels: ["email"],
+    },
+  ];
+
+  if (venue?.claimed_by) {
+    const ownerEmail = await getUserEmail(supabase, venue.claimed_by);
+    notificationsToCreate.push({
+      recipient_user_id: venue.claimed_by,
+      recipient_email: ownerEmail,
+      recipient_type: "owner",
+      notification_type: "booking_request_submitted",
+      title: "New booking request",
+      body: `You have a new booking request for ${venueName}.`,
+      action_label: "View booking",
+      action_url: `/owner/bookings?booking=${booking.id}`,
+      related_entity_type: "booking_request",
+      related_entity_id: booking.id,
+      venue_id: booking.venue_id,
+      booking_request_id: booking.id,
+      delivery_channels: ["email"],
+    });
+  }
+
+  const { data, error: insertError } = await supabase.from("notifications").insert(notificationsToCreate).select("id");
+  if (insertError) throw insertError;
+  const notificationIds = (data ?? []).map((notification) => notification.id);
+  console.log("send-notification-email created missing notifications", { count: notificationIds.length, bookingRequestId });
+  return notificationIds;
+}
+
+async function getUserEmail(supabase: ReturnType<typeof createAdminClient>, userId: string) {
+  const { data, error } = await supabase.auth.admin.getUserById(userId);
+  if (error) {
+    console.log("send-notification-email owner email lookup failed", { userId, reason: safeError(error.message) });
+    return null;
+  }
+  return data.user?.email ?? null;
 }
 
 async function sendNotification(supabase: ReturnType<typeof createAdminClient>, notification: NotificationRow) {
@@ -120,20 +194,27 @@ async function sendNotification(supabase: ReturnType<typeof createAdminClient>, 
     .limit(1)
     .maybeSingle();
   if (logError) throw logError;
-  if (!log) {
-    console.log("send-notification-email no pending log", { notificationId: notification.id });
-    return { notificationId: notification.id, status: "skipped", reason: "No email delivery log." };
+  let deliveryLogId = log?.id ?? null;
+  if (!deliveryLogId) {
+    const { data: createdLog, error: createLogError } = await supabase
+      .from("notification_delivery_logs")
+      .insert({ notification_id: notification.id, channel: "email", status: "pending" })
+      .select("id")
+      .single();
+    if (createLogError) throw createLogError;
+    deliveryLogId = createdLog.id;
+    console.log("send-notification-email created missing email log", { notificationId: notification.id, deliveryLogId });
   }
 
   if (!notification.recipient_email) {
-    await updateLog(supabase, log.id, { status: "skipped", provider: "noop", error_message: "Recipient email is missing." });
+    await updateLog(supabase, deliveryLogId, { status: "skipped", provider: "noop", error_message: "Recipient email is missing." });
     return { notificationId: notification.id, status: "skipped", reason: "Recipient email is missing." };
   }
 
   const resendApiKey = Deno.env.get("RESEND_API_KEY");
   if (!resendApiKey) {
     console.log("send-notification-email skipped", { notificationId: notification.id, reason: "missing_resend_api_key" });
-    await updateLog(supabase, log.id, { status: "skipped", provider: "noop", error_message: "RESEND_API_KEY is not configured." });
+    await updateLog(supabase, deliveryLogId, { status: "skipped", provider: "noop", error_message: "RESEND_API_KEY is not configured." });
     return { notificationId: notification.id, status: "skipped", reason: "RESEND_API_KEY is not configured." };
   }
 
@@ -142,7 +223,7 @@ async function sendNotification(supabase: ReturnType<typeof createAdminClient>, 
   const fromAddress = Deno.env.get("EMAIL_FROM_ADDRESS");
   if (!fromAddress) {
     console.log("send-notification-email skipped", { notificationId: notification.id, reason: "missing_from_address" });
-    await updateLog(supabase, log.id, { status: "skipped", provider: "noop", error_message: "EMAIL_FROM_ADDRESS is not configured." });
+    await updateLog(supabase, deliveryLogId, { status: "skipped", provider: "noop", error_message: "EMAIL_FROM_ADDRESS is not configured." });
     return { notificationId: notification.id, status: "skipped", reason: "EMAIL_FROM_ADDRESS is not configured." };
   }
 
@@ -162,11 +243,11 @@ async function sendNotification(supabase: ReturnType<typeof createAdminClient>, 
   if (!response.ok) {
     const message = typeof result?.message === "string" ? result.message : "Resend email send failed.";
     console.log("send-notification-email failed", { notificationId: notification.id, reason: safeError(message) });
-    await updateLog(supabase, log.id, { status: "failed", provider: "resend", error_message: safeError(message) });
+    await updateLog(supabase, deliveryLogId, { status: "failed", provider: "resend", error_message: safeError(message) });
     return { notificationId: notification.id, status: "failed", reason: safeError(message) };
   }
 
-  await updateLog(supabase, log.id, { status: "sent", provider: "resend", provider_message_id: typeof result?.id === "string" ? result.id : null, error_message: null, delivered_at: new Date().toISOString() });
+  await updateLog(supabase, deliveryLogId, { status: "sent", provider: "resend", provider_message_id: typeof result?.id === "string" ? result.id : null, error_message: null, delivered_at: new Date().toISOString() });
   console.log("send-notification-email sent", { notificationId: notification.id, providerMessageId: typeof result?.id === "string" ? result.id : null });
   return { notificationId: notification.id, status: "sent" };
 }
