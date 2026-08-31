@@ -80,6 +80,18 @@ async function getTargetNotifications(supabase: ReturnType<typeof createAdminCli
     return notification ? [notification as NotificationRow] : [];
   }
 
+  let notificationIds: string[] | null = null;
+  if (typeof input.bookingRequestId === "string" || typeof input.enquiryId === "string") {
+    let notificationQuery = supabase.from("notifications").select("id");
+    if (typeof input.bookingRequestId === "string") notificationQuery = notificationQuery.eq("booking_request_id", input.bookingRequestId);
+    if (typeof input.enquiryId === "string") notificationQuery = notificationQuery.eq("enquiry_id", input.enquiryId);
+    const { data, error } = await notificationQuery;
+    if (error) throw error;
+    notificationIds = (data ?? []).map((notification) => notification.id);
+    console.log("send-notification-email notification ids", { count: notificationIds.length, bookingRequestId: input.bookingRequestId, enquiryId: input.enquiryId });
+    if (notificationIds.length === 0) return [];
+  }
+
   let query = supabase
     .from("notification_delivery_logs")
     .select("notifications(*)")
@@ -88,8 +100,7 @@ async function getTargetNotifications(supabase: ReturnType<typeof createAdminCli
     .order("created_at", { ascending: true });
 
   if (typeof input.notificationId === "string") query = query.eq("notification_id", input.notificationId);
-  else if (typeof input.bookingRequestId === "string") query = query.eq("notifications.booking_request_id", input.bookingRequestId);
-  else if (typeof input.enquiryId === "string") query = query.eq("notifications.enquiry_id", input.enquiryId);
+  else if (notificationIds) query = query.in("notification_id", notificationIds);
   else throw new Error("notificationId, bookingRequestId or enquiryId is required.");
 
   const { data, error } = await query.limit(10);
