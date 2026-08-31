@@ -24,36 +24,77 @@ export async function createBookingRequest(input: { userId?: string | null; requ
   }
 
   const client = ensureSupabase();
+  const bookingRequestId = crypto.randomUUID();
   const customerAccessToken = generateCustomerAccessToken();
+  const customerAccessTokenExpiresAt = getCustomerAccessTokenExpiry();
   const confirmationReference = generateConfirmationReference();
-  const { data, error } = await client
+  const createdAt = new Date().toISOString();
+  const sourceSurface = input.request.sourceSurface ?? "venue_page";
+  const customerName = input.request.customerName.trim();
+  const customerEmail = input.request.customerEmail.trim();
+  const customerPhone = nullableText(input.request.customerPhone);
+  const occasion = nullableText(input.request.occasion);
+  const message = nullableText(input.request.message);
+  const { error } = await client
     .from("booking_requests")
     .insert({
+      id: bookingRequestId,
       venue_id: input.request.venueId,
       submitted_by: input.userId ?? null,
-      customer_name: input.request.customerName.trim(),
-      customer_email: input.request.customerEmail.trim(),
-      customer_phone: nullableText(input.request.customerPhone),
+      customer_name: customerName,
+      customer_email: customerEmail,
+      customer_phone: customerPhone,
       party_size: input.request.partySize,
       requested_date: input.request.requestedDate,
       requested_time: input.request.requestedTime,
-      occasion: nullableText(input.request.occasion),
-      message: nullableText(input.request.message),
-      source_surface: input.request.sourceSurface ?? "venue_page",
+      occasion,
+      message,
+      source_surface: sourceSurface,
       status: "pending",
       customer_access_token: customerAccessToken,
-      customer_access_token_expires_at: getCustomerAccessTokenExpiry(),
+      customer_access_token_expires_at: customerAccessTokenExpiresAt,
       confirmation_reference: confirmationReference,
-    })
-    .select("*")
-    .single();
+    });
 
   if (error) {
     trackEvent("booking_request_submit_failed", { venueId: input.request.venueId, sourceSurface: input.request.sourceSurface ?? "venue_page" });
     throw new Error(`Could not send booking request: ${error.message}`);
   }
 
-  const request = mapBookingRequestRowToBookingRequest(data as BookingRequestRow);
+  const request: BookingRequest = {
+    id: bookingRequestId,
+    venueId: input.request.venueId,
+    submittedBy: input.userId ?? null,
+    customerName,
+    customerEmail,
+    customerPhone,
+    partySize: input.request.partySize,
+    requestedDate: input.request.requestedDate,
+    requestedTime: input.request.requestedTime,
+    occasion,
+    message,
+    status: "pending",
+    ownerResponseMessage: null,
+    proposedDate: null,
+    proposedTime: null,
+    proposedMessage: null,
+    acceptedAt: null,
+    declinedAt: null,
+    proposedAt: null,
+    cancelledAt: null,
+    customerAccessToken,
+    customerAccessTokenExpiresAt,
+    customerAlternativeResponseMessage: null,
+    customerRespondedAt: null,
+    confirmedAt: null,
+    confirmationReference,
+    ownerLastUpdatedBy: null,
+    ownerLastUpdatedAt: null,
+    adminNotes: null,
+    sourceSurface,
+    createdAt,
+    updatedAt: createdAt,
+  };
   const safeMetadata = {
     venueId: request.venueId,
     city: input.venue?.city ?? null,
