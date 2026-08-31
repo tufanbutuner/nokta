@@ -84,7 +84,7 @@ export function AuthProvider({ children }: PropsWithChildren) {
       email,
       password,
       options: {
-        emailRedirectTo: `${window.location.origin}/account`,
+        emailRedirectTo: `${window.location.origin}/sign-in`,
       },
     });
 
