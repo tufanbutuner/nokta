@@ -33,6 +33,12 @@ export interface BookingRequest {
   declinedAt: string | null;
   proposedAt: string | null;
   cancelledAt: string | null;
+  customerAccessToken: string | null;
+  customerAccessTokenExpiresAt: string | null;
+  customerAlternativeResponseMessage: string | null;
+  customerRespondedAt: string | null;
+  confirmedAt: string | null;
+  confirmationReference: string | null;
   ownerLastUpdatedBy: string | null;
   ownerLastUpdatedAt: string | null;
   adminNotes: string | null;

@@ -21,6 +21,7 @@ import { AppErrorPage } from "@/pages/AppErrorPage";
 import { AppErrorPreviewPage } from "@/pages/AppErrorPreviewPage";
 import { ClaimVenuePage } from "@/pages/ClaimVenuePage";
 import { CityPage } from "@/pages/CityPage";
+import { CustomerBookingStatusPage } from "@/pages/CustomerBookingStatusPage";
 import { DiscoverPage } from "@/pages/DiscoverPage";
 import { HomePage } from "@/pages/HomePage";
 import { MonetisationDashboardPage } from "@/pages/admin/MonetisationDashboardPage";
@@ -32,6 +33,7 @@ import { OwnerBookingsPage } from "@/pages/owner/OwnerBookingsPage";
 import { OwnerEnquiriesPage } from "@/pages/owner/OwnerEnquiriesPage";
 import { OwnerVenueDashboardPage } from "@/pages/owner/OwnerVenueDashboardPage";
 import { OwnerVenueEnquiriesPage } from "@/pages/owner/OwnerVenueEnquiriesPage";
+import { OwnerVenueAvailabilityPage } from "@/pages/owner/OwnerVenueAvailabilityPage";
 import { OwnerVenueMediaPage } from "@/pages/owner/OwnerVenueMediaPage";
 import { OwnerVenueUpdateRequestPage } from "@/pages/owner/OwnerVenueUpdateRequestPage";
 import { OwnerPricingPage } from "@/pages/owner/OwnerPricingPage";
@@ -145,6 +147,14 @@ export const router = createBrowserRouter([
         ),
       },
       {
+        path: "/owner/venues/:venueId/availability",
+        element: (
+          <RequireAuth>
+            <OwnerVenueAvailabilityPage />
+          </RequireAuth>
+        ),
+      },
+      {
         path: "/owner/venues/:venueId/update",
         element: (
           <RequireAuth>
@@ -196,6 +206,7 @@ export const router = createBrowserRouter([
       { path: "/sign-up", element: <SignUpPage /> },
       { path: "/venues/:slug/claim", element: <ClaimVenuePage /> },
       { path: "/venues/:slug/request-booking", element: <RequestBookingPage /> },
+      { path: "/booking-status/:token", element: <CustomerBookingStatusPage /> },
       { path: "/venues/:slug/enquire", element: <VenueEnquiryPage /> },
       { path: "/venues/:slug", element: <VenuePage /> },
       ...(import.meta.env.DEV

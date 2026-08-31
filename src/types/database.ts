@@ -220,10 +220,55 @@ export interface BookingRequestRow {
   declined_at: string | null;
   proposed_at: string | null;
   cancelled_at: string | null;
+  customer_access_token: string | null;
+  customer_access_token_expires_at: string | null;
+  customer_alternative_response_message: string | null;
+  customer_responded_at: string | null;
+  confirmed_at: string | null;
+  confirmation_reference: string | null;
   owner_last_updated_by: string | null;
   owner_last_updated_at: string | null;
   admin_notes: string | null;
   source_surface: "venue_page" | "discover" | "city_page" | "saved_venues" | "recommendations" | "owner_preview" | "admin_preview" | null;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface VenueBookingSettingsRow {
+  id: string;
+  venue_id: string;
+  booking_requests_enabled: boolean;
+  min_party_size: number;
+  max_party_size: number;
+  min_notice_minutes: number;
+  max_advance_days: number;
+  default_booking_duration_minutes: number;
+  booking_instructions: string | null;
+  internal_notes: string | null;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface VenueBookingWindowRow {
+  id: string;
+  venue_id: string;
+  day_of_week: number;
+  start_time: string;
+  end_time: string;
+  is_enabled: boolean;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface VenueBookingBlackoutDateRow {
+  id: string;
+  venue_id: string;
+  blackout_date: string;
+  reason: string | null;
+  is_full_day: boolean;
+  start_time: string | null;
+  end_time: string | null;
+  created_by: string | null;
   created_at: string;
   updated_at: string;
 }

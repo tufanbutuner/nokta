@@ -1,4 +1,5 @@
 import { MoreHorizontal } from "lucide-react";
+import { useState, type MouseEvent } from "react";
 import { Button } from "@/components/ui/button";
 import { formatBookingRequestDateTime } from "@/lib/bookingRequestLabels";
 import type { BookingRequest, BookingRequestStatus } from "@/types/bookingRequests";
@@ -66,17 +67,36 @@ function BookingCard({ booking, venue, onView, onStatus, onDecline, onPropose }:
 }
 
 function BookingActions({ booking, onStatus, onDecline, onPropose }: { booking: BookingRequest; onStatus: (status: BookingRequestStatus) => void; onDecline: () => void; onPropose: () => void }) {
+  const [menuPosition, setMenuPosition] = useState<{ top: number; right: number } | null>(null);
+
+  function toggleMenu(event: MouseEvent<HTMLButtonElement>) {
+    const rect = event.currentTarget.getBoundingClientRect();
+    setMenuPosition((current) => current ? null : { top: rect.bottom + 8, right: window.innerWidth - rect.right });
+  }
+
+  function runAction(action: () => void) {
+    setMenuPosition(null);
+    action();
+  }
+
   return (
-    <details className="relative inline-block text-left">
-      <summary className="list-none"><Button type="button" variant="ghost" size="icon" aria-label="Booking actions"><MoreHorizontal className="h-4 w-4" /></Button></summary>
-      <div className="absolute right-0 z-50 mt-2 grid w-48 gap-1 rounded-xl border bg-card p-1 text-sm shadow-lg">
-        {booking.status === "pending" ? <Button variant="ghost" className="justify-start" onClick={() => onStatus("accepted")}>Accept</Button> : null}
-        {booking.status === "pending" ? <Button variant="ghost" className="justify-start" onClick={onDecline}>Decline</Button> : null}
-        {booking.status === "pending" ? <Button variant="ghost" className="justify-start" onClick={onPropose}>Propose alternative</Button> : null}
-        {booking.status === "accepted" ? <Button variant="ghost" className="justify-start" onClick={() => onStatus("completed")}>Mark completed</Button> : null}
-        {booking.status === "accepted" ? <Button variant="ghost" className="justify-start" onClick={() => onStatus("no_show")}>Mark no-show</Button> : null}
-        {["accepted", "alternative_proposed"].includes(booking.status) ? <Button variant="ghost" className="justify-start" onClick={() => onStatus("cancelled")}>Cancel</Button> : null}
-      </div>
-    </details>
+    <>
+      <Button type="button" variant="ghost" size="icon" aria-label="Booking actions" aria-expanded={Boolean(menuPosition)} onClick={toggleMenu}>
+        <MoreHorizontal className="h-4 w-4" />
+      </Button>
+      {menuPosition ? (
+        <>
+          <button type="button" className="fixed inset-0 z-[1490] cursor-default" aria-label="Close booking actions" onClick={() => setMenuPosition(null)} />
+          <div className="fixed z-[1500] grid w-48 gap-1 rounded-xl border bg-card p-1 text-sm shadow-lg" style={{ top: menuPosition.top, right: menuPosition.right }}>
+            {booking.status === "pending" ? <Button variant="ghost" className="justify-start" onClick={() => runAction(() => onStatus("accepted"))}>Accept</Button> : null}
+            {booking.status === "pending" ? <Button variant="ghost" className="justify-start" onClick={() => runAction(onDecline)}>Decline</Button> : null}
+            {booking.status === "pending" ? <Button variant="ghost" className="justify-start" onClick={() => runAction(onPropose)}>Propose alternative</Button> : null}
+            {booking.status === "accepted" ? <Button variant="ghost" className="justify-start" onClick={() => runAction(() => onStatus("completed"))}>Mark completed</Button> : null}
+            {booking.status === "accepted" ? <Button variant="ghost" className="justify-start" onClick={() => runAction(() => onStatus("no_show"))}>Mark no-show</Button> : null}
+            {["accepted", "alternative_proposed"].includes(booking.status) ? <Button variant="ghost" className="justify-start" onClick={() => runAction(() => onStatus("cancelled"))}>Cancel</Button> : null}
+          </div>
+        </>
+      ) : null}
+    </>
   );
 }

@@ -2,7 +2,9 @@ import { trackEvent, trackVenueAnalyticsEvent } from "@/lib/analytics";
 import { getRequestedDateBucket, getPartySizeBucket } from "@/lib/bookingRequestAnalytics";
 import { mapBookingRequestRowToBookingRequest } from "@/lib/bookingRequestMappers";
 import { validateCreateBookingRequestInput } from "@/lib/bookingRequestValidation";
+import { generateConfirmationReference, generateCustomerAccessToken, getCustomerAccessTokenExpiry } from "@/lib/bookingTokens";
 import { supabase, supabaseConfigError } from "@/lib/supabase";
+import { checkVenueBookingRequestAvailability } from "@/services/bookingAvailabilityService";
 import type { BookingRequest, CreateBookingRequestInput } from "@/types/bookingRequests";
 import type { BookingRequestRow } from "@/types/database";
 
@@ -14,8 +16,15 @@ function ensureSupabase() {
 export async function createBookingRequest(input: { userId?: string | null; request: CreateBookingRequestInput; venue?: { city?: string | null; area?: string | null } }): Promise<BookingRequest> {
   const validation = validateCreateBookingRequestInput(input.request);
   if (!validation.isValid) throw new Error(Object.values(validation.errors)[0] ?? "Booking request is not valid.");
+  const availability = await checkVenueBookingRequestAvailability({ venueId: input.request.venueId, requestedDate: input.request.requestedDate, requestedTime: input.request.requestedTime, partySize: input.request.partySize });
+  if (!availability.isAvailable) {
+    trackEvent("booking_request_blocked_by_availability", { venueId: input.request.venueId, reason: availability.errors[0] ?? "unavailable", sourceSurface: input.request.sourceSurface ?? "venue_page" });
+    throw new Error(availability.errors[0] ?? "This booking request is not available.");
+  }
 
   const client = ensureSupabase();
+  const customerAccessToken = generateCustomerAccessToken();
+  const confirmationReference = generateConfirmationReference();
   const { data, error } = await client
     .from("booking_requests")
     .insert({
@@ -31,6 +40,9 @@ export async function createBookingRequest(input: { userId?: string | null; requ
       message: nullableText(input.request.message),
       source_surface: input.request.sourceSurface ?? "venue_page",
       status: "pending",
+      customer_access_token: customerAccessToken,
+      customer_access_token_expires_at: getCustomerAccessTokenExpiry(),
+      confirmation_reference: confirmationReference,
     })
     .select("*")
     .single();
@@ -51,6 +63,7 @@ export async function createBookingRequest(input: { userId?: string | null; requ
     sourceSurface: request.sourceSurface,
   };
   trackEvent("booking_request_submitted", safeMetadata);
+  trackEvent("booking_request_status_link_created", { venueId: request.venueId, sourceSurface: request.sourceSurface });
   trackVenueAnalyticsEvent({
     venueId: request.venueId,
     eventName: "venue_booking_request_submitted",

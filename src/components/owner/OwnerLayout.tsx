@@ -1,4 +1,4 @@
-import { ArrowLeft, BookOpenCheck, Building2, CreditCard, Home, Inbox, LayoutDashboard, Megaphone, Menu, PanelLeftClose, PanelLeftOpen, UserCircle, X } from "lucide-react";
+import { ArrowLeft, BookOpenCheck, Building2, CalendarCog, CreditCard, Home, Inbox, LayoutDashboard, Megaphone, Menu, PanelLeftClose, PanelLeftOpen, UserCircle, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -9,6 +9,7 @@ const OWNER_NAV_ITEMS = [
   { label: "Dashboard", compactLabel: "Dashboard", to: "/owner", icon: LayoutDashboard },
   { label: "My venues", compactLabel: "Venues", to: "/owner/venues", icon: Building2 },
   { label: "Bookings", compactLabel: "Bookings", to: "/owner/bookings", icon: BookOpenCheck },
+  { label: "Availability", compactLabel: "Availability", to: "/owner/venues/sheesha-test-lounge/availability", icon: CalendarCog },
   { label: "Enquiries", compactLabel: "Enquiries", to: "/owner/enquiries", icon: Inbox },
   { label: "Promotions", compactLabel: "Promotions", to: "/owner/promotions", icon: Megaphone },
   { label: "Pricing", compactLabel: "Pricing", to: "/owner/pricing", icon: CreditCard },

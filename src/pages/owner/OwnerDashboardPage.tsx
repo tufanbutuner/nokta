@@ -1,10 +1,12 @@
 import { useEffect, useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import { OwnerLayout } from "@/components/owner/OwnerLayout";
 import { OwnerNoVenuesState } from "@/components/owner/OwnerNoVenuesState";
 import { OwnerVenueCard } from "@/components/owner/OwnerVenueCard";
 import { PageMeta } from "@/components/seo/PageMeta";
 import { ErrorState } from "@/components/state/ErrorState";
 import { LoadingState } from "@/components/state/LoadingState";
+import { Button } from "@/components/ui/button";
 import { useAuth } from "@/context/AuthContext";
 import { trackEvent } from "@/lib/analytics";
 import { getMyClaimedVenues } from "@/services/ownerVenueService";
@@ -91,6 +93,24 @@ export function OwnerDashboardPage() {
               <Metric label="Directions" value={totals.directionsClicks} />
               <Metric label="Active promotions" value={totals.activeOffers + totals.activeFeatured} />
             </div>
+            <section className="flex flex-col gap-4 rounded-xl border bg-card p-4 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <h2 className="font-semibold">Booking calendar</h2>
+                <p className="mt-1 text-sm text-muted-foreground">See this week’s booking requests and accepted bookings in one place.</p>
+              </div>
+              <Button asChild>
+                <Link to="/owner/bookings?view=week">Open calendar</Link>
+              </Button>
+            </section>
+            <section className="flex flex-col gap-4 rounded-xl border bg-card p-4 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <h2 className="font-semibold">Availability</h2>
+                <p className="mt-1 text-sm text-muted-foreground">Set bookable days, time windows, notice periods and blackout dates.</p>
+              </div>
+              <Button asChild variant="outline">
+                <Link to={`/owner/venues/${venues[0]?.id}/availability`}>Manage availability</Link>
+              </Button>
+            </section>
             <div className="grid gap-4">
               {venues.map((venue) => <OwnerVenueCard key={venue.id} venue={venue} analytics={analytics[venue.id]} enquiries={enquiries[venue.id]} commercial={commercial[venue.id]} subscription={subscriptions[venue.id]} />)}
             </div>

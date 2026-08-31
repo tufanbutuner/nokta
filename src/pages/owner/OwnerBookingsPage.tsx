@@ -1,5 +1,10 @@
 import { useEffect, useMemo, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams, useSearchParams } from "react-router-dom";
+import { OwnerBookingCalendarLegend } from "@/components/owner/bookings/calendar/OwnerBookingCalendarLegend";
+import { OwnerBookingCalendarToolbar, getStatusesForPreset, type BookingCalendarStatusPreset } from "@/components/owner/bookings/calendar/OwnerBookingCalendarToolbar";
+import { OwnerBookingMonthView } from "@/components/owner/bookings/calendar/OwnerBookingMonthView";
+import { OwnerBookingTodayView } from "@/components/owner/bookings/calendar/OwnerBookingTodayView";
+import { OwnerBookingWeekView } from "@/components/owner/bookings/calendar/OwnerBookingWeekView";
 import { OwnerBookingFilters, type OwnerBookingFilterState } from "@/components/owner/bookings/OwnerBookingFilters";
 import { OwnerBookingRequestsTable } from "@/components/owner/bookings/OwnerBookingRequestsTable";
 import { OwnerBookingSummaryCards } from "@/components/owner/bookings/OwnerBookingSummaryCards";
@@ -11,14 +16,17 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useAuth } from "@/context/AuthContext";
 import { trackEvent } from "@/lib/analytics";
+import { addCalendarPeriod, getBookingCalendarDateRange, toDateInputValue } from "@/lib/bookingCalendarDates";
 import { formatBookingRequestDateTime } from "@/lib/bookingRequestLabels";
 import { acceptBookingRequest, cancelBookingRequest, declineBookingRequest, getOwnerBookingRequests, markBookingCompleted, markBookingNoShow, proposeBookingAlternative } from "@/services/ownerBookingRequestService";
 import { getMyClaimedVenues } from "@/services/ownerVenueService";
 import type { BookingRequest, BookingRequestStatus } from "@/types/bookingRequests";
+import type { BookingCalendarEvent, BookingCalendarView } from "@/types/bookingCalendar";
 import type { Venue } from "@/types/venue";
 
 export function OwnerBookingsPage() {
   const { venueId } = useParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const { user } = useAuth();
   const [venues, setVenues] = useState<Venue[]>([]);
   const [bookings, setBookings] = useState<BookingRequest[]>([]);
@@ -26,6 +34,9 @@ export function OwnerBookingsPage() {
   const [declineTarget, setDeclineTarget] = useState<BookingRequest | null>(null);
   const [proposeTarget, setProposeTarget] = useState<BookingRequest | null>(null);
   const [filters, setFilters] = useState<OwnerBookingFilterState>({ venueId: venueId ?? "all", status: "pending", date: "30d" });
+  const [view, setView] = useState<BookingCalendarView>(() => getInitialView(searchParams.get("view")));
+  const [anchorDate, setAnchorDate] = useState(() => getInitialDate(searchParams.get("date")));
+  const [statusPreset, setStatusPreset] = useState<BookingCalendarStatusPreset>("all_active");
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -51,6 +62,42 @@ export function OwnerBookingsPage() {
 
   const venuesById = useMemo(() => Object.fromEntries(venues.map((venue) => [venue.id, venue])), [venues]);
   const filtered = useMemo(() => filterBookings(bookings, filters), [bookings, filters]);
+  const calendarRange = useMemo(() => getBookingCalendarDateRange({ view, anchorDate }), [anchorDate, view]);
+  const calendarStatuses = useMemo(() => getStatusesForPreset(statusPreset), [statusPreset]);
+  const calendarEvents = useMemo(() => bookings
+    .filter((booking) => booking.requestedDate >= calendarRange.dateFrom && booking.requestedDate <= calendarRange.dateTo)
+    .filter((booking) => filters.venueId === "all" || booking.venueId === filters.venueId)
+    .filter((booking) => !calendarStatuses.length || calendarStatuses.includes(booking.status))
+    .map((booking) => mapBookingToCalendarEvent(booking, venuesById[booking.venueId]?.name ?? booking.venueId))
+    .sort((a, b) => `${a.date}T${a.time}`.localeCompare(`${b.date}T${b.time}`)), [bookings, calendarRange.dateFrom, calendarRange.dateTo, calendarStatuses, filters.venueId, venuesById]);
+
+  function updateUrl(nextView: BookingCalendarView, nextDate: Date) {
+    setSearchParams({ view: nextView, date: toDateInputValue(nextDate), ...(filters.venueId !== "all" ? { venueId: filters.venueId } : {}) });
+  }
+
+  function handleViewChange(nextView: BookingCalendarView) {
+    setView(nextView);
+    updateUrl(nextView, anchorDate);
+    trackEvent("owner_booking_calendar_view_changed", { view: nextView, dateRange: `${calendarRange.dateFrom}:${calendarRange.dateTo}` });
+  }
+
+  function handleAnchorDateChange(nextDate: Date) {
+    setAnchorDate(nextDate);
+    updateUrl(view, nextDate);
+    trackEvent("owner_booking_calendar_date_changed", { view, dateRange: `${calendarRange.dateFrom}:${calendarRange.dateTo}` });
+  }
+
+  function handleVenueChange(nextVenueId: string) {
+    setFilters((current) => ({ ...current, venueId: nextVenueId }));
+    trackEvent("owner_booking_calendar_filter_changed", { view, venueId: nextVenueId });
+  }
+
+  function handleEventClick(event: BookingCalendarEvent) {
+    const booking = bookings.find((item) => item.id === event.bookingRequestId);
+    if (!booking) return;
+    setSelected(booking);
+    trackEvent("owner_booking_calendar_event_opened", { view, eventStatus: event.status, venueId: event.venueId });
+  }
 
   async function handleStatus(booking: BookingRequest, status: BookingRequestStatus) {
     if (!user) return;
@@ -90,8 +137,29 @@ export function OwnerBookingsPage() {
         {isLoading ? <p className="text-sm text-muted-foreground">Loading booking requests...</p> : (
           <>
             <OwnerBookingSummaryCards bookings={bookings} />
-            <OwnerBookingFilters venues={venues} value={filters} onChange={setFilters} lockVenue={Boolean(venueId)} />
-            <OwnerBookingRequestsTable bookings={filtered} venuesById={venuesById} onView={setSelected} onStatus={handleStatus} onDecline={setDeclineTarget} onPropose={setProposeTarget} />
+            <OwnerBookingCalendarToolbar
+              view={view}
+              anchorDate={anchorDate}
+              venues={venues}
+              venueId={filters.venueId}
+              statusPreset={statusPreset}
+              onViewChange={handleViewChange}
+              onVenueChange={handleVenueChange}
+              onStatusPresetChange={setStatusPreset}
+              onPrevious={() => handleAnchorDateChange(addCalendarPeriod({ view, anchorDate, amount: -1 }))}
+              onNext={() => handleAnchorDateChange(addCalendarPeriod({ view, anchorDate, amount: 1 }))}
+              onToday={() => handleAnchorDateChange(new Date())}
+            />
+            <OwnerBookingCalendarLegend />
+            {view === "today" ? <OwnerBookingTodayView events={calendarEvents} onEventClick={handleEventClick} /> : null}
+            {view === "week" ? <OwnerBookingWeekView range={calendarRange} events={calendarEvents} onEventClick={handleEventClick} /> : null}
+            {view === "month" ? <OwnerBookingMonthView anchorDate={anchorDate} events={calendarEvents} onEventClick={handleEventClick} onDateClick={(date) => { const nextDate = new Date(`${date}T00:00:00`); setView("today"); handleAnchorDateChange(nextDate); }} /> : null}
+            {view === "list" ? (
+              <>
+                <OwnerBookingFilters venues={venues} value={filters} onChange={setFilters} lockVenue={Boolean(venueId)} />
+                <OwnerBookingRequestsTable bookings={filtered} venuesById={venuesById} onView={setSelected} onStatus={handleStatus} onDecline={setDeclineTarget} onPropose={setProposeTarget} />
+              </>
+            ) : null}
           </>
         )}
       </div>
@@ -100,6 +168,36 @@ export function OwnerBookingsPage() {
       {proposeTarget ? <ProposeDialog booking={proposeTarget} onClose={() => setProposeTarget(null)} onSave={handlePropose} /> : null}
     </OwnerLayout>
   );
+}
+
+function getInitialView(value: string | null): BookingCalendarView {
+  return value === "today" || value === "month" || value === "list" ? value : "week";
+}
+
+function getInitialDate(value: string | null) {
+  if (!value) return new Date();
+  const date = new Date(`${value}T00:00:00`);
+  return Number.isNaN(date.getTime()) ? new Date() : date;
+}
+
+function mapBookingToCalendarEvent(booking: BookingRequest, venueName: string): BookingCalendarEvent {
+  const startsAt = `${booking.requestedDate}T${booking.requestedTime}`;
+  return {
+    id: booking.id,
+    bookingRequestId: booking.id,
+    venueId: booking.venueId,
+    venueName,
+    customerName: booking.customerName,
+    partySize: booking.partySize,
+    date: booking.requestedDate,
+    time: booking.requestedTime,
+    startsAt,
+    endsAt: null,
+    status: booking.status,
+    occasion: booking.occasion,
+    sourceSurface: booking.sourceSurface,
+    isActionRequired: booking.status === "pending" || booking.status === "customer_accepted_alternative",
+  };
 }
 
 function filterBookings(bookings: BookingRequest[], filters: OwnerBookingFilterState) {
@@ -115,7 +213,7 @@ function filterBookings(bookings: BookingRequest[], filters: OwnerBookingFilterS
 }
 
 function BookingDetails({ booking, venue, onClose }: { booking: BookingRequest; venue?: Venue; onClose: () => void }) {
-  return <Modal title="Booking request" onClose={onClose}><div className="space-y-2 text-sm"><p><strong>Venue:</strong> {venue?.name ?? booking.venueId}</p><p><strong>Customer:</strong> {booking.customerName} • {booking.customerEmail}</p><p><strong>Phone:</strong> {booking.customerPhone ?? "Not provided"}</p><p><strong>Request:</strong> {booking.partySize} people • {formatBookingRequestDateTime(booking.requestedDate, booking.requestedTime)}</p><p><strong>Occasion:</strong> {booking.occasion ?? "General"}</p>{booking.message ? <p className="whitespace-pre-line"><strong>Message:</strong> {booking.message}</p> : null}{booking.proposedDate ? <p><strong>Alternative:</strong> {formatBookingRequestDateTime(booking.proposedDate, booking.proposedTime ?? "")}</p> : null}</div></Modal>;
+  return <Modal title="Booking request" onClose={onClose}><div className="space-y-2 text-sm"><p><strong>Venue:</strong> {venue?.name ?? booking.venueId}</p><p><strong>Reference:</strong> {booking.confirmationReference ?? "Not generated"}</p><p><strong>Customer:</strong> {booking.customerName} • {booking.customerEmail}</p><p><strong>Phone:</strong> {booking.customerPhone ?? "Not provided"}</p><p><strong>Request:</strong> {booking.partySize} people • {formatBookingRequestDateTime(booking.requestedDate, booking.requestedTime)}</p><p><strong>Occasion:</strong> {booking.occasion ?? "General"}</p>{booking.confirmedAt ? <p><strong>Confirmed:</strong> {new Date(booking.confirmedAt).toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short" })}</p> : null}{booking.message ? <p className="whitespace-pre-line"><strong>Message:</strong> {booking.message}</p> : null}{booking.ownerResponseMessage ? <p className="whitespace-pre-line"><strong>Owner response:</strong> {booking.ownerResponseMessage}</p> : null}{booking.proposedDate ? <p><strong>Alternative:</strong> {formatBookingRequestDateTime(booking.proposedDate, booking.proposedTime ?? "")}</p> : null}{booking.customerAlternativeResponseMessage ? <p className="whitespace-pre-line"><strong>Customer response:</strong> {booking.customerAlternativeResponseMessage}</p> : null}</div></Modal>;
 }
 
 function DeclineDialog({ booking, onClose, onSave }: { booking: BookingRequest; onClose: () => void; onSave: (message: string | null) => void }) {

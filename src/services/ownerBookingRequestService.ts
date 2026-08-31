@@ -25,7 +25,8 @@ export function acceptBookingRequest(input: OwnerBookingRequestActionInput): Pro
     status: "accepted",
     owner_response_message: nullableText(input.responseMessage),
     accepted_at: new Date().toISOString(),
-  }, "owner_booking_accepted", "venue_booking_request_accepted");
+    confirmed_at: new Date().toISOString(),
+  }, "owner_booking_accepted", "venue_booking_confirmed");
 }
 
 export function declineBookingRequest(input: OwnerBookingRequestActionInput): Promise<BookingRequest> {
@@ -33,6 +34,7 @@ export function declineBookingRequest(input: OwnerBookingRequestActionInput): Pr
     status: "declined",
     owner_response_message: nullableText(input.responseMessage),
     declined_at: new Date().toISOString(),
+    confirmed_at: null,
   }, "owner_booking_declined", "venue_booking_request_declined");
 }
 
@@ -43,6 +45,7 @@ export function proposeBookingAlternative(input: OwnerProposeAlternativeInput): 
     proposed_time: input.proposedTime,
     proposed_message: nullableText(input.proposedMessage),
     proposed_at: new Date().toISOString(),
+    confirmed_at: null,
   }, "owner_booking_alternative_proposed", "venue_booking_alternative_proposed");
 }
 
@@ -65,7 +68,7 @@ export function cancelBookingRequest(input: OwnerBookingRequestActionInput): Pro
 async function updateOwnerBookingRequest(
   bookingRequestId: string,
   ownerUserId: string,
-  updates: Partial<Record<"status" | "owner_response_message" | "proposed_date" | "proposed_time" | "proposed_message" | "accepted_at" | "declined_at" | "proposed_at" | "cancelled_at", unknown>>,
+  updates: Partial<Record<"status" | "owner_response_message" | "proposed_date" | "proposed_time" | "proposed_message" | "accepted_at" | "declined_at" | "proposed_at" | "cancelled_at" | "confirmed_at", unknown>>,
   eventName?: Parameters<typeof trackEvent>[0],
   venueEventName?: Parameters<typeof trackVenueAnalyticsEvent>[0]["eventName"],
 ) {
