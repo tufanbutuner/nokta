@@ -68,7 +68,7 @@ async function constructStripeEvent(input: { body: string; signature: string }) 
   throw new Error("Could not verify Stripe webhook signature.");
 }
 
-function mapStripeSubscriptionStatusToSheeshaStatus(status: string) {
+function mapStripeSubscriptionStatusToNoktaStatus(status: string) {
   switch (status) {
     case "trialing":
       return "trial";
@@ -206,15 +206,15 @@ async function syncSubscription(input: {
   const customerId = typeof input.subscription.customer === "string" ? input.subscription.customer : input.subscription.customer.id;
   const periodStart = item?.current_period_start ?? input.subscription.current_period_start;
   const periodEnd = item?.current_period_end ?? input.subscription.current_period_end;
-  const sheeshaStatus = mapStripeSubscriptionStatusToSheeshaStatus(input.subscription.status);
-  const hasPaidAccess = sheeshaStatus === "active" || sheeshaStatus === "trial" || sheeshaStatus === "past_due";
+  const noktaStatus = mapStripeSubscriptionStatusToNoktaStatus(input.subscription.status);
+  const hasPaidAccess = noktaStatus === "active" || noktaStatus === "trial" || noktaStatus === "past_due";
   const cancelsAtPeriodEnd = input.subscription.cancel_at_period_end || Boolean(input.subscription.cancel_at);
 
   await input.supabase.from("venue_subscriptions").upsert(
     {
       venue_id: venueId,
       plan,
-      status: sheeshaStatus,
+      status: noktaStatus,
       billing_provider: "stripe",
       billing_customer_id: customerId,
       billing_subscription_id: input.subscription.id,
@@ -236,7 +236,7 @@ async function syncSubscription(input: {
     .from("venues")
     .update({
       partner_tier: hasPaidAccess ? plan : "none",
-      monetisation_status: sheeshaStatus === "cancelled" ? "churned" : hasPaidAccess ? "paying" : "not-contacted",
+      monetisation_status: noktaStatus === "cancelled" ? "churned" : hasPaidAccess ? "paying" : "not-contacted",
       updated_at: new Date().toISOString(),
     })
     .eq("id", venueId);

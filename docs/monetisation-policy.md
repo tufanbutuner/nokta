@@ -1,4 +1,4 @@
-# Sheesha Monetisation Policy
+# Nokta Monetisation Policy
 
 This is internal guidance for future commercial work.
 

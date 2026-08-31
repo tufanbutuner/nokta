@@ -1,6 +1,6 @@
 # Stripe Subscriptions
 
-Sprint 30 adds Stripe Checkout for paid Sheesha venue plans.
+Sprint 30 adds Stripe Checkout for paid Nokta venue plans.
 
 Stripe is the billing source of truth. `public.venue_subscriptions` is the app access-control mirror used by feature gates.
 
@@ -15,8 +15,8 @@ VITE_STRIPE_PUBLISHABLE_KEY=pk_test_or_live_value
 Supabase Edge Functions:
 
 ```env
-APP_URL=https://sheesha-lovat.vercel.app
-LIVE_APP_URL=https://sheesha-lovat.vercel.app
+APP_URL=https://nokta.uk
+LIVE_APP_URL=https://nokta.uk
 TEST_APP_URL=http://127.0.0.1:5173
 
 STRIPE_LIVE_SECRET_KEY=sk_live_value

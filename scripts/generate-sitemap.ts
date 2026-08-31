@@ -8,8 +8,8 @@ import { SUPPORTED_CITIES } from "../src/data/supportedCities";
 config({ path: ".env.local" });
 config();
 
-const SITE_URL = (process.env.VITE_PUBLIC_SITE_URL || "https://sheesha-lovat.vercel.app").replace(/\/$/, "");
-const STATIC_ROUTES = ["/", "/discover", "/recommend", "/saved", "/suggest", "/sign-in", "/sign-up", "/privacy", "/terms"];
+const SITE_URL = (process.env.VITE_PUBLIC_SITE_URL || process.env.VITE_APP_URL || "https://nokta.uk").replace(/\/$/, "");
+const STATIC_ROUTES = ["/", "/discover", "/privacy", "/terms"];
 
 async function main() {
   const venueSlugs = await getVenueSlugs();

@@ -1,6 +1,6 @@
 # Subscription Foundation
 
-Sprint 28 adds Sheesha's manual billing and subscription foundation. Stripe checkout is not implemented yet.
+Sprint 28 adds Nokta's manual billing and subscription foundation. Stripe checkout is not implemented yet.
 
 ## Plans
 

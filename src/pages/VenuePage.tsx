@@ -29,6 +29,7 @@ import { formatVenuePrimaryCategory, formatVenueSecondaryCategory } from "@/lib/
 import { getVenueImage, getVenueImages } from "@/lib/venueImages";
 import { getVenueRatingSummary } from "@/services/reviewService";
 import { getApprovedVenueMedia } from "@/services/ownerVenueMediaService";
+import { brandConfig } from "@/config/brand";
 import type { Venue } from "@/types/venue";
 import { Camera, ChevronLeft, ChevronRight, Clock, ExternalLink, Flag, MapPin, Navigation, Phone, Share2, Sofa, Star, Utensils, X } from "lucide-react";
 import { useEffect, useState, type FormEvent } from "react";
@@ -354,7 +355,7 @@ function ActionBar({ venue, shareLabel, onShare }: { venue: Venue; shareLabel: s
         {shareLabel}
       </Button>
       <Button asChild variant="outline" className={actionButtonClass}>
-        <a href={`mailto:hello@sheesh.london?subject=${encodeURIComponent(`Venue report: ${venue.name}`)}`}>
+        <a href={`mailto:${brandConfig.supportEmail}?subject=${encodeURIComponent(`Venue report: ${venue.name}`)}`}>
           <Flag className="mr-2 h-4 w-4" />
           Report
         </a>

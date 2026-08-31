@@ -219,7 +219,7 @@ async function sendNotification(supabase: ReturnType<typeof createAdminClient>, 
   }
 
   const email = await buildEmail(supabase, notification);
-  const fromName = Deno.env.get("EMAIL_FROM_NAME") ?? "Sheesha";
+  const fromName = Deno.env.get("EMAIL_FROM_NAME") ?? "Nokta";
   const fromAddress = Deno.env.get("EMAIL_FROM_ADDRESS");
   if (!fromAddress) {
     console.log("send-notification-email skipped", { notificationId: notification.id, reason: "missing_from_address" });
@@ -308,16 +308,16 @@ function buildEnquiryEmail(notification: NotificationRow, enquiry: Record<string
 }
 
 function buildGenericEmail(notification: NotificationRow) {
-  return renderEmail({ subject: clean(notification.notification_type), lines: ["There is a new Sheesha notification."], actionUrl: notification.action_url ? absoluteUrl(notification.action_url) : null, actionLabel: notification.action_label });
+  return renderEmail({ subject: clean(notification.notification_type), lines: ["There is a new Nokta notification."], actionUrl: notification.action_url ? absoluteUrl(notification.action_url) : null, actionLabel: notification.action_label });
 }
 
 function renderEmail(input: { subject: string; lines: string[]; actionUrl?: string | null; actionLabel?: string | null; owner?: boolean }) {
   const lines = input.lines.filter(Boolean).map((line) => truncate(clean(line), 700));
-  const actionHtml = input.actionUrl ? `<p style="margin:28px 0 8px"><a href="${escapeHtml(input.actionUrl)}" style="display:inline-block;background:#23201d;color:#fff;text-decoration:none;border-radius:10px;padding:12px 16px;font-weight:700">${escapeHtml(input.actionLabel ?? "Open Sheesha")}</a></p><p style="font-size:12px;color:#766b60;word-break:break-all">${escapeHtml(input.actionUrl)}</p>` : "";
+  const actionHtml = input.actionUrl ? `<p style="margin:28px 0 8px"><a href="${escapeHtml(input.actionUrl)}" style="display:inline-block;background:#23201d;color:#fff;text-decoration:none;border-radius:10px;padding:12px 16px;font-weight:700">${escapeHtml(input.actionLabel ?? "Open Nokta")}</a></p><p style="font-size:12px;color:#766b60;word-break:break-all">${escapeHtml(input.actionUrl)}</p>` : "";
   const htmlLines = lines.map((line) => `<p style="margin:0 0 10px">${escapeHtml(line)}</p>`).join("");
-  const footer = input.owner ? "You received this email because you manage a venue on Sheesha." : "You received this email because you used Sheesha for a booking or venue enquiry.";
-  const html = `<!doctype html><html><body style="margin:0;background:#f7f3ed;font-family:Arial,sans-serif;color:#23201d"><main style="max-width:620px;margin:0 auto;padding:32px 18px"><div style="font-size:22px;font-weight:800;letter-spacing:-0.5px;margin-bottom:22px">sheesh.</div><section style="background:#fff;border:1px solid #ebe2d7;border-radius:16px;padding:28px"><h1 style="margin:0 0 14px;font-size:26px;line-height:1.2">${escapeHtml(input.subject)}</h1><div style="font-size:15px;line-height:1.7;color:#423b35">${htmlLines}</div>${actionHtml}</section><p style="margin:18px 4px 0;font-size:12px;line-height:1.6;color:#766b60">${escapeHtml(footer)}</p></main></body></html>`;
-  const text = [input.subject, "", ...lines, ...(input.actionUrl ? ["", input.actionLabel ?? "Open Sheesha", input.actionUrl] : []), "", footer].join("\n");
+  const footer = input.owner ? "You received this email because you manage a venue on Nokta." : "You received this email because you used Nokta for a booking or venue enquiry.";
+  const html = `<!doctype html><html><body style="margin:0;background:#f7f3ed;font-family:Arial,sans-serif;color:#23201d"><main style="max-width:620px;margin:0 auto;padding:32px 18px"><div style="font-size:22px;font-weight:800;letter-spacing:-0.5px;margin-bottom:22px">nokta</div><section style="background:#fff;border:1px solid #ebe2d7;border-radius:16px;padding:28px"><h1 style="margin:0 0 14px;font-size:26px;line-height:1.2">${escapeHtml(input.subject)}</h1><div style="font-size:15px;line-height:1.7;color:#423b35">${htmlLines}</div>${actionHtml}</section><p style="margin:18px 4px 0;font-size:12px;line-height:1.6;color:#766b60">${escapeHtml(footer)}</p></main></body></html>`;
+  const text = [input.subject, "", ...lines, ...(input.actionUrl ? ["", input.actionLabel ?? "Open Nokta", input.actionUrl] : []), "", footer].join("\n");
   return { subject: input.subject, html, text };
 }
 

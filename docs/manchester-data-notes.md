@@ -1,6 +1,6 @@
 # Manchester Data Notes
 
-Sprint 20 adds Manchester as an active Sheesha city.
+Sprint 20 adds Manchester as an active Nokta city.
 
 ## Venues Added
 

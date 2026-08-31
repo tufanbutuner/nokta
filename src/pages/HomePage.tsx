@@ -1,7 +1,7 @@
 import { useMemo, useState, type FormEvent } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import type { LucideIcon } from "lucide-react";
-import { ArrowRight, BookmarkCheck, ChevronRight, MapPin, MessageCircle, Search, Sparkles, Star } from "lucide-react";
+import { ArrowRight, BookmarkCheck, ChevronRight, MapPin, MessageCircle, Search, Star } from "lucide-react";
 import { HomepageFeaturedVenues } from "@/components/featured/HomepageFeaturedVenues";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { HomepageOffersSection } from "@/components/offers/HomepageOffersSection";
@@ -102,8 +102,8 @@ export function HomePage() {
   return (
     <main>
       <PageMeta
-        title={`Discover Social Venues Across the UK | ${brandConfig.appName}`}
-        description="Find lounges, restaurants, bars and cafes across the UK. Discover venue details, photos, opening info and request bookings, starting with shisha lounges."
+        title={`${brandConfig.appName} - Discover Social Venues Across the UK`}
+        description="Find lounges, restaurants, bars and cafes across the UK, starting with shisha lounges. View venue details, photos, opening info and request bookings."
         canonicalPath="/"
       />
       <section>
@@ -304,7 +304,7 @@ export function HomePage() {
         </section>
 
         <section className="overflow-hidden rounded-3xl bg-foreground px-6 py-12 text-center text-background sm:px-10">
-          <Sparkles className="mx-auto h-8 w-8 text-clay-accent" />
+          <img src="/nokta-dot-white-transparent.svg" alt="" className="mx-auto h-20 w-20 sm:h-24 sm:w-24" aria-hidden="true" />
           <h2 className="mx-auto mt-4 max-w-xl text-3xl font-semibold sm:text-4xl">Ready to find your spot?</h2>
           <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-background/70">
             Explore venues, save your shortlist and keep the next plan easy to choose.

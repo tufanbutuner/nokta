@@ -1,6 +1,6 @@
-# Sheesha UK expansion plan
+# Nokta UK expansion plan
 
-Sheesha is expanding from a London-first product into a UK-wide shisha venue discovery platform, city by city.
+Nokta is expanding from a London-first product into a UK-wide shisha venue discovery platform, city by city.
 
 ## Positioning
 

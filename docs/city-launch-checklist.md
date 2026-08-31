@@ -1,6 +1,6 @@
 # City Launch Checklist
 
-Use this before making a city active in Sheesha.
+Use this before making a city active in Nokta.
 
 ## Launch status
 

@@ -1,6 +1,6 @@
 # Birmingham Data Notes
 
-Sprint 19 adds Birmingham as the first active non-London Sheesha city.
+Sprint 19 adds Birmingham as the first active non-London Nokta city.
 
 ## Venues Added
 

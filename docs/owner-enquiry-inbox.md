@@ -16,7 +16,7 @@ Owners can view customer contact details, enquiry message, preferred date/time, 
 
 Owners can update enquiry status to contacted, responded, converted, closed or spam. They can also add venue response and owner notes.
 
-Owner notes are visible to the venue account and Sheesha admins. Admin notes remain admin-only.
+Owner notes are visible to the venue account and Nokta admins. Admin notes remain admin-only.
 
 ## Admin Oversight
 
@@ -24,7 +24,7 @@ Admins retain full enquiry oversight and controls. The admin enquiry dashboard s
 
 ## Out Of Scope
 
-Enquiries are not confirmed bookings. This sprint does not add in-app messaging, email notifications, payment/deposit handling, instant booking or customer replies inside Sheesha.
+Enquiries are not confirmed bookings. This sprint does not add in-app messaging, email notifications, payment/deposit handling, instant booking or customer replies inside Nokta.
 
 ## Analytics
 

@@ -1,12 +1,12 @@
-# Sheesha Analytics Strategy
+# Nokta Analytics Strategy
 
-Sheesha uses three analytics layers:
+Nokta uses three analytics layers:
 
 - Vercel Analytics is for basic site-level traffic and page overview.
 - PostHog is for product analytics, route views, funnels, user journeys, feature flags and session-level product insight.
 - Supabase is the source of truth for venue commercial analytics.
 
-Venue reporting uses Supabase because it needs to be queryable by venue, city and date range, controlled by Sheesha, safe to expose later to venue owners, and useful for monetisation reporting.
+Venue reporting uses Supabase because it needs to be queryable by venue, city and date range, controlled by Nokta, safe to expose later to venue owners, and useful for monetisation reporting.
 
 Privacy rules:
 

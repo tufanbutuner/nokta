@@ -45,7 +45,7 @@ function getPlanFromStripePriceId(priceId: string | null | undefined, mode: Stri
   return null;
 }
 
-function mapStripeSubscriptionStatusToSheeshaStatus(status: string) {
+function mapStripeSubscriptionStatusToNoktaStatus(status: string) {
   switch (status) {
     case "trialing":
       return "trial";
@@ -100,9 +100,9 @@ Deno.serve(async (request) => {
     const item = stripeSubscription.items.data[0];
     const priceId = item?.price.id ?? null;
     const plan = getPlanFromStripePriceId(priceId, stripeMode);
-    if (!plan) return jsonResponse({ error: "Could not map Stripe price to a Sheesha plan." }, { status: 400 });
+    if (!plan) return jsonResponse({ error: "Could not map Stripe price to a Nokta plan." }, { status: 400 });
 
-    const status = mapStripeSubscriptionStatusToSheeshaStatus(stripeSubscription.status);
+    const status = mapStripeSubscriptionStatusToNoktaStatus(stripeSubscription.status);
     const hasPaidAccess = status === "active" || status === "trial" || status === "past_due";
     const customerId = typeof stripeSubscription.customer === "string" ? stripeSubscription.customer : stripeSubscription.customer.id;
     const productId = typeof item?.price.product === "string" ? item.price.product : item?.price.product?.id ?? null;

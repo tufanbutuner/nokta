@@ -2,7 +2,7 @@
 
 Featured placements are paid or promotional visibility surfaces. They must always be clearly labelled as Featured.
 
-Featured does not mean Sheesha recommends the venue, has verified every detail, or ranks it above organic results.
+Featured does not mean Nokta recommends the venue, has verified every detail, or ranks it above organic results.
 
 Do not feature poor-quality venues, unverified venues, or venues with unsafe or materially incomplete data.
 

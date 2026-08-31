@@ -3,6 +3,8 @@ Allow: /
 
 Disallow: /admin/
 Disallow: /account
+Disallow: /owner/
+Disallow: /booking-status/
 Disallow: /saved
 
-Sitemap: https://sheesha-lovat.vercel.app/sitemap.xml
+Sitemap: https://nokta.uk/sitemap.xml

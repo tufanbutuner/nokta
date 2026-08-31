@@ -1,13 +1,13 @@
 # Booking Request Workflow
 
-Sprint 33 adds request-based booking for Sheesha venues.
+Sprint 33 adds request-based booking for Nokta venues.
 
 ## Product Model
 
 - Customers request a booking with date, time and party size.
 - The booking is not confirmed until the venue accepts it.
 - Owners can accept, decline or propose another time.
-- Sheesha is not doing live availability, instant confirmation, deposits or payments for bookings yet.
+- Nokta is not doing live availability, instant confirmation, deposits or payments for bookings yet.
 - Email notifications are not part of this sprint.
 
 ## Data And Privacy

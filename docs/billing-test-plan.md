@@ -42,4 +42,4 @@ Use Stripe test mode before enabling live payments.
 
 ## Plan Changes
 
-Plan changes should be handled in Stripe Billing Portal once portal configuration allows subscription updates. The webhook should sync the new price ID back to the Sheesha plan.
+Plan changes should be handled in Stripe Billing Portal once portal configuration allows subscription updates. The webhook should sync the new price ID back to the Nokta plan.

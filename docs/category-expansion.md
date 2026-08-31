@@ -1,6 +1,6 @@
 # Category Expansion
 
-Sheesha launches with shisha lounges and late-night lounge venues, but the product should remain flexible enough for restaurants, bars, cafes, dessert spots, private hire venues and other social venues.
+Nokta launches with shisha lounges and late-night lounge venues, but the product should remain flexible enough for restaurants, bars, cafes, dessert spots, private hire venues and other social venues.
 
 Global copy should describe social venue discovery and booking. Shisha-specific copy belongs on launch-category, city/category and venue surfaces where the data genuinely supports it.
 

@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { brandConfig } from "@/config/brand";
 
 interface PageMetaProps {
   title: string;
@@ -7,7 +8,7 @@ interface PageMetaProps {
   imageUrl?: string;
 }
 
-const FALLBACK_SITE_URL = "https://sheesha-lovat.vercel.app";
+const FALLBACK_SITE_URL = "https://nokta.uk";
 
 export function PageMeta({ title, description, canonicalPath, imageUrl }: PageMetaProps) {
   const siteUrl = getSiteUrl();
@@ -24,11 +25,15 @@ export function PageMeta({ title, description, canonicalPath, imageUrl }: PageMe
       <meta property="og:type" content="website" />
       {canonicalUrl ? <meta property="og:url" content={canonicalUrl} /> : null}
       {image ? <meta property="og:image" content={image} /> : null}
+      <meta name="twitter:card" content={image ? "summary_large_image" : "summary"} />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="application-name" content={brandConfig.appName} />
     </Helmet>
   );
 }
 
 function getSiteUrl() {
-  const envSiteUrl = import.meta.env.VITE_PUBLIC_SITE_URL as string | undefined;
+  const envSiteUrl = (import.meta.env.VITE_PUBLIC_SITE_URL || import.meta.env.VITE_APP_URL) as string | undefined;
   return (envSiteUrl || FALLBACK_SITE_URL).replace(/\/$/, "");
 }

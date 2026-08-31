@@ -1,6 +1,6 @@
 # Leicester Data Notes
 
-Sprint 20 adds Leicester as an active Sheesha city.
+Sprint 20 adds Leicester as an active Nokta city.
 
 ## Venues Added
 
