@@ -11,8 +11,13 @@ export function getBookingTimeOptions(input: { availability: VenueBookingAvailab
     .filter((window) => window.isEnabled && window.dayOfWeek === dayOfWeek)
     .flatMap((window) => buildOptions(window.startTime, window.endTime, interval))
     .filter((time) => new Date(`${input.selectedDate}T${time}`).getTime() >= minTime)
+    .filter((time) => !input.availability.bookedSlots.some((slot) => slot.requestedDate === input.selectedDate && normaliseTime(slot.requestedTime) === time))
     .filter((time, index, times) => times.indexOf(time) === index)
     .sort();
+}
+
+function normaliseTime(time: string) {
+  return time.slice(0, 5);
 }
 
 function buildOptions(startTime: string, endTime: string, intervalMinutes: number) {

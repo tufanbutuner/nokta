@@ -2,6 +2,8 @@ import { RequireAuth } from "@/components/auth/RequireAuth";
 import { RequireAdmin } from "@/components/auth/RequireAdmin";
 import { AppLayout } from "@/components/layout/AppLayout";
 import { AccountPage } from "@/pages/AccountPage";
+import { MyBookingsPage } from "@/pages/account/MyBookingsPage";
+import { NotificationsPage } from "@/pages/account/NotificationsPage";
 import { DataQualityPage } from "@/pages/admin/DataQualityPage";
 import { AdminFeaturedPlacementsPage } from "@/pages/admin/AdminFeaturedPlacementsPage";
 import { AdminMediaReviewPage } from "@/pages/admin/AdminMediaReviewPage";
@@ -79,6 +81,22 @@ export const router = createBrowserRouter([
         element: (
           <RequireAuth>
             <AccountPage />
+          </RequireAuth>
+        ),
+      },
+      {
+        path: "/account/bookings",
+        element: (
+          <RequireAuth>
+            <MyBookingsPage />
+          </RequireAuth>
+        ),
+      },
+      {
+        path: "/account/notifications",
+        element: (
+          <RequireAuth>
+            <NotificationsPage />
           </RequireAuth>
         ),
       },

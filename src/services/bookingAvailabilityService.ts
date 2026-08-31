@@ -2,7 +2,7 @@ import { mapVenueBookingBlackoutDateRow, mapVenueBookingSettingsRow, mapVenueBoo
 import { checkBookingAvailability } from "@/lib/bookingAvailabilityValidation";
 import { supabase, supabaseConfigError } from "@/lib/supabase";
 import type { BookingAvailabilityCheckResult, VenueBookingAvailability } from "@/types/bookingAvailability";
-import type { VenueBookingBlackoutDateRow, VenueBookingSettingsRow, VenueBookingWindowRow } from "@/types/database";
+import type { BookingRequestRow, VenueBookingBlackoutDateRow, VenueBookingSettingsRow, VenueBookingWindowRow } from "@/types/database";
 
 function ensureSupabase() {
   if (!supabase) throw new Error(supabaseConfigError ?? "Supabase is not configured.");
@@ -11,19 +11,30 @@ function ensureSupabase() {
 
 export async function getVenueBookingAvailability(venueId: string): Promise<VenueBookingAvailability | null> {
   const client = ensureSupabase();
-  const [{ data: settings, error: settingsError }, { data: windows, error: windowsError }, { data: blackoutDates, error: blackoutError }] = await Promise.all([
+  const [{ data: settings, error: settingsError }, { data: windows, error: windowsError }, { data: blackoutDates, error: blackoutError }, { data: bookedSlots, error: bookedSlotsError }] = await Promise.all([
     client.from("venue_booking_settings").select("*").eq("venue_id", venueId).maybeSingle(),
     client.from("venue_booking_windows").select("*").eq("venue_id", venueId).order("day_of_week").order("start_time"),
     client.from("venue_booking_blackout_dates").select("*").eq("venue_id", venueId).order("blackout_date"),
+    client
+      .from("booking_requests")
+      .select("requested_date, requested_time")
+      .eq("venue_id", venueId)
+      .in("status", ["accepted", "customer_accepted_alternative"])
+      .gte("requested_date", new Date().toISOString().slice(0, 10)),
   ]);
   if (settingsError) throw new Error(`Could not load booking settings: ${settingsError.message}`);
   if (windowsError) throw new Error(`Could not load booking windows: ${windowsError.message}`);
   if (blackoutError) throw new Error(`Could not load blackout dates: ${blackoutError.message}`);
+  if (bookedSlotsError) throw new Error(`Could not load booked slots: ${bookedSlotsError.message}`);
   if (!settings) return null;
   return {
     settings: mapVenueBookingSettingsRow(settings as VenueBookingSettingsRow),
     windows: ((windows ?? []) as VenueBookingWindowRow[]).map(mapVenueBookingWindowRow),
     blackoutDates: ((blackoutDates ?? []) as VenueBookingBlackoutDateRow[]).map(mapVenueBookingBlackoutDateRow),
+    bookedSlots: ((bookedSlots ?? []) as Pick<BookingRequestRow, "requested_date" | "requested_time">[]).map((slot) => ({
+      requestedDate: slot.requested_date,
+      requestedTime: slot.requested_time,
+    })),
   };
 }
 

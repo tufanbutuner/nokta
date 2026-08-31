@@ -44,6 +44,11 @@ export function checkBookingAvailability(input: BookingAvailabilityCheckInput): 
   const enabledWindows = input.availability.windows.filter((window) => window.isEnabled && window.dayOfWeek === dayOfWeek);
   if (!enabledWindows.length) errors.push(`This venue is not accepting booking requests on ${formatDayOfWeek(dayOfWeek)}.`);
   if (enabledWindows.length && !enabledWindows.some((window) => input.requestedTime >= window.startTime && input.requestedTime <= window.endTime)) errors.push("Please choose a time within this venue's booking request hours.");
+  if (input.availability.bookedSlots.some((slot) => slot.requestedDate === input.requestedDate && normaliseTime(slot.requestedTime) === normaliseTime(input.requestedTime))) errors.push("This time has already been booked. Please choose another time.");
 
   return { isAvailable: errors.length === 0, errors, warnings };
+}
+
+function normaliseTime(time: string) {
+  return time.slice(0, 5);
 }

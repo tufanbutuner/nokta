@@ -273,6 +273,68 @@ export interface VenueBookingBlackoutDateRow {
   updated_at: string;
 }
 
+export interface NotificationRow {
+  id: string;
+  recipient_user_id: string | null;
+  recipient_email: string | null;
+  recipient_type: "owner" | "customer" | "admin";
+  notification_type:
+    | "booking_request_submitted"
+    | "booking_request_accepted"
+    | "booking_request_declined"
+    | "booking_alternative_proposed"
+    | "booking_alternative_accepted"
+    | "booking_alternative_declined"
+    | "booking_cancelled"
+    | "enquiry_submitted"
+    | "media_upload_approved"
+    | "media_upload_rejected"
+    | "promotion_request_approved"
+    | "promotion_request_rejected"
+    | "venue_update_approved"
+    | "venue_update_rejected"
+    | "billing_subscription_updated"
+    | "system";
+  title: string;
+  body: string;
+  action_label: string | null;
+  action_url: string | null;
+  related_entity_type: "booking_request" | "venue_enquiry" | "venue_media" | "promotion_request" | "venue_update_request" | "subscription" | "venue" | null;
+  related_entity_id: string | null;
+  venue_id: string | null;
+  booking_request_id: string | null;
+  enquiry_id: string | null;
+  delivery_channels: string[];
+  read_at: string | null;
+  dismissed_at: string | null;
+  created_at: string;
+}
+
+export interface NotificationDeliveryLogRow {
+  id: string;
+  notification_id: string;
+  channel: "in_app" | "email";
+  status: "pending" | "sent" | "delivered" | "failed" | "skipped";
+  provider: string | null;
+  provider_message_id: string | null;
+  error_message: string | null;
+  attempted_at: string | null;
+  delivered_at: string | null;
+  created_at: string;
+}
+
+export interface NotificationPreferencesRow {
+  id: string;
+  user_id: string;
+  booking_notifications_in_app: boolean;
+  booking_notifications_email: boolean;
+  enquiry_notifications_in_app: boolean;
+  enquiry_notifications_email: boolean;
+  marketing_notifications_email: boolean;
+  created_at: string;
+  updated_at: string;
+}
+
 export interface OwnerPromotionRequestRow {
   id: string;
   venue_id: string;

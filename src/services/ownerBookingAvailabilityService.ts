@@ -24,6 +24,7 @@ export async function getOwnerVenueBookingAvailability(input: { ownerUserId: str
     settings: mapVenueBookingSettingsRow(settings as VenueBookingSettingsRow),
     windows: ((windows ?? []) as VenueBookingWindowRow[]).map(mapVenueBookingWindowRow),
     blackoutDates: ((blackoutDates ?? []) as VenueBookingBlackoutDateRow[]).map(mapVenueBookingBlackoutDateRow),
+    bookedSlots: [],
   };
 }
 

@@ -2,6 +2,7 @@ import { ArrowLeft, BookOpenCheck, Building2, CalendarCog, CreditCard, Home, Inb
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { NotificationBell } from "@/components/notifications/NotificationBell";
 import { useAuth } from "@/context/AuthContext";
 import { cn } from "@/lib/utils";
 
@@ -34,9 +35,12 @@ export function OwnerLayout({ children }: { children: React.ReactNode }) {
           <div className="border-b bg-sheesh-ink text-clay-50 shadow-sm">
             <div className="flex h-14 items-center justify-between gap-3 px-4">
               <Link to="/" className="font-brand text-xl font-bold tracking-[-0.5px] text-clay-400">sheesh.</Link>
-              <Button type="button" variant="ghost" size="icon" className="text-clay-50/80 hover:bg-clay-400/10 hover:text-clay-200" aria-label={isMobileOpen ? "Close owner menu" : "Open owner menu"} onClick={() => setIsMobileOpen((next) => !next)}>
-                {isMobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-              </Button>
+              <div className="flex items-center gap-2">
+                <NotificationBell className="relative text-clay-50/80" />
+                <Button type="button" variant="ghost" size="icon" className="text-clay-50/80 hover:bg-clay-400/10 hover:text-clay-200" aria-label={isMobileOpen ? "Close owner menu" : "Open owner menu"} onClick={() => setIsMobileOpen((next) => !next)}>
+                  {isMobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+                </Button>
+              </div>
             </div>
             {isMobileOpen ? (
               <div className="max-h-[calc(100vh-3.5rem)] overflow-y-auto border-t border-white/10 px-3 py-3">
@@ -60,16 +64,19 @@ export function OwnerLayout({ children }: { children: React.ReactNode }) {
             <NavLink to="/" className={cn("font-brand text-xl font-bold tracking-[-0.5px] text-clay-400", isCollapsed ? "sr-only" : "")}>
               sheesh.
             </NavLink>
-            <Button
-              type="button"
-              variant="ghost"
-              size="icon"
-              className="h-8 w-8 shrink-0 text-clay-50/60 hover:bg-clay-400/10 hover:text-clay-200"
-              aria-label={isCollapsed ? "Expand owner sidebar" : "Collapse owner sidebar"}
-              onClick={() => setIsCollapsed((next) => !next)}
-            >
-              {isCollapsed ? <PanelLeftOpen className="h-[15px] w-[15px]" /> : <PanelLeftClose className="h-[15px] w-[15px]" />}
-            </Button>
+            <div className="flex items-center gap-1">
+              {!isCollapsed ? <NotificationBell align="left" className="relative text-clay-50/70" /> : null}
+              <Button
+                type="button"
+                variant="ghost"
+                size="icon"
+                className="h-8 w-8 shrink-0 text-clay-50/60 hover:bg-clay-400/10 hover:text-clay-200"
+                aria-label={isCollapsed ? "Expand owner sidebar" : "Collapse owner sidebar"}
+                onClick={() => setIsCollapsed((next) => !next)}
+              >
+                {isCollapsed ? <PanelLeftOpen className="h-[15px] w-[15px]" /> : <PanelLeftClose className="h-[15px] w-[15px]" />}
+              </Button>
+            </div>
           </div>
           <div className={cn("mt-8 text-[10px] font-semibold uppercase tracking-[2px] text-[#8a7e7266]", isCollapsed ? "sr-only" : "")}>Owner</div>
           <nav className="mt-6 grid gap-1">

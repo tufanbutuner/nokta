@@ -1,11 +1,12 @@
 import { NavLocationControl } from "@/components/location/NavLocationControl";
+import { NotificationBell } from "@/components/notifications/NotificationBell";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetClose, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { useAuth } from "@/context/AuthContext";
 import { useVenuePreferences } from "@/context/VenuePreferencesContext";
 import { useIsAdmin } from "@/hooks/useIsAdmin";
 import { cn } from "@/lib/utils";
-import { Activity, BadgeCheck, BarChart3, Building2, Camera, ChevronDown, CreditCard, GitBranch, Inbox, LayoutDashboard, Megaphone, Menu, PenLine, ShieldCheck, Sparkles, Tag, UserCircle } from "lucide-react";
+import { Activity, BadgeCheck, BarChart3, Bell, BookOpenCheck, Building2, Camera, ChevronDown, CreditCard, GitBranch, Inbox, LayoutDashboard, Megaphone, Menu, PenLine, ShieldCheck, Sparkles, Tag, UserCircle } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 
@@ -76,12 +77,13 @@ export function Header() {
               <NavLink reloadDocument to="/suggest" className={navLinkClass}>
                 Suggest
               </NavLink>
-              <NavLocationControl />
             </div>
           </div>
           <nav className="hidden items-center gap-6 text-sm text-muted-foreground md:flex">
+            <NavLocationControl />
+            <NotificationBell />
             {user ? (
-              <div ref={accountMenuRef} className="relative border-l pl-5">
+              <div ref={accountMenuRef} className="relative">
                 <Button
                   type="button"
                   variant="ghost"
@@ -100,9 +102,17 @@ export function Header() {
                     role="menu"
                     className="absolute right-0 top-12 z-[1400] max-h-[calc(100vh-5rem)] w-64 overflow-y-auto rounded-xl border bg-card p-2 text-card-foreground shadow-xl"
                   >
-                    <NavLink reloadDocument to="/account" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
+                    <NavLink reloadDocument end to="/account" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
                       <UserCircle className="h-4 w-4" />
                       Account settings
+                    </NavLink>
+                    <NavLink reloadDocument to="/account/bookings" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
+                      <BookOpenCheck className="h-4 w-4" />
+                      My bookings
+                    </NavLink>
+                    <NavLink reloadDocument to="/account/notifications" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
+                      <Bell className="h-4 w-4" />
+                      Notifications
                     </NavLink>
                     <div className="my-2 border-t" />
                     <div className="flex items-center gap-2 px-3 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
@@ -222,8 +232,14 @@ export function Header() {
           </NavLink>
           {user ? (
             <>
-              <NavLink reloadDocument to="/account" className={mobileNavLinkClass}>
+              <NavLink reloadDocument end to="/account" className={mobileNavLinkClass}>
                 Account
+              </NavLink>
+              <NavLink reloadDocument to="/account/bookings" className={mobileNavLinkClass}>
+                My bookings
+              </NavLink>
+              <NavLink reloadDocument to="/account/notifications" className={mobileNavLinkClass}>
+                Notifications
               </NavLink>
               <NavLink reloadDocument to="/owner" className={mobileNavLinkClass}>
                 Owner dashboard

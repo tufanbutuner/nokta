@@ -41,6 +41,12 @@ export interface VenueBookingAvailability {
   settings: VenueBookingSettings;
   windows: VenueBookingWindow[];
   blackoutDates: VenueBookingBlackoutDate[];
+  bookedSlots: VenueBookingBookedSlot[];
+}
+
+export interface VenueBookingBookedSlot {
+  requestedDate: string;
+  requestedTime: string;
 }
 
 export interface BookingAvailabilityCheckInput {

@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { BadgeCheck, BarChart3, Building2, CreditCard, Heart, History, Inbox, LayoutDashboard, LogOut, PenLine, ShieldCheck, UserCircle } from "lucide-react";
+import { BadgeCheck, BarChart3, BookOpenCheck, Building2, CreditCard, Heart, History, Inbox, LayoutDashboard, LogOut, PenLine, ShieldCheck, UserCircle } from "lucide-react";
 import { AuthError } from "@/components/auth/AuthError";
 import { MyClaimRequests } from "@/components/claims/MyClaimRequests";
 import { MyVenueEnquiries } from "@/components/enquiries/MyVenueEnquiries";
@@ -194,6 +194,7 @@ export function AccountPage() {
                   {claimedVenues.length ? "Open your owner workspace for venue performance, enquiries and billing." : "Claim your venue profile to access owner tools."}
                 </p>
                 <div className="mt-4 grid gap-2">
+                  <ShortcutLink to="/account/bookings" icon={BookOpenCheck} label="My bookings" />
                   {claimedVenues.length ? (
                     <>
                       <ShortcutLink to="/owner" icon={LayoutDashboard} label="Owner dashboard" />
