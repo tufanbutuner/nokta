@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Link, useParams, useSearchParams } from "react-router-dom";
 import { OwnerBookingCalendarLegend } from "@/components/owner/bookings/calendar/OwnerBookingCalendarLegend";
 import { OwnerBookingCalendarToolbar, getStatusesForPreset, type BookingCalendarStatusPreset } from "@/components/owner/bookings/calendar/OwnerBookingCalendarToolbar";
@@ -18,6 +18,7 @@ import { useAuth } from "@/context/AuthContext";
 import { trackEvent } from "@/lib/analytics";
 import { addCalendarPeriod, getBookingCalendarDateRange, toDateInputValue } from "@/lib/bookingCalendarDates";
 import { formatBookingRequestDateTime } from "@/lib/bookingRequestLabels";
+import { supabase } from "@/lib/supabase";
 import { acceptBookingRequest, cancelBookingRequest, declineBookingRequest, getOwnerBookingRequests, markBookingCompleted, markBookingNoShow, proposeBookingAlternative } from "@/services/ownerBookingRequestService";
 import { getMyClaimedVenues } from "@/services/ownerVenueService";
 import type { BookingRequest, BookingRequestStatus } from "@/types/bookingRequests";
@@ -33,23 +34,40 @@ export function OwnerBookingsPage() {
   const [selected, setSelected] = useState<BookingRequest | null>(null);
   const [declineTarget, setDeclineTarget] = useState<BookingRequest | null>(null);
   const [proposeTarget, setProposeTarget] = useState<BookingRequest | null>(null);
+  const [cancelTarget, setCancelTarget] = useState<BookingRequest | null>(null);
   const [filters, setFilters] = useState<OwnerBookingFilterState>({ venueId: venueId ?? "all", status: "pending", date: "30d" });
   const [view, setView] = useState<BookingCalendarView>(() => getInitialView(searchParams.get("view")));
   const [anchorDate, setAnchorDate] = useState(() => getInitialDate(searchParams.get("date")));
   const [statusPreset, setStatusPreset] = useState<BookingCalendarStatusPreset>("all_active");
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const closingBookingIdRef = useRef<string | null>(null);
   const selectedBookingId = searchParams.get("booking");
+  const ownerVenueIds = useMemo(() => new Set(venues.map((venue) => venue.id)), [venues]);
+
+  const loadBookings = useCallback(async (options?: { showLoading?: boolean }) => {
+    if (!user) return;
+    if (options?.showLoading) setIsLoading(true);
+    try {
+      const [nextVenues, nextBookings] = await Promise.all([getMyClaimedVenues(user.id), getOwnerBookingRequests({ ownerUserId: user.id, venueId })]);
+      setVenues(nextVenues);
+      setBookings(nextBookings);
+      setSelected((current) => current ? nextBookings.find((booking) => booking.id === current.id) ?? current : current);
+      setError(null);
+    } catch (caughtError) {
+      setError(caughtError instanceof Error ? caughtError.message : "Could not load booking requests.");
+    } finally {
+      if (options?.showLoading) setIsLoading(false);
+    }
+  }, [user, venueId]);
 
   useEffect(() => {
     if (!user) return;
     let cancelled = false;
     setIsLoading(true);
-    Promise.all([getMyClaimedVenues(user.id), getOwnerBookingRequests({ ownerUserId: user.id, venueId })])
-      .then(([nextVenues, nextBookings]) => {
+    loadBookings()
+      .then(() => {
         if (cancelled) return;
-        setVenues(nextVenues);
-        setBookings(nextBookings);
         trackEvent("owner_bookings_viewed", { venueId: venueId ?? null });
       })
       .catch((caughtError) => {
@@ -59,9 +77,42 @@ export function OwnerBookingsPage() {
         if (!cancelled) setIsLoading(false);
       });
     return () => { cancelled = true; };
-  }, [user, venueId]);
+  }, [loadBookings, user, venueId]);
 
   useEffect(() => {
+    if (!user) return;
+    function refreshOnFocus() {
+      void loadBookings();
+    }
+    window.addEventListener("focus", refreshOnFocus);
+    document.addEventListener("visibilitychange", refreshOnFocus);
+    return () => {
+      window.removeEventListener("focus", refreshOnFocus);
+      document.removeEventListener("visibilitychange", refreshOnFocus);
+    };
+  }, [loadBookings, user]);
+
+  useEffect(() => {
+    if (!user || !supabase || venues.length === 0) return;
+    const client = supabase;
+    const channel = client
+      .channel(`owner-booking-requests-${user.id}`)
+      .on("postgres_changes", { event: "*", schema: "public", table: "booking_requests" }, (payload: { new: unknown; old: unknown }) => {
+        const row = (payload.new ?? payload.old) as { venue_id?: string } | null;
+        if (venueId || (row?.venue_id && ownerVenueIds.has(row.venue_id))) void loadBookings();
+      })
+      .subscribe();
+    return () => {
+      void client.removeChannel(channel);
+    };
+  }, [loadBookings, ownerVenueIds, user, venueId, venues.length]);
+
+  useEffect(() => {
+    if (!selectedBookingId) {
+      closingBookingIdRef.current = null;
+      return;
+    }
+    if (closingBookingIdRef.current === selectedBookingId) return;
     if (!selectedBookingId || !bookings.length || selected?.id === selectedBookingId) return;
     const booking = bookings.find((item) => item.id === selectedBookingId);
     if (booking) setSelected(booking);
@@ -102,8 +153,37 @@ export function OwnerBookingsPage() {
   function handleEventClick(event: BookingCalendarEvent) {
     const booking = bookings.find((item) => item.id === event.bookingRequestId);
     if (!booking) return;
+    closingBookingIdRef.current = null;
     setSelected(booking);
+    setSearchParams((current) => {
+      const next = new URLSearchParams(current);
+      next.set("booking", booking.id);
+      return next;
+    });
     trackEvent("owner_booking_calendar_event_opened", { view, eventStatus: event.status, venueId: event.venueId });
+  }
+
+  function handleSelectBooking(booking: BookingRequest) {
+    closingBookingIdRef.current = null;
+    setSelected(booking);
+    setSearchParams((current) => {
+      const next = new URLSearchParams(current);
+      next.set("booking", booking.id);
+      return next;
+    });
+  }
+
+  function handleCloseBooking() {
+    closingBookingIdRef.current = selected?.id ?? selectedBookingId;
+    setSearchParams((current) => {
+      const next = new URLSearchParams(current);
+      next.delete("booking");
+      return next;
+    });
+    setSelected(null);
+    setDeclineTarget(null);
+    setProposeTarget(null);
+    setCancelTarget(null);
   }
 
   async function handleStatus(booking: BookingRequest, status: BookingRequestStatus) {
@@ -138,6 +218,12 @@ export function OwnerBookingsPage() {
     setProposeTarget(null);
   }
 
+  async function handleCancelConfirmed() {
+    if (!user || !cancelTarget) return;
+    await handleStatus(cancelTarget, "cancelled");
+    setCancelTarget(null);
+  }
+
   return (
     <OwnerLayout>
       <PageMeta title="Booking requests | Sheesha" description="Manage booking requests for your claimed venues." canonicalPath="/owner/bookings" />
@@ -167,15 +253,16 @@ export function OwnerBookingsPage() {
             {view === "list" ? (
               <>
                 <OwnerBookingFilters venues={venues} value={filters} onChange={setFilters} lockVenue={Boolean(venueId)} />
-                <OwnerBookingRequestsTable bookings={filtered} venuesById={venuesById} onView={setSelected} onStatus={handleStatus} onDecline={setDeclineTarget} onPropose={setProposeTarget} />
+                <OwnerBookingRequestsTable bookings={filtered} venuesById={venuesById} onView={handleSelectBooking} onStatus={handleStatus} onDecline={setDeclineTarget} onPropose={setProposeTarget} onCancel={setCancelTarget} />
               </>
             ) : null}
           </>
         )}
       </div>
-      {selected ? <BookingDetails booking={selected} venue={venuesById[selected.venueId]} onClose={() => setSelected(null)} onStatus={handleStatus} onDecline={setDeclineTarget} onPropose={setProposeTarget} /> : null}
+      {selected ? <BookingDetails booking={selected} venue={venuesById[selected.venueId]} onClose={handleCloseBooking} onStatus={handleStatus} onDecline={setDeclineTarget} onPropose={setProposeTarget} onCancel={setCancelTarget} /> : null}
       {declineTarget ? <DeclineDialog booking={declineTarget} onClose={() => setDeclineTarget(null)} onSave={handleDecline} /> : null}
       {proposeTarget ? <ProposeDialog booking={proposeTarget} onClose={() => setProposeTarget(null)} onSave={handlePropose} /> : null}
+      {cancelTarget ? <CancelDialog booking={cancelTarget} onClose={() => setCancelTarget(null)} onConfirm={handleCancelConfirmed} /> : null}
     </OwnerLayout>
   );
 }
@@ -222,7 +309,7 @@ function filterBookings(bookings: BookingRequest[], filters: OwnerBookingFilterS
   });
 }
 
-function BookingDetails({ booking, venue, onClose, onStatus, onDecline, onPropose }: { booking: BookingRequest; venue?: Venue; onClose: () => void; onStatus: (booking: BookingRequest, status: BookingRequestStatus) => void; onDecline: (booking: BookingRequest) => void; onPropose: (booking: BookingRequest) => void }) {
+function BookingDetails({ booking, venue, onClose, onStatus, onDecline, onPropose, onCancel }: { booking: BookingRequest; venue?: Venue; onClose: () => void; onStatus: (booking: BookingRequest, status: BookingRequestStatus) => void; onDecline: (booking: BookingRequest) => void; onPropose: (booking: BookingRequest) => void; onCancel: (booking: BookingRequest) => void }) {
   return (
     <Modal title="Booking request" onClose={onClose}>
       <div className="space-y-5">
@@ -245,7 +332,7 @@ function BookingDetails({ booking, venue, onClose, onStatus, onDecline, onPropos
           {booking.status === "pending" ? <Button variant="outline" onClick={() => onPropose(booking)}>Propose alternative</Button> : null}
           {booking.status === "accepted" || booking.status === "customer_accepted_alternative" ? <Button variant="outline" onClick={() => onStatus(booking, "completed")}>Mark completed</Button> : null}
           {booking.status === "accepted" || booking.status === "customer_accepted_alternative" ? <Button variant="outline" onClick={() => onStatus(booking, "no_show")}>Mark no-show</Button> : null}
-          {["accepted", "alternative_proposed", "customer_accepted_alternative"].includes(booking.status) ? <Button variant="outline" onClick={() => onStatus(booking, "cancelled")}>Cancel</Button> : null}
+          {["accepted", "alternative_proposed", "customer_accepted_alternative"].includes(booking.status) ? <Button variant="outline" onClick={() => onCancel(booking)}>Cancel</Button> : null}
         </div>
       </div>
     </Modal>
@@ -262,6 +349,22 @@ function ProposeDialog({ booking, onClose, onSave }: { booking: BookingRequest; 
   const [proposedTime, setProposedTime] = useState("");
   const [proposedMessage, setProposedMessage] = useState("");
   return <Modal title="Propose another time" onClose={onClose}><div className="space-y-4"><p className="text-sm text-muted-foreground">Original request: {formatBookingRequestDateTime(booking.requestedDate, booking.requestedTime)}.</p><Input type="date" value={proposedDate} onChange={(event) => setProposedDate(event.target.value)} /><Input type="time" value={proposedTime} onChange={(event) => setProposedTime(event.target.value)} /><Textarea value={proposedMessage} onChange={(event) => setProposedMessage(event.target.value)} placeholder="Optional message" /><Button disabled={!proposedDate || !proposedTime} onClick={() => onSave({ proposedDate, proposedTime, proposedMessage })}>Send alternative</Button></div></Modal>;
+}
+
+function CancelDialog({ booking, onClose, onConfirm }: { booking: BookingRequest; onClose: () => void; onConfirm: () => void }) {
+  return (
+    <Modal title="Cancel booking" onClose={onClose}>
+      <div className="space-y-4">
+        <p className="text-sm leading-6 text-muted-foreground">
+          Cancel {booking.customerName}'s booking for {formatBookingRequestDateTime(booking.requestedDate, booking.requestedTime)}? This will update the booking status and notify the customer.
+        </p>
+        <div className="flex flex-col-reverse gap-2 sm:flex-row sm:justify-end">
+          <Button variant="outline" onClick={onClose}>Keep booking</Button>
+          <Button className="bg-red-700 text-white hover:bg-red-800" onClick={onConfirm}>Cancel booking</Button>
+        </div>
+      </div>
+    </Modal>
+  );
 }
 
 function Modal({ title, children, onClose }: { title: string; children: React.ReactNode; onClose: () => void }) {
