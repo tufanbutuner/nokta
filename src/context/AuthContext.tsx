@@ -80,7 +80,13 @@ export function AuthProvider({ children }: PropsWithChildren) {
 
   const signUp = useCallback(async (email: string, password: string) => {
     const client = ensureSupabase();
-    const { error } = await client.auth.signUp({ email, password });
+    const { error } = await client.auth.signUp({
+      email,
+      password,
+      options: {
+        emailRedirectTo: `${window.location.origin}/account`,
+      },
+    });
 
     if (error) {
       throw error;
