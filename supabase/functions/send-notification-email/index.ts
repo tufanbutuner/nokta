@@ -185,7 +185,7 @@ function buildBookingEmail(notification: NotificationRow, booking: Record<string
 
   switch (notification.notification_type) {
     case "booking_request_submitted":
-      if (notification.recipient_type === "owner") return renderEmail({ subject: `New booking request for ${venueName}`, lines: [`You have a new booking request for ${venueName}.`, ...common, `Customer: ${clean(booking.customer_name)}`, `Email: ${clean(booking.customer_email)}`, optional("Phone", booking.customer_phone), optional("Occasion", booking.occasion)], actionUrl: statusUrl ?? absoluteUrl("/owner/bookings"), actionLabel: "Manage booking", owner: true });
+      if (notification.recipient_type === "owner") return renderEmail({ subject: `New booking request for ${venueName}`, lines: [`You have a new booking request for ${venueName}.`, ...common, `Customer: ${clean(booking.customer_name)}`, `Email: ${clean(booking.customer_email)}`, optional("Phone", booking.customer_phone), optional("Occasion", booking.occasion)], actionUrl: statusUrl ?? absoluteUrl(`/owner/bookings?booking=${booking.id}`), actionLabel: "Manage booking", owner: true });
       return renderEmail({ subject: "Your booking request has been sent", lines: [`Your booking request for ${venueName} has been sent.`, "This is not confirmed yet. The venue will review your request.", ...common], actionUrl: statusUrl, actionLabel: "View booking status" });
     case "booking_request_accepted":
       return renderEmail({ subject: "Your booking is confirmed", lines: [`${venueName} has accepted your booking request. Your booking is confirmed.`, ...common], actionUrl: statusUrl, actionLabel: "View booking status" });
@@ -194,9 +194,9 @@ function buildBookingEmail(notification: NotificationRow, booking: Record<string
     case "booking_alternative_proposed":
       return renderEmail({ subject: `${venueName} proposed another booking time`, lines: [`${venueName} has suggested another date or time for your booking.`, `Original request: ${requested}`, `Proposed: ${proposed}`, `Party size: ${party}`, optional("Venue message", booking.proposed_message)], actionUrl: statusUrl, actionLabel: "Review alternative" });
     case "booking_alternative_accepted":
-      return renderEmail({ subject: "Customer accepted your proposed booking time", lines: [`The customer accepted your proposed booking time for ${venueName}.`, ...common, `Customer: ${clean(booking.customer_name)}`], actionUrl: absoluteUrl("/owner/bookings"), actionLabel: "View booking", owner: true });
+      return renderEmail({ subject: "Customer accepted your proposed booking time", lines: [`The customer accepted your proposed booking time for ${venueName}.`, ...common, `Customer: ${clean(booking.customer_name)}`], actionUrl: absoluteUrl(`/owner/bookings?booking=${booking.id}`), actionLabel: "View booking", owner: true });
     case "booking_alternative_declined":
-      return renderEmail({ subject: "Customer declined your proposed booking time", lines: [`The customer declined your proposed booking time for ${venueName}.`, `Original request: ${requested}`, `Proposed: ${proposed}`, `Party size: ${party}`, `Customer: ${clean(booking.customer_name)}`, optional("Customer response", booking.customer_alternative_response_message)], actionUrl: absoluteUrl("/owner/bookings"), actionLabel: "View booking", owner: true });
+      return renderEmail({ subject: "Customer declined your proposed booking time", lines: [`The customer declined your proposed booking time for ${venueName}.`, `Original request: ${requested}`, `Proposed: ${proposed}`, `Party size: ${party}`, `Customer: ${clean(booking.customer_name)}`, optional("Customer response", booking.customer_alternative_response_message)], actionUrl: absoluteUrl(`/owner/bookings?booking=${booking.id}`), actionLabel: "View booking", owner: true });
     case "booking_cancelled":
       return renderEmail({ subject: "Your booking was cancelled", lines: [`${venueName} cancelled this booking.`, ...common], actionUrl: statusUrl, actionLabel: "View booking status" });
     default:

@@ -39,6 +39,7 @@ export function OwnerBookingsPage() {
   const [statusPreset, setStatusPreset] = useState<BookingCalendarStatusPreset>("all_active");
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const selectedBookingId = searchParams.get("booking");
 
   useEffect(() => {
     if (!user) return;
@@ -59,6 +60,12 @@ export function OwnerBookingsPage() {
       });
     return () => { cancelled = true; };
   }, [user, venueId]);
+
+  useEffect(() => {
+    if (!selectedBookingId || !bookings.length || selected?.id === selectedBookingId) return;
+    const booking = bookings.find((item) => item.id === selectedBookingId);
+    if (booking) setSelected(booking);
+  }, [bookings, selected?.id, selectedBookingId]);
 
   const venuesById = useMemo(() => Object.fromEntries(venues.map((venue) => [venue.id, venue])), [venues]);
   const filtered = useMemo(() => filterBookings(bookings, filters), [bookings, filters]);
@@ -109,6 +116,7 @@ export function OwnerBookingsPage() {
         status === "cancelled" ? await cancelBookingRequest({ ownerUserId: user.id, bookingRequestId: booking.id }) :
         booking;
       setBookings((current) => current.map((item) => item.id === updated.id ? updated : item));
+      setSelected((current) => current?.id === updated.id ? updated : current);
     } catch (caughtError) {
       setError(caughtError instanceof Error ? caughtError.message : "Could not update booking request.");
     }
@@ -118,6 +126,7 @@ export function OwnerBookingsPage() {
     if (!user || !declineTarget) return;
     const updated = await declineBookingRequest({ ownerUserId: user.id, bookingRequestId: declineTarget.id, responseMessage: message });
     setBookings((current) => current.map((item) => item.id === updated.id ? updated : item));
+    setSelected((current) => current?.id === updated.id ? updated : current);
     setDeclineTarget(null);
   }
 
@@ -125,6 +134,7 @@ export function OwnerBookingsPage() {
     if (!user || !proposeTarget) return;
     const updated = await proposeBookingAlternative({ ownerUserId: user.id, bookingRequestId: proposeTarget.id, ...input });
     setBookings((current) => current.map((item) => item.id === updated.id ? updated : item));
+    setSelected((current) => current?.id === updated.id ? updated : current);
     setProposeTarget(null);
   }
 
@@ -163,7 +173,7 @@ export function OwnerBookingsPage() {
           </>
         )}
       </div>
-      {selected ? <BookingDetails booking={selected} venue={venuesById[selected.venueId]} onClose={() => setSelected(null)} /> : null}
+      {selected ? <BookingDetails booking={selected} venue={venuesById[selected.venueId]} onClose={() => setSelected(null)} onStatus={handleStatus} onDecline={setDeclineTarget} onPropose={setProposeTarget} /> : null}
       {declineTarget ? <DeclineDialog booking={declineTarget} onClose={() => setDeclineTarget(null)} onSave={handleDecline} /> : null}
       {proposeTarget ? <ProposeDialog booking={proposeTarget} onClose={() => setProposeTarget(null)} onSave={handlePropose} /> : null}
     </OwnerLayout>
@@ -212,8 +222,34 @@ function filterBookings(bookings: BookingRequest[], filters: OwnerBookingFilterS
   });
 }
 
-function BookingDetails({ booking, venue, onClose }: { booking: BookingRequest; venue?: Venue; onClose: () => void }) {
-  return <Modal title="Booking request" onClose={onClose}><div className="space-y-2 text-sm"><p><strong>Venue:</strong> {venue?.name ?? booking.venueId}</p><p><strong>Reference:</strong> {booking.confirmationReference ?? "Not generated"}</p><p><strong>Customer:</strong> {booking.customerName} • {booking.customerEmail}</p><p><strong>Phone:</strong> {booking.customerPhone ?? "Not provided"}</p><p><strong>Request:</strong> {booking.partySize} people • {formatBookingRequestDateTime(booking.requestedDate, booking.requestedTime)}</p><p><strong>Occasion:</strong> {booking.occasion ?? "General"}</p>{booking.confirmedAt ? <p><strong>Confirmed:</strong> {new Date(booking.confirmedAt).toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short" })}</p> : null}{booking.message ? <p className="whitespace-pre-line"><strong>Message:</strong> {booking.message}</p> : null}{booking.ownerResponseMessage ? <p className="whitespace-pre-line"><strong>Owner response:</strong> {booking.ownerResponseMessage}</p> : null}{booking.proposedDate ? <p><strong>Alternative:</strong> {formatBookingRequestDateTime(booking.proposedDate, booking.proposedTime ?? "")}</p> : null}{booking.customerAlternativeResponseMessage ? <p className="whitespace-pre-line"><strong>Customer response:</strong> {booking.customerAlternativeResponseMessage}</p> : null}</div></Modal>;
+function BookingDetails({ booking, venue, onClose, onStatus, onDecline, onPropose }: { booking: BookingRequest; venue?: Venue; onClose: () => void; onStatus: (booking: BookingRequest, status: BookingRequestStatus) => void; onDecline: (booking: BookingRequest) => void; onPropose: (booking: BookingRequest) => void }) {
+  return (
+    <Modal title="Booking request" onClose={onClose}>
+      <div className="space-y-5">
+        <div className="space-y-2 text-sm">
+          <p><strong>Venue:</strong> {venue?.name ?? booking.venueId}</p>
+          <p><strong>Reference:</strong> {booking.confirmationReference ?? "Not generated"}</p>
+          <p><strong>Customer:</strong> {booking.customerName} • {booking.customerEmail}</p>
+          <p><strong>Phone:</strong> {booking.customerPhone ?? "Not provided"}</p>
+          <p><strong>Request:</strong> {booking.partySize} people • {formatBookingRequestDateTime(booking.requestedDate, booking.requestedTime)}</p>
+          <p><strong>Occasion:</strong> {booking.occasion ?? "General"}</p>
+          {booking.confirmedAt ? <p><strong>Confirmed:</strong> {new Date(booking.confirmedAt).toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short" })}</p> : null}
+          {booking.message ? <p className="whitespace-pre-line"><strong>Message:</strong> {booking.message}</p> : null}
+          {booking.ownerResponseMessage ? <p className="whitespace-pre-line"><strong>Owner response:</strong> {booking.ownerResponseMessage}</p> : null}
+          {booking.proposedDate ? <p><strong>Alternative:</strong> {formatBookingRequestDateTime(booking.proposedDate, booking.proposedTime ?? "")}</p> : null}
+          {booking.customerAlternativeResponseMessage ? <p className="whitespace-pre-line"><strong>Customer response:</strong> {booking.customerAlternativeResponseMessage}</p> : null}
+        </div>
+        <div className="flex flex-wrap gap-2 border-t pt-4">
+          {booking.status === "pending" ? <Button onClick={() => onStatus(booking, "accepted")}>Accept</Button> : null}
+          {booking.status === "pending" ? <Button variant="outline" onClick={() => onDecline(booking)}>Decline</Button> : null}
+          {booking.status === "pending" ? <Button variant="outline" onClick={() => onPropose(booking)}>Propose alternative</Button> : null}
+          {booking.status === "accepted" || booking.status === "customer_accepted_alternative" ? <Button variant="outline" onClick={() => onStatus(booking, "completed")}>Mark completed</Button> : null}
+          {booking.status === "accepted" || booking.status === "customer_accepted_alternative" ? <Button variant="outline" onClick={() => onStatus(booking, "no_show")}>Mark no-show</Button> : null}
+          {["accepted", "alternative_proposed", "customer_accepted_alternative"].includes(booking.status) ? <Button variant="outline" onClick={() => onStatus(booking, "cancelled")}>Cancel</Button> : null}
+        </div>
+      </div>
+    </Modal>
+  );
 }
 
 function DeclineDialog({ booking, onClose, onSave }: { booking: BookingRequest; onClose: () => void; onSave: (message: string | null) => void }) {

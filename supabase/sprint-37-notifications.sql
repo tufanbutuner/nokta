@@ -265,7 +265,7 @@ begin
     'New booking request',
     'You have a new booking request for ' || venue_record.name || '.',
     'View booking',
-    '/owner/bookings',
+    '/owner/bookings?booking=' || new.id::text,
     'booking_request',
     new.id::text,
     new.venue_id,
@@ -310,10 +310,10 @@ begin
     values (new.submitted_by, new.customer_email, 'customer', 'booking_cancelled', 'Booking cancelled', venue_record.name || ' cancelled this booking.', 'View booking status', customer_action_url, 'booking_request', new.id::text, new.venue_id, new.id, public.get_booking_notification_channels(new.submitted_by, 'customer'));
   elsif new.status = 'customer_accepted_alternative' and owner_id is not null then
     insert into public.notifications (recipient_user_id, recipient_email, recipient_type, notification_type, title, body, action_label, action_url, related_entity_type, related_entity_id, venue_id, booking_request_id, delivery_channels)
-    values (owner_id, public.get_user_email(owner_id), 'owner', 'booking_alternative_accepted', 'Alternative accepted', 'The customer accepted your proposed booking time.', 'View booking', '/owner/bookings', 'booking_request', new.id::text, new.venue_id, new.id, public.get_booking_notification_channels(owner_id, 'owner'));
+    values (owner_id, public.get_user_email(owner_id), 'owner', 'booking_alternative_accepted', 'Alternative accepted', 'The customer accepted your proposed booking time.', 'View booking', '/owner/bookings?booking=' || new.id::text, 'booking_request', new.id::text, new.venue_id, new.id, public.get_booking_notification_channels(owner_id, 'owner'));
   elsif new.status = 'customer_declined_alternative' and owner_id is not null then
     insert into public.notifications (recipient_user_id, recipient_email, recipient_type, notification_type, title, body, action_label, action_url, related_entity_type, related_entity_id, venue_id, booking_request_id, delivery_channels)
-    values (owner_id, public.get_user_email(owner_id), 'owner', 'booking_alternative_declined', 'Alternative declined', 'The customer declined your proposed booking time.', 'View booking', '/owner/bookings', 'booking_request', new.id::text, new.venue_id, new.id, public.get_booking_notification_channels(owner_id, 'owner'));
+    values (owner_id, public.get_user_email(owner_id), 'owner', 'booking_alternative_declined', 'Alternative declined', 'The customer declined your proposed booking time.', 'View booking', '/owner/bookings?booking=' || new.id::text, 'booking_request', new.id::text, new.venue_id, new.id, public.get_booking_notification_channels(owner_id, 'owner'));
   end if;
 
   return new;

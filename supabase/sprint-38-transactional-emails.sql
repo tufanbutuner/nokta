@@ -122,7 +122,7 @@ begin
       'New booking request',
       'You have a new booking request for ' || venue_record.name || '.',
       'View booking',
-      '/owner/bookings',
+      '/owner/bookings?booking=' || new.id::text,
       'booking_request',
       new.id::text,
       new.venue_id,
