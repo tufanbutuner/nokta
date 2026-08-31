@@ -17,11 +17,13 @@ export function BookingRequestForm({
   isSubmitting,
   onSubmit,
   availability,
+  initialValues,
 }: {
   venueId: string;
   defaultEmail?: string | null;
   isSubmitting: boolean;
   availability?: VenueBookingAvailability | null;
+  initialValues?: Partial<Pick<CreateBookingRequestInput, "partySize" | "requestedDate" | "requestedTime">>;
   onSubmit: (input: CreateBookingRequestInput) => Promise<void>;
 }) {
   const [values, setValues] = useState<CreateBookingRequestInput>({
@@ -29,9 +31,9 @@ export function BookingRequestForm({
     customerName: "",
     customerEmail: defaultEmail ?? "",
     customerPhone: "",
-    partySize: 2,
-    requestedDate: "",
-    requestedTime: "",
+    partySize: initialValues?.partySize ?? 2,
+    requestedDate: initialValues?.requestedDate ?? "",
+    requestedTime: initialValues?.requestedTime ?? "",
     occasion: "General",
     message: "",
     sourceSurface: "venue_page",

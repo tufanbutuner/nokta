@@ -31,8 +31,8 @@ import { getVenueRatingSummary } from "@/services/reviewService";
 import { getApprovedVenueMedia } from "@/services/ownerVenueMediaService";
 import type { Venue } from "@/types/venue";
 import { Camera, ChevronLeft, ChevronRight, Clock, ExternalLink, Flag, MapPin, Navigation, Phone, Share2, Sofa, Star, Utensils, X } from "lucide-react";
-import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useEffect, useState, type FormEvent } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 type VenueDetailTab = "overview" | "menu" | "reviews" | "photos";
 
@@ -380,26 +380,43 @@ function ActionBar({ venue, shareLabel, onShare }: { venue: Venue; shareLabel: s
 }
 
 function BookingSidebarCard({ venue }: { venue: Venue }) {
+  const navigate = useNavigate();
+  const [date, setDate] = useState("");
+  const [time, setTime] = useState("");
+  const [partySize, setPartySize] = useState(2);
+
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    trackBookingCta(venue);
+    const params = new URLSearchParams();
+    if (date) params.set("date", date);
+    if (time) params.set("time", time);
+    if (partySize) params.set("partySize", String(partySize));
+    const query = params.toString();
+    navigate(`/venues/${venue.slug}/request-booking${query ? `?${query}` : ""}`);
+  }
+
   return (
-    <aside className="rounded-2xl border border-nokta-border bg-white p-5 shadow-sm shadow-stone-950/5">
+    <form className="rounded-2xl border border-nokta-border bg-white p-5 shadow-sm shadow-stone-950/5" onSubmit={handleSubmit}>
       <div className="flex items-center justify-between gap-3">
         <h2 className="text-[15px] font-semibold text-nokta-ink">Request a booking</h2>
         <FavouriteButton venueId={venue.id} venueName={venue.name} venue={venue} className="hidden h-10 w-10 shrink-0 border lg:inline-flex" />
       </div>
       <div className="mt-4 grid gap-3">
-        <Input readOnly value="Choose date and time" aria-label="Booking date and time" className="h-11 cursor-pointer rounded-lg border-nokta-border-input bg-white text-sm text-nokta-ink-muted" onClick={() => trackBookingCta(venue)} />
-        <Input readOnly value="Party size" aria-label="Party size" className="h-11 cursor-pointer rounded-lg border-nokta-border-input bg-white text-sm text-nokta-ink-muted" onClick={() => trackBookingCta(venue)} />
+        <div className="grid grid-cols-2 gap-2">
+          <Input type="date" value={date} aria-label="Booking date" className="h-11 rounded-lg border-nokta-border-input bg-white text-sm text-nokta-ink" onChange={(event) => setDate(event.target.value)} />
+          <Input type="time" value={time} aria-label="Booking time" className="h-11 rounded-lg border-nokta-border-input bg-white text-sm text-nokta-ink" onChange={(event) => setTime(event.target.value)} />
+        </div>
+        <Input type="number" min={1} max={100} value={partySize} aria-label="Party size" className="h-11 rounded-lg border-nokta-border-input bg-white text-sm text-nokta-ink" onChange={(event) => setPartySize(event.target.value ? Number(event.target.value) : 0)} />
       </div>
       <div className="mt-4 grid gap-2">
-        <Button asChild className="h-11 rounded-lg bg-nokta-accent text-white hover:bg-nokta-accent-dark" onClick={() => trackBookingCta(venue)}>
-          <Link to={`/venues/${venue.slug}/request-booking`}>Request booking</Link>
-        </Button>
+        <Button type="submit" className="h-11 rounded-lg bg-nokta-accent text-white hover:bg-nokta-accent-dark">Request booking</Button>
         <Button asChild variant="outline" className="h-11 rounded-lg border-nokta-border bg-white text-nokta-ink hover:bg-nokta-surface-hover" onClick={() => trackEnquiryCta(venue)}>
           <Link to={`/venues/${venue.slug}/enquire`}>Send enquiry</Link>
         </Button>
       </div>
       <p className="mt-3 text-xs leading-5 text-nokta-ink-muted">Requests are confirmed once the venue accepts.</p>
-    </aside>
+    </form>
   );
 }
 

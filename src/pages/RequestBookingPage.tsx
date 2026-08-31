@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useSearchParams } from "react-router-dom";
 import { BookingRequestForm } from "@/components/bookings/BookingRequestForm";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { PageMeta } from "@/components/seo/PageMeta";
@@ -18,6 +18,7 @@ import type { BookingRequest, CreateBookingRequestInput } from "@/types/bookingR
 
 export function RequestBookingPage() {
   const { slug = "" } = useParams();
+  const [searchParams] = useSearchParams();
   const { user } = useAuth();
   const { venues, isLoading, error } = useVenues();
   const venue = venues.find((item) => item.slug === slug);
@@ -76,7 +77,7 @@ export function RequestBookingPage() {
                 </div>
               </div>
             ) : (
-              <BookingRequestForm venueId={venue.id} defaultEmail={user?.email} availability={availability} isSubmitting={isSubmitting} onSubmit={handleSubmit} />
+              <BookingRequestForm venueId={venue.id} defaultEmail={user?.email} availability={availability} initialValues={getBookingInitialValues(searchParams)} isSubmitting={isSubmitting} onSubmit={handleSubmit} />
             )}
             {mutationError ? <Alert className="border-destructive/30 text-destructive">{mutationError}</Alert> : null}
           </CardContent>
@@ -84,4 +85,16 @@ export function RequestBookingPage() {
       </PageContainer>
     </main>
   );
+}
+
+function getBookingInitialValues(searchParams: URLSearchParams) {
+  const date = searchParams.get("date") ?? "";
+  const time = searchParams.get("time") ?? "";
+  const partySize = Number(searchParams.get("partySize") ?? "");
+
+  return {
+    requestedDate: date,
+    requestedTime: time,
+    partySize: Number.isFinite(partySize) && partySize > 0 ? partySize : undefined,
+  };
 }
