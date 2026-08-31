@@ -16,7 +16,7 @@ export function OwnerBillingSuccessPage() {
 
   return (
     <OwnerLayout>
-      <PageMeta title="Payment successful | Sheesha" description="Your Sheesha venue plan payment was successful." canonicalPath="/owner/billing/success" />
+      <PageMeta title="Payment successful | nokta" description="Your nokta venue plan payment was successful." canonicalPath="/owner/billing/success" />
       <section className="max-w-2xl rounded-xl border bg-card p-8">
         <CheckCircle2 className="h-10 w-10 text-clay-500" />
         <h1 className="mt-5 font-brand text-3xl font-bold tracking-[-0.5px]">Payment successful</h1>

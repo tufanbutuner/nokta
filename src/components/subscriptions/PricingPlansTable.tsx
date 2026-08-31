@@ -69,7 +69,7 @@ export function PricingPlansTable({
             {FEATURE_ROWS.map((feature) => {
               const included = PLAN_FEATURES[plan.plan].includes(feature);
               return (
-                <li key={feature} className={cn("flex items-start gap-2", included ? "text-sheesh-ink" : "text-muted-foreground/50")}>
+                <li key={feature} className={cn("flex items-start gap-2", included ? "text-nokta-ink" : "text-muted-foreground/50")}>
                   <Check className={cn("mt-0.5 h-4 w-4", included ? "text-clay-500" : "text-transparent")} />
                   {feature}
                 </li>

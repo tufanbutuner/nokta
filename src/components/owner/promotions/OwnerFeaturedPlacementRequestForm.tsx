@@ -40,7 +40,7 @@ export function OwnerFeaturedPlacementRequestForm({ venue, onSubmit, isSubmittin
 
   return (
     <form onSubmit={handleSubmit} className="rounded-xl border bg-card p-5 shadow-sm">
-      <p className="text-sm text-muted-foreground">Featured placements are reviewed by Sheesha before they go live.</p>
+      <p className="text-sm text-muted-foreground">Featured placements are reviewed by nokta before they go live.</p>
       <div className="mt-5 grid gap-4 sm:grid-cols-2">
         <Field label="Venue"><Input value={venue.name} disabled /></Field>
         <Field label="Placement type" error={showErrors ? validation.errors.placementType : undefined}><Select value={values.placementType} onValueChange={(value) => setValues({ ...values, placementType: value as OwnerPromotionPlacementType })} options={PLACEMENT_TYPES} /></Field>

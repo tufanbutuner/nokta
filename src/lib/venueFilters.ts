@@ -1,5 +1,5 @@
 import type { DiscoverView, FeatureFilterKey, VenueFilterState } from "@/types/filters";
-import { activeVenueCategories } from "@/data/venueCategories";
+import { venueCategories } from "@/data/venueCategories";
 import { DEFAULT_CITY, DEFAULT_COUNTRY } from "@/lib/cities";
 import type { VenueSortOption } from "@/types/sort";
 import type { PriceLevel, VenueVibe } from "@/types/venue";
@@ -10,7 +10,7 @@ export const INITIAL_VENUE_FILTERS: VenueFilterState = {
   country: DEFAULT_COUNTRY,
   city: DEFAULT_CITY,
   area: "all",
-  primaryCategory: "all",
+  primaryCategories: [],
   priceLevel: "all",
   openNow: false,
   minRating: "all",
@@ -55,7 +55,7 @@ export const FEATURE_OPTIONS: { label: string; value: FeatureFilterKey }[] = [
 
 const validVibes = new Set(VIBE_OPTIONS.map((option) => option.value));
 const validFeatures = new Set(FEATURE_OPTIONS.map((option) => option.value));
-const activePrimaryCategories = new Set(activeVenueCategories.map((category) => category.id));
+const validPrimaryCategories = new Set(venueCategories.map((category) => category.id));
 
 export function parseVenueFilters(params: URLSearchParams): VenueFilterState {
   const price = Number(params.get("price"));
@@ -69,7 +69,7 @@ export function parseVenueFilters(params: URLSearchParams): VenueFilterState {
     country: params.get("country") || DEFAULT_COUNTRY,
     city: params.get("city") || DEFAULT_CITY,
     area: params.get("area") || "all",
-    primaryCategory: parsePrimaryCategory(params.get("category")),
+    primaryCategories: parsePrimaryCategories(params.get("category")),
     priceLevel: isPriceLevel(price) ? price : "all",
     openNow: params.get("status") === "open",
     minRating: params.get("rating") === "4" ? 4 : "all",
@@ -88,11 +88,11 @@ export function filtersToSearchParams(filters: VenueFilterState) {
   const params = new URLSearchParams();
   const features = FEATURE_OPTIONS.filter((option) => filters.features[option.value]).map((option) => option.value);
 
-  if (filters.query.trim()) params.set("q", filters.query.trim());
+  if (filters.query.trim()) params.set("q", filters.query);
   if (filters.country !== DEFAULT_COUNTRY) params.set("country", filters.country);
   if (filters.city !== DEFAULT_CITY) params.set("city", filters.city);
   if (filters.area !== "all") params.set("area", filters.area);
-  if (filters.primaryCategory !== "all") params.set("category", filters.primaryCategory);
+  if (filters.primaryCategories.length) params.set("category", filters.primaryCategories.join(","));
   if (filters.priceLevel !== "all") params.set("price", String(filters.priceLevel));
   if (filters.openNow) params.set("status", "open");
   if (filters.minRating !== "all") params.set("rating", String(filters.minRating));
@@ -108,7 +108,7 @@ export function hasActiveFilters(filters: VenueFilterState) {
     filters.country !== DEFAULT_COUNTRY ||
     filters.city !== DEFAULT_CITY ||
     filters.area !== "all" ||
-    filters.primaryCategory !== "all" ||
+    filters.primaryCategories.length > 0 ||
     filters.priceLevel !== "all" ||
     filters.openNow ||
     filters.minRating !== "all" ||
@@ -150,6 +150,6 @@ function isPriceLevel(value: number): value is PriceLevel {
   return value === 1 || value === 2 || value === 3 || value === 4;
 }
 
-function parsePrimaryCategory(value: string | null): VenuePrimaryCategory | "all" {
-  return activePrimaryCategories.has(value as VenuePrimaryCategory) ? (value as VenuePrimaryCategory) : "all";
+function parsePrimaryCategories(value: string | null): VenuePrimaryCategory[] {
+  return splitParam(value).filter((category): category is VenuePrimaryCategory => validPrimaryCategories.has(category as VenuePrimaryCategory));
 }

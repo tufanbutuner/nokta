@@ -11,7 +11,6 @@ import { VenueSearch } from "@/components/search/VenueSearch";
 import { EmptyState } from "@/components/state/EmptyState";
 import { ErrorState } from "@/components/state/ErrorState";
 import { LoadingState } from "@/components/state/LoadingState";
-import { VenueGrid } from "@/components/venues/VenueGrid";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { useAppLocation } from "@/context/AppLocationContext";
@@ -123,10 +122,10 @@ export function DiscoverPage() {
         description="Explore social venues by city, area and vibe. View photos, venue details, opening info and request bookings."
         canonicalPath="/discover"
       />
-      <div className="mx-auto flex min-h-[calc(100vh-4rem)] max-w-none flex-col px-3 py-3 lg:h-[calc(100vh-4rem)]">
-        <div className="grid min-h-0 flex-1 gap-4 lg:grid-cols-[460px_minmax(0,1fr)]">
-          <aside className="flex min-h-0 flex-col overflow-hidden rounded-2xl border bg-card shadow-xl shadow-stone-950/5">
-            <div className="space-y-3 border-b p-4">
+      <div className="mx-auto flex min-h-[calc(100vh-4rem)] max-w-none flex-col bg-nokta-page-bg px-3 py-3 lg:h-[calc(100vh-4rem)]">
+        <div className="grid min-h-0 flex-1 gap-4 lg:grid-cols-[440px_minmax(0,1fr)]">
+          <aside className="flex min-h-0 flex-col overflow-hidden rounded-2xl border border-nokta-border bg-nokta-surface shadow-[0_12px_30px_-16px_oklch(0.2_0.02_40_/_0.18)]">
+            <div className="space-y-4 border-b border-nokta-border p-4">
               <VenueSearch value={filters.query} onChange={(query) => updateFilters({ ...filters, query })} />
 
               <DiscoveryFilterChips
@@ -139,36 +138,28 @@ export function DiscoverPage() {
               <ActiveFilterChips filters={filters} onClear={clearFilters} />
 
               {filtersOpen ? (
-                <div className="rounded-xl border bg-background/50 p-3">
+                <div className="rounded-2xl border border-nokta-border bg-nokta-page-bg/45 p-3">
                   <VenueFilters venues={venues} filters={filters} onChange={updateFilters} onClear={clearFilters} />
                 </div>
               ) : null}
             </div>
 
-            <div className="space-y-2 border-b bg-background/35 p-4">
-              <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
-                <div className="flex min-w-0 flex-wrap items-center gap-x-2 gap-y-1 text-sm">
-                  <p className="font-medium">{resultContextLabel}</p>
-                  <span className="text-muted-foreground">·</span>
+            <div className="border-b border-nokta-border bg-nokta-surface-alt p-4">
+              <div className="flex items-center justify-between gap-3">
+                <div className="flex min-w-0 items-center gap-1.5">
+                  <p className="min-w-0 truncate text-[13px] font-semibold text-nokta-ink">{resultContextLabel}</p>
+                  <span className="text-xs text-nokta-ink-muted">·</span>
                   <SortSelect value={sortOption} userLocation={userLocation} onChange={updateSort} inline />
                 </div>
                 {filtersAreActive ? (
-                  <Button type="button" variant="ghost" size="sm" onClick={clearFilters}>
+                  <Button type="button" variant="ghost" size="sm" onClick={clearFilters} className="h-8 shrink-0 text-xs font-semibold text-nokta-accent hover:bg-nokta-accent-tint">
                     Clear
                   </Button>
                 ) : null}
               </div>
-              {savedLocation ? (
-                <>
-                  <p className="text-xs text-muted-foreground lg:hidden">Use View venue to open details.</p>
-                  <p className="hidden text-xs text-muted-foreground lg:block">Tap a venue to focus it on the map.</p>
-                </>
-              ) : (
-                <p className="text-xs text-muted-foreground">Set your location in the navbar for nearest sorting.</p>
-              )}
             </div>
 
-            <div className={cn("block min-h-[420px] flex-1 overflow-y-auto p-3", view === "list" && "lg:hidden")}>
+            <div className="block min-h-[420px] flex-1 overflow-y-auto p-3">
               {isLoading ? (
                 <LoadingState />
               ) : error ? (
@@ -191,7 +182,7 @@ export function DiscoverPage() {
           </aside>
 
           {showDesktopMapArea ? (
-            <section className="min-h-[560px] overflow-hidden rounded-2xl border bg-card shadow-xl shadow-stone-950/5 lg:min-h-0">
+            <section className="min-h-[560px] overflow-hidden rounded-2xl border border-nokta-border bg-nokta-surface shadow-[0_12px_30px_-16px_oklch(0.2_0.02_40_/_0.18)] lg:min-h-0">
               {isLoading ? (
                 <div className="flex h-full min-h-[560px] items-center justify-center">
                   <LoadingState />
@@ -200,7 +191,7 @@ export function DiscoverPage() {
                 <div className="flex h-full min-h-[560px] items-center justify-center p-6">
                   <ErrorState message={error} />
                 </div>
-              ) : view === "map" ? (
+              ) : (
                 <div className="relative h-full min-h-[560px]">
                   <VenueMap
                     venues={sortedVenues}
@@ -208,18 +199,12 @@ export function DiscoverPage() {
                     userLocation={userLocation}
                     city={filters.city}
                     onClearFilters={clearFilters}
-                    className="h-full rounded-none border-0"
+                    className="h-full rounded-none border-0 bg-nokta-surface"
                   />
-                  <div className="absolute bottom-4 left-4 rounded-full border bg-card/90 px-3 py-2 text-xs font-medium shadow-lg shadow-stone-950/10 backdrop-blur">
+                  <div className="absolute bottom-4 left-4 rounded-full border border-nokta-border bg-white/90 px-3 py-2 text-xs font-semibold text-nokta-ink shadow-lg shadow-stone-950/10 backdrop-blur">
                     {statusCountLabel}
                   </div>
                 </div>
-              ) : sortedVenues.length ? (
-                <div className="h-full overflow-y-auto p-5">
-                  <VenueGrid venues={sortedVenues} userLocation={userLocation} />
-                </div>
-              ) : (
-                <DiscoverEmptyState onClear={clearFilters} className="h-full min-h-[560px]" />
               )}
             </section>
           ) : null}
@@ -273,8 +258,8 @@ function DiscoveryFilterChips({
         aria-expanded={filtersOpen}
         onClick={onToggleFilters}
         className={cn(
-          "inline-flex h-8 items-center gap-1.5 rounded-full px-3 text-xs font-medium transition-colors",
-          filtersOpen ? "bg-foreground text-background hover:bg-foreground/90" : "bg-foreground/5 text-muted-foreground hover:bg-foreground/10 hover:text-foreground",
+          "inline-flex h-8 items-center gap-1.5 rounded-full px-3 text-xs font-semibold transition-colors",
+          filtersOpen ? "bg-nokta-ink text-white hover:bg-nokta-ink/90" : "bg-nokta-ink/5 text-nokta-ink-subtle hover:bg-nokta-ink/10 hover:text-nokta-ink",
         )}
       >
         <SlidersHorizontal className="h-3.5 w-3.5" />
@@ -291,8 +276,8 @@ function FilterChip({ active, label, onClick }: { active: boolean; label: string
       aria-pressed={active}
       onClick={onClick}
       className={cn(
-        "inline-flex h-8 items-center gap-1.5 rounded-full px-3 text-xs font-medium transition-colors",
-        active ? "bg-clay-accent/10 text-clay-accent hover:bg-clay-accent/15" : "bg-foreground/5 text-muted-foreground hover:bg-foreground/10 hover:text-foreground",
+        "inline-flex h-8 items-center gap-1.5 rounded-full px-3 text-xs font-semibold transition-colors",
+        active ? "bg-nokta-accent-tint text-nokta-accent-dark hover:bg-nokta-accent-tint/80" : "bg-nokta-ink/5 text-nokta-ink-subtle hover:bg-nokta-ink/10 hover:text-nokta-ink",
       )}
     >
       {label}
@@ -308,7 +293,7 @@ function ActiveFilterChips({
   filters: VenueFilterState;
   onClear: () => void;
 }) {
-  const showChips = filters.query.trim() || filters.city !== DEFAULT_CITY || filters.area !== "all" || filters.primaryCategory !== "all" || filters.vibes.length;
+  const showChips = filters.query.trim() || filters.city !== DEFAULT_CITY || filters.area !== "all" || filters.primaryCategories.length || filters.vibes.length;
 
   if (!showChips) {
     return null;
@@ -316,12 +301,16 @@ function ActiveFilterChips({
 
   return (
     <div className="flex flex-wrap gap-2">
-      {filters.query.trim() ? <Badge className="bg-clay-accent/10 text-clay-accent">Search: {filters.query.trim()}</Badge> : null}
-      {filters.city !== DEFAULT_CITY ? <Badge className="bg-clay-accent/10 text-clay-accent">{filters.city}</Badge> : null}
-      {filters.area !== "all" ? <Badge className="bg-clay-accent/10 text-clay-accent">{filters.area}</Badge> : null}
-      {filters.primaryCategory !== "all" ? <Badge className="bg-clay-accent/10 text-clay-accent">{formatVenuePrimaryCategory(filters.primaryCategory)}</Badge> : null}
+      {filters.query.trim() ? <Badge className="rounded-full bg-nokta-accent-tint text-nokta-accent-dark">Search: {filters.query.trim()}</Badge> : null}
+      {filters.city !== DEFAULT_CITY ? <Badge className="rounded-full bg-nokta-accent-tint text-nokta-accent-dark">{filters.city}</Badge> : null}
+      {filters.area !== "all" ? <Badge className="rounded-full bg-nokta-accent-tint text-nokta-accent-dark">{filters.area}</Badge> : null}
+      {filters.primaryCategories.map((category) => (
+        <Badge key={category} className="rounded-full bg-nokta-accent-tint text-nokta-accent-dark">
+          {formatVenuePrimaryCategory(category)}
+        </Badge>
+      ))}
       {filters.vibes.map((vibe) => (
-        <Badge key={vibe} className="bg-clay-accent/10 text-clay-accent">
+        <Badge key={vibe} className="rounded-full bg-nokta-accent-tint text-nokta-accent-dark">
           {formatVibe(vibe)}
         </Badge>
       ))}
@@ -383,7 +372,7 @@ function getDiscoverAnalyticsProperties(filters: VenueFilterState, sort: VenueSo
     country: filters.country,
     city: filters.city,
     area: filters.area,
-    category: filters.primaryCategory === "all" ? null : filters.primaryCategory,
+    categories: filters.primaryCategories.length ? filters.primaryCategories.join(",") : null,
     price: filters.priceLevel === "all" ? null : filters.priceLevel,
     sort,
     view,

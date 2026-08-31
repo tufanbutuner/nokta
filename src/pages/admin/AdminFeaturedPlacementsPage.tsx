@@ -124,12 +124,12 @@ export function AdminFeaturedPlacementsPage() {
 
   return (
     <AdminPageShell activePath="/admin/featured">
-      <PageMeta title="Featured Placements | Sheesha Admin" description="Manage featured placement campaigns." />
+      <PageMeta title="Featured Placements | nokta Admin" description="Manage featured placement campaigns." />
       <div className="space-y-6">
         <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
           <div>
             <p className="text-sm font-medium text-[#8a7e72]">Admin</p>
-            <h1 className="mt-1 font-brand text-3xl font-bold tracking-[-0.5px] text-sheesh-ink">Featured placements</h1>
+            <h1 className="mt-1 font-brand text-3xl font-bold tracking-[-0.5px] text-nokta-ink">Featured placements</h1>
             <p className="mt-2 text-sm text-[#8a7e72]">Create clearly labelled promotional placements.</p>
           </div>
           <Button asChild variant="outline">

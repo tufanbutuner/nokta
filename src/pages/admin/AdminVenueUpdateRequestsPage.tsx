@@ -70,11 +70,11 @@ export function AdminVenueUpdateRequestsPage() {
 
   return (
     <AdminPageShell activePath="/admin/venue-updates">
-      <PageMeta title="Venue Updates | Sheesha Admin" description="Review owner-submitted venue profile update requests." />
+      <PageMeta title="Venue Updates | nokta Admin" description="Review owner-submitted venue profile update requests." />
       <div className="space-y-6">
         <div>
           <p className="text-sm font-medium text-[#8a7e72]">Admin</p>
-          <h1 className="mt-1 font-brand text-3xl font-bold tracking-[-0.5px] text-sheesh-ink">Venue updates</h1>
+          <h1 className="mt-1 font-brand text-3xl font-bold tracking-[-0.5px] text-nokta-ink">Venue updates</h1>
           <p className="mt-2 text-sm text-[#8a7e72]">Review, approve and apply owner profile update requests.</p>
         </div>
         <SummaryCards requests={requests} />

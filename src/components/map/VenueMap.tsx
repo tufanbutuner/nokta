@@ -39,7 +39,7 @@ export function VenueMap({
   const cityCenter = getMapCenterForCity(city);
 
   return (
-    <div className={cn("relative overflow-hidden rounded-lg border bg-card", className)}>
+    <div className={cn("relative overflow-hidden rounded-2xl border border-nokta-border bg-nokta-surface", className)}>
       <MapContainer
         center={[cityCenter.latitude, cityCenter.longitude]}
         zoom={cityCenter.defaultZoom}

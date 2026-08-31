@@ -41,7 +41,7 @@ export function RequireAdmin({ children }: PropsWithChildren) {
           <CardContent className="p-6 text-center">
             <h1 className="text-2xl font-semibold">Not authorised</h1>
             <p className="mt-3 text-muted-foreground">
-              Your account is signed in, but it is not configured as a Sheesha admin.
+              Your account is signed in, but it is not configured as a nokta admin.
             </p>
             {error ? <p className="mt-3 text-sm text-red-700">{error}</p> : null}
           </CardContent>

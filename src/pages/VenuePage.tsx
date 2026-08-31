@@ -8,10 +8,10 @@ import { LoadingState } from "@/components/state/LoadingState";
 import { Badge } from "@/components/ui/badge";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { ClaimedVenueBadge } from "@/components/venues/ClaimedVenueBadge";
 import { FavouriteButton } from "@/components/venues/FavouriteButton";
 import { VenueBadge } from "@/components/venues/VenueBadge";
-import { VenuePrice } from "@/components/venues/VenuePrice";
 import { VenueVerificationBadge } from "@/components/venues/VenueVerificationBadge";
 import { useAppLocation } from "@/context/AppLocationContext";
 import { useVenuePreferences } from "@/context/VenuePreferencesContext";
@@ -90,7 +90,7 @@ export function VenuePage() {
   if (isLoading) {
     return (
       <main>
-        <PageMeta title="Venue | Sheesha" description="View opening hours, features, address, reviews and verification details for a Sheesha venue." />
+        <PageMeta title="Venue | nokta" description="View opening hours, features, address, reviews and verification details for a nokta venue." />
         <PageContainer className="py-20">
           <LoadingState message="Loading venue..." />
         </PageContainer>
@@ -101,7 +101,7 @@ export function VenuePage() {
   if (error) {
     return (
       <main>
-        <PageMeta title="Venue unavailable | Sheesha" description="We could not load this venue right now." />
+        <PageMeta title="Venue unavailable | nokta" description="We could not load this venue right now." />
         <PageContainer className="py-20">
           <ErrorState message={error} />
         </PageContainer>
@@ -112,7 +112,7 @@ export function VenuePage() {
   if (!venue) {
     return (
       <PageContainer className="py-20">
-        <PageMeta title="Venue not found | Sheesha" description="This Sheesha venue could not be found." />
+        <PageMeta title="Venue not found | nokta" description="This nokta venue could not be found." />
         <h1 className="text-3xl font-semibold">Venue not found</h1>
         <Button asChild className="mt-6">
           <Link reloadDocument to="/discover">
@@ -153,13 +153,15 @@ export function VenuePage() {
   }
 
   return (
-    <main className="bg-background">
-      <PageMeta title={`${venue.name} in ${venue.city} | Sheesha`} description={`View category, opening hours, features, address, reviews and booking details for ${venue.name} in ${venue.city}.`} canonicalPath={`/venues/${venue.slug}`} imageUrl={galleryImages[0] ?? getVenueImage(venue)} />
-      <PageContainer className="py-6 sm:py-8">
-        <Breadcrumb className="mb-4">
+    <main className="bg-nokta-page-bg text-nokta-ink">
+      <PageMeta title={`${venue.name} in ${venue.city} | nokta`} description={`View category, opening hours, features, address, reviews and booking details for ${venue.name} in ${venue.city}.`} canonicalPath={`/venues/${venue.slug}`} imageUrl={galleryImages[0] ?? getVenueImage(venue)} />
+      <PhotoGallery venue={venue} images={galleryImages} onOpenImage={setActiveImageIndex} />
+
+      <PageContainer className="py-5 sm:py-7">
+        <Breadcrumb className="mb-5 text-[13px] text-nokta-ink-muted">
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink asChild>
+              <BreadcrumbLink asChild className="font-normal text-nokta-ink-muted hover:text-nokta-ink">
                 <Link reloadDocument to="/discover">
                   Discover
                 </Link>
@@ -169,7 +171,7 @@ export function VenuePage() {
               <>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
-                  <BreadcrumbLink asChild>
+                  <BreadcrumbLink asChild className="font-normal text-nokta-ink-muted hover:text-nokta-ink">
                     <Link reloadDocument to={`/cities/${city.slug}`}>
                       {city.name}
                     </Link>
@@ -179,12 +181,12 @@ export function VenuePage() {
             ) : null}
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbPage>{venue.name}</BreadcrumbPage>
+              <BreadcrumbPage className="font-medium text-nokta-ink">{venue.name}</BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
 
-        <section className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
+        <section className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-start">
           <div className="min-w-0">
             <div className="mb-3 flex flex-wrap gap-2">
               <VenueBadge label={formatVenuePrimaryCategory(venue.primaryCategory)} />
@@ -198,68 +200,39 @@ export function VenuePage() {
             </div>
             <div className="flex items-start justify-between gap-3">
               <div className="min-w-0 flex flex-wrap items-center gap-3">
-                <h1 className="text-4xl font-semibold leading-tight sm:text-5xl">{venue.name}</h1>
+                <h1 className="font-body text-[32px] font-semibold leading-tight text-nokta-ink sm:text-4xl">{venue.name}</h1>
                 <CurrentStatusBadge status={currentStatus} />
               </div>
               <FavouriteButton venueId={venue.id} venueName={venue.name} venue={venue} className="h-11 w-11 shrink-0 border lg:hidden" />
             </div>
             <VenueHeaderMeta venue={venue} distanceLabel={distanceLabel} />
+            <p className="mt-5 max-w-xl text-base leading-7 text-nokta-ink-subtle">{venue.description}</p>
+            <ActionBar venue={venue} shareLabel={shareLabel} onShare={shareVenue} />
           </div>
 
-          <div className="hidden items-center gap-2 lg:flex">
-            <Button asChild onClick={() => trackBookingCta(venue)}>
-              <Link to={`/venues/${venue.slug}/request-booking`}>Request booking</Link>
-            </Button>
-            <Button asChild variant="outline" onClick={() => trackEnquiryCta(venue)}>
-              <Link to={`/venues/${venue.slug}/enquire`}>Send enquiry</Link>
-            </Button>
-            <FavouriteButton venueId={venue.id} venueName={venue.name} venue={venue} className="h-11 w-11 border" />
-          </div>
-        </section>
-
-        <section className="mt-6 rounded-xl border bg-card p-4">
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <div>
-                <h2 className="font-semibold">Planning a visit or group booking?</h2>
-                <p className="mt-1 text-sm text-muted-foreground">Send a booking request with your date, time and party size. It is not confirmed until the venue accepts.</p>
-            </div>
-            <div className="flex flex-col gap-2 sm:flex-row">
-              <Button asChild onClick={() => trackBookingCta(venue)}>
-                <Link to={`/venues/${venue.slug}/request-booking`}>Request booking</Link>
-              </Button>
-              <Button asChild variant="outline" onClick={() => trackEnquiryCta(venue)}>
-                <Link to={`/venues/${venue.slug}/enquire`}>Send enquiry</Link>
-              </Button>
-            </div>
-          </div>
+          <BookingSidebarCard venue={venue} />
         </section>
 
         {!venue.isClaimed ? (
-          <section className="mt-6 rounded-xl border bg-card p-4">
+          <section className="mt-6 rounded-2xl border border-nokta-border bg-white p-5 shadow-sm shadow-stone-950/5">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <div>
-                <h2 className="font-semibold">Own or manage this venue?</h2>
-                <p className="mt-1 text-sm text-muted-foreground">Claim this profile to keep your venue details accurate.</p>
+                <h2 className="font-semibold text-nokta-ink">Own or manage this venue?</h2>
+                <p className="mt-1 text-sm text-nokta-ink-muted">Claim this profile to keep your venue details accurate.</p>
               </div>
-              <Button asChild>
+              <Button asChild className="rounded-lg bg-nokta-ink text-white hover:bg-nokta-ink/90">
                 <Link to={`/venues/${venue.slug}/claim`}>Claim this venue</Link>
               </Button>
             </div>
           </section>
         ) : null}
 
-        <div className="mt-6">
-          <PhotoGallery venue={venue} images={galleryImages} onOpenImage={setActiveImageIndex} />
-        </div>
-
-        <ActionBar venue={venue} shareLabel={shareLabel} onShare={shareVenue} />
-
         <VenueOffersSection venue={venue} />
 
-        <div className="sticky top-16 z-[1100] mt-6 border-b bg-background/95 backdrop-blur">
-          <div className="flex gap-2 overflow-x-auto py-2">
+        <div className="mt-7 border-b border-nokta-border">
+          <div className="flex gap-2 overflow-x-auto pb-3">
             {VENUE_TABS.map((tab) => (
-              <button key={tab.value} type="button" className={cn("h-9 shrink-0 rounded-lg px-3 text-sm font-medium transition-colors", activeTab === tab.value ? "bg-foreground text-background" : "text-muted-foreground hover:bg-secondary hover:text-foreground")} onClick={() => setActiveTab(tab.value)}>
+              <button key={tab.value} type="button" className={cn("h-9 shrink-0 rounded-full px-4 text-sm font-medium transition-colors", activeTab === tab.value ? "bg-nokta-ink text-white" : "text-nokta-ink-muted hover:bg-white hover:text-nokta-ink")} onClick={() => setActiveTab(tab.value)}>
                 {tab.label}
               </button>
             ))}
@@ -286,28 +259,28 @@ function VenueHeaderMeta({ venue, distanceLabel }: { venue: Venue; distanceLabel
   const reviewLabel = summary.reviewCount > 0 ? `${summary.reviewCount} user review${summary.reviewCount === 1 ? "" : "s"}` : "No user reviews yet";
 
   return (
-    <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-muted-foreground">
+    <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-nokta-ink-muted">
       {displayRating ? (
         <>
-          <span className="inline-flex items-center gap-1.5 font-medium text-foreground">
-            <Star className="h-4 w-4 fill-clay-accent text-clay-accent" />
+          <span className="inline-flex items-center gap-1.5 font-medium text-nokta-ink">
+            <Star className="h-3.5 w-3.5 fill-nokta-ink text-nokta-ink" />
             {displayRating}
           </span>
-          <span className="text-muted-foreground" aria-hidden="true">
+          <span className="text-nokta-ink-muted" aria-hidden="true">
             •
           </span>
         </>
       ) : null}
       <span>{reviewLabel}</span>
-      <span className="text-muted-foreground" aria-hidden="true">
+      <span className="text-nokta-ink-muted" aria-hidden="true">
         •
       </span>
       <span className="inline-flex items-center gap-1.5">
-        <MapPin className="h-4 w-4" />
+        <MapPin className="h-3.5 w-3.5" />
         {venue.area}
         {distanceLabel ? ` • ${distanceLabel}` : null}
       </span>
-      <span className="text-muted-foreground" aria-hidden="true">
+      <span className="text-nokta-ink-muted" aria-hidden="true">
         •
       </span>
       <span>{venue.priceFrom ? `Shisha from £${venue.priceFrom}` : "Shisha price TBC"}</span>
@@ -317,51 +290,29 @@ function VenueHeaderMeta({ venue, distanceLabel }: { venue: Venue; distanceLabel
 
 function PhotoGallery({ venue, images, onOpenImage }: { venue: Venue; images: string[]; onOpenImage: (index: number) => void }) {
   const primaryImage = images[0] ?? getVenueImage(venue);
-  const secondaryImages = images.slice(1, 5);
-  const galleryCount = images.length;
-
-  if (!secondaryImages.length) {
-    return (
-      <section className="relative overflow-hidden rounded-xl border bg-card">
-        <button type="button" className="block w-full overflow-hidden text-left" onClick={() => onOpenImage(0)}>
-          <img src={primaryImage} alt={`${venue.name} main gallery`} className="aspect-[16/7] w-full object-cover transition duration-500 hover:scale-[1.02]" />
-        </button>
-        <PhotoCountBadge current={1} total={galleryCount} />
-      </section>
-    );
-  }
+  const galleryImages = images.length ? images : [primaryImage];
+  const galleryCount = galleryImages.length;
+  const [activeGalleryIndex, setActiveGalleryIndex] = useState(0);
+  const activeImage = galleryImages[activeGalleryIndex] ?? primaryImage;
+  const hasMultipleImages = galleryImages.length > 1;
 
   return (
-    <>
-      <section className="overflow-hidden rounded-xl border bg-card lg:hidden">
-        <div className="flex snap-x snap-mandatory overflow-x-auto">
-          {images.map((image, index) => (
-            <button key={`${image}-mobile-${index}`} type="button" className="relative block min-w-full snap-center overflow-hidden text-left" onClick={() => onOpenImage(index)}>
-              <img src={image} alt={`${venue.name} gallery ${index + 1}`} className="aspect-[4/3] w-full object-cover" />
-              <PhotoCountBadge current={index + 1} total={galleryCount} />
-            </button>
-          ))}
-        </div>
-      </section>
-
-      <section className="hidden gap-3 lg:grid lg:grid-cols-[minmax(0,1.6fr)_minmax(280px,0.9fr)]">
-        <div className="relative overflow-hidden rounded-xl border bg-card">
-          <button type="button" className="block h-full w-full overflow-hidden text-left" onClick={() => onOpenImage(0)}>
-            <img src={primaryImage} alt={`${venue.name} main gallery`} className="aspect-[16/9] h-full w-full object-cover transition duration-500 hover:scale-[1.02] lg:aspect-[16/8]" />
-          </button>
-          <PhotoCountBadge current={1} total={galleryCount} />
-        </div>
-        <div className="grid grid-cols-2 gap-3 overflow-x-auto lg:grid-cols-2">
-          {secondaryImages.slice(0, 4).map((image, index) => (
-            <div key={`${image}-${index}`} className="overflow-hidden rounded-xl border bg-card">
-              <button type="button" className="block h-full w-full overflow-hidden text-left" onClick={() => onOpenImage(index + 1)}>
-                <img src={image} alt={`${venue.name} gallery ${index + 2}`} className="aspect-[4/3] h-full w-full object-cover transition duration-500 hover:scale-[1.04]" />
-              </button>
-            </div>
-          ))}
-        </div>
-      </section>
-    </>
+    <section className="relative bg-nokta-surface">
+      <button type="button" className="block h-[260px] w-full overflow-hidden text-left sm:h-[340px]" onClick={() => onOpenImage(activeGalleryIndex)}>
+        <img src={activeImage} alt={`${venue.name} gallery ${activeGalleryIndex + 1}`} className="h-full w-full object-cover transition duration-700 hover:scale-[1.015]" />
+      </button>
+      {hasMultipleImages ? (
+        <>
+          <Button type="button" variant="secondary" size="icon" className="absolute left-3 top-1/2 h-10 w-10 -translate-y-1/2 rounded-full bg-white/90 text-nokta-ink shadow-lg backdrop-blur hover:bg-white" aria-label="Previous photo" onClick={() => setActiveGalleryIndex((index) => getPreviousImageIndex(index, galleryImages.length))}>
+            <ChevronLeft className="h-5 w-5" />
+          </Button>
+          <Button type="button" variant="secondary" size="icon" className="absolute right-3 top-1/2 h-10 w-10 -translate-y-1/2 rounded-full bg-white/90 text-nokta-ink shadow-lg backdrop-blur hover:bg-white" aria-label="Next photo" onClick={() => setActiveGalleryIndex((index) => getNextImageIndex(index, galleryImages.length))}>
+            <ChevronRight className="h-5 w-5" />
+          </Button>
+        </>
+      ) : null}
+      <PhotoCountBadge current={activeGalleryIndex + 1} total={galleryCount} />
+    </section>
   );
 }
 
@@ -375,40 +326,41 @@ function PhotoCountBadge({ current, total }: { current: number; total: number })
 
 function ActionBar({ venue, shareLabel, onShare }: { venue: Venue; shareLabel: string; onShare: () => void }) {
   const analyticsProperties = getVenueAnalyticsProperties(venue);
+  const actionButtonClass = "h-10 rounded-lg border-nokta-border bg-white px-3.5 text-sm font-medium text-nokta-ink-subtle hover:bg-nokta-surface-hover hover:text-nokta-ink";
 
   return (
-    <section className="mt-6 flex flex-wrap gap-2 rounded-xl border bg-card p-2">
-      <Button asChild>
+    <section className="mt-6 flex flex-wrap gap-2">
+      <Button asChild className="h-10 rounded-lg bg-nokta-ink px-3.5 text-sm font-medium text-white hover:bg-nokta-ink/90">
         <a href={getGoogleMapsDirectionsUrl(venue)} target="_blank" rel="noreferrer" onClick={() => trackVenueAction(venue, "directions_clicked", "venue_directions_clicked", analyticsProperties)}>
           <Navigation className="mr-2 h-4 w-4" />
           Get directions
         </a>
       </Button>
       {venue.phone ? (
-        <Button asChild variant="outline">
+        <Button asChild variant="outline" className={actionButtonClass}>
           <a href={`tel:${venue.phone}`}>
             <Phone className="mr-2 h-4 w-4" />
             Call
           </a>
         </Button>
       ) : (
-        <Button type="button" variant="outline" disabled>
+        <Button type="button" variant="outline" className={actionButtonClass} disabled>
           <Phone className="mr-2 h-4 w-4" />
           Call
         </Button>
       )}
-      <Button type="button" variant="outline" onClick={onShare}>
+      <Button type="button" variant="outline" className={actionButtonClass} onClick={onShare}>
         <Share2 className="mr-2 h-4 w-4" />
         {shareLabel}
       </Button>
-      <Button asChild variant="outline">
+      <Button asChild variant="outline" className={actionButtonClass}>
         <a href={`mailto:hello@sheesh.london?subject=${encodeURIComponent(`Venue report: ${venue.name}`)}`}>
           <Flag className="mr-2 h-4 w-4" />
           Report
         </a>
       </Button>
       {venue.website ? (
-        <Button asChild variant="outline" className="ml-0 lg:ml-auto">
+        <Button asChild variant="outline" className={cn(actionButtonClass, "font-semibold text-nokta-ink")}>
           <a href={venue.website} target="_blank" rel="noreferrer" onClick={() => trackVenueAction(venue, "website_clicked", "venue_website_clicked", analyticsProperties)}>
             Website
             <ExternalLink className="ml-2 h-4 w-4" />
@@ -416,7 +368,7 @@ function ActionBar({ venue, shareLabel, onShare }: { venue: Venue; shareLabel: s
         </Button>
       ) : null}
       {venue.instagram ? (
-        <Button asChild variant="outline">
+        <Button asChild variant="outline" className={cn(actionButtonClass, "font-semibold text-nokta-ink")}>
           <a href={venue.instagram} target="_blank" rel="noreferrer" onClick={() => trackVenueAction(venue, "instagram_clicked", "venue_instagram_clicked", analyticsProperties)}>
             Instagram
             <ExternalLink className="ml-2 h-4 w-4" />
@@ -424,6 +376,30 @@ function ActionBar({ venue, shareLabel, onShare }: { venue: Venue; shareLabel: s
         </Button>
       ) : null}
     </section>
+  );
+}
+
+function BookingSidebarCard({ venue }: { venue: Venue }) {
+  return (
+    <aside className="rounded-2xl border border-nokta-border bg-white p-5 shadow-sm shadow-stone-950/5">
+      <div className="flex items-center justify-between gap-3">
+        <h2 className="text-[15px] font-semibold text-nokta-ink">Request a booking</h2>
+        <FavouriteButton venueId={venue.id} venueName={venue.name} venue={venue} className="hidden h-10 w-10 shrink-0 border lg:inline-flex" />
+      </div>
+      <div className="mt-4 grid gap-3">
+        <Input readOnly value="Choose date and time" aria-label="Booking date and time" className="h-11 cursor-pointer rounded-lg border-nokta-border-input bg-white text-sm text-nokta-ink-muted" onClick={() => trackBookingCta(venue)} />
+        <Input readOnly value="Party size" aria-label="Party size" className="h-11 cursor-pointer rounded-lg border-nokta-border-input bg-white text-sm text-nokta-ink-muted" onClick={() => trackBookingCta(venue)} />
+      </div>
+      <div className="mt-4 grid gap-2">
+        <Button asChild className="h-11 rounded-lg bg-nokta-accent text-white hover:bg-nokta-accent-dark" onClick={() => trackBookingCta(venue)}>
+          <Link to={`/venues/${venue.slug}/request-booking`}>Request booking</Link>
+        </Button>
+        <Button asChild variant="outline" className="h-11 rounded-lg border-nokta-border bg-white text-nokta-ink hover:bg-nokta-surface-hover" onClick={() => trackEnquiryCta(venue)}>
+          <Link to={`/venues/${venue.slug}/enquire`}>Send enquiry</Link>
+        </Button>
+      </div>
+      <p className="mt-3 text-xs leading-5 text-nokta-ink-muted">Requests are confirmed once the venue accepts.</p>
+    </aside>
   );
 }
 
@@ -475,12 +451,7 @@ function OverviewTab({ venue, amenities, similarVenues }: { venue: Venue; amenit
     <div className="grid min-w-0 gap-8 lg:grid-cols-[minmax(0,1fr)_360px]">
       <article className="min-w-0 space-y-8">
         <section>
-          <h2 className="text-2xl font-semibold">About</h2>
-          <p className="mt-4 max-w-3xl text-lg leading-8 text-muted-foreground">{venue.description}</p>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-semibold">Key details</h2>
+          <h2 className="text-2xl font-semibold text-nokta-ink">Key details</h2>
           <div className="mt-4 grid gap-3 sm:grid-cols-2">
             <DetailTile icon={<Clock className="h-4 w-4" />} label="Hours" value={formatCurrentStatus(getVenueCurrentStatus(venue))} />
             <DetailTile icon={<Star className="h-4 w-4" />} label="Rating" value={venue.rating ? `${venue.rating} / 5` : "Rating TBC"} />
@@ -490,57 +461,67 @@ function OverviewTab({ venue, amenities, similarVenues }: { venue: Venue; amenit
         </section>
 
         <section>
-          <h2 className="text-2xl font-semibold">Amenities</h2>
-          <div className="mt-4 flex flex-wrap gap-2">{amenities.length ? amenities.map((amenity) => <Badge key={amenity}>{amenity}</Badge>) : <p className="text-muted-foreground">Amenities TBC</p>}</div>
+          <h2 className="text-2xl font-semibold text-nokta-ink">Amenities</h2>
+          <div className="mt-4 flex flex-wrap gap-2">
+            {amenities.length ? (
+              amenities.map((amenity) => (
+                <Badge key={amenity} variant="outline" className="rounded-full border-nokta-border bg-white px-3 py-1.5 text-[13px] font-medium text-nokta-ink">
+                  {amenity}
+                </Badge>
+              ))
+            ) : (
+              <p className="text-nokta-ink-muted">Amenities TBC</p>
+            )}
+          </div>
         </section>
 
         <section>
-          <h2 className="text-2xl font-semibold">Similar venues</h2>
+          <h2 className="text-2xl font-semibold text-nokta-ink">Similar venues</h2>
           <SimilarVenueCarousel venues={similarVenues} />
         </section>
       </article>
 
       <aside className="min-w-0 space-y-4">
-        <section className="rounded-xl border bg-card p-4">
-          <h2 className="font-semibold">Opening hours</h2>
+        <section className="rounded-2xl border border-nokta-border bg-white p-5 shadow-sm shadow-stone-950/5">
+          <h2 className="font-semibold text-nokta-ink">Opening hours</h2>
           <div className="mt-4 grid gap-2">
             {venue.openingHours.length ? (
               venue.openingHours.map((item) => (
-                <div key={item.day} className="grid grid-cols-[96px_1fr] gap-3 text-sm">
-                  <span className="font-medium">{item.day}</span>
-                  <span className="text-muted-foreground">
+                <div key={item.day} className="grid grid-cols-[96px_1fr] gap-3 text-[13px]">
+                  <span className="font-medium text-nokta-ink">{item.day}</span>
+                  <span className="text-nokta-ink-muted">
                     {item.open} - {item.close}
                   </span>
                 </div>
               ))
             ) : (
-              <p className="text-sm text-muted-foreground">Opening hours TBC</p>
+              <p className="text-sm text-nokta-ink-muted">Opening hours TBC</p>
             )}
           </div>
         </section>
 
-        <section className="rounded-xl border bg-card p-4">
-          <h2 className="font-semibold">Location</h2>
-          <p className="mt-3 text-sm leading-6 text-muted-foreground">
+        <section className="rounded-2xl border border-nokta-border bg-white p-5 shadow-sm shadow-stone-950/5">
+          <h2 className="font-semibold text-nokta-ink">Location</h2>
+          <p className="mt-3 text-sm leading-6 text-nokta-ink-muted">
             {venue.address}
             <br />
             {venue.area}
             <br />
             {venue.city} {venue.postcode}
           </p>
-          <div className="mt-4 overflow-hidden rounded-xl border">
+          <div className="mt-4 overflow-hidden rounded-xl border border-nokta-border">
             <VenueMap venues={[venue]} selectedVenueId={venue.id} city={venue.city} className="h-72 rounded-none border-0 [&_.leaflet-container]:!min-h-72 md:[&_.leaflet-container]:!min-h-72" />
           </div>
         </section>
 
-        <section className="rounded-xl border bg-card p-4">
-          <h2 className="font-semibold">Venue information</h2>
+        <section className="rounded-2xl border border-nokta-border bg-white p-5 shadow-sm shadow-stone-950/5">
+          <h2 className="font-semibold text-nokta-ink">Venue information</h2>
           <div className="mt-4 flex flex-wrap items-center gap-3">
             <VenueVerificationBadge status={venue.verificationStatus} />
-            {venue.lastVerifiedAt ? <span className="text-sm text-muted-foreground">Checked {formatVerifiedDate(venue.lastVerifiedAt)}</span> : null}
+            {venue.lastVerifiedAt ? <span className="text-sm text-nokta-ink-muted">Checked {formatVerifiedDate(venue.lastVerifiedAt)}</span> : null}
           </div>
-          <p className="mt-4 text-sm leading-6 text-muted-foreground">Venue details can change. Check directly before travelling or booking.</p>
-          {venue.sourceNotes ? <p className="mt-3 text-sm leading-6 text-muted-foreground">{venue.sourceNotes}</p> : null}
+          <p className="mt-4 text-sm leading-6 text-nokta-ink-muted">Venue details can change. Check directly before travelling or booking.</p>
+          {venue.sourceNotes ? <p className="mt-3 text-sm leading-6 text-nokta-ink-muted">{venue.sourceNotes}</p> : null}
         </section>
       </aside>
     </div>
@@ -549,18 +530,18 @@ function OverviewTab({ venue, amenities, similarVenues }: { venue: Venue; amenit
 
 function DetailTile({ icon, label, value }: { icon: React.ReactNode; label: string; value: string }) {
   return (
-    <div className="rounded-xl border bg-card p-4">
-      <div className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
+    <div className="rounded-xl border border-nokta-border bg-white p-4 shadow-sm shadow-stone-950/5">
+      <div className="flex items-center gap-2 text-[13px] font-medium text-nokta-ink-muted">
         {icon}
         {label}
       </div>
-      <p className="mt-3 font-semibold">{value}</p>
+      <p className="mt-3 text-[15px] font-semibold text-nokta-ink">{value}</p>
     </div>
   );
 }
 
 function CurrentStatusBadge({ status }: { status: ReturnType<typeof getVenueCurrentStatus> }) {
-  return <span className={cn("inline-flex h-7 items-center rounded-full px-3 text-xs font-semibold", status === "open" && "bg-clay-accent/10 text-clay-accent", status === "closed" && "bg-red-950/10 text-red-700", status === "unknown" && "bg-foreground/5 text-muted-foreground")}>{formatCurrentStatus(status)}</span>;
+  return <span className={cn("inline-flex h-7 items-center rounded-full px-3 text-xs font-semibold", status === "open" && "bg-emerald-50 text-emerald-700", status === "closed" && "bg-red-50 text-red-700", status === "unknown" && "bg-stone-100 text-nokta-ink-muted")}>{formatCurrentStatus(status)}</span>;
 }
 
 function formatFoodDrinks(venue: Venue) {
@@ -589,16 +570,16 @@ function MenuTab({ venue }: { venue: Venue }) {
 
   return (
     <section className="max-w-3xl">
-      <h2 className="text-2xl font-semibold">Menu & prices</h2>
-      <div className="mt-5 overflow-hidden rounded-xl border bg-card">
+      <h2 className="text-2xl font-semibold text-nokta-ink">Menu & prices</h2>
+      <div className="mt-5 overflow-hidden rounded-2xl border border-nokta-border bg-white shadow-sm shadow-stone-950/5">
         {rows.map(([label, value], index) => (
-          <div key={label} className={cn("grid grid-cols-[1fr_auto] gap-4 p-4 text-sm", index > 0 && "border-t")}>
-            <span className="font-medium">{label}</span>
-            <span className="text-muted-foreground">{value}</span>
+          <div key={label} className={cn("grid grid-cols-[1fr_auto] gap-4 p-4 text-sm", index > 0 && "border-t border-nokta-border")}>
+            <span className="font-medium text-nokta-ink">{label}</span>
+            <span className="text-nokta-ink-muted">{value}</span>
           </div>
         ))}
       </div>
-      <p className="mt-4 text-sm text-muted-foreground">Detailed flavour and food menus will appear here once verified source data is available.</p>
+      <p className="mt-4 text-sm text-nokta-ink-muted">Detailed flavour and food menus will appear here once verified source data is available.</p>
     </section>
   );
 }
@@ -715,14 +696,19 @@ function SimilarVenueCarousel({ venues }: { venues: Venue[] }) {
   return (
     <div className="mt-4 flex max-w-full gap-4 overflow-x-auto pb-2">
       {venues.map((venue) => (
-        <Link key={venue.id} reloadDocument to={`/venues/${venue.slug}`} className="w-64 shrink-0 overflow-hidden rounded-xl border bg-card transition hover:border-clay-accent/40">
-          <img src={getVenueImage(venue)} alt={`${venue.name} interior`} className="h-32 w-full object-cover" />
-          <div className="p-3">
-            <h3 className="truncate font-semibold">{venue.name}</h3>
-            <p className="mt-1 truncate text-sm text-muted-foreground">{venue.area}</p>
-            <div className="mt-2">
-              <VenuePrice level={venue.priceLevel} from={venue.priceFrom} />
-            </div>
+        <Link key={venue.id} reloadDocument to={`/venues/${venue.slug}`} className="group w-[220px] shrink-0 rounded-2xl border border-nokta-border bg-white p-2 shadow-none transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-stone-950/5">
+          <div className="relative h-[110px] overflow-hidden rounded-xl bg-muted">
+            <img src={getVenueImage(venue)} alt={`${venue.name} interior`} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+            {venue.rating ? (
+              <span className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-nokta-ink shadow-sm">
+                <Star className="h-3.5 w-3.5 fill-nokta-ink text-nokta-ink" />
+                {venue.rating}
+              </span>
+            ) : null}
+          </div>
+          <div className="px-1 pb-1 pt-3">
+            <h3 className="truncate text-sm font-semibold leading-5 text-nokta-ink">{venue.name}</h3>
+            <p className="mt-0.5 truncate text-xs leading-5 text-nokta-ink-muted">{venue.area}</p>
           </div>
         </Link>
       ))}

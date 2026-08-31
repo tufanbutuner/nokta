@@ -64,7 +64,7 @@ export function OwnerVenueMediaPage() {
 
   return (
     <OwnerLayout>
-      <PageMeta title={venue ? `${venue.name} photos | Sheesha` : "Venue photos | Sheesha"} description="Upload and manage venue photos for review." />
+      <PageMeta title={venue ? `${venue.name} photos | nokta` : "Venue photos | nokta"} description="Upload and manage venue photos for review." />
       {isLoading ? <LoadingState message="Loading venue photos..." /> : error || !venue || !user ? <ErrorState title="Venue media not found" message={error ?? "You do not have access to this venue media page."} /> : (
         <div className="space-y-6">
           <div>

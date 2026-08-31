@@ -20,9 +20,9 @@ export function CityPage() {
   if (!city) {
     return (
       <main>
-        <PageMeta title="City not found | Sheesha" description="This Sheesha city page is not available." />
+        <PageMeta title="City not found | nokta" description="This nokta city page is not available." />
         <PageContainer className="py-16">
-          <EmptyState title="City not found" description="This city is not available in Sheesha yet." />
+          <EmptyState title="City not found" description="This city is not available in nokta yet." />
         </PageContainer>
       </main>
     );
@@ -32,7 +32,7 @@ export function CityPage() {
     return (
       <main>
         <PageMeta
-          title={`${city.name} coming soon | Sheesha`}
+          title={`${city.name} coming soon | nokta`}
           description={`We are adding verified social venues in ${city.name} soon.`}
           canonicalPath={`/cities/${city.slug}`}
         />
@@ -55,7 +55,7 @@ export function CityPage() {
   return (
     <main>
       <PageMeta
-        title={`Venues in ${city.name} | Sheesha`}
+        title={`Venues in ${city.name} | nokta`}
         description={`Explore social venues in ${city.name}, including lounges, late-night spots and shisha lounges. View venue details, photos and request bookings.`}
         canonicalPath={`/cities/${city.slug}`}
       />

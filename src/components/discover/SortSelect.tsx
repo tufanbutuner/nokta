@@ -24,7 +24,7 @@ export function SortSelect({
 }) {
   return (
     <div className={cn(inline ? "flex items-center gap-1.5" : "space-y-1.5")}>
-      <label className={cn("font-medium text-muted-foreground", inline ? "text-sm" : "text-xs")} htmlFor="sort-filter">
+      <label className={cn("font-medium text-nokta-ink-muted", inline ? "text-[13px]" : "text-xs")} htmlFor="sort-filter">
         Sort{inline ? ":" : ""}
       </label>
       <Select
@@ -35,7 +35,7 @@ export function SortSelect({
           ...option,
           label: option.value === "nearest" && !userLocation && !inline ? "Distance - set location first" : option.label,
         }))}
-        className={cn(inline ? "h-8 w-auto min-w-28 border-0 bg-transparent px-0 text-sm font-medium shadow-none focus-visible:ring-0" : "w-full")}
+        className={cn(inline ? "h-8 w-auto min-w-28 border-0 bg-transparent px-0 text-[13px] font-semibold text-nokta-ink shadow-none focus-visible:ring-0" : "w-full")}
       />
       {!inline && value === "nearest" && !userLocation ? (
         <p className="text-xs text-muted-foreground">Use my location to sort by nearest.</p>

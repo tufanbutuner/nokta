@@ -83,7 +83,7 @@ export function OwnerVenueUpdateRequestPage() {
 
   return (
     <OwnerLayout>
-      <PageMeta title={venue ? `Request profile update | ${venue.name}` : "Request profile update | Sheesha"} description="Submit a reviewed profile update request." />
+      <PageMeta title={venue ? `Request profile update | ${venue.name}` : "Request profile update | nokta"} description="Submit a reviewed profile update request." />
       {isLoading ? <LoadingState message="Loading update request..." /> : error && !venue ? <ErrorState message={error} /> : venue ? (
         <div className="space-y-6">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">

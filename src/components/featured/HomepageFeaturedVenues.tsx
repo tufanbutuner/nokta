@@ -53,7 +53,7 @@ export function HomepageFeaturedVenues({ venues }: { venues: Venue[] }) {
       <div className="mb-6">
         <p className="text-sm text-clay-accent">Featured</p>
         <h2 className="mt-1 text-3xl font-semibold">Featured venues</h2>
-        <p className="mt-2 text-sm text-muted-foreground">Promoted venues from across Sheesha.</p>
+        <p className="mt-2 text-sm text-muted-foreground">Promoted venues from across nokta.</p>
       </div>
       <div className="grid gap-4 md:grid-cols-3">
         {featured.map(({ placement, venue }) => (

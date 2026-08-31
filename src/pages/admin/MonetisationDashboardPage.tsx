@@ -90,16 +90,16 @@ export function MonetisationDashboardPage() {
                 <h2 className="font-primary text-xs font-semibold text-clay-600">Featured placements</h2>
                 <p className="mt-1 text-[13px] text-[#8a7e72]">Manage promoted homepage, city and discover placements.</p>
               </div>
-              <Link to="/admin/featured" className="text-sm font-medium text-clay-600 hover:text-sheesh-ink">
+              <Link to="/admin/featured" className="text-sm font-medium text-clay-600 hover:text-nokta-ink">
                 Open featured manager
               </Link>
-              <Link to="/admin/enquiries" className="text-sm font-medium text-clay-600 hover:text-sheesh-ink">
+              <Link to="/admin/enquiries" className="text-sm font-medium text-clay-600 hover:text-nokta-ink">
                 Open enquiries
               </Link>
-              <Link to="/admin/offers" className="text-sm font-medium text-clay-600 hover:text-sheesh-ink">
+              <Link to="/admin/offers" className="text-sm font-medium text-clay-600 hover:text-nokta-ink">
                 Open offers
               </Link>
-              <Link to="/admin/analytics" className="text-sm font-medium text-clay-600 hover:text-sheesh-ink">
+              <Link to="/admin/analytics" className="text-sm font-medium text-clay-600 hover:text-nokta-ink">
                 Open analytics
               </Link>
             </div>

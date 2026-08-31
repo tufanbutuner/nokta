@@ -68,7 +68,7 @@ export function OwnerVenueDashboardPage() {
 
   return (
     <OwnerLayout>
-      <PageMeta title={venue ? `${venue.name} owner dashboard | Sheesha` : "Owner venue dashboard | Sheesha"} description="View read-only venue performance and commercial activity." />
+      <PageMeta title={venue ? `${venue.name} owner dashboard | nokta` : "Owner venue dashboard | nokta"} description="View read-only venue performance and commercial activity." />
       {isLoading ? <LoadingState message="Loading venue dashboard..." /> : error || !venue || !analytics || !enquiries || !commercial ? <ErrorState title="Venue dashboard not found" message={error ?? "You do not have access to this venue dashboard."} /> : (
         <div className="space-y-6">
           <OwnerVenueHeader venue={venue} />

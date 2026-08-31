@@ -104,11 +104,11 @@ export function AdminPromotionRequestsPage() {
 
   return (
     <AdminPageShell activePath="/admin/promotion-requests">
-      <PageMeta title="Promotion Requests | Sheesha Admin" description="Review owner promotion requests." />
+      <PageMeta title="Promotion Requests | nokta Admin" description="Review owner promotion requests." />
       <div className="space-y-6">
         <div>
           <p className="text-sm text-clay-accent">Admin</p>
-          <h1 className="mt-1 font-brand text-3xl font-bold tracking-[-0.5px] text-sheesh-ink">Promotion requests</h1>
+          <h1 className="mt-1 font-brand text-3xl font-bold tracking-[-0.5px] text-nokta-ink">Promotion requests</h1>
           <p className="mt-2 text-sm text-[#8a7e72]">Approve, reject, and convert owner requests into draft campaigns.</p>
         </div>
         <SummaryCards requests={requests} />

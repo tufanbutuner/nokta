@@ -36,7 +36,7 @@ export function AdminSubscriptionTable({
           <tbody className="divide-y divide-border">
             {rows.map((row) => (
               <tr key={row.venue.id} className="align-top">
-                <td className="px-4 py-4 font-medium text-sheesh-ink">{row.venue.name}</td>
+                <td className="px-4 py-4 font-medium text-nokta-ink">{row.venue.name}</td>
                 <td className="px-4 py-4 text-muted-foreground">{row.venue.city} · {row.venue.area}</td>
                 <td className="px-4 py-4 text-muted-foreground">{row.venue.claimedBy ? "Claimed" : "Unassigned"}</td>
                 <td className="px-4 py-4"><SubscriptionPlanBadge plan={row.subscription.plan} status={row.subscription.status} /></td>

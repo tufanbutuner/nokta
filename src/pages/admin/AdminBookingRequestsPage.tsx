@@ -73,9 +73,9 @@ export function AdminBookingRequestsPage() {
 
   return (
     <AdminPageShell activePath="/admin/bookings">
-      <PageMeta title="Booking Requests | Sheesha Admin" description="Review booking request workflow activity." />
+      <PageMeta title="Booking Requests | nokta Admin" description="Review booking request workflow activity." />
       <div className="space-y-6">
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between"><div><p className="text-sm text-clay-accent">Operations</p><h1 className="mt-1 font-brand text-3xl font-bold tracking-[-0.5px] text-sheesh-ink">Booking requests</h1></div><p className="text-sm text-[#8a7e72]">{filtered.length} requests</p></div>
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between"><div><p className="text-sm text-clay-accent">Operations</p><h1 className="mt-1 font-brand text-3xl font-bold tracking-[-0.5px] text-nokta-ink">Booking requests</h1></div><p className="text-sm text-[#8a7e72]">{filtered.length} requests</p></div>
         <section className="grid gap-3 rounded-xl border bg-card p-4 lg:grid-cols-4"><Input placeholder="Search requests" value={query} onChange={(event) => setQuery(event.target.value)} /><Select value={venueId} onValueChange={setVenueId} options={[{ label: "All venues", value: "all" }, ...venues.map((venue) => ({ label: venue.name, value: venue.id }))]} /><Select value={status} onValueChange={(next) => setStatus(next as typeof status)} options={STATUSES.map((item) => ({ label: item === "all" ? "All statuses" : formatBookingRequestStatus(item), value: item }))} /></section>
         {error ? <Alert className="border-destructive/30 text-destructive">{error}</Alert> : null}
         {isLoading ? <p className="text-sm text-muted-foreground">Loading booking requests...</p> : error ? <ErrorState message={error} /> : <AdminBookingTable bookings={filtered} venuesById={venuesById} onSelect={(booking) => { setSelected(booking); setAdminNotes(booking.adminNotes ?? ""); }} onSpam={handleSpam} />}

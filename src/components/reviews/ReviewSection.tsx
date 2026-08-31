@@ -94,7 +94,7 @@ export function ReviewSection({ venue }: { venue: Venue }) {
       <div className="min-w-0 space-y-5">
         <div>
           <h2 className="text-2xl font-semibold">Reviews</h2>
-          <p className="mt-2 text-sm text-muted-foreground">Real experiences from Sheesha users.</p>
+          <p className="mt-2 text-sm text-muted-foreground">Real experiences from nokta users.</p>
         </div>
 
         {reviewsError ? <Alert className="border-destructive/30 text-destructive">{reviewsError}</Alert> : null}

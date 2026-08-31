@@ -6,7 +6,6 @@ import { HomepageFeaturedVenues } from "@/components/featured/HomepageFeaturedVe
 import { PageContainer } from "@/components/layout/PageContainer";
 import { HomepageOffersSection } from "@/components/offers/HomepageOffersSection";
 import { PageMeta } from "@/components/seo/PageMeta";
-import { ClaimedVenueBadge } from "@/components/venues/ClaimedVenueBadge";
 import { FavouriteButton } from "@/components/venues/FavouriteButton";
 import { VenueGrid } from "@/components/venues/VenueGrid";
 import { Button } from "@/components/ui/button";
@@ -19,6 +18,8 @@ import { brandConfig } from "@/config/brand";
 import { DEFAULT_CITY, getActiveCities } from "@/lib/cities";
 import { getVenueImage } from "@/lib/venueImages";
 import { getVenueCurrentStatus } from "@/lib/openingHours";
+import { formatVenuePrimaryCategoryPlural } from "@/lib/venueCategoryLabels";
+import { formatVenuePrimaryCategory } from "@/lib/venueCategoryLabels";
 import type { Venue } from "@/types/venue";
 
 const quickFilters = [
@@ -71,6 +72,13 @@ const CITY_DESCRIPTIONS: Record<string, string> = {
   Manchester: "Discover social venues across Manchester for casual nights, groups and late plans.",
   Leicester: "Browse social venues across Leicester by vibe, features and location.",
 };
+
+const categoryEntrypoints = [
+  { label: "Shisha lounges", category: "shisha_lounge", status: "live", description: "Bookable lounges, late-night spots and places with shisha menus." },
+  { label: "Restaurants", category: "restaurant", status: "Coming soon", description: "Dinner-first venues for dates, birthdays and group tables." },
+  { label: "Bars", category: "bar", status: "Coming soon", description: "Social bars and evening venues for drinks-led plans." },
+  { label: "Cafes", category: "cafe", status: "Coming soon", description: "Daytime cafes, dessert spots and casual catch-ups." },
+] as const;
 
 export function HomePage() {
   const navigate = useNavigate();
@@ -143,7 +151,7 @@ export function HomePage() {
         </PageContainer>
       </section>
 
-      <section className="border-b border-sheesh-ink bg-sheesh-ink">
+      <section className="border-b border-nokta-ink bg-nokta-ink">
         <PageContainer className="grid gap-4 py-6 text-center text-sm text-clay-50/60 sm:grid-cols-[1fr_auto_auto_auto] sm:items-center sm:text-left">
           <p className="font-medium text-clay-50">{brandConfig.shortDescription}</p>
           <span>Late-night plans</span>
@@ -153,6 +161,46 @@ export function HomePage() {
       </section>
 
       <PageContainer className="space-y-16 py-12 sm:py-16">
+        <section>
+          <div className="mb-6 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-sm font-semibold text-clay-accent">Explore by category</p>
+              <h2 className="mt-1 text-3xl font-semibold">Start with the kind of place you need</h2>
+            </div>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {categoryEntrypoints.map((category) => {
+              const count = venues.filter((venue) => venue.primaryCategory === category.category).length;
+              const isLive = category.status === "live";
+
+              return (
+                <Link
+                  key={category.category}
+                  reloadDocument={isLive}
+                  to={isLive ? `/discover?category=${category.category}` : "#"}
+                  className="group rounded-2xl border border-nokta-border bg-card p-5 transition hover:-translate-y-0.5 hover:border-nokta-border-input"
+                  aria-disabled={!isLive}
+                  onClick={(event) => {
+                    if (!isLive) event.preventDefault();
+                  }}
+                >
+                  <div className="flex items-start justify-between gap-4">
+                    <h3 className="font-semibold text-nokta-ink">{category.label}</h3>
+                    <span className={isLive ? "rounded-full bg-nokta-accent-tint px-2.5 py-1 text-xs font-semibold text-nokta-accent-dark" : "rounded-full bg-foreground/5 px-2.5 py-1 text-xs font-semibold text-muted-foreground"}>
+                      {isLive ? `${count} live` : category.status}
+                    </span>
+                  </div>
+                  <p className="mt-4 text-sm leading-6 text-nokta-ink-subtle">{category.description}</p>
+                  <div className="mt-5 flex items-center gap-2 text-sm font-semibold text-clay-accent">
+                    {isLive ? formatVenuePrimaryCategoryPlural(category.category) : "Planned category"}
+                    <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </section>
+
         {!isLoading && !error ? <HomepageFeaturedVenues venues={venues} /> : null}
         {!isLoading && !error ? <HomepageOffersSection venues={venues} /> : null}
 
@@ -308,8 +356,8 @@ function LandingVenueCard({ venue }: { venue: Venue }) {
   const currentStatus = getVenueCurrentStatus(venue);
 
   return (
-    <article className="group overflow-hidden rounded-xl border bg-card transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-stone-950/5">
-      <div className="relative h-[190px] overflow-hidden bg-muted">
+    <article className="group rounded-2xl border border-nokta-border bg-nokta-surface p-2 shadow-none transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-stone-950/5">
+      <div className="relative h-[190px] overflow-hidden rounded-xl bg-muted">
         <Link reloadDocument to={`/venues/${venue.slug}`} className="block h-full">
           <img
             src={getVenueImage(venue)}
@@ -318,30 +366,27 @@ function LandingVenueCard({ venue }: { venue: Venue }) {
           />
         </Link>
         {venue.rating ? (
-          <span className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full bg-card/90 px-2.5 py-1 text-xs font-medium backdrop-blur">
+          <span className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-nokta-ink shadow-sm">
             <Star className="h-3.5 w-3.5 fill-clay-accent text-clay-accent" />
             {venue.rating}
           </span>
         ) : null}
         <FavouriteButton venueId={venue.id} venueName={venue.name} venue={venue} className="absolute right-3 top-3 h-8 w-8 text-clay-accent" />
       </div>
-      <div className="p-4">
+      <div className="px-2 pb-2 pt-3">
         <Link reloadDocument to={`/venues/${venue.slug}`} className="block">
-          <div className="flex min-w-0 flex-wrap items-center gap-2">
-            <h3 className="line-clamp-1 min-w-0 font-semibold">{venue.name}</h3>
-            {venue.isClaimed ? <ClaimedVenueBadge compact /> : null}
-          </div>
-          <p className="mt-1 line-clamp-1 text-sm text-muted-foreground">{venue.area}</p>
+          <h3 className="truncate text-[15px] font-semibold leading-5 text-nokta-ink">{venue.name}</h3>
+          <p className="mt-0.5 truncate text-[13px] leading-5 text-nokta-ink-muted">{venue.area} · {formatVenuePrimaryCategory(venue.primaryCategory)}</p>
         </Link>
         <div className="mt-4 flex items-center justify-between gap-3">
-          <span className="text-sm text-muted-foreground">{venue.priceFrom ? `£${venue.priceFrom}+` : "Price TBC"}</span>
+          <span className="text-[13px] font-medium text-nokta-ink-muted">{venue.priceFrom ? `£${venue.priceFrom}+` : "Price TBC"}</span>
           <span
             className={
               currentStatus === "open"
-                ? "rounded-full bg-clay-accent/10 px-2 py-1 text-xs font-medium text-clay-accent"
+                ? "rounded-full bg-nokta-accent-tint px-2.5 py-1 text-xs font-semibold text-nokta-accent-dark"
                 : currentStatus === "closed"
-                  ? "rounded-full bg-red-950/10 px-2 py-1 text-xs font-medium text-red-700"
-                  : "rounded-full bg-muted px-2 py-1 text-xs font-medium text-muted-foreground"
+                  ? "rounded-full bg-red-950/10 px-2.5 py-1 text-xs font-semibold text-red-700"
+                  : "rounded-full bg-muted px-2.5 py-1 text-xs font-semibold text-muted-foreground"
             }
           >
             {formatLandingStatus(currentStatus)}

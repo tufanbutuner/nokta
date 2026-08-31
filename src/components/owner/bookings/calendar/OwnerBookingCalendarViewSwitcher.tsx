@@ -12,7 +12,7 @@ export function OwnerBookingCalendarViewSwitcher({ value, onChange }: { value: B
   return (
     <div className="inline-flex rounded-xl border bg-card p-1">
       {VIEWS.map((view) => (
-        <button key={view.value} type="button" className={cn("rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition", value === view.value && "bg-sheesh-ink text-clay-50")} onClick={() => onChange(view.value)}>
+        <button key={view.value} type="button" className={cn("rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition", value === view.value && "bg-nokta-ink text-clay-50")} onClick={() => onChange(view.value)}>
           {view.label}
         </button>
       ))}

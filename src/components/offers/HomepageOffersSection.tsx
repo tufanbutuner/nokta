@@ -35,7 +35,7 @@ export function HomepageOffersSection({ venues }: { venues: Venue[] }) {
       <div className="mb-6">
         <p className="text-sm text-clay-accent">Offers</p>
         <h2 className="mt-1 text-3xl font-semibold">Latest venue offers</h2>
-        <p className="mt-2 text-sm text-muted-foreground">Promoted offers from venues on Sheesha.</p>
+        <p className="mt-2 text-sm text-muted-foreground">Promoted offers from venues on nokta.</p>
       </div>
       <div className="grid gap-4 md:grid-cols-3">
         {promoted.map(({ offer, venue }) => (

@@ -3,6 +3,6 @@ export function buildPlainTextEmail(input: { title: string; lines: string[]; act
   if (input.actionUrl) {
     parts.push("", input.actionLabel ? `${input.actionLabel}:` : "Open link:", input.actionUrl);
   }
-  parts.push("", "You received this email because you used Sheesha for a booking or venue enquiry.");
+  parts.push("", "You received this email because you used nokta for a booking or venue enquiry.");
   return parts.join("\n");
 }

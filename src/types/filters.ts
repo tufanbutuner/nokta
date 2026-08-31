@@ -9,7 +9,7 @@ export interface VenueFilterState {
   country: string;
   city: string;
   area: string;
-  primaryCategory: VenuePrimaryCategory | "all";
+  primaryCategories: VenuePrimaryCategory[];
   priceLevel: PriceLevel | "all";
   openNow: boolean;
   minRating: 4 | "all";

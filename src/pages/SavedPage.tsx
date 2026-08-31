@@ -22,8 +22,8 @@ export function SavedPage() {
   return (
     <main>
       <PageMeta
-        title="Saved Venues | Sheesha"
-        description="View your saved Sheesha venues and keep a shortlist of shisha lounges to try."
+        title="Saved Venues | nokta"
+        description="View your saved nokta venues and keep a shortlist of shisha lounges to try."
         canonicalPath="/saved"
       />
       <PageContainer className="py-12">

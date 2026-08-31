@@ -41,7 +41,7 @@ export function SignInPage() {
 
   return (
     <main>
-      <PageMeta title="Sign in | Sheesha" description="Sign in to Sheesha to sync saved venues, reviews and suggestions." canonicalPath="/sign-in" />
+      <PageMeta title="Sign in | nokta" description="Sign in to nokta to sync saved venues, reviews and suggestions." canonicalPath="/sign-in" />
       <PageContainer className="py-12">
         <AuthForm
           mode="sign-in"

@@ -74,7 +74,7 @@ const previewOffers: PromotedOffer[] = [
 export function PromotedOfferPreviewPage() {
   return (
     <main>
-      <PageMeta title="Promoted Offer Preview | Sheesha" description="Preview promoted offer cards." />
+      <PageMeta title="Promoted Offer Preview | nokta" description="Preview promoted offer cards." />
       <PageContainer className="space-y-10 py-10">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>

@@ -104,11 +104,11 @@ export function AdminMediaReviewPage() {
 
   return (
     <AdminPageShell activePath="/admin/media-review">
-      <PageMeta title="Media Review | Sheesha Admin" description="Review owner-uploaded venue media." />
+      <PageMeta title="Media Review | nokta Admin" description="Review owner-uploaded venue media." />
       <div className="space-y-6">
         <div>
           <p className="text-sm text-clay-accent">Admin</p>
-          <h1 className="mt-1 font-brand text-3xl font-bold tracking-[-0.5px] text-sheesh-ink">Media review</h1>
+          <h1 className="mt-1 font-brand text-3xl font-bold tracking-[-0.5px] text-nokta-ink">Media review</h1>
           <p className="mt-2 text-sm text-[#8a7e72]">Approve or reject owner-uploaded venue photos before they appear publicly.</p>
         </div>
         <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
@@ -180,7 +180,7 @@ export function AdminMediaReviewPage() {
           </div>
         ) : null}
         {toastMessage ? (
-          <div className="fixed bottom-5 right-5 z-[1600] max-w-sm rounded-xl border bg-sheesh-ink px-4 py-3 text-sm font-medium text-clay-50 shadow-xl">
+          <div className="fixed bottom-5 right-5 z-[1600] max-w-sm rounded-xl border bg-nokta-ink px-4 py-3 text-sm font-medium text-clay-50 shadow-xl">
             {toastMessage}
           </div>
         ) : null}

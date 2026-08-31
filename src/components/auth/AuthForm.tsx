@@ -37,7 +37,7 @@ export function AuthForm({
       <CardContent className="space-y-6 p-6">
         <div>
           <p className="text-sm text-muted-foreground">{signingUp ? "Create account" : "Welcome back"}</p>
-          <h1 className="mt-2 text-3xl font-semibold">{signingUp ? "Create your Sheesha account" : "Sign in to Sheesha"}</h1>
+          <h1 className="mt-2 text-3xl font-semibold">{signingUp ? "Create your nokta account" : "Sign in to nokta"}</h1>
         </div>
 
         <form className="space-y-4" onSubmit={onSubmit}>

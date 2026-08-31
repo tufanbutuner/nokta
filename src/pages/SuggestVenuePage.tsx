@@ -98,7 +98,7 @@ export function SuggestVenuePage() {
   return (
     <main>
       <PageMeta
-        title="Suggest a Sheesha Venue | Sheesha"
+        title="Suggest a nokta Venue | nokta"
         description="Know a shisha spot we are missing? Suggest it for review."
         canonicalPath="/suggest"
       />
@@ -107,7 +107,7 @@ export function SuggestVenuePage() {
           <p className="text-sm font-medium text-muted-foreground">Suggest</p>
           <h1 className="mt-2 text-4xl font-semibold">Suggest a venue</h1>
           <p className="mt-3 text-muted-foreground">
-            Know a sheesha spot we are missing? Send it over and we will review it before adding it to Sheesha.
+            Know a sheesha spot we are missing? Send it over and we will review it before adding it to nokta.
           </p>
         </div>
 

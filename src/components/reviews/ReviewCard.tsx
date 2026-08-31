@@ -17,7 +17,7 @@ export function ReviewCard({ review, isOwner = false, onEdit, onDelete }: Review
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
           <StarRating value={review.rating} readOnly size="sm" />
-          <p className="mt-2 text-sm font-medium">Sheesha user</p>
+          <p className="mt-2 text-sm font-medium">nokta user</p>
           <p className="mt-1 text-xs text-muted-foreground">{formatDate(review.createdAt)}</p>
         </div>
         {isOwner ? (

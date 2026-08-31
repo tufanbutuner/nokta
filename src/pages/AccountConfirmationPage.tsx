@@ -10,7 +10,7 @@ export function AccountConfirmationPage() {
 
   return (
     <main>
-      <PageMeta title="Confirm your email | Sheesha" description="Confirm your email address to finish creating your Sheesha account." canonicalPath="/account" />
+      <PageMeta title="Confirm your email | nokta" description="Confirm your email address to finish creating your nokta account." canonicalPath="/account" />
       <PageContainer className="py-12 sm:py-16">
         <section className="mx-auto max-w-2xl rounded-xl border bg-card p-6 text-center shadow-sm sm:p-8">
           <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-emerald-50 text-emerald-700">
@@ -26,7 +26,7 @@ export function AccountConfirmationPage() {
               <Link to="/sign-in">Go to sign in</Link>
             </Button>
             <Button asChild variant="outline">
-              <Link to="/">Back to Sheesha</Link>
+              <Link to="/">Back to nokta</Link>
             </Button>
           </div>
         </section>

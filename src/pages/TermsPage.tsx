@@ -5,8 +5,8 @@ export function TermsPage() {
   return (
     <main>
       <PageMeta
-        title="Terms | Sheesha"
-        description="Basic terms for using Sheesha venue discovery, user reviews and suggested venue data."
+        title="Terms | nokta"
+        description="Basic terms for using nokta venue discovery, user reviews and suggested venue data."
         canonicalPath="/terms"
       />
       <PageContainer className="max-w-3xl py-12">
@@ -18,10 +18,10 @@ export function TermsPage() {
           <p>Reviews are user-submitted and reflect individual experiences.</p>
           <p>Users must not submit abusive, misleading, unlawful or intentionally inaccurate content in reviews, venue suggestions or venue claim requests.</p>
           <p>Venue claim requests may be approved, rejected or cancelled at our discretion. Submitting a claim does not guarantee access to manage a venue profile.</p>
-          <p>Venue enquiries are not confirmed bookings. Venue availability is not guaranteed, and Sheesha may not be responsible for venue response times.</p>
+          <p>Venue enquiries are not confirmed bookings. Venue availability is not guaranteed, and nokta may not be responsible for venue response times.</p>
           <p>Users should provide accurate contact details when sending enquiries.</p>
           <p>Claimants must provide accurate information and must not claim a venue they do not own, manage or have permission to represent.</p>
-          <p>Sheesha is not responsible for venue availability, pricing changes, booking outcomes or changes made by venues.</p>
+          <p>nokta is not responsible for venue availability, pricing changes, booking outcomes or changes made by venues.</p>
         </div>
       </PageContainer>
     </main>

@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 export function NotFoundPage() {
   return (
     <main>
-      <PageMeta title="Page not found | Sheesha" description="This page does not exist or may have moved." />
+      <PageMeta title="Page not found | nokta" description="This page does not exist or may have moved." />
       <PageContainer className="flex min-h-[60vh] items-center py-20">
         <section className="mx-auto max-w-xl text-center">
           <p className="text-sm font-medium text-muted-foreground">404</p>

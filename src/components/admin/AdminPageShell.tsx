@@ -17,12 +17,12 @@ export function AdminPageShell({
   const { user } = useAuth();
 
   return (
-    <main className="h-screen overflow-hidden bg-clay-50 font-primary text-sheesh-ink">
+    <main className="h-screen overflow-hidden bg-nokta-page-bg font-primary text-nokta-ink">
       <div className="flex h-full min-h-0 flex-col lg:flex-row">
-        <div className="shrink-0 border-b bg-sheesh-ink text-clay-50 lg:hidden">
+        <div className="shrink-0 border-b bg-nokta-ink text-clay-50 lg:hidden">
           <div className="flex h-14 items-center justify-between gap-3 px-4">
-            <NavLink to="/" className="font-brand text-xl font-bold tracking-[-0.5px] text-clay-400">
-              slice.
+            <NavLink to="/" className="font-brand text-xl font-bold tracking-[0.02em] text-clay-400">
+              nokta
             </NavLink>
             <Button type="button" variant="ghost" size="icon" className="text-clay-50/80 hover:bg-clay-400/10 hover:text-clay-200" aria-label={isMobileOpen ? "Close admin menu" : "Open admin menu"} onClick={() => setIsMobileOpen((next) => !next)}>
               {isMobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}

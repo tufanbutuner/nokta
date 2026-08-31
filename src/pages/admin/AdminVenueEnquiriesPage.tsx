@@ -83,12 +83,12 @@ export function AdminVenueEnquiriesPage() {
 
   return (
     <AdminPageShell activePath="/admin/enquiries">
-      <PageMeta title="Venue Enquiries | Sheesha Admin" description="Manage booking and venue enquiry leads." />
+      <PageMeta title="Venue Enquiries | nokta Admin" description="Manage booking and venue enquiry leads." />
       <div className="space-y-6">
         <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="text-sm font-medium text-[#8a7e72]">Admin</p>
-            <h1 className="mt-1 font-brand text-3xl font-bold tracking-[-0.5px] text-sheesh-ink">Venue enquiries</h1>
+            <h1 className="mt-1 font-brand text-3xl font-bold tracking-[-0.5px] text-nokta-ink">Venue enquiries</h1>
           </div>
           <p className="text-sm text-[#8a7e72]">{filtered.length} enquiries</p>
         </div>

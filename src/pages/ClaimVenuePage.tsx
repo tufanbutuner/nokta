@@ -127,7 +127,7 @@ export function ClaimVenuePage() {
   if (!venue) {
     return (
       <main>
-        <PageMeta title="Venue not found | Sheesha" description="This venue is not available." />
+        <PageMeta title="Venue not found | nokta" description="This venue is not available." />
         <PageContainer className="py-20">
           <ErrorState title="Venue not found" message="This venue is not available." />
         </PageContainer>
@@ -137,7 +137,7 @@ export function ClaimVenuePage() {
 
   return (
     <main>
-      <PageMeta title={`Claim ${venue.name} | Sheesha`} description={`Request to claim ${venue.name} on Sheesha.`} canonicalPath={`/venues/${venue.slug}/claim`} />
+      <PageMeta title={`Claim ${venue.name} | nokta`} description={`Request to claim ${venue.name} on nokta.`} canonicalPath={`/venues/${venue.slug}/claim`} />
       <PageContainer className="py-10">
         <Link to={`/venues/${venue.slug}`} className="mb-5 inline-flex text-sm font-medium text-muted-foreground hover:text-foreground">
           Back to {venue.name}

@@ -70,7 +70,7 @@ export function OwnerPromotionsPage() {
 
   return (
     <OwnerLayout>
-      <PageMeta title="Promotions | Sheesha" description="Request promoted offers and featured placements for your venue." canonicalPath="/owner/promotions" />
+      <PageMeta title="Promotions | nokta" description="Request promoted offers and featured placements for your venue." canonicalPath="/owner/promotions" />
       <div className="space-y-6">
         <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
           <div>

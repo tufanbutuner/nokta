@@ -57,14 +57,14 @@ export function SignUpPage() {
 
   return (
     <main>
-      <PageMeta title="Create account | Sheesha" description="Create a Sheesha account to save venues, write reviews and suggest missing shisha lounges." canonicalPath="/sign-up" />
+      <PageMeta title="Create account | nokta" description="Create a nokta account to save venues, write reviews and suggest missing shisha lounges." canonicalPath="/sign-up" />
       <PageContainer className="py-12">
         {submittedEmail ? (
           <Card className="mx-auto max-w-md">
             <CardContent className="space-y-5 p-6 text-center">
               <div>
                 <p className="text-sm text-clay-accent">Check your email</p>
-                <h1 className="mt-2 font-brand text-3xl font-bold tracking-[-0.5px]">Confirm your Sheesha account</h1>
+                <h1 className="mt-2 font-brand text-3xl font-bold tracking-[-0.5px]">Confirm your nokta account</h1>
                 <p className="mt-3 text-sm leading-6 text-muted-foreground">
                   We sent a confirmation email to {submittedEmail}. Open the link in that email to activate your account, then sign in.
                 </p>

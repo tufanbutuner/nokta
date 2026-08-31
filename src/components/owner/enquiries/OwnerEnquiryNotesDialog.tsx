@@ -17,7 +17,7 @@ export function OwnerEnquiryNotesDialog({ enquiry, onClose, onSave, isSaving }: 
         }}
       >
         <h2 className="text-2xl font-semibold">Enquiry notes</h2>
-        <p className="mt-1 text-sm text-muted-foreground">These notes are visible to your venue account and Sheesha admins.</p>
+        <p className="mt-1 text-sm text-muted-foreground">These notes are visible to your venue account and nokta admins.</p>
         <label className="mt-5 block space-y-2"><span className="text-sm font-medium">Venue response</span><Textarea rows={4} value={venueResponse} onChange={(event) => setVenueResponse(event.target.value)} /></label>
         <label className="mt-4 block space-y-2"><span className="text-sm font-medium">Owner notes</span><Textarea rows={4} value={ownerNotes} onChange={(event) => setOwnerNotes(event.target.value)} /></label>
         <div className="mt-5 flex justify-end gap-2">

@@ -76,7 +76,7 @@ export function OwnerPricingPage() {
 
   return (
     <OwnerLayout>
-      <PageMeta title="Venue plans | Sheesha" description="Compare Sheesha venue owner plans." canonicalPath="/owner/pricing" />
+      <PageMeta title="Venue plans | nokta" description="Compare nokta venue owner plans." canonicalPath="/owner/pricing" />
       <div className="space-y-6">
         <div>
           <p className="text-sm text-clay-accent">Venue plans</p>

@@ -1,3 +1,3 @@
 export function AppErrorPreviewPage(): never {
-  throw new Error("Preview error for the Sheesha route error boundary.");
+  throw new Error("Preview error for the nokta route error boundary.");
 }

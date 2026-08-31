@@ -226,7 +226,7 @@ export function OwnerBookingsPage() {
 
   return (
     <OwnerLayout>
-      <PageMeta title="Booking requests | Sheesha" description="Manage booking requests for your claimed venues." canonicalPath="/owner/bookings" />
+      <PageMeta title="Booking requests | nokta" description="Manage booking requests for your claimed venues." canonicalPath="/owner/bookings" />
       <div className="space-y-6">
         <div><p className="text-sm text-clay-accent">Owner workflow</p><h1 className="mt-1 font-brand text-4xl font-bold tracking-[-0.5px]">Booking requests</h1><p className="mt-2 text-sm text-muted-foreground">Accept, decline or propose another time. Requests are not confirmed until accepted.</p></div>
         {error ? <Alert className="border-destructive/30 text-destructive">{error}</Alert> : null}

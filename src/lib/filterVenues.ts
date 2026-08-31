@@ -12,7 +12,9 @@ export function filterVenues(venues: Venue[], filters: VenueFilterState): Venue[
     const matchesCity = venue.city === filters.city;
     const matchesQuery = !query || haystack.includes(query);
     const matchesArea = filters.area === "all" || venue.area === filters.area;
-    const matchesCategory = filters.primaryCategory === "all" || venue.primaryCategory === filters.primaryCategory;
+    const matchesCategory =
+      filters.primaryCategories.length === 0 ||
+      filters.primaryCategories.some((category) => venue.primaryCategory === category || venue.secondaryCategories.includes(getSecondaryCategoryMatch(category)));
     const matchesPrice = filters.priceLevel === "all" || venue.priceLevel === filters.priceLevel;
     const matchesOpenNow = !filters.openNow || isVenueOpenNow(venue);
     const matchesRating = filters.minRating === "all" || (venue.rating ?? 0) >= filters.minRating;
@@ -26,4 +28,20 @@ export function filterVenues(venues: Venue[], filters: VenueFilterState): Venue[
 
     return matchesCountry && matchesCity && matchesArea && matchesCategory && matchesQuery && matchesPrice && matchesOpenNow && matchesRating && matchesVibes && matchesFeatures;
   });
+}
+
+function getSecondaryCategoryMatch(category: VenueFilterState["primaryCategories"][number]) {
+  const secondaryCategoryByPrimary = {
+    shisha_lounge: "shisha",
+    restaurant: "food",
+    bar: "cocktails",
+    cafe: "coffee",
+    dessert: "dessert",
+    lounge: "groups",
+    late_night: "late_night",
+    private_hire: "private_hire",
+    other: "events",
+  } as const;
+
+  return secondaryCategoryByPrimary[category];
 }

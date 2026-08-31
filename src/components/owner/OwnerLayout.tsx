@@ -29,12 +29,12 @@ export function OwnerLayout({ children }: { children: React.ReactNode }) {
   }, [isCollapsed]);
 
   return (
-    <main className="h-screen overflow-hidden bg-clay-50 font-primary text-sheesh-ink">
+    <main className="h-screen overflow-hidden bg-nokta-page-bg font-primary text-nokta-ink">
       <div className="flex h-full min-h-0 flex-col lg:flex-row">
         <div className="shrink-0 lg:hidden">
-          <div className="border-b bg-sheesh-ink text-clay-50 shadow-sm">
+          <div className="border-b bg-nokta-ink text-clay-50 shadow-sm">
             <div className="flex h-14 items-center justify-between gap-3 px-4">
-              <Link to="/" className="font-brand text-xl font-bold tracking-[-0.5px] text-clay-400">slice.</Link>
+              <Link to="/" className="font-brand text-xl font-bold tracking-[0.02em] text-clay-400">nokta</Link>
               <div className="flex items-center gap-2">
                 <NotificationBell className="relative text-clay-50/80" />
                 <Button type="button" variant="ghost" size="icon" className="text-clay-50/80 hover:bg-clay-400/10 hover:text-clay-200" aria-label={isMobileOpen ? "Close owner menu" : "Open owner menu"} onClick={() => setIsMobileOpen((next) => !next)}>
@@ -52,17 +52,17 @@ export function OwnerLayout({ children }: { children: React.ReactNode }) {
                 </nav>
                 <NavLink to="/" onClick={() => setIsMobileOpen(false)} className="mt-4 flex items-center gap-3 rounded-lg bg-clay-400/10 px-3 py-3 text-sm font-medium text-clay-200">
                   <Home className="h-4 w-4" />
-                  Back to Sheesha
+                  Back to nokta
                 </NavLink>
                 <div className="mt-4 border-t border-white/10 px-3 pt-4 text-xs text-clay-50/50">{user?.email ?? "Signed in"}</div>
               </div>
             ) : null}
           </div>
         </div>
-        <aside className={cn("hidden shrink-0 flex-col bg-sheesh-ink px-4 py-5 text-clay-50 transition-[width] duration-200 lg:flex", isCollapsed ? "w-[76px]" : "w-[220px]")}>
+        <aside className={cn("hidden shrink-0 flex-col bg-nokta-ink px-4 py-5 text-clay-50 transition-[width] duration-200 lg:flex", isCollapsed ? "w-[76px]" : "w-[220px]")}>
           <div className={cn("flex items-center gap-3", isCollapsed ? "justify-center" : "justify-between")}>
-            <NavLink to="/" className={cn("font-brand text-xl font-bold tracking-[-0.5px] text-clay-400", isCollapsed ? "sr-only" : "")}>
-              slice.
+            <NavLink to="/" className={cn("font-brand text-xl font-bold tracking-[0.02em] text-clay-400", isCollapsed ? "sr-only" : "")}>
+              nokta
             </NavLink>
             <div className="flex items-center gap-1">
               {!isCollapsed ? <NotificationBell align="left" className="relative text-clay-50/70" /> : null}
@@ -87,14 +87,14 @@ export function OwnerLayout({ children }: { children: React.ReactNode }) {
           <div className="mt-auto border-t border-white/10 pt-4">
             <NavLink
               to="/"
-              title="Back to Sheesha"
+              title="Back to nokta"
               className={cn(
                 "mb-4 flex items-center gap-3 rounded-lg bg-clay-400/10 px-3 py-[9px] text-[13px] font-medium text-clay-200 transition-colors hover:bg-clay-400/15",
                 isCollapsed ? "justify-center px-0" : "",
               )}
             >
               <ArrowLeft className="h-[15px] w-[15px] shrink-0" />
-              <span className={isCollapsed ? "sr-only" : ""}>Back to Sheesha</span>
+              <span className={isCollapsed ? "sr-only" : ""}>Back to nokta</span>
             </NavLink>
             <div className={cn("flex items-center gap-3", isCollapsed ? "justify-center" : "")}>
               <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-clay-400 text-[11px] font-bold text-white">{initials}</div>

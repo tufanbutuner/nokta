@@ -62,7 +62,7 @@ export function NotificationsPage() {
 
   return (
     <main>
-      <PageMeta title="Notifications | Sheesha" description="View your Sheesha notifications." canonicalPath="/account/notifications" />
+      <PageMeta title="Notifications | nokta" description="View your nokta notifications." canonicalPath="/account/notifications" />
       <PageContainer className="py-8 sm:py-12">
         <div className="mx-auto max-w-4xl space-y-6">
           <div className="flex flex-col gap-4 rounded-xl border bg-card p-5 shadow-sm sm:p-6 md:flex-row md:items-end md:justify-between">

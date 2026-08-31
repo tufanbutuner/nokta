@@ -9,7 +9,7 @@ export function VenueSearch({ value, onChange }: { value: string; onChange: (val
         value={value}
         onChange={(event) => onChange(event.target.value)}
         placeholder="Search venues, areas or vibes..."
-        className="pl-9"
+        className="h-11 rounded-xl border-nokta-border-input bg-white pl-9 text-[15px] shadow-none"
       />
     </div>
   );

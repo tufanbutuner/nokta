@@ -12,7 +12,7 @@ export function NotificationItem({ notification, onRead, onDismiss }: { notifica
       <div className="min-w-0 flex-1">
         <div className="flex items-start justify-between gap-3">
           <div>
-            <p className="font-medium text-sheesh-ink">{notification.title}</p>
+            <p className="font-medium text-nokta-ink">{notification.title}</p>
             <p className="mt-1 text-sm leading-5 text-muted-foreground">{notification.body}</p>
           </div>
           <p className="shrink-0 text-xs text-muted-foreground">{formatCreatedAt(notification.createdAt)}</p>

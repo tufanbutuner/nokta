@@ -131,7 +131,7 @@ export function AdminSubscriptionsPage() {
 
   return (
     <AdminPageShell activePath="/admin/subscriptions">
-      <PageMeta title="Subscriptions | Sheesha Admin" description="Manually manage venue plans and subscription access." />
+      <PageMeta title="Subscriptions | nokta Admin" description="Manually manage venue plans and subscription access." />
       {isLoading ? <div className="py-20"><LoadingState message="Loading subscriptions..." /></div> : venuesError ? <div className="py-20"><ErrorState message={venuesError} /></div> : (
         <div className="grid gap-5 py-5">
           <div>

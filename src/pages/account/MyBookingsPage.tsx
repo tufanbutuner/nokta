@@ -58,7 +58,7 @@ export function MyBookingsPage() {
 
   return (
     <main>
-      <PageMeta title="My bookings | Sheesha" description="Track your booking requests and confirmed bookings." canonicalPath="/account/bookings" />
+      <PageMeta title="My bookings | nokta" description="Track your booking requests and confirmed bookings." canonicalPath="/account/bookings" />
       <PageContainer className="py-8 sm:py-12">
         <div className="mx-auto max-w-5xl space-y-6">
           <div className="flex flex-col gap-4 rounded-xl border bg-card p-5 shadow-sm sm:p-6 md:flex-row md:items-end md:justify-between">

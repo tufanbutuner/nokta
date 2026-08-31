@@ -13,7 +13,7 @@ export function buildTransactionalEmail(input: { template: EmailNotificationTemp
   return {
     subject,
     text: buildPlainTextEmail({ title: subject, lines, actionUrl: input.actionUrl, actionLabel: input.actionLabel }),
-    html: buildBaseEmailHtml({ title: subject, bodyHtml, actionUrl: input.actionUrl, actionLabel: input.actionLabel, footer: input.template.startsWith("owner_") ? "You received this email because you manage a venue on Sheesha." : undefined }),
+    html: buildBaseEmailHtml({ title: subject, bodyHtml, actionUrl: input.actionUrl, actionLabel: input.actionLabel, footer: input.template.startsWith("owner_") ? "You received this email because you manage a venue on nokta." : undefined }),
   };
 
   function getLines(template: EmailNotificationTemplate, data: TransactionalEmailPayload["data"]): string[] {
@@ -38,7 +38,7 @@ export function buildTransactionalEmail(input: { template: EmailNotificationTemp
       case "owner_new_enquiry":
         return [`You have a new enquiry for ${venueName}.`, optionalLine("Type", data.enquiryType), `Customer: ${text(data.customerName)}`, `Email: ${text(data.customerEmail)}`, phoneLine(data.customerPhone), optionalLine("Message", data.message)].filter(Boolean);
       default:
-        return ["There is a new Sheesha notification."];
+        return ["There is a new nokta notification."];
     }
   }
 }
@@ -62,7 +62,7 @@ function getSubject(template: EmailNotificationTemplate, venueName: string) {
     case "owner_new_enquiry":
       return `New enquiry for ${venueName}`;
     default:
-      return "Sheesha notification";
+      return "nokta notification";
   }
 }
 

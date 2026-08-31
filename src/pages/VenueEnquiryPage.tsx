@@ -82,11 +82,11 @@ export function VenueEnquiryPage() {
 
   if (isLoading) return <main><PageContainer className="py-20"><LoadingState message="Loading venue..." /></PageContainer></main>;
   if (error) return <main><PageContainer className="py-20"><ErrorState message={error} /></PageContainer></main>;
-  if (!venue) return <main><PageMeta title="Venue not found | Sheesha" description="This venue is not available." /><PageContainer className="py-20"><ErrorState title="Venue not found" message="This venue is not available." /></PageContainer></main>;
+  if (!venue) return <main><PageMeta title="Venue not found | nokta" description="This venue is not available." /><PageContainer className="py-20"><ErrorState title="Venue not found" message="This venue is not available." /></PageContainer></main>;
 
   return (
     <main>
-      <PageMeta title={`Send enquiry to ${venue.name} | Sheesha`} description={`Send an enquiry to ${venue.name}.`} canonicalPath={`/venues/${venue.slug}/enquire`} />
+      <PageMeta title={`Send enquiry to ${venue.name} | nokta`} description={`Send an enquiry to ${venue.name}.`} canonicalPath={`/venues/${venue.slug}/enquire`} />
       <PageContainer className="py-10">
         <Link to={`/venues/${venue.slug}`} className="mb-5 inline-flex text-sm font-medium text-muted-foreground hover:text-foreground">Back to {venue.name}</Link>
         <Card className="mx-auto max-w-3xl">
@@ -102,7 +102,7 @@ export function VenueEnquiryPage() {
                 <div className="mt-6 flex gap-3"><Button asChild><Link to="/sign-in">Sign in</Link></Button><Button asChild variant="outline"><Link to="/sign-up">Create account</Link></Button></div>
               </div>
             ) : success ? (
-              <Alert className="border-emerald-200 bg-emerald-50 text-emerald-900">Your enquiry has been sent. This is not a confirmed booking. The venue or Sheesha team may follow up if more information is needed.</Alert>
+              <Alert className="border-emerald-200 bg-emerald-50 text-emerald-900">Your enquiry has been sent. This is not a confirmed booking. The venue or nokta team may follow up if more information is needed.</Alert>
             ) : (
               <VenueEnquiryForm venueId={venue.id} defaultEmail={user.email} isSubmitting={isSubmitting} onSubmit={handleSubmit} />
             )}

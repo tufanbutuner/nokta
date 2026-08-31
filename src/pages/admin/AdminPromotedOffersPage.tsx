@@ -115,12 +115,12 @@ export function AdminPromotedOffersPage() {
 
   return (
     <AdminPageShell activePath="/admin/offers">
-      <PageMeta title="Promoted Offers | Sheesha Admin" description="Manage promoted venue offers." />
+      <PageMeta title="Promoted Offers | nokta Admin" description="Manage promoted venue offers." />
       <div className="space-y-6">
         <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
           <div>
             <p className="text-sm font-medium text-[#8a7e72]">Admin</p>
-            <h1 className="mt-1 font-brand text-3xl font-bold tracking-[-0.5px] text-sheesh-ink">Promoted offers</h1>
+            <h1 className="mt-1 font-brand text-3xl font-bold tracking-[-0.5px] text-nokta-ink">Promoted offers</h1>
             <p className="mt-2 text-sm text-[#8a7e72]">Create clearly labelled venue packages and offers.</p>
           </div>
           <Button asChild variant="outline">

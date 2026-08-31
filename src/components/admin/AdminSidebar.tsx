@@ -26,9 +26,9 @@ export function AdminSidebar({ activePath = "/admin/monetisation" }: { activePat
   const initials = getInitials(user?.email);
 
   return (
-    <aside className="hidden w-[220px] shrink-0 flex-col bg-sheesh-ink px-4 py-5 text-clay-50 lg:flex">
-      <NavLink to="/" className="font-brand text-xl font-bold tracking-[-0.5px] text-clay-400">
-        slice.
+    <aside className="hidden w-[220px] shrink-0 flex-col bg-nokta-ink px-4 py-5 text-clay-50 lg:flex">
+      <NavLink to="/" className="font-brand text-xl font-bold tracking-[0.02em] text-clay-400">
+        nokta
       </NavLink>
       <div className="mt-8 text-[10px] font-semibold uppercase tracking-[2px] text-[#8a7e7266]">Admin</div>
       <nav className="mt-3 grid gap-1">

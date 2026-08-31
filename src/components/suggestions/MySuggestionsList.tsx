@@ -8,7 +8,7 @@ const STATUS_LABELS: Record<VenueSuggestionStatus, string> = {
   pending: "Pending review",
   approved: "Approved",
   rejected: "Not accepted",
-  converted: "Added to Sheesha",
+  converted: "Added to nokta",
 };
 
 const STATUS_CLASSES: Record<VenueSuggestionStatus, string> = {

@@ -1,12 +1,11 @@
 import { Star } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ClaimedVenueBadge } from "@/components/venues/ClaimedVenueBadge";
-import { VenuePrice } from "@/components/venues/VenuePrice";
 import { formatDistanceMiles, getVenueDistanceMiles } from "@/lib/location";
 import { getVenueCurrentStatus } from "@/lib/openingHours";
 import { cn } from "@/lib/utils";
+import { formatPriceLevel } from "@/lib/venueFilters";
 import { getVenueImage } from "@/lib/venueImages";
+import { Link } from "react-router-dom";
 import type { UserLocation } from "@/types/location";
 import type { VenueRatingSummary } from "@/types/reviews";
 import type { Venue } from "@/types/venue";
@@ -25,7 +24,7 @@ export function VenueMapResultList({
   onSelectVenue: (venue: Venue) => void;
 }) {
   return (
-    <div className="space-y-3">
+    <div className="space-y-2">
       {venues.map((venue) => {
         const selected = venue.id === selectedVenueId;
         const distanceLabel = userLocation ? formatDistanceMiles(getVenueDistanceMiles(venue, userLocation)).replace(" away", "") : null;
@@ -35,15 +34,12 @@ export function VenueMapResultList({
         return (
           <Card
             key={venue.id}
-            className={cn(
-              "cursor-pointer overflow-hidden rounded-xl transition hover:border-clay-accent/40 hover:shadow-lg hover:shadow-stone-950/5",
-              selected && "border-clay-accent shadow-lg shadow-clay-accent/10",
-            )}
+            className={cn("cursor-pointer rounded-xl border-nokta-border bg-white p-2 shadow-none transition hover:border-nokta-border-input", selected && "border-nokta-accent bg-nokta-accent-tint")}
           >
             <div
               role="button"
               tabIndex={0}
-              className="grid w-full cursor-pointer grid-cols-[88px_1fr] text-left"
+              className="grid w-full cursor-pointer grid-cols-[88px_minmax(0,1fr)] gap-3 text-left"
               onClick={() => onSelectVenue(venue)}
               onKeyDown={(event) => {
                 if (event.key === "Enter" || event.key === " ") {
@@ -52,34 +48,24 @@ export function VenueMapResultList({
                 }
               }}
             >
-              <img src={getVenueImage(venue)} alt={`${venue.name} interior`} className="h-full min-h-28 w-full object-cover" />
-              <div className="min-w-0 p-3">
-                <div className="flex items-start justify-between gap-3">
-                  <div className="min-w-0">
-                    <h3 className="truncate text-base font-semibold">{venue.name}</h3>
-                    <div className="mt-0.5 flex min-w-0 flex-wrap items-center gap-x-2 gap-y-1">
-                      <p className="truncate text-sm text-muted-foreground">
-                        {venue.area}
-                        {distanceLabel ? <span> • {distanceLabel}</span> : null}
-                      </p>
-                      <CurrentStatusBadge status={getVenueCurrentStatus(venue)} />
-                    </div>
-                  </div>
+              <img src={getVenueImage(venue)} alt={`${venue.name} interior`} className="h-[72px] w-[88px] rounded-lg object-cover" />
+              <div className="min-w-0">
+                <Link reloadDocument to={`/venues/${venue.slug}`} className="block truncate text-sm font-semibold leading-5 text-nokta-ink hover:text-nokta-accent" onClick={(event) => event.stopPropagation()}>
+                  {venue.name}
+                </Link>
+                <p className="mt-0.5 truncate text-xs leading-4 text-nokta-ink-muted">
+                  {venue.area}
+                  {distanceLabel ? <span> • {distanceLabel}</span> : null}
+                  <span> • {formatPriceLevel(venue.priceLevel)}</span>
+                </p>
+                <div className="mt-2 flex items-center gap-2">
                   {rating ? (
-                    <span className="inline-flex shrink-0 items-center gap-1 text-sm">
-                      <Star className="h-4 w-4 fill-clay-accent text-clay-accent" />
+                    <span className="inline-flex items-center gap-1 text-xs font-semibold text-nokta-ink">
+                      <Star className="h-3 w-3 fill-nokta-ink text-nokta-ink" />
                       {rating}
                     </span>
                   ) : null}
-                </div>
-                <div className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted-foreground">
-                  {venue.isClaimed ? <ClaimedVenueBadge compact /> : null}
-                  <VenuePrice level={venue.priceLevel} from={venue.priceFrom} />
-                </div>
-                <div className="mt-3">
-                  <Button asChild size="sm" variant="outline" onClick={(event) => event.stopPropagation()}>
-                    <a href={`/venues/${venue.slug}`}>View venue</a>
-                  </Button>
+                  <CurrentStatusBadge status={getVenueCurrentStatus(venue)} />
                 </div>
               </div>
             </div>
@@ -94,8 +80,8 @@ function CurrentStatusBadge({ status }: { status: ReturnType<typeof getVenueCurr
   return (
     <span
       className={cn(
-        "inline-flex h-5 shrink-0 items-center rounded-full px-2 text-[11px] font-medium",
-        status === "open" && "bg-emerald-950/10 text-emerald-700",
+        "inline-flex h-5 shrink-0 items-center rounded-full px-2 text-[11px] font-semibold",
+        status === "open" && "bg-nokta-accent-tint text-nokta-accent-dark",
         status === "closed" && "bg-red-950/10 text-red-700",
         status === "unknown" && "bg-foreground/5 text-muted-foreground",
       )}

@@ -50,11 +50,11 @@ export function RequestBookingPage() {
 
   if (isLoading) return <main><PageContainer className="py-20"><LoadingState message="Loading venue..." /></PageContainer></main>;
   if (error) return <main><PageContainer className="py-20"><ErrorState message={error} /></PageContainer></main>;
-  if (!venue) return <main><PageMeta title="Venue not found | Sheesha" description="This venue is not available." /><PageContainer className="py-20"><ErrorState title="Venue not found" message="This venue is not available." /></PageContainer></main>;
+  if (!venue) return <main><PageMeta title="Venue not found | nokta" description="This venue is not available." /><PageContainer className="py-20"><ErrorState title="Venue not found" message="This venue is not available." /></PageContainer></main>;
 
   return (
     <main>
-      <PageMeta title={`Request booking at ${venue.name} | Sheesha`} description={`Request a booking at ${venue.name}.`} canonicalPath={`/venues/${venue.slug}/request-booking`} />
+      <PageMeta title={`Request booking at ${venue.name} | nokta`} description={`Request a booking at ${venue.name}.`} canonicalPath={`/venues/${venue.slug}/request-booking`} />
       <PageContainer className="py-10">
         <Link to={`/venues/${venue.slug}`} className="mb-5 inline-flex text-sm font-medium text-muted-foreground hover:text-foreground">Back to {venue.name}</Link>
         <Card className="mx-auto max-w-3xl">

@@ -129,18 +129,18 @@ export function AccountPage() {
 
   return (
     <main>
-      <PageMeta title="Account | Sheesha" description="Manage your Sheesha account, saved venues and recently viewed venues." canonicalPath="/account" />
+      <PageMeta title="Account | nokta" description="Manage your nokta account, saved venues and recently viewed venues." canonicalPath="/account" />
       <PageContainer className="py-8 sm:py-12">
         <div className="mx-auto max-w-6xl space-y-6">
           <div className="rounded-xl border bg-card p-5 shadow-sm sm:p-6">
             <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
               <div>
                 <p className="text-sm text-clay-accent">Account</p>
-                <h1 className="mt-2 font-brand text-4xl font-bold tracking-[-0.5px]">Your Sheesha account</h1>
+                <h1 className="mt-2 font-brand text-4xl font-bold tracking-[-0.5px]">Your nokta account</h1>
                 <p className="mt-2 text-sm text-muted-foreground">Manage saved venues, enquiries, owner tools and admin access from one place.</p>
               </div>
               <div className="flex items-center gap-3 rounded-xl border bg-background/70 p-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-sheesh-ink text-sm font-semibold text-clay-50">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-nokta-ink text-sm font-semibold text-clay-50">
                   {getInitials(user?.email)}
                 </div>
                 <div className="min-w-0">
@@ -208,7 +208,7 @@ export function AccountPage() {
               </section>
 
               {isAdmin ? (
-                <section className="rounded-xl border bg-sheesh-ink p-5 text-clay-50 shadow-sm">
+                <section className="rounded-xl border bg-nokta-ink p-5 text-clay-50 shadow-sm">
                   <div className="flex items-center gap-2">
                     <ShieldCheck className="h-4 w-4 text-clay-400" />
                     <p className="text-xs font-semibold uppercase tracking-[0.14em] text-clay-400">Admin</p>

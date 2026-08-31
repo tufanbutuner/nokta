@@ -36,7 +36,7 @@ export function RecommendPage() {
   return (
     <main>
       <PageMeta
-        title="Find your perfect shisha spot | Sheesha"
+        title="Find your perfect shisha spot | nokta"
         description="Answer a few quick questions and get matched with shisha lounges in your selected city."
         canonicalPath="/recommend"
       />

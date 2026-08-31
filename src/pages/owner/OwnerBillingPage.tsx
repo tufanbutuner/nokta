@@ -77,7 +77,7 @@ export function OwnerBillingPage() {
 
   return (
     <OwnerLayout>
-      <PageMeta title="Billing | Sheesha" description="Manage Sheesha venue billing and subscription plans." canonicalPath="/owner/billing" />
+      <PageMeta title="Billing | nokta" description="Manage nokta venue billing and subscription plans." canonicalPath="/owner/billing" />
       {isLoading ? <LoadingState message="Loading billing..." /> : error ? <ErrorState message={error} /> : (
         <div className="space-y-6">
           <div>
@@ -98,7 +98,7 @@ export function OwnerBillingPage() {
                       <h2 className="font-brand text-xl font-bold tracking-[-0.5px]">{venue.name}</h2>
                       <div className="mt-2 flex flex-wrap items-center gap-2">
                         <PlanBadge plan={subscription?.plan ?? "free"} status={subscription?.status ?? "inactive"} />
-                        <span className="text-sm capitalize text-muted-foreground">{isStripeSubscription ? "Stripe billing" : "Managed manually by Sheesha"}</span>
+                        <span className="text-sm capitalize text-muted-foreground">{isStripeSubscription ? "Stripe billing" : "Managed manually by nokta"}</span>
                       </div>
                       <p className="mt-2 text-sm text-muted-foreground">
                         {formatBillingPeriod(subscription)}

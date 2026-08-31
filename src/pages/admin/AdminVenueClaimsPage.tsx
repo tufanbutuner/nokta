@@ -160,12 +160,12 @@ export function AdminVenueClaimsPage() {
 
   return (
     <AdminPageShell activePath="/admin/claims">
-      <PageMeta title="Venue Claims | Sheesha Admin" description="Review and manage venue ownership claim requests." />
+      <PageMeta title="Venue Claims | nokta Admin" description="Review and manage venue ownership claim requests." />
       <div className="space-y-6">
         <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="text-sm font-medium text-[#8a7e72]">Admin</p>
-            <h1 className="mt-1 font-brand text-3xl font-bold tracking-[-0.5px] text-sheesh-ink">Venue claims</h1>
+            <h1 className="mt-1 font-brand text-3xl font-bold tracking-[-0.5px] text-nokta-ink">Venue claims</h1>
           </div>
           <p className="text-sm text-[#8a7e72]">{filteredClaims.length} claim requests</p>
         </div>

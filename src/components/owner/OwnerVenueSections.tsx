@@ -47,7 +47,7 @@ export function OwnerVenueAnalyticsCards({ analytics }: { analytics: OwnerVenueA
   return (
     <section className="rounded-xl border bg-card p-5">
       <h2 className="text-xl font-semibold">Performance</h2>
-      <p className="mt-1 text-sm text-muted-foreground">These numbers show activity from Sheesha over the selected period.</p>
+      <p className="mt-1 text-sm text-muted-foreground">These numbers show activity from nokta over the selected period.</p>
       <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
         <Metric label="Profile views" value={analytics.profileViews} />
         <Metric label="Directions clicks" value={analytics.directionsClicks} />
@@ -155,7 +155,7 @@ export function OwnerVenueProfilePreview({ venue, subscription }: { venue: Venue
   return (
     <section className="rounded-xl border bg-card p-5">
       <h2 className="text-xl font-semibold">Profile preview</h2>
-      <p className="mt-1 text-sm text-muted-foreground">Profile editing is coming soon. Contact Sheesha if something needs changing.</p>
+      <p className="mt-1 text-sm text-muted-foreground">Profile editing is coming soon. Contact nokta if something needs changing.</p>
       <dl className="mt-5 grid gap-4 text-sm sm:grid-cols-2">
         <Detail label="Address" value={`${venue.address}, ${venue.postcode}`} />
         <Detail label="City / area" value={`${venue.city} · ${venue.area}`} />
@@ -196,7 +196,7 @@ export function OwnerNextStepsCard({ venue, commercial, enquiries }: { venue: Ve
       <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-muted-foreground">
         {(steps.length ? steps : ["Your profile is in good shape."]).map((step) => <li key={String(step)}>{step}</li>)}
       </ul>
-      <Button asChild variant="outline" className="mt-5"><Link to="/account">Contact Sheesha</Link></Button>
+      <Button asChild variant="outline" className="mt-5"><Link to="/account">Contact nokta</Link></Button>
     </section>
   );
 }

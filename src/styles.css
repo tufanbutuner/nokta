@@ -1,9 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Onest:wght@700&family=Outfit:wght@300;400;500;600;700&display=swap");
 @import "tailwindcss";
 
 @theme {
   --font-primary: Outfit, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-brand: "Space Grotesk", Outfit, ui-sans-serif, system-ui, sans-serif;
+  --font-brand: Onest, Outfit, ui-sans-serif, system-ui, sans-serif;
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
   --color-card: hsl(var(--card));
@@ -19,7 +19,18 @@
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
-  --color-sheesh-ink: #1a1510;
+  --color-nokta-page-bg: oklch(0.95 0.045 55);
+  --color-nokta-surface: #ffffff;
+  --color-nokta-surface-alt: oklch(0.995 0.001 60);
+  --color-nokta-ink: oklch(0.2 0.02 40);
+  --color-nokta-ink-muted: oklch(0.46 0.02 42);
+  --color-nokta-ink-subtle: oklch(0.36 0.022 42);
+  --color-nokta-border: oklch(0.87 0.026 55);
+  --color-nokta-border-input: oklch(0.82 0.03 50);
+  --color-nokta-accent: oklch(0.56 0.13 35);
+  --color-nokta-accent-dark: oklch(0.33 0.095 35);
+  --color-nokta-accent-tint: oklch(0.92 0.045 35);
+  --color-sheesh-ink: oklch(0.2 0.02 40);
   --color-clay-accent: #c45d3e;
   --color-clay-accent-hover: #b34e32;
   --color-clay-50: #faf6f1;
@@ -49,21 +60,21 @@
   }
 
   :root {
-    --background: 36 42% 94%;
-    --foreground: 30 24% 8%;
-    --card: 40 55% 98%;
+    --background: 34 64% 91%;
+    --foreground: 30 24% 14%;
+    --card: 0 0% 100%;
     --card-foreground: 30 24% 8%;
-    --primary: 30 24% 8%;
-    --primary-foreground: 40 55% 98%;
-    --secondary: 38 26% 88%;
+    --primary: 14 53% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 34 35% 89%;
     --secondary-foreground: 30 24% 8%;
     --muted: 38 24% 88%;
     --muted-foreground: 30 8% 42%;
-    --accent: 82 8% 45%;
-    --accent-foreground: 40 55% 98%;
-    --border: 35 22% 82%;
-    --input: 35 22% 82%;
-    --ring: 82 8% 45%;
+    --accent: 14 53% 45%;
+    --accent-foreground: 0 0% 100%;
+    --border: 34 24% 79%;
+    --input: 30 25% 74%;
+    --ring: 14 53% 45%;
     --radius: 0.5rem;
   }
 

@@ -36,7 +36,7 @@ export function OwnerVenueUpdateForm({ venue, onSubmit, isSubmitting }: { venue:
 
   return (
     <form className="space-y-6" onSubmit={handleSubmit}>
-      <Alert>Need to update your venue name, address or location? Contact Sheesha so we can verify the change.</Alert>
+      <Alert>Need to update your venue name, address or location? Contact nokta so we can verify the change.</Alert>
       <div className="grid gap-4 lg:grid-cols-2">
         <Field label="Description" error={showErrors ? validation.errors.description : undefined}><Textarea value={changes.description ?? ""} onChange={(event) => setChanges({ ...changes, description: event.target.value })} /></Field>
         <Field label="Phone" error={showErrors ? validation.errors.phone : undefined}><Input value={changes.phone ?? ""} onChange={(event) => setChanges({ ...changes, phone: event.target.value })} /></Field>

@@ -156,7 +156,7 @@ export function AdminVenueSuggestionsPage() {
           <div>
             <p className="text-sm font-medium text-muted-foreground">Internal</p>
             <h1 className="mt-2 text-4xl font-semibold">Venue suggestions</h1>
-            <p className="mt-3 max-w-2xl text-muted-foreground">Review missing venues submitted by signed-in users before adding them to Sheesha.</p>
+            <p className="mt-3 max-w-2xl text-muted-foreground">Review missing venues submitted by signed-in users before adding them to nokta.</p>
           </div>
           <div className="flex flex-col gap-2 sm:flex-row">
             <Button asChild>

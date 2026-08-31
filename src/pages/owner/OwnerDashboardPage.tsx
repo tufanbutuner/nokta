@@ -77,7 +77,7 @@ export function OwnerDashboardPage() {
 
   return (
     <OwnerLayout>
-      <PageMeta title="Owner dashboard | Sheesha" description="View your claimed venues, profile performance and enquiry activity." canonicalPath="/owner" />
+      <PageMeta title="Owner dashboard | nokta" description="View your claimed venues, profile performance and enquiry activity." canonicalPath="/owner" />
       <div className="space-y-6">
         <div>
           <p className="text-sm text-clay-accent">Owner dashboard</p>

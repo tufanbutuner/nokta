@@ -18,7 +18,7 @@ export function Header() {
   const [accountMenuOpen, setAccountMenuOpen] = useState(false);
   const accountMenuRef = useRef<HTMLDivElement>(null);
   const savedLabel = favouriteVenueIds.length > 0 ? `Saved (${favouriteVenueIds.length})` : "Saved";
-  const navLinkClass = ({ isActive }: { isActive: boolean }) => (isActive ? "text-foreground" : "hover:text-foreground");
+  const navLinkClass = ({ isActive }: { isActive: boolean }) => (isActive ? "text-nokta-ink" : "hover:text-nokta-ink");
   const accountMenuLinkClass = ({ isActive }: { isActive: boolean }) =>
     cn(
       "flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-colors",
@@ -58,11 +58,11 @@ export function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-[1200] border-b bg-background/95 backdrop-blur">
+      <header className="sticky top-0 z-[1200] border-b border-nokta-border bg-nokta-surface-alt/90 backdrop-blur">
         <div className="flex h-16 w-full items-center justify-between gap-4 px-4 sm:px-6">
           <div className="flex min-w-0 items-center gap-6">
-            <Link reloadDocument to="/" className="shrink-0 font-brand text-xl font-bold tracking-[-0.5px]">
-              slice.
+            <Link reloadDocument to="/" className="shrink-0 font-brand text-xl font-bold tracking-[0.02em]">
+              nokta
             </Link>
             <div className="hidden items-center gap-6 text-sm text-muted-foreground md:flex">
               <NavLink reloadDocument to="/discover" className={navLinkClass}>

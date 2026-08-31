@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 export function RouteErrorState({
   title = "Something went wrong",
-  description = "We could not load this part of Sheesha. Try again or go back to Discover.",
+  description = "We could not load this part of nokta. Try again or go back to Discover.",
   devDetail,
 }: {
   title?: string;
@@ -17,7 +17,7 @@ export function RouteErrorState({
       <header className="border-b bg-background/95">
         <div className="flex h-16 w-full items-center px-4 sm:px-6">
           <Link reloadDocument to="/" className="text-sm font-semibold uppercase tracking-[0.18em]">
-            Sheesha
+            nokta
           </Link>
         </div>
       </header>
@@ -27,7 +27,7 @@ export function RouteErrorState({
             <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-destructive/10 text-destructive">
               <AlertTriangle className="h-5 w-5" />
             </div>
-            <p className="mt-6 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Sheesha</p>
+            <p className="mt-6 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">nokta</p>
             <h1 className="mt-3 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">{title}</h1>
             <p className="mx-auto mt-4 max-w-md text-sm leading-6 text-muted-foreground">{description}</p>
             {devDetail ? (

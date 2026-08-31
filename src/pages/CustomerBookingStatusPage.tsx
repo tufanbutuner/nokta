@@ -55,7 +55,7 @@ export function CustomerBookingStatusPage() {
 
   if (isLoading) return <main><PageContainer className="py-20"><LoadingState message="Loading booking status..." /></PageContainer></main>;
   if (error && !booking) return <main><PageContainer className="py-20"><ErrorState title="Could not load booking" message={error} /></PageContainer></main>;
-  if (!booking) return <main><PageMeta title="Booking status unavailable | Sheesha" description="This booking status link is invalid or expired." /><PageContainer className="py-20"><ErrorState title="Booking status unavailable" message="This link is invalid or has expired." /></PageContainer></main>;
+  if (!booking) return <main><PageMeta title="Booking status unavailable | nokta" description="This booking status link is invalid or expired." /><PageContainer className="py-20"><ErrorState title="Booking status unavailable" message="This link is invalid or has expired." /></PageContainer></main>;
 
   const copy = getCustomerBookingStatusCopy(booking.status);
   const confirmed = isCustomerBookingConfirmed(booking);
@@ -63,14 +63,14 @@ export function CustomerBookingStatusPage() {
 
   return (
     <main>
-      <PageMeta title={`Booking status for ${booking.venueName} | Sheesha`} description="Track your Sheesha booking request status." canonicalPath={`/booking-status/${token}`} />
+      <PageMeta title={`Booking status for ${booking.venueName} | nokta`} description="Track your nokta booking request status." canonicalPath={`/booking-status/${token}`} />
       <PageContainer className="py-10">
         <Card className="mx-auto max-w-3xl">
           <CardContent className="space-y-6 p-6 sm:p-8">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
               <div>
                 <p className="text-sm text-muted-foreground">{booking.venueCity} • {booking.venueArea}</p>
-                <h1 className="mt-2 font-brand text-3xl font-bold tracking-[-0.5px] text-sheesh-ink">{copy.title}</h1>
+                <h1 className="mt-2 font-brand text-3xl font-bold tracking-[-0.5px] text-nokta-ink">{copy.title}</h1>
                 <p className="mt-2 text-sm leading-6 text-muted-foreground">{copy.description}</p>
               </div>
               {booking.confirmationReference ? <div className="rounded-xl border bg-muted/50 px-4 py-3 text-sm"><span className="block text-xs uppercase text-muted-foreground">Reference</span><strong>{booking.confirmationReference}</strong></div> : null}

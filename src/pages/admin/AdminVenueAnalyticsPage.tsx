@@ -71,12 +71,12 @@ export function AdminVenueAnalyticsPage() {
 
   return (
     <AdminPageShell activePath="/admin/analytics">
-      <PageMeta title="Venue Analytics | Sheesha Admin" description="Review venue traffic, clicks and enquiries." />
+      <PageMeta title="Venue Analytics | nokta Admin" description="Review venue traffic, clicks and enquiries." />
       <div className="space-y-6">
         <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
           <div>
             <p className="text-sm font-medium text-[#8a7e72]">Admin</p>
-            <h1 className="mt-1 font-brand text-3xl font-bold tracking-[-0.5px] text-sheesh-ink">Venue analytics</h1>
+            <h1 className="mt-1 font-brand text-3xl font-bold tracking-[-0.5px] text-nokta-ink">Venue analytics</h1>
             <p className="mt-2 text-sm text-[#8a7e72]">Commercial reporting for venue views, clicks, enquiries and promotions.</p>
           </div>
           <Button asChild variant="outline">

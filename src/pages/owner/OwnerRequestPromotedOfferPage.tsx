@@ -67,7 +67,7 @@ export function OwnerRequestPromotedOfferPage() {
 
   return (
     <OwnerLayout>
-      <PageMeta title="Request promoted offer | Sheesha" description="Request a promoted offer for your venue." />
+      <PageMeta title="Request promoted offer | nokta" description="Request a promoted offer for your venue." />
       {isLoading ? <LoadingState message="Loading request form..." /> : error && !venue ? <ErrorState message={error} /> : venue ? (
         <div className="max-w-3xl space-y-6">
           <div>
@@ -78,7 +78,7 @@ export function OwnerRequestPromotedOfferPage() {
           {success ? (
             <div className="rounded-xl border bg-card p-6 shadow-sm">
               <h2 className="text-xl font-semibold">Request submitted</h2>
-              <p className="mt-2 text-sm text-muted-foreground">Sheesha will review it before it goes live.</p>
+              <p className="mt-2 text-sm text-muted-foreground">nokta will review it before it goes live.</p>
               <Button asChild className="mt-5"><Link to="/owner/promotions">Back to promotions</Link></Button>
             </div>
           ) : canRequestPromotedOffer(subscription) ? (
