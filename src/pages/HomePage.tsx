@@ -106,7 +106,7 @@ export function HomePage() {
         description="Find lounges, restaurants, bars and cafes across the UK. Discover venue details, photos, opening info and request bookings, starting with shisha lounges."
         canonicalPath="/"
       />
-      <section className="border-b">
+      <section>
         <PageContainer className="py-12 sm:py-16 lg:py-20">
           <div className="mx-auto max-w-4xl text-center">
             <h1 className="mx-auto max-w-4xl text-5xl font-semibold leading-[0.95] sm:text-6xl lg:text-7xl">
@@ -151,23 +151,8 @@ export function HomePage() {
         </PageContainer>
       </section>
 
-      <section className="border-b border-nokta-ink bg-nokta-ink">
-        <PageContainer className="grid gap-4 py-6 text-center text-sm text-clay-50/60 sm:grid-cols-[1fr_auto_auto_auto] sm:items-center sm:text-left">
-          <p className="font-medium text-clay-50">{brandConfig.shortDescription}</p>
-          <span>Late-night plans</span>
-          <span>Group bookings</span>
-          <span>Venue details</span>
-        </PageContainer>
-      </section>
-
       <PageContainer className="space-y-16 py-12 sm:py-16">
         <section>
-          <div className="mb-6 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <p className="text-sm font-semibold text-clay-accent">Explore by category</p>
-              <h2 className="mt-1 text-3xl font-semibold">Start with the kind of place you need</h2>
-            </div>
-          </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {categoryEntrypoints.map((category) => {
               const count = venues.filter((venue) => venue.primaryCategory === category.category).length;

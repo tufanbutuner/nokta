@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { SlidersHorizontal, X } from "lucide-react";
 import { SortSelect } from "@/components/discover/SortSelect";
 import { DiscoverFeaturedVenues } from "@/components/featured/DiscoverFeaturedVenues";
@@ -39,6 +39,7 @@ import type { VenueSortOption } from "@/types/sort";
 export function DiscoverPage() {
   const { venues, isLoading, error } = useVenues();
   const { userLocation, savedLocation } = useAppLocation();
+  const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
   const [selectedVenueId, setSelectedVenueId] = useState<string | undefined>();
   const filters = useMemo(() => parseVenueFilters(searchParams), [searchParams]);
@@ -172,7 +173,14 @@ export function DiscoverPage() {
                     selectedVenueId={selectedVenueId}
                     userLocation={userLocation}
                     reviewSummaries={reviewSummaries}
-                    onSelectVenue={(venue) => setSelectedVenueId(venue.id)}
+                    onSelectVenue={(venue) => {
+                      if (showDesktopMapArea) {
+                        setSelectedVenueId(venue.id);
+                        return;
+                      }
+
+                      navigate(`/venues/${venue.slug}`);
+                    }}
                   />
                 </>
               ) : (
