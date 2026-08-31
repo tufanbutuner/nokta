@@ -6,6 +6,7 @@ import { VenueBadge } from "@/components/venues/VenueBadge";
 import { VenueDistance } from "@/components/venues/VenueDistance";
 import { FavouriteButton } from "@/components/venues/FavouriteButton";
 import { VenuePrice } from "@/components/venues/VenuePrice";
+import { formatVenuePrimaryCategory } from "@/lib/venueCategoryLabels";
 import { getVenueImage } from "@/lib/venueImages";
 import type { UserLocation } from "@/types/location";
 import { Venue } from "@/types/venue";
@@ -29,7 +30,7 @@ export function VenueCard({ venue, userLocation }: { venue: Venue; userLocation?
             <div className="flex items-start justify-between gap-3">
               <div>
                 <h3 className="text-lg font-semibold">{venue.name}</h3>
-                <p className="text-sm text-muted-foreground">{venue.area}</p>
+                <p className="text-sm text-muted-foreground">{formatVenuePrimaryCategory(venue.primaryCategory)} · {venue.area}</p>
               </div>
               {venue.rating ? (
                 <span className="inline-flex items-center gap-1 text-sm">

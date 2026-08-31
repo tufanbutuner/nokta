@@ -12,6 +12,7 @@ export function filterVenues(venues: Venue[], filters: VenueFilterState): Venue[
     const matchesCity = venue.city === filters.city;
     const matchesQuery = !query || haystack.includes(query);
     const matchesArea = filters.area === "all" || venue.area === filters.area;
+    const matchesCategory = filters.primaryCategory === "all" || venue.primaryCategory === filters.primaryCategory;
     const matchesPrice = filters.priceLevel === "all" || venue.priceLevel === filters.priceLevel;
     const matchesOpenNow = !filters.openNow || isVenueOpenNow(venue);
     const matchesRating = filters.minRating === "all" || (venue.rating ?? 0) >= filters.minRating;
@@ -23,6 +24,6 @@ export function filterVenues(venues: Venue[], filters: VenueFilterState): Venue[
       (!filters.features.alcohol || venue.alcohol) &&
       (!filters.features.openLate || venue.openLate);
 
-    return matchesCountry && matchesCity && matchesArea && matchesQuery && matchesPrice && matchesOpenNow && matchesRating && matchesVibes && matchesFeatures;
+    return matchesCountry && matchesCity && matchesArea && matchesCategory && matchesQuery && matchesPrice && matchesOpenNow && matchesRating && matchesVibes && matchesFeatures;
   });
 }

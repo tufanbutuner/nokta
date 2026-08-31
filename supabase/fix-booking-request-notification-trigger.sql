@@ -207,4 +207,7 @@ where br.status = 'pending'
       and n.notification_type = 'booking_request_submitted'
   );
 
+revoke execute on function public.create_notification_delivery_logs() from anon, authenticated;
+revoke execute on function public.notify_booking_request_inserted() from anon, authenticated;
+
 notify pgrst, 'reload schema';

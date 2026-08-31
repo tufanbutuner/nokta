@@ -30,6 +30,8 @@ export async function createVenueSuggestion(input: {
       website: nullableText(suggestion.website),
       instagram: nullableText(suggestion.instagram),
       phone: nullableText(suggestion.phone),
+      primary_category: suggestion.primaryCategory ?? "shisha_lounge",
+      secondary_categories: suggestion.secondaryCategories ?? ["shisha"],
       notes: nullableText(suggestion.notes),
     })
     .select("*")

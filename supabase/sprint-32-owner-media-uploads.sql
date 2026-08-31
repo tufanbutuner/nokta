@@ -175,10 +175,6 @@ with check (
 );
 
 drop policy if exists "Anyone can read venue media files" on storage.objects;
-create policy "Anyone can read venue media files"
-on storage.objects
-for select
-using (bucket_id = 'venue-media');
 
 drop policy if exists "Owners can delete own pending venue media files" on storage.objects;
 create policy "Owners can delete own pending venue media files"

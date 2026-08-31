@@ -2,6 +2,7 @@ import type { VenueRow } from "../types/database";
 import type { Venue, VenueDataSources } from "../types/venue";
 import { DEFAULT_CITY, DEFAULT_COUNTRY } from "@/lib/cities";
 import type { MonetisationStatus, PartnerTier } from "@/types/monetisation";
+import type { VenuePrimaryCategory, VenueSecondaryCategory } from "@/types/venueCategories";
 
 export function mapVenueRowToVenue(row: VenueRow): Venue {
   const commercialRow = row as Partial<VenueRow>;
@@ -21,6 +22,8 @@ export function mapVenueRowToVenue(row: VenueRow): Venue {
     rating: row.rating,
     priceFrom: row.price_from,
     priceLevel: row.price_level,
+    primaryCategory: mapPrimaryCategory(row.primary_category),
+    secondaryCategories: mapSecondaryCategories(row.secondary_categories),
     indoor: row.indoor,
     outdoor: row.outdoor,
     food: row.food,
@@ -67,6 +70,8 @@ export function mapVenueToVenueRow(venue: Venue): Omit<VenueRow, "created_at" | 
     rating: venue.rating ?? null,
     price_from: venue.priceFrom ?? null,
     price_level: venue.priceLevel,
+    primary_category: venue.primaryCategory,
+    secondary_categories: venue.secondaryCategories,
     indoor: venue.indoor,
     outdoor: venue.outdoor,
     food: venue.food,
@@ -93,6 +98,16 @@ export function mapVenueToVenueRow(venue: Venue): Omit<VenueRow, "created_at" | 
     featured_blocked_reason: venue.featuredBlockedReason,
     is_test: venue.isTest,
   };
+}
+
+function mapPrimaryCategory(category?: string | null): VenuePrimaryCategory {
+  const allowed: VenuePrimaryCategory[] = ["shisha_lounge", "restaurant", "bar", "cafe", "dessert", "lounge", "late_night", "private_hire", "other"];
+  return allowed.includes(category as VenuePrimaryCategory) ? category as VenuePrimaryCategory : "shisha_lounge";
+}
+
+function mapSecondaryCategories(categories?: string[] | null): VenueSecondaryCategory[] {
+  const allowed = new Set<VenueSecondaryCategory>(["shisha", "food", "mocktails", "cocktails", "coffee", "dessert", "brunch", "late_night", "live_sport", "private_hire", "outdoor_seating", "date_night", "groups", "events"]);
+  return (categories ?? []).filter((category): category is VenueSecondaryCategory => allowed.has(category as VenueSecondaryCategory));
 }
 
 function compactDataSources(dataSources: VenueDataSources): Record<string, string> {

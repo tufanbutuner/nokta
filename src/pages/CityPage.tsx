@@ -33,13 +33,13 @@ export function CityPage() {
       <main>
         <PageMeta
           title={`${city.name} coming soon | Sheesha`}
-          description={`We are adding verified shisha venues in ${city.name} soon.`}
+          description={`We are adding verified social venues in ${city.name} soon.`}
           canonicalPath={`/cities/${city.slug}`}
         />
         <PageContainer className="py-16">
           <EmptyState
             title={`${city.name} coming soon`}
-            description={`We are adding verified shisha venues in ${city.name} soon.`}
+            description={`We are adding verified social venues in ${city.name} soon.`}
           >
             <Button asChild className="mt-6">
               <Link to="/suggest">
@@ -55,17 +55,17 @@ export function CityPage() {
   return (
     <main>
       <PageMeta
-        title={`Shisha lounges in ${city.name} | Sheesha`}
-        description={`Discover shisha lounges in ${city.name} by area, vibe, price, features and distance. Check venue details, opening hours, reviews and directions.`}
+        title={`Venues in ${city.name} | Sheesha`}
+        description={`Explore social venues in ${city.name}, including lounges, late-night spots and shisha lounges. View venue details, photos and request bookings.`}
         canonicalPath={`/cities/${city.slug}`}
       />
       <PageContainer className="py-12">
         <div className="mb-8 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
           <div>
             <p className="text-sm text-clay-accent">{city.country}</p>
-            <h1 className="mt-2 text-5xl font-semibold">Shisha lounges in {city.name}</h1>
+            <h1 className="mt-2 text-5xl font-semibold">Venues in {city.name}</h1>
             <p className="mt-3 max-w-2xl text-muted-foreground">
-              Explore shisha lounges across {city.name} by area, vibe, price and features. Venue details are checked where possible, but always confirm directly before travelling or booking.
+              Explore social venues in {city.name}, starting with shisha lounges and lounge venues. Venue details are checked where possible, but always confirm directly before travelling or booking.
             </p>
           </div>
           <Button asChild>

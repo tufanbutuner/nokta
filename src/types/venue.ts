@@ -1,4 +1,5 @@
 import type { MonetisationStatus, PartnerTier } from "@/types/monetisation";
+import type { VenuePrimaryCategory, VenueSecondaryCategory } from "@/types/venueCategories";
 
 export type VenueVibe =
   | "casual"
@@ -57,6 +58,8 @@ export interface Venue {
   rating?: number | null;
   priceFrom?: number | null;
   priceLevel: PriceLevel;
+  primaryCategory: VenuePrimaryCategory;
+  secondaryCategories: VenueSecondaryCategory[];
   indoor: boolean;
   outdoor: boolean;
   food: boolean;

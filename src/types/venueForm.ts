@@ -1,5 +1,6 @@
 import type { MonetisationStatus, PartnerTier } from "@/types/monetisation";
 import type { BusinessStatus, OpeningHours, PriceLevel, VenueVibe, VerificationStatus } from "@/types/venue";
+import type { VenuePrimaryCategory, VenueSecondaryCategory } from "@/types/venueCategories";
 
 export interface VenueFormValues {
   id: string;
@@ -16,6 +17,8 @@ export interface VenueFormValues {
   rating: number | null;
   priceFrom: number | null;
   priceLevel: PriceLevel;
+  primaryCategory: VenuePrimaryCategory;
+  secondaryCategories: VenueSecondaryCategory[];
   indoor: boolean;
   outdoor: boolean;
   food: boolean;

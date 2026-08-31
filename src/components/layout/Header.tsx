@@ -62,7 +62,7 @@ export function Header() {
         <div className="flex h-16 w-full items-center justify-between gap-4 px-4 sm:px-6">
           <div className="flex min-w-0 items-center gap-6">
             <Link reloadDocument to="/" className="shrink-0 font-brand text-xl font-bold tracking-[-0.5px]">
-              sheesh.
+              slice.
             </Link>
             <div className="hidden items-center gap-6 text-sm text-muted-foreground md:flex">
               <NavLink reloadDocument to="/discover" className={navLinkClass}>

@@ -21,6 +21,7 @@ import { useVenues } from "@/hooks/useVenues";
 import { filterVenues } from "@/lib/filterVenues";
 import { trackEvent } from "@/lib/analytics";
 import { DEFAULT_CITY } from "@/lib/cities";
+import { brandConfig } from "@/config/brand";
 import { getVenueCurrentStatus, isVenueOpenNow } from "@/lib/openingHours";
 import { sortVenues } from "@/lib/sortVenues";
 import { cn } from "@/lib/utils";
@@ -32,6 +33,7 @@ import {
   parseVenueFilters,
   parseVenueSort,
 } from "@/lib/venueFilters";
+import { formatVenuePrimaryCategory } from "@/lib/venueCategoryLabels";
 import type { DiscoverView, VenueFilterState } from "@/types/filters";
 import type { VenueSortOption } from "@/types/sort";
 
@@ -117,8 +119,8 @@ export function DiscoverPage() {
   return (
     <main className="bg-background">
       <PageMeta
-        title={`Discover shisha lounges in ${filters.city} | Sheesha`}
-        description={`Search shisha lounges in ${filters.city} with filters, map view and location-aware sorting.`}
+        title={`Discover Venues Near You | ${brandConfig.appName}`}
+        description="Explore social venues by city, area and vibe. View photos, venue details, opening info and request bookings."
         canonicalPath="/discover"
       />
       <div className="mx-auto flex min-h-[calc(100vh-4rem)] max-w-none flex-col px-3 py-3 lg:h-[calc(100vh-4rem)]">
@@ -306,7 +308,7 @@ function ActiveFilterChips({
   filters: VenueFilterState;
   onClear: () => void;
 }) {
-  const showChips = filters.query.trim() || filters.city !== DEFAULT_CITY || filters.area !== "all" || filters.vibes.length;
+  const showChips = filters.query.trim() || filters.city !== DEFAULT_CITY || filters.area !== "all" || filters.primaryCategory !== "all" || filters.vibes.length;
 
   if (!showChips) {
     return null;
@@ -317,6 +319,7 @@ function ActiveFilterChips({
       {filters.query.trim() ? <Badge className="bg-clay-accent/10 text-clay-accent">Search: {filters.query.trim()}</Badge> : null}
       {filters.city !== DEFAULT_CITY ? <Badge className="bg-clay-accent/10 text-clay-accent">{filters.city}</Badge> : null}
       {filters.area !== "all" ? <Badge className="bg-clay-accent/10 text-clay-accent">{filters.area}</Badge> : null}
+      {filters.primaryCategory !== "all" ? <Badge className="bg-clay-accent/10 text-clay-accent">{formatVenuePrimaryCategory(filters.primaryCategory)}</Badge> : null}
       {filters.vibes.map((vibe) => (
         <Badge key={vibe} className="bg-clay-accent/10 text-clay-accent">
           {formatVibe(vibe)}
@@ -380,6 +383,7 @@ function getDiscoverAnalyticsProperties(filters: VenueFilterState, sort: VenueSo
     country: filters.country,
     city: filters.city,
     area: filters.area,
+    category: filters.primaryCategory === "all" ? null : filters.primaryCategory,
     price: filters.priceLevel === "all" ? null : filters.priceLevel,
     sort,
     view,

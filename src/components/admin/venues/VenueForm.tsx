@@ -7,6 +7,7 @@ import { VenueFormSection } from "@/components/admin/venues/VenueFormSection";
 import { VenueFormWarnings } from "@/components/admin/venues/VenueFormWarnings";
 import { VibeSelector } from "@/components/admin/venues/VibeSelector";
 import { CitySelector } from "@/components/search/CitySelector";
+import { activeVenueCategories } from "@/data/venueCategories";
 import { Alert } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -18,6 +19,7 @@ import { validateVenueForm } from "@/lib/venueFormValidation";
 import type { MonetisationStatus, PartnerTier } from "@/types/monetisation";
 import type { BusinessStatus, PriceLevel, VerificationStatus } from "@/types/venue";
 import type { VenueFormValues } from "@/types/venueForm";
+import type { VenuePrimaryCategory } from "@/types/venueCategories";
 
 const FEATURE_FIELDS = [
   ["indoor", "Indoor"],
@@ -43,6 +45,8 @@ const MONETISATION_STATUS_OPTIONS: { label: string; value: MonetisationStatus }[
   { label: "Churned", value: "churned" },
   { label: "Not a fit", value: "not-fit" },
 ];
+
+const CATEGORY_OPTIONS = activeVenueCategories.map((category) => ({ label: category.label, value: category.id }));
 
 export function VenueForm({
   initialValues,
@@ -187,6 +191,21 @@ export function VenueForm({
           </Field>
           <Field label="Rating" error={showErrors ? validation.errors.rating : undefined}>
             <Input value={values.rating ?? ""} onChange={(event) => update("rating", parseNullableNumberInput(event.target.value))} />
+          </Field>
+        </div>
+      </VenueFormSection>
+
+      <VenueFormSection title="Category">
+        <div className="grid gap-4 md:grid-cols-2">
+          <Field label="Primary category">
+            <Select value={values.primaryCategory} onChange={(event) => update("primaryCategory", event.target.value as VenuePrimaryCategory)} options={CATEGORY_OPTIONS} />
+          </Field>
+          <Field label="Secondary categories">
+            <Input
+              value={values.secondaryCategories.join(", ")}
+              onChange={(event) => update("secondaryCategories", event.target.value.split(",").map((item) => item.trim()).filter(Boolean) as VenueFormValues["secondaryCategories"])}
+              placeholder="shisha, food, late_night"
+            />
           </Field>
         </div>
       </VenueFormSection>

@@ -359,4 +359,11 @@ after insert on public.venue_enquiries
 for each row
 execute function public.notify_venue_enquiry_inserted();
 
+revoke execute on function public.create_notification_delivery_logs() from anon, authenticated;
+revoke execute on function public.get_user_email(uuid) from anon, authenticated;
+revoke execute on function public.get_booking_notification_channels(uuid, text) from anon, authenticated;
+revoke execute on function public.notify_booking_request_inserted() from anon, authenticated;
+revoke execute on function public.notify_booking_request_updated() from anon, authenticated;
+revoke execute on function public.notify_venue_enquiry_inserted() from anon, authenticated;
+
 notify pgrst, 'reload schema';

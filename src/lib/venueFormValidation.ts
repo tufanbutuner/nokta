@@ -103,6 +103,8 @@ function mapValuesToValidationVenue(values: VenueFormValues): Venue {
     rating: values.rating,
     priceFrom: values.priceFrom,
     priceLevel: values.priceLevel,
+    primaryCategory: values.primaryCategory,
+    secondaryCategories: values.secondaryCategories,
     indoor: values.indoor,
     outdoor: values.outdoor,
     food: values.food,

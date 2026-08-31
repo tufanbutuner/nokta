@@ -13,6 +13,8 @@ export interface VenueRow {
   rating: number | null;
   price_from: number | null;
   price_level: 1 | 2 | 3 | 4;
+  primary_category: string;
+  secondary_categories: string[];
   indoor: boolean;
   outdoor: boolean;
   food: boolean;
@@ -103,6 +105,8 @@ export interface VenueSuggestionRow {
   website: string | null;
   instagram: string | null;
   phone: string | null;
+  primary_category: string;
+  secondary_categories: string[];
   notes: string | null;
   status: "pending" | "approved" | "rejected" | "converted";
   admin_notes: string | null;

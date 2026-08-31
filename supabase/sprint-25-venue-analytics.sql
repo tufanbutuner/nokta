@@ -72,7 +72,32 @@ drop policy if exists "Anyone can insert venue analytics events" on public.venue
 create policy "Anyone can insert venue analytics events"
 on public.venue_analytics_events
 for insert
-with check (true);
+with check (
+  venue_id is not null
+  and event_name is not null
+  and event_name in (
+    'venue_profile_viewed',
+    'venue_directions_clicked',
+    'venue_website_clicked',
+    'venue_instagram_clicked',
+    'venue_saved',
+    'venue_unsaved',
+    'venue_enquiry_cta_clicked',
+    'venue_enquiry_submitted',
+    'venue_booking_request_cta_clicked',
+    'venue_booking_request_submitted',
+    'venue_booking_status_viewed',
+    'venue_booking_alternative_accepted',
+    'venue_booking_alternative_declined',
+    'venue_booking_confirmed',
+    'venue_booking_request_declined',
+    'venue_booking_alternative_proposed',
+    'featured_placement_viewed',
+    'featured_placement_clicked',
+    'promoted_offer_viewed',
+    'promoted_offer_clicked'
+  )
+);
 
 drop policy if exists "Admins can read venue analytics events" on public.venue_analytics_events;
 create policy "Admins can read venue analytics events"
@@ -86,7 +111,8 @@ on public.venue_analytics_events
 for delete
 using (exists (select 1 from public.admin_users where admin_users.user_id = auth.uid()));
 
-create or replace view public.venue_analytics_daily as
+create or replace view public.venue_analytics_daily
+with (security_invoker = true) as
 select
   venue_id,
   city,

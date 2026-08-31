@@ -5,6 +5,7 @@ import { VibeFilter } from "@/components/search/VibeFilter";
 import { Button } from "@/components/ui/button";
 import { Select } from "@/components/ui/select";
 import { Separator } from "@/components/ui/separator";
+import { activeVenueCategories } from "@/data/venueCategories";
 import type { VenueFilterState } from "@/types/filters";
 import type { Venue } from "@/types/venue";
 
@@ -25,6 +26,7 @@ export function VenueFilters({
     (first, second) => first.localeCompare(second),
   );
   const areaOptions = [{ label: "All areas", value: "all" }, ...areas.map((area) => ({ label: area, value: area }))];
+  const categoryOptions = [{ label: "All venue types", value: "all" }, ...activeVenueCategories.map((category) => ({ label: category.label, value: category.id }))];
 
   return (
     <div className={className}>
@@ -63,6 +65,19 @@ export function VenueFilters({
               })
             }
             options={[...PRICE_OPTIONS]}
+            className="w-full"
+          />
+        </div>
+        <div className="space-y-2">
+          <label className="text-sm font-medium" htmlFor="category-filter">
+            Venue type
+          </label>
+          <Select
+            id="category-filter"
+            aria-label="Venue type"
+            value={filters.primaryCategory}
+            onChange={(event) => onChange({ ...filters, primaryCategory: event.target.value as VenueFilterState["primaryCategory"] })}
+            options={categoryOptions}
             className="w-full"
           />
         </div>

@@ -15,6 +15,7 @@ import { Input } from "@/components/ui/input";
 import { ErrorState } from "@/components/state/ErrorState";
 import { LoadingState } from "@/components/state/LoadingState";
 import { useVenues } from "@/hooks/useVenues";
+import { brandConfig } from "@/config/brand";
 import { DEFAULT_CITY, getActiveCities } from "@/lib/cities";
 import { getVenueImage } from "@/lib/venueImages";
 import { getVenueCurrentStatus } from "@/lib/openingHours";
@@ -41,7 +42,7 @@ const steps: { title: string; description: string; Icon: LucideIcon }[] = [
   },
   {
     title: "Rate",
-    description: "Share what the session was actually like so other people can choose well.",
+    description: "Share what the venue was actually like so other people can choose well.",
     Icon: MessageCircle,
   },
 ];
@@ -65,10 +66,10 @@ const testimonials = [
 ];
 
 const CITY_DESCRIPTIONS: Record<string, string> = {
-  London: "Explore shisha lounges across London by area, vibe, price and distance.",
-  Birmingham: "Find shisha lounges across Birmingham, from central spots to neighbourhood lounges.",
-  Manchester: "Discover shisha lounges across Manchester for casual nights, groups and late plans.",
-  Leicester: "Browse shisha lounges across Leicester by vibe, features and location.",
+  London: "Explore social venues across London by area, vibe, price and distance.",
+  Birmingham: "Find lounges and late-night social venues across Birmingham.",
+  Manchester: "Discover social venues across Manchester for casual nights, groups and late plans.",
+  Leicester: "Browse social venues across Leicester by vibe, features and location.",
 };
 
 export function HomePage() {
@@ -93,19 +94,19 @@ export function HomePage() {
   return (
     <main>
       <PageMeta
-        title="Sheesha | Discover shisha lounges across the UK"
-        description="Find shisha lounges by city, area, vibe, price, features and distance."
+        title={`Discover Social Venues Across the UK | ${brandConfig.appName}`}
+        description="Find lounges, restaurants, bars and cafes across the UK. Discover venue details, photos, opening info and request bookings, starting with shisha lounges."
         canonicalPath="/"
       />
       <section className="border-b">
         <PageContainer className="py-12 sm:py-16 lg:py-20">
           <div className="mx-auto max-w-4xl text-center">
             <h1 className="mx-auto max-w-4xl text-5xl font-semibold leading-[0.95] sm:text-6xl lg:text-7xl">
-              Find your perfect
-              <span className="mt-1 block text-clay-accent">sheesha spot</span>
+              Discover social venues
+              <span className="mt-1 block text-clay-accent">worth going out for</span>
             </h1>
             <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
-              Discover verified shisha lounges, compare features, save your favourites and find the right spot for your next night out.
+              Find shisha lounges, restaurants, bars and cafes across the UK.
             </p>
 
             <form className="mx-auto mt-8 max-w-3xl rounded-2xl border bg-card p-2 shadow-xl shadow-stone-950/5" onSubmit={handleSearchSubmit}>
@@ -123,7 +124,7 @@ export function HomePage() {
                 </div>
                 <Button type="submit" className="absolute right-0 top-1/2 h-10 w-10 -translate-y-1/2 bg-clay-accent px-0 text-white hover:bg-clay-accent-hover sm:w-24 sm:px-4">
                   <Search className="h-4 w-4 sm:hidden" />
-                  <span className="sr-only sm:not-sr-only">Search</span>
+                  <span className="sr-only sm:not-sr-only">Explore</span>
                 </Button>
               </div>
             </form>
@@ -142,12 +143,12 @@ export function HomePage() {
         </PageContainer>
       </section>
 
-      <section className="border-b bg-card/35">
-        <PageContainer className="grid gap-4 py-6 text-center text-sm text-muted-foreground sm:grid-cols-[1fr_auto_auto_auto] sm:items-center sm:text-left">
-          <p className="font-medium text-foreground">Find shisha lounges by city, area, vibe and distance</p>
-          <span className="opacity-60">Late-night lists</span>
-          <span className="opacity-60">Terrace picks</span>
-          <span className="opacity-60">Price checks</span>
+      <section className="border-b border-sheesh-ink bg-sheesh-ink">
+        <PageContainer className="grid gap-4 py-6 text-center text-sm text-clay-50/60 sm:grid-cols-[1fr_auto_auto_auto] sm:items-center sm:text-left">
+          <p className="font-medium text-clay-50">{brandConfig.shortDescription}</p>
+          <span>Late-night plans</span>
+          <span>Group bookings</span>
+          <span>Venue details</span>
         </PageContainer>
       </section>
 
@@ -159,7 +160,7 @@ export function HomePage() {
           <div className="mb-6 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
             <div>
               <p className="text-sm text-clay-accent">Popular near you</p>
-              <h2 className="mt-1 text-3xl font-semibold">Book-worthy lounges</h2>
+              <h2 className="mt-1 text-3xl font-semibold">Book-worthy venues</h2>
             </div>
             <Button asChild variant="outline" className="w-fit">
               <Link reloadDocument to="/discover">
@@ -226,7 +227,7 @@ export function HomePage() {
         <section className="rounded-2xl bg-card px-5 py-10 sm:px-8 lg:px-10">
           <div className="mx-auto max-w-2xl text-center">
             <p className="text-sm font-medium uppercase tracking-[0.18em] text-clay-accent">How it works</p>
-            <h2 className="mt-3 text-3xl font-semibold">Three steps to your next session</h2>
+            <h2 className="mt-3 text-3xl font-semibold">Three steps to your next plan</h2>
           </div>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {steps.map(({ title, description, Icon }) => (
@@ -273,7 +274,7 @@ export function HomePage() {
           <Sparkles className="mx-auto h-8 w-8 text-clay-accent" />
           <h2 className="mx-auto mt-4 max-w-xl text-3xl font-semibold sm:text-4xl">Ready to find your spot?</h2>
           <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-background/70">
-            Explore venues, save your shortlist and keep the next session easy to choose.
+            Explore venues, save your shortlist and keep the next plan easy to choose.
           </p>
           <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
             <Button asChild className="bg-clay-accent text-white hover:bg-clay-accent-hover">
@@ -393,7 +394,7 @@ function getCityCards(venues: Venue[]) {
     return {
       ...city,
       count,
-      description: CITY_DESCRIPTIONS[city.name] ?? `Explore shisha lounges across ${city.name}.`,
+      description: CITY_DESCRIPTIONS[city.name] ?? `Explore social venues across ${city.name}.`,
     };
   });
 }

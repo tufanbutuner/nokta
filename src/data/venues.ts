@@ -16,6 +16,8 @@ const demoVenues: Array<
     | "businessStatus"
     | "country"
     | "city"
+    | "primaryCategory"
+    | "secondaryCategories"
     | "verificationStatus"
     | "lastVerifiedAt"
     | "dataSources"
@@ -261,6 +263,8 @@ export const venues: Venue[] = demoVenues.map((venue) => ({
   ...venue,
   country: "United Kingdom",
   city: "London",
+  primaryCategory: "shisha_lounge",
+  secondaryCategories: ["shisha"],
   businessStatus: "unknown",
   verificationStatus: "unverified",
   lastVerifiedAt: null,

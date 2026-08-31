@@ -1,3 +1,5 @@
+import type { VenuePrimaryCategory, VenueSecondaryCategory } from "@/types/venueCategories";
+
 export type VenueSuggestionStatus = "pending" | "approved" | "rejected" | "converted";
 
 export interface VenueSuggestion {
@@ -12,6 +14,8 @@ export interface VenueSuggestion {
   website: string | null;
   instagram: string | null;
   phone: string | null;
+  primaryCategory: VenuePrimaryCategory;
+  secondaryCategories: VenueSecondaryCategory[];
   notes: string | null;
   status: VenueSuggestionStatus;
   adminNotes: string | null;
@@ -31,5 +35,7 @@ export interface VenueSuggestionInput {
   website?: string | null;
   instagram?: string | null;
   phone?: string | null;
+  primaryCategory?: VenuePrimaryCategory;
+  secondaryCategories?: VenueSecondaryCategory[];
   notes?: string | null;
 }

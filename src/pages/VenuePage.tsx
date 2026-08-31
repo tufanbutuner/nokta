@@ -25,6 +25,7 @@ import { formatDistanceMiles, getVenueDistanceMiles } from "@/lib/location";
 import { getVenueCurrentStatus } from "@/lib/openingHours";
 import { cn } from "@/lib/utils";
 import { formatPriceLevel } from "@/lib/venueFilters";
+import { formatVenuePrimaryCategory, formatVenueSecondaryCategory } from "@/lib/venueCategoryLabels";
 import { getVenueImage, getVenueImages } from "@/lib/venueImages";
 import { getVenueRatingSummary } from "@/services/reviewService";
 import { getApprovedVenueMedia } from "@/services/ownerVenueMediaService";
@@ -153,7 +154,7 @@ export function VenuePage() {
 
   return (
     <main className="bg-background">
-      <PageMeta title={`${venue.name} in ${venue.city} | Sheesha`} description={`View opening hours, features, address, reviews and verification details for ${venue.name} in ${venue.city}.`} canonicalPath={`/venues/${venue.slug}`} imageUrl={galleryImages[0] ?? getVenueImage(venue)} />
+      <PageMeta title={`${venue.name} in ${venue.city} | Sheesha`} description={`View category, opening hours, features, address, reviews and booking details for ${venue.name} in ${venue.city}.`} canonicalPath={`/venues/${venue.slug}`} imageUrl={galleryImages[0] ?? getVenueImage(venue)} />
       <PageContainer className="py-6 sm:py-8">
         <Breadcrumb className="mb-4">
           <BreadcrumbList>
@@ -186,7 +187,11 @@ export function VenuePage() {
         <section className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
           <div className="min-w-0">
             <div className="mb-3 flex flex-wrap gap-2">
+              <VenueBadge label={formatVenuePrimaryCategory(venue.primaryCategory)} />
               {venue.isClaimed ? <ClaimedVenueBadge /> : null}
+              {venue.secondaryCategories.slice(0, 3).map((category) => (
+                <VenueBadge key={category} label={formatVenueSecondaryCategory(category)} />
+              ))}
               {venue.vibes.slice(0, 5).map((vibe) => (
                 <VenueBadge key={vibe} label={vibe} />
               ))}
@@ -427,6 +432,7 @@ function getVenueAnalyticsProperties(venue: Venue) {
     venueId: venue.id,
     venueSlug: venue.slug,
     venueName: venue.name,
+    primaryCategory: venue.primaryCategory,
     area: venue.area,
   };
 }
