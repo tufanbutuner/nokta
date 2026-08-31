@@ -2,6 +2,7 @@ import { trackEvent, trackVenueAnalyticsEvent } from "@/lib/analytics";
 import { getPartySizeBucket, getRequestedDateBucket } from "@/lib/bookingRequestAnalytics";
 import { mapBookingRequestRowToBookingRequest } from "@/lib/bookingRequestMappers";
 import { supabase, supabaseConfigError } from "@/lib/supabase";
+import { queueEmailDeliveryForNotification } from "@/services/emailDeliveryService";
 import type { BookingRequest, BookingRequestStatus, OwnerBookingRequestActionInput, OwnerProposeAlternativeInput } from "@/types/bookingRequests";
 import type { BookingRequestRow } from "@/types/database";
 
@@ -96,6 +97,9 @@ async function updateOwnerBookingRequest(
       },
     });
   }
+  queueEmailDeliveryForNotification({ bookingRequestId: request.id }).catch((error) => {
+    if (import.meta.env.DEV) console.info("[email delivery]", error instanceof Error ? error.message : "Could not send booking email.");
+  });
   return request;
 }
 

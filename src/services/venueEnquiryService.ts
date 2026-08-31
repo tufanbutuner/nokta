@@ -1,5 +1,6 @@
 import { mapVenueEnquiryRowToEnquiry } from "@/lib/venueEnquiryMappers";
 import { supabase, supabaseConfigError } from "@/lib/supabase";
+import { queueEmailDeliveryForNotification } from "@/services/emailDeliveryService";
 import type { VenueEnquiryRow } from "@/types/database";
 import type { VenueEnquiry, VenueEnquiryInput } from "@/types/venueEnquiries";
 
@@ -29,7 +30,11 @@ export async function createVenueEnquiry(input: { userId: string; enquiry: Venue
     .single();
 
   if (error) throw new Error(`Could not send enquiry: ${error.message}`);
-  return mapVenueEnquiryRowToEnquiry(data as VenueEnquiryRow);
+  const enquiry = mapVenueEnquiryRowToEnquiry(data as VenueEnquiryRow);
+  queueEmailDeliveryForNotification({ enquiryId: enquiry.id }).catch((caughtError) => {
+    if (import.meta.env.DEV) console.info("[email delivery]", caughtError instanceof Error ? caughtError.message : "Could not send enquiry email.");
+  });
+  return enquiry;
 }
 
 export async function getMyVenueEnquiries(userId: string): Promise<VenueEnquiry[]> {

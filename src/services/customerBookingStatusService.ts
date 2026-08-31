@@ -1,6 +1,7 @@
 import { trackEvent, trackVenueAnalyticsEvent } from "@/lib/analytics";
 import { mapCustomerBookingStatusRow } from "@/lib/customerBookingStatusMappers";
 import { supabase, supabaseConfigError } from "@/lib/supabase";
+import { queueEmailDeliveryForNotification } from "@/services/emailDeliveryService";
 import type { CustomerBookingStatus, CustomerBookingStatusRow } from "@/types/customerBookingStatus";
 
 function ensureSupabase() {
@@ -32,6 +33,9 @@ export async function acceptCustomerBookingAlternative(input: { token: string; r
   const status = mapCustomerBookingStatusRow(row as CustomerBookingStatusRow);
   trackEvent("customer_booking_alternative_accepted", { venueId: status.venueId, status: status.status });
   trackVenueAnalyticsEvent({ venueId: status.venueId, eventName: "venue_booking_alternative_accepted", sourceSurface: "venue_page", metadata: { status: status.status } });
+  queueEmailDeliveryForNotification({ bookingRequestId: status.id }).catch((error) => {
+    if (import.meta.env.DEV) console.info("[email delivery]", error instanceof Error ? error.message : "Could not send booking email.");
+  });
   return status;
 }
 
@@ -44,6 +48,9 @@ export async function declineCustomerBookingAlternative(input: { token: string; 
   const status = mapCustomerBookingStatusRow(row as CustomerBookingStatusRow);
   trackEvent("customer_booking_alternative_declined", { venueId: status.venueId, status: status.status });
   trackVenueAnalyticsEvent({ venueId: status.venueId, eventName: "venue_booking_alternative_declined", sourceSurface: "venue_page", metadata: { status: status.status } });
+  queueEmailDeliveryForNotification({ bookingRequestId: status.id }).catch((error) => {
+    if (import.meta.env.DEV) console.info("[email delivery]", error instanceof Error ? error.message : "Could not send booking email.");
+  });
   return status;
 }
 

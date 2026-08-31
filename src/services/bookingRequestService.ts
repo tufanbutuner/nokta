@@ -5,6 +5,7 @@ import { validateCreateBookingRequestInput } from "@/lib/bookingRequestValidatio
 import { generateConfirmationReference, generateCustomerAccessToken, getCustomerAccessTokenExpiry } from "@/lib/bookingTokens";
 import { supabase, supabaseConfigError } from "@/lib/supabase";
 import { checkVenueBookingRequestAvailability } from "@/services/bookingAvailabilityService";
+import { queueEmailDeliveryForNotification } from "@/services/emailDeliveryService";
 import type { BookingRequest, CreateBookingRequestInput } from "@/types/bookingRequests";
 import type { BookingRequestRow } from "@/types/database";
 
@@ -75,6 +76,9 @@ export async function createBookingRequest(input: { userId?: string | null; requ
       requestedDateBucket: safeMetadata.requestedDateBucket,
       status: request.status,
     },
+  });
+  queueEmailDeliveryForNotification({ bookingRequestId: request.id }).catch((error) => {
+    if (import.meta.env.DEV) console.info("[email delivery]", error instanceof Error ? error.message : "Could not send booking email.");
   });
   return request;
 }
