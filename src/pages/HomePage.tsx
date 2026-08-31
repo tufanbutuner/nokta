@@ -109,7 +109,7 @@ export function HomePage() {
       <section>
         <PageContainer className="py-12 sm:py-16 lg:py-20">
           <div className="mx-auto max-w-4xl text-center">
-            <h1 className="mx-auto max-w-4xl text-5xl font-semibold leading-[0.95] sm:text-6xl lg:text-7xl">
+            <h1 className="mx-auto max-w-4xl text-4xl font-semibold leading-[0.95] sm:text-6xl lg:text-7xl">
               Discover social venues
               <span className="mt-1 block text-clay-accent">worth going out for</span>
             </h1>
