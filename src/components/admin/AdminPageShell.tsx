@@ -21,8 +21,9 @@ export function AdminPageShell({
       <div className="flex h-full min-h-0 flex-col lg:flex-row">
         <div className="shrink-0 border-b bg-nokta-ink text-clay-50 lg:hidden">
           <div className="flex h-14 items-center justify-between gap-3 px-4">
-            <NavLink to="/" className="font-brand text-xl font-bold tracking-[0.02em] text-clay-400">
-              nokta
+            <NavLink to="/" className="flex items-center gap-2 font-wordmark text-xl font-bold tracking-[0.02em] text-clay-400">
+              <span className="h-3.5 w-3.5 rounded-full bg-white" aria-hidden="true" />
+              <span>nokta</span>
             </NavLink>
             <Button type="button" variant="ghost" size="icon" className="text-clay-50/80 hover:bg-clay-400/10 hover:text-clay-200" aria-label={isMobileOpen ? "Close admin menu" : "Open admin menu"} onClick={() => setIsMobileOpen((next) => !next)}>
               {isMobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}

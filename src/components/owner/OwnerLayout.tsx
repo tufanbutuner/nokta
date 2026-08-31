@@ -34,7 +34,10 @@ export function OwnerLayout({ children }: { children: React.ReactNode }) {
         <div className="shrink-0 lg:hidden">
           <div className="border-b bg-nokta-ink text-clay-50 shadow-sm">
             <div className="flex h-14 items-center justify-between gap-3 px-4">
-              <Link to="/" className="font-brand text-xl font-bold tracking-[0.02em] text-clay-400">nokta</Link>
+              <Link to="/" className="flex items-center gap-2 font-wordmark text-xl font-bold tracking-[0.02em] text-clay-400">
+                <span className="h-3.5 w-3.5 rounded-full bg-white" aria-hidden="true" />
+                <span>nokta</span>
+              </Link>
               <div className="flex items-center gap-2">
                 <NotificationBell className="relative text-clay-50/80" />
                 <Button type="button" variant="ghost" size="icon" className="text-clay-50/80 hover:bg-clay-400/10 hover:text-clay-200" aria-label={isMobileOpen ? "Close owner menu" : "Open owner menu"} onClick={() => setIsMobileOpen((next) => !next)}>
@@ -61,8 +64,9 @@ export function OwnerLayout({ children }: { children: React.ReactNode }) {
         </div>
         <aside className={cn("hidden shrink-0 flex-col bg-nokta-ink px-4 py-5 text-clay-50 transition-[width] duration-200 lg:flex", isCollapsed ? "w-[76px]" : "w-[220px]")}>
           <div className={cn("flex items-center gap-3", isCollapsed ? "justify-center" : "justify-between")}>
-            <NavLink to="/" className={cn("font-brand text-xl font-bold tracking-[0.02em] text-clay-400", isCollapsed ? "sr-only" : "")}>
-              nokta
+            <NavLink to="/" className={cn("flex items-center gap-2 font-wordmark text-xl font-bold tracking-[0.02em] text-clay-400", isCollapsed ? "sr-only" : "")}>
+              <span className="h-3.5 w-3.5 rounded-full bg-white" aria-hidden="true" />
+              <span>nokta</span>
             </NavLink>
             <div className="flex items-center gap-1">
               {!isCollapsed ? <NotificationBell align="left" className="relative text-clay-50/70" /> : null}

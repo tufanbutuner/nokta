@@ -27,8 +27,9 @@ export function AdminSidebar({ activePath = "/admin/monetisation" }: { activePat
 
   return (
     <aside className="hidden w-[220px] shrink-0 flex-col bg-nokta-ink px-4 py-5 text-clay-50 lg:flex">
-      <NavLink to="/" className="font-brand text-xl font-bold tracking-[0.02em] text-clay-400">
-        nokta
+      <NavLink to="/" className="flex items-center gap-2 font-wordmark text-xl font-bold tracking-[0.02em] text-clay-400">
+        <span className="h-3.5 w-3.5 rounded-full bg-white" aria-hidden="true" />
+        <span>nokta</span>
       </NavLink>
       <div className="mt-8 text-[10px] font-semibold uppercase tracking-[2px] text-[#8a7e7266]">Admin</div>
       <nav className="mt-3 grid gap-1">
