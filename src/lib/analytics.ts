@@ -107,6 +107,7 @@ export type AnalyticsEvent =
   | "owner_booking_window_added"
   | "owner_booking_window_updated"
   | "owner_booking_window_deleted"
+  | "owner_booking_windows_replaced"
   | "owner_blackout_date_added"
   | "owner_blackout_date_deleted"
   | "booking_request_blocked_by_availability"

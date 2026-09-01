@@ -10,8 +10,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useAuth } from "@/context/AuthContext";
 import { trackEvent } from "@/lib/analytics";
-import { formatDayOfWeek, formatNoticePeriod } from "@/lib/bookingAvailabilityLabels";
-import { createOwnerVenueBookingBlackoutDate, deleteOwnerVenueBookingBlackoutDate, deleteOwnerVenueBookingWindow, getOwnerVenueBookingAvailability, updateOwnerVenueBookingSettings, upsertOwnerVenueBookingWindow } from "@/services/ownerBookingAvailabilityService";
+import { formatBookingWindowLabel, formatDayOfWeek, formatNoticePeriod } from "@/lib/bookingAvailabilityLabels";
+import { createOwnerVenueBookingBlackoutDate, deleteOwnerVenueBookingBlackoutDate, deleteOwnerVenueBookingWindow, getOwnerVenueBookingAvailability, replaceOwnerVenueBookingWindows, updateOwnerVenueBookingSettings, upsertOwnerVenueBookingWindow } from "@/services/ownerBookingAvailabilityService";
 import { getMyClaimedVenue } from "@/services/ownerVenueService";
 import type { VenueBookingAvailability, VenueBookingBlackoutDate, VenueBookingSettings, VenueBookingWindow } from "@/types/bookingAvailability";
 import type { Venue } from "@/types/venue";
@@ -30,6 +30,7 @@ export function OwnerVenueAvailabilityPage() {
   const [isSaving, setIsSaving] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [windowsMessage, setWindowsMessage] = useState<string | null>(null);
 
   useEffect(() => {
     if (!user) return;
@@ -79,17 +80,31 @@ export function OwnerVenueAvailabilityPage() {
 
   async function saveWindow(window: Partial<VenueBookingWindow>) {
     if (!user || !availability) return;
-    const saved = await upsertOwnerVenueBookingWindow({ ownerUserId: user.id, venueId, window });
-    setAvailability({
-      ...availability,
-      windows: [...availability.windows.filter((item) => item.id !== saved.id), saved].sort((a, b) => a.dayOfWeek - b.dayOfWeek || a.startTime.localeCompare(b.startTime)),
-    });
+    setError(null);
+    setWindowsMessage(null);
+    try {
+      const saved = await upsertOwnerVenueBookingWindow({ ownerUserId: user.id, venueId, window });
+      setAvailability({
+        ...availability,
+        windows: [...availability.windows.filter((item) => item.id !== saved.id), saved].sort((a, b) => a.dayOfWeek - b.dayOfWeek || a.startTime.localeCompare(b.startTime)),
+      });
+      setWindowsMessage("Booking window saved.");
+    } catch (caughtError) {
+      setError(caughtError instanceof Error ? caughtError.message : "Could not save booking window.");
+    }
   }
 
   async function deleteWindow(windowId: string) {
     if (!user || !availability) return;
-    await deleteOwnerVenueBookingWindow({ ownerUserId: user.id, venueId, windowId });
-    setAvailability({ ...availability, windows: availability.windows.filter((window) => window.id !== windowId) });
+    setError(null);
+    setWindowsMessage(null);
+    try {
+      await deleteOwnerVenueBookingWindow({ ownerUserId: user.id, venueId, windowId });
+      setAvailability({ ...availability, windows: availability.windows.filter((window) => window.id !== windowId) });
+      setWindowsMessage("Booking window removed.");
+    } catch (caughtError) {
+      setError(caughtError instanceof Error ? caughtError.message : "Could not remove booking window.");
+    }
   }
 
   async function addBlackoutDate() {
@@ -98,6 +113,28 @@ export function OwnerVenueAvailabilityPage() {
     setAvailability({ ...availability, blackoutDates: [...availability.blackoutDates, saved].sort((a, b) => a.blackoutDate.localeCompare(b.blackoutDate)) });
     setBlackoutDate("");
     setBlackoutReason("");
+  }
+
+  async function useOpeningHoursPreset() {
+    if (!user || !availability || !venue) return;
+    const windows = buildWindowsFromOpeningHours(venue);
+    if (!windows.length) {
+      setWindowsMessage(null);
+      setError("This venue does not have usable opening hours yet.");
+      return;
+    }
+    setIsSaving(true);
+    setError(null);
+    setWindowsMessage(null);
+    try {
+      const savedWindows = await replaceOwnerVenueBookingWindows({ ownerUserId: user.id, venueId, windows });
+      setAvailability({ ...availability, windows: savedWindows });
+      setWindowsMessage(`Added ${savedWindows.length} booking window${savedWindows.length === 1 ? "" : "s"} from opening hours.`);
+    } catch (caughtError) {
+      setError(caughtError instanceof Error ? caughtError.message : "Could not apply opening hours.");
+    } finally {
+      setIsSaving(false);
+    }
   }
 
   async function deleteBlackoutDate(blackout: VenueBookingBlackoutDate) {
@@ -140,7 +177,19 @@ export function OwnerVenueAvailabilityPage() {
           <Button className="mt-4" onClick={saveSettings} disabled={isSaving}>{isSaving ? "Saving..." : "Save settings"}</Button>
         </section>
         <section className="rounded-xl border bg-card p-5">
-          <h2 className="text-xl font-semibold">Weekly booking windows</h2>
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+            <div>
+              <h2 className="text-xl font-semibold">Weekly booking windows</h2>
+              <p className="mt-1 max-w-2xl text-sm leading-6 text-muted-foreground">Set the days and times customers can request bookings. Use opening hours as a starting point, then adjust any day that needs tighter booking slots.</p>
+              {windowsMessage ? <p className="mt-2 text-sm font-medium text-emerald-700">{windowsMessage}</p> : null}
+            </div>
+            <div className="flex shrink-0 flex-col items-start gap-2 sm:items-end">
+              <Button type="button" variant="outline" onClick={useOpeningHoursPreset} disabled={isSaving}>
+                {isSaving ? "Applying..." : "Use opening hours"}
+              </Button>
+              {!venue.openingHours.length ? <span className="text-xs text-muted-foreground">No opening hours saved yet</span> : null}
+            </div>
+          </div>
           <div className="mt-4 grid gap-4">
             {DAYS.map((day) => <DayWindows key={day} day={day} windows={windowsByDay.get(day) ?? []} onSave={saveWindow} onDelete={deleteWindow} />)}
           </div>
@@ -168,7 +217,49 @@ function AvailabilityPreview({ settings, windowsCount, blackoutCount }: { settin
 function DayWindows({ day, windows, onSave, onDelete }: { day: number; windows: VenueBookingWindow[]; onSave: (window: Partial<VenueBookingWindow>) => void; onDelete: (windowId: string) => void }) {
   const [startTime, setStartTime] = useState("18:00");
   const [endTime, setEndTime] = useState("23:30");
-  return <div className="rounded-xl border p-4"><div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between"><h3 className="font-semibold">{formatDayOfWeek(day)}</h3><div className="grid gap-2 sm:grid-cols-[120px_120px_auto]"><Input type="time" value={startTime} onChange={(event) => setStartTime(event.target.value)} /><Input type="time" value={endTime} onChange={(event) => setEndTime(event.target.value)} /><Button variant="outline" onClick={() => onSave({ dayOfWeek: day, startTime, endTime, isEnabled: true })}>Add window</Button></div></div><div className="mt-3 grid gap-2">{windows.length ? windows.map((window) => <div key={window.id} className="flex items-center justify-between gap-3 rounded-lg bg-secondary p-2 text-sm"><span>{window.startTime} - {window.endTime}{window.isEnabled ? "" : " • Disabled"}</span><div className="flex gap-2"><Button size="sm" variant="ghost" onClick={() => onSave({ ...window, isEnabled: !window.isEnabled })}>{window.isEnabled ? "Disable" : "Enable"}</Button><Button size="sm" variant="ghost" onClick={() => onDelete(window.id)}>Remove</Button></div></div>) : <p className="text-sm text-muted-foreground">No windows for this day.</p>}</div></div>;
+  const sortedWindows = [...windows].sort((a, b) => a.startTime.localeCompare(b.startTime));
+
+  return (
+    <div className="rounded-xl border border-border/80 bg-background p-4">
+      <div className="grid gap-4 lg:grid-cols-[150px_minmax(0,1fr)] lg:items-start">
+        <div>
+          <h3 className="font-semibold text-foreground">{formatDayOfWeek(day)}</h3>
+          <p className="mt-1 text-xs text-muted-foreground">{sortedWindows.filter((window) => window.isEnabled).length || "No"} active window{sortedWindows.filter((window) => window.isEnabled).length === 1 ? "" : "s"}</p>
+        </div>
+        <div className="space-y-3">
+          <div className="grid gap-2 sm:grid-cols-[130px_130px_auto]">
+            <Input aria-label={`${formatDayOfWeek(day)} start time`} type="time" value={startTime} onChange={(event) => setStartTime(event.target.value)} />
+            <Input aria-label={`${formatDayOfWeek(day)} end time`} type="time" value={endTime} onChange={(event) => setEndTime(event.target.value)} />
+            <Button type="button" variant="outline" onClick={() => onSave({ dayOfWeek: day, startTime, endTime, isEnabled: true })}>
+              Add window
+            </Button>
+          </div>
+          <div className="grid gap-2">
+            {sortedWindows.length ? (
+              sortedWindows.map((window) => (
+                <div key={window.id} className="flex flex-col gap-2 rounded-lg bg-secondary/70 p-3 text-sm sm:flex-row sm:items-center sm:justify-between">
+                  <span className="font-medium text-foreground">
+                    {formatBookingWindowLabel(window)}
+                    {window.isEnabled ? null : <span className="ml-2 text-muted-foreground">Disabled</span>}
+                  </span>
+                  <div className="flex gap-2">
+                    <Button type="button" size="sm" variant="ghost" onClick={() => onSave({ ...window, isEnabled: !window.isEnabled })}>
+                      {window.isEnabled ? "Disable" : "Enable"}
+                    </Button>
+                    <Button type="button" size="sm" variant="ghost" onClick={() => onDelete(window.id)}>
+                      Remove
+                    </Button>
+                  </div>
+                </div>
+              ))
+            ) : (
+              <p className="rounded-lg bg-secondary/50 p-3 text-sm text-muted-foreground">No booking windows for this day.</p>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
@@ -177,4 +268,34 @@ function Field({ label, children }: { label: string; children: React.ReactNode }
 
 function Metric({ label, value }: { label: string; value: string }) {
   return <div className="rounded-xl border bg-card p-4"><p className="text-sm text-muted-foreground">{label}</p><p className="mt-2 text-2xl font-semibold">{value}</p></div>;
+}
+
+function buildWindowsFromOpeningHours(venue: Venue): Partial<VenueBookingWindow>[] {
+  return venue.openingHours.flatMap((item) => {
+    const dayOfWeek = parseOpeningHoursDay(item.day);
+    const startTime = normaliseOpeningHoursTime(item.open);
+    const endTime = normaliseOpeningHoursTime(item.close);
+    if (dayOfWeek === null || !startTime || !endTime || startTime === endTime) return [];
+    if (endTime > startTime) return [{ dayOfWeek, startTime, endTime, isEnabled: true }];
+    if (endTime === "00:00") return [{ dayOfWeek, startTime, endTime: "23:59", isEnabled: true }];
+    return [
+      { dayOfWeek, startTime, endTime: "23:59", isEnabled: true },
+      { dayOfWeek: (dayOfWeek + 1) % 7, startTime: "00:00", endTime, isEnabled: true },
+    ];
+  });
+}
+
+function parseOpeningHoursDay(day: string): number | null {
+  const normalised = day.trim().toLowerCase();
+  const index = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"].findIndex((value) => normalised.startsWith(value.slice(0, 3)));
+  return index >= 0 ? index : null;
+}
+
+function normaliseOpeningHoursTime(value: string): string | null {
+  const match = value.match(/(\d{1,2}):(\d{2})/);
+  if (!match) return null;
+  const hours = Number(match[1]);
+  const minutes = Number(match[2]);
+  if (hours > 23 || minutes > 59) return null;
+  return `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}`;
 }

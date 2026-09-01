@@ -51,6 +51,34 @@ export async function upsertOwnerVenueBookingWindow(input: { ownerUserId: string
   return mapVenueBookingWindowRow(data as VenueBookingWindowRow);
 }
 
+export async function replaceOwnerVenueBookingWindows(input: { ownerUserId: string; venueId: string; windows: Partial<VenueBookingWindow>[] }): Promise<VenueBookingWindow[]> {
+  input.windows.forEach((window) => {
+    const validation = validateVenueBookingWindow({ ...window, venueId: input.venueId });
+    if (!validation.isValid) throw new Error(Object.values(validation.errors)[0] ?? "Booking window is invalid.");
+  });
+
+  const client = ensureSupabase();
+  const { error: deleteError } = await client.from("venue_booking_windows").delete().eq("venue_id", input.venueId);
+  if (deleteError) throw new Error(`Could not replace booking windows: ${deleteError.message}`);
+
+  if (!input.windows.length) {
+    trackEvent("owner_booking_windows_replaced", { venueId: input.venueId, windowsCount: 0 });
+    return [];
+  }
+
+  const values = input.windows.map((window) => ({
+    venue_id: input.venueId,
+    day_of_week: window.dayOfWeek,
+    start_time: window.startTime,
+    end_time: window.endTime,
+    is_enabled: window.isEnabled ?? true,
+  }));
+  const { data, error } = await client.from("venue_booking_windows").insert(values).select("*").order("day_of_week").order("start_time");
+  if (error) throw new Error(`Could not replace booking windows: ${error.message}`);
+  trackEvent("owner_booking_windows_replaced", { venueId: input.venueId, windowsCount: values.length });
+  return ((data ?? []) as VenueBookingWindowRow[]).map(mapVenueBookingWindowRow);
+}
+
 export async function deleteOwnerVenueBookingWindow(input: { ownerUserId: string; venueId: string; windowId: string }): Promise<void> {
   const client = ensureSupabase();
   const { error } = await client.from("venue_booking_windows").delete().eq("id", input.windowId).eq("venue_id", input.venueId);
