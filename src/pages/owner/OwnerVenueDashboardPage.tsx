@@ -1,11 +1,12 @@
 import { useEffect, useMemo, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { OwnerLayout } from "@/components/owner/OwnerLayout";
 import { OwnerNextStepsCard, OwnerVenueAnalyticsCards, OwnerVenueCommercialSummary as OwnerVenueCommercialSummarySection, OwnerVenueEnquiryInboxCta, OwnerVenueEnquirySummary as OwnerVenueEnquirySummarySection, OwnerVenueHeader, OwnerVenueMediaSummary, OwnerVenueProfilePreview, OwnerVenueStatusCards } from "@/components/owner/OwnerVenueSections";
 import { OwnerLaunchChecklist } from "@/components/owner/onboarding/OwnerLaunchChecklist";
 import { PageMeta } from "@/components/seo/PageMeta";
 import { ErrorState } from "@/components/state/ErrorState";
 import { LoadingState } from "@/components/state/LoadingState";
+import { Button } from "@/components/ui/button";
 import { useAuth } from "@/context/AuthContext";
 import { trackEvent } from "@/lib/analytics";
 import { getMyClaimedVenue } from "@/services/ownerVenueService";
@@ -88,6 +89,15 @@ export function OwnerVenueDashboardPage() {
           <OwnerVenueStatusCards venue={venue} subscription={subscription} />
           <OwnerVenueMediaSummary venue={venue} media={media} />
           <OwnerVenueAnalyticsCards analytics={analytics} />
+          <section className="flex flex-col gap-4 rounded-xl border bg-card p-5 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <h2 className="font-semibold">Analytics and value reporting</h2>
+              <p className="mt-1 text-sm text-muted-foreground">See profile views, customer actions, booking requests, trends and practical improvement ideas.</p>
+            </div>
+            <Button asChild>
+              <Link to={`/owner/venues/${venue.slug}/analytics`}>View analytics</Link>
+            </Button>
+          </section>
           <OwnerVenueEnquirySummarySection enquiries={enquiries} />
           <OwnerVenueEnquiryInboxCta venue={venue} subscription={subscription} />
           <OwnerVenueCommercialSummarySection commercial={commercial} venue={venue} subscription={subscription} />

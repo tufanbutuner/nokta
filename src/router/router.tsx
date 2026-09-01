@@ -32,6 +32,7 @@ import { HomePage } from "@/pages/HomePage";
 import { MonetisationDashboardPage } from "@/pages/admin/MonetisationDashboardPage";
 import { NotFoundPage } from "@/pages/NotFoundPage";
 import { OwnerDashboardPage } from "@/pages/owner/OwnerDashboardPage";
+import { OwnerAnalyticsPage } from "@/pages/owner/OwnerAnalyticsPage";
 import { OwnerBillingPage } from "@/pages/owner/OwnerBillingPage";
 import { OwnerBillingSuccessPage } from "@/pages/owner/OwnerBillingSuccessPage";
 import { OwnerBookingsPage } from "@/pages/owner/OwnerBookingsPage";
@@ -39,6 +40,7 @@ import { OwnerEnquiriesPage } from "@/pages/owner/OwnerEnquiriesPage";
 import { OwnerVenueDashboardPage } from "@/pages/owner/OwnerVenueDashboardPage";
 import { OwnerVenueEnquiriesPage } from "@/pages/owner/OwnerVenueEnquiriesPage";
 import { OwnerVenueAvailabilityPage } from "@/pages/owner/OwnerVenueAvailabilityPage";
+import { OwnerVenueAnalyticsPage } from "@/pages/owner/OwnerVenueAnalyticsPage";
 import { OwnerVenueMediaPage } from "@/pages/owner/OwnerVenueMediaPage";
 import { OwnerVenueUpdateRequestPage } from "@/pages/owner/OwnerVenueUpdateRequestPage";
 import { OwnerPricingPage } from "@/pages/owner/OwnerPricingPage";
@@ -102,6 +104,14 @@ export const router = createBrowserRouter([
         ),
       },
       {
+        path: "/owner/analytics",
+        element: (
+          <RequireAuth>
+            <OwnerAnalyticsPage />
+          </RequireAuth>
+        ),
+      },
+      {
         path: "/owner/venues/:venueId/bookings",
         element: (
           <RequireAuth>
@@ -154,6 +164,14 @@ export const router = createBrowserRouter([
         element: (
           <RequireAuth>
             <OwnerVenueEnquiriesPage />
+          </RequireAuth>
+        ),
+      },
+      {
+        path: "/owner/venues/:venueId/analytics",
+        element: (
+          <RequireAuth>
+            <OwnerVenueAnalyticsPage />
           </RequireAuth>
         ),
       },

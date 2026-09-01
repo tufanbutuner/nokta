@@ -25,6 +25,8 @@ export type AnalyticsEvent =
   | "owner_landing_page_viewed"
   | "owner_claim_cta_clicked"
   | "owner_dashboard_first_viewed"
+  | "owner_analytics_overview_viewed"
+  | "owner_venue_analytics_viewed"
   | "owner_onboarding_task_clicked"
   | "owner_onboarding_task_completed"
   | "owner_onboarding_completed"

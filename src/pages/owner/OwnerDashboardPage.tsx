@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
+import { BarChart3, BookOpenCheck, CalendarCog, CreditCard, Inbox, Megaphone } from "lucide-react";
 import { OwnerLayout } from "@/components/owner/OwnerLayout";
 import { OwnerNoVenuesState } from "@/components/owner/OwnerNoVenuesState";
 import { OwnerVenueCard } from "@/components/owner/OwnerVenueCard";
@@ -66,14 +67,45 @@ export function OwnerDashboardPage() {
     };
   }, [range.from, range.to, user]);
 
-  const totals = venues.reduce((acc, venue) => {
-    acc.profileViews += analytics[venue.id]?.profileViews ?? 0;
-    acc.enquiries += enquiries[venue.id]?.totalEnquiries ?? 0;
-    acc.directionsClicks += analytics[venue.id]?.directionsClicks ?? 0;
-    acc.activeOffers += commercial[venue.id]?.activePromotedOffers ?? 0;
-    acc.activeFeatured += commercial[venue.id]?.activeFeaturedPlacements ?? 0;
-    return acc;
-  }, { profileViews: 0, enquiries: 0, directionsClicks: 0, activeOffers: 0, activeFeatured: 0 });
+  const primaryVenue = venues[0];
+  const sectionCards = primaryVenue ? [
+    {
+      title: "Analytics",
+      description: "See views, customer actions, booking demand and value reporting.",
+      to: "/owner/analytics",
+      Icon: BarChart3,
+    },
+    {
+      title: "Bookings",
+      description: "Review requests, accept bookings and manage your calendar.",
+      to: "/owner/bookings?view=week",
+      Icon: BookOpenCheck,
+    },
+    {
+      title: "Availability",
+      description: "Set bookable days, time windows and blackout dates.",
+      to: `/owner/venues/${primaryVenue.slug}/availability`,
+      Icon: CalendarCog,
+    },
+    {
+      title: "Enquiries",
+      description: "Manage customer enquiries from one owner inbox.",
+      to: "/owner/enquiries",
+      Icon: Inbox,
+    },
+    {
+      title: "Promotions",
+      description: "Request promoted offers and featured placements.",
+      to: "/owner/promotions",
+      Icon: Megaphone,
+    },
+    {
+      title: "Billing",
+      description: "View your current plan and manage subscription settings.",
+      to: "/owner/billing",
+      Icon: CreditCard,
+    },
+  ] : [];
 
   return (
     <OwnerLayout>
@@ -86,30 +118,16 @@ export function OwnerDashboardPage() {
         </div>
         {isLoading ? <LoadingState message="Loading owner dashboard..." /> : error ? <ErrorState message={error} /> : !venues.length ? <OwnerNoVenuesState /> : (
           <>
-            <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-5">
-              <Metric label="Claimed venues" value={venues.length} />
-              <Metric label="Profile views" value={totals.profileViews} />
-              <Metric label="Enquiries" value={totals.enquiries} />
-              <Metric label="Directions" value={totals.directionsClicks} />
-              <Metric label="Active promotions" value={totals.activeOffers + totals.activeFeatured} />
-            </div>
-            <section className="flex flex-col gap-4 rounded-xl border bg-card p-4 sm:flex-row sm:items-center sm:justify-between">
-              <div>
-                <h2 className="font-semibold">Booking calendar</h2>
-                <p className="mt-1 text-sm text-muted-foreground">See this week’s booking requests and accepted bookings in one place.</p>
+            <section>
+              <div className="mb-4">
+                <h2 className="text-xl font-semibold">Manage your venue</h2>
+                <p className="mt-1 text-sm text-muted-foreground">Jump into the owner tools you use most.</p>
               </div>
-              <Button asChild>
-                <Link to="/owner/bookings?view=week">Open calendar</Link>
-              </Button>
-            </section>
-            <section className="flex flex-col gap-4 rounded-xl border bg-card p-4 sm:flex-row sm:items-center sm:justify-between">
-              <div>
-                <h2 className="font-semibold">Availability</h2>
-                <p className="mt-1 text-sm text-muted-foreground">Set bookable days, time windows, notice periods and blackout dates.</p>
+              <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+                {sectionCards.map((card) => (
+                  <OwnerSectionCard key={card.title} {...card} />
+                ))}
               </div>
-              <Button asChild variant="outline">
-                <Link to={`/owner/venues/${venues[0]?.id}/availability`}>Manage availability</Link>
-              </Button>
             </section>
             <div className="grid gap-4">
               {venues.map((venue) => <OwnerVenueCard key={venue.id} venue={venue} analytics={analytics[venue.id]} enquiries={enquiries[venue.id]} commercial={commercial[venue.id]} subscription={subscriptions[venue.id]} />)}
@@ -121,8 +139,29 @@ export function OwnerDashboardPage() {
   );
 }
 
-function Metric({ label, value }: { label: string; value: number }) {
-  return <div className="rounded-xl border bg-card p-4"><p className="text-sm text-muted-foreground">{label}</p><p className="mt-2 text-3xl font-semibold">{value}</p></div>;
+function OwnerSectionCard({
+  title,
+  description,
+  to,
+  Icon,
+}: {
+  title: string;
+  description: string;
+  to: string;
+  Icon: React.ComponentType<{ className?: string }>;
+}) {
+  return (
+    <Link to={to} className="group rounded-xl border bg-card p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-stone-950/5">
+      <div className="flex items-start justify-between gap-4">
+        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-clay-accent/10 text-clay-accent">
+          <Icon className="h-5 w-5" />
+        </div>
+        <span className="text-sm font-semibold text-clay-accent transition group-hover:translate-x-0.5">Open</span>
+      </div>
+      <h3 className="mt-5 text-lg font-semibold">{title}</h3>
+      <p className="mt-2 text-sm leading-6 text-muted-foreground">{description}</p>
+    </Link>
+  );
 }
 
 function last30Days() {

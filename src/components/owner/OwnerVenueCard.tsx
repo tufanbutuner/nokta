@@ -40,6 +40,9 @@ export function OwnerVenueCard({ venue, analytics, enquiries, commercial, subscr
       <Button asChild variant="outline" className="mt-4">
         <Link to={`/venues/${venue.slug}`}>View public page</Link>
       </Button>
+      <Button asChild variant="outline" className="ml-2 mt-4">
+        <Link to={`/owner/venues/${venue.slug}/analytics`}>View analytics</Link>
+      </Button>
       {canRequestUpdate ? (
         <Button asChild variant="outline" className="ml-2 mt-4">
           <Link to={`/owner/venues/${venue.slug}/update`}>Request profile update</Link>

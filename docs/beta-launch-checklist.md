@@ -12,6 +12,7 @@
 - [ ] A signed-in customer can see My Bookings from latest to oldest.
 - [ ] A venue owner can accept, decline, propose and cancel bookings.
 - [ ] A newly approved owner sees the launch checklist in their venue dashboard.
+- [ ] A claimed owner can open venue analytics and see aggregate value reporting.
 - [ ] `/for-venues` explains the owner value proposition and links into claim/list flows.
 - [ ] Admin can manage venues, claims, reviews, media, bookings and promotions.
 
