@@ -100,6 +100,20 @@
     cursor: pointer;
   }
 
+  input[type="date"],
+  input[type="time"] {
+    -webkit-appearance: none;
+    appearance: none;
+    line-height: 1.5;
+    min-height: 2.5rem;
+  }
+
+  input[type="date"]::-webkit-date-and-time-value,
+  input[type="time"]::-webkit-date-and-time-value {
+    min-height: 1.5em;
+    text-align: left;
+  }
+
   body {
     @apply bg-background text-foreground antialiased;
     font-family: Outfit, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;

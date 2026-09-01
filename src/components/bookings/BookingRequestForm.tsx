@@ -74,16 +74,16 @@ export function BookingRequestForm({
           <Input value={values.customerPhone ?? ""} onChange={(event) => update("customerPhone", event.target.value)} />
         </Field>
         <Field label="Party size" error={showErrors ? validation.errors.partySize : undefined}>
-          <Input type="number" min={availability?.settings.minPartySize ?? 1} max={availability?.settings.maxPartySize ?? 100} value={values.partySize} onChange={(event) => update("partySize", event.target.value ? Number(event.target.value) : 0)} />
+          <Input className="text-base sm:text-sm" type="number" min={availability?.settings.minPartySize ?? 1} max={availability?.settings.maxPartySize ?? 100} value={values.partySize} onChange={(event) => update("partySize", event.target.value ? Number(event.target.value) : 0)} />
         </Field>
         <Field label="Date" error={showErrors ? validation.errors.requestedDate : undefined}>
-          <Input type="date" value={values.requestedDate} onChange={(event) => update("requestedDate", event.target.value)} />
+          <Input className="text-base sm:text-sm" type="date" value={values.requestedDate} onChange={(event) => update("requestedDate", event.target.value)} />
         </Field>
         <Field label="Time" error={showErrors ? validation.errors.requestedTime : undefined}>
           {availability && values.requestedDate ? (
-            <Select value={values.requestedTime} placeholder={timeOptions.length ? "Choose a time" : "No times available"} onValueChange={(time) => update("requestedTime", time)} options={timeOptions.map((time) => ({ label: time, value: time }))} disabled={!timeOptions.length} />
+            <Select className="text-base sm:text-sm" value={values.requestedTime} placeholder={timeOptions.length ? "Choose a time" : "No times available"} onValueChange={(time) => update("requestedTime", time)} options={timeOptions.map((time) => ({ label: time, value: time }))} disabled={!timeOptions.length} />
           ) : (
-            <Input type="time" value={values.requestedTime} onChange={(event) => update("requestedTime", event.target.value)} />
+            <Input className="text-base sm:text-sm" type="time" value={values.requestedTime} onChange={(event) => update("requestedTime", event.target.value)} />
           )}
         </Field>
         <Field label="Occasion" error={showErrors ? validation.errors.occasion : undefined}>
