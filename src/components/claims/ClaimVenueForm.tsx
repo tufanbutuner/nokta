@@ -62,7 +62,7 @@ export function ClaimVenueForm({
       <div>
         <h2 className="text-2xl font-semibold">Claim this venue</h2>
         <p className="mt-2 text-sm leading-6 text-muted-foreground">
-          Tell us how you are connected to this venue. This helps us verify the claim before giving access.
+          Tell us how you are connected to this venue. The Nokta team reviews every claim before enabling owner access.
         </p>
       </div>
 
@@ -81,19 +81,19 @@ export function ClaimVenueForm({
         <Field label="Your phone" error={showErrors ? validation.errors.claimantPhone : undefined}>
           <Input value={values.claimantPhone ?? ""} onChange={(event) => update("claimantPhone", event.target.value)} />
         </Field>
-        <Field label="Business email" error={showErrors ? validation.errors.businessEmail : undefined}>
+        <Field label="Business email, if different" error={showErrors ? validation.errors.businessEmail : undefined}>
           <Input type="email" value={values.businessEmail ?? ""} onChange={(event) => update("businessEmail", event.target.value)} />
         </Field>
-        <Field label="Business phone" error={showErrors ? validation.errors.businessPhone : undefined}>
+        <Field label="Business phone, if different" error={showErrors ? validation.errors.businessPhone : undefined}>
           <Input value={values.businessPhone ?? ""} onChange={(event) => update("businessPhone", event.target.value)} />
         </Field>
       </div>
 
-      <Field label="Proof URL" error={showErrors ? validation.errors.proofUrl : undefined}>
+      <Field label="Proof link" error={showErrors ? validation.errors.proofUrl : undefined}>
         <Input placeholder="Website, booking page, Companies House profile or social link" value={values.proofUrl ?? ""} onChange={(event) => update("proofUrl", event.target.value)} />
       </Field>
 
-      <Field label="Proof notes" error={showErrors ? validation.errors.proofNotes : undefined}>
+      <Field label="Anything else we should know?" error={showErrors ? validation.errors.proofNotes : undefined}>
         <Textarea value={values.proofNotes ?? ""} onChange={(event) => update("proofNotes", event.target.value)} />
       </Field>
 

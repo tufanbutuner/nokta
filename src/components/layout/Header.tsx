@@ -74,6 +74,9 @@ export function Header() {
               <NavLink reloadDocument to="/saved" className={navLinkClass}>
                 {savedLabel}
               </NavLink>
+              <NavLink reloadDocument to="/for-venues" className={navLinkClass}>
+                For venues
+              </NavLink>
               <NavLink reloadDocument to="/suggest" className={navLinkClass}>
                 Suggest
               </NavLink>
@@ -226,6 +229,9 @@ export function Header() {
           </NavLink>
           <NavLink reloadDocument to="/saved" className={mobileNavLinkClass}>
             {savedLabel}
+          </NavLink>
+          <NavLink reloadDocument to="/for-venues" className={mobileNavLinkClass}>
+            For venues
           </NavLink>
           <NavLink reloadDocument to="/suggest" className={mobileNavLinkClass}>
             Suggest

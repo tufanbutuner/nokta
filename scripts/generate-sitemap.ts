@@ -9,7 +9,7 @@ config({ path: ".env.local" });
 config();
 
 const SITE_URL = (process.env.VITE_PUBLIC_SITE_URL || process.env.VITE_APP_URL || "https://nokta.uk").replace(/\/$/, "");
-const STATIC_ROUTES = ["/", "/discover", "/privacy", "/terms"];
+const STATIC_ROUTES = ["/", "/discover", "/for-venues", "/privacy", "/terms"];
 
 async function main() {
   const venueSlugs = await getVenueSlugs();

@@ -9,6 +9,7 @@
 - Production email delivery depends on a verified Resend sender domain.
 - Production URL configuration must be switched fully to the final Nokta domain before indexing.
 - Stripe test/live mode separation should be smoke-tested after every billing function deploy.
+- Run `supabase/sprint-41-owner-onboarding.sql` before testing persisted owner onboarding tasks in production.
 
 ## P2 - important post-beta
 

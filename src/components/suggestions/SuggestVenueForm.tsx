@@ -9,6 +9,8 @@ import { getCityOptions, DEFAULT_CITY, DEFAULT_COUNTRY } from "@/lib/cities";
 import { validateVenueSuggestionInput } from "@/lib/venueSuggestionValidation";
 import type { VenueSuggestionInput } from "@/types/venueSuggestions";
 
+type SubmitterIntent = "customer" | "owner" | "staff" | "other";
+
 const INITIAL_VALUES: VenueSuggestionInput = {
   venueName: "",
   country: DEFAULT_COUNTRY,
@@ -32,9 +34,14 @@ export function SuggestVenueForm({
   onSubmit: (input: VenueSuggestionInput) => Promise<void>;
 }) {
   const [values, setValues] = useState<VenueSuggestionInput>(INITIAL_VALUES);
+  const [submitterIntent, setSubmitterIntent] = useState<SubmitterIntent>("customer");
+  const [ownerName, setOwnerName] = useState("");
+  const [ownerEmail, setOwnerEmail] = useState("");
+  const [ownerPhone, setOwnerPhone] = useState("");
   const [errors, setErrors] = useState<Record<string, string>>({});
   const normalizedVenueName = values.venueName.trim().toLowerCase();
   const mayAlreadyExist = Boolean(normalizedVenueName && existingVenueNames.some((name) => name.trim().toLowerCase() === normalizedVenueName));
+  const isOwnerIntent = submitterIntent === "owner" || submitterIntent === "staff";
 
   function update<Key extends keyof VenueSuggestionInput>(key: Key, value: VenueSuggestionInput[Key]) {
     setValues((currentValues) => ({ ...currentValues, [key]: value }));
@@ -49,8 +56,12 @@ export function SuggestVenueForm({
       return;
     }
 
-    await onSubmit(values);
+    await onSubmit({ ...values, notes: buildSuggestionNotes(values.notes, { submitterIntent, ownerName, ownerEmail, ownerPhone }) });
     setValues(INITIAL_VALUES);
+    setSubmitterIntent("customer");
+    setOwnerName("");
+    setOwnerEmail("");
+    setOwnerPhone("");
   }
 
   return (
@@ -104,6 +115,36 @@ export function SuggestVenueForm({
             <Input value={values.phone ?? ""} onChange={(event) => update("phone", event.target.value)} placeholder="Optional" />
           </Field>
 
+          <div className="rounded-md border border-border bg-muted/20 p-4">
+            <Field label="I am" error={errors.submitterIntent}>
+              <Select
+                value={submitterIntent}
+                onChange={(event) => setSubmitterIntent(event.target.value as SubmitterIntent)}
+                options={[
+                  { label: "A customer suggesting a place", value: "customer" },
+                  { label: "The owner", value: "owner" },
+                  { label: "Part of the venue team", value: "staff" },
+                  { label: "Something else", value: "other" },
+                ]}
+                className="w-full"
+              />
+            </Field>
+
+            {isOwnerIntent ? (
+              <div className="mt-4 grid gap-4 sm:grid-cols-3">
+                <Field label="Your name">
+                  <Input value={ownerName} onChange={(event) => setOwnerName(event.target.value)} placeholder="Full name" />
+                </Field>
+                <Field label="Business email">
+                  <Input value={ownerEmail} onChange={(event) => setOwnerEmail(event.target.value)} placeholder="name@venue.com" />
+                </Field>
+                <Field label="Business phone">
+                  <Input value={ownerPhone} onChange={(event) => setOwnerPhone(event.target.value)} placeholder="Optional" />
+                </Field>
+              </div>
+            ) : null}
+          </div>
+
           <Field label="Notes" error={errors.notes}>
             <Textarea
               value={values.notes ?? ""}
@@ -120,6 +161,21 @@ export function SuggestVenueForm({
       </CardContent>
     </Card>
   );
+}
+
+function buildSuggestionNotes(
+  notes: string | null | undefined,
+  ownerContext: { submitterIntent: SubmitterIntent; ownerName: string; ownerEmail: string; ownerPhone: string },
+) {
+  const lines = [
+    notes?.trim(),
+    `Submitter type: ${ownerContext.submitterIntent}`,
+    ownerContext.ownerName.trim() ? `Owner/contact name: ${ownerContext.ownerName.trim()}` : null,
+    ownerContext.ownerEmail.trim() ? `Business email: ${ownerContext.ownerEmail.trim()}` : null,
+    ownerContext.ownerPhone.trim() ? `Business phone: ${ownerContext.ownerPhone.trim()}` : null,
+  ].filter(Boolean);
+
+  return lines.join("\n");
 }
 
 function Field({ label, error, children }: { label: string; error?: string; children: React.ReactNode }) {

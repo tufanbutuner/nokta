@@ -11,6 +11,8 @@
 - [ ] A signed-out user can request a booking and receive the status link.
 - [ ] A signed-in customer can see My Bookings from latest to oldest.
 - [ ] A venue owner can accept, decline, propose and cancel bookings.
+- [ ] A newly approved owner sees the launch checklist in their venue dashboard.
+- [ ] `/for-venues` explains the owner value proposition and links into claim/list flows.
 - [ ] Admin can manage venues, claims, reviews, media, bookings and promotions.
 
 ## Public surfaces
@@ -20,6 +22,7 @@
 - [ ] City pages render only active cities.
 - [ ] Venue pages render gallery, booking card, tabs and map without overflow.
 - [ ] Error boundaries show a useful fallback.
+- [ ] Owner claim page clearly explains what happens after approval.
 
 ## Brand
 

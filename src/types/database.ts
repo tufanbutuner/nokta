@@ -136,6 +136,17 @@ export interface VenueClaimRequestRow {
   updated_at: string;
 }
 
+export interface OwnerOnboardingTaskRow {
+  id: string;
+  venue_id: string;
+  user_id: string;
+  task_key: "claim_approved" | "review_profile" | "upload_photos" | "configure_availability" | "test_booking" | "enable_notifications" | "review_pricing";
+  status: "pending" | "completed" | "skipped";
+  completed_at: string | null;
+  created_at: string;
+  updated_at: string;
+}
+
 export interface FeaturedPlacementRow {
   id: string;
   venue_id: string;

@@ -76,7 +76,7 @@ export function ClaimVenuePage() {
     try {
       const nextClaim = await createVenueClaimRequest({ userId: user.id, claim: input });
       setClaim(nextClaim);
-      setSuccessMessage("Your claim request has been submitted for review.");
+      setSuccessMessage("Your claim request has been sent. The Nokta team will review your request. If approved, you will be able to manage this venue from your owner dashboard.");
       trackEvent("venue_claim_submitted", { venueId: venue.id });
     } catch (caughtError) {
       setMutationError(caughtError instanceof Error ? caughtError.message : "Could not submit claim request.");
@@ -136,32 +136,36 @@ export function ClaimVenuePage() {
   }
 
   return (
-    <main>
-      <PageMeta title={`Claim ${venue.name} | nokta`} description={`Request to claim ${venue.name} on nokta.`} canonicalPath={`/venues/${venue.slug}/claim`} />
-      <PageContainer className="py-10">
-        <Link to={`/venues/${venue.slug}`} className="mb-5 inline-flex text-sm font-medium text-muted-foreground hover:text-foreground">
+    <main className="bg-nokta-page-bg">
+      <PageMeta title={`Claim ${venue.name} | Nokta`} description={`Request to claim ${venue.name} on Nokta.`} canonicalPath={`/venues/${venue.slug}/claim`} />
+      <PageContainer className="py-8 sm:py-12">
+        <Link to={`/venues/${venue.slug}`} className="mb-5 inline-flex text-sm font-medium text-nokta-ink-muted hover:text-nokta-ink">
           Back to {venue.name}
         </Link>
 
-        <Card className="mx-auto max-w-3xl">
-          <CardContent className="p-6">
+        <Card className="mx-auto max-w-4xl rounded-2xl border-nokta-border bg-white shadow-sm shadow-stone-950/5">
+          <CardContent className="grid gap-8 p-5 sm:p-7 lg:grid-cols-[minmax(0,1fr)_280px]">
+            <div>
             <div className="mb-6">
-              <p className="text-sm text-muted-foreground">{venue.city}</p>
-              <h1 className="mt-2 text-4xl font-semibold">{venue.name}</h1>
+              <p className="text-sm font-semibold text-nokta-accent-dark">Claim venue profile</p>
+              <h1 className="mt-2 text-3xl font-semibold text-nokta-ink sm:text-4xl">{venue.name}</h1>
+              <p className="mt-3 text-sm leading-6 text-nokta-ink-muted">
+                Claiming a venue lets you manage key parts of the profile, receive booking requests, upload original venue photos and access owner tools.
+              </p>
             </div>
 
             {venue.isClaimed ? (
               <ClaimState
                 title="This venue has already been claimed."
-                description="If you believe this is incorrect, contact support."
+                description="If you believe this is incorrect, contact Nokta support and we will review the profile."
               />
             ) : !user ? (
-              <ClaimState title="Sign in to claim this venue." description="Venue claims are reviewed before access is granted.">
+              <ClaimState title="Sign in to claim this venue." description="Venue claims are reviewed before owner access is granted. This protects venue profiles and keeps customer-facing details trustworthy.">
                 <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                  <Button asChild>
+                  <Button asChild className="rounded-xl bg-nokta-ink text-white hover:bg-nokta-ink/90">
                     <Link to="/sign-in">Sign in</Link>
                   </Button>
-                  <Button asChild variant="outline">
+                  <Button asChild variant="outline" className="rounded-xl border-nokta-border bg-white">
                     <Link to="/sign-up">Create account</Link>
                   </Button>
                 </div>
@@ -169,7 +173,7 @@ export function ClaimVenuePage() {
             ) : isLoadingClaim ? (
               <LoadingState message="Checking claim status..." />
             ) : claim?.status === "pending" ? (
-              <ClaimState title="Your claim request is pending review." description="We will review the information and update the venue status if approved.">
+              <ClaimState title="Your claim request is pending review." description="The Nokta team will review your request. If approved, this venue will appear in your owner dashboard with setup steps to complete.">
                 {mutationError ? <Alert className="mt-5 border-destructive/30 text-destructive">{mutationError}</Alert> : null}
                 <Button className="mt-6" variant="outline" disabled={isSubmitting} onClick={handleCancel}>
                   {isSubmitting ? "Cancelling..." : "Cancel request"}
@@ -187,6 +191,19 @@ export function ClaimVenuePage() {
                 />
               </>
             )}
+            </div>
+            <aside className="rounded-2xl border border-nokta-border bg-nokta-page-bg/50 p-5">
+              <h2 className="font-semibold text-nokta-ink">After approval</h2>
+              <ul className="mt-4 space-y-3 text-sm leading-6 text-nokta-ink-muted">
+                <li>Manage profile details through owner update requests.</li>
+                <li>Upload original venue photos for review.</li>
+                <li>Configure availability and receive booking requests.</li>
+                <li>Track enquiries, bookings and promotion opportunities.</li>
+              </ul>
+              <Button asChild variant="outline" className="mt-5 w-full rounded-xl border-nokta-border bg-white">
+                <Link to="/for-venues">Learn about owner tools</Link>
+              </Button>
+            </aside>
           </CardContent>
         </Card>
       </PageContainer>
@@ -197,8 +214,8 @@ export function ClaimVenuePage() {
 function ClaimState({ title, description, children }: { title: string; description: string; children?: ReactNode }) {
   return (
     <div>
-      <h2 className="text-2xl font-semibold">{title}</h2>
-      <p className="mt-3 text-sm leading-6 text-muted-foreground">{description}</p>
+      <h2 className="text-2xl font-semibold text-nokta-ink">{title}</h2>
+      <p className="mt-3 text-sm leading-6 text-nokta-ink-muted">{description}</p>
       {children}
     </div>
   );

@@ -1,6 +1,7 @@
 import { trackEvent } from "@/lib/analytics";
 import { mapVenueClaimRequestRowToClaimRequest } from "@/lib/venueClaimMappers";
 import { supabase, supabaseConfigError } from "@/lib/supabase";
+import { initialiseOwnerOnboardingTasks } from "@/services/ownerOnboardingService";
 import type { VenueClaimRequestRow } from "@/types/database";
 import type { VenueClaimRequest, VenueClaimRequestStatus } from "@/types/venueClaims";
 
@@ -105,6 +106,7 @@ export async function approveVenueClaimRequest(input: {
   }
 
   trackEvent("venue_claim_approved", { venueId: input.venueId });
+  await initialiseOwnerOnboardingTasks({ venueId: input.venueId, userId: input.submittedBy }).catch(() => []);
   return mapVenueClaimRequestRowToClaimRequest(data as VenueClaimRequestRow);
 }
 

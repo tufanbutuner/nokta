@@ -26,6 +26,8 @@ import { ClaimVenuePage } from "@/pages/ClaimVenuePage";
 import { CityPage } from "@/pages/CityPage";
 import { CustomerBookingStatusPage } from "@/pages/CustomerBookingStatusPage";
 import { DiscoverPage } from "@/pages/DiscoverPage";
+import { ForVenuesPage } from "@/pages/ForVenuesPage";
+import { HeroDotOptionsPage } from "@/pages/HeroDotOptionsPage";
 import { HomePage } from "@/pages/HomePage";
 import { MonetisationDashboardPage } from "@/pages/admin/MonetisationDashboardPage";
 import { NotFoundPage } from "@/pages/NotFoundPage";
@@ -62,7 +64,9 @@ export const router = createBrowserRouter([
     errorElement: <AppErrorPage />,
     children: [
       { path: "/", element: <HomePage /> },
+      { path: "/hero-dot-options", element: <HeroDotOptionsPage /> },
       { path: "/discover", element: <DiscoverPage /> },
+      { path: "/for-venues", element: <ForVenuesPage /> },
       { path: "/cities/:citySlug", element: <CityPage /> },
       { path: "/recommend", element: <RecommendPage /> },
       { path: "/saved", element: <SavedPage /> },

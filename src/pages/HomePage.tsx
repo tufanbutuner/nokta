@@ -108,8 +108,9 @@ export function HomePage() {
       />
       <section>
         <PageContainer className="py-12 sm:py-16 lg:py-20">
-          <div className="mx-auto max-w-4xl text-center">
-            <h1 className="mx-auto max-w-4xl text-4xl font-semibold leading-[0.95] sm:text-6xl lg:text-7xl">
+          <div className="relative isolate mx-auto max-w-5xl px-4 py-12 text-center sm:px-8 sm:py-20 lg:py-24">
+            <span aria-hidden="true" className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[24rem] w-[24rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-clay-accent opacity-[0.08] sm:h-[30rem] sm:w-[30rem] lg:h-[34rem] lg:w-[34rem]" />
+            <h1 className="mx-auto max-w-4xl text-4xl font-bold leading-[1.02] sm:text-6xl lg:text-7xl">
               Discover social venues
               <span className="mt-1 block text-clay-accent">worth going out for</span>
             </h1>
@@ -163,12 +164,13 @@ export function HomePage() {
                   key={category.category}
                   reloadDocument={isLive}
                   to={isLive ? `/discover?category=${category.category}` : "#"}
-                  className="group rounded-2xl border border-nokta-border bg-card p-5 transition hover:-translate-y-0.5 hover:border-nokta-border-input"
+                  className="group relative isolate overflow-hidden rounded-2xl border border-nokta-border bg-card p-5 transition hover:-translate-y-0.5 hover:border-nokta-border-input"
                   aria-disabled={!isLive}
                   onClick={(event) => {
                     if (!isLive) event.preventDefault();
                   }}
                 >
+                  <CardMark className="-bottom-10 -right-9 h-32 w-32 opacity-[0.055]" />
                   <div className="flex items-start justify-between gap-4">
                     <h3 className="font-semibold text-nokta-ink">{category.label}</h3>
                     <span className={isLive ? "rounded-full bg-nokta-accent-tint px-2.5 py-1 text-xs font-semibold text-nokta-accent-dark" : "rounded-full bg-foreground/5 px-2.5 py-1 text-xs font-semibold text-muted-foreground"}>
@@ -216,8 +218,9 @@ export function HomePage() {
                 key={area.name}
                 reloadDocument
                 to={`/discover?area=${encodeURIComponent(area.name)}`}
-                className="group flex items-center justify-between rounded-xl border bg-card p-5 transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-stone-950/5"
+                className="group relative isolate flex items-center justify-between overflow-hidden rounded-xl border bg-card p-5 transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-stone-950/5"
               >
+                <CardMark className="-bottom-12 -right-10 h-32 w-32 opacity-[0.045]" />
                 <span>
                   <span className="block font-semibold">{area.name}</span>
                   <span className="mt-1 block text-sm text-muted-foreground">{area.count} venues</span>
@@ -235,7 +238,8 @@ export function HomePage() {
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
             {cityCards.map((city) => (
-              <article key={city.slug} className="rounded-xl border bg-card p-5 transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-stone-950/5">
+              <article key={city.slug} className="relative isolate overflow-hidden rounded-xl border bg-card p-5 transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-stone-950/5">
+                <CardMark className="-bottom-12 -right-10 h-36 w-36 opacity-[0.045]" />
                 <div className="flex items-start justify-between gap-4">
                   <div>
                     <h3 className="font-semibold">{city.name}</h3>
@@ -264,7 +268,8 @@ export function HomePage() {
           </div>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {steps.map(({ title, description, Icon }) => (
-              <div key={title} className="rounded-xl border bg-background p-5">
+              <div key={title} className="relative isolate overflow-hidden rounded-xl border bg-background p-5">
+                <CardMark className="-bottom-12 -right-10 h-32 w-32 opacity-[0.045]" />
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-clay-accent/10 text-clay-accent">
                   <Icon className="h-5 w-5" />
                 </div>
@@ -282,7 +287,8 @@ export function HomePage() {
           </div>
           <div className="grid gap-4 md:grid-cols-3">
             {testimonials.map((testimonial) => (
-              <div key={testimonial.name} className="rounded-xl border bg-card p-5">
+              <div key={testimonial.name} className="relative isolate overflow-hidden rounded-xl border bg-card p-5">
+                <CardMark className="-bottom-12 -right-10 h-32 w-32 opacity-[0.045]" />
                 <div className="flex gap-1 text-clay-accent" aria-label="5 star review">
                   {Array.from({ length: 5 }).map((_, index) => (
                     <Star key={index} className="h-4 w-4 fill-current" />
@@ -341,7 +347,8 @@ function LandingVenueCard({ venue }: { venue: Venue }) {
   const currentStatus = getVenueCurrentStatus(venue);
 
   return (
-    <article className="group rounded-2xl border border-nokta-border bg-nokta-surface p-2 shadow-none transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-stone-950/5">
+    <article className="group relative isolate overflow-hidden rounded-2xl border border-nokta-border bg-nokta-surface p-2 shadow-none transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-stone-950/5">
+      <CardMark className="-bottom-12 -right-10 h-32 w-32 opacity-[0.04]" />
       <div className="relative h-[190px] overflow-hidden rounded-xl bg-muted">
         <Link reloadDocument to={`/venues/${venue.slug}`} className="block h-full">
           <img
@@ -380,6 +387,10 @@ function LandingVenueCard({ venue }: { venue: Venue }) {
       </div>
     </article>
   );
+}
+
+function CardMark({ className }: { className: string }) {
+  return <img src="/nokta-dot.svg" alt="" aria-hidden="true" className={`pointer-events-none absolute -z-10 ${className}`} />;
 }
 
 function formatLandingStatus(status: ReturnType<typeof getVenueCurrentStatus>) {
