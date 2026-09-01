@@ -218,20 +218,6 @@ export function VenuePage() {
           <BookingSidebarCard venue={venue} />
         </section>
 
-        {!venue.isClaimed ? (
-          <section className="mt-6 rounded-2xl border border-nokta-border bg-white p-5 shadow-sm shadow-stone-950/5">
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-              <div>
-                <h2 className="font-semibold text-nokta-ink">Own or manage this venue?</h2>
-                <p className="mt-1 text-sm text-nokta-ink-muted">Claim this profile to keep your venue details accurate.</p>
-              </div>
-              <Button asChild className="rounded-lg bg-nokta-ink text-white hover:bg-nokta-ink/90">
-                <Link to={`/venues/${venue.slug}/claim`}>Claim this venue</Link>
-              </Button>
-            </div>
-          </section>
-        ) : null}
-
         <VenueOffersSection venue={venue} />
 
         <div className="mt-7 border-b border-nokta-border">
@@ -542,6 +528,8 @@ function OverviewTab({ venue, amenities, similarVenues }: { venue: Venue; amenit
           <h2 className="text-2xl font-semibold text-nokta-ink">Similar venues</h2>
           <SimilarVenueCarousel venues={similarVenues} />
         </section>
+
+        <ClaimVenueBanner venue={venue} />
       </article>
 
       <aside className="min-w-0 space-y-4">
@@ -621,6 +609,26 @@ function formatFoodDrinks(venue: Venue) {
   }
 
   return "Not listed";
+}
+
+function ClaimVenueBanner({ venue }: { venue: Venue }) {
+  if (venue.isClaimed) {
+    return null;
+  }
+
+  return (
+    <section className="rounded-2xl border border-nokta-border bg-white p-5 shadow-sm shadow-stone-950/5">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <h2 className="text-base font-semibold text-nokta-ink">Own or manage this venue?</h2>
+          <p className="mt-1 text-sm leading-6 text-nokta-ink-muted">Claim this profile to keep details accurate, respond to enquiries and manage bookings.</p>
+        </div>
+        <Button asChild className="h-10 shrink-0 rounded-lg bg-nokta-ink px-4 text-sm font-medium text-white hover:bg-nokta-ink/90">
+          <Link to={`/venues/${venue.slug}/claim`}>Claim venue</Link>
+        </Button>
+      </div>
+    </section>
+  );
 }
 
 function MenuTab({ venue }: { venue: Venue }) {
