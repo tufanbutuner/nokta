@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Select } from "@/components/ui/select";
 import { ClaimedVenueBadge } from "@/components/venues/ClaimedVenueBadge";
 import { FavouriteButton } from "@/components/venues/FavouriteButton";
 import { VenueBadge } from "@/components/venues/VenueBadge";
@@ -23,13 +24,16 @@ import { getCityByName } from "@/lib/cities";
 import { getGoogleMapsDirectionsUrl } from "@/lib/directions";
 import { formatDistanceMiles, getVenueDistanceMiles } from "@/lib/location";
 import { getVenueCurrentStatus } from "@/lib/openingHours";
+import { getBookingTimeOptions } from "@/lib/bookingTimeOptions";
 import { cn } from "@/lib/utils";
 import { formatPriceLevel } from "@/lib/venueFilters";
 import { formatVenuePrimaryCategory, formatVenueSecondaryCategory } from "@/lib/venueCategoryLabels";
 import { getVenueImage, getVenueImages } from "@/lib/venueImages";
 import { getVenueRatingSummary } from "@/services/reviewService";
 import { getApprovedVenueMedia } from "@/services/ownerVenueMediaService";
+import { getVenueBookingAvailability } from "@/services/bookingAvailabilityService";
 import { brandConfig } from "@/config/brand";
+import type { VenueBookingAvailability } from "@/types/bookingAvailability";
 import type { Venue } from "@/types/venue";
 import { Camera, ChevronLeft, ChevronRight, Clock, ExternalLink, Flag, MapPin, Navigation, Phone, Share2, Sofa, Star, Utensils, X } from "lucide-react";
 import { useEffect, useState, type FormEvent } from "react";
@@ -382,12 +386,31 @@ function ActionBar({ venue, shareLabel, onShare }: { venue: Venue; shareLabel: s
 
 function BookingSidebarCard({ venue }: { venue: Venue }) {
   const navigate = useNavigate();
-  const [date, setDate] = useState("");
+  const [date, setDate] = useState(getTodayDateValue());
   const [time, setTime] = useState("");
   const [partySize, setPartySize] = useState(2);
+  const [availability, setAvailability] = useState<VenueBookingAvailability | null>(null);
+  const timeOptions = availability && date ? getBookingTimeOptions({ availability, selectedDate: date }) : [];
+  const hasAvailabilityForDate = Boolean(availability && date && timeOptions.length);
+
+  useEffect(() => {
+    let cancelled = false;
+    getVenueBookingAvailability(venue.id)
+      .then((nextAvailability) => {
+        if (!cancelled) setAvailability(nextAvailability);
+      })
+      .catch(() => {
+        if (!cancelled) setAvailability(null);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [venue.id]);
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (availability && !time) return;
     trackBookingCta(venue);
     const params = new URLSearchParams();
     if (date) params.set("date", date);
@@ -405,13 +428,30 @@ function BookingSidebarCard({ venue }: { venue: Venue }) {
       </div>
       <div className="mt-4 grid gap-3">
         <div className="grid grid-cols-2 gap-2">
-          <Input type="date" value={date} aria-label="Booking date" className="h-11 rounded-lg border-nokta-border-input bg-white text-sm text-nokta-ink" onChange={(event) => setDate(event.target.value)} />
-          <Input type="time" value={time} aria-label="Booking time" className="h-11 rounded-lg border-nokta-border-input bg-white text-sm text-nokta-ink" onChange={(event) => setTime(event.target.value)} />
+          <Input
+            type="date"
+            value={date}
+            aria-label="Booking date"
+            className="h-11 rounded-lg border-nokta-border-input bg-white text-base text-nokta-ink sm:text-sm"
+            onChange={(event) => {
+              setDate(event.target.value);
+              setTime("");
+            }}
+          />
+          <Select
+            value={time}
+            aria-label="Booking time"
+            className="h-11 rounded-lg border-nokta-border-input bg-white text-base text-nokta-ink sm:text-sm"
+            placeholder={availability && date ? timeOptions.length ? "Time" : "No times" : "Choose date"}
+            options={timeOptions.map((option) => ({ label: option, value: option }))}
+            disabled={!hasAvailabilityForDate}
+            onValueChange={setTime}
+          />
         </div>
-        <Input type="number" min={1} max={100} value={partySize} aria-label="Party size" className="h-11 rounded-lg border-nokta-border-input bg-white text-sm text-nokta-ink" onChange={(event) => setPartySize(event.target.value ? Number(event.target.value) : 0)} />
+        <Input type="number" min={1} max={100} value={partySize} aria-label="Party size" className="h-11 rounded-lg border-nokta-border-input bg-white text-base text-nokta-ink sm:text-sm" onChange={(event) => setPartySize(event.target.value ? Number(event.target.value) : 0)} />
       </div>
       <div className="mt-4 grid gap-2">
-        <Button type="submit" className="h-11 rounded-lg bg-nokta-accent text-white hover:bg-nokta-accent-dark">Request booking</Button>
+        <Button type="submit" className="h-11 rounded-lg bg-nokta-accent text-white hover:bg-nokta-accent-dark" disabled={Boolean(availability && (!date || !time))}>Request booking</Button>
         <Button asChild variant="outline" className="h-11 rounded-lg border-nokta-border bg-white text-nokta-ink hover:bg-nokta-surface-hover" onClick={() => trackEnquiryCta(venue)}>
           <Link to={`/venues/${venue.slug}/enquire`}>Send enquiry</Link>
         </Button>
@@ -462,6 +502,11 @@ function trackVenueAction(venue: Venue, productEvent: "directions_clicked" | "we
     area: venue.area,
     sourceSurface: "venue_page",
   });
+}
+
+function getTodayDateValue() {
+  const today = new Date();
+  return `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, "0")}-${String(today.getDate()).padStart(2, "0")}`;
 }
 
 function OverviewTab({ venue, amenities, similarVenues }: { venue: Venue; amenities: string[]; similarVenues: Venue[] }) {
