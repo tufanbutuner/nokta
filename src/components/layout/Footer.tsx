@@ -12,7 +12,7 @@ export function Footer() {
       <PageContainer className="relative z-10">
         <div className="mx-auto max-w-2xl text-center">
           <p className="font-wordmark text-xl font-bold tracking-[-0.5px] text-white">{brandConfig.logoText}</p>
-          <p className="mt-2 font-medium text-white">Your spot, found.</p>
+          <p className="mt-2 font-medium text-white">Find your spot.</p>
           <p className="mt-3 leading-6">
             {brandConfig.longDescription} Venue details can change, so always check directly before travelling or booking.
           </p>
