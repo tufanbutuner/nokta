@@ -7,14 +7,19 @@ interface SheetProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   children: React.ReactNode;
+  side?: "right" | "bottom";
 }
 
-function Sheet({ open, onOpenChange, children }: SheetProps) {
+function Sheet({ open, onOpenChange, children, side = "right" }: SheetProps) {
   if (!open) return null;
   return (
     <div className="fixed inset-0 z-[1600] bg-black/35" onClick={() => onOpenChange(false)}>
       <div
-        className="fixed inset-y-0 right-0 w-full max-w-sm overflow-y-auto bg-card p-5 shadow-2xl"
+        className={cn(
+          "fixed w-full overflow-y-auto bg-card p-5 shadow-2xl",
+          side === "right" && "inset-y-0 right-0 max-w-sm",
+          side === "bottom" && "inset-x-0 bottom-0 max-h-[88dvh] rounded-t-3xl pb-[calc(1.25rem+env(safe-area-inset-bottom))]",
+        )}
         onClick={(event) => event.stopPropagation()}
       >
         {children}

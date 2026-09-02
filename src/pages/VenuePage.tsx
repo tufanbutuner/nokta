@@ -10,6 +10,7 @@ import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbP
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select } from "@/components/ui/select";
+import { Sheet, SheetClose, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { ClaimedVenueBadge } from "@/components/venues/ClaimedVenueBadge";
 import { FavouriteButton } from "@/components/venues/FavouriteButton";
 import { VenueBadge } from "@/components/venues/VenueBadge";
@@ -35,7 +36,7 @@ import { getVenueBookingAvailability } from "@/services/bookingAvailabilityServi
 import { brandConfig } from "@/config/brand";
 import type { VenueBookingAvailability } from "@/types/bookingAvailability";
 import type { Venue } from "@/types/venue";
-import { Camera, ChevronLeft, ChevronRight, Clock, ExternalLink, Flag, MapPin, Navigation, Phone, Share2, Sofa, Star, Utensils, X } from "lucide-react";
+import { ArrowLeft, Camera, ChevronLeft, ChevronRight, Clock, ExternalLink, Flag, MapPin, Navigation, Phone, Share2, Sofa, Star, Utensils, X } from "lucide-react";
 import { useEffect, useState, type FormEvent } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 
@@ -162,8 +163,8 @@ export function VenuePage() {
       <PageMeta title={`${venue.name} in ${venue.city} | nokta`} description={`View category, opening hours, features, address, reviews and booking details for ${venue.name} in ${venue.city}.`} canonicalPath={`/venues/${venue.slug}`} imageUrl={galleryImages[0] ?? getVenueImage(venue)} />
       <PhotoGallery venue={venue} images={galleryImages} onOpenImage={setActiveImageIndex} />
 
-      <PageContainer className="py-5 sm:py-7">
-        <Breadcrumb className="mb-5 text-[13px] text-nokta-ink-muted">
+      <PageContainer className="pb-24 pt-4 sm:py-7 lg:pb-7">
+        <Breadcrumb className="mb-4 hidden text-[13px] text-nokta-ink-muted sm:block">
           <BreadcrumbList>
             <BreadcrumbItem>
               <BreadcrumbLink asChild className="font-normal text-nokta-ink-muted hover:text-nokta-ink">
@@ -191,36 +192,32 @@ export function VenuePage() {
           </BreadcrumbList>
         </Breadcrumb>
 
-        <section className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-start">
+        <section className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-start lg:gap-8">
           <div className="min-w-0">
-            <div className="mb-3 flex flex-wrap gap-2">
-              <VenueBadge label={formatVenuePrimaryCategory(venue.primaryCategory)} />
-              {venue.isClaimed ? <ClaimedVenueBadge /> : null}
-              {venue.secondaryCategories.slice(0, 3).map((category) => (
-                <VenueBadge key={category} label={formatVenueSecondaryCategory(category)} />
-              ))}
-              {venue.vibes.slice(0, 5).map((vibe) => (
-                <VenueBadge key={vibe} label={vibe} />
-              ))}
-            </div>
-            <div className="flex items-start justify-between gap-3">
-              <div className="min-w-0 flex flex-wrap items-center gap-3">
-                <h1 className="font-body text-[32px] font-semibold leading-tight text-nokta-ink sm:text-4xl">{venue.name}</h1>
-                <CurrentStatusBadge status={currentStatus} />
+            <VenueBadgeRow venue={venue} />
+            <div className="flex items-start justify-between gap-3 sm:items-center">
+              <div className="flex min-w-0 flex-1 items-start justify-between gap-3 sm:block">
+                <div className="min-w-0 flex-1">
+                  <h1 className="min-w-0 text-wrap font-body text-[26px] font-semibold leading-[1.08] text-nokta-ink sm:text-4xl">
+                    {venue.name}
+                    {venue.isClaimed ? <ClaimedVenueBadge size="md" className="ml-2 inline-flex translate-y-[-2px] align-middle sm:translate-y-[-3px]" /> : null}
+                  </h1>
+                  <CurrentStatusBadge status={currentStatus} className="hidden sm:inline-flex" />
+                </div>
+                <CurrentStatusBadge status={currentStatus} className="mt-1 shrink-0 sm:hidden" />
               </div>
-              <FavouriteButton venueId={venue.id} venueName={venue.name} venue={venue} className="h-11 w-11 shrink-0 border lg:hidden" />
             </div>
-            <VenueHeaderMeta venue={venue} distanceLabel={distanceLabel} />
+            <VenueHeaderMeta venue={venue} distanceLabel={distanceLabel} currentStatus={currentStatus} />
             <p className="mt-5 max-w-xl text-base leading-7 text-nokta-ink-subtle">{venue.description}</p>
             <ActionBar venue={venue} shareLabel={shareLabel} onShare={shareVenue} />
           </div>
 
-          <BookingSidebarCard venue={venue} />
+          <BookingSidebarCard venue={venue} className="hidden lg:block" />
         </section>
 
         <VenueOffersSection venue={venue} />
 
-        <div className="mt-7 border-b border-nokta-border">
+        <div className="sticky top-0 z-20 -mx-4 mt-6 border-b border-nokta-border bg-nokta-page-bg/95 px-4 backdrop-blur sm:static sm:mx-0 sm:mt-7 sm:bg-transparent sm:px-0 sm:backdrop-blur-none">
           <div className="flex gap-2 overflow-x-auto pb-3">
             {VENUE_TABS.map((tab) => (
               <button key={tab.value} type="button" className={cn("h-9 shrink-0 rounded-full px-4 text-sm font-medium transition-colors", activeTab === tab.value ? "bg-nokta-ink text-white" : "text-nokta-ink-muted hover:bg-white hover:text-nokta-ink")} onClick={() => setActiveTab(tab.value)}>
@@ -230,7 +227,7 @@ export function VenuePage() {
           </div>
         </div>
 
-        <div className="mt-8">
+        <div className="mt-6 sm:mt-8">
           {activeTab === "overview" ? <OverviewTab venue={venue} amenities={amenities} similarVenues={similarVenues} /> : null}
           {activeTab === "menu" ? <MenuTab venue={venue} /> : null}
           {activeTab === "reviews" ? <ReviewsTab venue={venue} /> : null}
@@ -238,19 +235,66 @@ export function VenuePage() {
         </div>
       </PageContainer>
 
+      <MobileBookingCta venue={venue} />
+
       {activeImageIndex !== null ? <PhotoLightbox venue={venue} images={galleryImages} activeIndex={activeImageIndex} onChange={setActiveImageIndex} onClose={() => setActiveImageIndex(null)} /> : null}
     </main>
   );
 }
 
-function VenueHeaderMeta({ venue, distanceLabel }: { venue: Venue; distanceLabel: string | null }) {
+function VenueBadgeRow({ venue }: { venue: Venue }) {
+  const mobileBadges = [formatVenuePrimaryCategory(venue.primaryCategory), ...venue.vibes.slice(0, 2)];
+  const hiddenMobileCount = Math.max(0, venue.secondaryCategories.slice(0, 3).length + venue.vibes.slice(2, 5).length);
+
+  return (
+    <>
+      <div className="mb-3 flex flex-wrap gap-2 sm:hidden">
+        {mobileBadges.map((label) => (
+          <VenueBadge key={label} label={label} />
+        ))}
+        {hiddenMobileCount ? <Badge variant="outline" className="rounded-full border-transparent bg-nokta-surface px-2.5 py-1 text-[12px] font-semibold text-nokta-ink-muted">+{hiddenMobileCount}</Badge> : null}
+      </div>
+      <div className="mb-3 hidden flex-wrap gap-2 sm:flex">
+        <VenueBadge label={formatVenuePrimaryCategory(venue.primaryCategory)} />
+        {venue.secondaryCategories.slice(0, 3).map((category) => (
+          <VenueBadge key={category} label={formatVenueSecondaryCategory(category)} />
+        ))}
+        {venue.vibes.slice(0, 5).map((vibe) => (
+          <VenueBadge key={vibe} label={vibe} />
+        ))}
+      </div>
+    </>
+  );
+}
+
+function VenueHeaderMeta({ venue, distanceLabel, currentStatus }: { venue: Venue; distanceLabel: string | null; currentStatus: ReturnType<typeof getVenueCurrentStatus> }) {
   const { reviews } = useVenueReviews(venue.id);
   const summary = getVenueRatingSummary(reviews);
   const displayRating = summary.averageRating ?? venue.rating ?? null;
   const reviewLabel = summary.reviewCount > 0 ? `${summary.reviewCount} user review${summary.reviewCount === 1 ? "" : "s"}` : "No user reviews yet";
 
   return (
-    <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-nokta-ink-muted">
+    <>
+      <div className="mt-3 grid gap-1.5 text-[13.5px] leading-[1.4] sm:hidden">
+        <div className="flex items-center gap-2 font-medium text-nokta-ink">
+          {displayRating ? (
+            <span className="inline-flex items-center gap-1.5">
+              <Star className="h-3.5 w-3.5 fill-nokta-ink text-nokta-ink" />
+              {displayRating}
+            </span>
+          ) : null}
+          <span className="text-nokta-ink-muted">·</span>
+          <span>{reviewLabel}</span>
+        </div>
+        <div className="flex items-center gap-1.5 text-nokta-ink-muted">
+          <MapPin className="h-3.5 w-3.5" />
+          {venue.area}
+          {distanceLabel ? ` · ${distanceLabel}` : null}
+        </div>
+        <div className="text-nokta-ink-muted">{venue.priceFrom ? `Shisha from £${venue.priceFrom}` : "Shisha price TBC"}</div>
+      </div>
+
+      <div className="mt-3 hidden flex-wrap items-center gap-x-3 gap-y-2 text-sm text-nokta-ink-muted sm:flex">
       {displayRating ? (
         <>
           <span className="inline-flex items-center gap-1.5 font-medium text-nokta-ink">
@@ -274,8 +318,9 @@ function VenueHeaderMeta({ venue, distanceLabel }: { venue: Venue; distanceLabel
       <span className="text-nokta-ink-muted" aria-hidden="true">
         •
       </span>
-      <span>{venue.priceFrom ? `Shisha from £${venue.priceFrom}` : "Shisha price TBC"}</span>
-    </div>
+      <span className="whitespace-nowrap">{venue.priceFrom ? `Shisha from £${venue.priceFrom}` : "Shisha price TBC"}</span>
+      </div>
+    </>
   );
 }
 
@@ -289,7 +334,13 @@ function PhotoGallery({ venue, images, onOpenImage }: { venue: Venue; images: st
 
   return (
     <section className="relative bg-nokta-surface">
-      <button type="button" className="block h-[260px] w-full overflow-hidden text-left sm:h-[340px]" onClick={() => onOpenImage(activeGalleryIndex)}>
+      <Button asChild variant="secondary" size="icon" className="absolute left-3 top-3 z-20 h-10 w-10 rounded-full bg-stone-950/55 text-white backdrop-blur hover:bg-stone-950/70 sm:hidden" aria-label="Back to discover">
+        <Link to="/discover">
+          <ArrowLeft className="h-5 w-5" />
+        </Link>
+      </Button>
+      <FavouriteButton venueId={venue.id} venueName={venue.name} venue={venue} className="absolute right-3 top-3 z-20 h-10 w-10 bg-stone-950/55 text-white backdrop-blur hover:bg-stone-950/70 sm:hidden [&_svg.fill-foreground]:fill-white" />
+      <button type="button" className="block h-[220px] w-full overflow-hidden text-left sm:h-[340px]" onClick={() => onOpenImage(activeGalleryIndex)}>
         <img src={activeImage} alt={`${venue.name} gallery ${activeGalleryIndex + 1}`} className="h-full w-full object-cover transition duration-700 hover:scale-[1.015]" />
       </button>
       {hasMultipleImages ? (
@@ -317,11 +368,19 @@ function PhotoCountBadge({ current, total }: { current: number; total: number })
 
 function ActionBar({ venue, shareLabel, onShare }: { venue: Venue; shareLabel: string; onShare: () => void }) {
   const analyticsProperties = getVenueAnalyticsProperties(venue);
-  const actionButtonClass = "h-10 rounded-lg border-nokta-border bg-white px-3.5 text-sm font-medium text-nokta-ink-subtle hover:bg-nokta-surface-hover hover:text-nokta-ink";
+  const actionButtonClass = "h-10 w-full rounded-lg border-nokta-border bg-white px-3.5 text-sm font-medium text-nokta-ink-subtle hover:bg-nokta-surface-hover hover:text-nokta-ink sm:w-auto";
 
   return (
-    <section className="mt-6 flex flex-wrap gap-2">
-      <Button asChild className="h-10 rounded-lg bg-nokta-ink px-3.5 text-sm font-medium text-white hover:bg-nokta-ink/90">
+    <>
+      <section className="mt-5 flex gap-2 sm:hidden">
+        <MobileActionButton primary as="a" href={getGoogleMapsDirectionsUrl(venue)} label="Directions" onClick={() => trackVenueAction(venue, "directions_clicked", "venue_directions_clicked", analyticsProperties)} icon={<Navigation className="h-5 w-5" />} />
+        <MobileActionButton as={venue.phone ? "a" : "button"} href={venue.phone ? `tel:${venue.phone}` : undefined} label="Call" disabled={!venue.phone} icon={<Phone className="h-5 w-5" />} />
+        <MobileActionButton as="button" label={shareLabel} onClick={onShare} icon={<Share2 className="h-5 w-5" />} />
+        <MobileActionButton as="a" href={`mailto:${brandConfig.supportEmail}?subject=${encodeURIComponent(`Venue report: ${venue.name}`)}`} label="Report" icon={<Flag className="h-5 w-5" />} />
+        <MobileActionButton as={venue.website ? "a" : "button"} href={venue.website ?? undefined} target={venue.website ? "_blank" : undefined} rel={venue.website ? "noreferrer" : undefined} label="Website" disabled={!venue.website} onClick={venue.website ? () => trackVenueAction(venue, "website_clicked", "venue_website_clicked", analyticsProperties) : undefined} icon={<ExternalLink className="h-5 w-5" />} />
+      </section>
+      <section className="mt-5 hidden flex-wrap gap-2 sm:mt-6 sm:flex">
+      <Button asChild className="col-span-2 h-10 rounded-lg bg-nokta-ink px-3.5 text-sm font-medium text-white hover:bg-nokta-ink/90 sm:col-span-1">
         <a href={getGoogleMapsDirectionsUrl(venue)} target="_blank" rel="noreferrer" onClick={() => trackVenueAction(venue, "directions_clicked", "venue_directions_clicked", analyticsProperties)}>
           <Navigation className="mr-2 h-4 w-4" />
           Get directions
@@ -366,11 +425,31 @@ function ActionBar({ venue, shareLabel, onShare }: { venue: Venue; shareLabel: s
           </a>
         </Button>
       ) : null}
-    </section>
+      </section>
+    </>
   );
 }
 
-function BookingSidebarCard({ venue }: { venue: Venue }) {
+function MobileActionButton({ as, href, target, rel, label, icon, primary = false, disabled = false, onClick }: { as: "a" | "button"; href?: string; target?: string; rel?: string; label: string; icon: React.ReactNode; primary?: boolean; disabled?: boolean; onClick?: () => void }) {
+  const buttonClass = cn("h-12 w-full rounded-full", primary ? "bg-nokta-ink text-white hover:bg-nokta-ink/90" : "border-nokta-border bg-white text-nokta-ink hover:bg-nokta-surface-hover");
+
+  return (
+    <div className="min-w-0 flex-1 text-center">
+      <Button asChild={as === "a" && !disabled} type={as === "button" ? "button" : undefined} variant={primary ? "default" : "outline"} size="icon" className={buttonClass} disabled={disabled} onClick={onClick}>
+        {as === "a" && !disabled ? (
+          <a href={href} target={target} rel={rel}>
+            {icon}
+          </a>
+        ) : (
+          <span>{icon}</span>
+        )}
+      </Button>
+      <span className="mt-1 block truncate text-[11px] font-medium leading-4 text-nokta-ink-muted">{label}</span>
+    </div>
+  );
+}
+
+function BookingSidebarCard({ venue, className, compact = false }: { venue: Venue; className?: string; compact?: boolean }) {
   const navigate = useNavigate();
   const [date, setDate] = useState(getTodayDateValue());
   const [time, setTime] = useState("");
@@ -407,13 +486,13 @@ function BookingSidebarCard({ venue }: { venue: Venue }) {
   }
 
   return (
-    <form className="rounded-2xl border border-nokta-border bg-white p-5 shadow-sm shadow-stone-950/5" onSubmit={handleSubmit}>
+    <form className={cn("rounded-2xl border border-nokta-border bg-white p-4 shadow-sm shadow-stone-950/5 sm:p-5", compact && "border-0 p-0 shadow-none sm:p-0", className)} onSubmit={handleSubmit}>
       <div className="flex items-center justify-between gap-3">
-        <h2 className="text-[15px] font-semibold text-nokta-ink">Request a booking</h2>
+        {!compact ? <h2 className="text-[15px] font-semibold text-nokta-ink">Request a booking</h2> : null}
         <FavouriteButton venueId={venue.id} venueName={venue.name} venue={venue} className="hidden h-10 w-10 shrink-0 border lg:inline-flex" />
       </div>
       <div className="mt-4 grid gap-3">
-        <div className="grid grid-cols-2 gap-2">
+        <div className="grid gap-2 min-[380px]:grid-cols-2">
           <Input
             type="date"
             value={date}
@@ -444,6 +523,33 @@ function BookingSidebarCard({ venue }: { venue: Venue }) {
       </div>
       <p className="mt-3 text-xs leading-5 text-nokta-ink-muted">Requests are confirmed once the venue accepts.</p>
     </form>
+  );
+}
+
+function MobileBookingCta({ venue }: { venue: Venue }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="fixed inset-x-0 bottom-0 z-[1200] border-t border-nokta-border bg-white px-4 py-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] shadow-[0_-12px_28px_rgba(28,25,23,0.08)] lg:hidden">
+      <div className="mx-auto flex max-w-[1180px] items-center justify-between gap-3">
+        <div className="min-w-0">
+          <p className="text-sm font-semibold text-nokta-ink">{venue.priceFrom ? `From £${venue.priceFrom}` : "Price TBC"}</p>
+          <p className="truncate text-xs text-nokta-ink-muted">Request a booking</p>
+        </div>
+        <Button type="button" className="h-11 shrink-0 rounded-lg bg-nokta-accent px-5 text-white hover:bg-nokta-accent-dark" onClick={() => setOpen(true)}>
+          Request booking
+        </Button>
+      </div>
+      <Sheet open={open} onOpenChange={setOpen} side="bottom">
+        <SheetHeader>
+          <div>
+            <SheetTitle>Request a booking</SheetTitle>
+            <p className="mt-1 text-sm text-muted-foreground">{venue.name}</p>
+          </div>
+          <SheetClose onClick={() => setOpen(false)} />
+        </SheetHeader>
+        <BookingSidebarCard venue={venue} compact />
+      </Sheet>
+    </div>
   );
 }
 
@@ -561,7 +667,7 @@ function OverviewTab({ venue, amenities, similarVenues }: { venue: Venue; amenit
             {venue.city} {venue.postcode}
           </p>
           <div className="mt-4 overflow-hidden rounded-xl border border-nokta-border">
-            <VenueMap venues={[venue]} selectedVenueId={venue.id} city={venue.city} className="h-72 rounded-none border-0 [&_.leaflet-container]:!min-h-72 md:[&_.leaflet-container]:!min-h-72" />
+            <VenueMap venues={[venue]} selectedVenueId={venue.id} city={venue.city} className="h-72 rounded-none border-0 [&_.leaflet-container]:!min-h-72 [&_.leaflet-control-container]:relative [&_.leaflet-control-container]:z-0 md:[&_.leaflet-container]:!min-h-72" />
           </div>
         </section>
 
@@ -591,8 +697,8 @@ function DetailTile({ icon, label, value }: { icon: React.ReactNode; label: stri
   );
 }
 
-function CurrentStatusBadge({ status }: { status: ReturnType<typeof getVenueCurrentStatus> }) {
-  return <span className={cn("inline-flex h-7 items-center rounded-full px-3 text-xs font-semibold", status === "open" && "bg-emerald-50 text-emerald-700", status === "closed" && "bg-red-50 text-red-700", status === "unknown" && "bg-stone-100 text-nokta-ink-muted")}>{formatCurrentStatus(status)}</span>;
+function CurrentStatusBadge({ status, className }: { status: ReturnType<typeof getVenueCurrentStatus>; className?: string }) {
+  return <span className={cn("inline-flex h-7 items-center rounded-full px-3 text-xs font-semibold", status === "open" && "bg-emerald-50 text-emerald-700", status === "closed" && "bg-red-50 text-red-700", status === "unknown" && "bg-stone-100 text-nokta-ink-muted", className)}>{formatCurrentStatus(status)}</span>;
 }
 
 function formatFoodDrinks(venue: Venue) {
@@ -765,7 +871,7 @@ function SimilarVenueCarousel({ venues }: { venues: Venue[] }) {
   }
 
   return (
-    <div className="mt-4 flex max-w-full gap-4 overflow-x-auto pb-2">
+    <div className="-mx-4 mt-4 flex max-w-[calc(100%+2rem)] gap-4 overflow-x-auto px-4 pb-2 sm:mx-0 sm:max-w-full sm:px-0">
       {venues.map((venue) => (
         <Link key={venue.id} reloadDocument to={`/venues/${venue.slug}`} className="group w-[220px] shrink-0 rounded-2xl border border-nokta-border bg-white p-2 shadow-none transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-stone-950/5">
           <div className="relative h-[110px] overflow-hidden rounded-xl bg-muted">
