@@ -491,7 +491,7 @@ function BookingSidebarCard({ venue, className, compact = false }: { venue: Venu
         {!compact ? <h2 className="text-[15px] font-semibold text-nokta-ink">Request a booking</h2> : null}
         <FavouriteButton venueId={venue.id} venueName={venue.name} venue={venue} className="hidden h-10 w-10 shrink-0 border lg:inline-flex" />
       </div>
-      <div className="mt-4 grid gap-3">
+      <div className={cn("mt-4 grid gap-3", compact && "mt-0")}>
         <div className="grid gap-2 min-[380px]:grid-cols-2">
           <Input
             type="date"
@@ -513,7 +513,7 @@ function BookingSidebarCard({ venue, className, compact = false }: { venue: Venu
             onValueChange={setTime}
           />
         </div>
-        <Input type="number" min={1} max={100} value={partySize} aria-label="Party size" className="h-11 rounded-lg border-nokta-border-input bg-white text-base text-nokta-ink sm:text-sm" onChange={(event) => setPartySize(event.target.value ? Number(event.target.value) : 0)} />
+        <Input type="number" min={1} max={100} value={partySize} aria-label="Party size" placeholder="Party size" className="h-11 rounded-lg border-nokta-border-input bg-white text-base text-nokta-ink sm:text-sm" onChange={(event) => setPartySize(event.target.value ? Number(event.target.value) : 0)} />
       </div>
       <div className="mt-4 grid gap-2">
         <Button type="submit" className="h-11 rounded-lg bg-nokta-accent text-white hover:bg-nokta-accent-dark" disabled={Boolean(availability && (!date || !time))}>Request booking</Button>

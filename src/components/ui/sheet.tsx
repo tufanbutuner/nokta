@@ -16,9 +16,9 @@ function Sheet({ open, onOpenChange, children, side = "right" }: SheetProps) {
     <div className="fixed inset-0 z-[1600] bg-black/35" onClick={() => onOpenChange(false)}>
       <div
         className={cn(
-          "fixed w-full overflow-y-auto bg-card p-5 shadow-2xl",
-          side === "right" && "inset-y-0 right-0 max-w-sm",
-          side === "bottom" && "inset-x-0 bottom-0 max-h-[88dvh] rounded-t-3xl pb-[calc(1.25rem+env(safe-area-inset-bottom))]",
+          "fixed w-full bg-card p-5 shadow-2xl",
+          side === "right" && "inset-y-0 right-0 max-w-sm overflow-y-auto",
+          side === "bottom" && "inset-x-0 bottom-0 max-h-[88dvh] rounded-t-3xl pb-[calc(1.25rem+env(safe-area-inset-bottom))] overflow-visible",
         )}
         onClick={(event) => event.stopPropagation()}
       >
