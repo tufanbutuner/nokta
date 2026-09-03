@@ -1,7 +1,6 @@
 import { useMemo, useState, type FormEvent } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import type { LucideIcon } from "lucide-react";
-import { ArrowRight, BookmarkCheck, ChevronRight, MapPin, MessageCircle, Search, Star } from "lucide-react";
+import { ArrowRight, ChevronRight, MapPin, Search, Star } from "lucide-react";
 import { HomepageFeaturedVenues } from "@/components/featured/HomepageFeaturedVenues";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { HomepageOffersSection } from "@/components/offers/HomepageOffersSection";
@@ -23,48 +22,12 @@ import { formatVenuePrimaryCategory } from "@/lib/venueCategoryLabels";
 import type { Venue } from "@/types/venue";
 
 const quickFilters = [
-  { label: "London", to: "/discover?city=London" },
-  { label: "Near me", to: "/discover?city=London&sort=nearest" },
-  { label: "Open now", to: "/discover?city=London&status=open" },
+  { label: "Open tonight", to: "/discover?city=London&status=open" },
+  { label: "Good for groups", to: "/discover?city=London&vibe=groups" },
+  { label: "Outdoor spots", to: "/discover?city=London&vibe=outdoor" },
   { label: "Under £20", to: "/discover?city=London&price=1" },
-  { label: "Top rated", to: "/discover?city=London&rating=4" },
+  { label: "Near me", to: "/discover?city=London&sort=nearest" },
 ] as const;
-
-const steps: { title: string; description: string; Icon: LucideIcon }[] = [
-  {
-    title: "Search",
-    description: "Find lounges by city, area, vibe, price and the details that matter before you travel.",
-    Icon: Search,
-  },
-  {
-    title: "Save",
-    description: "Keep a shortlist of places you want to try, from late-night lounges to quiet terraces.",
-    Icon: BookmarkCheck,
-  },
-  {
-    title: "Rate",
-    description: "Share what the venue was actually like so other people can choose well.",
-    Icon: MessageCircle,
-  },
-];
-
-const testimonials = [
-  {
-    quote: "Finally, a way to compare shisha spots without opening ten different tabs.",
-    name: "Aisha",
-    area: "Bermondsey",
-  },
-  {
-    quote: "The filters are exactly how we pick a place: outdoor, late, decent price.",
-    name: "Rami",
-    area: "Edgware Road",
-  },
-  {
-    quote: "Feels more curated than a directory. The saved list has become our weekend shortlist.",
-    name: "Maya",
-    area: "Shoreditch",
-  },
-];
 
 const CITY_DESCRIPTIONS: Record<string, string> = {
   London: "Explore social venues across London by area, vibe, price and distance.",
@@ -108,14 +71,14 @@ export function HomePage() {
       />
       <section>
         <PageContainer className="py-12 sm:py-16 lg:py-20">
-          <div className="relative isolate mx-auto max-w-5xl px-4 py-12 text-center sm:px-8 sm:py-20 lg:py-24">
+          <div className="relative isolate mx-auto max-w-5xl px-4 py-12 text-center sm:px-8 sm:py-16 lg:py-20">
             <span aria-hidden="true" className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[24rem] w-[24rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-clay-accent opacity-[0.08] sm:h-[30rem] sm:w-[30rem] lg:h-[34rem] lg:w-[34rem]" />
             <h1 className="mx-auto max-w-4xl text-4xl font-bold leading-[1.02] sm:text-6xl lg:text-7xl">
-              Discover social venues
-              <span className="mt-1 block text-clay-accent">worth going out for</span>
+              Find the right spot
+              <span className="mt-1 block text-clay-accent">before you head out</span>
             </h1>
             <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
-              Find shisha lounges, restaurants, bars and cafes across the UK.
+              Search shisha lounges, restaurants, bars and cafes across the UK, compare the details, then book with more confidence.
             </p>
 
             <form className="mx-auto mt-8 max-w-3xl rounded-2xl border bg-card p-2 shadow-xl shadow-stone-950/5" onSubmit={handleSearchSubmit}>
@@ -141,7 +104,7 @@ export function HomePage() {
             <div className="mx-auto mt-4 flex max-w-3xl flex-wrap justify-center gap-2">
               {quickFilters.map((filter) => (
                 <Link key={filter.label} reloadDocument to={filter.to}>
-                  <Badge variant="outline" className="border-transparent bg-foreground/5 px-3 py-1.5 text-xs text-foreground/75 hover:bg-foreground/10">
+                  <Badge variant="outline" className="border-transparent bg-foreground/5 px-3 py-1.5 text-xs font-medium text-foreground/75 hover:bg-foreground/10">
                     {filter.label}
                   </Badge>
                 </Link>
@@ -152,7 +115,7 @@ export function HomePage() {
         </PageContainer>
       </section>
 
-      <PageContainer className="space-y-16 py-12 sm:py-16">
+      <PageContainer className="space-y-14 py-10 sm:space-y-16 sm:py-14">
         <section>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {categoryEntrypoints.map((category) => {
@@ -207,39 +170,17 @@ export function HomePage() {
           {isLoading ? <LoadingState /> : error ? <ErrorState message={error} /> : <LandingVenueGrid venues={featured} />}
         </section>
 
-        <section>
-          <div className="mb-6">
-            <p className="text-sm text-clay-accent">Browse by area</p>
-            <h2 className="mt-1 text-3xl font-semibold">Start with the part of London you know</h2>
-          </div>
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {areaCards.map((area) => (
-              <Link
-                key={area.name}
-                reloadDocument
-                to={`/discover?area=${encodeURIComponent(area.name)}`}
-                className="group relative isolate flex items-center justify-between overflow-hidden rounded-xl border bg-card p-5 transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-stone-950/5"
-              >
-                <CardMark className="-bottom-12 -right-10 h-32 w-32 opacity-[0.045]" />
-                <span>
-                  <span className="block font-semibold">{area.name}</span>
-                  <span className="mt-1 block text-sm text-muted-foreground">{area.count} venues</span>
-                </span>
-                <ChevronRight className="h-4 w-4 text-muted-foreground transition group-hover:translate-x-0.5 group-hover:text-foreground" />
-              </Link>
-            ))}
-          </div>
-        </section>
-
-        <section>
-          <div className="mb-6">
-            <p className="text-sm text-clay-accent">Explore by city</p>
-            <h2 className="mt-1 text-3xl font-semibold">Explore city by city</h2>
+        <section className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+          <div>
+            <h2 className="text-3xl font-semibold">Browse by place</h2>
+            <p className="mt-3 max-w-md text-sm leading-6 text-muted-foreground">
+              Start with a city, or jump straight into the London areas people already search for.
+            </p>
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
             {cityCards.map((city) => (
-              <article key={city.slug} className="relative isolate overflow-hidden rounded-xl border bg-card p-5 transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-stone-950/5">
-                <CardMark className="-bottom-12 -right-10 h-36 w-36 opacity-[0.045]" />
+              <article key={city.slug} className="relative isolate overflow-hidden rounded-xl border bg-card p-5 transition hover:-translate-y-0.5 hover:border-nokta-border-input">
+                <CardMark className="-bottom-12 -right-10 h-32 w-32 opacity-[0.04]" />
                 <div className="flex items-start justify-between gap-4">
                   <div>
                     <h3 className="font-semibold">{city.name}</h3>
@@ -258,53 +199,19 @@ export function HomePage() {
                 </div>
               </article>
             ))}
-          </div>
-        </section>
-
-        <section className="rounded-2xl bg-card px-5 py-10 sm:px-8 lg:px-10">
-          <div className="mx-auto max-w-2xl text-center">
-            <p className="text-sm font-medium uppercase tracking-[0.18em] text-clay-accent">How it works</p>
-            <h2 className="mt-3 text-3xl font-semibold">Three steps to your next plan</h2>
-          </div>
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
-            {steps.map(({ title, description, Icon }) => (
-              <div key={title} className="relative isolate overflow-hidden rounded-xl border bg-background p-5">
-                <CardMark className="-bottom-12 -right-10 h-32 w-32 opacity-[0.045]" />
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-clay-accent/10 text-clay-accent">
-                  <Icon className="h-5 w-5" />
-                </div>
-                <h3 className="mt-5 text-lg font-semibold">{title}</h3>
-                <p className="mt-2 text-sm leading-6 text-muted-foreground">{description}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section>
-          <div className="mb-6">
-            <p className="text-sm text-clay-accent">Word around town</p>
-            <h2 className="mt-1 text-3xl font-semibold">Built for how people actually choose</h2>
-          </div>
-          <div className="grid gap-4 md:grid-cols-3">
-            {testimonials.map((testimonial) => (
-              <div key={testimonial.name} className="relative isolate overflow-hidden rounded-xl border bg-card p-5">
-                <CardMark className="-bottom-12 -right-10 h-32 w-32 opacity-[0.045]" />
-                <div className="flex gap-1 text-clay-accent" aria-label="5 star review">
-                  {Array.from({ length: 5 }).map((_, index) => (
-                    <Star key={index} className="h-4 w-4 fill-current" />
-                  ))}
-                </div>
-                <p className="mt-4 leading-7 text-foreground/85">"{testimonial.quote}"</p>
-                <div className="mt-5 flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-clay-accent/10 text-sm font-semibold text-clay-accent">
-                    {testimonial.name.charAt(0)}
-                  </div>
-                  <div>
-                    <p className="font-medium">{testimonial.name}</p>
-                    <p className="text-sm text-muted-foreground">{testimonial.area}</p>
-                  </div>
-                </div>
-              </div>
+            {areaCards.map((area) => (
+              <Link
+                key={area.name}
+                reloadDocument
+                to={`/discover?area=${encodeURIComponent(area.name)}`}
+                className="group flex items-center justify-between rounded-xl border bg-background px-4 py-3 transition hover:border-nokta-border-input"
+              >
+                <span>
+                  <span className="block font-semibold">{area.name}</span>
+                  <span className="mt-0.5 block text-sm text-muted-foreground">{area.count} venues</span>
+                </span>
+                <ChevronRight className="h-4 w-4 text-muted-foreground transition group-hover:translate-x-0.5 group-hover:text-foreground" />
+              </Link>
             ))}
           </div>
         </section>

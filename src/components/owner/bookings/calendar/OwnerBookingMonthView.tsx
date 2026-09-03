@@ -28,5 +28,20 @@ export function OwnerBookingMonthView({ anchorDate, events, onEventClick, onDate
 
 function MonthChip({ event, onClick }: { event: BookingCalendarEvent; onClick: () => void }) {
   const tone = getBookingCalendarStatusTone(event.status);
-  return <button type="button" className={cn("truncate rounded-md border-l-4 px-2 py-1 text-left text-xs font-medium shadow-sm", tone === "pending" && "border-amber-500 bg-amber-100 text-amber-950", tone === "alternative" && "border-sky-500 bg-sky-100 text-sky-950", tone === "success" && "border-emerald-600 bg-emerald-100 text-emerald-950", tone === "destructive" && "border-rose-500 bg-rose-100 text-rose-950", tone === "muted" && "border-stone-500 bg-stone-100 text-stone-800")} onClick={onClick}>{event.time} • {event.partySize}</button>;
+  return (
+    <button
+      type="button"
+      className={cn(
+        "truncate rounded-md border px-2 py-1 text-left text-xs font-medium shadow-sm",
+        tone === "pending" && "border-amber-200 bg-amber-100 text-amber-950",
+        tone === "alternative" && "border-sky-200 bg-sky-100 text-sky-950",
+        tone === "success" && "border-emerald-200 bg-emerald-100 text-emerald-950",
+        tone === "destructive" && "border-rose-200 bg-rose-100 text-rose-950",
+        tone === "muted" && "border-stone-200 bg-stone-100 text-neutral-950",
+      )}
+      onClick={onClick}
+    >
+      {event.time} • {event.partySize}
+    </button>
+  );
 }

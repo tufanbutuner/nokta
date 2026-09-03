@@ -194,20 +194,19 @@ export function VenuePage() {
 
         <section className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-start lg:gap-8">
           <div className="min-w-0">
-            <VenueBadgeRow venue={venue} />
-            <div className="flex items-start justify-between gap-3 sm:items-center">
-              <div className="flex min-w-0 flex-1 items-start justify-between gap-3 sm:block">
-                <div className="min-w-0 flex-1">
-                  <h1 className="min-w-0 text-wrap font-body text-[26px] font-semibold leading-[1.08] text-nokta-ink sm:text-4xl">
+            <div className="flex items-start justify-between gap-3">
+              <div className="min-w-0 flex-1">
+                <div className="flex min-w-0 items-start gap-2">
+                  <h1 className="min-w-0 text-wrap font-body text-[24px] font-semibold leading-[1.08] text-nokta-ink sm:text-4xl">
                     {venue.name}
-                    {venue.isClaimed ? <ClaimedVenueBadge size="md" className="ml-2 inline-flex translate-y-[-2px] align-middle sm:translate-y-[-3px]" /> : null}
                   </h1>
-                  <CurrentStatusBadge status={currentStatus} className="hidden sm:inline-flex" />
+                  {venue.isClaimed ? <ClaimedVenueBadge size="md" className="mt-1.5 shrink-0 sm:mt-2" /> : null}
                 </div>
-                <CurrentStatusBadge status={currentStatus} className="mt-1 shrink-0 sm:hidden" />
+                <VenueBadgeRow venue={venue} />
               </div>
+              <CurrentStatusBadge status={currentStatus} className="shrink-0" />
             </div>
-            <VenueHeaderMeta venue={venue} distanceLabel={distanceLabel} currentStatus={currentStatus} />
+            <VenueHeaderMeta venue={venue} distanceLabel={distanceLabel} />
             <p className="mt-5 max-w-xl text-base leading-7 text-nokta-ink-subtle">{venue.description}</p>
             <ActionBar venue={venue} shareLabel={shareLabel} onShare={shareVenue} />
           </div>
@@ -218,9 +217,9 @@ export function VenuePage() {
         <VenueOffersSection venue={venue} />
 
         <div className="sticky top-0 z-20 -mx-4 mt-6 border-b border-nokta-border bg-nokta-page-bg/95 px-4 backdrop-blur sm:static sm:mx-0 sm:mt-7 sm:bg-transparent sm:px-0 sm:backdrop-blur-none">
-          <div className="flex gap-2 overflow-x-auto pb-3">
+          <div className="flex gap-5 overflow-x-auto pb-3">
             {VENUE_TABS.map((tab) => (
-              <button key={tab.value} type="button" className={cn("h-9 shrink-0 rounded-full px-4 text-sm font-medium transition-colors", activeTab === tab.value ? "bg-nokta-ink text-white" : "text-nokta-ink-muted hover:bg-white hover:text-nokta-ink")} onClick={() => setActiveTab(tab.value)}>
+              <button key={tab.value} type="button" className={cn("relative h-9 shrink-0 text-sm font-semibold text-nokta-ink-muted transition-colors hover:text-nokta-ink", activeTab === tab.value && "text-nokta-ink after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 after:rounded-full after:bg-nokta-ink")} onClick={() => setActiveTab(tab.value)}>
                 {tab.label}
               </button>
             ))}
@@ -243,18 +242,18 @@ export function VenuePage() {
 }
 
 function VenueBadgeRow({ venue }: { venue: Venue }) {
-  const mobileBadges = [formatVenuePrimaryCategory(venue.primaryCategory), ...venue.vibes.slice(0, 2)];
-  const hiddenMobileCount = Math.max(0, venue.secondaryCategories.slice(0, 3).length + venue.vibes.slice(2, 5).length);
+  const mobileBadges = [formatVenuePrimaryCategory(venue.primaryCategory), ...venue.vibes.slice(0, 1)];
+  const hiddenMobileCount = Math.max(0, venue.secondaryCategories.slice(0, 3).length + venue.vibes.slice(1, 5).length);
 
   return (
     <>
-      <div className="mb-3 flex flex-wrap gap-2 sm:hidden">
+      <div className="mt-3 flex flex-wrap gap-2 sm:hidden">
         {mobileBadges.map((label) => (
           <VenueBadge key={label} label={label} />
         ))}
         {hiddenMobileCount ? <Badge variant="outline" className="rounded-full border-transparent bg-nokta-surface px-2.5 py-1 text-[12px] font-semibold text-nokta-ink-muted">+{hiddenMobileCount}</Badge> : null}
       </div>
-      <div className="mb-3 hidden flex-wrap gap-2 sm:flex">
+      <div className="mt-3 hidden flex-wrap gap-2 sm:flex">
         <VenueBadge label={formatVenuePrimaryCategory(venue.primaryCategory)} />
         {venue.secondaryCategories.slice(0, 3).map((category) => (
           <VenueBadge key={category} label={formatVenueSecondaryCategory(category)} />
@@ -267,11 +266,12 @@ function VenueBadgeRow({ venue }: { venue: Venue }) {
   );
 }
 
-function VenueHeaderMeta({ venue, distanceLabel, currentStatus }: { venue: Venue; distanceLabel: string | null; currentStatus: ReturnType<typeof getVenueCurrentStatus> }) {
+function VenueHeaderMeta({ venue, distanceLabel }: { venue: Venue; distanceLabel: string | null }) {
   const { reviews } = useVenueReviews(venue.id);
   const summary = getVenueRatingSummary(reviews);
   const displayRating = summary.averageRating ?? venue.rating ?? null;
-  const reviewLabel = summary.reviewCount > 0 ? `${summary.reviewCount} user review${summary.reviewCount === 1 ? "" : "s"}` : "No user reviews yet";
+  const reviewLabel = summary.reviewCount > 0 ? `${summary.reviewCount} user review${summary.reviewCount === 1 ? "" : "s"}` : displayRating ? "Rating estimate" : "No user reviews yet";
+  const priceLabel = venue.priceFrom ? `From £${venue.priceFrom}` : "Price TBC";
 
   return (
     <>
@@ -291,36 +291,87 @@ function VenueHeaderMeta({ venue, distanceLabel, currentStatus }: { venue: Venue
           {venue.area}
           {distanceLabel ? ` · ${distanceLabel}` : null}
         </div>
-        <div className="text-nokta-ink-muted">{venue.priceFrom ? `Shisha from £${venue.priceFrom}` : "Shisha price TBC"}</div>
+        <div className="text-nokta-ink-muted">{priceLabel}</div>
       </div>
 
       <div className="mt-3 hidden flex-wrap items-center gap-x-3 gap-y-2 text-sm text-nokta-ink-muted sm:flex">
-      {displayRating ? (
-        <>
-          <span className="inline-flex items-center gap-1.5 font-medium text-nokta-ink">
-            <Star className="h-3.5 w-3.5 fill-nokta-ink text-nokta-ink" />
-            {displayRating}
-          </span>
-          <span className="text-nokta-ink-muted" aria-hidden="true">
-            •
-          </span>
-        </>
-      ) : null}
-      <span>{reviewLabel}</span>
-      <span className="text-nokta-ink-muted" aria-hidden="true">
-        •
-      </span>
-      <span className="inline-flex items-center gap-1.5">
-        <MapPin className="h-3.5 w-3.5" />
-        {venue.area}
-        {distanceLabel ? ` • ${distanceLabel}` : null}
-      </span>
-      <span className="text-nokta-ink-muted" aria-hidden="true">
-        •
-      </span>
-      <span className="whitespace-nowrap">{venue.priceFrom ? `Shisha from £${venue.priceFrom}` : "Shisha price TBC"}</span>
+        {displayRating ? (
+          <>
+            <span className="inline-flex items-center gap-1.5 font-medium text-nokta-ink">
+              <Star className="h-3.5 w-3.5 fill-nokta-ink text-nokta-ink" />
+              {displayRating}
+            </span>
+            <span className="text-nokta-ink-muted" aria-hidden="true">
+              •
+            </span>
+          </>
+        ) : null}
+        <span>{reviewLabel}</span>
+        <span className="text-nokta-ink-muted" aria-hidden="true">
+          •
+        </span>
+        <span className="inline-flex items-center gap-1.5">
+          <MapPin className="h-3.5 w-3.5" />
+          {venue.area}
+          {distanceLabel ? ` • ${distanceLabel}` : null}
+        </span>
+        <span className="text-nokta-ink-muted" aria-hidden="true">
+          •
+        </span>
+        <span className="whitespace-nowrap">{priceLabel}</span>
       </div>
     </>
+  );
+}
+
+function PlanYourVisitCard({ venue }: { venue: Venue }) {
+  return (
+    <section className="rounded-2xl border border-nokta-border bg-white p-5 shadow-sm shadow-stone-950/5">
+      <h2 className="font-semibold text-nokta-ink">Plan your visit</h2>
+      <div className="mt-4 grid gap-5">
+        <div>
+          <h3 className="text-[13px] font-semibold uppercase text-nokta-ink-muted">Opening hours</h3>
+          <div className="mt-3 grid gap-2">
+            {venue.openingHours.length ? (
+              venue.openingHours.map((item) => (
+                <div key={item.day} className="grid grid-cols-[96px_1fr] gap-3 text-[13px]">
+                  <span className="font-medium text-nokta-ink">{item.day}</span>
+                  <span className="text-nokta-ink-muted">
+                    {item.open} • {item.close}
+                  </span>
+                </div>
+              ))
+            ) : (
+              <p className="text-sm text-nokta-ink-muted">Opening hours TBC</p>
+            )}
+          </div>
+        </div>
+
+        <div className="border-t border-nokta-border pt-5">
+          <h3 className="text-[13px] font-semibold uppercase text-nokta-ink-muted">Location</h3>
+          <p className="mt-3 text-sm leading-6 text-nokta-ink-muted">
+            {venue.address}
+            <br />
+            {venue.area}
+            <br />
+            {venue.city} {venue.postcode}
+          </p>
+          <div className="mt-4 overflow-hidden rounded-xl border border-nokta-border">
+            <VenueMap venues={[venue]} selectedVenueId={venue.id} city={venue.city} className="h-72 rounded-none border-0 [&_.leaflet-container]:!min-h-72 [&_.leaflet-control-container]:relative [&_.leaflet-control-container]:z-0 md:[&_.leaflet-container]:!min-h-72" />
+          </div>
+        </div>
+
+        <div className="border-t border-nokta-border pt-5">
+          <h3 className="text-[13px] font-semibold uppercase text-nokta-ink-muted">Venue information</h3>
+          <div className="mt-3 flex flex-wrap items-center gap-3">
+            <VenueVerificationBadge status={venue.verificationStatus} />
+            {venue.lastVerifiedAt ? <span className="text-sm text-nokta-ink-muted">Checked {formatVerifiedDate(venue.lastVerifiedAt)}</span> : null}
+          </div>
+          <p className="mt-4 text-sm leading-6 text-nokta-ink-muted">Venue details can change. Check directly before travelling or booking.</p>
+          {venue.sourceNotes ? <p className="mt-3 text-sm leading-6 text-nokta-ink-muted">{venue.sourceNotes}</p> : null}
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -638,48 +689,8 @@ function OverviewTab({ venue, amenities, similarVenues }: { venue: Venue; amenit
         <ClaimVenueBanner venue={venue} />
       </article>
 
-      <aside className="min-w-0 space-y-4">
-        <section className="rounded-2xl border border-nokta-border bg-white p-5 shadow-sm shadow-stone-950/5">
-          <h2 className="font-semibold text-nokta-ink">Opening hours</h2>
-          <div className="mt-4 grid gap-2">
-            {venue.openingHours.length ? (
-              venue.openingHours.map((item) => (
-                <div key={item.day} className="grid grid-cols-[96px_1fr] gap-3 text-[13px]">
-                  <span className="font-medium text-nokta-ink">{item.day}</span>
-                  <span className="text-nokta-ink-muted">
-                    {item.open} - {item.close}
-                  </span>
-                </div>
-              ))
-            ) : (
-              <p className="text-sm text-nokta-ink-muted">Opening hours TBC</p>
-            )}
-          </div>
-        </section>
-
-        <section className="rounded-2xl border border-nokta-border bg-white p-5 shadow-sm shadow-stone-950/5">
-          <h2 className="font-semibold text-nokta-ink">Location</h2>
-          <p className="mt-3 text-sm leading-6 text-nokta-ink-muted">
-            {venue.address}
-            <br />
-            {venue.area}
-            <br />
-            {venue.city} {venue.postcode}
-          </p>
-          <div className="mt-4 overflow-hidden rounded-xl border border-nokta-border">
-            <VenueMap venues={[venue]} selectedVenueId={venue.id} city={venue.city} className="h-72 rounded-none border-0 [&_.leaflet-container]:!min-h-72 [&_.leaflet-control-container]:relative [&_.leaflet-control-container]:z-0 md:[&_.leaflet-container]:!min-h-72" />
-          </div>
-        </section>
-
-        <section className="rounded-2xl border border-nokta-border bg-white p-5 shadow-sm shadow-stone-950/5">
-          <h2 className="font-semibold text-nokta-ink">Venue information</h2>
-          <div className="mt-4 flex flex-wrap items-center gap-3">
-            <VenueVerificationBadge status={venue.verificationStatus} />
-            {venue.lastVerifiedAt ? <span className="text-sm text-nokta-ink-muted">Checked {formatVerifiedDate(venue.lastVerifiedAt)}</span> : null}
-          </div>
-          <p className="mt-4 text-sm leading-6 text-nokta-ink-muted">Venue details can change. Check directly before travelling or booking.</p>
-          {venue.sourceNotes ? <p className="mt-3 text-sm leading-6 text-nokta-ink-muted">{venue.sourceNotes}</p> : null}
-        </section>
+      <aside className="min-w-0">
+        <PlanYourVisitCard venue={venue} />
       </aside>
     </div>
   );

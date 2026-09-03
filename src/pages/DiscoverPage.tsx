@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import type { ReactNode } from "react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { SlidersHorizontal, X } from "lucide-react";
 import { SortSelect } from "@/components/discover/SortSelect";
@@ -126,34 +127,43 @@ export function DiscoverPage() {
       <div className="mx-auto flex min-h-[calc(100vh-4rem)] max-w-none flex-col bg-nokta-page-bg px-3 py-3 lg:h-[calc(100vh-4rem)]">
         <div className="grid min-h-0 flex-1 gap-4 lg:grid-cols-[440px_minmax(0,1fr)]">
           <aside className="flex min-h-0 flex-col overflow-hidden rounded-2xl border border-nokta-border bg-nokta-surface shadow-[0_12px_30px_-16px_oklch(0.2_0.02_40_/_0.18)]">
-            <div className="space-y-4 border-b border-nokta-border p-4">
+            <div className="space-y-3 border-b border-nokta-border p-4">
               <VenueSearch value={filters.query} onChange={(query) => updateFilters({ ...filters, query })} />
 
-              <DiscoveryFilterChips
-                filters={filters}
-                filtersOpen={filtersOpen}
-                onChange={updateFilters}
-                onToggleFilters={() => setFiltersOpen((open) => !open)}
-              />
+              <div className="space-y-2">
+                <DiscoveryFilterChips
+                  filters={filters}
+                  filtersOpen={filtersOpen}
+                  activeAdvancedCount={getAdvancedFilterCount(filters)}
+                  onChange={updateFilters}
+                  onToggleFilters={() => setFiltersOpen((open) => !open)}
+                />
 
-              <ActiveFilterChips filters={filters} onClear={clearFilters} />
+                <ActiveFilterChips filters={filters} onClear={clearFilters} />
+              </div>
 
               {filtersOpen ? (
-                <div className="rounded-2xl border border-nokta-border bg-nokta-page-bg/45 p-3">
+                <div className="rounded-2xl border border-nokta-border bg-nokta-page-bg/45 p-3 shadow-inner shadow-stone-950/[0.02]">
                   <VenueFilters venues={venues} filters={filters} onChange={updateFilters} onClear={clearFilters} />
                 </div>
               ) : null}
             </div>
 
             <div className="border-b border-nokta-border bg-nokta-surface-alt p-4">
-              <div className="flex items-center justify-between gap-3">
-                <div className="flex min-w-0 items-center gap-1.5">
+              <div className="flex items-center justify-between gap-2">
+                <div className="flex min-w-0 flex-wrap items-center gap-x-1.5 gap-y-1">
                   <p className="min-w-0 truncate text-[13px] font-semibold text-nokta-ink">{resultContextLabel}</p>
+                  {showDesktopMapArea && statusCountLabel ? (
+                    <>
+                      <span className="text-xs text-nokta-ink-muted">·</span>
+                      <p className="text-[13px] font-medium text-nokta-ink-muted">{statusCountLabel}</p>
+                    </>
+                  ) : null}
                   <span className="text-xs text-nokta-ink-muted">·</span>
                   <SortSelect value={sortOption} userLocation={userLocation} onChange={updateSort} inline />
                 </div>
                 {filtersAreActive ? (
-                  <Button type="button" variant="ghost" size="sm" onClick={clearFilters} className="h-8 shrink-0 text-xs font-semibold text-nokta-accent hover:bg-nokta-accent-tint">
+                  <Button type="button" variant="ghost" size="sm" onClick={clearFilters} className="h-8 shrink-0 rounded-full px-2.5 text-xs font-semibold text-nokta-ink-muted hover:bg-nokta-ink/5 hover:text-nokta-ink">
                     Clear
                   </Button>
                 ) : null}
@@ -209,9 +219,6 @@ export function DiscoverPage() {
                     onClearFilters={clearFilters}
                     className="h-full rounded-none border-0 bg-nokta-surface"
                   />
-                  <div className="absolute bottom-4 left-4 rounded-full border border-nokta-border bg-white/90 px-3 py-2 text-xs font-semibold text-nokta-ink shadow-lg shadow-stone-950/10 backdrop-blur">
-                    {statusCountLabel}
-                  </div>
                 </div>
               )}
             </section>
@@ -225,11 +232,13 @@ export function DiscoverPage() {
 function DiscoveryFilterChips({
   filters,
   filtersOpen,
+  activeAdvancedCount,
   onChange,
   onToggleFilters,
 }: {
   filters: VenueFilterState;
   filtersOpen: boolean;
+  activeAdvancedCount: number;
   onChange: (filters: VenueFilterState) => void;
   onToggleFilters: () => void;
 }) {
@@ -271,7 +280,12 @@ function DiscoveryFilterChips({
         )}
       >
         <SlidersHorizontal className="h-3.5 w-3.5" />
-        More
+        Filters
+        {activeAdvancedCount ? (
+          <span className={cn("ml-0.5 rounded-full px-1.5 text-[10px]", filtersOpen ? "bg-white/15 text-white" : "bg-nokta-ink text-white")}>
+            {activeAdvancedCount}
+          </span>
+        ) : null}
       </button>
     </div>
   );
@@ -285,7 +299,7 @@ function FilterChip({ active, label, onClick }: { active: boolean; label: string
       onClick={onClick}
       className={cn(
         "inline-flex h-8 items-center gap-1.5 rounded-full px-3 text-xs font-semibold transition-colors",
-        active ? "bg-nokta-accent-tint text-nokta-accent-dark hover:bg-nokta-accent-tint/80" : "bg-nokta-ink/5 text-nokta-ink-subtle hover:bg-nokta-ink/10 hover:text-nokta-ink",
+        active ? "bg-nokta-ink text-white hover:bg-nokta-ink/90" : "bg-nokta-ink/5 text-nokta-ink-subtle hover:bg-nokta-ink/10 hover:text-nokta-ink",
       )}
     >
       {label}
@@ -308,25 +322,29 @@ function ActiveFilterChips({
   }
 
   return (
-    <div className="flex flex-wrap gap-2">
-      {filters.query.trim() ? <Badge className="rounded-full bg-nokta-accent-tint text-nokta-accent-dark">Search: {filters.query.trim()}</Badge> : null}
-      {filters.city !== DEFAULT_CITY ? <Badge className="rounded-full bg-nokta-accent-tint text-nokta-accent-dark">{filters.city}</Badge> : null}
-      {filters.area !== "all" ? <Badge className="rounded-full bg-nokta-accent-tint text-nokta-accent-dark">{filters.area}</Badge> : null}
+    <div className="flex flex-wrap items-center gap-1.5">
+      {filters.query.trim() ? <ActiveFilterBadge>Search: {filters.query.trim()}</ActiveFilterBadge> : null}
+      {filters.city !== DEFAULT_CITY ? <ActiveFilterBadge>{filters.city}</ActiveFilterBadge> : null}
+      {filters.area !== "all" ? <ActiveFilterBadge>{filters.area}</ActiveFilterBadge> : null}
       {filters.primaryCategories.map((category) => (
-        <Badge key={category} className="rounded-full bg-nokta-accent-tint text-nokta-accent-dark">
+        <ActiveFilterBadge key={category}>
           {formatVenuePrimaryCategory(category)}
-        </Badge>
+        </ActiveFilterBadge>
       ))}
       {filters.vibes.map((vibe) => (
-        <Badge key={vibe} className="rounded-full bg-nokta-accent-tint text-nokta-accent-dark">
+        <ActiveFilterBadge key={vibe}>
           {formatVibe(vibe)}
-        </Badge>
+        </ActiveFilterBadge>
       ))}
-      <Button type="button" variant="ghost" size="sm" onClick={onClear} className="h-7 rounded-full px-2 text-xs">
+      <Button type="button" variant="ghost" size="sm" onClick={onClear} className="h-6 rounded-full px-2 text-[11px] font-semibold text-nokta-ink-muted hover:bg-nokta-ink/5 hover:text-nokta-ink">
         Clear all
       </Button>
     </div>
   );
+}
+
+function ActiveFilterBadge({ children }: { children: ReactNode }) {
+  return <Badge className="h-6 rounded-full border border-nokta-border bg-white px-2 text-[11px] font-medium text-nokta-ink-muted shadow-none">{children}</Badge>;
 }
 
 function DiscoverEmptyState({ onClear, compact = false, className }: { onClear: () => void; compact?: boolean; className?: string }) {
@@ -389,4 +407,16 @@ function getDiscoverAnalyticsProperties(filters: VenueFilterState, sort: VenueSo
 
 function hasActiveAdvancedFilters(filters: VenueFilterState) {
   return hasActiveFilters({ ...filters, query: "" });
+}
+
+function getAdvancedFilterCount(filters: VenueFilterState) {
+  return [
+    filters.city !== DEFAULT_CITY,
+    filters.area !== "all",
+    filters.primaryCategories.length > 0,
+    filters.vibes.length > 0,
+    filters.priceLevel !== "all",
+    filters.minRating !== "all",
+    Object.values(filters.features).some(Boolean),
+  ].filter(Boolean).length;
 }

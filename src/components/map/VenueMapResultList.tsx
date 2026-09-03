@@ -34,7 +34,10 @@ export function VenueMapResultList({
         return (
           <Card
             key={venue.id}
-            className={cn("cursor-pointer rounded-xl border-nokta-border bg-white p-2 shadow-none transition hover:border-nokta-border-input", selected && "border-nokta-accent bg-nokta-accent-tint")}
+            className={cn(
+              "cursor-pointer rounded-xl border-nokta-border bg-white p-2 shadow-none ring-1 ring-transparent transition hover:border-nokta-ink/25 hover:ring-nokta-ink/10",
+              selected && "border-nokta-ink ring-nokta-ink/15",
+            )}
           >
             <div
               role="button"

@@ -3,6 +3,7 @@ import { AppLocationProvider } from "@/context/AppLocationContext";
 import { VenuePreferencesProvider } from "@/context/VenuePreferencesContext";
 import { router } from "@/router/router";
 import { VercelAnalytics } from "@/components/analytics/VercelAnalytics";
+import { VercelSpeedInsights } from "@/components/analytics/VercelSpeedInsights";
 import { AppErrorBoundary } from "@/components/state/AppErrorBoundary";
 import { initPostHog } from "@/lib/posthogClient";
 import "@/styles.css";
@@ -23,6 +24,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
             <VenuePreferencesProvider>
               <RouterProvider router={router} />
               <VercelAnalytics />
+              <VercelSpeedInsights />
             </VenuePreferencesProvider>
           </AppLocationProvider>
         </AuthProvider>

@@ -49,9 +49,10 @@ export function DiscoverFeaturedVenues({ city, area, venues }: { city?: string |
   if (!featured.length) return null;
 
   return (
-    <section className="mb-3 rounded-xl border bg-purple-50/35 p-3">
-      <div className="mb-3">
-        <p className="text-sm font-semibold text-purple-950">Featured venues</p>
+    <section className="mb-3 rounded-xl border border-nokta-border bg-white p-3 shadow-[0_10px_24px_-20px_oklch(0.2_0.02_40_/_0.28)]">
+      <div className="mb-3 flex items-center justify-between gap-3">
+        <p className="text-sm font-semibold text-nokta-ink">Featured nearby</p>
+        <span className="rounded-full bg-nokta-ink/5 px-2 py-1 text-[11px] font-semibold text-nokta-ink-muted">Curated</span>
       </div>
       <div className="grid gap-3">
         {featured.map(({ placement, venue }) => (

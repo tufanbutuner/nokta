@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { BarChart3, BookOpenCheck, CalendarCog, CreditCard, Inbox, Megaphone } from "lucide-react";
+import { AlertCircle, ArrowRight, BarChart3, BookOpenCheck, CalendarCog, CreditCard, Inbox, Megaphone } from "lucide-react";
 import { OwnerLayout } from "@/components/owner/OwnerLayout";
 import { OwnerNoVenuesState } from "@/components/owner/OwnerNoVenuesState";
 import { OwnerVenueCard } from "@/components/owner/OwnerVenueCard";
@@ -10,6 +10,7 @@ import { LoadingState } from "@/components/state/LoadingState";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/context/AuthContext";
 import { trackEvent } from "@/lib/analytics";
+import { cn } from "@/lib/utils";
 import { getMyClaimedVenues } from "@/services/ownerVenueService";
 import { getOwnerVenueAnalyticsSummary, type OwnerVenueAnalyticsSummary } from "@/services/ownerVenueAnalyticsService";
 import { getOwnerVenueCommercialSummary, type OwnerVenueCommercialSummary } from "@/services/ownerCommercialSummaryService";
@@ -68,6 +69,39 @@ export function OwnerDashboardPage() {
   }, [range.from, range.to, user]);
 
   const primaryVenue = venues[0];
+  const totalNewEnquiries = Object.values(enquiries).reduce((total, summary) => total + summary.newEnquiries, 0);
+  const totalBookingDemand = Object.values(analytics).reduce((total, summary) => total + summary.bookingRequests, 0);
+  const venuesWithoutPromotions = venues.filter((venue) => {
+    const venueCommercial = commercial[venue.id];
+    return venueCommercial ? !venueCommercial.hasActiveFeaturedPlacement && !venueCommercial.hasActivePromotedOffer : false;
+  }).length;
+  const profileUpdateCount = venues.filter((venue) => subscriptionHasProfileUpdates(subscriptions[venue.id])).length;
+  const attentionItems = [
+    {
+      label: "New enquiries",
+      value: totalNewEnquiries,
+      description: totalNewEnquiries ? "Customers are waiting for a reply." : "Inbox is clear.",
+      to: "/owner/enquiries",
+      Icon: Inbox,
+      tone: totalNewEnquiries ? "urgent" : "neutral",
+    },
+    {
+      label: "Booking demand",
+      value: totalBookingDemand,
+      description: totalBookingDemand ? "Requests received in the last 30 days." : "No booking requests in this period.",
+      to: "/owner/bookings?view=week",
+      Icon: BookOpenCheck,
+      tone: totalBookingDemand ? "active" : "neutral",
+    },
+    {
+      label: "Visibility gaps",
+      value: venuesWithoutPromotions,
+      description: venuesWithoutPromotions ? "Venues without active promotions." : "Promotion coverage looks healthy.",
+      to: "/owner/promotions",
+      Icon: Megaphone,
+      tone: venuesWithoutPromotions ? "active" : "neutral",
+    },
+  ] as const;
   const sectionCards = primaryVenue ? [
     {
       title: "Analytics",
@@ -84,7 +118,7 @@ export function OwnerDashboardPage() {
     {
       title: "Availability",
       description: "Set bookable days, time windows and blackout dates.",
-      to: `/owner/venues/${primaryVenue.slug}/availability`,
+      to: venues.length === 1 ? `/owner/venues/${primaryVenue.slug}/availability` : "/owner/venues",
       Icon: CalendarCog,
     },
     {
@@ -110,18 +144,33 @@ export function OwnerDashboardPage() {
   return (
     <OwnerLayout>
       <PageMeta title="Owner dashboard | nokta" description="View your claimed venues, profile performance and enquiry activity." canonicalPath="/owner" />
-      <div className="space-y-6">
+      <div className="space-y-7">
         <div>
-          <p className="text-sm text-clay-accent">Owner dashboard</p>
-          <h1 className="mt-1 font-brand text-4xl font-bold tracking-[-0.5px]">Owner dashboard</h1>
-          <p className="mt-2 text-sm text-muted-foreground">View your claimed venues, profile performance and enquiry activity.</p>
+          <p className="text-sm font-semibold text-clay-accent">Owner workspace</p>
+          <h1 className="mt-1 font-brand text-4xl font-bold tracking-[-0.5px]">Today at a glance</h1>
+          <p className="mt-2 text-sm text-muted-foreground">Start with what needs attention, then jump into the right tool.</p>
         </div>
         {isLoading ? <LoadingState message="Loading owner dashboard..." /> : error ? <ErrorState message={error} /> : !venues.length ? <OwnerNoVenuesState /> : (
           <>
             <section>
+              <div className="mb-4 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+                <div>
+                  <h2 className="text-xl font-semibold">Needs attention</h2>
+                  <p className="mt-1 text-sm text-muted-foreground">A quick read on customer activity and profile opportunities.</p>
+                </div>
+                <p className="text-sm text-muted-foreground">{venues.length} owned venue{venues.length === 1 ? "" : "s"} · {profileUpdateCount} update-ready</p>
+              </div>
+              <div className="grid gap-4 md:grid-cols-3">
+                {attentionItems.map((item) => (
+                  <OwnerAttentionCard key={item.label} {...item} />
+                ))}
+              </div>
+            </section>
+
+            <section>
               <div className="mb-4">
-                <h2 className="text-xl font-semibold">Manage your venue</h2>
-                <p className="mt-1 text-sm text-muted-foreground">Jump into the owner tools you use most.</p>
+                <h2 className="text-xl font-semibold">Owner tools</h2>
+                <p className="mt-1 text-sm text-muted-foreground">Manage bookings, profile quality, visibility and billing.</p>
               </div>
               <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
                 {sectionCards.map((card) => (
@@ -151,17 +200,57 @@ function OwnerSectionCard({
   Icon: React.ComponentType<{ className?: string }>;
 }) {
   return (
-    <Link to={to} className="group rounded-xl border bg-card p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-stone-950/5">
+    <Link to={to} className="group rounded-2xl border border-nokta-border bg-white p-5 shadow-sm shadow-stone-950/5 transition hover:-translate-y-0.5 hover:border-nokta-ink/20 hover:shadow-lg hover:shadow-stone-950/5">
       <div className="flex items-start justify-between gap-4">
-        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-clay-accent/10 text-clay-accent">
+        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-nokta-ink/5 text-nokta-ink">
           <Icon className="h-5 w-5" />
         </div>
-        <span className="text-sm font-semibold text-clay-accent transition group-hover:translate-x-0.5">Open</span>
+        <ArrowRight className="h-4 w-4 text-nokta-ink-muted transition group-hover:translate-x-0.5 group-hover:text-nokta-ink" />
       </div>
-      <h3 className="mt-5 text-lg font-semibold">{title}</h3>
+      <h3 className="mt-5 text-lg font-semibold text-nokta-ink">{title}</h3>
       <p className="mt-2 text-sm leading-6 text-muted-foreground">{description}</p>
     </Link>
   );
+}
+
+function OwnerAttentionCard({
+  label,
+  value,
+  description,
+  to,
+  Icon,
+  tone,
+}: {
+  label: string;
+  value: number;
+  description: string;
+  to: string;
+  Icon: React.ComponentType<{ className?: string }>;
+  tone: "urgent" | "active" | "neutral";
+}) {
+  return (
+    <Link
+      to={to}
+      className={cn(
+        "group rounded-2xl border bg-white p-5 shadow-sm shadow-stone-950/5 transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-stone-950/5",
+        tone === "urgent" ? "border-rose-200" : "border-nokta-border",
+      )}
+    >
+      <div className="flex items-start justify-between gap-4">
+        <div className={cn("flex h-10 w-10 items-center justify-center rounded-xl", tone === "urgent" ? "bg-rose-50 text-rose-700" : tone === "active" ? "bg-clay-100 text-clay-700" : "bg-nokta-ink/5 text-nokta-ink-muted")}>
+          {tone === "urgent" ? <AlertCircle className="h-5 w-5" /> : <Icon className="h-5 w-5" />}
+        </div>
+        <ArrowRight className="h-4 w-4 text-nokta-ink-muted transition group-hover:translate-x-0.5 group-hover:text-nokta-ink" />
+      </div>
+      <p className="mt-5 text-sm font-medium text-nokta-ink-muted">{label}</p>
+      <p className="mt-1 text-3xl font-semibold tracking-[-0.02em] text-nokta-ink">{value}</p>
+      <p className="mt-2 text-sm leading-6 text-muted-foreground">{description}</p>
+    </Link>
+  );
+}
+
+function subscriptionHasProfileUpdates(subscription?: VenueSubscription) {
+  return Boolean(subscription?.plan && subscription.plan !== "free");
 }
 
 function last30Days() {

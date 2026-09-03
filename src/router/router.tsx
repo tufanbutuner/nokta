@@ -1,392 +1,406 @@
+import { Suspense, lazy, type ComponentType, type ReactElement } from "react";
 import { RequireAuth } from "@/components/auth/RequireAuth";
 import { RequireAdmin } from "@/components/auth/RequireAdmin";
 import { AppLayout } from "@/components/layout/AppLayout";
-import { AccountConfirmationPage } from "@/pages/AccountConfirmationPage";
-import { AccountPage } from "@/pages/AccountPage";
-import { MyBookingsPage } from "@/pages/account/MyBookingsPage";
-import { NotificationsPage } from "@/pages/account/NotificationsPage";
-import { DataQualityPage } from "@/pages/admin/DataQualityPage";
-import { AdminFeaturedPlacementsPage } from "@/pages/admin/AdminFeaturedPlacementsPage";
-import { AdminMediaReviewPage } from "@/pages/admin/AdminMediaReviewPage";
-import { AdminReviewsPage } from "@/pages/admin/AdminReviewsPage";
-import { AdminPromotedOffersPage } from "@/pages/admin/AdminPromotedOffersPage";
-import { AdminPromotionRequestsPage } from "@/pages/admin/AdminPromotionRequestsPage";
-import { AdminVenueAnalyticsPage } from "@/pages/admin/AdminVenueAnalyticsPage";
-import { AdminVenueUpdateRequestsPage } from "@/pages/admin/AdminVenueUpdateRequestsPage";
-import { AdminSubscriptionsPage } from "@/pages/admin/AdminSubscriptionsPage";
-import { AdminBookingRequestsPage } from "@/pages/admin/AdminBookingRequestsPage";
-import { AdminVenueEnquiriesPage } from "@/pages/admin/AdminVenueEnquiriesPage";
-import { AdminVenueClaimsPage } from "@/pages/admin/AdminVenueClaimsPage";
-import { AdminVenueSuggestionsPage } from "@/pages/admin/AdminVenueSuggestionsPage";
-import { AdminVenuesPage } from "@/pages/admin/AdminVenuesPage";
-import { VenueFormPage } from "@/pages/admin/VenueFormPage";
+import { PageLoadingState } from "@/components/state/PageLoadingState";
 import { AppErrorPage } from "@/pages/AppErrorPage";
-import { AppErrorPreviewPage } from "@/pages/AppErrorPreviewPage";
-import { ClaimVenuePage } from "@/pages/ClaimVenuePage";
-import { CityPage } from "@/pages/CityPage";
-import { CustomerBookingStatusPage } from "@/pages/CustomerBookingStatusPage";
-import { DiscoverPage } from "@/pages/DiscoverPage";
-import { ForVenuesPage } from "@/pages/ForVenuesPage";
-import { HomePage } from "@/pages/HomePage";
-import { MonetisationDashboardPage } from "@/pages/admin/MonetisationDashboardPage";
-import { NotFoundPage } from "@/pages/NotFoundPage";
-import { OwnerDashboardPage } from "@/pages/owner/OwnerDashboardPage";
-import { OwnerAnalyticsPage } from "@/pages/owner/OwnerAnalyticsPage";
-import { OwnerBillingPage } from "@/pages/owner/OwnerBillingPage";
-import { OwnerBillingSuccessPage } from "@/pages/owner/OwnerBillingSuccessPage";
-import { OwnerBookingsPage } from "@/pages/owner/OwnerBookingsPage";
-import { OwnerEnquiriesPage } from "@/pages/owner/OwnerEnquiriesPage";
-import { OwnerVenueDashboardPage } from "@/pages/owner/OwnerVenueDashboardPage";
-import { OwnerVenueEnquiriesPage } from "@/pages/owner/OwnerVenueEnquiriesPage";
-import { OwnerVenueAvailabilityPage } from "@/pages/owner/OwnerVenueAvailabilityPage";
-import { OwnerVenueAnalyticsPage } from "@/pages/owner/OwnerVenueAnalyticsPage";
-import { OwnerVenueMediaPage } from "@/pages/owner/OwnerVenueMediaPage";
-import { OwnerVenueUpdateRequestPage } from "@/pages/owner/OwnerVenueUpdateRequestPage";
-import { OwnerPricingPage } from "@/pages/owner/OwnerPricingPage";
-import { OwnerPromotionsPage } from "@/pages/owner/OwnerPromotionsPage";
-import { OwnerRequestFeaturedPlacementPage } from "@/pages/owner/OwnerRequestFeaturedPlacementPage";
-import { OwnerRequestPromotedOfferPage } from "@/pages/owner/OwnerRequestPromotedOfferPage";
-import { PrivacyPage } from "@/pages/PrivacyPage";
-import { PromotedOfferPreviewPage } from "@/pages/PromotedOfferPreviewPage";
-import { RecommendPage } from "@/pages/RecommendPage";
-import { RequestBookingPage } from "@/pages/RequestBookingPage";
-import { SavedPage } from "@/pages/SavedPage";
-import { SignInPage } from "@/pages/SignInPage";
-import { SignUpPage } from "@/pages/SignUpPage";
-import { SuggestVenuePage } from "@/pages/SuggestVenuePage";
-import { TermsPage } from "@/pages/TermsPage";
-import { VenueEnquiryPage } from "@/pages/VenueEnquiryPage";
-import { VenuePage } from "@/pages/VenuePage";
 import { createBrowserRouter, useSearchParams } from "react-router-dom";
+
+const AccountConfirmationPage = lazyPage(() => import("@/pages/AccountConfirmationPage"), "AccountConfirmationPage");
+const AccountPage = lazyPage(() => import("@/pages/AccountPage"), "AccountPage");
+const MyBookingsPage = lazyPage(() => import("@/pages/account/MyBookingsPage"), "MyBookingsPage");
+const NotificationsPage = lazyPage(() => import("@/pages/account/NotificationsPage"), "NotificationsPage");
+const DataQualityPage = lazyPage(() => import("@/pages/admin/DataQualityPage"), "DataQualityPage");
+const AdminFeaturedPlacementsPage = lazyPage(() => import("@/pages/admin/AdminFeaturedPlacementsPage"), "AdminFeaturedPlacementsPage");
+const AdminMediaReviewPage = lazyPage(() => import("@/pages/admin/AdminMediaReviewPage"), "AdminMediaReviewPage");
+const AdminReviewsPage = lazyPage(() => import("@/pages/admin/AdminReviewsPage"), "AdminReviewsPage");
+const AdminPromotedOffersPage = lazyPage(() => import("@/pages/admin/AdminPromotedOffersPage"), "AdminPromotedOffersPage");
+const AdminPromotionRequestsPage = lazyPage(() => import("@/pages/admin/AdminPromotionRequestsPage"), "AdminPromotionRequestsPage");
+const AdminVenueAnalyticsPage = lazyPage(() => import("@/pages/admin/AdminVenueAnalyticsPage"), "AdminVenueAnalyticsPage");
+const AdminVenueUpdateRequestsPage = lazyPage(() => import("@/pages/admin/AdminVenueUpdateRequestsPage"), "AdminVenueUpdateRequestsPage");
+const AdminSubscriptionsPage = lazyPage(() => import("@/pages/admin/AdminSubscriptionsPage"), "AdminSubscriptionsPage");
+const AdminBookingRequestsPage = lazyPage(() => import("@/pages/admin/AdminBookingRequestsPage"), "AdminBookingRequestsPage");
+const AdminVenueEnquiriesPage = lazyPage(() => import("@/pages/admin/AdminVenueEnquiriesPage"), "AdminVenueEnquiriesPage");
+const AdminVenueClaimsPage = lazyPage(() => import("@/pages/admin/AdminVenueClaimsPage"), "AdminVenueClaimsPage");
+const AdminVenueSuggestionsPage = lazyPage(() => import("@/pages/admin/AdminVenueSuggestionsPage"), "AdminVenueSuggestionsPage");
+const AdminVenuesPage = lazyPage(() => import("@/pages/admin/AdminVenuesPage"), "AdminVenuesPage");
+const VenueFormPage = lazyPage<{ mode: "edit" | "new" }>(() => import("@/pages/admin/VenueFormPage"), "VenueFormPage");
+const AppErrorPreviewPage = lazyPage(() => import("@/pages/AppErrorPreviewPage"), "AppErrorPreviewPage");
+const ClaimVenuePage = lazyPage(() => import("@/pages/ClaimVenuePage"), "ClaimVenuePage");
+const CityPage = lazyPage(() => import("@/pages/CityPage"), "CityPage");
+const CustomerBookingStatusPage = lazyPage(() => import("@/pages/CustomerBookingStatusPage"), "CustomerBookingStatusPage");
+const DiscoverPage = lazyPage(() => import("@/pages/DiscoverPage"), "DiscoverPage");
+const ForVenuesPage = lazyPage(() => import("@/pages/ForVenuesPage"), "ForVenuesPage");
+const HomePage = lazyPage(() => import("@/pages/HomePage"), "HomePage");
+const MonetisationDashboardPage = lazyPage(() => import("@/pages/admin/MonetisationDashboardPage"), "MonetisationDashboardPage");
+const NotFoundPage = lazyPage(() => import("@/pages/NotFoundPage"), "NotFoundPage");
+const OwnerDashboardPage = lazyPage(() => import("@/pages/owner/OwnerDashboardPage"), "OwnerDashboardPage");
+const OwnerAnalyticsPage = lazyPage(() => import("@/pages/owner/OwnerAnalyticsPage"), "OwnerAnalyticsPage");
+const OwnerBillingPage = lazyPage(() => import("@/pages/owner/OwnerBillingPage"), "OwnerBillingPage");
+const OwnerBillingSuccessPage = lazyPage(() => import("@/pages/owner/OwnerBillingSuccessPage"), "OwnerBillingSuccessPage");
+const OwnerBookingsPage = lazyPage(() => import("@/pages/owner/OwnerBookingsPage"), "OwnerBookingsPage");
+const OwnerEnquiriesPage = lazyPage(() => import("@/pages/owner/OwnerEnquiriesPage"), "OwnerEnquiriesPage");
+const OwnerVenueDashboardPage = lazyPage(() => import("@/pages/owner/OwnerVenueDashboardPage"), "OwnerVenueDashboardPage");
+const OwnerVenueEnquiriesPage = lazyPage(() => import("@/pages/owner/OwnerVenueEnquiriesPage"), "OwnerVenueEnquiriesPage");
+const OwnerVenueAvailabilityPage = lazyPage(() => import("@/pages/owner/OwnerVenueAvailabilityPage"), "OwnerVenueAvailabilityPage");
+const OwnerVenueAnalyticsPage = lazyPage(() => import("@/pages/owner/OwnerVenueAnalyticsPage"), "OwnerVenueAnalyticsPage");
+const OwnerVenueMediaPage = lazyPage(() => import("@/pages/owner/OwnerVenueMediaPage"), "OwnerVenueMediaPage");
+const OwnerVenueUpdateRequestPage = lazyPage(() => import("@/pages/owner/OwnerVenueUpdateRequestPage"), "OwnerVenueUpdateRequestPage");
+const OwnerPricingPage = lazyPage(() => import("@/pages/owner/OwnerPricingPage"), "OwnerPricingPage");
+const OwnerPromotionsPage = lazyPage(() => import("@/pages/owner/OwnerPromotionsPage"), "OwnerPromotionsPage");
+const OwnerRequestFeaturedPlacementPage = lazyPage(() => import("@/pages/owner/OwnerRequestFeaturedPlacementPage"), "OwnerRequestFeaturedPlacementPage");
+const OwnerRequestPromotedOfferPage = lazyPage(() => import("@/pages/owner/OwnerRequestPromotedOfferPage"), "OwnerRequestPromotedOfferPage");
+const PrivacyPage = lazyPage(() => import("@/pages/PrivacyPage"), "PrivacyPage");
+const PromotedOfferPreviewPage = lazyPage(() => import("@/pages/PromotedOfferPreviewPage"), "PromotedOfferPreviewPage");
+const RecommendPage = lazyPage(() => import("@/pages/RecommendPage"), "RecommendPage");
+const RequestBookingPage = lazyPage(() => import("@/pages/RequestBookingPage"), "RequestBookingPage");
+const SavedPage = lazyPage(() => import("@/pages/SavedPage"), "SavedPage");
+const SignInPage = lazyPage(() => import("@/pages/SignInPage"), "SignInPage");
+const SignUpPage = lazyPage(() => import("@/pages/SignUpPage"), "SignUpPage");
+const SuggestVenuePage = lazyPage(() => import("@/pages/SuggestVenuePage"), "SuggestVenuePage");
+const TermsPage = lazyPage(() => import("@/pages/TermsPage"), "TermsPage");
+const VenueEnquiryPage = lazyPage(() => import("@/pages/VenueEnquiryPage"), "VenueEnquiryPage");
+const VenuePage = lazyPage(() => import("@/pages/VenuePage"), "VenuePage");
+
+function lazyPage<TProps = Record<string, never>>(loader: () => Promise<unknown>, exportName: string) {
+  return lazy(async () => {
+    const mod = (await loader()) as Record<string, ComponentType<TProps>>;
+    return { default: mod[exportName] };
+  });
+}
+
+function routeElement(element: ReactElement) {
+  return <Suspense fallback={<PageLoadingState />}>{element}</Suspense>;
+}
 
 export const router = createBrowserRouter([
   {
-    element: <AppLayout />,
+    element: routeElement(<AppLayout />),
     errorElement: <AppErrorPage />,
     children: [
-      { path: "/", element: <HomePage /> },
-      { path: "/discover", element: <DiscoverPage /> },
-      { path: "/for-venues", element: <ForVenuesPage /> },
-      { path: "/cities/:citySlug", element: <CityPage /> },
-      { path: "/recommend", element: <RecommendPage /> },
-      { path: "/saved", element: <SavedPage /> },
-      { path: "/suggest", element: <SuggestVenuePage /> },
-      { path: "/privacy", element: <PrivacyPage /> },
-      { path: "/terms", element: <TermsPage /> },
+      { path: "/", element: routeElement(<HomePage />) },
+      { path: "/discover", element: routeElement(<DiscoverPage />) },
+      { path: "/for-venues", element: routeElement(<ForVenuesPage />) },
+      { path: "/cities/:citySlug", element: routeElement(<CityPage />) },
+      { path: "/recommend", element: routeElement(<RecommendPage />) },
+      { path: "/saved", element: routeElement(<SavedPage />) },
+      { path: "/suggest", element: routeElement(<SuggestVenuePage />) },
+      { path: "/privacy", element: routeElement(<PrivacyPage />) },
+      { path: "/terms", element: routeElement(<TermsPage />) },
       {
         path: "/owner/bookings",
-        element: (
+        element: routeElement(
           <RequireAuth>
             <OwnerBookingsPage />
-          </RequireAuth>
+          </RequireAuth>,
         ),
       },
       {
         path: "/account",
-        element: <AccountRoute />,
+        element: routeElement(<AccountRoute />),
       },
       {
         path: "/account/bookings",
-        element: (
+        element: routeElement(
           <RequireAuth>
             <MyBookingsPage />
-          </RequireAuth>
+          </RequireAuth>,
         ),
       },
       {
         path: "/account/notifications",
-        element: (
+        element: routeElement(
           <RequireAuth>
             <NotificationsPage />
-          </RequireAuth>
+          </RequireAuth>,
         ),
       },
       {
         path: "/owner/analytics",
-        element: (
+        element: routeElement(
           <RequireAuth>
             <OwnerAnalyticsPage />
-          </RequireAuth>
+          </RequireAuth>,
         ),
       },
       {
         path: "/owner/venues/:venueId/bookings",
-        element: (
+        element: routeElement(
           <RequireAuth>
             <OwnerBookingsPage />
-          </RequireAuth>
+          </RequireAuth>,
         ),
       },
       {
         path: "/owner",
-        element: (
+        element: routeElement(
           <RequireAuth>
             <OwnerDashboardPage />
-          </RequireAuth>
+          </RequireAuth>,
         ),
       },
       {
         path: "/owner/venues",
-        element: (
+        element: routeElement(
           <RequireAuth>
             <OwnerDashboardPage />
-          </RequireAuth>
+          </RequireAuth>,
         ),
       },
       {
         path: "/owner/enquiries",
-        element: (
+        element: routeElement(
           <RequireAuth>
             <OwnerEnquiriesPage />
-          </RequireAuth>
+          </RequireAuth>,
         ),
       },
       {
         path: "/owner/promotions",
-        element: (
+        element: routeElement(
           <RequireAuth>
             <OwnerPromotionsPage />
-          </RequireAuth>
+          </RequireAuth>,
         ),
       },
       {
         path: "/owner/venues/:venueId",
-        element: (
+        element: routeElement(
           <RequireAuth>
             <OwnerVenueDashboardPage />
-          </RequireAuth>
+          </RequireAuth>,
         ),
       },
       {
         path: "/owner/venues/:venueId/enquiries",
-        element: (
+        element: routeElement(
           <RequireAuth>
             <OwnerVenueEnquiriesPage />
-          </RequireAuth>
+          </RequireAuth>,
         ),
       },
       {
         path: "/owner/venues/:venueId/analytics",
-        element: (
+        element: routeElement(
           <RequireAuth>
             <OwnerVenueAnalyticsPage />
-          </RequireAuth>
+          </RequireAuth>,
         ),
       },
       {
         path: "/owner/venues/:venueId/media",
-        element: (
+        element: routeElement(
           <RequireAuth>
             <OwnerVenueMediaPage />
-          </RequireAuth>
+          </RequireAuth>,
         ),
       },
       {
         path: "/owner/venues/:venueId/availability",
-        element: (
+        element: routeElement(
           <RequireAuth>
             <OwnerVenueAvailabilityPage />
-          </RequireAuth>
+          </RequireAuth>,
         ),
       },
       {
         path: "/owner/venues/:venueId/update",
-        element: (
+        element: routeElement(
           <RequireAuth>
             <OwnerVenueUpdateRequestPage />
-          </RequireAuth>
+          </RequireAuth>,
         ),
       },
       {
         path: "/owner/venues/:venueId/promotions/offers/new",
-        element: (
+        element: routeElement(
           <RequireAuth>
             <OwnerRequestPromotedOfferPage />
-          </RequireAuth>
+          </RequireAuth>,
         ),
       },
       {
         path: "/owner/venues/:venueId/promotions/featured/new",
-        element: (
+        element: routeElement(
           <RequireAuth>
             <OwnerRequestFeaturedPlacementPage />
-          </RequireAuth>
+          </RequireAuth>,
         ),
       },
       {
         path: "/owner/pricing",
-        element: (
+        element: routeElement(
           <RequireAuth>
             <OwnerPricingPage />
-          </RequireAuth>
+          </RequireAuth>,
         ),
       },
       {
         path: "/owner/billing",
-        element: (
+        element: routeElement(
           <RequireAuth>
             <OwnerBillingPage />
-          </RequireAuth>
+          </RequireAuth>,
         ),
       },
       {
         path: "/owner/billing/success",
-        element: (
+        element: routeElement(
           <RequireAuth>
             <OwnerBillingSuccessPage />
-          </RequireAuth>
+          </RequireAuth>,
         ),
       },
-      { path: "/sign-in", element: <SignInPage /> },
-      { path: "/sign-up", element: <SignUpPage /> },
-      { path: "/venues/:slug/claim", element: <ClaimVenuePage /> },
-      { path: "/venues/:slug/request-booking", element: <RequestBookingPage /> },
-      { path: "/booking-status/:token", element: <CustomerBookingStatusPage /> },
-      { path: "/venues/:slug/enquire", element: <VenueEnquiryPage /> },
-      { path: "/venues/:slug", element: <VenuePage /> },
+      { path: "/sign-in", element: routeElement(<SignInPage />) },
+      { path: "/sign-up", element: routeElement(<SignUpPage />) },
+      { path: "/venues/:slug/claim", element: routeElement(<ClaimVenuePage />) },
+      { path: "/venues/:slug/request-booking", element: routeElement(<RequestBookingPage />) },
+      { path: "/booking-status/:token", element: routeElement(<CustomerBookingStatusPage />) },
+      { path: "/venues/:slug/enquire", element: routeElement(<VenueEnquiryPage />) },
+      { path: "/venues/:slug", element: routeElement(<VenuePage />) },
       ...(import.meta.env.DEV
         ? [
-            { path: "/error-boundary-preview", element: <AppErrorPreviewPage /> },
-            { path: "/promoted-offer-preview", element: <PromotedOfferPreviewPage /> },
+            { path: "/error-boundary-preview", element: routeElement(<AppErrorPreviewPage />) },
+            { path: "/promoted-offer-preview", element: routeElement(<PromotedOfferPreviewPage />) },
           ]
         : []),
       {
         path: "/admin/bookings",
-        element: (
+        element: routeElement(
           <RequireAdmin>
             <AdminBookingRequestsPage />
-          </RequireAdmin>
+          </RequireAdmin>,
         ),
       },
       {
         path: "/admin/data-quality",
-        element: (
+        element: routeElement(
           <RequireAdmin>
             <DataQualityPage />
-          </RequireAdmin>
+          </RequireAdmin>,
         ),
       },
       {
         path: "/admin/venue-updates",
-        element: (
+        element: routeElement(
           <RequireAdmin>
             <AdminVenueUpdateRequestsPage />
-          </RequireAdmin>
+          </RequireAdmin>,
         ),
       },
       {
         path: "/admin/media-review",
-        element: (
+        element: routeElement(
           <RequireAdmin>
             <AdminMediaReviewPage />
-          </RequireAdmin>
+          </RequireAdmin>,
         ),
       },
       {
         path: "/admin/subscriptions",
-        element: (
+        element: routeElement(
           <RequireAdmin>
             <AdminSubscriptionsPage />
-          </RequireAdmin>
+          </RequireAdmin>,
         ),
       },
       {
         path: "/admin/promotion-requests",
-        element: (
+        element: routeElement(
           <RequireAdmin>
             <AdminPromotionRequestsPage />
-          </RequireAdmin>
+          </RequireAdmin>,
         ),
       },
       {
         path: "/admin/venues",
-        element: (
+        element: routeElement(
           <RequireAdmin>
             <AdminVenuesPage />
-          </RequireAdmin>
+          </RequireAdmin>,
         ),
       },
       {
         path: "/admin/reviews",
-        element: (
+        element: routeElement(
           <RequireAdmin>
             <AdminReviewsPage />
-          </RequireAdmin>
+          </RequireAdmin>,
         ),
       },
       {
         path: "/admin/suggestions",
-        element: (
+        element: routeElement(
           <RequireAdmin>
             <AdminVenueSuggestionsPage />
-          </RequireAdmin>
+          </RequireAdmin>,
         ),
       },
       {
         path: "/admin/claims",
-        element: (
+        element: routeElement(
           <RequireAdmin>
             <AdminVenueClaimsPage />
-          </RequireAdmin>
+          </RequireAdmin>,
         ),
       },
       {
         path: "/admin/featured",
-        element: (
+        element: routeElement(
           <RequireAdmin>
             <AdminFeaturedPlacementsPage />
-          </RequireAdmin>
+          </RequireAdmin>,
         ),
       },
       {
         path: "/admin/enquiries",
-        element: (
+        element: routeElement(
           <RequireAdmin>
             <AdminVenueEnquiriesPage />
-          </RequireAdmin>
+          </RequireAdmin>,
         ),
       },
       {
         path: "/admin/offers",
-        element: (
+        element: routeElement(
           <RequireAdmin>
             <AdminPromotedOffersPage />
-          </RequireAdmin>
+          </RequireAdmin>,
         ),
       },
       {
         path: "/admin/analytics",
-        element: (
+        element: routeElement(
           <RequireAdmin>
             <AdminVenueAnalyticsPage />
-          </RequireAdmin>
+          </RequireAdmin>,
         ),
       },
       {
         path: "/admin/monetisation",
-        element: (
+        element: routeElement(
           <RequireAdmin>
             <MonetisationDashboardPage />
-          </RequireAdmin>
+          </RequireAdmin>,
         ),
       },
       {
         path: "/admin/venues/new",
-        element: (
+        element: routeElement(
           <RequireAdmin>
             <VenueFormPage mode="new" />
-          </RequireAdmin>
+          </RequireAdmin>,
         ),
       },
       {
         path: "/admin/venues/:id/edit",
-        element: (
+        element: routeElement(
           <RequireAdmin>
             <VenueFormPage mode="edit" />
-          </RequireAdmin>
+          </RequireAdmin>,
         ),
       },
-      { path: "*", element: <NotFoundPage /> },
+      { path: "*", element: routeElement(<NotFoundPage />) },
     ],
   },
 ]);
