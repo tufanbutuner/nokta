@@ -42,7 +42,6 @@ export function FeaturedVenueCard({
 
   return (
     <Link
-      reloadDocument
       to={`/venues/${venue.slug}`}
       onClick={handleClick}
       className="group block rounded-2xl border border-nokta-border bg-nokta-surface p-2 shadow-none transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-stone-950/5"

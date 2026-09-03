@@ -31,13 +31,13 @@ export function EmptyState({
       {actionLabel && actionHref ? (
         <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
           <Button asChild>
-            <Link reloadDocument to={actionHref}>
+            <Link to={actionHref}>
               {actionLabel}
             </Link>
           </Button>
           {secondaryActionLabel && secondaryActionHref ? (
             <Button asChild variant="outline">
-              <Link reloadDocument to={secondaryActionHref}>
+              <Link to={secondaryActionHref}>
                 {secondaryActionLabel}
               </Link>
             </Button>

@@ -18,22 +18,22 @@ export function Footer() {
           </p>
         </div>
         <nav className="mx-auto mt-8 flex max-w-2xl flex-wrap justify-center gap-x-5 gap-y-2 text-center" aria-label="Footer">
-          <Link reloadDocument to="/discover" className="hover:text-white">
+          <Link to="/discover" className="hover:text-white">
             Discover
           </Link>
-          <Link reloadDocument to="/recommend" className="hover:text-white">
+          <Link to="/recommend" className="hover:text-white">
             Recommend
           </Link>
-          <Link reloadDocument to="/suggest" className="hover:text-white">
+          <Link to="/suggest" className="hover:text-white">
             Suggest
           </Link>
-          <Link reloadDocument to="/for-venues" className="hover:text-white">
+          <Link to="/for-venues" className="hover:text-white">
             For venues
           </Link>
-          <Link reloadDocument to="/privacy" className="hover:text-white">
+          <Link to="/privacy" className="hover:text-white">
             Privacy
           </Link>
-          <Link reloadDocument to="/terms" className="hover:text-white">
+          <Link to="/terms" className="hover:text-white">
             Terms
           </Link>
           <a href={`mailto:${brandConfig.supportEmail}`} className="hover:text-white">

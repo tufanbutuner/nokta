@@ -85,11 +85,11 @@ export function AuthForm({
 
         <div className="text-center text-sm text-muted-foreground">
           {signingUp ? (
-            <Link reloadDocument to="/sign-in" className="text-foreground hover:underline">
+            <Link to="/sign-in" className="text-foreground hover:underline">
               Already have an account? Sign in
             </Link>
           ) : (
-            <Link reloadDocument to="/sign-up" className="text-foreground hover:underline">
+            <Link to="/sign-up" className="text-foreground hover:underline">
               Create account
             </Link>
           )}

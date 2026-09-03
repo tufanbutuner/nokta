@@ -16,7 +16,7 @@ export function RouteErrorState({
     <>
       <header className="border-b bg-background/95">
         <div className="flex h-16 w-full items-center px-4 sm:px-6">
-          <Link reloadDocument to="/" className="text-sm font-semibold uppercase tracking-[0.18em]">
+          <Link to="/" className="text-sm font-semibold uppercase tracking-[0.18em]">
             nokta
           </Link>
         </div>
@@ -38,12 +38,12 @@ export function RouteErrorState({
                 Try again
               </Button>
               <Button asChild variant="outline">
-                <Link reloadDocument to="/discover">
+                <Link to="/discover">
                   Back to Discover
                 </Link>
               </Button>
               <Button asChild variant="ghost">
-                <Link reloadDocument to="/">
+                <Link to="/">
                   Back home
                 </Link>
               </Button>

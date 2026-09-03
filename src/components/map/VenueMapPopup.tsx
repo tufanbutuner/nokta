@@ -19,7 +19,7 @@ export function VenueMapPopup({ venue }: { venue: Venue }) {
         {venue.rating ? ` · ★ ${venue.rating}` : null}
       </p>
       <Button asChild size="sm" className="w-full">
-        <Link reloadDocument to={`/venues/${venue.slug}`}>
+        <Link to={`/venues/${venue.slug}`}>
           View venue
         </Link>
       </Button>

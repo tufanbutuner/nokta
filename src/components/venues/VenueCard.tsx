@@ -17,7 +17,7 @@ export function VenueCard({ venue, userLocation }: { venue: Venue; userLocation?
   return (
     <Card className="group rounded-2xl border-nokta-border bg-nokta-surface p-2 shadow-none transition duration-200 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-stone-950/5">
       <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-muted">
-        <Link reloadDocument to={`/venues/${venue.slug}`} className="block h-full">
+        <Link to={`/venues/${venue.slug}`} className="block h-full">
           <img
             src={getVenueImage(venue)}
             alt={`${venue.name} interior`}
@@ -33,7 +33,7 @@ export function VenueCard({ venue, userLocation }: { venue: Venue; userLocation?
         <FavouriteButton venueId={venue.id} venueName={venue.name} venue={venue} className="absolute right-3 top-3 h-9 w-9" />
       </div>
       <CardContent className="space-y-3 px-2 pb-2 pt-3">
-        <Link reloadDocument to={`/venues/${venue.slug}`} className="block">
+        <Link to={`/venues/${venue.slug}`} className="block">
           <div>
             <h3 className="truncate text-[15px] font-semibold leading-5 text-nokta-ink">{venue.name}</h3>
             <p className="mt-0.5 truncate text-[13px] font-normal leading-5 text-nokta-ink-muted">{venue.area} · {formatVenuePrimaryCategory(venue.primaryCategory)}</p>

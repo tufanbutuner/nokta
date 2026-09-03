@@ -14,12 +14,12 @@ export function NotFoundPage() {
           <p className="mx-auto mt-3 max-w-md text-muted-foreground">This page does not exist or may have moved.</p>
           <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
             <Button asChild>
-              <Link reloadDocument to="/discover">
+              <Link to="/discover">
                 Explore Discover
               </Link>
             </Button>
             <Button asChild variant="outline">
-              <Link reloadDocument to="/recommend">
+              <Link to="/recommend">
                 Get a recommendation
               </Link>
             </Button>

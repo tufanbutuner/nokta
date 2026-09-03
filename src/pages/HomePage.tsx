@@ -103,7 +103,7 @@ export function HomePage() {
 
             <div className="mx-auto mt-4 flex max-w-3xl flex-wrap justify-center gap-2">
               {quickFilters.map((filter) => (
-                <Link key={filter.label} reloadDocument to={filter.to}>
+                <Link key={filter.label} to={filter.to}>
                   <Badge variant="outline" className="border-transparent bg-foreground/5 px-3 py-1.5 text-xs font-medium text-foreground/75 hover:bg-foreground/10">
                     {filter.label}
                   </Badge>
@@ -125,7 +125,6 @@ export function HomePage() {
               return (
                 <Link
                   key={category.category}
-                  reloadDocument={isLive}
                   to={isLive ? `/discover?category=${category.category}` : "#"}
                   className="group relative isolate overflow-hidden rounded-2xl border border-nokta-border bg-card p-5 transition hover:-translate-y-0.5 hover:border-nokta-border-input"
                   aria-disabled={!isLive}
@@ -161,7 +160,7 @@ export function HomePage() {
               <h2 className="mt-1 text-3xl font-semibold">Book-worthy venues</h2>
             </div>
             <Button asChild variant="outline" className="w-fit">
-              <Link reloadDocument to="/discover">
+              <Link to="/discover">
                 View all
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
@@ -202,7 +201,6 @@ export function HomePage() {
             {areaCards.map((area) => (
               <Link
                 key={area.name}
-                reloadDocument
                 to={`/discover?area=${encodeURIComponent(area.name)}`}
                 className="group flex items-center justify-between rounded-xl border bg-background px-4 py-3 transition hover:border-nokta-border-input"
               >
@@ -224,10 +222,10 @@ export function HomePage() {
           </p>
           <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
             <Button asChild className="bg-clay-accent text-white hover:bg-clay-accent-hover">
-              <Link reloadDocument to="/discover">Get started free</Link>
+              <Link to="/discover">Get started free</Link>
             </Button>
             <Button asChild variant="outline" className="border-background/25 text-background hover:bg-background/10">
-              <Link reloadDocument to="/recommend">Find a recommendation</Link>
+              <Link to="/recommend">Find a recommendation</Link>
             </Button>
           </div>
         </section>
@@ -257,7 +255,7 @@ function LandingVenueCard({ venue }: { venue: Venue }) {
     <article className="group relative isolate overflow-hidden rounded-2xl border border-nokta-border bg-nokta-surface p-2 shadow-none transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-stone-950/5">
       <CardMark className="-bottom-12 -right-10 h-32 w-32 opacity-[0.04]" />
       <div className="relative h-[190px] overflow-hidden rounded-xl bg-muted">
-        <Link reloadDocument to={`/venues/${venue.slug}`} className="block h-full">
+        <Link to={`/venues/${venue.slug}`} className="block h-full">
           <img
             src={getVenueImage(venue)}
             alt={`${venue.name} interior`}
@@ -273,7 +271,7 @@ function LandingVenueCard({ venue }: { venue: Venue }) {
         <FavouriteButton venueId={venue.id} venueName={venue.name} venue={venue} className="absolute right-3 top-3 h-8 w-8 text-clay-accent" />
       </div>
       <div className="px-2 pb-2 pt-3">
-        <Link reloadDocument to={`/venues/${venue.slug}`} className="block">
+        <Link to={`/venues/${venue.slug}`} className="block">
           <h3 className="truncate text-[15px] font-semibold leading-5 text-nokta-ink">{venue.name}</h3>
           <p className="mt-0.5 truncate text-[13px] leading-5 text-nokta-ink-muted">{venue.area} · {formatVenuePrimaryCategory(venue.primaryCategory)}</p>
         </Link>

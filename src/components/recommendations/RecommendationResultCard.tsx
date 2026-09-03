@@ -12,7 +12,7 @@ export function RecommendationResultCard({ recommendation, rank }: { recommendat
   return (
     <Card className="overflow-hidden">
       <div className="grid gap-0 md:grid-cols-[240px_1fr]">
-        <Link reloadDocument to={`/venues/${venue.slug}`} className="block bg-muted">
+        <Link to={`/venues/${venue.slug}`} className="block bg-muted">
           <img src={getVenueImage(venue)} alt={`${venue.name} interior`} className="aspect-[4/3] h-full w-full object-cover" />
         </Link>
         <CardContent className="space-y-5">

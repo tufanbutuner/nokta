@@ -61,23 +61,23 @@ export function Header() {
       <header className="sticky top-0 z-[1200] border-b border-nokta-border bg-nokta-surface-alt/90 backdrop-blur">
         <div className="flex h-16 w-full items-center justify-between gap-4 px-4 sm:px-6">
           <div className="flex min-w-0 items-center gap-6">
-            <Link reloadDocument to="/" className="shrink-0 font-wordmark text-xl font-bold tracking-[0.02em]">
+            <Link to="/" className="shrink-0 font-wordmark text-xl font-bold tracking-[0.02em]">
               nokta
             </Link>
             <div className="hidden items-center gap-6 text-sm text-muted-foreground md:flex">
-              <NavLink reloadDocument to="/discover" className={navLinkClass}>
+              <NavLink to="/discover" className={navLinkClass}>
                 Discover
               </NavLink>
-              <NavLink reloadDocument to="/recommend" className={navLinkClass}>
+              <NavLink to="/recommend" className={navLinkClass}>
                 Recommend
               </NavLink>
-              <NavLink reloadDocument to="/saved" className={navLinkClass}>
+              <NavLink to="/saved" className={navLinkClass}>
                 {savedLabel}
               </NavLink>
-              <NavLink reloadDocument to="/for-venues" className={navLinkClass}>
+              <NavLink to="/for-venues" className={navLinkClass}>
                 For venues
               </NavLink>
-              <NavLink reloadDocument to="/suggest" className={navLinkClass}>
+              <NavLink to="/suggest" className={navLinkClass}>
                 Suggest
               </NavLink>
             </div>
@@ -105,15 +105,15 @@ export function Header() {
                     role="menu"
                     className="absolute right-0 top-12 z-[1400] max-h-[calc(100vh-5rem)] w-64 overflow-y-auto rounded-xl border bg-card p-2 text-card-foreground shadow-xl"
                   >
-                    <NavLink reloadDocument end to="/account" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
+                    <NavLink end to="/account" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
                       <UserCircle className="h-4 w-4" />
                       Account settings
                     </NavLink>
-                    <NavLink reloadDocument to="/account/bookings" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
+                    <NavLink to="/account/bookings" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
                       <BookOpenCheck className="h-4 w-4" />
                       My bookings
                     </NavLink>
-                    <NavLink reloadDocument to="/account/notifications" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
+                    <NavLink to="/account/notifications" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
                       <Bell className="h-4 w-4" />
                       Notifications
                     </NavLink>
@@ -122,19 +122,19 @@ export function Header() {
                       <LayoutDashboard className="h-3.5 w-3.5" />
                       Owner
                     </div>
-                    <NavLink reloadDocument to="/owner" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
+                    <NavLink to="/owner" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
                       <LayoutDashboard className="h-4 w-4" />
                       Owner dashboard
                     </NavLink>
-                    <NavLink reloadDocument to="/owner/enquiries" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
+                    <NavLink to="/owner/enquiries" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
                       <Inbox className="h-4 w-4" />
                       Owner enquiries
                     </NavLink>
-                    <NavLink reloadDocument to="/owner/promotions" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
+                    <NavLink to="/owner/promotions" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
                       <Megaphone className="h-4 w-4" />
                       Promotions
                     </NavLink>
-                    <NavLink reloadDocument to="/owner/billing" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
+                    <NavLink to="/owner/billing" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
                       <CreditCard className="h-4 w-4" />
                       Billing
                     </NavLink>
@@ -145,47 +145,47 @@ export function Header() {
                           <ShieldCheck className="h-3.5 w-3.5" />
                           Admin
                         </div>
-                        <NavLink reloadDocument to="/admin/venues" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
+                        <NavLink to="/admin/venues" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
                           <Building2 className="h-4 w-4" />
                           Manage venues
                         </NavLink>
-                        <NavLink reloadDocument to="/admin/data-quality" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
+                        <NavLink to="/admin/data-quality" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
                           <Activity className="h-4 w-4" />
                           Data quality
                         </NavLink>
-                        <NavLink reloadDocument to="/admin/media-review" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
+                        <NavLink to="/admin/media-review" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
                           <Camera className="h-4 w-4" />
                           Media review
                         </NavLink>
-                        <NavLink reloadDocument to="/admin/reviews" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
+                        <NavLink to="/admin/reviews" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
                           <PenLine className="h-4 w-4" />
                           Reviews
                         </NavLink>
-                        <NavLink reloadDocument to="/admin/suggestions" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
+                        <NavLink to="/admin/suggestions" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
                           <GitBranch className="h-4 w-4" />
                           Suggestions
                         </NavLink>
-                        <NavLink reloadDocument to="/admin/promotion-requests" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
+                        <NavLink to="/admin/promotion-requests" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
                           <Megaphone className="h-4 w-4" />
                           Promotion requests
                         </NavLink>
-                        <NavLink reloadDocument to="/admin/claims" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
+                        <NavLink to="/admin/claims" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
                           <BadgeCheck className="h-4 w-4" />
                           Claims
                         </NavLink>
-                        <NavLink reloadDocument to="/admin/featured" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
+                        <NavLink to="/admin/featured" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
                           <Sparkles className="h-4 w-4" />
                           Featured
                         </NavLink>
-                        <NavLink reloadDocument to="/admin/offers" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
+                        <NavLink to="/admin/offers" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
                           <Tag className="h-4 w-4" />
                           Offers
                         </NavLink>
-                        <NavLink reloadDocument to="/admin/analytics" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
+                        <NavLink to="/admin/analytics" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
                           <BarChart3 className="h-4 w-4" />
                           Analytics
                         </NavLink>
-                        <NavLink reloadDocument to="/admin/monetisation" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
+                        <NavLink to="/admin/monetisation" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
                           <CreditCard className="h-4 w-4" />
                           Monetisation
                         </NavLink>
@@ -195,7 +195,7 @@ export function Header() {
                 ) : null}
               </div>
             ) : (
-              <NavLink reloadDocument to="/sign-in" className={navLinkClass}>
+              <NavLink to="/sign-in" className={navLinkClass}>
                 Sign in
               </NavLink>
             )}
@@ -221,72 +221,72 @@ export function Header() {
           <SheetClose onClick={() => setMobileMenuOpen(false)} aria-label="Close menu" />
         </SheetHeader>
         <nav className="flex flex-col">
-          <NavLink reloadDocument to="/discover" className={mobileNavLinkClass}>
+          <NavLink to="/discover" className={mobileNavLinkClass}>
             Discover
           </NavLink>
-          <NavLink reloadDocument to="/recommend" className={mobileNavLinkClass}>
+          <NavLink to="/recommend" className={mobileNavLinkClass}>
             Recommend
           </NavLink>
-          <NavLink reloadDocument to="/saved" className={mobileNavLinkClass}>
+          <NavLink to="/saved" className={mobileNavLinkClass}>
             {savedLabel}
           </NavLink>
-          <NavLink reloadDocument to="/for-venues" className={mobileNavLinkClass}>
+          <NavLink to="/for-venues" className={mobileNavLinkClass}>
             For venues
           </NavLink>
-          <NavLink reloadDocument to="/suggest" className={mobileNavLinkClass}>
+          <NavLink to="/suggest" className={mobileNavLinkClass}>
             Suggest
           </NavLink>
           {user ? (
             <>
-              <NavLink reloadDocument end to="/account" className={mobileNavLinkClass}>
+              <NavLink end to="/account" className={mobileNavLinkClass}>
                 Account
               </NavLink>
-              <NavLink reloadDocument to="/account/bookings" className={mobileNavLinkClass}>
+              <NavLink to="/account/bookings" className={mobileNavLinkClass}>
                 My bookings
               </NavLink>
-              <NavLink reloadDocument to="/account/notifications" className={mobileNavLinkClass}>
+              <NavLink to="/account/notifications" className={mobileNavLinkClass}>
                 Notifications
               </NavLink>
-              <NavLink reloadDocument to="/owner" className={mobileNavLinkClass}>
+              <NavLink to="/owner" className={mobileNavLinkClass}>
                 Owner dashboard
               </NavLink>
-              <NavLink reloadDocument to="/owner/enquiries" className={mobileNavLinkClass}>
+              <NavLink to="/owner/enquiries" className={mobileNavLinkClass}>
                 Owner enquiries
               </NavLink>
-              <NavLink reloadDocument to="/owner/promotions" className={mobileNavLinkClass}>
+              <NavLink to="/owner/promotions" className={mobileNavLinkClass}>
                 Promotions
               </NavLink>
-              <NavLink reloadDocument to="/owner/billing" className={mobileNavLinkClass}>
+              <NavLink to="/owner/billing" className={mobileNavLinkClass}>
                 Billing
               </NavLink>
               {isAdmin ? (
                 <>
-                  <NavLink reloadDocument to="/admin/venues" className={mobileNavLinkClass}>
+                  <NavLink to="/admin/venues" className={mobileNavLinkClass}>
                     Admin
                   </NavLink>
-                  <NavLink reloadDocument to="/admin/data-quality" className={mobileNavLinkClass}>
+                  <NavLink to="/admin/data-quality" className={mobileNavLinkClass}>
                     Data quality
                   </NavLink>
-                  <NavLink reloadDocument to="/admin/media-review" className={mobileNavLinkClass}>
+                  <NavLink to="/admin/media-review" className={mobileNavLinkClass}>
                     Media review
                   </NavLink>
-                  <NavLink reloadDocument to="/admin/reviews" className={mobileNavLinkClass}>
+                  <NavLink to="/admin/reviews" className={mobileNavLinkClass}>
                     Reviews
                   </NavLink>
-                  <NavLink reloadDocument to="/admin/suggestions" className={mobileNavLinkClass}>
+                  <NavLink to="/admin/suggestions" className={mobileNavLinkClass}>
                     Suggestions
                   </NavLink>
-                  <NavLink reloadDocument to="/admin/promotion-requests" className={mobileNavLinkClass}>
+                  <NavLink to="/admin/promotion-requests" className={mobileNavLinkClass}>
                     Promotion requests
                   </NavLink>
-                  <NavLink reloadDocument to="/admin/monetisation" className={mobileNavLinkClass}>
+                  <NavLink to="/admin/monetisation" className={mobileNavLinkClass}>
                     Monetisation
                   </NavLink>
                 </>
               ) : null}
             </>
           ) : (
-            <NavLink reloadDocument to="/sign-in" className={mobileNavLinkClass}>
+            <NavLink to="/sign-in" className={mobileNavLinkClass}>
               Sign in
             </NavLink>
           )}

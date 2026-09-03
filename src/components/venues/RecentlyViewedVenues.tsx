@@ -22,7 +22,7 @@ export function RecentlyViewedVenues({ venues }: { venues: Venue[] }) {
           <h2 className="text-3xl font-semibold">Pick up where you left off</h2>
         </div>
         <Button asChild variant="outline">
-          <Link reloadDocument to="/discover">
+          <Link to="/discover">
             Discover more
           </Link>
         </Button>

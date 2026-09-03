@@ -24,7 +24,7 @@ export function RequireAuth({ children }: PropsWithChildren) {
           <CardContent className="p-6 text-center">
             <h1 className="text-2xl font-semibold">You need to sign in to view your account.</h1>
             <Button asChild className="mt-6">
-              <Link reloadDocument to="/sign-in">
+              <Link to="/sign-in">
                 Sign in
               </Link>
             </Button>

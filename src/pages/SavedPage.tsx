@@ -35,7 +35,7 @@ export function SavedPage() {
           <div className="mb-6 flex flex-col gap-3 rounded-lg border bg-card p-4 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-sm text-muted-foreground">Sign in to sync your saved venues across devices.</p>
             <Button asChild variant="outline" size="sm">
-              <Link reloadDocument to="/sign-in">
+              <Link to="/sign-in">
                 Sign in
               </Link>
             </Button>

@@ -53,7 +53,7 @@ export function VenueMapResultList({
             >
               <img src={getVenueImage(venue)} alt={`${venue.name} interior`} className="h-[72px] w-[88px] rounded-lg object-cover" />
               <div className="min-w-0">
-                <Link reloadDocument to={`/venues/${venue.slug}`} className="block truncate text-sm font-semibold leading-5 text-nokta-ink hover:text-nokta-accent" onClick={(event) => event.stopPropagation()}>
+                <Link to={`/venues/${venue.slug}`} className="block truncate text-sm font-semibold leading-5 text-nokta-ink hover:text-nokta-accent" onClick={(event) => event.stopPropagation()}>
                   {venue.name}
                 </Link>
                 <p className="mt-0.5 truncate text-xs leading-4 text-nokta-ink-muted">
