@@ -48,7 +48,7 @@ export function DiscoverPage() {
   const sortOption = !searchParams.has("sort") && userLocation ? "nearest" : requestedSortOption;
   const filtersAreActive = hasActiveFilters(filters);
   const advancedFiltersAreActive = hasActiveAdvancedFilters(filters);
-  const [filtersOpen, setFiltersOpen] = useState(advancedFiltersAreActive);
+  const [filtersOpen, setFiltersOpen] = useState(false);
   const showDesktopMapArea = useMediaQuery("(min-width: 1024px)");
   const filteredVenues = useMemo(() => filterVenues(venues, filters), [venues, filters]);
   const sortedVenues = useMemo(() => sortVenues(filteredVenues, sortOption, userLocation), [filteredVenues, sortOption, userLocation]);
@@ -83,12 +83,6 @@ export function DiscoverPage() {
       setSelectedVenueId(sortedVenues[0].id);
     }
   }, [sortedVenues, selectedVenueId]);
-
-  useEffect(() => {
-    if (advancedFiltersAreActive) {
-      setFiltersOpen(true);
-    }
-  }, [advancedFiltersAreActive]);
 
   useEffect(() => {
     if (!userLocation || searchParams.has("sort")) {
@@ -266,4 +260,3 @@ function getDiscoverAnalyticsProperties(filters: VenueFilterState, sort: VenueSo
     view,
   };
 }
-

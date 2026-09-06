@@ -26,6 +26,8 @@ type SeedVenue = {
   rating: number | null;
   priceFrom: number | null;
   priceLevel: 1 | 2 | 3 | 4;
+  primaryCategory?: string;
+  secondaryCategories?: string[];
   indoor: boolean;
   outdoor: boolean;
   food: boolean;
@@ -64,6 +66,8 @@ function toVenueRow(venue: SeedVenue) {
     rating: venue.rating,
     price_from: venue.priceFrom,
     price_level: venue.priceLevel,
+    primary_category: venue.primaryCategory ?? "shisha_lounge",
+    secondary_categories: venue.secondaryCategories ?? ["shisha"],
     indoor: venue.indoor,
     outdoor: venue.outdoor,
     food: venue.food,
