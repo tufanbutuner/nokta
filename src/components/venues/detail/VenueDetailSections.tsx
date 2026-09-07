@@ -7,9 +7,12 @@ import { getVenueCurrentStatus } from "@/lib/openingHours";
 import { cn } from "@/lib/utils";
 import { formatPriceLevel } from "@/lib/venueFilters";
 import { getVenueImage } from "@/lib/venueImages";
+import { formatPenceAsPrice } from "@/lib/venueMenuValidation";
+import { getPublicVenueMenu } from "@/services/venueMenuService";
 import type { Venue } from "@/types/venue";
+import type { VenueMenu } from "@/types/venueMenu";
 import { Clock, Sofa, Star, Utensils } from "lucide-react";
-import type { ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 
 export function PlanYourVisitCard({ venue }: { venue: Venue }) {
@@ -145,12 +148,29 @@ function ClaimVenueBanner({ venue }: { venue: Venue }) {
 }
 
 export function MenuTab({ venue }: { venue: Venue }) {
+  const [menu, setMenu] = useState<VenueMenu | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    getPublicVenueMenu(venue.id)
+      .then((nextMenu) => {
+        if (!cancelled) setMenu(nextMenu);
+      })
+      .catch(() => {
+        if (!cancelled) setMenu(null);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [venue.id]);
+
   const rows = [
     ["Shisha", venue.priceFrom ? `From £${venue.priceFrom}` : "Price TBC"],
     ["Price tier", formatPriceLevel(venue.priceLevel)],
     ["Food", venue.food ? "Available" : "Not listed"],
     ["Alcohol", venue.alcohol ? "Available" : "Not listed"],
   ];
+  const menuLink = venue.dataSources.shishaMenuUrl ?? venue.dataSources.menuUrl;
 
   return (
     <section className="max-w-3xl">
@@ -163,7 +183,36 @@ export function MenuTab({ venue }: { venue: Venue }) {
           </div>
         ))}
       </div>
-      <p className="mt-4 text-sm text-nokta-ink-muted">Detailed flavour and food menus will appear here once verified source data is available.</p>
+
+      {/* Items win over a link when the venue maintains both. */}
+      {menu?.items.length ? (
+        <div className="mt-6 space-y-5">
+          {menu.sections.map((section) => {
+            const sectionItems = menu.items.filter((item) => item.sectionId === section.id);
+            if (!sectionItems.length) return null;
+            return (
+              <div key={section.id}>
+                <h3 className="text-sm font-semibold uppercase tracking-[0.5px] text-nokta-ink">{section.name}</h3>
+                <div className="mt-3 overflow-hidden rounded-2xl border border-nokta-border bg-white">
+                  {sectionItems.map((item, index) => (
+                    <div key={item.id} className={cn("flex items-baseline justify-between gap-4 p-4 text-sm", index > 0 && "border-t border-nokta-border")}>
+                      <div className="min-w-0">
+                        <span className="font-medium text-nokta-ink">{item.name}</span>
+                        {item.note ? <p className="mt-0.5 text-nokta-ink-muted">{item.note}</p> : null}
+                      </div>
+                      <span className="flex-none font-medium text-nokta-ink">{formatPenceAsPrice(item.pricePence)}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      ) : menuLink ? (
+        <a href={menuLink} target="_blank" rel="noreferrer noopener" className="mt-4 inline-block text-sm font-medium text-clay-accent hover:underline">View the full menu →</a>
+      ) : (
+        <p className="mt-4 text-sm text-nokta-ink-muted">Detailed flavour and food menus will appear here once verified source data is available.</p>
+      )}
     </section>
   );
 }

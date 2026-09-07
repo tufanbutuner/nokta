@@ -1,6 +1,11 @@
 import type { VenueProfileUpdateChanges, VenueUpdateRequestInput } from "@/types/venueUpdateRequests";
 
-export const OWNER_EDITABLE_VENUE_FIELDS = ["description", "phone", "website", "instagram", "priceFrom", "openingHours", "features", "vibes", "menuUrl", "bookingUrl", "contactUrl"] as const;
+/**
+ * Review-gated fields only. priceFrom and menuUrl moved out when menus became
+ * owner-owned: priceFrom is now derived from the cheapest live shisha item and
+ * the menu links are edited directly on the Menu & pricing tab.
+ */
+export const OWNER_EDITABLE_VENUE_FIELDS = ["description", "phone", "website", "instagram", "openingHours", "features", "vibes", "bookingUrl", "contactUrl"] as const;
 type OwnerEditableField = (typeof OWNER_EDITABLE_VENUE_FIELDS)[number];
 
 export interface VenueUpdateRequestValidationResult {
@@ -22,10 +27,8 @@ export function validateVenueUpdateRequestInput(input: VenueUpdateRequestInput):
   if (requestedChanges.website && !isValidUrl(requestedChanges.website)) errors.website = "Website must be a valid URL.";
   if ((requestedChanges.instagram ?? "").length > 120) errors.instagram = "Instagram must be under 120 characters.";
   if (requestedChanges.instagram && requestedChanges.instagram.startsWith("http") && !isValidUrl(requestedChanges.instagram)) errors.instagram = "Instagram must be a valid URL or handle.";
-  if (requestedChanges.priceFrom !== null && requestedChanges.priceFrom !== undefined && (Number(requestedChanges.priceFrom) < 0 || Number(requestedChanges.priceFrom) > 100)) errors.priceFrom = "Price must be between 0 and 100.";
   if ((requestedChanges.features?.length ?? 0) > 30) errors.features = "Choose fewer features.";
   if ((requestedChanges.vibes?.length ?? 0) > 30) errors.vibes = "Choose fewer vibes.";
-  if (requestedChanges.menuUrl && !isValidUrl(requestedChanges.menuUrl)) errors.menuUrl = "Menu URL must be valid.";
   if (requestedChanges.bookingUrl && !isValidUrl(requestedChanges.bookingUrl)) errors.bookingUrl = "Booking URL must be valid.";
   if (requestedChanges.contactUrl && !isValidUrl(requestedChanges.contactUrl)) errors.contactUrl = "Contact URL must be valid.";
   if ((input.requestNotes ?? "").length > 1000) errors.requestNotes = "Notes must be under 1000 characters.";
