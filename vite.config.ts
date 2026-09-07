@@ -2,6 +2,8 @@ import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 
+const devPort = Number(process.env.PORT ?? 5173);
+
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   build: {
@@ -21,11 +23,11 @@ export default defineConfig({
   },
   server: {
     host: "127.0.0.1",
-    port: 5173,
+    port: devPort,
     strictPort: true,
     hmr: {
       host: "127.0.0.1",
-      clientPort: 5173,
+      clientPort: devPort,
     },
     watch: {
       usePolling: true,
