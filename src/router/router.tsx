@@ -45,6 +45,7 @@ const OwnerVenueEnquiriesPage = lazyPage(() => import("@/pages/owner/OwnerVenueE
 const OwnerVenueAvailabilityPage = lazyPage(() => import("@/pages/owner/OwnerVenueAvailabilityPage"), "OwnerVenueAvailabilityPage");
 const OwnerVenueAnalyticsPage = lazyPage(() => import("@/pages/owner/OwnerVenueAnalyticsPage"), "OwnerVenueAnalyticsPage");
 const OwnerVenueMediaPage = lazyPage(() => import("@/pages/owner/OwnerVenueMediaPage"), "OwnerVenueMediaPage");
+const OwnerVenueMenuPage = lazyPage(() => import("@/pages/owner/OwnerVenueMenuPage"), "OwnerVenueMenuPage");
 const OwnerVenueUpdateRequestPage = lazyPage(() => import("@/pages/owner/OwnerVenueUpdateRequestPage"), "OwnerVenueUpdateRequestPage");
 const OwnerVenuesPage = lazyPage(() => import("@/pages/owner/OwnerVenuesPage"), "OwnerVenuesPage");
 const OwnerPromotionsPage = lazyPage(() => import("@/pages/owner/OwnerPromotionsPage"), "OwnerPromotionsPage");
@@ -184,6 +185,14 @@ export const router = createBrowserRouter([
         element: routeElement(
           <RequireAuth>
             <OwnerVenueAnalyticsPage />
+          </RequireAuth>,
+        ),
+      },
+      {
+        path: "/owner/venues/:venueId/menu",
+        element: routeElement(
+          <RequireAuth>
+            <OwnerVenueMenuPage />
           </RequireAuth>,
         ),
       },

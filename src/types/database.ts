@@ -186,6 +186,30 @@ export interface PromotedOfferRow {
   updated_at: string;
 }
 
+export interface VenueMenuSectionRow {
+  id: string;
+  venue_id: string;
+  name: string;
+  slug: string;
+  is_shisha: boolean;
+  sort_order: number;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface VenueMenuItemRow {
+  id: string;
+  venue_id: string;
+  section_id: string;
+  name: string;
+  note: string | null;
+  price_pence: number;
+  is_live: boolean;
+  sort_order: number;
+  created_at: string;
+  updated_at: string;
+}
+
 export interface VenueMediaRow {
   id: string;
   venue_id: string;

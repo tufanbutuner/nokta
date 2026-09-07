@@ -1,15 +1,18 @@
 export type VenueUpdateRequestStatus = "pending" | "approved" | "rejected" | "cancelled" | "applied";
 
+/**
+ * Fields that still route through admin review. Menu items, prices and the
+ * three menu links are owner-owned and publish immediately — see
+ * venueMenuService.ts.
+ */
 export interface VenueProfileUpdateChanges {
   description?: string | null;
   phone?: string | null;
   website?: string | null;
   instagram?: string | null;
-  priceFrom?: number | null;
   openingHours?: unknown;
   features?: string[];
   vibes?: string[];
-  menuUrl?: string | null;
   bookingUrl?: string | null;
   contactUrl?: string | null;
 }

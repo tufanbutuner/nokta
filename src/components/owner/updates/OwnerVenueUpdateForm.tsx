@@ -36,14 +36,12 @@ export function OwnerVenueUpdateForm({ venue, onSubmit, isSubmitting }: { venue:
 
   return (
     <form className="space-y-6" onSubmit={handleSubmit}>
-      <Alert>Need to update your venue name, address or location? Contact nokta so we can verify the change.</Alert>
+      <Alert>Menu items, prices and menu links are yours to change — edit them on the Menu &amp; pricing tab and they go live straight away. Need to update your venue name, address or location? Contact nokta so we can verify the change.</Alert>
       <div className="grid gap-4 lg:grid-cols-2">
         <Field label="Description" error={showErrors ? validation.errors.description : undefined}><Textarea value={changes.description ?? ""} onChange={(event) => setChanges({ ...changes, description: event.target.value })} /></Field>
         <Field label="Phone" error={showErrors ? validation.errors.phone : undefined}><Input value={changes.phone ?? ""} onChange={(event) => setChanges({ ...changes, phone: event.target.value })} /></Field>
         <Field label="Website" error={showErrors ? validation.errors.website : undefined}><Input value={changes.website ?? ""} onChange={(event) => setChanges({ ...changes, website: event.target.value })} /></Field>
         <Field label="Instagram" error={showErrors ? validation.errors.instagram : undefined}><Input value={changes.instagram ?? ""} onChange={(event) => setChanges({ ...changes, instagram: event.target.value })} /></Field>
-        <Field label="Price from" error={showErrors ? validation.errors.priceFrom : undefined}><Input type="number" min={0} max={100} value={changes.priceFrom ?? ""} onChange={(event) => setChanges({ ...changes, priceFrom: event.target.value ? Number(event.target.value) : null })} /></Field>
-        <Field label="Menu URL" error={showErrors ? validation.errors.menuUrl : undefined}><Input value={changes.menuUrl ?? ""} onChange={(event) => setChanges({ ...changes, menuUrl: event.target.value })} /></Field>
         <Field label="Booking URL" error={showErrors ? validation.errors.bookingUrl : undefined}><Input value={changes.bookingUrl ?? ""} onChange={(event) => setChanges({ ...changes, bookingUrl: event.target.value })} /></Field>
         <Field label="Contact URL" error={showErrors ? validation.errors.contactUrl : undefined}><Input value={changes.contactUrl ?? ""} onChange={(event) => setChanges({ ...changes, contactUrl: event.target.value })} /></Field>
       </div>
@@ -81,11 +79,9 @@ function toChanges(venue: Venue): VenueProfileUpdateChanges {
     phone: venue.phone,
     website: venue.website,
     instagram: venue.instagram,
-    priceFrom: venue.priceFrom,
     openingHours: venue.openingHours,
     features: [venue.food && "food", venue.alcohol && "alcohol", venue.indoor && "indoor", venue.outdoor && "outdoor", venue.openLate && "openLate"].filter(Boolean) as string[],
     vibes: venue.vibes,
-    menuUrl: venue.dataSources.menuUrl ?? venue.dataSources.shishaMenuUrl ?? null,
     bookingUrl: venue.dataSources.bookingUrl ?? null,
     contactUrl: venue.dataSources.contactUrl ?? null,
   };

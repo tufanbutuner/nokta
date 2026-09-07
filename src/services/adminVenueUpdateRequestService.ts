@@ -70,7 +70,6 @@ async function toVenueUpdate(venueId: string, changes: VenueProfileUpdateChanges
   if (changes.phone !== undefined) update.phone = changes.phone;
   if (changes.website !== undefined) update.website = changes.website;
   if (changes.instagram !== undefined) update.instagram = changes.instagram;
-  if (changes.priceFrom !== undefined) update.price_from = changes.priceFrom;
   if (changes.openingHours !== undefined) update.opening_hours = changes.openingHours;
   if (changes.vibes !== undefined) update.vibes = changes.vibes;
   if (changes.features !== undefined) {
@@ -80,11 +79,12 @@ async function toVenueUpdate(venueId: string, changes: VenueProfileUpdateChanges
     update.outdoor = changes.features.includes("outdoor");
     update.open_late = changes.features.includes("openLate");
   }
-  if (changes.menuUrl !== undefined || changes.bookingUrl !== undefined || changes.contactUrl !== undefined) {
+  // menuUrl is deliberately absent: menu links are owner-owned and never
+  // routed through this queue.
+  if (changes.bookingUrl !== undefined || changes.contactUrl !== undefined) {
     const existing = await getVenueDataSources(venueId);
     update.data_sources = {
       ...existing,
-      ...(changes.menuUrl !== undefined ? { menuUrl: changes.menuUrl } : {}),
       ...(changes.bookingUrl !== undefined ? { bookingUrl: changes.bookingUrl } : {}),
       ...(changes.contactUrl !== undefined ? { contactUrl: changes.contactUrl } : {}),
     };

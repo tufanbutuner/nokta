@@ -130,7 +130,7 @@ function OwnerHomeVenueRow({ venue, isLast }: { venue: OwnerHomeVenue; isLast: b
         <div className="truncate text-[13.5px] font-medium text-nokta-ink">{venue.name}</div>
         <div className="mt-0.5 text-xs text-muted-foreground">
           {venue.area} · {PLAN_CONFIG[venue.plan].name} ·{" "}
-          {venue.hasPricing ? "profile complete" : <span className="font-medium text-[oklch(0.45_0.12_60)]">no prices set</span>}
+          {venue.liveMenuItemCount ? "profile complete" : <span className="font-medium text-[oklch(0.45_0.12_60)]">no menu or prices</span>}
         </div>
       </div>
       <Link to={`/owner/venues/${venue.slug}`} className="flex-none text-[12.5px] font-medium text-clay-accent hover:underline">Manage →</Link>

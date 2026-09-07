@@ -20,6 +20,8 @@ export interface OwnerHomeVenue {
   plan: VenuePlan;
   hasPricing: boolean;
   approvedPhotoCount: number;
+  liveMenuItemCount: number;
+  menuLastUpdatedAt: string | null;
 }
 
 export interface OwnerHomeSummary {
@@ -40,9 +42,10 @@ export async function getOwnerHomeSummary(input: { userId: string }): Promise<Ow
   if (!venues.length) return emptySummary();
 
   const venueIds = venues.map((venue) => venue.id);
-  const [subscriptions, photoCounts, bookings, enquiries, analytics] = await Promise.all([
+  const [subscriptions, photoCounts, menuStats, bookings, enquiries, analytics] = await Promise.all([
     getOwnerVenueSubscriptions(input.userId).catch(() => []),
     getApprovedPhotoCounts(venueIds).catch(() => ({}) as Record<string, number>),
+    getMenuStats(venueIds).catch(() => ({}) as Record<string, MenuStat>),
     getPendingBookingRequests(venueIds).catch(() => [] as { createdAt: string }[]),
     getNewEnquiryCount(venueIds).catch(() => 0),
     Promise.all(venues.map((venue) => getOwnerVenueAnalyticsSummary({ userId: input.userId, venueId: venue.id, dateRange: "last_30_days" }).catch(() => null))),
@@ -59,6 +62,8 @@ export async function getOwnerHomeSummary(input: { userId: string }): Promise<Ow
       plan: planByVenueId[venue.id] ?? "free",
       hasPricing: hasPricing(venue),
       approvedPhotoCount: photoCounts[venue.id] ?? 0,
+      liveMenuItemCount: menuStats[venue.id]?.liveCount ?? 0,
+      menuLastUpdatedAt: menuStats[venue.id]?.lastUpdatedAt ?? null,
     })),
     metrics: analytics.reduce<OwnerHomeMetrics>(
       (totals, summary) => ({
@@ -86,6 +91,26 @@ async function getApprovedPhotoCounts(venueIds: string[]): Promise<Record<string
   return ((data ?? []) as { venue_id: string }[]).reduce<Record<string, number>>((counts, row) => {
     counts[row.venue_id] = (counts[row.venue_id] ?? 0) + 1;
     return counts;
+  }, {});
+}
+
+interface MenuStat {
+  liveCount: number;
+  lastUpdatedAt: string | null;
+}
+
+async function getMenuStats(venueIds: string[]): Promise<Record<string, MenuStat>> {
+  const client = ensureSupabase();
+  const { data, error } = await client.from("venue_menu_items").select("venue_id, is_live, updated_at").in("venue_id", venueIds);
+  if (error) throw new Error(`Could not load menu items: ${error.message}`);
+
+  return ((data ?? []) as { venue_id: string; is_live: boolean; updated_at: string }[]).reduce<Record<string, MenuStat>>((stats, row) => {
+    const current = stats[row.venue_id] ?? { liveCount: 0, lastUpdatedAt: null };
+    stats[row.venue_id] = {
+      liveCount: current.liveCount + (row.is_live ? 1 : 0),
+      lastUpdatedAt: !current.lastUpdatedAt || row.updated_at > current.lastUpdatedAt ? row.updated_at : current.lastUpdatedAt,
+    };
+    return stats;
   }, {});
 }
 
