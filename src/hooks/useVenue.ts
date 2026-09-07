@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 import { useAuth } from "@/context/AuthContext";
 import { isAdminUser } from "@/lib/admin";
 import { getVenueBySlug } from "@/services/venueService";
@@ -13,48 +13,14 @@ interface UseVenueResult {
 export function useVenue(slug?: string): UseVenueResult {
   const { user, isLoading: isLoadingAuth } = useAuth();
   const canSeeTestVenues = isAdminUser(user);
-  const [venue, setVenue] = useState<Venue | null>(null);
-  const [isLoading, setIsLoading] = useState(Boolean(slug));
-  const [error, setError] = useState<string | null>(null);
+  const query = useQuery({
+    queryKey: ["venue", slug],
+    queryFn: () => getVenueBySlug(slug ?? ""),
+    enabled: !isLoadingAuth && Boolean(slug),
+  });
 
-  useEffect(() => {
-    if (!slug) {
-      setVenue(null);
-      setIsLoading(false);
-      return;
-    }
+  const venue = query.data?.isTest && !canSeeTestVenues ? null : query.data ?? null;
+  const error = query.error instanceof Error ? query.error.message : query.error ? "Could not load venue." : null;
 
-    let cancelled = false;
-    const venueSlug = slug;
-
-    async function loadVenue() {
-      setIsLoading(true);
-      setError(null);
-      setVenue(null);
-
-      try {
-        const nextVenue = await getVenueBySlug(venueSlug);
-        if (!cancelled) {
-          setVenue(nextVenue?.isTest && !canSeeTestVenues ? null : nextVenue);
-        }
-      } catch (caughtError) {
-        if (!cancelled) {
-          setVenue(null);
-          setError(caughtError instanceof Error ? caughtError.message : "Could not load venue.");
-        }
-      } finally {
-        if (!cancelled) {
-          setIsLoading(false);
-        }
-      }
-    }
-
-    if (!isLoadingAuth) void loadVenue();
-
-    return () => {
-      cancelled = true;
-    };
-  }, [canSeeTestVenues, isLoadingAuth, slug]);
-
-  return { venue, isLoading, error };
+  return { venue, isLoading: isLoadingAuth || (Boolean(slug) && query.isPending), error };
 }
