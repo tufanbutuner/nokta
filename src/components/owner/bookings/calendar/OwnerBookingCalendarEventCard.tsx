@@ -8,7 +8,7 @@ export function OwnerBookingCalendarEventCard({ event, onClick, showVenue = true
     <button
       type="button"
       className={cn(
-        "w-full rounded-lg border p-3 text-left text-xs shadow-sm transition hover:-translate-y-0.5 hover:shadow-md",
+        "block min-w-0 max-w-full overflow-hidden rounded-lg border p-3 text-left text-xs shadow-sm transition hover:-translate-y-0.5 hover:shadow-md",
         tone === "pending" && "border-amber-200 bg-amber-100 text-amber-950",
         tone === "alternative" && "border-sky-200 bg-sky-100 text-sky-950",
         tone === "success" && "border-emerald-200 bg-emerald-100 text-emerald-950",
@@ -18,7 +18,7 @@ export function OwnerBookingCalendarEventCard({ event, onClick, showVenue = true
       )}
       onClick={onClick}
     >
-      <div className="font-medium">{getBookingCalendarEventLabel({ time: event.time, partySize: event.partySize, status: event.status })}</div>
+      <div className="truncate font-medium">{getBookingCalendarEventLabel({ time: event.time, partySize: event.partySize, status: event.status })}</div>
       {showVenue ? <div className="mt-1 truncate text-[11px] opacity-75">{event.venueName}</div> : null}
       {event.occasion ? <div className="mt-1 truncate text-[11px] opacity-75">{event.occasion}</div> : null}
     </button>

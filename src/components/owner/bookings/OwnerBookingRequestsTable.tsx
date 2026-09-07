@@ -40,7 +40,7 @@ export function OwnerBookingRequestsTable({
                 return (
                   <tr key={booking.id}>
                     <td className="px-4 py-4"><button className="font-medium hover:text-clay-accent" onClick={() => onView(booking)}>{booking.customerName}</button><div className="mt-1 text-xs text-muted-foreground">{booking.customerEmail}</div>{booking.customerPhone ? <div className="mt-1 text-xs text-muted-foreground">{booking.customerPhone}</div> : null}</td>
-                    <td className="px-4 py-4 text-muted-foreground">{venue?.name ?? booking.venueId}</td>
+                    <td className="px-4 py-4 text-muted-foreground">{venue?.name ?? formatVenueIdFallback(booking.venueId)}</td>
                     <td className="px-4 py-4">{booking.partySize}</td>
                     <td className="px-4 py-4 text-muted-foreground">{formatBookingRequestDateTime(booking.requestedDate, booking.requestedTime)}</td>
                     <td className="px-4 py-4 text-muted-foreground">{booking.occasion ?? "General"}</td>
@@ -61,11 +61,19 @@ export function OwnerBookingRequestsTable({
 function BookingCard({ booking, venue, onView, onStatus, onDecline, onPropose, onCancel }: { booking: BookingRequest; venue?: Venue; onView: () => void; onStatus: (status: BookingRequestStatus) => void; onDecline: () => void; onPropose: () => void; onCancel: () => void }) {
   return (
     <article className="rounded-xl border bg-card p-4">
-      <div className="flex items-start justify-between gap-3"><div><button className="font-semibold hover:text-clay-accent" onClick={onView}>{booking.customerName}</button><p className="mt-1 text-sm text-muted-foreground">{venue?.name ?? booking.venueId}</p></div><OwnerBookingStatusBadge status={booking.status} /></div>
+      <div className="flex items-start justify-between gap-3"><div><button className="font-semibold hover:text-clay-accent" onClick={onView}>{booking.customerName}</button><p className="mt-1 text-sm text-muted-foreground">{venue?.name ?? formatVenueIdFallback(booking.venueId)}</p></div><OwnerBookingStatusBadge status={booking.status} /></div>
       <p className="mt-3 text-sm text-muted-foreground">{booking.partySize} people • {formatBookingRequestDateTime(booking.requestedDate, booking.requestedTime)}</p>
       <div className="mt-4"><BookingActions booking={booking} onStatus={onStatus} onDecline={onDecline} onPropose={onPropose} onCancel={onCancel} /></div>
     </article>
   );
+}
+
+function formatVenueIdFallback(venueId: string) {
+  return venueId
+    .split("-")
+    .filter(Boolean)
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
 }
 
 function BookingActions({ booking, onStatus, onDecline, onPropose, onCancel }: { booking: BookingRequest; onStatus: (status: BookingRequestStatus) => void; onDecline: () => void; onPropose: () => void; onCancel: () => void }) {

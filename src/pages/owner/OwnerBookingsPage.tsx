@@ -126,7 +126,7 @@ export function OwnerBookingsPage() {
     .filter((booking) => booking.requestedDate >= calendarRange.dateFrom && booking.requestedDate <= calendarRange.dateTo)
     .filter((booking) => filters.venueId === "all" || booking.venueId === filters.venueId)
     .filter((booking) => !calendarStatuses.length || calendarStatuses.includes(booking.status))
-    .map((booking) => mapBookingToCalendarEvent(booking, venuesById[booking.venueId]?.name ?? booking.venueId))
+    .map((booking) => mapBookingToCalendarEvent(booking, getVenueDisplayName(booking.venueId, venuesById)))
     .sort((a, b) => `${a.date}T${a.time}`.localeCompare(`${b.date}T${b.time}`)), [bookings, calendarRange.dateFrom, calendarRange.dateTo, calendarStatuses, filters.venueId, venuesById]);
 
   function updateUrl(nextView: BookingCalendarView, nextDate: Date) {
@@ -297,6 +297,18 @@ function mapBookingToCalendarEvent(booking: BookingRequest, venueName: string): 
   };
 }
 
+function getVenueDisplayName(venueId: string, venuesById: Record<string, Venue | undefined>) {
+  return venuesById[venueId]?.name ?? formatVenueIdFallback(venueId);
+}
+
+function formatVenueIdFallback(venueId: string) {
+  return venueId
+    .split("-")
+    .filter(Boolean)
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+}
+
 function filterBookings(bookings: BookingRequest[], filters: OwnerBookingFilterState) {
   const now = new Date();
   const monthStart = new Date(now.getFullYear(), now.getMonth(), 1).getTime();
@@ -314,7 +326,7 @@ function BookingDetails({ booking, venue, onClose, onStatus, onDecline, onPropos
     <Modal title="Booking request" onClose={onClose}>
       <div className="space-y-5">
         <div className="space-y-2 text-sm">
-          <p><strong>Venue:</strong> {venue?.name ?? booking.venueId}</p>
+          <p><strong>Venue:</strong> {venue?.name ?? formatVenueIdFallback(booking.venueId)}</p>
           <p><strong>Reference:</strong> {booking.confirmationReference ?? "Not generated"}</p>
           <p><strong>Customer:</strong> {booking.customerName} • {booking.customerEmail}</p>
           <p><strong>Phone:</strong> {booking.customerPhone ?? "Not provided"}</p>

@@ -126,17 +126,15 @@ export function VenuePage() {
     }
 
     const url = window.location.href;
-    const title = venue.name;
-    const text = venue.description;
 
     try {
       if (navigator.share) {
-        await navigator.share({ title, text, url });
+        await navigator.share({ url });
       } else {
         await navigator.clipboard.writeText(url);
-        setShareLabel("Copied");
-        window.setTimeout(() => setShareLabel("Share"), 1800);
       }
+      setShareLabel("Copied");
+      window.setTimeout(() => setShareLabel("Share"), 1800);
     } catch {
       setShareLabel("Share");
     }
