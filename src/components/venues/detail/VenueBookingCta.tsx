@@ -13,14 +13,16 @@ import { useEffect, useState, type FormEvent } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { getVenueAnalyticsProperties } from "./venueDetailAnalytics";
 
+const FALLBACK_TIME_OPTIONS = ["17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00", "20:30", "21:00", "21:30", "22:00", "22:30", "23:00"];
+
 export function BookingSidebarCard({ venue, className, compact = false }: { venue: Venue; className?: string; compact?: boolean }) {
   const navigate = useNavigate();
   const [date, setDate] = useState(getTodayDateValue());
   const [time, setTime] = useState("");
   const [partySize, setPartySize] = useState(2);
   const [availability, setAvailability] = useState<VenueBookingAvailability | null>(null);
-  const timeOptions = availability && date ? getBookingTimeOptions({ availability, selectedDate: date }) : [];
-  const hasAvailabilityForDate = Boolean(availability && date && timeOptions.length);
+  const availableTimeOptions = availability && date ? getBookingTimeOptions({ availability, selectedDate: date }) : [];
+  const timeOptions = availableTimeOptions.length ? availableTimeOptions : FALLBACK_TIME_OPTIONS;
 
   useEffect(() => {
     let cancelled = false;
@@ -39,7 +41,7 @@ export function BookingSidebarCard({ venue, className, compact = false }: { venu
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (availability && !time) return;
+    if (!time) return;
     trackBookingCta(venue);
     const params = new URLSearchParams();
     if (date) params.set("date", date);
@@ -71,16 +73,16 @@ export function BookingSidebarCard({ venue, className, compact = false }: { venu
             value={time}
             aria-label="Booking time"
             className="h-11 rounded-lg border-nokta-border-input bg-white text-base text-nokta-ink sm:text-sm"
-            placeholder={availability && date ? timeOptions.length ? "Time" : "No times" : "Choose date"}
+            placeholder="Time"
             options={timeOptions.map((option) => ({ label: option, value: option }))}
-            disabled={!hasAvailabilityForDate}
+            disabled={!date}
             onValueChange={setTime}
           />
         </div>
         <Input type="number" min={1} max={100} value={partySize} aria-label="Party size" placeholder="Party size" className="h-11 rounded-lg border-nokta-border-input bg-white text-base text-nokta-ink sm:text-sm" onChange={(event) => setPartySize(event.target.value ? Number(event.target.value) : 0)} />
       </div>
       <div className="mt-4 grid gap-2">
-        <Button type="submit" className="h-11 rounded-lg bg-nokta-accent text-white hover:bg-nokta-accent-dark" disabled={Boolean(availability && (!date || !time))}>Request booking</Button>
+        <Button type="submit" className="h-11 rounded-lg bg-nokta-accent text-white hover:bg-nokta-accent-dark" disabled={!date || !time}>Request booking</Button>
         <Button asChild variant="outline" className="h-11 rounded-lg border-nokta-border bg-white text-nokta-ink hover:bg-nokta-surface-hover" onClick={() => trackEnquiryCta(venue)}>
           <Link to={`/venues/${venue.slug}/enquire`}>Send enquiry</Link>
         </Button>

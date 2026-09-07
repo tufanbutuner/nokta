@@ -4,6 +4,7 @@ export const brandConfig = {
   shortDescription: "Discover social venues across the UK.",
   longDescription: "Find lounges, restaurants, bars and cafes across the UK, starting with shisha lounges.",
   supportEmail: "hello@nokta.uk",
+  instagramUrl: "https://www.instagram.com/nokta.uk/",
   noReplyEmailName: "Nokta",
   noReplyEmailAddress: "notifications@nokta.uk",
 };

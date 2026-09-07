@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { PlanBadge } from "@/components/subscriptions/PlanBadge";
 import { UpgradePrompt } from "@/components/subscriptions/UpgradePrompt";
 import { ClaimedVenueBadge } from "@/components/venues/ClaimedVenueBadge";
+import { brandConfig } from "@/config/brand";
 import { canRequestFeaturedPlacement, canRequestPromotedOffer } from "@/lib/ownerPromotionAccess";
 import { subscriptionHasPlanAccess } from "@/lib/planFeatureAccess";
 import { formatPriceLevel } from "@/lib/venueFilters";
@@ -196,7 +197,7 @@ export function OwnerNextStepsCard({ venue, commercial, enquiries }: { venue: Ve
       <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-muted-foreground">
         {(steps.length ? steps : ["Your profile is in good shape."]).map((step) => <li key={String(step)}>{step}</li>)}
       </ul>
-      <Button asChild variant="outline" className="mt-5"><Link to="/account">Contact nokta</Link></Button>
+      <Button asChild variant="outline" className="mt-5"><a href={`mailto:${brandConfig.supportEmail}`}>Contact nokta</a></Button>
     </section>
   );
 }
