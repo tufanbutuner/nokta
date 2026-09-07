@@ -1,11 +1,24 @@
+import { Skeleton } from "@/components/ui/skeleton";
+
 export function LoadingState({ message = "Loading venues..." }: { message?: string }) {
   return (
-    <div className="rounded-lg border border-nokta-border bg-white p-8 text-center text-sm text-nokta-ink-muted shadow-sm shadow-stone-950/5">
-      <div className="relative mx-auto mb-4 h-12 w-12" aria-hidden="true">
-        <span className="absolute left-1/2 top-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-nokta-accent" />
-        <span className="absolute left-1/2 top-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-nokta-accent opacity-70 animate-[noktaPulse_1.4s_ease-out_infinite]" />
+    <div className="rounded-lg border border-nokta-border bg-white p-5 shadow-sm shadow-stone-950/5" role="status" aria-label={message}>
+      <div className="space-y-4">
+        <div className="flex items-center gap-3">
+          <Skeleton className="h-11 w-11 shrink-0 rounded-xl" />
+          <div className="min-w-0 flex-1 space-y-2">
+            <Skeleton className="h-4 w-2/3" />
+            <Skeleton className="h-3 w-1/2" />
+          </div>
+        </div>
+        <div className="grid gap-2 sm:grid-cols-3">
+          <Skeleton className="h-8 rounded-full" />
+          <Skeleton className="h-8 rounded-full" />
+          <Skeleton className="h-8 rounded-full" />
+        </div>
+        <Skeleton className="h-24 rounded-xl" />
       </div>
-      <p>{message}</p>
+      <span className="sr-only">{message}</span>
     </div>
   );
 }

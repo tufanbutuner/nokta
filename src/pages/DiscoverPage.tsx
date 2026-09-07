@@ -15,8 +15,8 @@ import { PageMeta } from "@/components/seo/PageMeta";
 import { VenueFilters } from "@/components/search/VenueFilters";
 import { VenueSearch } from "@/components/search/VenueSearch";
 import { ErrorState } from "@/components/state/ErrorState";
-import { LoadingState } from "@/components/state/LoadingState";
 import { Button } from "@/components/ui/button";
+import { Skeleton } from "@/components/ui/skeleton";
 import { useAppLocation } from "@/context/AppLocationContext";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { useVenueReviewSummaries } from "@/hooks/useVenueReviewSummaries";
@@ -165,7 +165,7 @@ export function DiscoverPage() {
 
             <div className="block min-h-[420px] flex-1 overflow-y-auto p-3">
               {isLoading ? (
-                <LoadingState />
+                <DiscoverResultsSkeleton />
               ) : error ? (
                 <ErrorState message={error} />
               ) : sortedVenues.length ? (
@@ -195,9 +195,7 @@ export function DiscoverPage() {
           {showDesktopMapArea ? (
             <section className="min-h-[560px] overflow-hidden rounded-2xl border border-nokta-border bg-nokta-surface shadow-[0_12px_30px_-16px_oklch(0.2_0.02_40_/_0.18)] lg:min-h-0">
               {isLoading ? (
-                <div className="flex h-full min-h-[560px] items-center justify-center">
-                  <LoadingState />
-                </div>
+                <DiscoverMapSkeleton />
               ) : error ? (
                 <div className="flex h-full min-h-[560px] items-center justify-center p-6">
                   <ErrorState message={error} />
@@ -219,6 +217,42 @@ export function DiscoverPage() {
         </div>
       </div>
     </main>
+  );
+}
+
+function DiscoverResultsSkeleton() {
+  return (
+    <div className="min-h-full space-y-2" aria-label="Loading venue results">
+      {Array.from({ length: 10 }).map((_, index) => (
+        <div key={index} className="rounded-xl border border-nokta-border bg-white p-2">
+          <div className="grid grid-cols-[88px_minmax(0,1fr)] gap-3">
+            <Skeleton className="h-[72px] w-[88px] rounded-lg" />
+            <div className="min-w-0 space-y-2 py-1">
+              <Skeleton className="h-4 w-4/5" />
+              <Skeleton className="h-3 w-3/5" />
+              <div className="flex items-center gap-2 pt-1">
+                <Skeleton className="h-4 w-10 rounded-full" />
+                <Skeleton className="h-5 w-16 rounded-full" />
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function DiscoverMapSkeleton() {
+  return (
+    <div className="relative h-full min-h-[560px] w-full overflow-hidden bg-nokta-surface lg:min-h-0" aria-label="Loading map">
+      <Skeleton className="absolute inset-0 rounded-none bg-nokta-border/35" />
+      <div className="absolute left-5 top-5 space-y-2">
+        <Skeleton className="h-10 w-10 rounded-lg bg-white/80" />
+        <Skeleton className="h-10 w-10 rounded-lg bg-white/80" />
+      </div>
+      <Skeleton className="absolute left-1/2 top-1/2 h-14 w-14 -translate-x-1/2 -translate-y-1/2 rounded-full bg-nokta-accent/25" />
+      <Skeleton className="absolute bottom-5 left-5 h-12 w-52 rounded-xl bg-white/80" />
+    </div>
   );
 }
 

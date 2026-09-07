@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { ErrorState } from "@/components/state/ErrorState";
-import { LoadingState } from "@/components/state/LoadingState";
+import { Skeleton } from "@/components/ui/skeleton";
 import { useVenues } from "@/hooks/useVenues";
 import { brandConfig } from "@/config/brand";
 import { DEFAULT_CITY, getActiveCities } from "@/lib/cities";
@@ -150,8 +150,8 @@ export function HomePage() {
           </div>
         </section>
 
-        {!isLoading && !error ? <HomepageFeaturedVenues venues={venues} /> : null}
-        {!isLoading && !error ? <HomepageOffersSection venues={venues} /> : null}
+        {isLoading ? <HomepagePromoSectionSkeleton title="Featured venues" /> : !error ? <HomepageFeaturedVenues venues={venues} /> : null}
+        {isLoading ? <HomepagePromoSectionSkeleton title="Latest venue offers" /> : !error ? <HomepageOffersSection venues={venues} /> : null}
 
         <section>
           <div className="mb-6 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
@@ -166,7 +166,7 @@ export function HomePage() {
               </Link>
             </Button>
           </div>
-          {isLoading ? <LoadingState /> : error ? <ErrorState message={error} /> : <LandingVenueGrid venues={featured} />}
+          {isLoading ? <LandingVenueGridSkeleton /> : error ? <ErrorState message={error} /> : <LandingVenueGrid venues={featured} />}
         </section>
 
         <section className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
@@ -243,6 +243,50 @@ function LandingVenueGrid({ venues }: { venues: Venue[] }) {
     <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
       {venues.map((venue) => (
         <LandingVenueCard key={venue.id} venue={venue} />
+      ))}
+    </div>
+  );
+}
+
+function HomepagePromoSectionSkeleton({ title }: { title: string }) {
+  return (
+    <section aria-label={`Loading ${title.toLowerCase()}`}>
+      <div className="mb-6">
+        <Skeleton className="h-4 w-20" />
+        <Skeleton className="mt-2 h-8 w-56" />
+        <Skeleton className="mt-3 h-4 w-72 max-w-full" />
+      </div>
+      <div className="grid gap-4 md:grid-cols-3">
+        {Array.from({ length: 3 }).map((_, index) => (
+          <article key={index} className="overflow-hidden rounded-2xl border border-nokta-border bg-card p-3 shadow-sm shadow-stone-950/5">
+            <Skeleton className="h-36 rounded-xl" />
+            <div className="space-y-3 px-1 py-3">
+              <Skeleton className="h-5 w-3/4" />
+              <Skeleton className="h-4 w-1/2" />
+              <Skeleton className="h-9 rounded-full" />
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function LandingVenueGridSkeleton() {
+  return (
+    <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4" aria-label="Loading venues">
+      {Array.from({ length: 4 }).map((_, index) => (
+        <article key={index} className="overflow-hidden rounded-2xl border border-nokta-border bg-nokta-surface p-2">
+          <Skeleton className="h-[190px] rounded-xl" />
+          <div className="space-y-3 px-2 pb-2 pt-3">
+            <Skeleton className="h-5 w-4/5" />
+            <Skeleton className="h-4 w-3/5" />
+            <div className="flex items-center justify-between gap-3 pt-1">
+              <Skeleton className="h-4 w-14" />
+              <Skeleton className="h-7 w-20 rounded-full" />
+            </div>
+          </div>
+        </article>
       ))}
     </div>
   );
