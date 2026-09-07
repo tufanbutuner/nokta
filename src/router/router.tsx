@@ -4,7 +4,7 @@ import { RequireAdmin } from "@/components/auth/RequireAdmin";
 import { AppLayout } from "@/components/layout/AppLayout";
 import { PageLoadingState } from "@/components/state/PageLoadingState";
 import { AppErrorPage } from "@/pages/AppErrorPage";
-import { Navigate, createBrowserRouter, useSearchParams } from "react-router-dom";
+import { Navigate, createBrowserRouter, useLocation, useParams, useSearchParams } from "react-router-dom";
 
 const AccountConfirmationPage = lazyPage(() => import("@/pages/AccountConfirmationPage"), "AccountConfirmationPage");
 const AccountPage = lazyPage(() => import("@/pages/AccountPage"), "AccountPage");
@@ -40,8 +40,6 @@ const OwnerBillingPage = lazyPage(() => import("@/pages/owner/OwnerBillingPage")
 const OwnerBillingSuccessPage = lazyPage(() => import("@/pages/owner/OwnerBillingSuccessPage"), "OwnerBillingSuccessPage");
 const OwnerBookingsPage = lazyPage(() => import("@/pages/owner/OwnerBookingsPage"), "OwnerBookingsPage");
 const OwnerEnquiriesPage = lazyPage(() => import("@/pages/owner/OwnerEnquiriesPage"), "OwnerEnquiriesPage");
-const OwnerVenueDashboardPage = lazyPage(() => import("@/pages/owner/OwnerVenueDashboardPage"), "OwnerVenueDashboardPage");
-const OwnerVenueEnquiriesPage = lazyPage(() => import("@/pages/owner/OwnerVenueEnquiriesPage"), "OwnerVenueEnquiriesPage");
 const OwnerVenueAvailabilityPage = lazyPage(() => import("@/pages/owner/OwnerVenueAvailabilityPage"), "OwnerVenueAvailabilityPage");
 const OwnerVenueAnalyticsPage = lazyPage(() => import("@/pages/owner/OwnerVenueAnalyticsPage"), "OwnerVenueAnalyticsPage");
 const OwnerVenueMediaPage = lazyPage(() => import("@/pages/owner/OwnerVenueMediaPage"), "OwnerVenueMediaPage");
@@ -128,7 +126,7 @@ export const router = createBrowserRouter([
         path: "/owner/venues/:venueId/bookings",
         element: routeElement(
           <RequireAuth>
-            <OwnerBookingsPage />
+            <OwnerVenueAvailabilityPage />
           </RequireAuth>,
         ),
       },
@@ -149,7 +147,7 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: "/owner/enquiries",
+        path: "/owner/inbox",
         element: routeElement(
           <RequireAuth>
             <OwnerEnquiriesPage />
@@ -168,20 +166,20 @@ export const router = createBrowserRouter([
         path: "/owner/venues/:venueId",
         element: routeElement(
           <RequireAuth>
-            <OwnerVenueDashboardPage />
+            <VenueRouteRedirect destination="profile" />
           </RequireAuth>,
         ),
       },
       {
-        path: "/owner/venues/:venueId/enquiries",
+        path: "/owner/venues/:venueId/profile",
         element: routeElement(
           <RequireAuth>
-            <OwnerVenueEnquiriesPage />
+            <OwnerVenueUpdateRequestPage />
           </RequireAuth>,
         ),
       },
       {
-        path: "/owner/venues/:venueId/analytics",
+        path: "/owner/venues/:venueId/performance",
         element: routeElement(
           <RequireAuth>
             <OwnerVenueAnalyticsPage />
@@ -197,7 +195,7 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: "/owner/venues/:venueId/media",
+        path: "/owner/venues/:venueId/photos",
         element: routeElement(
           <RequireAuth>
             <OwnerVenueMediaPage />
@@ -205,21 +203,34 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: "/owner/venues/:venueId/availability",
+        path: "/owner/venues/:venueId/analytics",
         element: routeElement(
           <RequireAuth>
-            <OwnerVenueAvailabilityPage />
+            <VenueRouteRedirect destination="performance" />
           </RequireAuth>,
         ),
       },
       {
-        path: "/owner/venues/:venueId/update",
+        path: "/owner/venues/:venueId/media",
         element: routeElement(
           <RequireAuth>
-            <OwnerVenueUpdateRequestPage />
+            <VenueRouteRedirect destination="photos" />
           </RequireAuth>,
         ),
       },
+      {
+        path: "/owner/venues/:venueId/availability",
+        element: routeElement(<RequireAuth><VenueRouteRedirect destination="bookings" /></RequireAuth>),
+      },
+      {
+        path: "/owner/venues/:venueId/update",
+        element: routeElement(<RequireAuth><VenueRouteRedirect destination="profile" /></RequireAuth>),
+      },
+      {
+        path: "/owner/venues/:venueId/enquiries",
+        element: routeElement(<RequireAuth><VenueInboxRedirect /></RequireAuth>),
+      },
+      { path: "/owner/enquiries", element: routeElement(<OwnerInboxRedirect />) },
       {
         path: "/owner/venues/:venueId/promotions/offers/new",
         element: routeElement(
@@ -418,4 +429,23 @@ function AccountRoute() {
       <AccountPage />
     </RequireAuth>
   );
+}
+
+function VenueRouteRedirect({ destination }: { destination: "profile" | "photos" | "bookings" | "performance" }) {
+  const { venueId = "" } = useParams();
+  const { search } = useLocation();
+  return <Navigate replace to={`/owner/venues/${venueId}/${destination}${search}`} />;
+}
+
+function VenueInboxRedirect() {
+  const { venueId = "" } = useParams();
+  const { search } = useLocation();
+  const nextSearch = new URLSearchParams(search);
+  nextSearch.set("venue", venueId);
+  return <Navigate replace to={`/owner/inbox?${nextSearch.toString()}`} />;
+}
+
+function OwnerInboxRedirect() {
+  const { search } = useLocation();
+  return <Navigate replace to={`/owner/inbox${search}`} />;
 }

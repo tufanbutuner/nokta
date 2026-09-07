@@ -13,11 +13,11 @@ export function buildOwnerBookingsUrl(): string {
 }
 
 export function buildOwnerEnquiriesUrl(): string {
-  return buildAbsoluteAppUrl("/owner/enquiries");
+  return buildAbsoluteAppUrl("/owner/inbox");
 }
 
 export function buildOwnerVenueMediaUrl(venueId: string): string {
-  return buildAbsoluteAppUrl(`/owner/venues/${venueId}/media`);
+  return buildAbsoluteAppUrl(`/owner/venues/${venueId}/photos`);
 }
 
 export function buildOwnerPromotionsUrl(venueId?: string): string {
@@ -25,5 +25,5 @@ export function buildOwnerPromotionsUrl(venueId?: string): string {
 }
 
 export function buildOwnerVenueUpdatesUrl(venueId?: string): string {
-  return buildAbsoluteAppUrl(venueId ? `/owner/venues/${venueId}/update` : "/owner/venues");
+  return buildAbsoluteAppUrl(venueId ? `/owner/venues/${venueId}/profile` : "/owner/venues");
 }

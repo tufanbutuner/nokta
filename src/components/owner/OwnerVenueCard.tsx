@@ -28,7 +28,7 @@ export function OwnerVenueCard({ venue, analytics, enquiries, commercial, subscr
           </div>
         </div>
         <Button asChild>
-          <Link to={`/owner/venues/${venue.slug}`}>View dashboard<ArrowRight className="ml-2 h-4 w-4" /></Link>
+          <Link to={`/owner/venues/${venue.slug}/profile`}>Manage venue<ArrowRight className="ml-2 h-4 w-4" /></Link>
         </Button>
       </div>
       <div className="mt-5 grid gap-3 sm:grid-cols-4">
@@ -44,11 +44,11 @@ export function OwnerVenueCard({ venue, analytics, enquiries, commercial, subscr
         <Link to={`/owner/venues/${venue.slug}/menu`}>Menu &amp; pricing</Link>
       </Button>
       <Button asChild variant="outline" className="ml-2 mt-4">
-        <Link to={`/owner/venues/${venue.slug}/analytics`}>View analytics</Link>
+        <Link to={`/owner/venues/${venue.slug}/performance`}>View performance</Link>
       </Button>
       {canRequestUpdate ? (
         <Button asChild variant="outline" className="ml-2 mt-4">
-          <Link to={`/owner/venues/${venue.slug}/update`}>Request profile update</Link>
+          <Link to={`/owner/venues/${venue.slug}/profile`}>Request profile update</Link>
         </Button>
       ) : (
         <Button asChild variant="outline" className="ml-2 mt-4">
@@ -57,7 +57,7 @@ export function OwnerVenueCard({ venue, analytics, enquiries, commercial, subscr
       )}
       {subscriptionHasPlanAccess(subscription ?? null, "owner_enquiry_inbox") ? (
         <Button asChild variant="outline" className="ml-2 mt-4">
-          <Link to={`/owner/venues/${venue.slug}/enquiries`}>View enquiries</Link>
+          <Link to={`/owner/inbox?venue=${encodeURIComponent(venue.slug)}`}>View enquiries</Link>
         </Button>
       ) : null}
     </article>

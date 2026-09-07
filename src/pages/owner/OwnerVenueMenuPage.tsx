@@ -5,6 +5,7 @@ import { MenuSectionCard } from "@/components/owner/menu/MenuSectionCard";
 import { NoReviewNotice, PublicPagePreview, UnpublishedChangesTray } from "@/components/owner/menu/MenuSidePanels";
 import { useVenueMenuDraft } from "@/components/owner/menu/useVenueMenuDraft";
 import { OwnerLayout } from "@/components/owner/OwnerLayout";
+import { OwnerVenueTabShell } from "@/components/owner/OwnerVenueTabShell";
 import { PageMeta } from "@/components/seo/PageMeta";
 import { ErrorState } from "@/components/state/ErrorState";
 import { LoadingState } from "@/components/state/LoadingState";
@@ -139,28 +140,33 @@ export function OwnerVenueMenuPage() {
     raiseSectionPrices({ sectionId, percent, items: draftItems });
   }
 
+  function confirmTabChange() {
+    if (!changeCount) return true;
+    const shouldDiscard = window.confirm(`Publish or discard your ${changeCount} change${changeCount === 1 ? "" : "s"}? Select OK to discard and leave this tab.`);
+    if (shouldDiscard) discard();
+    return shouldDiscard;
+  }
+
   return (
     <OwnerLayout>
       <PageMeta title="Menu & pricing | nokta" description="Edit your menu items and prices." canonicalPath={`/owner/venues/${venueId}/menu`} />
       {isLoading ? <LoadingState message="Loading your menu..." /> : !venue || !menu ? <ErrorState message={error ?? "Could not load your menu."} /> : (
-        <div className="flex flex-col gap-4">
-          <div className="flex flex-wrap items-start justify-between gap-3">
-            <div>
-              <p className="text-[12.5px] text-muted-foreground">
-                <Link to="/owner/venues" className="font-medium text-clay-accent hover:underline">My venues</Link> / {venue.name}
-              </p>
-              <h1 className="mt-1 font-brand text-[25px] font-bold tracking-[-0.4px] text-nokta-ink">Menu &amp; pricing</h1>
-              <p className="mt-1 text-[12.5px] text-muted-foreground">{venue.area}, {venue.city}</p>
-            </div>
-            <div className="flex gap-2">
+        <OwnerVenueTabShell
+          venue={venue}
+          title="Menu & pricing"
+          canNavigate={confirmTabChange}
+          actions={
+            <>
               <Button asChild variant="outline" className="h-[34px] text-[13px]">
                 <Link to={`/venues/${venue.slug}`}>Preview public page</Link>
               </Button>
               <Button type="button" onClick={handlePublish} disabled={!changeCount || isPublishing || !validation.isValid} className="h-[34px] text-[13px]">
                 {isPublishing ? "Publishing..." : changeCount ? `Publish ${changeCount} change${changeCount === 1 ? "" : "s"}` : "Publish"}
               </Button>
-            </div>
-          </div>
+            </>
+          }
+        >
+        <div className="flex flex-col gap-4">
 
           {error ? <ErrorState message={error} /> : null}
           {notice ? <p className="rounded-lg border border-[oklch(0.86_0.06_150)] bg-[oklch(0.96_0.03_150)] px-3 py-2 text-[13px] text-[oklch(0.32_0.06_150)]">{notice}</p> : null}
@@ -202,6 +208,7 @@ export function OwnerVenueMenuPage() {
             </div>
           </div>
         </div>
+        </OwnerVenueTabShell>
       )}
     </OwnerLayout>
   );

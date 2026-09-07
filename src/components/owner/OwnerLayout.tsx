@@ -10,7 +10,7 @@ import { getOwnerNeedsReplyCount } from "@/services/ownerHomeSummaryService";
 const OWNER_NAV_ITEMS = [
   { label: "Home", to: "/owner", icon: LayoutDashboard },
   { label: "My venues", to: "/owner/venues", icon: Building2 },
-  { label: "Inbox", to: "/owner/enquiries", icon: Inbox, badge: "inbox" },
+  { label: "Inbox", to: "/owner/inbox", icon: Inbox, badge: "inbox" },
   { label: "Marketing", to: "/owner/promotions", icon: Megaphone },
   { label: "Plan & billing", to: "/owner/billing", icon: CreditCard },
   { label: "Account", to: "/account", icon: UserCircle },

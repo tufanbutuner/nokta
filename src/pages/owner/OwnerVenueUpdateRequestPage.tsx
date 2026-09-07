@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { OwnerLayout } from "@/components/owner/OwnerLayout";
+import { OwnerVenueTabShell } from "@/components/owner/OwnerVenueTabShell";
+import { ProfileCompletenessCard } from "@/components/owner/analytics/ProfileCompletenessCard";
 import { OwnerVenueUpdateForm } from "@/components/owner/updates/OwnerVenueUpdateForm";
 import { OwnerVenueUpdateRequestsList } from "@/components/owner/updates/OwnerVenueUpdateRequestsList";
 import { PageMeta } from "@/components/seo/PageMeta";
@@ -83,17 +85,15 @@ export function OwnerVenueUpdateRequestPage() {
 
   return (
     <OwnerLayout>
-      <PageMeta title={venue ? `Request profile update | ${venue.name}` : "Request profile update | nokta"} description="Submit a reviewed profile update request." />
+      <PageMeta title={venue ? `${venue.name} profile | nokta` : "Venue profile | nokta"} description="Review venue profile details and submit approved-field changes." canonicalPath={venue ? `/owner/venues/${venue.slug}/profile` : undefined} />
       {isLoading ? <LoadingState message="Loading update request..." /> : error && !venue ? <ErrorState message={error} /> : venue ? (
-        <div className="space-y-6">
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <p className="text-sm text-clay-accent">Profile management</p>
-              <h1 className="mt-1 font-brand text-4xl font-bold tracking-[-0.5px]">Request profile update</h1>
-              <p className="mt-2 text-sm text-muted-foreground">{venue.name} · {venue.city} · {venue.area}</p>
-            </div>
-            <Button asChild variant="outline"><Link to={`/owner/venues/${venue.slug}`}>Back to dashboard</Link></Button>
-          </div>
+        <OwnerVenueTabShell
+          venue={venue}
+          title={venue.name}
+          actions={<Button asChild variant="outline" className="h-[34px] text-[13px]"><Link to={`/venues/${venue.slug}`}>Preview public page</Link></Button>}
+        >
+        <div className="space-y-5">
+          <ProfileCompletenessCard venue={venue} subscription={subscription} />
           {!subscriptionHasPlanAccess(subscription, "profile_update_requests") ? (
             <UpgradePrompt feature="profile_update_requests" requiredPlan="starter" currentPlan={subscription?.plan ?? "free"} venueId={venue.id} />
           ) : success ? (
@@ -107,6 +107,7 @@ export function OwnerVenueUpdateRequestPage() {
             <OwnerVenueUpdateRequestsList requests={requests} onCancel={handleCancel} />
           </section>
         </div>
+        </OwnerVenueTabShell>
       ) : null}
     </OwnerLayout>
   );

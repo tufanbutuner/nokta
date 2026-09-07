@@ -19,9 +19,9 @@ export function ProfileCompletenessCard({ venue, subscription }: { venue: Venue;
         <div className="h-full rounded-full bg-clay-accent" style={{ width: `${score}%` }} />
       </div>
       <div className="mt-5 flex flex-wrap gap-2">
-        <Button asChild variant="outline" size="sm"><Link to={`/owner/venues/${venue.slug}/media`}>Upload photos</Link></Button>
-        <Button asChild variant="outline" size="sm"><Link to={`/owner/venues/${venue.slug}/update`}>Update details</Link></Button>
-        <Button asChild variant="outline" size="sm"><Link to={`/owner/venues/${venue.slug}/availability`}>Configure availability</Link></Button>
+        <Button asChild variant="outline" size="sm"><Link to={`/owner/venues/${venue.slug}/photos`}>Upload photos</Link></Button>
+        <Button asChild variant="outline" size="sm"><Link to={`/owner/venues/${venue.slug}/profile`}>Update details</Link></Button>
+        <Button asChild variant="outline" size="sm"><Link to={`/owner/venues/${venue.slug}/bookings`}>Configure availability</Link></Button>
       </div>
     </section>
   );

@@ -12,6 +12,7 @@ import { OwnerValueInsightsPanel } from "@/components/owner/analytics/OwnerValue
 import { OwnerVenueFunnel } from "@/components/owner/analytics/OwnerVenueFunnel";
 import { ProfileCompletenessCard } from "@/components/owner/analytics/ProfileCompletenessCard";
 import { OwnerLayout } from "@/components/owner/OwnerLayout";
+import { OwnerVenueTabShell } from "@/components/owner/OwnerVenueTabShell";
 import { PageMeta } from "@/components/seo/PageMeta";
 import { ErrorState } from "@/components/state/ErrorState";
 import { LoadingState } from "@/components/state/LoadingState";
@@ -73,22 +74,11 @@ export function OwnerVenueAnalyticsPage() {
 
   return (
     <OwnerLayout>
-      <PageMeta title={venue ? `${venue.name} analytics | nokta` : "Venue analytics | nokta"} description="See how Nokta is helping your venue get discovered and receive customer interest." />
+      <PageMeta title={venue ? `${venue.name} performance | nokta` : "Venue performance | nokta"} description="See how Nokta is helping your venue get discovered and receive customer interest." canonicalPath={venue ? `/owner/venues/${venue.slug}/performance` : undefined} />
       {isLoading ? <LoadingState message="Loading venue analytics..." /> : error || !venue || !summary ? <ErrorState title="Could not load analytics" message={error ?? "You do not have access to this venue analytics page."} /> : (
-        <div className="space-y-6">
-          <header className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-            <div>
-              <p className="text-sm text-clay-accent">Owner analytics</p>
-              <h1 className="mt-1 font-brand text-4xl font-bold tracking-[-0.5px]">{venue.name}</h1>
-              <p className="mt-2 max-w-2xl text-sm leading-6 text-muted-foreground">
-                See how Nokta is helping your venue get discovered, trusted and booked.
-              </p>
-            </div>
-            <div className="flex flex-col gap-3 sm:items-end">
-              <OwnerAnalyticsDateRangeFilter value={dateRange} onChange={setDateRange} />
-              <Button asChild variant="outline" size="sm"><Link to={`/owner/venues/${venue.slug}`}>Back to dashboard</Link></Button>
-            </div>
-          </header>
+        <OwnerVenueTabShell venue={venue} title="Performance" actions={<OwnerAnalyticsDateRangeFilter value={dateRange} onChange={setDateRange} />}>
+        <div className="space-y-5">
+          <p className="max-w-2xl text-[13px] leading-6 text-muted-foreground">See how Nokta is helping your venue get discovered, trusted and booked.</p>
 
           <OwnerAnalyticsSummaryCards summary={summary} />
           {!hasActivity ? <OwnerAnalyticsEmptyState venue={venue} /> : null}
@@ -121,6 +111,7 @@ export function OwnerVenueAnalyticsPage() {
             </aside>
           </div>
         </div>
+        </OwnerVenueTabShell>
       )}
     </OwnerLayout>
   );

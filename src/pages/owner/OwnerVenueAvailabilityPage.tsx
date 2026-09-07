@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { OwnerLayout } from "@/components/owner/OwnerLayout";
+import { OwnerVenueTabShell } from "@/components/owner/OwnerVenueTabShell";
 import { PageMeta } from "@/components/seo/PageMeta";
 import { ErrorState } from "@/components/state/ErrorState";
 import { LoadingState } from "@/components/state/LoadingState";
@@ -149,16 +150,10 @@ export function OwnerVenueAvailabilityPage() {
 
   return (
     <OwnerLayout>
-      <PageMeta title={`Availability | ${venue.name}`} description="Manage venue booking availability settings." canonicalPath={`/owner/venues/${venue.id}/availability`} />
-      <div className="space-y-6">
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <p className="text-sm text-clay-accent">Booking settings</p>
-            <h1 className="mt-1 font-brand text-4xl font-bold tracking-[-0.5px]">Availability</h1>
-            <p className="mt-2 text-sm text-muted-foreground">{venue.name} • configure when customers can request bookings.</p>
-          </div>
-          <Button asChild variant="outline"><Link to={`/owner/venues/${venue.id}`}>Back to venue dashboard</Link></Button>
-        </div>
+      <PageMeta title={`Hours & bookings | ${venue.name}`} description="Manage venue booking availability settings." canonicalPath={`/owner/venues/${venue.slug}/bookings`} />
+      <OwnerVenueTabShell venue={venue} title="Hours & bookings">
+      <div className="space-y-5">
+        <p className="text-[13px] text-muted-foreground">Configure when customers can request bookings. The calendar and unified request log arrive in Phase 5.</p>
         {message ? <Alert className="border-emerald-200 bg-emerald-50 text-emerald-900">{message}</Alert> : null}
         {error ? <Alert className="border-destructive/30 text-destructive">{error}</Alert> : null}
         <AvailabilityPreview settings={availability.settings} windowsCount={availability.windows.filter((window) => window.isEnabled).length} blackoutCount={availability.blackoutDates.length} />
@@ -206,6 +201,7 @@ export function OwnerVenueAvailabilityPage() {
           </div>
         </section>
       </div>
+      </OwnerVenueTabShell>
     </OwnerLayout>
   );
 }

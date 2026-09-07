@@ -10,7 +10,7 @@ export function OwnerAnalyticsEmptyState({ venue }: { venue: Venue }) {
         Once customers start viewing your venue on Nokta, profile views, booking requests and customer actions will appear here.
       </p>
       <div className="mt-5 flex flex-col justify-center gap-3 sm:flex-row">
-        <Button asChild><Link to={`/owner/venues/${venue.slug}`}>Complete setup</Link></Button>
+        <Button asChild><Link to={`/owner/venues/${venue.slug}/profile`}>Complete setup</Link></Button>
         <Button asChild variant="outline"><Link to={`/venues/${venue.slug}`}>View public profile</Link></Button>
       </div>
     </section>

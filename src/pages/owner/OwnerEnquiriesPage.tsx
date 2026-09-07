@@ -98,7 +98,7 @@ export function OwnerEnquiriesPage() {
 
   return (
     <OwnerLayout>
-      <PageMeta title="Enquiry inbox | nokta" description="Manage customer enquiries for your claimed venues." canonicalPath="/owner/enquiries" />
+      <PageMeta title="Enquiry inbox | nokta" description="Manage customer enquiries for your claimed venues." canonicalPath="/owner/inbox" />
       <div className="space-y-6">
         <div>
           <p className="text-sm text-clay-accent">Growth feature</p>

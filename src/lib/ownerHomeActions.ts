@@ -33,7 +33,7 @@ export function getOwnerHomeActions(summary: OwnerHomeSummary): OwnerHomeAction[
       title: `${summary.newEnquiries} new ${summary.newEnquiries === 1 ? "enquiry" : "enquiries"}`,
       description: "Customers are waiting for a reply.",
       actionLabel: "Open inbox",
-      to: "/owner/enquiries",
+      to: "/owner/inbox",
       tone: "urgent",
     });
   }
@@ -71,7 +71,7 @@ export function getOwnerHomeActions(summary: OwnerHomeSummary): OwnerHomeAction[
       title: `Only ${venue.approvedPhotoCount} photo${venue.approvedPhotoCount === 1 ? "" : "s"} on ${venue.name}`,
       description: "Profiles with three or more photos get more visits.",
       actionLabel: "Add photos",
-      to: `/owner/venues/${venue.slug}/media`,
+      to: `/owner/venues/${venue.slug}/photos`,
       tone: "warning",
     });
   }

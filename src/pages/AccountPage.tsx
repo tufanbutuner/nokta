@@ -198,7 +198,7 @@ export function AccountPage() {
                   {claimedVenues.length ? (
                     <>
                       <ShortcutLink to="/owner" icon={LayoutDashboard} label="Owner dashboard" />
-                      <ShortcutLink to="/owner/enquiries" icon={Inbox} label="Enquiry inbox" />
+                      <ShortcutLink to="/owner/inbox" icon={Inbox} label="Enquiry inbox" />
                       <ShortcutLink to="/owner/billing" icon={CreditCard} label="Billing" />
                     </>
                   ) : (

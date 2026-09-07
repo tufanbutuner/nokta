@@ -118,7 +118,7 @@ function VenueAnalyticsOverviewCard({ venue, summary }: { venue: Venue; summary?
           </div>
         </div>
         <Button asChild>
-          <Link to={`/owner/venues/${venue.slug}/analytics`}>
+          <Link to={`/owner/venues/${venue.slug}/performance`}>
             View full analytics
             <ArrowRight className="ml-2 h-4 w-4" />
           </Link>

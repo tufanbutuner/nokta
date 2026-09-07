@@ -17,7 +17,7 @@ export function OwnerActivePromotionsList({ venues, commercialByVenueId }: { ven
             <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
               <span>{commercial?.activePromotedOffers ?? 0} active offers</span>
               <span>{commercial?.activeFeaturedPlacements ?? 0} featured placements</span>
-              <Button asChild size="sm" variant="outline"><Link to={`/owner/venues/${venue.slug}`}>Open venue</Link></Button>
+              <Button asChild size="sm" variant="outline"><Link to={`/owner/venues/${venue.slug}/profile`}>Open venue</Link></Button>
             </div>
           </div>
         );

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { OwnerLayout } from "@/components/owner/OwnerLayout";
+import { OwnerVenueTabShell } from "@/components/owner/OwnerVenueTabShell";
 import { OwnerMediaGrid } from "@/components/owner/media/OwnerMediaGrid";
 import { OwnerMediaGuidelines } from "@/components/owner/media/OwnerMediaGuidelines";
 import { OwnerMediaMetadataDialog } from "@/components/owner/media/OwnerMediaMetadataDialog";
@@ -8,6 +9,7 @@ import { OwnerMediaUploader } from "@/components/owner/media/OwnerMediaUploader"
 import { PageMeta } from "@/components/seo/PageMeta";
 import { ErrorState } from "@/components/state/ErrorState";
 import { LoadingState } from "@/components/state/LoadingState";
+import { Button } from "@/components/ui/button";
 import { useAuth } from "@/context/AuthContext";
 import { trackEvent } from "@/lib/analytics";
 import { deleteOwnerPendingMedia, getOwnerVenueMedia, updateOwnerVenueMediaMetadata } from "@/services/ownerVenueMediaService";
@@ -64,14 +66,15 @@ export function OwnerVenueMediaPage() {
 
   return (
     <OwnerLayout>
-      <PageMeta title={venue ? `${venue.name} photos | nokta` : "Venue photos | nokta"} description="Upload and manage venue photos for review." />
+      <PageMeta title={venue ? `${venue.name} photos | nokta` : "Venue photos | nokta"} description="Upload and manage venue photos for review." canonicalPath={venue ? `/owner/venues/${venue.slug}/photos` : undefined} />
       {isLoading ? <LoadingState message="Loading venue photos..." /> : error || !venue || !user ? <ErrorState title="Venue media not found" message={error ?? "You do not have access to this venue media page."} /> : (
-        <div className="space-y-6">
-          <div>
-            <p className="text-sm text-clay-accent">Owner dashboard</p>
-            <h1 className="mt-1 font-brand text-4xl font-bold tracking-[-0.5px]">{venue.name} photos</h1>
-            <p className="mt-2 text-sm text-muted-foreground">Upload original venue photos for admin review. Approved photos appear on the public venue page.</p>
-          </div>
+        <OwnerVenueTabShell
+          venue={venue}
+          title="Photos"
+          actions={<Button asChild variant="outline" className="h-[34px] text-[13px]"><Link to={`/venues/${venue.slug}`}>Preview public page</Link></Button>}
+        >
+        <div className="space-y-5">
+          <p className="text-[13px] text-muted-foreground">Upload original venue photos for admin review. Approved photos appear on the public venue page.</p>
           <div className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_340px]">
             <div className="space-y-6">
               <OwnerMediaUploader venue={venue} userId={user.id} onUploaded={(item) => setMedia((current) => [item, ...current])} />
@@ -81,6 +84,7 @@ export function OwnerVenueMediaPage() {
           </div>
           {editing ? <OwnerMediaMetadataDialog media={editing} onClose={() => setEditing(null)} onSave={handleSaveMetadata} /> : null}
         </div>
+        </OwnerVenueTabShell>
       )}
     </OwnerLayout>
   );

@@ -126,7 +126,7 @@ export function Header() {
                       <LayoutDashboard className="h-4 w-4" />
                       Owner dashboard
                     </NavLink>
-                    <NavLink to="/owner/enquiries" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
+                    <NavLink to="/owner/inbox" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
                       <Inbox className="h-4 w-4" />
                       Owner enquiries
                     </NavLink>
@@ -250,7 +250,7 @@ export function Header() {
               <NavLink to="/owner" className={mobileNavLinkClass}>
                 Owner dashboard
               </NavLink>
-              <NavLink to="/owner/enquiries" className={mobileNavLinkClass}>
+              <NavLink to="/owner/inbox" className={mobileNavLinkClass}>
                 Owner enquiries
               </NavLink>
               <NavLink to="/owner/promotions" className={mobileNavLinkClass}>
