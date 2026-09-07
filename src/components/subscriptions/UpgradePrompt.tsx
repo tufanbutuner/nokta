@@ -33,7 +33,7 @@ export function UpgradePrompt({ feature, requiredPlan, currentPlan, venueId }: {
           variant="outline"
           onClick={() => trackEvent("owner_upgrade_prompt_clicked", { venueId, currentPlan, targetPlan, feature })}
         >
-          <Link to="/owner/pricing">
+          <Link to="/owner/billing#owner-plans">
             View plans <ArrowUpRight className="ml-2 h-4 w-4" />
           </Link>
         </Button>

@@ -13,7 +13,7 @@ const taskContent: Record<OwnerOnboardingTaskKey, { title: string; description: 
   configure_availability: { title: "Configure booking availability", description: "Set the days, times and party sizes you can handle.", cta: "Set availability", href: (venue) => `/owner/venues/${venue.slug}/availability` },
   test_booking: { title: "Test a booking request", description: "Submit a test request and check the owner response workflow.", cta: "Open bookings", href: () => "/owner/bookings" },
   enable_notifications: { title: "Check notifications", description: "Make sure booking and enquiry alerts reach the right place.", cta: "View notifications", href: () => "/account/notifications" },
-  review_pricing: { title: "Review pricing/features", description: "Compare owner tools and decide when to unlock paid features.", cta: "View plans", href: () => "/owner/pricing" },
+  review_pricing: { title: "Review pricing/features", description: "Compare owner tools and decide when to unlock paid features.", cta: "View plans", href: () => "/owner/billing#owner-plans" },
 };
 
 export function OwnerLaunchChecklist({ venue, tasks, onComplete }: { venue: Venue; tasks: OwnerOnboardingTask[]; onComplete: (taskKey: OwnerOnboardingTaskKey) => void }) {

@@ -4,7 +4,7 @@ import { RequireAdmin } from "@/components/auth/RequireAdmin";
 import { AppLayout } from "@/components/layout/AppLayout";
 import { PageLoadingState } from "@/components/state/PageLoadingState";
 import { AppErrorPage } from "@/pages/AppErrorPage";
-import { createBrowserRouter, useSearchParams } from "react-router-dom";
+import { Navigate, createBrowserRouter, useSearchParams } from "react-router-dom";
 
 const AccountConfirmationPage = lazyPage(() => import("@/pages/AccountConfirmationPage"), "AccountConfirmationPage");
 const AccountPage = lazyPage(() => import("@/pages/AccountPage"), "AccountPage");
@@ -46,7 +46,7 @@ const OwnerVenueAvailabilityPage = lazyPage(() => import("@/pages/owner/OwnerVen
 const OwnerVenueAnalyticsPage = lazyPage(() => import("@/pages/owner/OwnerVenueAnalyticsPage"), "OwnerVenueAnalyticsPage");
 const OwnerVenueMediaPage = lazyPage(() => import("@/pages/owner/OwnerVenueMediaPage"), "OwnerVenueMediaPage");
 const OwnerVenueUpdateRequestPage = lazyPage(() => import("@/pages/owner/OwnerVenueUpdateRequestPage"), "OwnerVenueUpdateRequestPage");
-const OwnerPricingPage = lazyPage(() => import("@/pages/owner/OwnerPricingPage"), "OwnerPricingPage");
+const OwnerVenuesPage = lazyPage(() => import("@/pages/owner/OwnerVenuesPage"), "OwnerVenuesPage");
 const OwnerPromotionsPage = lazyPage(() => import("@/pages/owner/OwnerPromotionsPage"), "OwnerPromotionsPage");
 const OwnerRequestFeaturedPlacementPage = lazyPage(() => import("@/pages/owner/OwnerRequestFeaturedPlacementPage"), "OwnerRequestFeaturedPlacementPage");
 const OwnerRequestPromotedOfferPage = lazyPage(() => import("@/pages/owner/OwnerRequestPromotedOfferPage"), "OwnerRequestPromotedOfferPage");
@@ -143,7 +143,7 @@ export const router = createBrowserRouter([
         path: "/owner/venues",
         element: routeElement(
           <RequireAuth>
-            <OwnerDashboardPage />
+            <OwnerVenuesPage />
           </RequireAuth>,
         ),
       },
@@ -229,11 +229,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/owner/pricing",
-        element: routeElement(
-          <RequireAuth>
-            <OwnerPricingPage />
-          </RequireAuth>,
-        ),
+        element: <Navigate to="/owner/billing" replace />,
       },
       {
         path: "/owner/billing",

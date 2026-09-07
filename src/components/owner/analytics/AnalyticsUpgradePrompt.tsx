@@ -7,7 +7,7 @@ export function AnalyticsUpgradePrompt({ title, description }: { title: string; 
       <h2 className="font-semibold">{title}</h2>
       <p className="mt-2 text-sm leading-6 text-muted-foreground">{description}</p>
       <Button asChild className="mt-5" variant="outline">
-        <Link to="/owner/pricing">View plans</Link>
+        <Link to="/owner/billing#owner-plans">View plans</Link>
       </Button>
     </section>
   );

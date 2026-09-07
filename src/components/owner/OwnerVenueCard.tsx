@@ -49,7 +49,7 @@ export function OwnerVenueCard({ venue, analytics, enquiries, commercial, subscr
         </Button>
       ) : (
         <Button asChild variant="outline" className="ml-2 mt-4">
-          <Link to="/owner/pricing">View plans</Link>
+          <Link to="/owner/billing#owner-plans">View plans</Link>
         </Button>
       )}
       {subscriptionHasPlanAccess(subscription ?? null, "owner_enquiry_inbox") ? (

@@ -1,32 +1,51 @@
-import { ArrowLeft, BarChart3, BookOpenCheck, Building2, CreditCard, Home, Inbox, LayoutDashboard, Megaphone, Menu, PanelLeftClose, PanelLeftOpen, UserCircle, X } from "lucide-react";
+import { ArrowLeft, Building2, CreditCard, Home, Inbox, LayoutDashboard, Megaphone, Menu, PanelLeftClose, PanelLeftOpen, UserCircle, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { NotificationBell } from "@/components/notifications/NotificationBell";
 import { useAuth } from "@/context/AuthContext";
 import { cn } from "@/lib/utils";
+import { getOwnerNeedsReplyCount } from "@/services/ownerHomeSummaryService";
 
 const OWNER_NAV_ITEMS = [
-  { label: "Dashboard", compactLabel: "Dashboard", to: "/owner", icon: LayoutDashboard },
-  { label: "My venues", compactLabel: "Venues", to: "/owner/venues", icon: Building2 },
-  { label: "Analytics", compactLabel: "Analytics", to: "/owner/analytics", icon: BarChart3 },
-  { label: "Bookings", compactLabel: "Bookings", to: "/owner/bookings", icon: BookOpenCheck },
-  { label: "Enquiries", compactLabel: "Enquiries", to: "/owner/enquiries", icon: Inbox },
-  { label: "Promotions", compactLabel: "Promotions", to: "/owner/promotions", icon: Megaphone },
-  { label: "Pricing", compactLabel: "Pricing", to: "/owner/pricing", icon: CreditCard },
-  { label: "Billing", compactLabel: "Billing", to: "/owner/billing", icon: CreditCard },
-  { label: "Account", compactLabel: "Account", to: "/account", icon: UserCircle },
+  { label: "Home", to: "/owner", icon: LayoutDashboard },
+  { label: "My venues", to: "/owner/venues", icon: Building2 },
+  { label: "Inbox", to: "/owner/enquiries", icon: Inbox, badge: "inbox" },
+  { label: "Marketing", to: "/owner/promotions", icon: Megaphone },
+  { label: "Plan & billing", to: "/owner/billing", icon: CreditCard },
+  { label: "Account", to: "/account", icon: UserCircle },
 ] as const;
 
 export function OwnerLayout({ children }: { children: React.ReactNode }) {
   const { user } = useAuth();
   const [isCollapsed, setIsCollapsed] = useState(() => localStorage.getItem("sheesh-owner-sidebar-collapsed") === "true");
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [needsReplyCount, setNeedsReplyCount] = useState(0);
   const initials = getInitials(user?.email);
 
   useEffect(() => {
     localStorage.setItem("sheesh-owner-sidebar-collapsed", String(isCollapsed));
   }, [isCollapsed]);
+
+  useEffect(() => {
+    if (!user) return;
+    let cancelled = false;
+    const load = () => {
+      getOwnerNeedsReplyCount({ userId: user.id })
+        .then((count) => {
+          if (!cancelled) setNeedsReplyCount(count);
+        })
+        .catch(() => {
+          if (!cancelled) setNeedsReplyCount(0);
+        });
+    };
+    load();
+    const interval = window.setInterval(load, 60_000);
+    return () => {
+      cancelled = true;
+      window.clearInterval(interval);
+    };
+  }, [user]);
 
   return (
     <main className="h-screen overflow-hidden bg-nokta-page-bg font-primary text-nokta-ink">
@@ -50,7 +69,7 @@ export function OwnerLayout({ children }: { children: React.ReactNode }) {
                 <div className="px-2 pb-2 text-[10px] font-semibold uppercase tracking-[2px] text-clay-50/40">Owner</div>
                 <nav className="grid gap-1">
                   {OWNER_NAV_ITEMS.map((item) => (
-                    <OwnerNavLink key={item.to} to={item.to} label={item.label} icon={item.icon} compact onClick={() => setIsMobileOpen(false)} />
+                    <OwnerNavLink key={item.to} to={item.to} label={item.label} icon={item.icon} badgeCount={"badge" in item ? needsReplyCount : 0} compact onClick={() => setIsMobileOpen(false)} />
                   ))}
                 </nav>
                 <NavLink to="/" onClick={() => setIsMobileOpen(false)} className="mt-4 flex items-center gap-3 rounded-lg bg-clay-400/10 px-3 py-3 text-sm font-medium text-clay-200">
@@ -85,7 +104,7 @@ export function OwnerLayout({ children }: { children: React.ReactNode }) {
           <div className={cn("mt-8 text-[10px] font-semibold uppercase tracking-[2px] text-[#8a7e7266]", isCollapsed ? "sr-only" : "")}>Owner</div>
           <nav className="mt-6 grid gap-1">
             {OWNER_NAV_ITEMS.map((item) => (
-              <OwnerNavLink key={item.to} to={item.to} label={item.label} icon={item.icon} collapsed={isCollapsed} />
+              <OwnerNavLink key={item.to} to={item.to} label={item.label} icon={item.icon} badgeCount={"badge" in item ? needsReplyCount : 0} collapsed={isCollapsed} />
             ))}
           </nav>
           <div className="mt-auto border-t border-white/10 pt-4">
@@ -117,7 +136,7 @@ export function OwnerLayout({ children }: { children: React.ReactNode }) {
   );
 }
 
-function OwnerNavLink({ to, label, icon: Icon, compact = false, collapsed = false, onClick }: { to: string; label: string; icon: React.ComponentType<{ className?: string }>; compact?: boolean; collapsed?: boolean; onClick?: () => void }) {
+function OwnerNavLink({ to, label, icon: Icon, badgeCount = 0, compact = false, collapsed = false, onClick }: { to: string; label: string; icon: React.ComponentType<{ className?: string }>; badgeCount?: number; compact?: boolean; collapsed?: boolean; onClick?: () => void }) {
   const end = to === "/owner";
 
   return (
@@ -139,6 +158,9 @@ function OwnerNavLink({ to, label, icon: Icon, compact = false, collapsed = fals
     >
       <Icon className="h-[15px] w-[15px] shrink-0" />
       <span className={collapsed && !compact ? "sr-only" : ""}>{label}</span>
+      {badgeCount > 0 ? (
+        <span className={cn("rounded-full bg-clay-accent px-[6px] py-px text-[10.5px] font-semibold text-white", collapsed && !compact ? "sr-only" : "ml-auto")}>{badgeCount}</span>
+      ) : null}
     </NavLink>
   );
 }
