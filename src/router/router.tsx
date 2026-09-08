@@ -10,9 +10,8 @@ const AccountConfirmationPage = lazyPage(() => import("@/pages/AccountConfirmati
 const AccountPage = lazyPage(() => import("@/pages/AccountPage"), "AccountPage");
 const MyBookingsPage = lazyPage(() => import("@/pages/account/MyBookingsPage"), "MyBookingsPage");
 const NotificationsPage = lazyPage(() => import("@/pages/account/NotificationsPage"), "NotificationsPage");
-const DataQualityPage = lazyPage(() => import("@/pages/admin/DataQualityPage"), "DataQualityPage");
+const AdminInsightsPage = lazyPage(() => import("@/pages/admin/AdminInsightsPage"), "AdminInsightsPage");
 const AdminCommercialPage = lazyPage(() => import("@/pages/admin/AdminCommercialPage"), "AdminCommercialPage");
-const AdminVenueAnalyticsPage = lazyPage(() => import("@/pages/admin/AdminVenueAnalyticsPage"), "AdminVenueAnalyticsPage");
 const AdminDemandPage = lazyPage(() => import("@/pages/admin/AdminDemandPage"), "AdminDemandPage");
 const AdminVenuesPage = lazyPage(() => import("@/pages/admin/AdminVenuesPage"), "AdminVenuesPage");
 const AdminReviewQueuePage = lazyPage(() => import("@/pages/admin/AdminReviewQueuePage"), "AdminReviewQueuePage");
@@ -296,12 +295,16 @@ export const router = createBrowserRouter([
         element: <Navigate to="/admin/demand?kind=booking" replace />,
       },
       {
-        path: "/admin/data-quality",
+        path: "/admin/insights",
         element: routeElement(
           <RequireAdmin>
-            <DataQualityPage />
+            <AdminInsightsPage />
           </RequireAdmin>,
         ),
+      },
+      {
+        path: "/admin/data-quality",
+        element: <Navigate to="/admin/insights?view=data-quality" replace />,
       },
       {
         path: "/admin/review",
@@ -361,11 +364,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/admin/analytics",
-        element: routeElement(
-          <RequireAdmin>
-            <AdminVenueAnalyticsPage />
-          </RequireAdmin>,
-        ),
+        element: <Navigate to="/admin/insights" replace />,
       },
       {
         path: "/admin/monetisation",

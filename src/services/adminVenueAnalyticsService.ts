@@ -68,6 +68,14 @@ export async function getAdminVenueAnalyticsSummaries(filters: AdminAnalyticsFil
   return Array.from(byVenue.values()).sort((a, b) => b.profileViews - a.profileViews);
 }
 
+export async function getAdminVenueIdsWithMenuItems(venueIds: string[]): Promise<Set<string>> {
+  if (!venueIds.length) return new Set();
+  const client = ensureSupabase();
+  const { data, error } = await client.from("venue_menu_items").select("venue_id").in("venue_id", venueIds);
+  if (error) throw new Error(`Could not load venue menu coverage: ${error.message}`);
+  return new Set(((data ?? []) as { venue_id: string }[]).map((row) => row.venue_id));
+}
+
 export async function getTopVenuesByMetric(input: { filters: AdminAnalyticsFilters; metric: AnalyticsMetric; limit?: number }): Promise<VenueAnalyticsSummary[]> {
   const summaries = await getAdminVenueAnalyticsSummaries(input.filters);
   return summaries.sort((a, b) => b[input.metric] - a[input.metric]).slice(0, input.limit ?? 10);

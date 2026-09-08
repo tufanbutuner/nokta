@@ -1,4 +1,4 @@
-import { Activity, BarChart3, ClipboardPenLine, CreditCard, LayoutDashboard, MapPin, MessageSquare } from "lucide-react";
+import { BarChart3, ClipboardPenLine, CreditCard, LayoutDashboard, MapPin, MessageSquare } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { useAuth } from "@/context/AuthContext";
 import { cn } from "@/lib/utils";
@@ -9,8 +9,7 @@ export const ADMIN_NAV_ITEMS = [
   { label: "Review queue", to: "/admin/review", icon: ClipboardPenLine },
   { label: "Demand", to: "/admin/demand", icon: MessageSquare },
   { label: "Commercial", to: "/admin/commercial", icon: CreditCard },
-  { label: "Analytics", to: "/admin/analytics", icon: BarChart3 },
-  { label: "Data Quality", to: "/admin/data-quality", icon: Activity },
+  { label: "Insights", to: "/admin/insights", icon: BarChart3 },
 ] as const;
 
 export function AdminSidebar({ activePath = "/admin/monetisation" }: { activePath?: string }) {
