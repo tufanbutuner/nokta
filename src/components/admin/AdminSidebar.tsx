@@ -1,24 +1,26 @@
-import { Activity, BadgeCheck, BarChart3, BookOpenCheck, Camera, ClipboardPenLine, CreditCard, DollarSign, GitBranch, Inbox, LayoutDashboard, MapPin, Megaphone, PenLine, Sparkles, Tag } from "lucide-react";
+import { Activity, BadgeCheck, BarChart3, BookOpenCheck, ClipboardPenLine, CreditCard, DollarSign, GitBranch, Inbox, LayoutDashboard, MapPin, Megaphone, PenLine, Sparkles, Tag } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { useAuth } from "@/context/AuthContext";
 import { cn } from "@/lib/utils";
 
 export const ADMIN_NAV_ITEMS = [
   { label: "Venues", to: "/admin/venues", icon: MapPin },
-  { label: "Data Quality", to: "/admin/data-quality", icon: Activity },
-  { label: "Media Review", to: "/admin/media-review", icon: Camera },
-  { label: "Venue Updates", to: "/admin/venue-updates", icon: ClipboardPenLine },
-  { label: "Subscriptions", to: "/admin/subscriptions", icon: CreditCard },
-  { label: "Promotion Requests", to: "/admin/promotion-requests", icon: Megaphone },
-  { label: "Bookings", to: "/admin/bookings", icon: BookOpenCheck },
+  // Review queue absorbs Venue Updates and Media Review; the other four
+  // approve/reject pages keep their own entries until their submitted-band
+  // components land.
+  { label: "Review queue", to: "/admin/review", icon: ClipboardPenLine },
   { label: "Suggestions", to: "/admin/suggestions", icon: GitBranch },
   { label: "Reviews", to: "/admin/reviews", icon: PenLine },
   { label: "Claims", to: "/admin/claims", icon: BadgeCheck },
-  { label: "Featured", to: "/admin/featured", icon: Sparkles },
+  { label: "Promotion Requests", to: "/admin/promotion-requests", icon: Megaphone },
+  { label: "Bookings", to: "/admin/bookings", icon: BookOpenCheck },
   { label: "Enquiries", to: "/admin/enquiries", icon: Inbox },
+  { label: "Subscriptions", to: "/admin/subscriptions", icon: CreditCard },
+  { label: "Featured", to: "/admin/featured", icon: Sparkles },
   { label: "Offers", to: "/admin/offers", icon: Tag },
-  { label: "Analytics", to: "/admin/analytics", icon: BarChart3 },
   { label: "Monetisation", to: "/admin/monetisation", icon: DollarSign },
+  { label: "Analytics", to: "/admin/analytics", icon: BarChart3 },
+  { label: "Data Quality", to: "/admin/data-quality", icon: Activity },
 ] as const;
 
 export function AdminSidebar({ activePath = "/admin/monetisation" }: { activePath?: string }) {
