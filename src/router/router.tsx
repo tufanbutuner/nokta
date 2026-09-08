@@ -11,10 +11,8 @@ const AccountPage = lazyPage(() => import("@/pages/AccountPage"), "AccountPage")
 const MyBookingsPage = lazyPage(() => import("@/pages/account/MyBookingsPage"), "MyBookingsPage");
 const NotificationsPage = lazyPage(() => import("@/pages/account/NotificationsPage"), "NotificationsPage");
 const DataQualityPage = lazyPage(() => import("@/pages/admin/DataQualityPage"), "DataQualityPage");
-const AdminFeaturedPlacementsPage = lazyPage(() => import("@/pages/admin/AdminFeaturedPlacementsPage"), "AdminFeaturedPlacementsPage");
-const AdminPromotedOffersPage = lazyPage(() => import("@/pages/admin/AdminPromotedOffersPage"), "AdminPromotedOffersPage");
+const AdminCommercialPage = lazyPage(() => import("@/pages/admin/AdminCommercialPage"), "AdminCommercialPage");
 const AdminVenueAnalyticsPage = lazyPage(() => import("@/pages/admin/AdminVenueAnalyticsPage"), "AdminVenueAnalyticsPage");
-const AdminSubscriptionsPage = lazyPage(() => import("@/pages/admin/AdminSubscriptionsPage"), "AdminSubscriptionsPage");
 const AdminDemandPage = lazyPage(() => import("@/pages/admin/AdminDemandPage"), "AdminDemandPage");
 const AdminVenuesPage = lazyPage(() => import("@/pages/admin/AdminVenuesPage"), "AdminVenuesPage");
 const AdminReviewQueuePage = lazyPage(() => import("@/pages/admin/AdminReviewQueuePage"), "AdminReviewQueuePage");
@@ -26,7 +24,6 @@ const CustomerBookingStatusPage = lazyPage(() => import("@/pages/CustomerBooking
 const DiscoverPage = lazyPage(() => import("@/pages/DiscoverPage"), "DiscoverPage");
 const ForVenuesPage = lazyPage(() => import("@/pages/ForVenuesPage"), "ForVenuesPage");
 const HomePage = lazyPage(() => import("@/pages/HomePage"), "HomePage");
-const MonetisationDashboardPage = lazyPage(() => import("@/pages/admin/MonetisationDashboardPage"), "MonetisationDashboardPage");
 const NotFoundPage = lazyPage(() => import("@/pages/NotFoundPage"), "NotFoundPage");
 const OwnerDashboardPage = lazyPage(() => import("@/pages/owner/OwnerDashboardPage"), "OwnerDashboardPage");
 const OwnerAnalyticsPage = lazyPage(() => import("@/pages/owner/OwnerAnalyticsPage"), "OwnerAnalyticsPage");
@@ -287,6 +284,14 @@ export const router = createBrowserRouter([
         ),
       },
       {
+        path: "/admin/commercial",
+        element: routeElement(
+          <RequireAdmin>
+            <AdminCommercialPage />
+          </RequireAdmin>,
+        ),
+      },
+      {
         path: "/admin/bookings",
         element: <Navigate to="/admin/demand?kind=booking" replace />,
       },
@@ -316,11 +321,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/admin/subscriptions",
-        element: routeElement(
-          <RequireAdmin>
-            <AdminSubscriptionsPage />
-          </RequireAdmin>,
-        ),
+        element: <Navigate to="/admin/commercial?view=subscriptions" replace />,
       },
       {
         path: "/admin/promotion-requests",
@@ -348,11 +349,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/admin/featured",
-        element: routeElement(
-          <RequireAdmin>
-            <AdminFeaturedPlacementsPage />
-          </RequireAdmin>,
-        ),
+        element: <Navigate to="/admin/commercial?view=placements&kind=featured" replace />,
       },
       {
         path: "/admin/enquiries",
@@ -360,11 +357,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/admin/offers",
-        element: routeElement(
-          <RequireAdmin>
-            <AdminPromotedOffersPage />
-          </RequireAdmin>,
-        ),
+        element: <Navigate to="/admin/commercial?view=placements&kind=offers" replace />,
       },
       {
         path: "/admin/analytics",
@@ -376,11 +369,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/admin/monetisation",
-        element: routeElement(
-          <RequireAdmin>
-            <MonetisationDashboardPage />
-          </RequireAdmin>,
-        ),
+        element: <Navigate to="/admin/commercial" replace />,
       },
       {
         path: "/admin/venues/new",
