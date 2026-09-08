@@ -11,7 +11,7 @@ const taskContent: Record<OwnerOnboardingTaskKey, { title: string; description: 
   review_profile: { title: "Review profile details", description: "Check address, contact links, features, prices and venue copy.", cta: "Review profile", href: (venue) => `/owner/venues/${venue.slug}/profile` },
   upload_photos: { title: "Upload venue photos", description: "Add original photos so customers know what to expect.", cta: "Upload photos", href: (venue) => `/owner/venues/${venue.slug}/photos` },
   configure_availability: { title: "Configure booking availability", description: "Set the days, times and party sizes you can handle.", cta: "Set availability", href: (venue) => `/owner/venues/${venue.slug}/bookings` },
-  test_booking: { title: "Test a booking request", description: "Submit a test request and check the owner response workflow.", cta: "Open bookings", href: () => "/owner/bookings" },
+  test_booking: { title: "Test a booking request", description: "Submit a test request and check the owner response workflow.", cta: "Open bookings", href: () => "/owner/inbox?type=booking" },
   enable_notifications: { title: "Check notifications", description: "Make sure booking and enquiry alerts reach the right place.", cta: "View notifications", href: () => "/account/notifications" },
   review_pricing: { title: "Review pricing/features", description: "Compare owner tools and decide when to unlock paid features.", cta: "View plans", href: () => "/owner/billing#owner-plans" },
 };

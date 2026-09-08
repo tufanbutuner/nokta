@@ -3,6 +3,7 @@ import { getPartySizeBucket, getRequestedDateBucket } from "@/lib/bookingRequest
 import { mapBookingRequestRowToBookingRequest } from "@/lib/bookingRequestMappers";
 import { supabase, supabaseConfigError } from "@/lib/supabase";
 import { queueEmailDeliveryForNotification } from "@/services/emailDeliveryService";
+import { getMyClaimedVenue, getMyClaimedVenues } from "@/services/ownerVenueService";
 import type { BookingRequest, BookingRequestStatus, OwnerBookingRequestActionInput, OwnerProposeAlternativeInput } from "@/types/bookingRequests";
 import type { BookingRequestRow } from "@/types/database";
 
@@ -13,8 +14,13 @@ function ensureSupabase() {
 
 export async function getOwnerBookingRequests(input: { ownerUserId: string; venueId?: string; status?: string }): Promise<BookingRequest[]> {
   const client = ensureSupabase();
-  let query = client.from("booking_requests").select("*").order("requested_date", { ascending: true }).order("created_at", { ascending: false });
-  if (input.venueId) query = query.eq("venue_id", input.venueId);
+  const venues = input.venueId
+    ? [await getMyClaimedVenue({ userId: input.ownerUserId, venueId: input.venueId })].filter(Boolean)
+    : await getMyClaimedVenues(input.ownerUserId);
+  const venueIds = venues.map((venue) => venue!.id);
+  if (!venueIds.length) return [];
+
+  let query = client.from("booking_requests").select("*").in("venue_id", venueIds).order("requested_date", { ascending: true }).order("created_at", { ascending: false });
   if (input.status && input.status !== "all") query = query.eq("status", input.status);
   const { data, error } = await query;
   if (error) throw new Error(`Could not load booking requests: ${error.message}`);
@@ -37,6 +43,12 @@ export function declineBookingRequest(input: OwnerBookingRequestActionInput): Pr
     declined_at: new Date().toISOString(),
     confirmed_at: null,
   }, "owner_booking_declined", "venue_booking_request_declined");
+}
+
+export function replyToBookingRequest(input: OwnerBookingRequestActionInput): Promise<BookingRequest> {
+  return updateOwnerBookingRequest(input.bookingRequestId, input.ownerUserId, {
+    owner_response_message: nullableText(input.responseMessage),
+  });
 }
 
 export function proposeBookingAlternative(input: OwnerProposeAlternativeInput): Promise<BookingRequest> {

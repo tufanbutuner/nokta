@@ -22,7 +22,7 @@ export function getOwnerHomeActions(summary: OwnerHomeSummary): OwnerHomeAction[
       title: `${summary.pendingBookingRequests} booking request${summary.pendingBookingRequests === 1 ? "" : "s"} waiting`,
       description: describeOldestBooking(summary.oldestPendingBookingAt),
       actionLabel: "Open bookings",
-      to: "/owner/bookings",
+      to: "/owner/inbox?type=booking",
       tone: "urgent",
     });
   }

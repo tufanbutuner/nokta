@@ -9,7 +9,7 @@ export function buildBookingStatusUrl(token: string): string {
 }
 
 export function buildOwnerBookingsUrl(): string {
-  return buildAbsoluteAppUrl("/owner/bookings");
+  return buildAbsoluteAppUrl("/owner/inbox?type=booking");
 }
 
 export function buildOwnerEnquiriesUrl(): string {

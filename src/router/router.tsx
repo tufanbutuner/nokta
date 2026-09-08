@@ -38,7 +38,6 @@ const OwnerDashboardPage = lazyPage(() => import("@/pages/owner/OwnerDashboardPa
 const OwnerAnalyticsPage = lazyPage(() => import("@/pages/owner/OwnerAnalyticsPage"), "OwnerAnalyticsPage");
 const OwnerBillingPage = lazyPage(() => import("@/pages/owner/OwnerBillingPage"), "OwnerBillingPage");
 const OwnerBillingSuccessPage = lazyPage(() => import("@/pages/owner/OwnerBillingSuccessPage"), "OwnerBillingSuccessPage");
-const OwnerBookingsPage = lazyPage(() => import("@/pages/owner/OwnerBookingsPage"), "OwnerBookingsPage");
 const OwnerEnquiriesPage = lazyPage(() => import("@/pages/owner/OwnerEnquiriesPage"), "OwnerEnquiriesPage");
 const OwnerVenueAvailabilityPage = lazyPage(() => import("@/pages/owner/OwnerVenueAvailabilityPage"), "OwnerVenueAvailabilityPage");
 const OwnerVenueAnalyticsPage = lazyPage(() => import("@/pages/owner/OwnerVenueAnalyticsPage"), "OwnerVenueAnalyticsPage");
@@ -88,11 +87,7 @@ export const router = createBrowserRouter([
       { path: "/terms", element: routeElement(<TermsPage />) },
       {
         path: "/owner/bookings",
-        element: routeElement(
-          <RequireAuth>
-            <OwnerBookingsPage />
-          </RequireAuth>,
-        ),
+        element: routeElement(<OwnerInboxRedirect bookingOnly />),
       },
       {
         path: "/account",
@@ -445,7 +440,15 @@ function VenueInboxRedirect() {
   return <Navigate replace to={`/owner/inbox?${nextSearch.toString()}`} />;
 }
 
-function OwnerInboxRedirect() {
+function OwnerInboxRedirect({ bookingOnly = false }: { bookingOnly?: boolean }) {
   const { search } = useLocation();
-  return <Navigate replace to={`/owner/inbox${search}`} />;
+  const nextSearch = new URLSearchParams(search);
+  const legacyBookingId = nextSearch.get("booking");
+  if (legacyBookingId) {
+    nextSearch.set("item", legacyBookingId);
+    nextSearch.delete("booking");
+  }
+  if (bookingOnly) nextSearch.set("type", "booking");
+  const query = nextSearch.toString();
+  return <Navigate replace to={`/owner/inbox${query ? `?${query}` : ""}`} />;
 }

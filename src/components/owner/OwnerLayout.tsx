@@ -41,9 +41,11 @@ export function OwnerLayout({ children }: { children: React.ReactNode }) {
     };
     load();
     const interval = window.setInterval(load, 60_000);
+    window.addEventListener("owner-inbox-updated", load);
     return () => {
       cancelled = true;
       window.clearInterval(interval);
+      window.removeEventListener("owner-inbox-updated", load);
     };
   }, [user]);
 
