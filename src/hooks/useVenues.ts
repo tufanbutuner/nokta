@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { useAuth } from "@/context/AuthContext";
-import { isAdminUser } from "@/lib/admin";
+import { useIsAdmin } from "@/hooks/useIsAdmin";
 import { getVenues } from "@/services/venueService";
 import type { Venue } from "@/types/venue";
 
@@ -11,8 +11,8 @@ interface UseVenuesResult {
 }
 
 export function useVenues(): UseVenuesResult {
-  const { user, isLoading: isLoadingAuth } = useAuth();
-  const canSeeTestVenues = isAdminUser(user);
+  const { isLoading: isLoadingAuth } = useAuth();
+  const { isAdmin: canSeeTestVenues, isLoading: isLoadingAdmin } = useIsAdmin();
   const query = useQuery({
     queryKey: ["venues"],
     queryFn: getVenues,
@@ -22,5 +22,5 @@ export function useVenues(): UseVenuesResult {
   const venues = canSeeTestVenues ? query.data ?? [] : (query.data ?? []).filter((venue) => !venue.isTest);
   const error = query.error instanceof Error ? query.error.message : query.error ? "Could not load venues." : null;
 
-  return { venues, isLoading: isLoadingAuth || query.isPending, error };
+  return { venues, isLoading: isLoadingAuth || isLoadingAdmin || query.isPending, error };
 }
