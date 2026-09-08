@@ -11,6 +11,8 @@ export function validateVenueBookingSettings(settings: Partial<VenueBookingSetti
   if (settings.minNoticeMinutes !== undefined && (settings.minNoticeMinutes < 0 || settings.minNoticeMinutes > 43200)) errors.minNoticeMinutes = "Notice period must be between 0 minutes and 30 days.";
   if (settings.maxAdvanceDays !== undefined && (settings.maxAdvanceDays < 1 || settings.maxAdvanceDays > 365)) errors.maxAdvanceDays = "Advance booking window must be between 1 and 365 days.";
   if (settings.defaultBookingDurationMinutes !== undefined && (settings.defaultBookingDurationMinutes < 30 || settings.defaultBookingDurationMinutes > 480)) errors.defaultBookingDurationMinutes = "Duration must be between 30 minutes and 8 hours.";
+  // Shown above the public request form, so it has to stay short.
+  if (settings.bookingInstructions && settings.bookingInstructions.length > 140) errors.bookingInstructions = "Keep this under 140 characters.";
   return { errors, isValid: Object.keys(errors).length === 0 };
 }
 
@@ -21,6 +23,15 @@ export function validateVenueBookingWindow(window: Partial<VenueBookingWindow>):
   if (!window.endTime || !TIME_PATTERN.test(window.endTime)) errors.endTime = "Use HH:mm format.";
   if (window.startTime && window.endTime && window.endTime <= window.startTime) errors.endTime = "End time must be after start time.";
   return { errors, isValid: Object.keys(errors).length === 0 };
+}
+
+export function validateVenueBookingClosureDate(date: string, now = new Date()): string | null {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) return "Use the YYYY-MM-DD format.";
+  const parsed = new Date(`${date}T00:00:00`);
+  if (Number.isNaN(parsed.getTime())) return "That is not a real date.";
+  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  if (parsed < today) return "Closure dates cannot be in the past.";
+  return null;
 }
 
 export function checkBookingAvailability(input: BookingAvailabilityCheckInput): BookingAvailabilityCheckResult {

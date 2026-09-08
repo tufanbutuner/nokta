@@ -39,7 +39,8 @@ const OwnerAnalyticsPage = lazyPage(() => import("@/pages/owner/OwnerAnalyticsPa
 const OwnerBillingPage = lazyPage(() => import("@/pages/owner/OwnerBillingPage"), "OwnerBillingPage");
 const OwnerBillingSuccessPage = lazyPage(() => import("@/pages/owner/OwnerBillingSuccessPage"), "OwnerBillingSuccessPage");
 const OwnerEnquiriesPage = lazyPage(() => import("@/pages/owner/OwnerEnquiriesPage"), "OwnerEnquiriesPage");
-const OwnerVenueAvailabilityPage = lazyPage(() => import("@/pages/owner/OwnerVenueAvailabilityPage"), "OwnerVenueAvailabilityPage");
+const OwnerVenueBookingsPage = lazyPage(() => import("@/pages/owner/OwnerVenueBookingsPage"), "OwnerVenueBookingsPage");
+const OwnerVenueBookingRulesPage = lazyPage(() => import("@/pages/owner/OwnerVenueBookingRulesPage"), "OwnerVenueBookingRulesPage");
 const OwnerVenueAnalyticsPage = lazyPage(() => import("@/pages/owner/OwnerVenueAnalyticsPage"), "OwnerVenueAnalyticsPage");
 const OwnerVenueMediaPage = lazyPage(() => import("@/pages/owner/OwnerVenueMediaPage"), "OwnerVenueMediaPage");
 const OwnerVenueMenuPage = lazyPage(() => import("@/pages/owner/OwnerVenueMenuPage"), "OwnerVenueMenuPage");
@@ -121,7 +122,15 @@ export const router = createBrowserRouter([
         path: "/owner/venues/:venueId/bookings",
         element: routeElement(
           <RequireAuth>
-            <OwnerVenueAvailabilityPage />
+            <OwnerVenueBookingsPage />
+          </RequireAuth>,
+        ),
+      },
+      {
+        path: "/owner/venues/:venueId/bookings/rules",
+        element: routeElement(
+          <RequireAuth>
+            <OwnerVenueBookingRulesPage />
           </RequireAuth>,
         ),
       },
