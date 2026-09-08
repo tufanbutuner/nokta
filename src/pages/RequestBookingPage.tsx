@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams, useSearchParams } from "react-router-dom";
 import { BookingRequestForm } from "@/components/bookings/BookingRequestForm";
+import { BookingUnavailableCard } from "@/components/venues/detail/VenueBookingCta";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { PageMeta } from "@/components/seo/PageMeta";
 import { ErrorState } from "@/components/state/ErrorState";
@@ -10,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useAuth } from "@/context/AuthContext";
 import { useVenues } from "@/hooks/useVenues";
+import { useVenueBookingGate } from "@/hooks/useVenueBookingGate";
 import { trackEvent } from "@/lib/analytics";
 import { getVenueBookingAvailability } from "@/services/bookingAvailabilityService";
 import { createBookingRequest } from "@/services/bookingRequestService";
@@ -22,6 +24,7 @@ export function RequestBookingPage() {
   const { user } = useAuth();
   const { venues, isLoading, error } = useVenues();
   const venue = venues.find((item) => item.slug === slug);
+  const { gate, isLoading: isLoadingGate, error: gateError } = useVenueBookingGate(venue);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [mutationError, setMutationError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
@@ -49,9 +52,12 @@ export function RequestBookingPage() {
     }
   }
 
-  if (isLoading) return <main><PageContainer className="py-20"><LoadingState message="Loading venue..." /></PageContainer></main>;
+  if (isLoading || isLoadingGate) return <main><PageContainer className="py-20"><LoadingState message="Loading venue..." /></PageContainer></main>;
   if (error) return <main><PageContainer className="py-20"><ErrorState message={error} /></PageContainer></main>;
+  if (gateError) return <main><PageContainer className="py-20"><ErrorState message={gateError} /></PageContainer></main>;
   if (!venue) return <main><PageMeta title="Venue not found | nokta" description="This venue is not available." /><PageContainer className="py-20"><ErrorState title="Venue not found" message="This venue is not available." /></PageContainer></main>;
+
+  if (gate && gate.state !== "live") return <main className="bg-nokta-page-bg"><PageMeta title={`${venue.name} books directly | nokta`} description={`Contact ${venue.name} directly about a booking.`} canonicalPath={`/venues/${venue.slug}/request-booking`} /><PageContainer className="py-10"><Link to={`/venues/${venue.slug}`} className="mb-5 inline-flex text-sm font-medium text-muted-foreground hover:text-foreground">Back to {venue.name}</Link><div className="mx-auto max-w-xl"><BookingUnavailableCard venue={venue} state={gate.state} /><Button asChild variant="outline" className="mt-3 w-full"><Link to="/discover">Venues nearby that do take bookings</Link></Button></div></PageContainer></main>;
 
   return (
     <main>

@@ -1,7 +1,7 @@
 import { mapVenueBookingBlackoutDateRow, mapVenueBookingSettingsRow, mapVenueBookingWindowRow } from "@/lib/bookingAvailabilityMappers";
 import { checkBookingAvailability } from "@/lib/bookingAvailabilityValidation";
 import { supabase, supabaseConfigError } from "@/lib/supabase";
-import type { BookingAvailabilityCheckResult, VenueBookingAvailability } from "@/types/bookingAvailability";
+import type { BookingAvailabilityCheckResult, VenueBookingAvailability, VenueBookingGate } from "@/types/bookingAvailability";
 import type { BookingRequestRow, VenueBookingBlackoutDateRow, VenueBookingSettingsRow, VenueBookingWindowRow } from "@/types/database";
 
 function ensureSupabase() {
@@ -42,4 +42,19 @@ export async function checkVenueBookingRequestAvailability(input: { venueId: str
   const availability = await getVenueBookingAvailability(input.venueId);
   if (!availability) return { isAvailable: true, errors: [], warnings: ["Booking availability settings are not configured yet."] };
   return checkBookingAvailability({ availability, requestedDate: input.requestedDate, requestedTime: input.requestedTime, partySize: input.partySize });
+}
+
+export async function getVenueBookingGate(venueId: string): Promise<VenueBookingGate> {
+  const client = ensureSupabase();
+  const { data, error } = await client.from("public_venue_booking_states").select("*").eq("venue_id", venueId).maybeSingle();
+  if (error) throw new Error(`Could not load booking status: ${error.message}`);
+  if (!data) throw new Error("Could not load booking status for this venue.");
+  if (!["live", "unclaimed", "disabled", "dormant"].includes(data.state as string)) throw new Error("The venue returned an invalid booking status.");
+  return {
+    venueId: data.venue_id as string,
+    isClaimed: Boolean(data.is_claimed),
+    bookingRequestsEnabled: Boolean(data.booking_requests_enabled),
+    responsive: Boolean(data.responsive),
+    state: data.state as VenueBookingGate["state"],
+  };
 }

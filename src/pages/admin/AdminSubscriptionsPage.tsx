@@ -99,7 +99,7 @@ export function AdminSubscriptionsPage() {
     }
   }
 
-  async function handleStartTrial(input: { plan: "starter" | "growth" | "pro"; trialDays: number; adminNotes: string | null }) {
+  async function handleStartTrial(input: { plan: "growth" | "pro"; trialDays: number; adminNotes: string | null }) {
     if (!trialRow || !user) return;
     setUpdatingVenueId(trialRow.venue.id);
     setActionError(null);

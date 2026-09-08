@@ -8,7 +8,7 @@ import { trackEvent } from "@/lib/analytics";
 import type { VenuePlan } from "@/types/subscriptions";
 
 const FEATURE_COPY: Partial<Record<VenuePlanFeature, string>> = {
-  profile_update_requests: "Structured profile updates are part of the Starter plan.",
+  profile_update_requests: "Profile updates are included with every claimed venue.",
   owner_enquiry_inbox: "Owner enquiry inbox is available on Growth.",
   promoted_offers: "Promoted offers are available on Growth.",
   featured_placements: "Featured placements are available on Pro.",

@@ -5,7 +5,7 @@ Use Stripe test mode before enabling live payments.
 ## Setup
 
 1. Create Starter, Growth and Pro products in Stripe.
-2. Create monthly recurring GBP prices for £29, £59 and £99.
+2. Create monthly recurring GBP prices for £49 and £99.
 3. Add the price IDs to Supabase Edge Function secrets.
 4. Deploy all Sprint 30 Supabase Edge Functions.
 5. Configure the Stripe webhook endpoint and copy the signing secret into `STRIPE_WEBHOOK_SECRET`.

@@ -1,26 +1,25 @@
-# Subscription Foundation
+# Venue plans and booking bands
 
-Sprint 28 adds Nokta's manual billing and subscription foundation. Stripe checkout is not implemented yet.
+Nokta has three public venue plans. `starter` remains in the database only so existing subscriptions and Stripe events can still be read safely; it is not offered to new venues.
 
 ## Plans
 
-- Free Claimed Profile: claimed badge, owner dashboard, public profile, limited analytics and enquiry summary.
-- Starter: unlocks structured profile update requests and update status tracking.
-- Growth: reserved for owner enquiry inbox, promoted offers, improved analytics and priority profile support.
-- Pro: reserved for featured placements, advanced analytics, offer reporting and monthly performance summaries.
+- Claimed (£0): public profile, original photos, profile updates, basic analytics and up to 10 accepted bookings in the monthly soft band.
+- Growth (£49/month): owner enquiry inbox, improved analytics, promoted offers and an 80-accepted-booking monthly soft band.
+- Pro (£99/month): up to three venues, featured placement tools, advanced reporting and no booking band.
 
-## Access Control
+The app reads access from `public.venue_subscriptions`. Owners can read subscriptions for venues they own. Only admins and the Stripe sync functions can mutate subscription records.
 
-Venue subscriptions are stored in `public.venue_subscriptions`. Owners can read subscriptions for their claimed venues, but they cannot create, update or delete subscription records.
+## Soft booking bands
 
-Admins can manually assign plans, start trials, update statuses and cancel subscriptions from `/admin/subscriptions`.
+`public.plan_booking_bands` stores each plan's band as data. `public.owner_booking_band_usage` derives usage for the current billing period, falling back to the calendar month when no Stripe period exists.
 
-## Current Gating
+Only accepted bookings count. Declines, cancellations, no-shows and enquiries do not count. A band is a reporting signal: it must never block a request, an acceptance, or a notification. Owner Home shows the signal from 80% onward and keeps accepting requests after the band is passed.
 
-The `profile_update_requests` feature requires Starter, Growth or Pro with `active`, `trial` or `past_due` status.
+## Booking readiness
 
-Owners on Free, inactive or cancelled subscriptions see an upgrade prompt instead of the profile update form.
+A venue receives public booking requests only when it is claimed, has booking requests enabled, and has answered at least one of its last three requests within 48 hours. New venues with no request history are responsive by default.
 
-## Revenue Reporting
+`public.public_venue_booking_states` exposes only the aggregate state (`unclaimed`, `disabled`, `dormant`, or `live`). The booking insert policy calls `public.can_venue_receive_booking_requests`; the client performs the same check to replace the form with direct-contact actions.
 
-`/admin/monetisation` shows estimated manual MRR based on manual subscription records. This is not payment-verified until Stripe is implemented.
+Run `supabase/sprint-45-venue-plan-model.sql` before testing bands or booking readiness against Supabase.

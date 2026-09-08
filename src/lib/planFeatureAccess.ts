@@ -22,7 +22,7 @@ const PLAN_RANK: Record<VenuePlan, number> = {
 const FEATURE_MIN_PLAN: Record<VenuePlanFeature, VenuePlan> = {
   owner_dashboard: "free",
   basic_analytics: "free",
-  profile_update_requests: "starter",
+  profile_update_requests: "free",
   enquiry_summary: "free",
   owner_enquiry_inbox: "growth",
   promoted_offers: "growth",

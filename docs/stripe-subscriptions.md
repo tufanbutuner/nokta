@@ -21,13 +21,11 @@ TEST_APP_URL=http://127.0.0.1:5173
 
 STRIPE_LIVE_SECRET_KEY=sk_live_value
 STRIPE_LIVE_WEBHOOK_SECRET=whsec_live_value
-STRIPE_LIVE_STARTER_PRICE_ID=price_live_value
 STRIPE_LIVE_GROWTH_PRICE_ID=price_live_value
 STRIPE_LIVE_PRO_PRICE_ID=price_live_value
 
 STRIPE_TEST_SECRET_KEY=sk_test_value
 STRIPE_TEST_WEBHOOK_SECRET=whsec_test_value
-STRIPE_TEST_STARTER_PRICE_ID=price_test_value
 STRIPE_TEST_GROWTH_PRICE_ID=price_test_value
 STRIPE_TEST_PRO_PRICE_ID=price_test_value
 
@@ -35,7 +33,7 @@ SUPABASE_URL=https://your-project.supabase.co
 SUPABASE_SERVICE_ROLE_KEY=service_role_value
 ```
 
-Legacy live names are still supported for compatibility: `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`, `STRIPE_STARTER_PRICE_ID`, `STRIPE_GROWTH_PRICE_ID` and `STRIPE_PRO_PRICE_ID`.
+Legacy live names are still supported for compatibility: `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`, `STRIPE_GROWTH_PRICE_ID` and `STRIPE_PRO_PRICE_ID`. Existing Starter subscriptions can still be read and synced, but Starter is no longer available at checkout.
 
 Do not expose Stripe secret keys, webhook secrets or `SUPABASE_SERVICE_ROLE_KEY` to the browser.
 
@@ -58,9 +56,8 @@ Free has no Stripe subscription.
 
 Paid plans map to Stripe recurring monthly price IDs:
 
-1. Starter: `STRIPE_TEST_STARTER_PRICE_ID` locally, `STRIPE_LIVE_STARTER_PRICE_ID` in production.
-2. Growth: `STRIPE_TEST_GROWTH_PRICE_ID` locally, `STRIPE_LIVE_GROWTH_PRICE_ID` in production.
-3. Pro: `STRIPE_TEST_PRO_PRICE_ID` locally, `STRIPE_LIVE_PRO_PRICE_ID` in production.
+1. Growth (£49/month): `STRIPE_TEST_GROWTH_PRICE_ID` locally, `STRIPE_LIVE_GROWTH_PRICE_ID` in production.
+2. Pro (£99/month): `STRIPE_TEST_PRO_PRICE_ID` locally, `STRIPE_LIVE_PRO_PRICE_ID` in production.
 
 Checkout mode is selected by request origin:
 

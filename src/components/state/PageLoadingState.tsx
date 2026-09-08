@@ -1,19 +1,28 @@
-import { LoadingState } from "@/components/state/LoadingState";
 import { Skeleton } from "@/components/ui/skeleton";
 
 export function PageLoadingState({ message = "Loading..." }: { message?: string }) {
-  if (window.location.pathname === "/") {
+  const pathname = window.location.pathname;
+
+  if (pathname === "/") {
     return <HomePageLoadingState />;
   }
 
-  if (window.location.pathname === "/discover") {
+  if (pathname === "/discover") {
     return <DiscoverPageLoadingState />;
   }
 
+  const isWorkspaceRoute = pathname.startsWith("/admin") || pathname.startsWith("/owner");
+
   return (
-    <div className="flex min-h-[320px] items-center justify-center">
-      <LoadingState message={message} />
-    </div>
+    <main className={`flex items-center justify-center bg-nokta-page-bg px-4 ${isWorkspaceRoute ? "min-h-[100svh]" : "min-h-[calc(100svh-4rem)]"}`} role="status" aria-label={message}>
+      <div className="flex flex-col items-center">
+        <span className="font-brand text-2xl font-bold tracking-[-0.6px] text-nokta-ink" aria-hidden="true">nokta<span className="text-clay-accent">.</span></span>
+        <span className="mt-4 h-1 w-28 overflow-hidden rounded-full bg-nokta-border" aria-hidden="true">
+          <span className="block h-full w-1/2 animate-pulse rounded-full bg-clay-accent" />
+        </span>
+        <span className="sr-only">{message}</span>
+      </div>
+    </main>
   );
 }
 

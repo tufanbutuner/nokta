@@ -11,6 +11,7 @@ import { getOwnerHomeActions, getOwnerHomeGreeting, getOwnerHomeSubline, type Ow
 import { PLAN_CONFIG } from "@/lib/planConfig";
 import { cn } from "@/lib/utils";
 import { getOwnerHomeSummary, type OwnerHomeSummary, type OwnerHomeVenue } from "@/services/ownerHomeSummaryService";
+import type { BookingBandUsage } from "@/types/subscriptions";
 
 export function OwnerDashboardPage() {
   const { user } = useAuth();
@@ -62,6 +63,8 @@ export function OwnerDashboardPage() {
             <div className="rounded-[11px] border bg-card p-4 text-[13px] text-muted-foreground">Nothing needs you right now.</div>
           )}
 
+          {summary.bookingBands.map((usage) => <OwnerBookingBandCard key={usage.venueId} usage={usage} venueName={summary.venues.find((venue) => venue.id === usage.venueId)?.name ?? "Your venue"} />)}
+
           <section className="rounded-xl border bg-card px-[17px] py-[15px]">
             <div className="flex items-baseline justify-between gap-3">
               <h2 className="text-sm font-semibold">Last 30 days</h2>
@@ -87,6 +90,27 @@ export function OwnerDashboardPage() {
       )}
     </OwnerLayout>
   );
+}
+
+function OwnerBookingBandCard({ usage, venueName }: { usage: BookingBandUsage; venueName: string }) {
+  const band = usage.acceptedBookingsBand;
+  if (!band || usage.acceptedBookings < band * 0.8) return null;
+  const overBand = usage.acceptedBookings > band;
+  const progress = Math.min(100, Math.round((usage.acceptedBookings / band) * 100));
+  const daysLeft = Math.max(0, Math.ceil((new Date(usage.periodEnd).getTime() - Date.now()) / 86_400_000));
+  const overBy = usage.acceptedBookings - band;
+  return (
+    <section className="rounded-[11px] border bg-card p-[15px]" aria-label={`${venueName} monthly booking band`}>
+      <div className="flex items-center justify-between gap-3"><h2 className="text-sm font-semibold">{usage.acceptedBookings}{overBand ? "" : ` of ${band}`} bookings accepted</h2>{overBand ? <span className="rounded-full bg-nokta-accent-tint px-2.5 py-1 text-xs font-semibold text-nokta-accent-dark">Past {band}</span> : <span className="text-xs text-muted-foreground">{daysLeft} days left</span>}</div>
+      <div className="mt-3 h-[7px] overflow-hidden rounded-full bg-[oklch(0.93_0.02_55)]"><div className="h-full rounded-full bg-clay-accent" style={{ width: `${progress}%` }} /></div>
+      {overBand ? <><p className="mt-3 text-[13px] leading-[1.6] text-nokta-ink-subtle">{numberWord(overBy)} more than your plan includes, and every one of them went through. Nothing to pay — your band is a fair-use line, not a meter. If this is your normal month, let us know and we will sort the right plan out with you.</p><div className="mt-3 flex flex-wrap gap-2"><a href="mailto:hello@nokta.uk?subject=Booking%20band" className="inline-flex h-9 items-center rounded-lg bg-clay-accent px-3 text-[12.5px] font-medium text-white hover:bg-clay-accent-hover">Talk to us about it</a><Link to="/owner/billing" className="inline-flex h-9 items-center rounded-lg border bg-card px-3 text-[12.5px] font-medium hover:bg-muted">See what Pro adds</Link></div></> : <p className="mt-3 text-[13px] leading-[1.6] text-muted-foreground">Busiest month yet. Nothing changes if you go over — we'll show you what Pro would cost when you do.</p>}
+    </section>
+  );
+}
+
+function numberWord(value: number) {
+  const words = ["Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen", "Twenty"];
+  return words[value] ?? value.toLocaleString();
 }
 
 function OwnerHomeActionRow({ action, isPrimary }: { action: OwnerHomeAction; isPrimary: boolean }) {

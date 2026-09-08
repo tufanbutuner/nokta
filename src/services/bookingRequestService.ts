@@ -4,7 +4,7 @@ import { mapBookingRequestRowToBookingRequest } from "@/lib/bookingRequestMapper
 import { validateCreateBookingRequestInput } from "@/lib/bookingRequestValidation";
 import { generateConfirmationReference, generateCustomerAccessToken, getCustomerAccessTokenExpiry } from "@/lib/bookingTokens";
 import { supabase, supabaseConfigError } from "@/lib/supabase";
-import { checkVenueBookingRequestAvailability } from "@/services/bookingAvailabilityService";
+import { checkVenueBookingRequestAvailability, getVenueBookingGate } from "@/services/bookingAvailabilityService";
 import { queueEmailDeliveryForNotification } from "@/services/emailDeliveryService";
 import type { BookingRequest, CreateBookingRequestInput } from "@/types/bookingRequests";
 import type { BookingRequestRow } from "@/types/database";
@@ -17,6 +17,8 @@ function ensureSupabase() {
 export async function createBookingRequest(input: { userId?: string | null; request: CreateBookingRequestInput; venue?: { city?: string | null; area?: string | null } }): Promise<BookingRequest> {
   const validation = validateCreateBookingRequestInput(input.request);
   if (!validation.isValid) throw new Error(Object.values(validation.errors)[0] ?? "Booking request is not valid.");
+  const gate = await getVenueBookingGate(input.request.venueId);
+  if (!gate || gate.state !== "live") throw new Error("This venue is not taking Nokta booking requests right now. Contact the venue directly.");
   const availability = await checkVenueBookingRequestAvailability({ venueId: input.request.venueId, requestedDate: input.request.requestedDate, requestedTime: input.request.requestedTime, partySize: input.request.partySize });
   if (!availability.isAvailable) {
     trackEvent("booking_request_blocked_by_availability", { venueId: input.request.venueId, reason: availability.errors[0] ?? "unavailable", sourceSurface: input.request.sourceSurface ?? "venue_page" });

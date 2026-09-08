@@ -1,8 +1,10 @@
+import { AlertCircle, ExternalLink, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select } from "@/components/ui/select";
 import { Sheet, SheetClose, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { FavouriteButton } from "@/components/venues/FavouriteButton";
+import { useVenueBookingGate } from "@/hooks/useVenueBookingGate";
 import { getBookingTimeOptions } from "@/lib/bookingTimeOptions";
 import { trackEvent, trackVenueAnalyticsEvent } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
@@ -21,6 +23,7 @@ export function BookingSidebarCard({ venue, className, compact = false }: { venu
   const [time, setTime] = useState("");
   const [partySize, setPartySize] = useState(2);
   const [availability, setAvailability] = useState<VenueBookingAvailability | null>(null);
+  const { gate, isLoading: isLoadingGate, error: gateError } = useVenueBookingGate(venue);
   const availableTimeOptions = availability && date ? getBookingTimeOptions({ availability, selectedDate: date }) : [];
   const timeOptions = availableTimeOptions.length ? availableTimeOptions : FALLBACK_TIME_OPTIONS;
 
@@ -50,6 +53,10 @@ export function BookingSidebarCard({ venue, className, compact = false }: { venu
     const query = params.toString();
     navigate(`/venues/${venue.slug}/request-booking${query ? `?${query}` : ""}`);
   }
+
+  if (isLoadingGate) return <div className={cn("rounded-2xl border border-nokta-border bg-white p-5 text-sm text-nokta-ink-muted", className)}>Checking booking availability…</div>;
+  if (gateError) return <BookingGateErrorCard venue={venue} className={className} compact={compact} />;
+  if (gate && gate.state !== "live") return <BookingUnavailableCard venue={venue} state={gate.state} className={className} compact={compact} />;
 
   return (
     <form className={cn("rounded-2xl border border-nokta-border bg-white p-4 shadow-sm shadow-stone-950/5 sm:p-5", compact && "border-0 p-0 shadow-none sm:p-0", className)} onSubmit={handleSubmit}>
@@ -94,16 +101,17 @@ export function BookingSidebarCard({ venue, className, compact = false }: { venu
 
 export function MobileBookingCta({ venue }: { venue: Venue }) {
   const [open, setOpen] = useState(false);
+  const { gate, isLoading, error } = useVenueBookingGate(venue);
+  const takesBookings = gate?.state === "live";
+  const directHref = venue.website ?? (venue.phone ? `tel:${venue.phone}` : `/venues/${venue.slug}/enquire`);
   return (
     <div className="fixed inset-x-0 bottom-0 z-[1200] border-t border-nokta-border bg-white px-4 py-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] shadow-[0_-12px_28px_rgba(28,25,23,0.08)] lg:hidden">
       <div className="mx-auto flex max-w-[1180px] items-center justify-between gap-3">
         <div className="min-w-0">
-          <p className="text-sm font-semibold text-nokta-ink">{venue.priceFrom ? `From £${venue.priceFrom}` : "Price TBC"}</p>
-          <p className="truncate text-xs text-nokta-ink-muted">Request a booking</p>
+          <p className="text-sm font-semibold text-nokta-ink">{takesBookings ? (venue.priceFrom ? `From £${venue.priceFrom}` : "Price TBC") : "Books directly"}</p>
+          <p className="truncate text-xs text-nokta-ink-muted">{takesBookings ? "Request a booking" : venue.phone ?? "Contact the venue"}</p>
         </div>
-        <Button type="button" className="h-11 shrink-0 rounded-lg bg-nokta-accent px-5 text-white hover:bg-nokta-accent-dark" onClick={() => setOpen(true)}>
-          Request booking
-        </Button>
+        {isLoading ? <Button type="button" disabled className="h-11 shrink-0 rounded-lg px-5">Checking…</Button> : takesBookings ? <Button type="button" className="h-11 shrink-0 rounded-lg bg-nokta-accent px-5 text-white hover:bg-nokta-accent-dark" onClick={() => setOpen(true)}>Request booking</Button> : <Button asChild className="h-11 shrink-0 rounded-lg bg-nokta-accent px-5 text-white hover:bg-nokta-accent-dark"><a href={directHref}>{error ? "Contact venue" : venue.website ? "Website" : venue.phone ? "Call venue" : "Send enquiry"}</a></Button>}
       </div>
       <Sheet open={open} onOpenChange={setOpen} side="bottom">
         <SheetHeader>
@@ -116,6 +124,38 @@ export function MobileBookingCta({ venue }: { venue: Venue }) {
         <BookingSidebarCard venue={venue} compact />
       </Sheet>
     </div>
+  );
+}
+
+function BookingGateErrorCard({ venue, className, compact = false }: { venue: Venue; className?: string; compact?: boolean }) {
+  return (
+    <aside className={cn("rounded-2xl border border-nokta-border bg-white p-5 shadow-sm shadow-stone-950/5", compact && "border-0 p-0 shadow-none", className)}>
+      <h2 className="text-[15px] font-semibold text-nokta-ink">Booking requests are unavailable right now</h2>
+      <p className="mt-2 text-sm leading-6 text-nokta-ink-muted">Contact {venue.name} directly while we check their booking setup.</p>
+      <div className="mt-4 grid gap-2">
+        {venue.website ? <Button asChild className="h-11 rounded-lg bg-nokta-accent text-white hover:bg-nokta-accent-dark"><a href={venue.website} target="_blank" rel="noreferrer">Visit their website <ExternalLink className="ml-2 h-4 w-4" /></a></Button> : null}
+        {venue.phone ? <Button asChild variant="outline" className="h-11 rounded-lg border-nokta-border bg-white text-nokta-ink"><a href={`tel:${venue.phone}`}><Phone className="mr-2 h-4 w-4" />{venue.phone}</a></Button> : null}
+      </div>
+    </aside>
+  );
+}
+
+export function BookingUnavailableCard({ venue, state, className, compact = false }: { venue: Venue; state: "unclaimed" | "disabled" | "dormant"; className?: string; compact?: boolean }) {
+  const content = state === "unclaimed"
+    ? { title: "Books directly, not through Nokta", body: `${venue.name} hasn't joined Nokta yet, so we can't take a booking for them. Contact them and they'll answer straight away.` }
+    : state === "disabled"
+      ? { title: "Takes enquiries, not booking requests", body: `${venue.name} hasn't switched on date-and-time booking. Send an enquiry or contact them directly.` }
+      : { title: "Calling is faster right now", body: `${venue.name} has been slow to reply on Nokta lately. Contact them directly for the quickest answer.` };
+  return (
+    <aside className={cn("rounded-2xl border border-nokta-border bg-white p-5 shadow-sm shadow-stone-950/5", compact && "border-0 p-0 shadow-none", className)}>
+      <div className="flex items-start gap-3"><span className="inline-flex h-8 w-8 flex-none items-center justify-center rounded-full bg-nokta-page-bg"><AlertCircle className="h-4 w-4 text-nokta-accent" /></span><div><h2 className="text-[15px] font-semibold text-nokta-ink">{content.title}</h2><p className="mt-2 text-sm leading-6 text-nokta-ink-muted">{content.body}</p></div></div>
+      <div className="mt-4 grid gap-2">
+        {venue.website ? <Button asChild className="h-11 rounded-lg bg-nokta-accent text-white hover:bg-nokta-accent-dark"><a href={venue.website} target="_blank" rel="noreferrer">Book on their website <ExternalLink className="ml-2 h-4 w-4" /></a></Button> : null}
+        {venue.phone ? <Button asChild variant="outline" className="h-11 rounded-lg border-nokta-border bg-white text-nokta-ink"><a href={`tel:${venue.phone}`}><Phone className="mr-2 h-4 w-4" />{venue.phone}</a></Button> : null}
+        {state === "disabled" ? <Button asChild variant="outline" className="h-11 rounded-lg border-nokta-border bg-white text-nokta-ink" onClick={() => trackEnquiryCta(venue)}><Link to={`/venues/${venue.slug}/enquire`}>Send enquiry</Link></Button> : null}
+      </div>
+      {state === "unclaimed" ? <div className="mt-4 flex items-center justify-between gap-3 border-t border-nokta-border pt-4"><p className="text-[13px] text-nokta-ink-muted">Work here? Take bookings through Nokta.</p><Button asChild size="sm" className="shrink-0 bg-nokta-ink text-white hover:bg-nokta-ink/90"><Link to={`/venues/${venue.slug}/claim`}>Claim venue</Link></Button></div> : null}
+    </aside>
   );
 }
 

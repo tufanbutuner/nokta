@@ -62,3 +62,13 @@ export interface BookingAvailabilityCheckResult {
   errors: string[];
   warnings: string[];
 }
+
+export type VenueBookingState = "live" | "unclaimed" | "disabled" | "dormant";
+
+export interface VenueBookingGate {
+  venueId: string;
+  isClaimed: boolean;
+  bookingRequestsEnabled: boolean;
+  responsive: boolean;
+  state: VenueBookingState;
+}
