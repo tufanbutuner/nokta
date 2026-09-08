@@ -11,14 +11,14 @@ export interface PlanConfig {
 export const PLAN_CONFIG: Record<VenuePlan, PlanConfig> = {
   free: {
     plan: "free",
-    name: "Free Claimed Profile",
+    name: "Claimed",
     monthlyPrice: 0,
-    description: "Claim your profile and view basic performance.",
-    features: ["Claimed badge", "Owner dashboard", "Public venue profile", "Limited analytics", "Enquiry summary"],
+    description: "Be found, look right and take booking requests.",
+    features: ["Claimed badge", "Owner dashboard", "Profile and photo updates", "Booking requests and enquiries", "Last 30 days of analytics"],
   },
   starter: {
     plan: "starter",
-    name: "Starter",
+    name: "Starter (legacy)",
     monthlyPrice: 29,
     description: "Manage your profile from your owner dashboard.",
     features: ["Everything in Free", "Structured profile update requests", "Opening hours updates", "Contact and social link updates", "Update request tracking"],
@@ -26,17 +26,18 @@ export const PLAN_CONFIG: Record<VenuePlan, PlanConfig> = {
   growth: {
     plan: "growth",
     name: "Growth",
-    monthlyPrice: 59,
-    description: "Get more from enquiries and offers.",
-    features: ["Everything in Starter", "Owner enquiry inbox", "Promoted offers", "Improved analytics", "Priority profile support"],
+    monthlyPrice: 49,
+    description: "Handle demand without living in your inbox.",
+    features: ["Everything in Claimed", "Full history and demand insights", "Monthly reporting", "Saved replies", "Priority profile support"],
   },
   pro: {
     plan: "pro",
     name: "Pro",
     monthlyPrice: 99,
-    description: "Maximise your visibility and reporting.",
-    features: ["Everything in Growth", "Featured placements", "Advanced venue analytics", "Offer performance reporting", "Monthly performance summary"],
+    description: "Manage multiple venues and add visibility when you want it.",
+    features: ["Everything in Growth", "Up to 3 venues", "Promoted offers", "Advanced venue analytics", "Quarterly performance call"],
   },
 };
 
-export const PLAN_OPTIONS = Object.values(PLAN_CONFIG).map((plan) => ({ label: plan.name, value: plan.plan }));
+export const PLAN_OPTIONS = [PLAN_CONFIG.free, PLAN_CONFIG.growth, PLAN_CONFIG.pro].map((plan) => ({ label: plan.name, value: plan.plan }));
+export const LEGACY_STARTER_PLAN_OPTION = { label: PLAN_CONFIG.starter.name, value: PLAN_CONFIG.starter.plan };

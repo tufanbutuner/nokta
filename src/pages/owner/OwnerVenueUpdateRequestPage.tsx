@@ -95,7 +95,7 @@ export function OwnerVenueUpdateRequestPage() {
         <div className="space-y-5">
           <ProfileCompletenessCard venue={venue} subscription={subscription} />
           {!subscriptionHasPlanAccess(subscription, "profile_update_requests") ? (
-            <UpgradePrompt feature="profile_update_requests" requiredPlan="starter" currentPlan={subscription?.plan ?? "free"} venueId={venue.id} />
+            <UpgradePrompt feature="profile_update_requests" currentPlan={subscription?.plan ?? "free"} venueId={venue.id} />
           ) : success ? (
             <Alert className="border-emerald-200 bg-emerald-50 text-emerald-900">Your update request has been submitted for admin review.</Alert>
           ) : (

@@ -3,6 +3,7 @@ import { getOwnerVenueAnalyticsSummary } from "@/services/ownerVenueAnalyticsSer
 import { getOwnerVenueSubscriptions } from "@/services/ownerSubscriptionService";
 import { getMyClaimedVenues } from "@/services/ownerVenueService";
 import type { VenuePlan } from "@/types/subscriptions";
+import type { BookingBandUsage } from "@/types/subscriptions";
 import type { Venue } from "@/types/venue";
 
 export interface OwnerHomeMetrics {
@@ -30,6 +31,7 @@ export interface OwnerHomeSummary {
   pendingBookingRequests: number;
   newEnquiries: number;
   oldestPendingBookingAt: string | null;
+  bookingBands: BookingBandUsage[];
 }
 
 function ensureSupabase() {
@@ -42,13 +44,14 @@ export async function getOwnerHomeSummary(input: { userId: string }): Promise<Ow
   if (!venues.length) return emptySummary();
 
   const venueIds = venues.map((venue) => venue.id);
-  const [subscriptions, photoCounts, menuStats, bookings, enquiries, analytics] = await Promise.all([
+  const [subscriptions, photoCounts, menuStats, bookings, enquiries, analytics, bookingBands] = await Promise.all([
     getOwnerVenueSubscriptions(input.userId).catch(() => []),
     getApprovedPhotoCounts(venueIds).catch(() => ({}) as Record<string, number>),
     getMenuStats(venueIds).catch(() => ({}) as Record<string, MenuStat>),
     getPendingBookingRequests(venueIds).catch(() => [] as { createdAt: string }[]),
     getNewEnquiryCount(venueIds).catch(() => 0),
     Promise.all(venues.map((venue) => getOwnerVenueAnalyticsSummary({ userId: input.userId, venueId: venue.id, dateRange: "last_30_days" }).catch(() => null))),
+    getBookingBandUsage(venueIds).catch(() => []),
   ]);
 
   const planByVenueId = Object.fromEntries(subscriptions.map((subscription) => [subscription.venueId, subscription.plan]));
@@ -77,7 +80,22 @@ export async function getOwnerHomeSummary(input: { userId: string }): Promise<Ow
     pendingBookingRequests: bookings.length,
     newEnquiries: enquiries,
     oldestPendingBookingAt: bookings.reduce<string | null>((oldest, booking) => (!oldest || booking.createdAt < oldest ? booking.createdAt : oldest), null),
+    bookingBands,
   };
+}
+
+async function getBookingBandUsage(venueIds: string[]): Promise<BookingBandUsage[]> {
+  const client = ensureSupabase();
+  const { data, error } = await client.from("owner_booking_band_usage").select("*").in("venue_id", venueIds);
+  if (error) throw new Error(`Could not load booking band usage: ${error.message}`);
+  return ((data ?? []) as Array<{ venue_id: string; plan: VenuePlan; accepted_bookings_band: number | null; accepted_bookings: number; period_start: string; period_end: string }>).map((row) => ({
+    venueId: row.venue_id,
+    plan: row.plan,
+    acceptedBookingsBand: row.accepted_bookings_band,
+    acceptedBookings: row.accepted_bookings,
+    periodStart: row.period_start,
+    periodEnd: row.period_end,
+  }));
 }
 
 function hasPricing(venue: Venue) {
@@ -143,5 +161,6 @@ function emptySummary(): OwnerHomeSummary {
     pendingBookingRequests: 0,
     newEnquiries: 0,
     oldestPendingBookingAt: null,
+    bookingBands: [],
   };
 }

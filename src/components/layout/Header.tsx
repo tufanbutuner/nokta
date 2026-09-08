@@ -6,9 +6,25 @@ import { useAuth } from "@/context/AuthContext";
 import { useVenuePreferences } from "@/context/VenuePreferencesContext";
 import { useIsAdmin } from "@/hooks/useIsAdmin";
 import { cn } from "@/lib/utils";
-import { Activity, BadgeCheck, BarChart3, Bell, BookOpenCheck, Building2, Camera, ChevronDown, CreditCard, GitBranch, Inbox, LayoutDashboard, Megaphone, Menu, PenLine, ShieldCheck, Sparkles, Tag, UserCircle } from "lucide-react";
+import { BarChart3, Bell, BookOpenCheck, Building2, ChevronDown, ClipboardPenLine, CreditCard, Inbox, LayoutDashboard, MapPin, Megaphone, Menu, MessageSquare, ShieldCheck, UserCircle } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+
+const OWNER_MENU_ITEMS = [
+  { label: "Home", to: "/owner", icon: LayoutDashboard, end: true },
+  { label: "My venues", to: "/owner/venues", icon: Building2 },
+  { label: "Inbox", to: "/owner/inbox", icon: Inbox },
+  { label: "Marketing", to: "/owner/promotions", icon: Megaphone },
+  { label: "Plan & billing", to: "/owner/billing", icon: CreditCard },
+] as const;
+
+const ADMIN_MENU_ITEMS = [
+  { label: "Venues", to: "/admin/venues", icon: MapPin },
+  { label: "Review queue", to: "/admin/review", icon: ClipboardPenLine },
+  { label: "Demand", to: "/admin/demand", icon: MessageSquare },
+  { label: "Commercial", to: "/admin/commercial", icon: CreditCard },
+  { label: "Insights", to: "/admin/insights", icon: BarChart3 },
+] as const;
 
 export function Header() {
   const { user } = useAuth();
@@ -122,22 +138,10 @@ export function Header() {
                       <LayoutDashboard className="h-3.5 w-3.5" />
                       Owner
                     </div>
-                    <NavLink to="/owner" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
-                      <LayoutDashboard className="h-4 w-4" />
-                      Owner dashboard
-                    </NavLink>
-                    <NavLink to="/owner/inbox" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
-                      <Inbox className="h-4 w-4" />
-                      Owner enquiries
-                    </NavLink>
-                    <NavLink to="/owner/promotions" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
-                      <Megaphone className="h-4 w-4" />
-                      Promotions
-                    </NavLink>
-                    <NavLink to="/owner/billing" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
-                      <CreditCard className="h-4 w-4" />
-                      Billing
-                    </NavLink>
+                    {OWNER_MENU_ITEMS.map((item) => {
+                      const Icon = item.icon;
+                      return <NavLink key={item.to} end={"end" in item ? item.end : undefined} to={item.to} className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}><Icon className="h-4 w-4" />{item.label}</NavLink>;
+                    })}
                     {isAdmin ? (
                       <>
                         <div className="my-2 border-t" />
@@ -145,50 +149,10 @@ export function Header() {
                           <ShieldCheck className="h-3.5 w-3.5" />
                           Admin
                         </div>
-                        <NavLink to="/admin/venues" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
-                          <Building2 className="h-4 w-4" />
-                          Manage venues
-                        </NavLink>
-                        <NavLink to="/admin/data-quality" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
-                          <Activity className="h-4 w-4" />
-                          Data quality
-                        </NavLink>
-                        <NavLink to="/admin/media-review" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
-                          <Camera className="h-4 w-4" />
-                          Media review
-                        </NavLink>
-                        <NavLink to="/admin/reviews" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
-                          <PenLine className="h-4 w-4" />
-                          Reviews
-                        </NavLink>
-                        <NavLink to="/admin/suggestions" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
-                          <GitBranch className="h-4 w-4" />
-                          Suggestions
-                        </NavLink>
-                        <NavLink to="/admin/promotion-requests" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
-                          <Megaphone className="h-4 w-4" />
-                          Promotion requests
-                        </NavLink>
-                        <NavLink to="/admin/claims" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
-                          <BadgeCheck className="h-4 w-4" />
-                          Claims
-                        </NavLink>
-                        <NavLink to="/admin/featured" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
-                          <Sparkles className="h-4 w-4" />
-                          Featured
-                        </NavLink>
-                        <NavLink to="/admin/offers" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
-                          <Tag className="h-4 w-4" />
-                          Offers
-                        </NavLink>
-                        <NavLink to="/admin/analytics" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
-                          <BarChart3 className="h-4 w-4" />
-                          Analytics
-                        </NavLink>
-                        <NavLink to="/admin/monetisation" className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}>
-                          <CreditCard className="h-4 w-4" />
-                          Monetisation
-                        </NavLink>
+                        {ADMIN_MENU_ITEMS.map((item) => {
+                          const Icon = item.icon;
+                          return <NavLink key={item.to} to={item.to} className={accountMenuLinkClass} role="menuitem" onClick={() => setAccountMenuOpen(false)}><Icon className="h-4 w-4" />{item.label}</NavLink>;
+                        })}
                       </>
                     ) : null}
                   </div>
@@ -247,41 +211,10 @@ export function Header() {
               <NavLink to="/account/notifications" className={mobileNavLinkClass}>
                 Notifications
               </NavLink>
-              <NavLink to="/owner" className={mobileNavLinkClass}>
-                Owner dashboard
-              </NavLink>
-              <NavLink to="/owner/inbox" className={mobileNavLinkClass}>
-                Owner enquiries
-              </NavLink>
-              <NavLink to="/owner/promotions" className={mobileNavLinkClass}>
-                Promotions
-              </NavLink>
-              <NavLink to="/owner/billing" className={mobileNavLinkClass}>
-                Billing
-              </NavLink>
+              {OWNER_MENU_ITEMS.map((item) => <NavLink key={item.to} end={"end" in item ? item.end : undefined} to={item.to} className={mobileNavLinkClass}>{item.label}</NavLink>)}
               {isAdmin ? (
                 <>
-                  <NavLink to="/admin/venues" className={mobileNavLinkClass}>
-                    Admin
-                  </NavLink>
-                  <NavLink to="/admin/data-quality" className={mobileNavLinkClass}>
-                    Data quality
-                  </NavLink>
-                  <NavLink to="/admin/media-review" className={mobileNavLinkClass}>
-                    Media review
-                  </NavLink>
-                  <NavLink to="/admin/reviews" className={mobileNavLinkClass}>
-                    Reviews
-                  </NavLink>
-                  <NavLink to="/admin/suggestions" className={mobileNavLinkClass}>
-                    Suggestions
-                  </NavLink>
-                  <NavLink to="/admin/promotion-requests" className={mobileNavLinkClass}>
-                    Promotion requests
-                  </NavLink>
-                  <NavLink to="/admin/monetisation" className={mobileNavLinkClass}>
-                    Monetisation
-                  </NavLink>
+                  {ADMIN_MENU_ITEMS.map((item) => <NavLink key={item.to} to={item.to} className={mobileNavLinkClass}>{item.label}</NavLink>)}
                 </>
               ) : null}
             </>

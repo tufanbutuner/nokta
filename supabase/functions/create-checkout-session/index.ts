@@ -7,7 +7,7 @@ const corsHeaders = {
   "Access-Control-Allow-Methods": "POST, OPTIONS",
 };
 
-type PaidVenuePlan = "starter" | "growth" | "pro";
+type PaidVenuePlan = "growth" | "pro";
 type StripeMode = "test" | "live";
 
 function jsonResponse(body: unknown, init: ResponseInit = {}) {
@@ -22,7 +22,7 @@ function jsonResponse(body: unknown, init: ResponseInit = {}) {
 }
 
 function isPaidVenuePlan(plan: string): plan is PaidVenuePlan {
-  return plan === "starter" || plan === "growth" || plan === "pro";
+  return plan === "growth" || plan === "pro";
 }
 
 function getStripePriceIdForPlan(plan: PaidVenuePlan) {

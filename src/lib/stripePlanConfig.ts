@@ -1,9 +1,9 @@
 import type { VenuePlan } from "@/types/subscriptions";
 
-export type PaidVenuePlan = Exclude<VenuePlan, "free">;
+export type PaidVenuePlan = Extract<VenuePlan, "growth" | "pro">;
 
-export const PAID_PLANS: PaidVenuePlan[] = ["starter", "growth", "pro"];
+export const PAID_PLANS: PaidVenuePlan[] = ["growth", "pro"];
 
 export function isPaidPlan(plan: VenuePlan): plan is PaidVenuePlan {
-  return plan !== "free";
+  return plan === "growth" || plan === "pro";
 }

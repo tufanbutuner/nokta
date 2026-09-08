@@ -32,7 +32,7 @@ Restricted fields:
 - Monetisation status
 - Claimed ownership fields
 
-Option B is active for Sprint 27. Only claimed venues with `partner_tier` of `starter`, `growth`, or `pro` can submit update requests. Venues on `none` see an upgrade prompt.
+Profile update requests are included with every claimed venue. The database policy checks ownership and claim status; it does not require a paid plan.
 
 Admins can approve, reject, or apply update requests. Applying a request filters requested changes to the allowed field list before updating the live venue profile.
 

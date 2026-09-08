@@ -50,3 +50,12 @@ export interface VenueSubscriptionInput {
   cancelledAt?: string | null;
   adminNotes?: string | null;
 }
+
+export interface BookingBandUsage {
+  venueId: string;
+  plan: VenuePlan;
+  acceptedBookingsBand: number | null;
+  acceptedBookings: number;
+  periodStart: string;
+  periodEnd: string;
+}

@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { PLAN_OPTIONS } from "@/lib/planConfig";
+import { LEGACY_STARTER_PLAN_OPTION, PLAN_OPTIONS } from "@/lib/planConfig";
 import type { VenuePlan, VenueSubscription, VenueSubscriptionStatus } from "@/types/subscriptions";
 
 const STATUS_OPTIONS = [
@@ -57,7 +57,7 @@ export function AdminSubscriptionEditDialog({
         <h2 className="font-brand text-2xl font-bold tracking-[-0.5px]">Edit subscription</h2>
         <div className="mt-5 grid gap-4 sm:grid-cols-2">
           <Field label="Plan">
-            <Select value={plan} onValueChange={(value) => setPlan(value as VenuePlan)} options={PLAN_OPTIONS} />
+            <Select value={plan} onValueChange={(value) => setPlan(value as VenuePlan)} options={subscription.plan === "starter" ? [...PLAN_OPTIONS, LEGACY_STARTER_PLAN_OPTION] : PLAN_OPTIONS} />
           </Field>
           <Field label="Status">
             <Select value={status} onValueChange={(value) => setStatus(value as VenueSubscriptionStatus)} options={STATUS_OPTIONS} />
