@@ -12,15 +12,11 @@ const MyBookingsPage = lazyPage(() => import("@/pages/account/MyBookingsPage"), 
 const NotificationsPage = lazyPage(() => import("@/pages/account/NotificationsPage"), "NotificationsPage");
 const DataQualityPage = lazyPage(() => import("@/pages/admin/DataQualityPage"), "DataQualityPage");
 const AdminFeaturedPlacementsPage = lazyPage(() => import("@/pages/admin/AdminFeaturedPlacementsPage"), "AdminFeaturedPlacementsPage");
-const AdminReviewsPage = lazyPage(() => import("@/pages/admin/AdminReviewsPage"), "AdminReviewsPage");
 const AdminPromotedOffersPage = lazyPage(() => import("@/pages/admin/AdminPromotedOffersPage"), "AdminPromotedOffersPage");
-const AdminPromotionRequestsPage = lazyPage(() => import("@/pages/admin/AdminPromotionRequestsPage"), "AdminPromotionRequestsPage");
 const AdminVenueAnalyticsPage = lazyPage(() => import("@/pages/admin/AdminVenueAnalyticsPage"), "AdminVenueAnalyticsPage");
 const AdminSubscriptionsPage = lazyPage(() => import("@/pages/admin/AdminSubscriptionsPage"), "AdminSubscriptionsPage");
 const AdminBookingRequestsPage = lazyPage(() => import("@/pages/admin/AdminBookingRequestsPage"), "AdminBookingRequestsPage");
 const AdminVenueEnquiriesPage = lazyPage(() => import("@/pages/admin/AdminVenueEnquiriesPage"), "AdminVenueEnquiriesPage");
-const AdminVenueClaimsPage = lazyPage(() => import("@/pages/admin/AdminVenueClaimsPage"), "AdminVenueClaimsPage");
-const AdminVenueSuggestionsPage = lazyPage(() => import("@/pages/admin/AdminVenueSuggestionsPage"), "AdminVenueSuggestionsPage");
 const AdminVenuesPage = lazyPage(() => import("@/pages/admin/AdminVenuesPage"), "AdminVenuesPage");
 const AdminReviewQueuePage = lazyPage(() => import("@/pages/admin/AdminReviewQueuePage"), "AdminReviewQueuePage");
 const VenueFormPage = lazyPage<{ mode: "edit" | "new" }>(() => import("@/pages/admin/VenueFormPage"), "VenueFormPage");
@@ -325,11 +321,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/admin/promotion-requests",
-        element: routeElement(
-          <RequireAdmin>
-            <AdminPromotionRequestsPage />
-          </RequireAdmin>,
-        ),
+        element: <Navigate to="/admin/review?type=promos" replace />,
       },
       {
         path: "/admin/venues",
@@ -341,27 +333,15 @@ export const router = createBrowserRouter([
       },
       {
         path: "/admin/reviews",
-        element: routeElement(
-          <RequireAdmin>
-            <AdminReviewsPage />
-          </RequireAdmin>,
-        ),
+        element: <Navigate to="/admin/review?type=reviews" replace />,
       },
       {
         path: "/admin/suggestions",
-        element: routeElement(
-          <RequireAdmin>
-            <AdminVenueSuggestionsPage />
-          </RequireAdmin>,
-        ),
+        element: <Navigate to="/admin/review?type=suggestions" replace />,
       },
       {
         path: "/admin/claims",
-        element: routeElement(
-          <RequireAdmin>
-            <AdminVenueClaimsPage />
-          </RequireAdmin>,
-        ),
+        element: <Navigate to="/admin/review?type=claims" replace />,
       },
       {
         path: "/admin/featured",

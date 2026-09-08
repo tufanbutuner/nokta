@@ -3,7 +3,15 @@ import { toReviewQueueDecision } from "@/lib/adminReviewQueueLabels";
 import { getVenueUpdateDiffLabels } from "@/lib/venueUpdateDiff";
 import { getAdminVenueUpdateRequests } from "@/services/adminVenueUpdateRequestService";
 import { getAdminVenueMedia } from "@/services/adminVenueMediaReviewService";
+import { getAdminVenueClaimRequests } from "@/services/adminVenueClaimService";
+import { getAdminVenueSuggestions } from "@/services/adminVenueSuggestionService";
+import { getAdminReviews } from "@/services/adminReviewService";
+import { getAdminPromotionRequests } from "@/services/adminPromotionRequestService";
 import type { ReviewQueueCounts, ReviewQueueItem } from "@/types/adminReviewQueue";
+import type { VenueClaimRequest } from "@/types/venueClaims";
+import type { VenueSuggestion } from "@/types/venueSuggestions";
+import type { VenueReview } from "@/types/reviews";
+import type { OwnerPromotionRequest } from "@/types/ownerPromotionRequests";
 import type { VenueMedia } from "@/types/venueMedia";
 import type { VenueUpdateRequest } from "@/types/venueUpdateRequests";
 
@@ -19,6 +27,19 @@ export interface VenueSummary {
   city: string;
   slug: string;
   isClaimed: boolean;
+}
+
+export async function getAdminUserEmails(userIds: string[]): Promise<Record<string, string>> {
+  const unique = [...new Set(userIds.filter(Boolean))];
+  if (!unique.length) return {};
+
+  const client = ensureSupabase();
+  const { data, error } = await client.rpc("get_admin_user_emails", { user_ids: unique });
+  if (error) throw new Error(`Could not load submitter emails: ${error.message}`);
+
+  return Object.fromEntries(
+    ((data ?? []) as { user_id: string; email: string }[]).map((row) => [row.user_id, row.email]),
+  );
 }
 
 /** One lookup for every venue referenced by a queue, rather than per row. */
@@ -115,6 +136,134 @@ export async function getMediaQueue(): Promise<MediaQueueResult> {
       };
     }),
     mediaByVenue,
+    venues,
+  };
+}
+
+export interface ClaimsQueueResult {
+  items: ReviewQueueItem[];
+  claimsById: Record<string, VenueClaimRequest>;
+  venues: Record<string, VenueSummary>;
+}
+
+export async function getClaimsQueue(): Promise<ClaimsQueueResult> {
+  const claims = await getAdminVenueClaimRequests();
+  const venues = await getVenueSummaries(claims.map((claim) => claim.venueId));
+
+  return {
+    items: claims.map((claim) => {
+      const venue = venues[claim.venueId];
+      const role = claim.claimantRole === "marketing" ? "marketing / agency" : claim.claimantRole;
+      return {
+        id: claim.id,
+        type: "claims" as const,
+        venueId: claim.venueId,
+        venueName: venue?.name ?? claim.venueId,
+        summary: `${claim.claimantName} · ${role}`,
+        status: claim.status,
+        decision: toReviewQueueDecision(claim.status),
+        qualifier: claim.status === "cancelled" ? "Claimant withdrew" : venue ? [venue.area, venue.city].filter(Boolean).join(", ") : null,
+        submittedBy: claim.submittedBy,
+        createdAt: claim.createdAt,
+        ownerNote: claim.proofNotes,
+        adminNote: claim.adminNotes,
+      };
+    }),
+    claimsById: Object.fromEntries(claims.map((claim) => [claim.id, claim])),
+    venues,
+  };
+}
+
+export interface SuggestionsQueueResult {
+  items: ReviewQueueItem[];
+  suggestionsById: Record<string, VenueSuggestion>;
+}
+
+export async function getSuggestionsQueue(): Promise<SuggestionsQueueResult> {
+  const suggestions = await getAdminVenueSuggestions();
+
+  return {
+    items: suggestions.map((suggestion) => ({
+      id: suggestion.id,
+      type: "suggestions" as const,
+      venueId: null,
+      venueName: suggestion.venueName,
+      summary: [suggestion.primaryCategory.replace(/_/g, " "), suggestion.area, suggestion.city].filter(Boolean).join(" · "),
+      status: suggestion.status,
+      decision: toReviewQueueDecision(suggestion.status),
+      qualifier: suggestion.status === "converted" ? "Venue created" : [suggestion.area, suggestion.city].filter(Boolean).join(", ") || null,
+      submittedBy: suggestion.submittedBy,
+      createdAt: suggestion.createdAt,
+      ownerNote: suggestion.notes,
+      adminNote: suggestion.adminNotes,
+    })),
+    suggestionsById: Object.fromEntries(suggestions.map((suggestion) => [suggestion.id, suggestion])),
+  };
+}
+
+export interface ReviewsQueueResult {
+  items: ReviewQueueItem[];
+  reviewsById: Record<string, VenueReview>;
+  venues: Record<string, VenueSummary>;
+}
+
+export async function getReviewsQueue(): Promise<ReviewsQueueResult> {
+  const reviews = await getAdminReviews();
+  const venues = await getVenueSummaries(reviews.map((review) => review.venueId));
+
+  return {
+    items: reviews.map((review) => {
+      const venue = venues[review.venueId];
+      return {
+        id: review.id,
+        type: "reviews" as const,
+        venueId: review.venueId,
+        venueName: venue?.name ?? review.venueId,
+        summary: `${review.rating}/5 · ${review.title || review.body}`,
+        status: review.status,
+        decision: review.status === "flagged" ? "pending" as const : toReviewQueueDecision(review.status),
+        qualifier: venue ? [venue.area, venue.city].filter(Boolean).join(", ") : null,
+        submittedBy: review.userId,
+        createdAt: review.createdAt,
+        ownerNote: null,
+        adminNote: review.moderationNotes ?? null,
+      };
+    }),
+    reviewsById: Object.fromEntries(reviews.map((review) => [review.id, review])),
+    venues,
+  };
+}
+
+export interface PromosQueueResult {
+  items: ReviewQueueItem[];
+  promosById: Record<string, OwnerPromotionRequest>;
+  venues: Record<string, VenueSummary>;
+}
+
+export async function getPromosQueue(): Promise<PromosQueueResult> {
+  const promos = await getAdminPromotionRequests();
+  const venues = await getVenueSummaries(promos.map((promo) => promo.venueId));
+
+  return {
+    items: promos.map((promo) => {
+      const venue = venues[promo.venueId];
+      const kind = promo.requestType === "promoted_offer" ? "Promoted offer" : "Featured placement";
+      return {
+        id: promo.id,
+        type: "promos" as const,
+        venueId: promo.venueId,
+        venueName: venue?.name ?? promo.venueId,
+        summary: `${kind} · ${promo.title}`,
+        status: promo.status,
+        decision: toReviewQueueDecision(promo.status),
+        qualifier: promo.status === "converted" ? "Draft created" : venue ? [venue.area, venue.city].filter(Boolean).join(", ") : null,
+        submittedBy: promo.submittedBy,
+        createdAt: promo.createdAt,
+        ownerNote: promo.ownerNotes,
+        adminNote: promo.adminNotes,
+      };
+    }),
+    promosById: Object.fromEntries(promos.map((promo) => [promo.id, promo])),
     venues,
   };
 }
