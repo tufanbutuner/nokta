@@ -39,6 +39,18 @@ export async function updateVenueEnquiryStatus(input: {
   return enquiry;
 }
 
+export async function updateVenueEnquiryAdminNotes(input: { enquiryId: string; adminNotes?: string | null }): Promise<VenueEnquiry> {
+  const client = ensureSupabase();
+  const { data, error } = await client
+    .from("venue_enquiries")
+    .update({ admin_notes: nullableText(input.adminNotes) })
+    .eq("id", input.enquiryId)
+    .select("*")
+    .single();
+  if (error) throw new Error(`Could not update enquiry notes: ${error.message}`);
+  return mapVenueEnquiryRowToEnquiry(data as VenueEnquiryRow);
+}
+
 export async function markVenueEnquiryContacted(input: { enquiryId: string; adminNotes?: string | null }): Promise<VenueEnquiry> {
   const client = ensureSupabase();
   const { data, error } = await client

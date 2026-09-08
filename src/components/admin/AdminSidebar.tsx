@@ -1,26 +1,15 @@
-import { Activity, BadgeCheck, BarChart3, BookOpenCheck, ClipboardPenLine, CreditCard, DollarSign, GitBranch, Inbox, LayoutDashboard, MapPin, Megaphone, PenLine, Sparkles, Tag } from "lucide-react";
+import { BarChart3, ClipboardPenLine, CreditCard, LayoutDashboard, MapPin, MessageSquare } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { useAuth } from "@/context/AuthContext";
 import { cn } from "@/lib/utils";
 
 export const ADMIN_NAV_ITEMS = [
   { label: "Venues", to: "/admin/venues", icon: MapPin },
-  // Review queue absorbs Venue Updates and Media Review; the other four
-  // approve/reject pages keep their own entries until their submitted-band
-  // components land.
+  // All six approve/reject workflows now live behind one queue.
   { label: "Review queue", to: "/admin/review", icon: ClipboardPenLine },
-  { label: "Suggestions", to: "/admin/suggestions", icon: GitBranch },
-  { label: "Reviews", to: "/admin/reviews", icon: PenLine },
-  { label: "Claims", to: "/admin/claims", icon: BadgeCheck },
-  { label: "Promotion Requests", to: "/admin/promotion-requests", icon: Megaphone },
-  { label: "Bookings", to: "/admin/bookings", icon: BookOpenCheck },
-  { label: "Enquiries", to: "/admin/enquiries", icon: Inbox },
-  { label: "Subscriptions", to: "/admin/subscriptions", icon: CreditCard },
-  { label: "Featured", to: "/admin/featured", icon: Sparkles },
-  { label: "Offers", to: "/admin/offers", icon: Tag },
-  { label: "Monetisation", to: "/admin/monetisation", icon: DollarSign },
-  { label: "Analytics", to: "/admin/analytics", icon: BarChart3 },
-  { label: "Data Quality", to: "/admin/data-quality", icon: Activity },
+  { label: "Demand", to: "/admin/demand", icon: MessageSquare },
+  { label: "Commercial", to: "/admin/commercial", icon: CreditCard },
+  { label: "Insights", to: "/admin/insights", icon: BarChart3 },
 ] as const;
 
 export function AdminSidebar({ activePath = "/admin/monetisation" }: { activePath?: string }) {

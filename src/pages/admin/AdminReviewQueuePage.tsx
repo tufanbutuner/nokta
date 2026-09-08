@@ -2,8 +2,12 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { AdminPageShell } from "@/components/admin/AdminPageShell";
 import { AdminNoteCard, DetailSideRail, InfoCard, OwnerNoteCard, ReviewQueueActionBar } from "@/components/admin/review/ReviewQueueActions";
+import { ClaimSubmittedBand } from "@/components/admin/review/ClaimSubmittedBand";
 import { MediaSubmittedBand } from "@/components/admin/review/MediaSubmittedBand";
+import { PromoSubmittedBand } from "@/components/admin/review/PromoSubmittedBand";
 import { ReviewQueueList, StatusPill, TypeChip } from "@/components/admin/review/ReviewQueueList";
+import { ReviewSubmittedBand } from "@/components/admin/review/ReviewSubmittedBand";
+import { SuggestionSubmittedBand } from "@/components/admin/review/SuggestionSubmittedBand";
 import { UpdatesSubmittedBand } from "@/components/admin/review/UpdatesSubmittedBand";
 import { PageMeta } from "@/components/seo/PageMeta";
 import { ErrorState } from "@/components/state/ErrorState";
@@ -21,11 +25,19 @@ import {
   REVIEW_QUEUE_TYPES,
 } from "@/lib/adminReviewQueueLabels";
 import { cn } from "@/lib/utils";
-import { getMediaQueue, getReviewQueueCounts, getUpdatesQueue, type VenueSummary } from "@/services/adminReviewQueueService";
+import { getAdminUserEmails, getClaimsQueue, getMediaQueue, getPromosQueue, getReviewQueueCounts, getReviewsQueue, getSuggestionsQueue, getUpdatesQueue, type VenueSummary } from "@/services/adminReviewQueueService";
 import { approveVenueMedia, rejectVenueMedia } from "@/services/adminVenueMediaReviewService";
+import { approveVenueClaimRequest, rejectVenueClaimRequest } from "@/services/adminVenueClaimService";
+import { updateVenueSuggestionStatus } from "@/services/adminVenueSuggestionService";
+import { updateReviewModerationStatus } from "@/services/adminReviewService";
+import { approvePromotionRequest, convertPromotionRequest, rejectPromotionRequest } from "@/services/adminPromotionRequestService";
 import { applyVenueUpdateRequest, approveVenueUpdateRequest, rejectVenueUpdateRequest } from "@/services/adminVenueUpdateRequestService";
 import type { PhotoDecision, ReviewQueueCounts, ReviewQueueItem, ReviewQueueSort } from "@/types/adminReviewQueue";
 import type { VenueMedia } from "@/types/venueMedia";
+import type { VenueClaimRequest } from "@/types/venueClaims";
+import type { VenueSuggestion } from "@/types/venueSuggestions";
+import type { VenueReview } from "@/types/reviews";
+import type { OwnerPromotionRequest } from "@/types/ownerPromotionRequests";
 import type { VenueUpdateRequest } from "@/types/venueUpdateRequests";
 
 const SORT_OPTIONS = [
@@ -33,7 +45,7 @@ const SORT_OPTIONS = [
   { label: "Newest first", value: "newest" },
 ];
 
-const IMPLEMENTED_TYPES = new Set(["updates", "media"]);
+const IMPLEMENTED_TYPES = new Set(REVIEW_QUEUE_TYPES);
 
 /** approve → reject → undecided, so a mis-click is reversible without a reset. */
 function cyclePhotoDecision(current: Record<string, PhotoDecision>, mediaId: string): Record<string, PhotoDecision> {
@@ -50,6 +62,11 @@ export function AdminReviewQueuePage() {
   const [items, setItems] = useState<ReviewQueueItem[]>([]);
   const [requestsById, setRequestsById] = useState<Record<string, VenueUpdateRequest>>({});
   const [mediaByVenue, setMediaByVenue] = useState<Record<string, VenueMedia[]>>({});
+  const [claimsById, setClaimsById] = useState<Record<string, VenueClaimRequest>>({});
+  const [suggestionsById, setSuggestionsById] = useState<Record<string, VenueSuggestion>>({});
+  const [reviewsById, setReviewsById] = useState<Record<string, VenueReview>>({});
+  const [promosById, setPromosById] = useState<Record<string, OwnerPromotionRequest>>({});
+  const [userEmails, setUserEmails] = useState<Record<string, string>>({});
   const [venues, setVenues] = useState<Record<string, VenueSummary>>({});
   const [counts, setCounts] = useState<ReviewQueueCounts | null>(null);
   const [adminNote, setAdminNote] = useState("");
@@ -73,6 +90,10 @@ export function AdminReviewQueuePage() {
       setRequestsById(result.requestsById);
       setVenues(result.venues);
       setMediaByVenue({});
+      setClaimsById({});
+      setSuggestionsById({});
+      setReviewsById({});
+      setPromosById({});
       return;
     }
     if (activeType === "media") {
@@ -81,6 +102,58 @@ export function AdminReviewQueuePage() {
       setMediaByVenue(result.mediaByVenue);
       setVenues(result.venues);
       setRequestsById({});
+      setClaimsById({});
+      setSuggestionsById({});
+      setReviewsById({});
+      setPromosById({});
+      return;
+    }
+    if (activeType === "claims") {
+      const result = await getClaimsQueue();
+      setItems(result.items);
+      setClaimsById(result.claimsById);
+      setVenues(result.venues);
+      setRequestsById({});
+      setMediaByVenue({});
+      setSuggestionsById({});
+      setReviewsById({});
+      setPromosById({});
+      return;
+    }
+    if (activeType === "suggestions") {
+      const result = await getSuggestionsQueue();
+      setItems(result.items);
+      setSuggestionsById(result.suggestionsById);
+      setVenues({});
+      setRequestsById({});
+      setMediaByVenue({});
+      setClaimsById({});
+      setReviewsById({});
+      setPromosById({});
+      return;
+    }
+    if (activeType === "reviews") {
+      const result = await getReviewsQueue();
+      setItems(result.items);
+      setReviewsById(result.reviewsById);
+      setVenues(result.venues);
+      setRequestsById({});
+      setMediaByVenue({});
+      setClaimsById({});
+      setSuggestionsById({});
+      setPromosById({});
+      return;
+    }
+    if (activeType === "promos") {
+      const result = await getPromosQueue();
+      setItems(result.items);
+      setPromosById(result.promosById);
+      setVenues(result.venues);
+      setRequestsById({});
+      setMediaByVenue({});
+      setClaimsById({});
+      setSuggestionsById({});
+      setReviewsById({});
       return;
     }
     setItems([]);
@@ -104,13 +177,30 @@ export function AdminReviewQueuePage() {
     };
   }, [loadQueue]);
 
+  useEffect(() => {
+    let cancelled = false;
+    const ids = items.flatMap((item) => item.submittedBy ? [item.submittedBy] : []);
+    getAdminUserEmails(ids)
+      .then((emails) => {
+        if (!cancelled) setUserEmails(emails);
+      })
+      // Deployments without sprint-44 keep the short-id fallback until the
+      // migration lands; the queue itself must remain usable.
+      .catch(() => {
+        if (!cancelled) setUserEmails({});
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [items]);
+
   const visibleItems = useMemo(() => {
     const term = search.trim().toLowerCase();
     return items
       .filter((item) => (showDecided ? item.decision !== "pending" : item.decision === "pending"))
-      .filter((item) => !term || item.venueName.toLowerCase().includes(term) || (item.submittedBy ?? "").toLowerCase().includes(term))
+      .filter((item) => !term || item.venueName.toLowerCase().includes(term) || (item.submittedBy ?? "").toLowerCase().includes(term) || (item.submittedBy ? userEmails[item.submittedBy]?.toLowerCase().includes(term) : false))
       .sort((a, b) => (sort === "oldest" ? a.createdAt.localeCompare(b.createdAt) : b.createdAt.localeCompare(a.createdAt)));
-  }, [items, search, showDecided, sort]);
+  }, [items, search, showDecided, sort, userEmails]);
 
   const selected = visibleItems.find((item) => item.id === selectedId) ?? visibleItems[0] ?? null;
   const selectedMedia = selected && activeType === "media" ? mediaByVenue[selected.id] ?? [] : [];
@@ -168,6 +258,38 @@ export function AdminReviewQueuePage() {
       });
       return;
     }
+    if (activeType === "claims") {
+      const claim = claimsById[selected.id];
+      if (!claim) return;
+      void runDecision(() => approveVenueClaimRequest({
+        claimRequestId: claim.id,
+        venueId: claim.venueId,
+        submittedBy: claim.submittedBy,
+        adminUserId: user.id,
+        adminNotes: adminNote || null,
+      }));
+      return;
+    }
+    if (activeType === "suggestions") {
+      void runDecision(() => updateVenueSuggestionStatus({
+        suggestionId: selected.id,
+        status: "approved",
+        adminUserId: user.id,
+        adminNotes: adminNote || null,
+      }));
+      return;
+    }
+    if (activeType === "reviews") {
+      void runDecision(() => updateReviewModerationStatus({ reviewId: selected.id, status: "published", moderationNotes: adminNote || null, adminUserId: user.id }));
+      return;
+    }
+    if (activeType === "promos") {
+      void runDecision(async () => {
+        await approvePromotionRequest({ requestId: selected.id, adminUserId: user.id, adminNotes: adminNote || null });
+        await convertPromotionRequest({ requestId: selected.id, adminUserId: user.id });
+      });
+      return;
+    }
     // Approve and apply stay separate service calls; this button is the default pairing.
     void runDecision(async () => {
       await approveVenueUpdateRequest({ requestId: selected.id, adminUserId: user.id, adminNotes: adminNote || null });
@@ -176,8 +298,13 @@ export function AdminReviewQueuePage() {
   }
 
   function handleApproveOnly() {
-    if (!user || !selected || activeType !== "updates") return;
-    void runDecision(() => approveVenueUpdateRequest({ requestId: selected.id, adminUserId: user.id, adminNotes: adminNote || null }));
+    if (!user || !selected) return;
+    if (activeType === "updates") {
+      void runDecision(() => approveVenueUpdateRequest({ requestId: selected.id, adminUserId: user.id, adminNotes: adminNote || null }));
+    }
+    if (activeType === "promos") {
+      void runDecision(() => approvePromotionRequest({ requestId: selected.id, adminUserId: user.id, adminNotes: adminNote || null }));
+    }
   }
 
   function handleReject() {
@@ -188,6 +315,22 @@ export function AdminReviewQueuePage() {
           if (photoDecisions[item.id] === "reject") await rejectVenueMedia({ mediaId: item.id, adminUserId: user.id, reviewNotes: adminNote });
         }
       });
+      return;
+    }
+    if (activeType === "claims") {
+      void runDecision(() => rejectVenueClaimRequest({ claimRequestId: selected.id, adminUserId: user.id, adminNotes: adminNote }));
+      return;
+    }
+    if (activeType === "suggestions") {
+      void runDecision(() => updateVenueSuggestionStatus({ suggestionId: selected.id, status: "rejected", adminUserId: user.id, adminNotes: adminNote }));
+      return;
+    }
+    if (activeType === "reviews") {
+      void runDecision(() => updateReviewModerationStatus({ reviewId: selected.id, status: "hidden", moderationNotes: adminNote, adminUserId: user.id }));
+      return;
+    }
+    if (activeType === "promos") {
+      void runDecision(() => rejectPromotionRequest({ requestId: selected.id, adminUserId: user.id, adminNotes: adminNote }));
       return;
     }
     void runDecision(() => rejectVenueUpdateRequest({ requestId: selected.id, adminUserId: user.id, adminNotes: adminNote }));
@@ -283,29 +426,31 @@ export function AdminReviewQueuePage() {
                       {[
                         selected.venueId && venues[selected.venueId] ? [venues[selected.venueId].area, venues[selected.venueId].city].filter(Boolean).join(", ") : null,
                         selected.venueId && venues[selected.venueId]?.isClaimed ? "claimed" : null,
-                        // submitted_by is an auth user id; emails are not
-                        // readable from the client, so show a short reference.
-                        selected.submittedBy ? `submitted by owner ${selected.submittedBy.slice(0, 8)}` : null,
+                        selected.submittedBy ? `submitted by ${userEmails[selected.submittedBy] ?? `owner ${selected.submittedBy.slice(0, 8)}`}` : null,
                         `${getReviewQueueAgeDays(selected.createdAt)} days ago`,
                       ].filter(Boolean).join(" · ")}
                     </p>
                   </div>
 
                   <ReviewQueueActionBar
-                    primaryLabel={activeType === "media" ? `Approve ${approveCount} selected` : "Approve & apply"}
-                    secondaryLabel={activeType === "updates" ? "Approve only" : undefined}
+                    primaryLabel={activeType === "media" ? `Approve ${approveCount} selected` : activeType === "claims" ? "Approve claim" : activeType === "suggestions" ? "Approve suggestion" : activeType === "reviews" ? "Publish review" : activeType === "promos" ? "Approve & create draft" : "Approve & apply"}
+                    secondaryLabel={activeType === "updates" || activeType === "promos" ? "Approve only" : undefined}
                     rejectLabel={activeType === "media" ? `Reject ${rejectCount}` : "Reject"}
-                    isBusy={isBusy || (activeType === "media" && approveCount === 0 && rejectCount === 0)}
+                    isBusy={isBusy || selected.decision !== "pending" || (activeType === "media" && approveCount === 0 && rejectCount === 0)}
                     canReject={canReject}
-                    venueFormHref={selected.venueId ? `/admin/venues/${selected.venueId}/edit` : null}
+                    venueFormHref={activeType === "suggestions" ? `/admin/venues/new?suggestion=${selected.id}` : selected.venueId ? `/admin/venues/${selected.venueId}/edit` : null}
                     onPrimary={handleApproveAndApply}
-                    onSecondary={activeType === "updates" ? handleApproveOnly : undefined}
+                    onSecondary={activeType === "updates" || activeType === "promos" ? handleApproveOnly : undefined}
                     onReject={handleReject}
                   />
 
                   <div className="grid gap-[14px] 2xl:grid-cols-[minmax(0,1fr)_280px] 2xl:items-start">
                     <div className="flex min-w-0 flex-col gap-[14px]">
                       {activeType === "updates" && requestsById[selected.id] ? <UpdatesSubmittedBand request={requestsById[selected.id]} /> : null}
+                      {activeType === "claims" && claimsById[selected.id] ? <ClaimSubmittedBand claim={claimsById[selected.id]} /> : null}
+                      {activeType === "suggestions" && suggestionsById[selected.id] ? <SuggestionSubmittedBand suggestion={suggestionsById[selected.id]} /> : null}
+                      {activeType === "reviews" && reviewsById[selected.id] ? <ReviewSubmittedBand review={reviewsById[selected.id]} /> : null}
+                      {activeType === "promos" && promosById[selected.id] ? <PromoSubmittedBand request={promosById[selected.id]} /> : null}
                       {activeType === "media" ? (
                         <>
                           <MediaSubmittedBand
@@ -338,9 +483,25 @@ export function AdminReviewQueuePage() {
                         <InfoCard title="Approve, then apply">
                           <p><strong className="font-semibold text-nokta-ink">Approve only</strong> records the decision. <strong className="font-semibold text-nokta-ink">Apply</strong> writes to the venue. The combined button does both.</p>
                         </InfoCard>
-                      ) : (
+                      ) : activeType === "media" ? (
                         <InfoCard title="Decisions are per photo">
                           <p>Click a tile to cycle approve → reject → undecided. Only the photos you marked are written.</p>
+                        </InfoCard>
+                      ) : activeType === "claims" ? (
+                        <InfoCard title="Approving a claim">
+                          <p>This assigns the venue to the claimant, marks it claimed and starts their owner onboarding.</p>
+                        </InfoCard>
+                      ) : activeType === "suggestions" ? (
+                        <InfoCard title="From suggestion to venue">
+                          <p>Approve the submission, then open the prefilled venue form to verify details and publish the listing.</p>
+                        </InfoCard>
+                      ) : activeType === "reviews" ? (
+                        <InfoCard title="Review moderation">
+                          <p>Publish makes the review visible. Reject hides it while preserving the record and moderation note.</p>
+                        </InfoCard>
+                      ) : (
+                        <InfoCard title="Approve, then create">
+                          <p>Approve only records the decision. The combined action also creates the promoted offer or placement as a draft.</p>
                         </InfoCard>
                       )}
                       <InfoCard title="This venue">
