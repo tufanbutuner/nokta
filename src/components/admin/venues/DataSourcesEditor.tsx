@@ -26,13 +26,17 @@ export function DataSourcesEditor({
 }) {
   return (
     <div className="grid gap-4 md:grid-cols-2">
-      {DATA_SOURCE_FIELDS.map(([key, label]) => (
-        <label key={key} className="grid gap-2 text-sm font-medium">
-          {label}
-          <Input value={value[key] ?? ""} onChange={(event) => onChange({ ...value, [key]: event.target.value })} placeholder="https://" />
-          {errors[`dataSources.${key}`] ? <span className="text-xs text-red-700">{errors[`dataSources.${key}`]}</span> : null}
+      {DATA_SOURCE_FIELDS.map(([key, label]) => {
+        const error = errors[`dataSources.${key}`];
+
+        return (
+          <label key={key} className="grid gap-2 text-sm font-medium" data-field-error={error ? "true" : undefined}>
+            {label}
+            <Input value={value[key] ?? ""} onChange={(event) => onChange({ ...value, [key]: event.target.value })} placeholder="https://" />
+            {error ? <span className="text-xs text-red-700">{error}</span> : null}
         </label>
-      ))}
+        );
+      })}
     </div>
   );
 }

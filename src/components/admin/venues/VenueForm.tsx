@@ -55,6 +55,7 @@ export function VenueForm({
   saveMessage,
   saveError,
   onSubmit,
+  onInvalidSubmit,
 }: {
   initialValues: VenueFormValues;
   mode: "new" | "edit";
@@ -62,6 +63,7 @@ export function VenueForm({
   saveMessage: string | null;
   saveError: string | null;
   onSubmit: (values: VenueFormValues) => Promise<void>;
+  onInvalidSubmit?: (errors: Record<string, string>) => void;
 }) {
   const [values, setValues] = useState(initialValues);
   const [slugWasEdited, setSlugWasEdited] = useState(mode === "edit");
@@ -102,6 +104,10 @@ export function VenueForm({
     setSubmitted(true);
 
     if (!validation.isValid) {
+      onInvalidSubmit?.(validation.errors);
+      window.requestAnimationFrame(() => {
+        document.querySelector("[data-field-error='true']")?.scrollIntoView({ block: "center", behavior: "smooth" });
+      });
       return;
     }
 
@@ -175,7 +181,7 @@ export function VenueForm({
       <VenueFormSection title="Pricing & rating">
         <div className="grid gap-4 md:grid-cols-3">
           <Field label="Price from" error={showErrors ? validation.errors.priceFrom : undefined}>
-            <Input value={values.priceFrom ?? ""} onChange={(event) => update("priceFrom", parseNullableNumberInput(event.target.value))} />
+            <Input inputMode="decimal" value={values.priceFrom ?? ""} onChange={(event) => update("priceFrom", parseNullableNumberInput(event.target.value))} />
           </Field>
           <Field label="Price level" error={showErrors ? validation.errors.priceLevel : undefined}>
             <Select
@@ -365,7 +371,7 @@ export function VenueForm({
 
 function Field({ label, error, children }: { label: string; error?: string; children: React.ReactNode }) {
   return (
-    <label className="grid gap-2 text-sm font-medium">
+    <label className="grid gap-2 text-sm font-medium" data-field-error={error ? "true" : undefined}>
       {label}
       {children}
       {error ? <span className="text-xs text-red-700">{error}</span> : null}
@@ -378,7 +384,8 @@ function parseNumberInput(value: string): number | "" {
 }
 
 function parseNullableNumberInput(value: string): number | null {
-  return value.trim() === "" ? null : Number(value);
+  const normalizedValue = value.replace(/[£,\s]/g, "");
+  return normalizedValue.trim() === "" ? null : Number(normalizedValue);
 }
 
 function nullableString(value: string): string | null {

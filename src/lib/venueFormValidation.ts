@@ -37,6 +37,10 @@ export function validateVenueForm(values: VenueFormValues): VenueFormValidationR
     errors.rating = "Rating must be between 0 and 5.";
   }
 
+  if (values.priceFrom != null && (!Number.isFinite(values.priceFrom) || values.priceFrom < 0 || values.priceFrom > 200)) {
+    errors.priceFrom = "Price from must be a number between 0 and 200.";
+  }
+
   if (values.website && !isValidUrl(values.website)) {
     errors.website = "Website must be a valid URL.";
   }
