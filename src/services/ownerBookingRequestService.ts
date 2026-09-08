@@ -27,6 +27,11 @@ export async function getOwnerBookingRequests(input: { ownerUserId: string; venu
   return ((data ?? []) as BookingRequestRow[]).map(mapBookingRequestRowToBookingRequest);
 }
 
+export async function getOwnerBookingRequest(input: { ownerUserId: string; venueId: string; bookingRequestId: string }): Promise<BookingRequest | null> {
+  const requests = await getOwnerBookingRequests({ ownerUserId: input.ownerUserId, venueId: input.venueId });
+  return requests.find((request) => request.id === input.bookingRequestId) ?? null;
+}
+
 export function acceptBookingRequest(input: OwnerBookingRequestActionInput): Promise<BookingRequest> {
   return updateOwnerBookingRequest(input.bookingRequestId, input.ownerUserId, {
     status: "accepted",

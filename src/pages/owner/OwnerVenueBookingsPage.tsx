@@ -1,8 +1,9 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { Link, useNavigate, useParams, useSearchParams } from "react-router-dom";
+import { Link, useParams, useSearchParams } from "react-router-dom";
 import { OwnerLayout } from "@/components/owner/OwnerLayout";
 import { OwnerVenueTabShell } from "@/components/owner/OwnerVenueTabShell";
 import { VenueBookingListView, type VenueBookingListFilter } from "@/components/owner/venueBookings/VenueBookingListView";
+import { VenueBookingDetailSheet } from "@/components/owner/venueBookings/VenueBookingDetailSheet";
 import { VenueBookingMonthGrid } from "@/components/owner/venueBookings/VenueBookingMonthGrid";
 import { VenueBookingSideRail } from "@/components/owner/venueBookings/VenueBookingSideRail";
 import { VenueBookingToolbar } from "@/components/owner/venueBookings/VenueBookingToolbar";
@@ -18,9 +19,10 @@ import { validateVenueBookingClosureDate } from "@/lib/bookingAvailabilityValida
 import { getWaitingDays, isEventAwaitingReply } from "@/lib/bookingCalendarGeometry";
 import { createOwnerVenueBookingBlackoutDate, getOwnerVenueBookingAvailability } from "@/services/ownerBookingAvailabilityService";
 import { getOwnerBookingCalendarEvents } from "@/services/ownerBookingCalendarService";
-import { acceptBookingRequest } from "@/services/ownerBookingRequestService";
+import { acceptBookingRequest, declineBookingRequest, getOwnerBookingRequest, proposeBookingAlternative } from "@/services/ownerBookingRequestService";
 import { getMyClaimedVenue } from "@/services/ownerVenueService";
 import type { VenueBookingAvailability } from "@/types/bookingAvailability";
+import type { BookingRequest } from "@/types/bookingRequests";
 import type { BookingCalendarEvent, BookingCalendarView } from "@/types/bookingCalendar";
 import type { Venue } from "@/types/venue";
 
@@ -29,13 +31,14 @@ const VIEWS: BookingCalendarView[] = ["today", "week", "month", "list"];
 export function OwnerVenueBookingsPage() {
   const { user } = useAuth();
   const { venueId = "" } = useParams();
-  const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
   const [venue, setVenue] = useState<Venue | null>(null);
   const [availability, setAvailability] = useState<VenueBookingAvailability | null>(null);
   const [events, setEvents] = useState<BookingCalendarEvent[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [confirmingId, setConfirmingId] = useState<string | null>(null);
+  const [selectedEvent, setSelectedEvent] = useState<BookingCalendarEvent | null>(null);
+  const [selectedRequest, setSelectedRequest] = useState<BookingRequest | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   // Below lg the week grid is unreadable, so List is the small-screen default.
@@ -112,12 +115,54 @@ export function OwnerVenueBookingsPage() {
       setEvents((current) => current.map((item) => (item.id === event.id ? { ...item, status: "accepted", isActionRequired: false } : item)));
       await acceptBookingRequest({ bookingRequestId: event.bookingRequestId, ownerUserId: user.id });
       await loadEvents(venue.id);
+      setSelectedEvent((current) => current?.id === event.id ? { ...current, status: "accepted", isActionRequired: false } : current);
     } catch (caughtError) {
       setEvents(previous);
       setError(caughtError instanceof Error ? caughtError.message : "Could not confirm that request.");
     } finally {
       setConfirmingId(null);
     }
+  }
+
+  function handleEventClick(event: BookingCalendarEvent) {
+    setSelectedEvent(event);
+    setSelectedRequest(null);
+    if (!user || !venue) return;
+    getOwnerBookingRequest({ ownerUserId: user.id, venueId: venue.id, bookingRequestId: event.bookingRequestId })
+      .then((request) => setSelectedRequest(request))
+      .catch((caughtError) => setError(caughtError instanceof Error ? caughtError.message : "Could not load that booking."));
+  }
+
+  async function handleDeclineSelected() {
+    if (!user || !venue || !selectedEvent) return;
+    const previous = events;
+    try {
+      setConfirmingId(selectedEvent.id);
+      setEvents((current) => current.map((item) => item.id === selectedEvent.id ? { ...item, status: "declined", isActionRequired: false } : item));
+      await declineBookingRequest({ bookingRequestId: selectedEvent.bookingRequestId, ownerUserId: user.id });
+      await loadEvents(venue.id);
+      setSelectedEvent((current) => current ? { ...current, status: "declined", isActionRequired: false } : current);
+    } catch (caughtError) {
+      setEvents(previous);
+      setError(caughtError instanceof Error ? caughtError.message : "Could not decline that request.");
+    } finally { setConfirmingId(null); }
+  }
+
+  async function handleSuggestSelected() {
+    if (!user || !venue || !selectedEvent) return;
+    const proposedDate = window.prompt("Alternative date (YYYY-MM-DD)", selectedEvent.date);
+    if (!proposedDate) return;
+    const proposedTime = window.prompt("Alternative time (HH:MM)", selectedEvent.time.slice(0, 5));
+    if (!proposedTime) return;
+    const proposedMessage = window.prompt("Message to the customer", "We can offer this alternative time.") ?? undefined;
+    try {
+      setConfirmingId(selectedEvent.id);
+      await proposeBookingAlternative({ bookingRequestId: selectedEvent.bookingRequestId, ownerUserId: user.id, proposedDate, proposedTime, proposedMessage });
+      await loadEvents(venue.id);
+      setSelectedEvent((current) => current ? { ...current, status: "alternative_proposed", isActionRequired: false } : current);
+    } catch (caughtError) {
+      setError(caughtError instanceof Error ? caughtError.message : "Could not suggest another time.");
+    } finally { setConfirmingId(null); }
   }
 
   async function handleAddClosure() {
@@ -183,13 +228,14 @@ export function OwnerVenueBookingsPage() {
                   onChangeFilter={(filter) => updateParams({ filter })}
                   onTogglePast={() => updateParams({ past: isPast ? null : "1" })}
                   onConfirm={handleConfirm}
+                  onOpen={handleEventClick}
                 />
               ) : view === "month" ? (
                 <VenueBookingMonthGrid
                   anchorDate={anchorDate}
                   events={events}
                   closures={availability.blackoutDates}
-                  onEventClick={(event) => navigate(`/owner/inbox?item=${event.bookingRequestId}`)}
+                  onEventClick={handleEventClick}
                   onOpenDayInWeek={(date) => updateParams({ view: "week", date })}
                 />
               ) : (
@@ -200,7 +246,7 @@ export function OwnerVenueBookingsPage() {
                     events={events}
                     openingHours={venue.openingHours}
                     closures={availability.blackoutDates}
-                    onEventClick={(event) => navigate(`/owner/inbox?item=${event.bookingRequestId}`)}
+                    onEventClick={handleEventClick}
                   />
                   {!events.length ? <p className="text-[13px] text-muted-foreground">No requests {view === "today" ? "today" : "this week"}.</p> : null}
                 </>
@@ -215,6 +261,15 @@ export function OwnerVenueBookingsPage() {
               availability={availability}
             />
           </div>
+          <VenueBookingDetailSheet
+            event={selectedEvent}
+            request={selectedRequest}
+            isSaving={confirmingId === selectedEvent?.id}
+            onClose={() => { setSelectedEvent(null); setSelectedRequest(null); }}
+            onConfirm={() => { if (selectedEvent) void handleConfirm(selectedEvent); }}
+            onDecline={() => void handleDeclineSelected()}
+            onSuggestTime={() => void handleSuggestSelected()}
+          />
         </OwnerVenueTabShell>
       )}
     </OwnerLayout>

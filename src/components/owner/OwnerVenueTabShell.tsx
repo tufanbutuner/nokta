@@ -45,7 +45,7 @@ export function OwnerVenueTabShell({
 
   return (
     <div className="-mx-4 -my-5 sm:-mx-6 lg:-mx-8">
-      <header className="border-b bg-background px-4 pt-4 sm:px-6 lg:px-[26px]">
+      <header className="border-b bg-white px-4 pt-4 sm:px-6 lg:px-[26px]">
         <p className="text-[12.5px] text-muted-foreground">
           <Link to="/owner/venues" className="font-medium text-clay-accent hover:underline">My venues</Link>
           <span aria-hidden="true"> / </span>

@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { getClosureForDate, getWaitingDays, isEventAwaitingReply } from "@/lib/bookingCalendarGeometry";
 import type { VenueBookingBlackoutDate } from "@/types/bookingAvailability";
@@ -16,6 +15,7 @@ export function VenueBookingListView({
   onChangeFilter,
   onTogglePast,
   onConfirm,
+  onOpen,
 }: {
   events: BookingCalendarEvent[];
   closures: VenueBookingBlackoutDate[];
@@ -26,6 +26,7 @@ export function VenueBookingListView({
   onChangeFilter: (filter: VenueBookingListFilter) => void;
   onTogglePast: () => void;
   onConfirm: (event: BookingCalendarEvent) => void;
+  onOpen: (event: BookingCalendarEvent) => void;
 }) {
   const grouped = groupByDate(events);
 
@@ -93,14 +94,14 @@ export function VenueBookingListView({
                           >
                             {confirmingId === event.id ? "Confirming..." : "Confirm"}
                           </button>
-                          <Link to={`/owner/inbox?item=${event.bookingRequestId}`} className="flex h-[30px] items-center rounded-lg border bg-card px-3 text-[12.5px] font-medium text-nokta-ink transition-colors hover:bg-muted">
+                          <button type="button" onClick={() => onOpen(event)} className="flex h-[30px] items-center rounded-lg border bg-card px-3 text-[12.5px] font-medium text-nokta-ink transition-colors hover:bg-muted">
                             Reply
-                          </Link>
+                          </button>
                         </>
                       ) : (
-                        <Link to={`/owner/inbox?item=${event.bookingRequestId}`} className="flex h-[30px] items-center rounded-lg border bg-card px-3 text-[12.5px] font-medium text-nokta-ink transition-colors hover:bg-muted">
+                        <button type="button" onClick={() => onOpen(event)} className="flex h-[30px] items-center rounded-lg border bg-card px-3 text-[12.5px] font-medium text-nokta-ink transition-colors hover:bg-muted">
                           Open
-                        </Link>
+                        </button>
                       )}
                     </div>
                   </div>
