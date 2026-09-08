@@ -1,3 +1,4 @@
+import { CheckCircle2, XCircle } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { Link, useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { AdminPageShell } from "@/components/admin/AdminPageShell";
@@ -26,6 +27,7 @@ export function VenueFormPage({ mode }: { mode: "new" | "edit" }) {
   const [isSaving, setIsSaving] = useState(false);
   const [saveMessage, setSaveMessage] = useState<string | null>(null);
   const [saveError, setSaveError] = useState<string | null>(null);
+  const [toast, setToast] = useState<{ type: "success" | "error"; message: string } | null>(null);
   const title = useMemo(() => (mode === "new" ? "New venue" : "Edit venue"), [mode]);
   const focusTarget = searchParams.get("focus");
 
@@ -133,6 +135,15 @@ export function VenueFormPage({ mode }: { mode: "new" | "edit" }) {
     return () => window.cancelAnimationFrame(frameId);
   }, [focusTarget, isLoading]);
 
+  useEffect(() => {
+    if (!toast) {
+      return;
+    }
+
+    const timeoutId = window.setTimeout(() => setToast(null), 4500);
+    return () => window.clearTimeout(timeoutId);
+  }, [toast]);
+
   async function handleSubmit(values: VenueFormValues) {
     setIsSaving(true);
     setSaveMessage(null);
@@ -141,6 +152,7 @@ export function VenueFormPage({ mode }: { mode: "new" | "edit" }) {
     try {
       if (mode === "new") {
         const createdVenue = await createVenue(values);
+        setToast({ type: "success", message: "Venue created." });
         navigate(`/admin/venues/${createdVenue.id}/edit`, { replace: true });
         return;
       }
@@ -152,8 +164,11 @@ export function VenueFormPage({ mode }: { mode: "new" | "edit" }) {
       const updatedVenue = await updateVenue(id, values);
       setInitialValues(mapVenueToFormValues(updatedVenue));
       setSaveMessage("Venue saved.");
+      setToast({ type: "success", message: "Venue saved." });
     } catch (caughtError) {
-      setSaveError(caughtError instanceof Error ? caughtError.message : "Could not save venue.");
+      const message = caughtError instanceof Error ? caughtError.message : "Could not save venue.";
+      setSaveError(message);
+      setToast({ type: "error", message });
     } finally {
       setIsSaving(false);
     }
@@ -205,8 +220,49 @@ export function VenueFormPage({ mode }: { mode: "new" | "edit" }) {
           saveMessage={saveMessage}
           saveError={saveError}
           onSubmit={handleSubmit}
+          onInvalidSubmit={(errors) => setToast({ type: "error", message: `Please fix ${formatValidationFields(errors)} before saving.` })}
         />
+        {toast ? <VenueSaveToast type={toast.type} message={toast.message} onClose={() => setToast(null)} /> : null}
       </div>
     </AdminPageShell>
+  );
+}
+
+function formatValidationFields(errors: Record<string, string>) {
+  const labels = Object.keys(errors).slice(0, 3).map(formatValidationField);
+  const remainingCount = Math.max(0, Object.keys(errors).length - labels.length);
+  const fieldList = labels.join(", ");
+
+  return remainingCount ? `${fieldList} and ${remainingCount} more field${remainingCount === 1 ? "" : "s"}` : fieldList || "the highlighted fields";
+}
+
+function formatValidationField(field: string) {
+  return field
+    .replace(/^dataSources\./, "")
+    .replace(/([A-Z])/g, " $1")
+    .replace(/^./, (letter) => letter.toUpperCase())
+    .toLowerCase();
+}
+
+function VenueSaveToast({ type, message, onClose }: { type: "success" | "error"; message: string; onClose: () => void }) {
+  const isSuccess = type === "success";
+
+  return (
+    <div className="fixed bottom-5 right-5 z-[80] w-[calc(100vw-2.5rem)] max-w-sm rounded-2xl border border-nokta-border bg-white p-4 shadow-2xl shadow-stone-950/15">
+      <div className="flex items-start gap-3">
+        {isSuccess ? (
+          <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-700" />
+        ) : (
+          <XCircle className="mt-0.5 h-5 w-5 shrink-0 text-red-700" />
+        )}
+        <div className="min-w-0 flex-1">
+          <p className="text-sm font-semibold text-nokta-ink">{isSuccess ? "Saved" : "Save failed"}</p>
+          <p className="mt-1 text-sm leading-5 text-nokta-ink-muted">{message}</p>
+        </div>
+        <button type="button" onClick={onClose} className="rounded-full px-2 py-1 text-xs font-semibold text-nokta-ink-muted hover:bg-nokta-ink/5 hover:text-nokta-ink">
+          Close
+        </button>
+      </div>
+    </div>
   );
 }
