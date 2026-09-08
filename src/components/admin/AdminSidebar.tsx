@@ -1,4 +1,4 @@
-import { Activity, BarChart3, BookOpenCheck, ClipboardPenLine, CreditCard, DollarSign, Inbox, LayoutDashboard, MapPin, Sparkles, Tag } from "lucide-react";
+import { Activity, BarChart3, ClipboardPenLine, CreditCard, DollarSign, LayoutDashboard, MapPin, MessageSquare, Sparkles, Tag } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { useAuth } from "@/context/AuthContext";
 import { cn } from "@/lib/utils";
@@ -7,8 +7,7 @@ export const ADMIN_NAV_ITEMS = [
   { label: "Venues", to: "/admin/venues", icon: MapPin },
   // All six approve/reject workflows now live behind one queue.
   { label: "Review queue", to: "/admin/review", icon: ClipboardPenLine },
-  { label: "Bookings", to: "/admin/bookings", icon: BookOpenCheck },
-  { label: "Enquiries", to: "/admin/enquiries", icon: Inbox },
+  { label: "Demand", to: "/admin/demand", icon: MessageSquare },
   { label: "Subscriptions", to: "/admin/subscriptions", icon: CreditCard },
   { label: "Featured", to: "/admin/featured", icon: Sparkles },
   { label: "Offers", to: "/admin/offers", icon: Tag },

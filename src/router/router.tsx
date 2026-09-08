@@ -15,8 +15,7 @@ const AdminFeaturedPlacementsPage = lazyPage(() => import("@/pages/admin/AdminFe
 const AdminPromotedOffersPage = lazyPage(() => import("@/pages/admin/AdminPromotedOffersPage"), "AdminPromotedOffersPage");
 const AdminVenueAnalyticsPage = lazyPage(() => import("@/pages/admin/AdminVenueAnalyticsPage"), "AdminVenueAnalyticsPage");
 const AdminSubscriptionsPage = lazyPage(() => import("@/pages/admin/AdminSubscriptionsPage"), "AdminSubscriptionsPage");
-const AdminBookingRequestsPage = lazyPage(() => import("@/pages/admin/AdminBookingRequestsPage"), "AdminBookingRequestsPage");
-const AdminVenueEnquiriesPage = lazyPage(() => import("@/pages/admin/AdminVenueEnquiriesPage"), "AdminVenueEnquiriesPage");
+const AdminDemandPage = lazyPage(() => import("@/pages/admin/AdminDemandPage"), "AdminDemandPage");
 const AdminVenuesPage = lazyPage(() => import("@/pages/admin/AdminVenuesPage"), "AdminVenuesPage");
 const AdminReviewQueuePage = lazyPage(() => import("@/pages/admin/AdminReviewQueuePage"), "AdminReviewQueuePage");
 const VenueFormPage = lazyPage<{ mode: "edit" | "new" }>(() => import("@/pages/admin/VenueFormPage"), "VenueFormPage");
@@ -280,12 +279,16 @@ export const router = createBrowserRouter([
           ]
         : []),
       {
-        path: "/admin/bookings",
+        path: "/admin/demand",
         element: routeElement(
           <RequireAdmin>
-            <AdminBookingRequestsPage />
+            <AdminDemandPage />
           </RequireAdmin>,
         ),
+      },
+      {
+        path: "/admin/bookings",
+        element: <Navigate to="/admin/demand?kind=booking" replace />,
       },
       {
         path: "/admin/data-quality",
@@ -353,11 +356,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/admin/enquiries",
-        element: routeElement(
-          <RequireAdmin>
-            <AdminVenueEnquiriesPage />
-          </RequireAdmin>,
-        ),
+        element: <Navigate to="/admin/demand?kind=enquiry" replace />,
       },
       {
         path: "/admin/offers",
