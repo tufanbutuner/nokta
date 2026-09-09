@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { getProfileCompletenessScore } from "@/lib/profileCompleteness";
 import { Link } from "react-router-dom";
 import type { VenueSubscription } from "@/types/subscriptions";
 import type { Venue } from "@/types/venue";
@@ -25,17 +26,4 @@ export function ProfileCompletenessCard({ venue, subscription }: { venue: Venue;
       </div>
     </section>
   );
-}
-
-function getProfileCompletenessScore(venue: Venue, subscription: VenueSubscription | null) {
-  let score = 0;
-  if (venue.description?.trim()) score += 15;
-  if (venue.openingHours.length) score += 15;
-  if (venue.images.length) score += 20;
-  if (venue.address?.trim()) score += 10;
-  if (venue.phone?.trim() || venue.website?.trim() || venue.instagram?.trim()) score += 10;
-  if (subscription?.plan && subscription.plan !== "free") score += 10;
-  if (venue.openingHours.length) score += 10;
-  if (venue.vibes.length || venue.secondaryCategories.length) score += 10;
-  return Math.min(score, 100);
 }

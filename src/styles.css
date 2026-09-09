@@ -28,6 +28,13 @@
   --color-nokta-ink-subtle: oklch(0.36 0.022 42);
   --color-nokta-border: oklch(0.87 0.026 55);
   --color-nokta-border-input: oklch(0.82 0.03 50);
+  --color-nokta-divider: oklch(0.93 0.015 55);
+  --color-nokta-divider-row: oklch(0.94 0.012 55);
+  --color-nokta-row-border: oklch(0.9 0.02 55);
+  --color-nokta-track: oklch(0.92 0.02 55);
+  --color-nokta-hover: oklch(0.98 0.01 60);
+  --color-nokta-hover-row: oklch(0.98 0.012 60);
+  --color-nokta-chip-tint: oklch(0.96 0.02 35);
   --color-nokta-accent: oklch(0.56 0.13 35);
   --color-nokta-accent-dark: oklch(0.33 0.095 35);
   --color-nokta-accent-tint: oklch(0.92 0.045 35);

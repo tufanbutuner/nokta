@@ -1,4 +1,3 @@
-import { CheckCircle2, XCircle } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { Link, useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { AdminPageShell } from "@/components/admin/AdminPageShell";
@@ -7,6 +6,7 @@ import { ErrorState } from "@/components/state/ErrorState";
 import { LoadingState } from "@/components/state/LoadingState";
 import { Alert } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
+import { Toast } from "@/components/ui/toast";
 import { createEmptyVenueFormValues, createVenueFormValuesFromSuggestion, mapVenueToFormValues } from "@/lib/venueFormMappers";
 import { createVenue, getVenueById, updateVenue } from "@/services/adminVenueService";
 import { getAdminVenueSuggestionById } from "@/services/adminVenueSuggestionService";
@@ -222,7 +222,7 @@ export function VenueFormPage({ mode }: { mode: "new" | "edit" }) {
           onSubmit={handleSubmit}
           onInvalidSubmit={(errors) => setToast({ type: "error", message: `Please fix ${formatValidationFields(errors)} before saving.` })}
         />
-        {toast ? <VenueSaveToast type={toast.type} message={toast.message} onClose={() => setToast(null)} /> : null}
+        {toast ? <Toast type={toast.type} title={toast.type === "success" ? "Saved" : "Save failed"} message={toast.message} onClose={() => setToast(null)} /> : null}
       </div>
     </AdminPageShell>
   );
@@ -242,27 +242,4 @@ function formatValidationField(field: string) {
     .replace(/([A-Z])/g, " $1")
     .replace(/^./, (letter) => letter.toUpperCase())
     .toLowerCase();
-}
-
-function VenueSaveToast({ type, message, onClose }: { type: "success" | "error"; message: string; onClose: () => void }) {
-  const isSuccess = type === "success";
-
-  return (
-    <div className="fixed bottom-5 right-5 z-[80] w-[calc(100vw-2.5rem)] max-w-sm rounded-2xl border border-nokta-border bg-white p-4 shadow-2xl shadow-stone-950/15">
-      <div className="flex items-start gap-3">
-        {isSuccess ? (
-          <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-700" />
-        ) : (
-          <XCircle className="mt-0.5 h-5 w-5 shrink-0 text-red-700" />
-        )}
-        <div className="min-w-0 flex-1">
-          <p className="text-sm font-semibold text-nokta-ink">{isSuccess ? "Saved" : "Save failed"}</p>
-          <p className="mt-1 text-sm leading-5 text-nokta-ink-muted">{message}</p>
-        </div>
-        <button type="button" onClick={onClose} className="rounded-full px-2 py-1 text-xs font-semibold text-nokta-ink-muted hover:bg-nokta-ink/5 hover:text-nokta-ink">
-          Close
-        </button>
-      </div>
-    </div>
-  );
 }
