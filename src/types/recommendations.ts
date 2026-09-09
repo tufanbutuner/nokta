@@ -14,6 +14,7 @@ export interface RecommendationPreferences {
     outdoor: boolean;
     food: boolean;
     alcohol: boolean;
+    halal: boolean;
     openLate: boolean;
   };
   distancePreference: DistancePreference;

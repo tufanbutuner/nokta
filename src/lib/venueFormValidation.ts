@@ -113,6 +113,7 @@ function mapValuesToValidationVenue(values: VenueFormValues): Venue {
     outdoor: values.outdoor,
     food: values.food,
     alcohol: values.alcohol,
+    halal: values.halal,
     openLate: values.openLate,
     vibes: values.vibes,
     images: values.images,

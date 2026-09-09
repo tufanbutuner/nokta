@@ -116,7 +116,7 @@ export function VenuePage() {
   const currentStatus = getVenueCurrentStatus(venue);
   const city = getCityByName(venue.city);
   const distanceLabel = userLocation ? formatDistanceMiles(getVenueDistanceMiles(venue, userLocation)).replace(" away", "") : null;
-  const amenities = [venue.food && "Food", venue.outdoor && "Outdoor seating", venue.indoor && "Indoor seating", venue.alcohol && "Alcohol", venue.openLate && "Open late"].filter((amenity): amenity is string => Boolean(amenity));
+  const amenities = [venue.food && "Food", venue.outdoor && "Outdoor seating", venue.indoor && "Indoor seating", venue.alcohol && "Alcohol", venue.halal && "Halal", venue.openLate && "Open late"].filter((amenity): amenity is string => Boolean(amenity));
   const galleryImages = approvedMediaImages.length ? approvedMediaImages : getVenueImages(venue);
   const similarVenues = venues.filter((candidate) => candidate.id !== venue.id && (candidate.area === venue.area || candidate.vibes.some((vibe) => venue.vibes.includes(vibe)))).slice(0, 6);
 

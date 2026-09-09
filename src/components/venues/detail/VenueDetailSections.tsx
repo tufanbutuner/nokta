@@ -123,8 +123,9 @@ function DetailTile({ icon, label, value }: { icon: ReactNode; label: string; va
 }
 
 function formatFoodDrinks(venue: Venue) {
-  if (venue.food && venue.alcohol) return "Food and alcohol";
-  if (venue.food) return "Food available";
+  const food = venue.halal ? "Halal food" : "Food";
+  if (venue.food && venue.alcohol) return `${food} and alcohol`;
+  if (venue.food) return `${food} available`;
   if (venue.alcohol) return "Alcohol available";
   return "Not listed";
 }
@@ -169,6 +170,7 @@ export function MenuTab({ venue }: { venue: Venue }) {
     ["Price tier", formatPriceLevel(venue.priceLevel)],
     ["Food", venue.food ? "Available" : "Not listed"],
     ["Alcohol", venue.alcohol ? "Available" : "Not listed"],
+    ["Halal", venue.halal ? "Available" : "Not listed"],
   ];
   const menuLink = venue.dataSources.shishaMenuUrl ?? venue.dataSources.menuUrl;
 

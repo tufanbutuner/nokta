@@ -34,6 +34,7 @@ const INITIAL_PREFERENCES: RecommendationPreferences = {
     outdoor: false,
     food: false,
     alcohol: false,
+    halal: false,
     openLate: false,
   },
   distancePreference: "none",

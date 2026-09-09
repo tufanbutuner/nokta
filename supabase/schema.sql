@@ -55,7 +55,8 @@ add column if not exists monetisation_status text not null default 'not-contacte
 add column if not exists monetisation_notes text,
 add column if not exists featured_eligible boolean not null default false,
 add column if not exists featured_blocked_reason text,
-add column if not exists is_test boolean not null default false;
+add column if not exists is_test boolean not null default false,
+add column if not exists halal boolean not null default false;
 
 do $$
 begin

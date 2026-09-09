@@ -32,6 +32,7 @@ type SeedVenue = {
   outdoor: boolean;
   food: boolean;
   alcohol: boolean;
+  halal?: boolean;
   openLate: boolean;
   vibes: string[];
   images: string[];
@@ -72,6 +73,7 @@ function toVenueRow(venue: SeedVenue) {
     outdoor: venue.outdoor,
     food: venue.food,
     alcohol: venue.alcohol,
+    halal: venue.halal ?? false,
     open_late: venue.openLate,
     vibes: venue.vibes,
     images: venue.images,

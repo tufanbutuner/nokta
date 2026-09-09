@@ -64,6 +64,7 @@ export interface Venue {
   outdoor: boolean;
   food: boolean;
   alcohol: boolean;
+  halal: boolean;
   openLate: boolean;
   vibes: VenueVibe[];
   images: string[];

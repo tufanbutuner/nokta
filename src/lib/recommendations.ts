@@ -9,6 +9,7 @@ const FEATURE_REASONS = {
   outdoor: "Outdoor seating available",
   food: "Food available",
   alcohol: "Alcohol available",
+  halal: "Halal food",
   openLate: "Open late",
 } as const;
 

@@ -23,6 +23,7 @@ export interface VenueFormValues {
   outdoor: boolean;
   food: boolean;
   alcohol: boolean;
+  halal: boolean;
   openLate: boolean;
   vibes: VenueVibe[];
   images: string[];
