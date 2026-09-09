@@ -1,16 +1,17 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { OwnerLayout } from "@/components/owner/OwnerLayout";
 import { OwnerVenueTabShell } from "@/components/owner/OwnerVenueTabShell";
-import { ProfileCompletenessCard } from "@/components/owner/analytics/ProfileCompletenessCard";
-import { OwnerVenueUpdateForm } from "@/components/owner/updates/OwnerVenueUpdateForm";
-import { OwnerVenueUpdateRequestsList } from "@/components/owner/updates/OwnerVenueUpdateRequestsList";
+import { OwnerProfileStrengthCard } from "@/components/owner/updates/OwnerProfileStrengthCard";
+import { OwnerRecentRequestsCard } from "@/components/owner/updates/OwnerRecentRequestsCard";
+import { OwnerVenueProfileForm } from "@/components/owner/updates/OwnerVenueProfileForm";
 import { PageMeta } from "@/components/seo/PageMeta";
 import { UpgradePrompt } from "@/components/subscriptions/UpgradePrompt";
 import { ErrorState } from "@/components/state/ErrorState";
 import { LoadingState } from "@/components/state/LoadingState";
-import { Alert } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
+import { Toast, useToastTimeout, type ToastState } from "@/components/ui/toast";
+import { brandConfig } from "@/config/brand";
 import { useAuth } from "@/context/AuthContext";
 import { trackEvent } from "@/lib/analytics";
 import { subscriptionHasPlanAccess } from "@/lib/planFeatureAccess";
@@ -29,8 +30,11 @@ export function OwnerVenueUpdateRequestPage() {
   const [requests, setRequests] = useState<VenueUpdateRequest[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [cancellingId, setCancellingId] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [success, setSuccess] = useState(false);
+  const [toast, setToast] = useState<ToastState | null>(null);
+  const [isDirty, setIsDirty] = useState(false);
+  const formRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!user || !venueId) return;
@@ -62,16 +66,22 @@ export function OwnerVenueUpdateRequestPage() {
     };
   }, [user, venueId]);
 
+  /**
+   * Returns whether the request was created, so the form only clears its
+   * review panel on success.
+   */
   async function handleSubmit(input: VenueUpdateRequestInput) {
-    if (!user) return;
+    if (!user) return false;
     setIsSubmitting(true);
-    setError(null);
     try {
       const request = await createOwnerVenueUpdateRequest({ userId: user.id, request: input });
       setRequests((current) => [request, ...current]);
-      setSuccess(true);
+      setToast({ type: "success", title: "Sent for review", message: "Your changes are with the nokta team, usually reviewed within one working day." });
+      return true;
     } catch (caughtError) {
-      setError(caughtError instanceof Error ? caughtError.message : "Could not submit update request.");
+      const message = caughtError instanceof Error ? caughtError.message : "Could not submit update request.";
+      setToast({ type: "error", title: "Not submitted", message });
+      return false;
     } finally {
       setIsSubmitting(false);
     }
@@ -79,9 +89,29 @@ export function OwnerVenueUpdateRequestPage() {
 
   async function handleCancel(request: VenueUpdateRequest) {
     if (!user) return;
-    const updated = await cancelOwnerVenueUpdateRequest({ userId: user.id, requestId: request.id });
-    setRequests((current) => current.map((item) => item.id === updated.id ? updated : item));
+    setCancellingId(request.id);
+    try {
+      const updated = await cancelOwnerVenueUpdateRequest({ userId: user.id, requestId: request.id });
+      setRequests((current) => current.map((item) => item.id === updated.id ? updated : item));
+    } catch (caughtError) {
+      setToast({ type: "error", title: "Not cancelled", message: caughtError instanceof Error ? caughtError.message : "Could not cancel update request." });
+    } finally {
+      setCancellingId(null);
+    }
   }
+
+  const handleDirtyChange = useCallback(setIsDirty, []);
+  const dismissToast = useCallback(() => setToast(null), []);
+  useToastTimeout(toast, dismissToast);
+
+  function focusField(field: "description" | "phone") {
+    const node = formRef.current?.querySelector<HTMLElement>(field === "description" ? "textarea" : "input");
+    node?.scrollIntoView({ behavior: "smooth", block: "center" });
+    node?.focus({ preventScroll: true });
+  }
+
+  const canEdit = subscriptionHasPlanAccess(subscription, "profile_update_requests");
+  const pendingRequest = requests.find((request) => request.status === "pending") ?? null;
 
   return (
     <OwnerLayout>
@@ -90,25 +120,31 @@ export function OwnerVenueUpdateRequestPage() {
         <OwnerVenueTabShell
           venue={venue}
           title={venue.name}
-          actions={<Button asChild variant="outline" className="h-[34px] text-[13px]"><Link to={`/venues/${venue.slug}`}>Preview public page</Link></Button>}
+          canNavigate={() => !isDirty || window.confirm("You have unsaved changes. Leave without submitting?")}
+          actions={<Button asChild variant="outline" className="h-[34px] rounded-lg border-nokta-border-input text-[13px] font-medium"><Link to={`/venues/${venue.slug}`}>Preview public page</Link></Button>}
         >
-        <div className="space-y-5">
-          <ProfileCompletenessCard venue={venue} subscription={subscription} />
-          {!subscriptionHasPlanAccess(subscription, "profile_update_requests") ? (
-            <UpgradePrompt feature="profile_update_requests" currentPlan={subscription?.plan ?? "free"} venueId={venue.id} />
-          ) : success ? (
-            <Alert className="border-emerald-200 bg-emerald-50 text-emerald-900">Your update request has been submitted for admin review.</Alert>
-          ) : (
-            <OwnerVenueUpdateForm venue={venue} onSubmit={handleSubmit} isSubmitting={isSubmitting} />
-          )}
-          {error ? <Alert className="border-destructive/30 text-destructive">{error}</Alert> : null}
-          <section className="space-y-3">
-            <h2 className="text-xl font-semibold">Latest update requests</h2>
-            <OwnerVenueUpdateRequestsList requests={requests} onCancel={handleCancel} />
-          </section>
-        </div>
+          <div className="flex flex-wrap items-start gap-x-7 gap-y-5 pb-[170px]">
+            <main ref={formRef} className="flex min-w-0 flex-[1_1_420px] flex-col gap-4">
+              <div className="rounded-[10px] border border-nokta-border border-l-[3px] border-l-clay-300 bg-white px-[15px] py-[13px] text-[13px] leading-[1.55] text-nokta-ink-subtle">
+                <strong className="font-semibold text-nokta-ink">Changes here are reviewed by nokta before they go live.</strong>{" "}
+                Menu, prices and photos publish instantly from their own tabs. Venue name, address and location need verification — <a href={`mailto:${brandConfig.supportEmail}`} className="font-medium text-clay-accent hover:underline">contact us</a> to change them.
+              </div>
+
+              {canEdit ? (
+                <OwnerVenueProfileForm venue={venue} pendingRequest={pendingRequest} onSubmit={handleSubmit} isSubmitting={isSubmitting} onDirtyChange={handleDirtyChange} />
+              ) : (
+                <UpgradePrompt feature="profile_update_requests" currentPlan={subscription?.plan ?? "free"} venueId={venue.id} />
+              )}
+            </main>
+
+            <aside className="sticky top-5 flex max-w-full flex-[1_1_260px] flex-col gap-4">
+              <OwnerProfileStrengthCard venue={venue} subscription={subscription} onFocusField={canEdit ? focusField : undefined} />
+              <OwnerRecentRequestsCard requests={requests} onCancel={handleCancel} cancellingId={cancellingId} />
+            </aside>
+          </div>
         </OwnerVenueTabShell>
       ) : null}
+      {toast ? <Toast {...toast} onClose={dismissToast} offsetBottom={isDirty} /> : null}
     </OwnerLayout>
   );
 }

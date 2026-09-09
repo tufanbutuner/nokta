@@ -54,9 +54,16 @@ export function OwnerVenueTabShell({
         <div className="mt-1 flex flex-wrap items-start justify-between gap-3">
           <div>
             <h1 className="font-brand text-[25px] font-bold tracking-[-0.4px] text-nokta-ink">{title}</h1>
-            <p className="mt-1 text-[12.5px] capitalize text-muted-foreground">
-              {venue.area}, {venue.city} · {venue.isClaimed ? "confirmed claim" : "claim pending"} · {plan} plan
-            </p>
+            <div className="mt-[5px] flex flex-wrap items-center gap-x-2 gap-y-1 text-[12.5px] text-nokta-ink-muted">
+              <span>{venue.area}, {venue.city}</span>
+              <span aria-hidden="true" className="opacity-45">·</span>
+              <span className="inline-flex items-center gap-[5px]">
+                <span aria-hidden="true" className={cn("size-1.5 rounded-full", venue.isClaimed ? "bg-forest-400" : "bg-clay-300")} />
+                {venue.isClaimed ? "Claim confirmed" : "Claim pending"}
+              </span>
+              <span aria-hidden="true" className="opacity-45">·</span>
+              <span className="rounded-full bg-nokta-accent-tint px-[7px] py-px text-[11.5px] font-semibold uppercase tracking-[0.02em] text-nokta-accent-dark">{plan} plan</span>
+            </div>
           </div>
           {actions ? <div className="flex flex-wrap gap-2">{actions}</div> : null}
         </div>
