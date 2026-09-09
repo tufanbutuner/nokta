@@ -5,12 +5,12 @@ import { useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 
 export function AppLayout() {
-  const { pathname, search } = useLocation();
+  const { pathname } = useLocation();
   const isWorkspaceRoute = pathname.startsWith("/admin") || pathname.startsWith("/owner");
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0 });
-  }, [pathname, search]);
+  }, [pathname]);
 
   return (
     <>

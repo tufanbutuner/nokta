@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import {
   ActiveFilterChips,
@@ -43,6 +43,8 @@ export function DiscoverPage() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [selectedVenueId, setSelectedVenueId] = useState<string | undefined>();
   const filters = useMemo(() => parseVenueFilters(searchParams), [searchParams]);
+  const [searchQuery, setSearchQuery] = useState(filters.query);
+  const lastCommittedQueryRef = useRef(filters.query);
   const view = parseDiscoverView(searchParams);
   const requestedSortOption = parseVenueSort(searchParams);
   const sortOption = !searchParams.has("sort") && userLocation ? "nearest" : requestedSortOption;
@@ -94,6 +96,23 @@ export function DiscoverPage() {
     setSearchParams(nextParams, { replace: true });
   }, [searchParams, setSearchParams, userLocation]);
 
+  useEffect(() => {
+    if (filters.query === lastCommittedQueryRef.current) return;
+    lastCommittedQueryRef.current = filters.query;
+    setSearchQuery(filters.query);
+  }, [filters.query]);
+
+  useEffect(() => {
+    if (searchQuery === filters.query) return;
+    const timeout = window.setTimeout(() => {
+      const nextFilters = { ...filters, query: searchQuery };
+      lastCommittedQueryRef.current = searchQuery;
+      trackDiscoverFilterChange(filters, nextFilters, sortOption, view);
+      setSearchParams(withDiscoverState(filtersToSearchParams(nextFilters), view, requestedSortOption, searchParams.has("sort")), { replace: true });
+    }, 250);
+    return () => window.clearTimeout(timeout);
+  }, [filters, requestedSortOption, searchParams, searchQuery, setSearchParams, sortOption, view]);
+
   function updateFilters(nextFilters: VenueFilterState) {
     trackDiscoverFilterChange(filters, nextFilters, sortOption, view);
     setSearchParams(withDiscoverState(filtersToSearchParams(nextFilters), view, requestedSortOption, searchParams.has("sort")), { replace: true });
@@ -121,7 +140,7 @@ export function DiscoverPage() {
         <div className="grid min-h-0 flex-1 gap-4 lg:grid-cols-[440px_minmax(0,1fr)]">
           <aside className="flex min-h-0 flex-col overflow-hidden rounded-2xl border border-nokta-border bg-nokta-surface shadow-[0_12px_30px_-16px_oklch(0.2_0.02_40_/_0.18)]">
             <div className="space-y-3 border-b border-nokta-border p-4">
-              <VenueSearch value={filters.query} onChange={(query) => updateFilters({ ...filters, query })} />
+              <VenueSearch value={searchQuery} onChange={setSearchQuery} />
 
               <div className="space-y-2">
                 <DiscoveryFilterChips
