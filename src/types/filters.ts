@@ -1,7 +1,7 @@
 import type { PriceLevel, VenueVibe } from "@/types/venue";
 import type { VenuePrimaryCategory } from "@/types/venueCategories";
 
-export type FeatureFilterKey = "indoor" | "outdoor" | "food" | "alcohol" | "openLate";
+export type FeatureFilterKey = "indoor" | "outdoor" | "food" | "alcohol" | "halal" | "openLate";
 export type DiscoverView = "list" | "map";
 
 export interface VenueFilterState {

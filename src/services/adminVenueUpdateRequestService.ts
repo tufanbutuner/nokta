@@ -75,6 +75,7 @@ async function toVenueUpdate(venueId: string, changes: VenueProfileUpdateChanges
   if (changes.features !== undefined) {
     update.food = changes.features.includes("food");
     update.alcohol = changes.features.includes("alcohol");
+    update.halal = changes.features.includes("halal");
     update.indoor = changes.features.includes("indoor");
     update.outdoor = changes.features.includes("outdoor");
     update.open_late = changes.features.includes("openLate");

@@ -24,6 +24,7 @@ export function filterVenues(venues: Venue[], filters: VenueFilterState): Venue[
       (!filters.features.outdoor || venue.outdoor) &&
       (!filters.features.food || venue.food) &&
       (!filters.features.alcohol || venue.alcohol) &&
+      (!filters.features.halal || venue.halal) &&
       (!filters.features.openLate || venue.openLate);
 
     return matchesCountry && matchesCity && matchesArea && matchesCategory && matchesQuery && matchesPrice && matchesOpenNow && matchesRating && matchesVibes && matchesFeatures;

@@ -26,6 +26,7 @@ const FEATURE_FIELDS = [
   ["outdoor", "Outdoor"],
   ["food", "Food"],
   ["alcohol", "Alcohol"],
+  ["halal", "Halal"],
   ["openLate", "Open late"],
 ] as const;
 

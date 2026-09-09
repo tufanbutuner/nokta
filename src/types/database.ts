@@ -19,6 +19,7 @@ export interface VenueRow {
   outdoor: boolean;
   food: boolean;
   alcohol: boolean;
+  halal: boolean;
   open_late: boolean;
   vibes: string[];
   images: string[];

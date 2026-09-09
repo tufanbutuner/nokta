@@ -12,6 +12,7 @@ import type { Venue, VenueVibe } from "@/types/venue";
 const FEATURE_OPTIONS = [
   { label: "Food", value: "food" },
   { label: "Alcohol", value: "alcohol" },
+  { label: "Halal", value: "halal" },
   { label: "Indoor", value: "indoor" },
   { label: "Outdoor", value: "outdoor" },
   { label: "Open late", value: "openLate" },
@@ -80,7 +81,7 @@ function toChanges(venue: Venue): VenueProfileUpdateChanges {
     website: venue.website,
     instagram: venue.instagram,
     openingHours: venue.openingHours,
-    features: [venue.food && "food", venue.alcohol && "alcohol", venue.indoor && "indoor", venue.outdoor && "outdoor", venue.openLate && "openLate"].filter(Boolean) as string[],
+    features: [venue.food && "food", venue.alcohol && "alcohol", venue.halal && "halal", venue.indoor && "indoor", venue.outdoor && "outdoor", venue.openLate && "openLate"].filter(Boolean) as string[],
     vibes: venue.vibes,
     bookingUrl: venue.dataSources.bookingUrl ?? null,
     contactUrl: venue.dataSources.contactUrl ?? null,

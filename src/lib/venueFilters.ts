@@ -20,6 +20,7 @@ export const INITIAL_VENUE_FILTERS: VenueFilterState = {
     outdoor: false,
     food: false,
     alcohol: false,
+    halal: false,
     openLate: false,
   },
 };
@@ -50,6 +51,7 @@ export const FEATURE_OPTIONS: { label: string; value: FeatureFilterKey }[] = [
   { label: "Outdoor seating", value: "outdoor" },
   { label: "Food available", value: "food" },
   { label: "Alcohol", value: "alcohol" },
+  { label: "Halal", value: "halal" },
   { label: "Open late", value: "openLate" },
 ];
 
@@ -79,6 +81,7 @@ export function parseVenueFilters(params: URLSearchParams): VenueFilterState {
       outdoor: features.includes("outdoor"),
       food: features.includes("food"),
       alcohol: features.includes("alcohol"),
+      halal: features.includes("halal"),
       openLate: features.includes("openLate"),
     },
   };
