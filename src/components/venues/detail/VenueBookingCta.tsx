@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select } from "@/components/ui/select";
 import { Sheet, SheetClose, SheetHeader, SheetTitle } from "@/components/ui/sheet";
-import { FavouriteButton } from "@/components/venues/FavouriteButton";
 import { useVenueBookingGate } from "@/hooks/useVenueBookingGate";
 import { getBookingTimeOptions } from "@/lib/bookingTimeOptions";
 import { trackEvent, trackVenueAnalyticsEvent } from "@/lib/analytics";
@@ -16,16 +15,25 @@ import { Link, useNavigate } from "react-router-dom";
 import { getVenueAnalyticsProperties } from "./venueDetailAnalytics";
 
 const FALLBACK_TIME_OPTIONS = ["17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00", "20:30", "21:00", "21:30", "22:00", "22:30", "23:00"];
+const PARTY_SIZE_OPTIONS = Array.from({ length: 20 }, (_, index) => index + 1);
 
+/**
+ * Every venue takes booking requests, claimed or not. `isClaimed` changes only the
+ * explanatory line and the claim nudge — never the presence of the form. A venue that has
+ * explicitly turned requests off still gets the enquiry route without date/time/party.
+ */
 export function BookingSidebarCard({ venue, className, compact = false }: { venue: Venue; className?: string; compact?: boolean }) {
   const navigate = useNavigate();
   const [date, setDate] = useState(getTodayDateValue());
   const [time, setTime] = useState("");
   const [partySize, setPartySize] = useState(2);
   const [availability, setAvailability] = useState<VenueBookingAvailability | null>(null);
-  const { gate, isLoading: isLoadingGate, error: gateError } = useVenueBookingGate(venue);
+  const { gate } = useVenueBookingGate(venue);
   const availableTimeOptions = availability && date ? getBookingTimeOptions({ availability, selectedDate: date }) : [];
   const timeOptions = availableTimeOptions.length ? availableTimeOptions : FALLBACK_TIME_OPTIONS;
+  // Only an explicit opt-out removes the date/time/party fields; unclaimed venues keep them.
+  const requestsDisabled = gate?.isClaimed === true && gate.bookingRequestsEnabled === false;
+  const hasDirectContact = Boolean(venue.phone || venue.website);
 
   useEffect(() => {
     let cancelled = false;
@@ -54,64 +62,80 @@ export function BookingSidebarCard({ venue, className, compact = false }: { venu
     navigate(`/venues/${venue.slug}/request-booking${query ? `?${query}` : ""}`);
   }
 
-  if (isLoadingGate) return <div className={cn("rounded-2xl border border-nokta-border bg-white p-5 text-sm text-nokta-ink-muted", className)}>Checking booking availability…</div>;
-  if (gateError) return <BookingGateErrorCard venue={venue} className={className} compact={compact} />;
-  if (gate && gate.state !== "live") return <BookingUnavailableCard venue={venue} state={gate.state} className={className} compact={compact} />;
-
   return (
-    <form className={cn("rounded-2xl border border-nokta-border bg-white p-4 shadow-sm shadow-stone-950/5 sm:p-5", compact && "border-0 p-0 shadow-none sm:p-0", className)} onSubmit={handleSubmit}>
-      <div className="flex items-center justify-between gap-3">
-        {!compact ? <h2 className="text-[15px] font-semibold text-nokta-ink">Request a booking</h2> : null}
-        <FavouriteButton venueId={venue.id} venueName={venue.name} venue={venue} className="hidden h-10 w-10 shrink-0 border lg:inline-flex" />
-      </div>
-      <div className={cn("mt-4 grid gap-3", compact && "mt-0")}>
-        <div className="grid gap-2 min-[380px]:grid-cols-2">
-          <Input
-            type="date"
-            value={date}
-            aria-label="Booking date"
-            className="h-11 rounded-lg border-nokta-border-input bg-white text-base text-nokta-ink sm:text-sm"
-            onChange={(event) => {
-              setDate(event.target.value);
-              setTime("");
-            }}
-          />
-          <Select
-            value={time}
-            aria-label="Booking time"
-            className="h-11 rounded-lg border-nokta-border-input bg-white text-base text-nokta-ink sm:text-sm"
-            placeholder="Time"
-            options={timeOptions.map((option) => ({ label: option, value: option }))}
-            disabled={!date}
-            onValueChange={setTime}
-          />
-        </div>
-        <Input type="number" min={1} max={100} value={partySize} aria-label="Party size" placeholder="Party size" className="h-11 rounded-lg border-nokta-border-input bg-white text-base text-nokta-ink sm:text-sm" onChange={(event) => setPartySize(event.target.value ? Number(event.target.value) : 0)} />
-      </div>
-      <div className="mt-4 grid gap-2">
-        <Button type="submit" className="h-11 rounded-lg bg-nokta-accent text-white hover:bg-nokta-accent-dark" disabled={!date || !time}>Request booking</Button>
-        <Button asChild variant="outline" className="h-11 rounded-lg border-nokta-border bg-white text-nokta-ink hover:bg-nokta-surface-hover" onClick={() => trackEnquiryCta(venue)}>
+    <form className={cn("rounded-2xl border border-nokta-border bg-white p-[17px] shadow-[0_1px_3px_rgba(28,25,23,0.05)]", compact && "border-0 p-0 shadow-none", className)} onSubmit={handleSubmit}>
+      {!compact ? <h2 className="text-[15px] font-semibold text-nokta-ink">Request a booking</h2> : null}
+      <p className={cn("text-[13px] leading-[1.55] text-nokta-ink-muted", compact ? "mt-0" : "mt-2")}>{getBookingNote(venue, requestsDisabled)}</p>
+
+      <div className="mt-3.5 grid gap-2.5">
+        {requestsDisabled ? null : (
+          <>
+            <div className="grid grid-cols-2 gap-2">
+              <Input
+                type="date"
+                value={date}
+                aria-label="Booking date"
+                className="h-11 rounded-lg border-nokta-border-input bg-white px-[11px] text-base text-nokta-ink sm:text-sm"
+                onChange={(event) => {
+                  setDate(event.target.value);
+                  setTime("");
+                }}
+              />
+              <Select value={time} aria-label="Booking time" className="h-11 rounded-lg border-nokta-border-input bg-white px-[11px] text-base text-nokta-ink sm:text-sm" placeholder="Time" options={timeOptions.map((option) => ({ label: option, value: option }))} disabled={!date} onValueChange={setTime} />
+            </div>
+            <Select value={String(partySize)} aria-label="Party size" className="h-11 rounded-lg border-nokta-border-input bg-white px-[11px] text-base text-nokta-ink sm:text-sm" options={PARTY_SIZE_OPTIONS.map((size) => ({ label: `${size} ${size === 1 ? "person" : "people"}`, value: String(size) }))} onValueChange={(value) => setPartySize(Number(value))} />
+            <Button type="submit" className="h-[46px] rounded-lg bg-clay-accent text-[14.5px] font-semibold text-white hover:bg-clay-accent-hover" disabled={!date || !time}>
+              Request booking
+            </Button>
+          </>
+        )}
+        <Button asChild variant="outline" className="h-11 rounded-lg border-nokta-border bg-white text-sm font-medium text-nokta-ink hover:bg-nokta-hover" onClick={() => trackEnquiryCta(venue)}>
           <Link to={`/venues/${venue.slug}/enquire`}>Send enquiry</Link>
         </Button>
       </div>
-      <p className="mt-3 text-xs leading-5 text-nokta-ink-muted">Requests are confirmed once the venue accepts.</p>
+
+      {hasDirectContact ? (
+        <div className="mt-3.5 flex flex-wrap gap-2 border-t border-nokta-row-border pt-[13px]">
+          {venue.phone ? (
+            <a href={`tel:${venue.phone}`} className="inline-flex min-h-9 items-center gap-[7px] rounded-lg border border-nokta-border px-3 py-1.5 text-[13px] font-medium text-nokta-ink transition-colors hover:bg-nokta-hover">
+              <Phone className="h-3.5 w-3.5" />
+              {venue.phone}
+            </a>
+          ) : null}
+          {venue.website ? (
+            <a href={venue.website} target="_blank" rel="noreferrer noopener" className="inline-flex min-h-9 items-center gap-[7px] rounded-lg border border-nokta-border px-3 py-1.5 text-[13px] font-medium text-nokta-ink transition-colors hover:bg-nokta-hover">
+              <ExternalLink className="h-3.5 w-3.5" />
+              Book on their site
+            </a>
+          ) : null}
+        </div>
+      ) : null}
+
+      {!venue.isClaimed ? (
+        <div className="mt-3.5 flex items-center justify-between gap-3 border-t border-nokta-row-border pt-[13px]">
+          <p className="max-w-[172px] text-[12.5px] leading-[1.45] text-nokta-ink-subtle">Work here? Take bookings through nokta.</p>
+          <Button asChild className="h-9 shrink-0 rounded-lg bg-nokta-ink px-[13px] text-[12.5px] font-medium text-white hover:bg-nokta-ink/90">
+            <Link to={`/venues/${venue.slug}/claim`}>Claim venue</Link>
+          </Button>
+        </div>
+      ) : null}
     </form>
   );
 }
 
 export function MobileBookingCta({ venue }: { venue: Venue }) {
   const [open, setOpen] = useState(false);
-  const { gate, isLoading, error } = useVenueBookingGate(venue);
-  const takesBookings = gate?.state === "live";
-  const directHref = venue.website ?? (venue.phone ? `tel:${venue.phone}` : `/venues/${venue.slug}/enquire`);
+
   return (
     <div className="fixed inset-x-0 bottom-0 z-[1200] border-t border-nokta-border bg-white px-4 py-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] shadow-[0_-12px_28px_rgba(28,25,23,0.08)] lg:hidden">
       <div className="mx-auto flex max-w-[1180px] items-center justify-between gap-3">
         <div className="min-w-0">
-          <p className="text-sm font-semibold text-nokta-ink">{takesBookings ? (venue.priceFrom ? `From £${venue.priceFrom}` : "Price TBC") : "Books directly"}</p>
-          <p className="truncate text-xs text-nokta-ink-muted">{takesBookings ? "Request a booking" : venue.phone ?? "Contact the venue"}</p>
+          <p className="text-sm font-semibold text-nokta-ink">{venue.name}</p>
+          <p className="truncate text-xs text-nokta-ink-muted">Request a booking</p>
         </div>
-        {isLoading ? <Button type="button" disabled className="h-11 shrink-0 rounded-lg px-5">Checking…</Button> : takesBookings ? <Button type="button" className="h-11 shrink-0 rounded-lg bg-nokta-accent px-5 text-white hover:bg-nokta-accent-dark" onClick={() => setOpen(true)}>Request booking</Button> : <Button asChild className="h-11 shrink-0 rounded-lg bg-nokta-accent px-5 text-white hover:bg-nokta-accent-dark"><a href={directHref}>{error ? "Contact venue" : venue.website ? "Website" : venue.phone ? "Call venue" : "Send enquiry"}</a></Button>}
+        <Button type="button" className="h-11 shrink-0 rounded-lg bg-clay-accent px-5 text-white hover:bg-clay-accent-hover" onClick={() => setOpen(true)}>
+          Request booking
+        </Button>
       </div>
       <Sheet open={open} onOpenChange={setOpen} side="bottom">
         <SheetHeader>
@@ -127,25 +151,16 @@ export function MobileBookingCta({ venue }: { venue: Venue }) {
   );
 }
 
-function BookingGateErrorCard({ venue, className, compact = false }: { venue: Venue; className?: string; compact?: boolean }) {
-  return (
-    <aside className={cn("rounded-2xl border border-nokta-border bg-white p-5 shadow-sm shadow-stone-950/5", compact && "border-0 p-0 shadow-none", className)}>
-      <h2 className="text-[15px] font-semibold text-nokta-ink">Booking requests are unavailable right now</h2>
-      <p className="mt-2 text-sm leading-6 text-nokta-ink-muted">Contact {venue.name} directly while we check their booking setup.</p>
-      <div className="mt-4 grid gap-2">
-        {venue.website ? <Button asChild className="h-11 rounded-lg bg-nokta-accent text-white hover:bg-nokta-accent-dark"><a href={venue.website} target="_blank" rel="noreferrer">Visit their website <ExternalLink className="ml-2 h-4 w-4" /></a></Button> : null}
-        {venue.phone ? <Button asChild variant="outline" className="h-11 rounded-lg border-nokta-border bg-white text-nokta-ink"><a href={`tel:${venue.phone}`}><Phone className="mr-2 h-4 w-4" />{venue.phone}</a></Button> : null}
-      </div>
-    </aside>
-  );
-}
-
+/**
+ * Still used by RequestBookingPage, which keeps its own gate for venues that turned
+ * requests off after the customer landed on the form.
+ */
 export function BookingUnavailableCard({ venue, state, className, compact = false }: { venue: Venue; state: "unclaimed" | "disabled" | "dormant"; className?: string; compact?: boolean }) {
   const content = state === "unclaimed"
-    ? { title: "Books directly, not through Nokta", body: `${venue.name} hasn't joined Nokta yet, so we can't take a booking for them. Contact them and they'll answer straight away.` }
+    ? { title: "Books directly, not through nokta", body: `${venue.name} hasn't joined nokta yet, so we can't take a booking for them. Contact them and they'll answer straight away.` }
     : state === "disabled"
       ? { title: "Takes enquiries, not booking requests", body: `${venue.name} hasn't switched on date-and-time booking. Send an enquiry or contact them directly.` }
-      : { title: "Calling is faster right now", body: `${venue.name} has been slow to reply on Nokta lately. Contact them directly for the quickest answer.` };
+      : { title: "Calling is faster right now", body: `${venue.name} has been slow to reply on nokta lately. Contact them directly for the quickest answer.` };
   return (
     <aside className={cn("rounded-2xl border border-nokta-border bg-white p-5 shadow-sm shadow-stone-950/5", compact && "border-0 p-0 shadow-none", className)}>
       <div className="flex items-start gap-3"><span className="inline-flex h-8 w-8 flex-none items-center justify-center rounded-full bg-nokta-page-bg"><AlertCircle className="h-4 w-4 text-nokta-accent" /></span><div><h2 className="text-[15px] font-semibold text-nokta-ink">{content.title}</h2><p className="mt-2 text-sm leading-6 text-nokta-ink-muted">{content.body}</p></div></div>
@@ -154,9 +169,15 @@ export function BookingUnavailableCard({ venue, state, className, compact = fals
         {venue.phone ? <Button asChild variant="outline" className="h-11 rounded-lg border-nokta-border bg-white text-nokta-ink"><a href={`tel:${venue.phone}`}><Phone className="mr-2 h-4 w-4" />{venue.phone}</a></Button> : null}
         {state === "disabled" ? <Button asChild variant="outline" className="h-11 rounded-lg border-nokta-border bg-white text-nokta-ink" onClick={() => trackEnquiryCta(venue)}><Link to={`/venues/${venue.slug}/enquire`}>Send enquiry</Link></Button> : null}
       </div>
-      {state === "unclaimed" ? <div className="mt-4 flex items-center justify-between gap-3 border-t border-nokta-border pt-4"><p className="text-[13px] text-nokta-ink-muted">Work here? Take bookings through Nokta.</p><Button asChild size="sm" className="shrink-0 bg-nokta-ink text-white hover:bg-nokta-ink/90"><Link to={`/venues/${venue.slug}/claim`}>Claim venue</Link></Button></div> : null}
+      {state === "unclaimed" ? <div className="mt-4 flex items-center justify-between gap-3 border-t border-nokta-border pt-4"><p className="text-[13px] text-nokta-ink-muted">Work here? Take bookings through nokta.</p><Button asChild size="sm" className="shrink-0 bg-nokta-ink text-white hover:bg-nokta-ink/90"><Link to={`/venues/${venue.slug}/claim`}>Claim venue</Link></Button></div> : null}
     </aside>
   );
+}
+
+function getBookingNote(venue: Venue, requestsDisabled: boolean): string {
+  if (requestsDisabled) return `${venue.name} isn't taking date-and-time requests. Send an enquiry and they'll reply directly.`;
+  if (!venue.isClaimed) return `${venue.name} isn't managing bookings on nokta yet. Send a request and we'll pass it to them, or contact them directly below.`;
+  return "Requests are confirmed once the venue accepts. Usually within an hour during opening times.";
 }
 
 function trackEnquiryCta(venue: Venue) {

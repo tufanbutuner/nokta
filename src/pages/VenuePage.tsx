@@ -5,41 +5,45 @@ import { ErrorState } from "@/components/state/ErrorState";
 import { LoadingState } from "@/components/state/LoadingState";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
-import { MenuTab, OverviewTab, ReviewsTab } from "@/components/venues/detail/VenueDetailSections";
+import { MenuTab, OverviewTab, ReviewsTab, VenueHoursLocationCard } from "@/components/venues/detail/VenueDetailSections";
 import { ActionBar, VenueHeaderMeta, VenueTitleRow } from "@/components/venues/detail/VenueHeaderSections";
 import { BookingSidebarCard, MobileBookingCta } from "@/components/venues/detail/VenueBookingCta";
-import { PhotoGallery, PhotoLightbox, PhotosTab } from "@/components/venues/detail/VenuePhotoGallery";
+import { PhotoGallery, PhotoLightbox } from "@/components/venues/detail/VenuePhotoGallery";
 import { getVenueAnalyticsProperties } from "@/components/venues/detail/venueDetailAnalytics";
 import { useAppLocation } from "@/context/AppLocationContext";
 import { useVenuePreferences } from "@/context/VenuePreferencesContext";
 import { useVenue } from "@/hooks/useVenue";
+import { useVenueReviews } from "@/hooks/useVenueReviews";
 import { useVenues } from "@/hooks/useVenues";
 import { trackEvent, trackVenueAnalyticsEvent } from "@/lib/analytics";
 import { getCityByName } from "@/lib/cities";
 import { formatDistanceMiles, getVenueDistanceMiles } from "@/lib/location";
-import { getVenueCurrentStatus } from "@/lib/openingHours";
 import { cn } from "@/lib/utils";
 import { getVenueImage, getVenueImages } from "@/lib/venueImages";
 import { getApprovedVenueMedia } from "@/services/ownerVenueMediaService";
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useSearchParams } from "react-router-dom";
 
-type VenueDetailTab = "overview" | "menu" | "reviews" | "photos";
+type VenueDetailTab = "overview" | "menu" | "reviews";
 
 const VENUE_TABS: { label: string; value: VenueDetailTab }[] = [
   { label: "Overview", value: "overview" },
-  { label: "Menu & Prices", value: "menu" },
+  { label: "Menu", value: "menu" },
   { label: "Reviews", value: "reviews" },
-  { label: "Photos", value: "photos" },
 ];
+
+function parseTab(value: string | null): VenueDetailTab {
+  return VENUE_TABS.some((tab) => tab.value === value) ? (value as VenueDetailTab) : "overview";
+}
 
 export function VenuePage() {
   const { slug } = useParams();
-  const { addRecentlyViewed } = useVenuePreferences();
+  const { addRecentlyViewed, isFavourite, toggleFavourite } = useVenuePreferences();
   const { venue, isLoading, error } = useVenue(slug);
   const { venues } = useVenues();
   const { userLocation } = useAppLocation();
-  const [activeTab, setActiveTab] = useState<VenueDetailTab>("overview");
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = parseTab(searchParams.get("tab"));
   const [shareLabel, setShareLabel] = useState("Share");
   const [activeImageIndex, setActiveImageIndex] = useState<number | null>(null);
   const [approvedMediaImages, setApprovedMediaImages] = useState<string[]>([]);
@@ -79,10 +83,17 @@ export function VenuePage() {
 
   if (isLoading) {
     return (
-      <main>
+      <main className="bg-nokta-page-bg">
         <PageMeta title="Venue | nokta" description="View opening hours, features, address, reviews and verification details for a nokta venue." />
-        <PageContainer className="py-20">
-          <LoadingState message="Loading venue..." />
+        <PageContainer className="py-7">
+          {/* Reserve the hero strip and rail so the page does not jump once the venue lands. */}
+          <div className="h-[240px] rounded-[14px] bg-nokta-track" />
+          <div className="mt-6 flex flex-wrap items-start gap-x-[34px] gap-y-6">
+            <div className="min-w-0 flex-[1_1_460px]">
+              <LoadingState message="Loading venue..." />
+            </div>
+            <div className="flex-[1_1_320px]" />
+          </div>
         </PageContainer>
       </main>
     );
@@ -113,12 +124,20 @@ export function VenuePage() {
     );
   }
 
-  const currentStatus = getVenueCurrentStatus(venue);
   const city = getCityByName(venue.city);
   const distanceLabel = userLocation ? formatDistanceMiles(getVenueDistanceMiles(venue, userLocation)).replace(" away", "") : null;
-  const amenities = [venue.food && "Food", venue.outdoor && "Outdoor seating", venue.indoor && "Indoor seating", venue.alcohol && "Alcohol", venue.halal && "Halal", venue.openLate && "Open late"].filter((amenity): amenity is string => Boolean(amenity));
   const galleryImages = approvedMediaImages.length ? approvedMediaImages : getVenueImages(venue);
   const similarVenues = venues.filter((candidate) => candidate.id !== venue.id && (candidate.area === venue.area || candidate.vibes.some((vibe) => venue.vibes.includes(vibe)))).slice(0, 6);
+
+  /** Tabs live in the URL so a tab is linkable and the back button works. */
+  function selectTab(tab: VenueDetailTab) {
+    setSearchParams((params) => {
+      const next = new URLSearchParams(params);
+      if (tab === "overview") next.delete("tab");
+      else next.set("tab", tab);
+      return next;
+    });
+  }
 
   async function shareVenue() {
     if (!venue) {
@@ -143,13 +162,14 @@ export function VenuePage() {
   return (
     <main className="bg-nokta-page-bg text-nokta-ink">
       <PageMeta title={`${venue.name} in ${venue.city} | nokta`} description={`View category, opening hours, features, address, reviews and booking details for ${venue.name} in ${venue.city}.`} canonicalPath={`/venues/${venue.slug}`} imageUrl={galleryImages[0] ?? getVenueImage(venue)} />
-      <PhotoGallery venue={venue} images={galleryImages} onOpenImage={setActiveImageIndex} />
 
-      <PageContainer className="pb-24 pt-4 sm:py-7 lg:pb-7">
-        <Breadcrumb className="mb-4 hidden text-[13px] text-nokta-ink-muted sm:block">
+      <PageContainer className="pb-28 pt-3 lg:pb-16">
+        <PhotoGallery venue={venue} images={galleryImages} onOpenImage={setActiveImageIndex} />
+
+        <Breadcrumb className="mb-3.5 mt-4 text-[12.5px] text-nokta-ink-muted">
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink asChild className="font-normal text-nokta-ink-muted hover:text-nokta-ink">
+              <BreadcrumbLink asChild className="font-normal text-clay-accent hover:text-clay-accent-hover">
                 <Link to="/discover">
                   Discover
                 </Link>
@@ -159,7 +179,7 @@ export function VenuePage() {
               <>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
-                  <BreadcrumbLink asChild className="font-normal text-nokta-ink-muted hover:text-nokta-ink">
+                  <BreadcrumbLink asChild className="font-normal text-clay-accent hover:text-clay-accent-hover">
                     <Link to={`/cities/${city.slug}`}>
                       {city.name}
                     </Link>
@@ -174,34 +194,34 @@ export function VenuePage() {
           </BreadcrumbList>
         </Breadcrumb>
 
-        <section className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-start lg:gap-8">
-          <div className="min-w-0">
-            <VenueTitleRow venue={venue} currentStatus={currentStatus} />
+        {/* One wrapping row: the rail sits alongside the whole main column, tabs included. */}
+        <div className="flex flex-wrap items-start gap-x-[34px] gap-y-6">
+          <div className="min-w-0 flex-[1_1_460px]">
+            <VenueTitleRow venue={venue} />
             <VenueHeaderMeta venue={venue} distanceLabel={distanceLabel} />
-            <p className="mt-5 max-w-xl text-base leading-7 text-nokta-ink-subtle">{venue.description}</p>
-            <ActionBar venue={venue} shareLabel={shareLabel} onShare={shareVenue} />
+            <p className="mt-4 max-w-[580px] text-[15.5px] leading-[1.72] text-nokta-ink-subtle">{venue.description}</p>
+            <ActionBar venue={venue} shareLabel={shareLabel} onShare={shareVenue} isSaved={isFavourite(venue.id)} onToggleSave={() => void toggleFavourite(venue.id)} />
+
+            <VenueOffersSection venue={venue} />
+
+            <div className="mt-7 flex gap-[22px] overflow-x-auto border-b border-nokta-border pb-[11px]">
+              {VENUE_TABS.map((tab) => (
+                <TabButton key={tab.value} label={tab.label} count={tab.value === "reviews" ? <ReviewCount venueId={venue.id} /> : null} isActive={activeTab === tab.value} onClick={() => selectTab(tab.value)} />
+              ))}
+            </div>
+
+            <div className="mt-[18px]">
+              {activeTab === "overview" ? <OverviewTab venue={venue} similarVenues={similarVenues} onOpenMenu={() => selectTab("menu")} /> : null}
+              {activeTab === "menu" ? <MenuTab venue={venue} /> : null}
+              {activeTab === "reviews" ? <ReviewsTab venue={venue} /> : null}
+            </div>
           </div>
 
-          <BookingSidebarCard venue={venue} className="hidden lg:block" />
-        </section>
-
-        <VenueOffersSection venue={venue} />
-
-        <div className="sticky top-0 z-20 -mx-4 mt-6 border-b border-nokta-border bg-nokta-page-bg/95 px-4 backdrop-blur sm:static sm:mx-0 sm:mt-7 sm:bg-transparent sm:px-0 sm:backdrop-blur-none">
-          <div className="flex gap-5 overflow-x-auto pb-3">
-            {VENUE_TABS.map((tab) => (
-              <button key={tab.value} type="button" className={cn("relative h-9 shrink-0 text-sm font-semibold text-nokta-ink-muted transition-colors hover:text-nokta-ink", activeTab === tab.value && "text-nokta-ink after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 after:rounded-full after:bg-nokta-ink")} onClick={() => setActiveTab(tab.value)}>
-                {tab.label}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        <div className="mt-6 sm:mt-8">
-          {activeTab === "overview" ? <OverviewTab venue={venue} amenities={amenities} similarVenues={similarVenues} /> : null}
-          {activeTab === "menu" ? <MenuTab venue={venue} /> : null}
-          {activeTab === "reviews" ? <ReviewsTab venue={venue} /> : null}
-          {activeTab === "photos" ? <PhotosTab venue={venue} images={galleryImages} onOpenImage={setActiveImageIndex} /> : null}
+          <aside className="grid w-full flex-[1_1_320px] gap-3 lg:sticky lg:top-4">
+            {/* Below lg the sticky bottom bar carries the CTA, so the rail card would duplicate it. */}
+            <BookingSidebarCard venue={venue} className="hidden lg:block" />
+            <VenueHoursLocationCard venue={venue} />
+          </aside>
         </div>
       </PageContainer>
 
@@ -210,4 +230,20 @@ export function VenuePage() {
       {activeImageIndex !== null ? <PhotoLightbox venue={venue} images={galleryImages} activeIndex={activeImageIndex} onChange={setActiveImageIndex} onClose={() => setActiveImageIndex(null)} /> : null}
     </main>
   );
+}
+
+function TabButton({ label, count, isActive, onClick }: { label: string; count: React.ReactNode; isActive: boolean; onClick: () => void }) {
+  return (
+    <button type="button" className={cn("-mb-[12px] shrink-0 border-b-2 pb-[11px] text-sm font-semibold transition-colors", isActive ? "border-nokta-ink text-nokta-ink" : "border-transparent text-nokta-ink-muted hover:text-nokta-ink")} onClick={onClick}>
+      {label}
+      {count}
+    </button>
+  );
+}
+
+/** Rendered even at zero, so an empty Reviews tab is honest about being empty. */
+function ReviewCount({ venueId }: { venueId: string }) {
+  const { reviews, isLoading } = useVenueReviews(venueId);
+  if (isLoading) return null;
+  return <span className="ml-1.5 font-medium text-[oklch(0.6_0.02_42)]">{reviews.length}</span>;
 }
