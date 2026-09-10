@@ -1,205 +1,154 @@
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ClaimedVenueBadge } from "@/components/venues/ClaimedVenueBadge";
-import { VenueBadge } from "@/components/venues/VenueBadge";
 import { brandConfig } from "@/config/brand";
-import { getGoogleMapsDirectionsUrl } from "@/lib/directions";
-import { getVenueCurrentStatus } from "@/lib/openingHours";
-import { trackEvent, trackVenueAnalyticsEvent } from "@/lib/analytics";
-import { cn } from "@/lib/utils";
-import { formatVenuePrimaryCategory, formatVenueSecondaryCategory } from "@/lib/venueCategoryLabels";
-import { getVenueRatingSummary } from "@/services/reviewService";
 import { useVenueReviews } from "@/hooks/useVenueReviews";
+import { trackEvent, trackVenueAnalyticsEvent } from "@/lib/analytics";
+import { getGoogleMapsDirectionsUrl } from "@/lib/directions";
+import { getVenueOpeningBoundary } from "@/lib/openingHours";
+import { cn } from "@/lib/utils";
+import { formatVenuePrimaryCategory } from "@/lib/venueCategoryLabels";
+import { VIBE_OPTIONS } from "@/lib/venueFilters";
+import { getVenueRatingSummary } from "@/services/reviewService";
 import type { Venue } from "@/types/venue";
-import { ExternalLink, Flag, MapPin, Navigation, Phone, Share2, Star } from "lucide-react";
-import type { ReactNode } from "react";
+import { ExternalLink, Flag, Heart, MoreHorizontal, Navigation, Phone, Share2, Star } from "lucide-react";
+import { useState } from "react";
 import { getVenueAnalyticsProperties } from "./venueDetailAnalytics";
 
-export function VenueTitleRow({ venue, currentStatus }: { venue: Venue; currentStatus: ReturnType<typeof getVenueCurrentStatus> }) {
+const VIBE_LABELS = new Map(VIBE_OPTIONS.map((option) => [option.value, option.label]));
+
+/** Venue name with the category as a label beside it, rather than as a chip row below. */
+export function VenueTitleRow({ venue }: { venue: Venue }) {
   return (
-    <div className="flex items-start justify-between gap-3">
-      <div className="min-w-0 flex-1">
-        <div className="flex min-w-0 items-start gap-2">
-          <h1 className="min-w-0 text-wrap font-body text-[24px] font-semibold leading-[1.08] text-nokta-ink sm:text-4xl">
-            {venue.name}
-          </h1>
-          {venue.isClaimed ? <ClaimedVenueBadge size="md" className="mt-1.5 shrink-0 sm:mt-2" /> : null}
-        </div>
-        <VenueBadgeRow venue={venue} />
-      </div>
-      <CurrentStatusBadge status={currentStatus} className="shrink-0" />
+    <div className="flex flex-wrap items-baseline gap-x-3 gap-y-2">
+      <h1 className="min-w-0 text-[28px] font-semibold leading-[1.05] tracking-[-0.6px] text-nokta-ink sm:text-[34px]">{venue.name}</h1>
+      <span className="inline-flex h-6 shrink-0 items-center rounded-md border border-nokta-border bg-white px-2.5 text-[12.5px] font-semibold text-nokta-ink-subtle">{formatVenuePrimaryCategory(venue.primaryCategory)}</span>
     </div>
   );
 }
 
+/**
+ * One meta line carrying every header fact once: live opening boundary, rating, area and
+ * distance, then the two strongest vibes alongside the category. Anything unknown is
+ * omitted rather than rendered as a placeholder.
+ */
 export function VenueHeaderMeta({ venue, distanceLabel }: { venue: Venue; distanceLabel: string | null }) {
   const { reviews } = useVenueReviews(venue.id);
   const summary = getVenueRatingSummary(reviews);
   const displayRating = summary.averageRating ?? venue.rating ?? null;
-  const reviewLabel = summary.reviewCount > 0 ? `${summary.reviewCount} user review${summary.reviewCount === 1 ? "" : "s"}` : displayRating ? "Rating estimate" : "No user reviews yet";
-  const priceLabel = venue.priceFrom ? `From £${venue.priceFrom}` : "Price TBC";
+  const boundary = getVenueOpeningBoundary(venue);
+  const areaLabel = [venue.area, distanceLabel].filter(Boolean).join(", ");
+  const descriptorLabel = [formatVenuePrimaryCategory(venue.primaryCategory), ...venue.vibes.slice(0, 2).map((vibe) => VIBE_LABELS.get(vibe) ?? vibe)].join(" · ");
+  const segments = [areaLabel, descriptorLabel].filter(Boolean);
 
   return (
-    <>
-      <div className="mt-3 grid gap-1.5 text-[13.5px] leading-[1.4] sm:hidden">
-        <div className="flex items-center gap-2 font-medium text-nokta-ink">
-          {displayRating ? (
-            <span className="inline-flex items-center gap-1.5">
-              <Star className="h-3.5 w-3.5 fill-nokta-ink text-nokta-ink" />
-              {displayRating}
+    <div className="mt-[11px] flex flex-wrap items-center gap-[9px] text-[14.5px] text-nokta-ink-subtle">
+      {boundary.label ? <OpeningStatusPill status={boundary.status} label={boundary.label} /> : null}
+      {displayRating ? (
+        <span className="inline-flex items-center gap-1.5 font-medium text-nokta-ink">
+          <Star className="h-3.5 w-3.5 fill-nokta-ink text-nokta-ink" />
+          {displayRating}
+        </span>
+      ) : null}
+      {segments.map((segment, index) => (
+        <span key={segment} className="inline-flex items-center gap-[9px]">
+          {index > 0 || displayRating || boundary.label ? (
+            <span className="text-[oklch(0.6_0.02_42)]" aria-hidden="true">
+              ·
             </span>
           ) : null}
-          <span className="text-nokta-ink-muted">·</span>
-          <span>{reviewLabel}</span>
-        </div>
-        <div className="flex items-center gap-1.5 text-nokta-ink-muted">
-          <MapPin className="h-3.5 w-3.5" />
-          {venue.area}
-          {distanceLabel ? ` · ${distanceLabel}` : null}
-        </div>
-        <div className="text-nokta-ink-muted">{priceLabel}</div>
-      </div>
-
-      <div className="mt-3 hidden flex-wrap items-center gap-x-3 gap-y-2 text-sm text-nokta-ink-muted sm:flex">
-        {displayRating ? (
-          <>
-            <span className="inline-flex items-center gap-1.5 font-medium text-nokta-ink">
-              <Star className="h-3.5 w-3.5 fill-nokta-ink text-nokta-ink" />
-              {displayRating}
-            </span>
-            <span className="text-nokta-ink-muted" aria-hidden="true">
-              •
-            </span>
-          </>
-        ) : null}
-        <span>{reviewLabel}</span>
-        <span className="text-nokta-ink-muted" aria-hidden="true">
-          •
+          {segment}
         </span>
-        <span className="inline-flex items-center gap-1.5">
-          <MapPin className="h-3.5 w-3.5" />
-          {venue.area}
-          {distanceLabel ? ` • ${distanceLabel}` : null}
-        </span>
-        <span className="text-nokta-ink-muted" aria-hidden="true">
-          •
-        </span>
-        <span className="whitespace-nowrap">{priceLabel}</span>
-      </div>
-    </>
-  );
-}
-
-export function ActionBar({ venue, shareLabel, onShare }: { venue: Venue; shareLabel: string; onShare: () => void }) {
-  const analyticsProperties = getVenueAnalyticsProperties(venue);
-  const actionButtonClass = "h-10 w-full rounded-lg border-nokta-border bg-white px-3.5 text-sm font-medium text-nokta-ink-subtle hover:bg-nokta-surface-hover hover:text-nokta-ink sm:w-auto";
-
-  return (
-    <>
-      <section className="mt-5 flex gap-2 sm:hidden">
-        <MobileActionButton primary as="a" href={getGoogleMapsDirectionsUrl(venue)} label="Directions" onClick={() => trackVenueAction(venue, "directions_clicked", "venue_directions_clicked", analyticsProperties)} icon={<Navigation className="h-5 w-5" />} />
-        <MobileActionButton as={venue.phone ? "a" : "button"} href={venue.phone ? `tel:${venue.phone}` : undefined} label="Call" disabled={!venue.phone} icon={<Phone className="h-5 w-5" />} />
-        <MobileActionButton as="button" label={shareLabel} onClick={onShare} icon={<Share2 className="h-5 w-5" />} />
-        <MobileActionButton as="a" href={`mailto:${brandConfig.supportEmail}?subject=${encodeURIComponent(`Venue report: ${venue.name}`)}`} label="Report" icon={<Flag className="h-5 w-5" />} />
-        <MobileActionButton as={venue.website ? "a" : "button"} href={venue.website ?? undefined} target={venue.website ? "_blank" : undefined} rel={venue.website ? "noreferrer" : undefined} label="Website" disabled={!venue.website} onClick={venue.website ? () => trackVenueAction(venue, "website_clicked", "venue_website_clicked", analyticsProperties) : undefined} icon={<ExternalLink className="h-5 w-5" />} />
-      </section>
-      <section className="mt-5 hidden flex-wrap gap-2 sm:mt-6 sm:flex">
-        <Button asChild className="col-span-2 h-10 rounded-lg bg-nokta-ink px-3.5 text-sm font-medium text-white hover:bg-nokta-ink/90 sm:col-span-1">
-          <a href={getGoogleMapsDirectionsUrl(venue)} target="_blank" rel="noreferrer" onClick={() => trackVenueAction(venue, "directions_clicked", "venue_directions_clicked", analyticsProperties)}>
-            <Navigation className="mr-2 h-4 w-4" />
-            Get directions
-          </a>
-        </Button>
-        {venue.phone ? (
-          <Button asChild variant="outline" className={actionButtonClass}>
-            <a href={`tel:${venue.phone}`}>
-              <Phone className="mr-2 h-4 w-4" />
-              Call
-            </a>
-          </Button>
-        ) : (
-          <Button type="button" variant="outline" className={actionButtonClass} disabled>
-            <Phone className="mr-2 h-4 w-4" />
-            Call
-          </Button>
-        )}
-        <Button type="button" variant="outline" className={actionButtonClass} onClick={onShare}>
-          <Share2 className="mr-2 h-4 w-4" />
-          {shareLabel}
-        </Button>
-        <Button asChild variant="outline" className={actionButtonClass}>
-          <a href={`mailto:${brandConfig.supportEmail}?subject=${encodeURIComponent(`Venue report: ${venue.name}`)}`}>
-            <Flag className="mr-2 h-4 w-4" />
-            Report
-          </a>
-        </Button>
-        {venue.website ? (
-          <Button asChild variant="outline" className={cn(actionButtonClass, "font-semibold text-nokta-ink")}>
-            <a href={venue.website} target="_blank" rel="noreferrer" onClick={() => trackVenueAction(venue, "website_clicked", "venue_website_clicked", analyticsProperties)}>
-              Website
-              <ExternalLink className="ml-2 h-4 w-4" />
-            </a>
-          </Button>
-        ) : null}
-        {venue.instagram ? (
-          <Button asChild variant="outline" className={cn(actionButtonClass, "font-semibold text-nokta-ink")}>
-            <a href={venue.instagram} target="_blank" rel="noreferrer" onClick={() => trackVenueAction(venue, "instagram_clicked", "venue_instagram_clicked", analyticsProperties)}>
-              Instagram
-              <ExternalLink className="ml-2 h-4 w-4" />
-            </a>
-          </Button>
-        ) : null}
-      </section>
-    </>
-  );
-}
-
-export function CurrentStatusBadge({ status, className }: { status: ReturnType<typeof getVenueCurrentStatus>; className?: string }) {
-  return <span className={cn("inline-flex h-7 items-center rounded-full px-3 text-xs font-semibold", status === "open" && "bg-emerald-50 text-emerald-700", status === "closed" && "bg-red-50 text-red-700", status === "unknown" && "bg-stone-100 text-nokta-ink-muted", className)}>{formatCurrentStatus(status)}</span>;
-}
-
-function VenueBadgeRow({ venue }: { venue: Venue }) {
-  const mobileBadges = [formatVenuePrimaryCategory(venue.primaryCategory), ...venue.vibes.slice(0, 1)];
-  const hiddenMobileCount = Math.max(0, venue.secondaryCategories.slice(0, 3).length + venue.vibes.slice(1, 5).length);
-
-  return (
-    <>
-      <div className="mt-3 flex flex-wrap gap-2 sm:hidden">
-        {mobileBadges.map((label) => (
-          <VenueBadge key={label} label={label} />
-        ))}
-        {hiddenMobileCount ? <Badge variant="outline" className="rounded-full border-transparent bg-nokta-surface px-2.5 py-1 text-[12px] font-semibold text-nokta-ink-muted">+{hiddenMobileCount}</Badge> : null}
-      </div>
-      <div className="mt-3 hidden flex-wrap gap-2 sm:flex">
-        <VenueBadge label={formatVenuePrimaryCategory(venue.primaryCategory)} />
-        {venue.secondaryCategories.slice(0, 3).map((category) => (
-          <VenueBadge key={category} label={formatVenueSecondaryCategory(category)} />
-        ))}
-        {venue.vibes.slice(0, 5).map((vibe) => (
-          <VenueBadge key={vibe} label={vibe} />
-        ))}
-      </div>
-    </>
-  );
-}
-
-function MobileActionButton({ as, href, target, rel, label, icon, primary = false, disabled = false, onClick }: { as: "a" | "button"; href?: string; target?: string; rel?: string; label: string; icon: ReactNode; primary?: boolean; disabled?: boolean; onClick?: () => void }) {
-  const buttonClass = cn("h-12 w-full rounded-full", primary ? "bg-nokta-ink text-white hover:bg-nokta-ink/90" : "border-nokta-border bg-white text-nokta-ink hover:bg-nokta-surface-hover");
-
-  return (
-    <div className="min-w-0 flex-1 text-center">
-      <Button asChild={as === "a" && !disabled} type={as === "button" ? "button" : undefined} variant={primary ? "default" : "outline"} size="icon" className={buttonClass} disabled={disabled} onClick={onClick}>
-        {as === "a" && !disabled ? (
-          <a href={href} target={target} rel={rel}>
-            {icon}
-          </a>
-        ) : (
-          <span>{icon}</span>
-        )}
-      </Button>
-      <span className="mt-1 block truncate text-[11px] font-medium leading-4 text-nokta-ink-muted">{label}</span>
+      ))}
     </div>
   );
+}
+
+/**
+ * Directions and website always work, so they read as buttons; the rest are icon buttons.
+ * A control whose datum is missing is removed rather than shown disabled.
+ */
+export function ActionBar({ venue, shareLabel, onShare, onToggleSave, isSaved }: { venue: Venue; shareLabel: string; onShare: () => void; onToggleSave?: () => void; isSaved?: boolean }) {
+  const [isMoreOpen, setIsMoreOpen] = useState(false);
+  const analyticsProperties = getVenueAnalyticsProperties(venue);
+  const iconButtonClass = "inline-flex h-11 w-11 items-center justify-center rounded-lg border border-nokta-border bg-white text-nokta-ink-subtle transition-colors hover:bg-nokta-hover";
+
+  return (
+    <div className="mt-[18px] flex flex-wrap items-center gap-2">
+      <Button asChild className="h-11 rounded-lg bg-nokta-ink px-[15px] text-sm font-medium text-white hover:bg-nokta-ink/90">
+        <a href={getGoogleMapsDirectionsUrl(venue)} target="_blank" rel="noreferrer noopener" onClick={() => trackVenueAction(venue, "directions_clicked", "venue_directions_clicked", analyticsProperties)}>
+          <Navigation className="mr-2 h-[15px] w-[15px]" />
+          Directions
+        </a>
+      </Button>
+
+      {venue.website ? (
+        <Button asChild variant="outline" className="h-11 rounded-lg border-nokta-border bg-white px-[15px] text-sm font-medium text-nokta-ink hover:bg-nokta-hover">
+          <a href={venue.website} target="_blank" rel="noreferrer noopener" onClick={() => trackVenueAction(venue, "website_clicked", "venue_website_clicked", analyticsProperties)}>
+            <ExternalLink className="mr-2 h-[15px] w-[15px]" />
+            {formatWebsiteDomain(venue.website)}
+          </a>
+        </Button>
+      ) : null}
+
+      {onToggleSave ? (
+        <button type="button" className={iconButtonClass} aria-label={isSaved ? "Remove from saved" : "Save venue"} aria-pressed={isSaved} onClick={onToggleSave}>
+          <Heart className={cn("h-4 w-4", isSaved && "fill-clay-accent text-clay-accent")} />
+        </button>
+      ) : null}
+
+      <button type="button" className={iconButtonClass} aria-label={shareLabel} onClick={onShare}>
+        <Share2 className="h-4 w-4" />
+      </button>
+
+      <div className="relative">
+        <button type="button" className={iconButtonClass} aria-label="More actions" aria-expanded={isMoreOpen} onClick={() => setIsMoreOpen((open) => !open)}>
+          <MoreHorizontal className="h-4 w-4" />
+        </button>
+        {isMoreOpen ? (
+          <>
+            <button type="button" className="fixed inset-0 z-10 cursor-default" aria-label="Close menu" onClick={() => setIsMoreOpen(false)} />
+            <div className="absolute right-0 z-20 mt-2 min-w-[200px] overflow-hidden rounded-lg border border-nokta-border bg-white py-1 shadow-[0_8px_24px_rgba(28,25,23,0.12)]">
+              {venue.phone ? (
+                <a href={`tel:${venue.phone}`} className="flex items-center gap-2.5 px-3.5 py-2.5 text-[13px] font-medium text-nokta-ink hover:bg-nokta-hover" onClick={() => setIsMoreOpen(false)}>
+                  <Phone className="h-4 w-4 text-nokta-ink-muted" />
+                  {venue.phone}
+                </a>
+              ) : null}
+              {venue.instagram ? (
+                <a href={venue.instagram} target="_blank" rel="noreferrer noopener" className="flex items-center gap-2.5 px-3.5 py-2.5 text-[13px] font-medium text-nokta-ink hover:bg-nokta-hover" onClick={() => { trackVenueAction(venue, "instagram_clicked", "venue_instagram_clicked", analyticsProperties); setIsMoreOpen(false); }}>
+                  <ExternalLink className="h-4 w-4 text-nokta-ink-muted" />
+                  Instagram
+                </a>
+              ) : null}
+              <a href={`mailto:${brandConfig.supportEmail}?subject=${encodeURIComponent(`Venue report: ${venue.name}`)}`} className="flex items-center gap-2.5 px-3.5 py-2.5 text-[13px] font-medium text-nokta-ink hover:bg-nokta-hover" onClick={() => setIsMoreOpen(false)}>
+                <Flag className="h-4 w-4 text-nokta-ink-muted" />
+                Report a problem
+              </a>
+            </div>
+          </>
+        ) : null}
+      </div>
+    </div>
+  );
+}
+
+function OpeningStatusPill({ status, label }: { status: "open" | "closed" | "unknown"; label: string }) {
+  const isOpen = status === "open";
+
+  return (
+    <span className={cn("inline-flex h-[26px] items-center gap-1.5 rounded-md pl-2 pr-[9px] text-[13px] font-semibold", isOpen ? "bg-[oklch(0.95_0.05_150)] text-[oklch(0.34_0.09_150)]" : "bg-stone-100 text-nokta-ink-subtle")}>
+      <span className={cn("h-1.5 w-1.5 rounded-full", isOpen ? "bg-[oklch(0.55_0.14_150)]" : "bg-nokta-ink-muted")} />
+      {label}
+    </span>
+  );
+}
+
+/** The bare domain reads better on the button than the full URL. */
+function formatWebsiteDomain(website: string): string {
+  try {
+    return new URL(website).hostname.replace(/^www\./, "");
+  } catch {
+    return website.replace(/^https?:\/\//, "").replace(/^www\./, "").replace(/\/.*$/, "");
+  }
 }
 
 function trackVenueAction(venue: Venue, productEvent: "directions_clicked" | "website_clicked" | "instagram_clicked", venueEvent: "venue_directions_clicked" | "venue_website_clicked" | "venue_instagram_clicked", properties: ReturnType<typeof getVenueAnalyticsProperties>) {
@@ -211,10 +160,4 @@ function trackVenueAction(venue: Venue, productEvent: "directions_clicked" | "we
     area: venue.area,
     sourceSurface: "venue_page",
   });
-}
-
-function formatCurrentStatus(status: ReturnType<typeof getVenueCurrentStatus>) {
-  if (status === "open") return "Open now";
-  if (status === "closed") return "Closed now";
-  return "Hours TBC";
 }

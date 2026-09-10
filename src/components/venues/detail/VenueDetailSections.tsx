@@ -1,159 +1,184 @@
 import { VenueMap } from "@/components/map/VenueMap";
 import { ReviewSection } from "@/components/reviews/ReviewSection";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { VenueVerificationBadge } from "@/components/venues/VenueVerificationBadge";
-import { getVenueCurrentStatus } from "@/lib/openingHours";
 import { cn } from "@/lib/utils";
-import { formatPriceLevel } from "@/lib/venueFilters";
+import { getGroupedOpeningHours, getTodayOpeningLabel } from "@/lib/openingHours";
+import { getVenueAmenities, type VenueAmenityIcon } from "@/lib/venueAmenities";
 import { getVenueImage } from "@/lib/venueImages";
 import { formatPenceAsPrice } from "@/lib/venueMenuValidation";
 import { getPublicVenueMenu } from "@/services/venueMenuService";
 import type { Venue } from "@/types/venue";
 import type { VenueMenu } from "@/types/venueMenu";
-import { Clock, Sofa, Star, Utensils } from "lucide-react";
-import { useEffect, useState, type ReactNode } from "react";
+import { Armchair, Clock, Martini, Umbrella, Users, Utensils } from "lucide-react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-export function PlanYourVisitCard({ venue }: { venue: Venue }) {
+const AMENITY_ICONS: Record<VenueAmenityIcon, typeof Clock> = {
+  awning: Umbrella,
+  utensils: Utensils,
+  clock: Clock,
+  users: Users,
+  sofa: Armchair,
+  glass: Martini,
+};
+
+const MENU_PREVIEW_LIMIT = 3;
+
+export function OverviewTab({ venue, similarVenues, onOpenMenu }: { venue: Venue; similarVenues: Venue[]; onOpenMenu: () => void }) {
+  const amenities = getVenueAmenities(venue);
+
   return (
-    <section className="rounded-2xl border border-nokta-border bg-white p-5 shadow-sm shadow-stone-950/5">
-      <h2 className="font-semibold text-nokta-ink">Plan your visit</h2>
-      <div className="mt-4 grid gap-5">
-        <div>
-          <h3 className="text-[13px] font-semibold uppercase text-nokta-ink-muted">Opening hours</h3>
-          <div className="mt-3 grid gap-2">
-            {venue.openingHours.length ? (
-              venue.openingHours.map((item) => (
-                <div key={item.day} className="grid grid-cols-[96px_1fr] gap-3 text-[13px]">
-                  <span className="font-medium text-nokta-ink">{item.day}</span>
-                  <span className="text-nokta-ink-muted">
-                    {item.open} • {item.close}
-                  </span>
-                </div>
-              ))
-            ) : (
-              <p className="text-sm text-nokta-ink-muted">Opening hours TBC</p>
-            )}
-          </div>
-        </div>
-
-        <div className="border-t border-nokta-border pt-5">
-          <h3 className="text-[13px] font-semibold uppercase text-nokta-ink-muted">Location</h3>
-          <p className="mt-3 text-sm leading-6 text-nokta-ink-muted">
-            {venue.address}
-            <br />
-            {venue.area}
-            <br />
-            {venue.city} {venue.postcode}
-          </p>
-          <div className="mt-4 overflow-hidden rounded-xl border border-nokta-border">
-            <VenueMap venues={[venue]} selectedVenueId={venue.id} city={venue.city} className="h-72 rounded-none border-0 [&_.leaflet-container]:!min-h-72 [&_.leaflet-control-container]:relative [&_.leaflet-control-container]:z-0 md:[&_.leaflet-container]:!min-h-72" />
-          </div>
-        </div>
-
-        <div className="border-t border-nokta-border pt-5">
-          <h3 className="text-[13px] font-semibold uppercase text-nokta-ink-muted">Venue information</h3>
-          <div className="mt-3 flex flex-wrap items-center gap-3">
-            <VenueVerificationBadge status={venue.verificationStatus} />
-            {venue.lastVerifiedAt ? <span className="text-sm text-nokta-ink-muted">Checked {formatVerifiedDate(venue.lastVerifiedAt)}</span> : null}
-          </div>
-          <p className="mt-4 text-sm leading-6 text-nokta-ink-muted">Venue details can change. Check directly before travelling or booking.</p>
-          {venue.sourceNotes ? <p className="mt-3 text-sm leading-6 text-nokta-ink-muted">{venue.sourceNotes}</p> : null}
-        </div>
+    <div className="min-w-0">
+      <div className="flex flex-wrap gap-2">
+        {amenities.map((amenity) => {
+          const Icon = amenity.icon ? AMENITY_ICONS[amenity.icon] : null;
+          return (
+            <span key={amenity.label} className={cn("inline-flex min-h-8 items-center gap-[7px] rounded-lg px-3 py-[5px] text-[13px] font-medium", amenity.isUnknown ? "text-nokta-ink-muted" : "border border-nokta-border bg-white text-nokta-ink")}>
+              {Icon ? <Icon className="h-3.5 w-3.5 text-clay-accent" strokeWidth={2} /> : null}
+              {amenity.label}
+            </span>
+          );
+        })}
       </div>
-    </section>
-  );
-}
 
-export function OverviewTab({ venue, amenities, similarVenues }: { venue: Venue; amenities: string[]; similarVenues: Venue[] }) {
-  return (
-    <div className="grid min-w-0 gap-8 lg:grid-cols-[minmax(0,1fr)_360px]">
-      <article className="min-w-0 space-y-8">
-        <section>
-          <h2 className="text-2xl font-semibold text-nokta-ink">Key details</h2>
-          <div className="mt-4 grid gap-3 sm:grid-cols-2">
-            <DetailTile icon={<Clock className="h-4 w-4" />} label="Hours" value={formatCurrentStatus(getVenueCurrentStatus(venue))} />
-            <DetailTile icon={<Star className="h-4 w-4" />} label="Rating" value={venue.rating ? `${venue.rating} / 5` : "Rating TBC"} />
-            <DetailTile icon={<Sofa className="h-4 w-4" />} label="Seating" value={venue.outdoor ? "Outdoor seating" : venue.indoor ? "Indoor seating" : "Seating TBC"} />
-            <DetailTile icon={<Utensils className="h-4 w-4" />} label="Food & drinks" value={formatFoodDrinks(venue)} />
-          </div>
-        </section>
+      <MenuPreviewCard venue={venue} onOpenMenu={onOpenMenu} />
 
-        <section>
-          <h2 className="text-2xl font-semibold text-nokta-ink">Amenities</h2>
-          <div className="mt-4 flex flex-wrap gap-2">
-            {amenities.length ? (
-              amenities.map((amenity) => (
-                <Badge key={amenity} variant="outline" className="rounded-full border-nokta-border bg-white px-3 py-1.5 text-[13px] font-medium text-nokta-ink">
-                  {amenity}
-                </Badge>
-              ))
-            ) : (
-              <p className="text-nokta-ink-muted">Amenities TBC</p>
-            )}
-          </div>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-semibold text-nokta-ink">Similar venues</h2>
+      {similarVenues.length ? (
+        <>
+          <h2 className="mt-[26px] text-[17px] font-semibold text-nokta-ink">Similar in {venue.area}</h2>
           <SimilarVenueCarousel venues={similarVenues} />
-        </section>
-
-        <ClaimVenueBanner venue={venue} />
-      </article>
-
-      <aside className="min-w-0">
-        <PlanYourVisitCard venue={venue} />
-      </aside>
+        </>
+      ) : null}
     </div>
   );
 }
 
-function DetailTile({ icon, label, value }: { icon: ReactNode; label: string; value: string }) {
+/** Three priced lines above the fold; the card disappears when the venue has no menu items. */
+function MenuPreviewCard({ venue, onOpenMenu }: { venue: Venue; onOpenMenu: () => void }) {
+  const menu = useVenueMenu(venue.id);
+  const previewItems = menu?.items.slice(0, MENU_PREVIEW_LIMIT) ?? [];
+
+  if (!previewItems.length) {
+    return null;
+  }
+
   return (
-    <div className="rounded-xl border border-nokta-border bg-white p-4 shadow-sm shadow-stone-950/5">
-      <div className="flex items-center gap-2 text-[13px] font-medium text-nokta-ink-muted">
-        {icon}
-        {label}
+    <section className="mt-[22px] overflow-hidden rounded-[14px] border border-nokta-border bg-white">
+      <div className="flex items-baseline justify-between gap-3 px-4 pb-3 pt-3.5">
+        <h2 className="text-[15px] font-semibold text-nokta-ink">Menu</h2>
+        <button type="button" className="text-[12.5px] font-medium text-clay-accent hover:text-clay-accent-hover hover:underline" onClick={onOpenMenu}>
+          See full menu
+        </button>
       </div>
-      <p className="mt-3 text-[15px] font-semibold text-nokta-ink">{value}</p>
-    </div>
-  );
-}
-
-function formatFoodDrinks(venue: Venue) {
-  const food = venue.halal ? "Halal food" : "Food";
-  if (venue.food && venue.alcohol) return `${food} and alcohol`;
-  if (venue.food) return `${food} available`;
-  if (venue.alcohol) return "Alcohol available";
-  return "Not listed";
-}
-
-function ClaimVenueBanner({ venue }: { venue: Venue }) {
-  if (venue.isClaimed) return null;
-
-  return (
-    <section className="rounded-2xl border border-nokta-border bg-white p-5 shadow-sm shadow-stone-950/5">
-      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <div>
-          <h2 className="text-base font-semibold text-nokta-ink">Own or manage this venue?</h2>
-          <p className="mt-1 text-sm leading-6 text-nokta-ink-muted">Claim this profile to keep details accurate, respond to enquiries and manage bookings.</p>
+      {previewItems.map((item) => (
+        <div key={item.id} className="flex items-baseline justify-between gap-4 border-t border-nokta-row-border px-4 py-[11px] text-[13.5px] font-medium text-nokta-ink">
+          <span className="min-w-0">{item.name}</span>
+          <span className="flex-none">{formatPenceAsPrice(item.pricePence)}</span>
         </div>
-        <Button asChild className="h-10 shrink-0 rounded-lg bg-nokta-ink px-4 text-sm font-medium text-white hover:bg-nokta-ink/90">
-          <Link to={`/venues/${venue.slug}/claim`}>Claim venue</Link>
-        </Button>
-      </div>
+      ))}
     </section>
   );
 }
 
 export function MenuTab({ venue }: { venue: Venue }) {
+  const menu = useVenueMenu(venue.id);
+  const menuLink = venue.dataSources.shishaMenuUrl ?? venue.dataSources.menuUrl;
+
+  if (menu?.items.length) {
+    return (
+      <section className="max-w-3xl space-y-5">
+        {menu.sections.map((section) => {
+          const sectionItems = menu.items.filter((item) => item.sectionId === section.id);
+          if (!sectionItems.length) return null;
+          return (
+            <div key={section.id}>
+              <h3 className="text-[13px] font-semibold uppercase tracking-[0.5px] text-nokta-ink">{section.name}</h3>
+              <div className="mt-3 overflow-hidden rounded-[14px] border border-nokta-border bg-white">
+                {sectionItems.map((item, index) => (
+                  <div key={item.id} className={cn("flex items-baseline justify-between gap-4 px-4 py-[11px] text-[13.5px]", index > 0 && "border-t border-nokta-row-border")}>
+                    <div className="min-w-0">
+                      <span className="font-medium text-nokta-ink">{item.name}</span>
+                      {item.note ? <p className="mt-0.5 text-[13px] text-nokta-ink-muted">{item.note}</p> : null}
+                    </div>
+                    <span className="flex-none font-medium text-nokta-ink">{formatPenceAsPrice(item.pricePence)}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          );
+        })}
+      </section>
+    );
+  }
+
+  if (menuLink) {
+    return (
+      <a href={menuLink} target="_blank" rel="noreferrer noopener" className="text-sm font-medium text-clay-accent hover:text-clay-accent-hover hover:underline">
+        View the full menu →
+      </a>
+    );
+  }
+
+  return <p className="text-sm text-nokta-ink-muted">{venue.name} hasn't published a menu on nokta yet.</p>;
+}
+
+export function ReviewsTab({ venue }: { venue: Venue }) {
+  return <ReviewSection venue={venue} />;
+}
+
+/**
+ * The rail's second card: today's hours, the grouped week, the address, the map and the
+ * provenance line. It replaces the old "Key details" and "Plan your visit" blocks, and
+ * stays put as the main column's tab changes.
+ */
+export function VenueHoursLocationCard({ venue, className }: { venue: Venue; className?: string }) {
+  const todayLabel = getTodayOpeningLabel(venue);
+  const groupedHours = getGroupedOpeningHours(venue.openingHours);
+
+  return (
+    <section className={cn("rounded-2xl border border-nokta-border bg-white p-[17px]", className)}>
+      {groupedHours.length ? (
+        <>
+          <div className="flex items-center justify-between gap-3">
+            <p className="text-[11.5px] font-semibold uppercase tracking-[0.04em] text-nokta-ink-muted">Today</p>
+            {todayLabel ? <span className="text-[13px] font-medium text-nokta-ink">{todayLabel}</span> : null}
+          </div>
+          <div className="mt-[11px] grid gap-1.5 text-[13px]">
+            {groupedHours.map((row) => (
+              <div key={row.days} className="grid grid-cols-[1fr_auto]">
+                <span className="text-nokta-ink-muted">{row.days}</span>
+                <span className="text-nokta-ink-subtle">{row.hours}</span>
+              </div>
+            ))}
+          </div>
+          <div className="my-[15px] h-px bg-nokta-border" />
+        </>
+      ) : null}
+
+      <p className="text-[13.5px] leading-[1.6] text-nokta-ink-subtle">
+        {venue.address}
+        <br />
+        {venue.city} {venue.postcode}
+      </p>
+
+      <div className="mt-[11px] overflow-hidden rounded-xl border border-nokta-border">
+        <VenueMap venues={[venue]} selectedVenueId={venue.id} city={venue.city} className="h-[150px] rounded-none border-0 [&_.leaflet-container]:!min-h-[150px] [&_.leaflet-control-container]:relative [&_.leaflet-control-container]:z-0 md:[&_.leaflet-container]:!min-h-[150px]" />
+      </div>
+
+      <div className="mt-[13px] flex flex-wrap items-center gap-2 text-[12.5px] text-nokta-ink-muted">
+        {venue.verificationStatus === "verified" ? <span className="inline-flex h-[22px] items-center rounded-full bg-[oklch(0.95_0.05_150)] px-[9px] text-[11px] font-semibold text-[oklch(0.4_0.1_150)]">Verified</span> : null}
+        {venue.lastVerifiedAt ? `Checked ${formatVerifiedDate(venue.lastVerifiedAt)} · details can change` : "Details can change"}
+      </div>
+    </section>
+  );
+}
+
+/** Public menu for a venue, or null while loading or when the read fails. */
+function useVenueMenu(venueId: string): VenueMenu | null {
   const [menu, setMenu] = useState<VenueMenu | null>(null);
 
   useEffect(() => {
     let cancelled = false;
-    getPublicVenueMenu(venue.id)
+    getPublicVenueMenu(venueId)
       .then((nextMenu) => {
         if (!cancelled) setMenu(nextMenu);
       })
@@ -163,88 +188,19 @@ export function MenuTab({ venue }: { venue: Venue }) {
     return () => {
       cancelled = true;
     };
-  }, [venue.id]);
+  }, [venueId]);
 
-  const rows = [
-    ["Shisha", venue.priceFrom ? `From £${venue.priceFrom}` : "Price TBC"],
-    ["Price tier", formatPriceLevel(venue.priceLevel)],
-    ["Food", venue.food ? "Available" : "Not listed"],
-    ["Alcohol", venue.alcohol ? "Available" : "Not listed"],
-    ["Halal", venue.halal ? "Available" : "Not listed"],
-  ];
-  const menuLink = venue.dataSources.shishaMenuUrl ?? venue.dataSources.menuUrl;
-
-  return (
-    <section className="max-w-3xl">
-      <h2 className="text-2xl font-semibold text-nokta-ink">Menu & prices</h2>
-      <div className="mt-5 overflow-hidden rounded-2xl border border-nokta-border bg-white shadow-sm shadow-stone-950/5">
-        {rows.map(([label, value], index) => (
-          <div key={label} className={cn("grid grid-cols-[1fr_auto] gap-4 p-4 text-sm", index > 0 && "border-t border-nokta-border")}>
-            <span className="font-medium text-nokta-ink">{label}</span>
-            <span className="text-nokta-ink-muted">{value}</span>
-          </div>
-        ))}
-      </div>
-
-      {/* Items win over a link when the venue maintains both. */}
-      {menu?.items.length ? (
-        <div className="mt-6 space-y-5">
-          {menu.sections.map((section) => {
-            const sectionItems = menu.items.filter((item) => item.sectionId === section.id);
-            if (!sectionItems.length) return null;
-            return (
-              <div key={section.id}>
-                <h3 className="text-sm font-semibold uppercase tracking-[0.5px] text-nokta-ink">{section.name}</h3>
-                <div className="mt-3 overflow-hidden rounded-2xl border border-nokta-border bg-white">
-                  {sectionItems.map((item, index) => (
-                    <div key={item.id} className={cn("flex items-baseline justify-between gap-4 p-4 text-sm", index > 0 && "border-t border-nokta-border")}>
-                      <div className="min-w-0">
-                        <span className="font-medium text-nokta-ink">{item.name}</span>
-                        {item.note ? <p className="mt-0.5 text-nokta-ink-muted">{item.note}</p> : null}
-                      </div>
-                      <span className="flex-none font-medium text-nokta-ink">{formatPenceAsPrice(item.pricePence)}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      ) : menuLink ? (
-        <a href={menuLink} target="_blank" rel="noreferrer noopener" className="mt-4 inline-block text-sm font-medium text-clay-accent hover:underline">View the full menu →</a>
-      ) : (
-        <p className="mt-4 text-sm text-nokta-ink-muted">Detailed flavour and food menus will appear here once verified source data is available.</p>
-      )}
-    </section>
-  );
-}
-
-export function ReviewsTab({ venue }: { venue: Venue }) {
-  return <ReviewSection venue={venue} />;
+  return menu;
 }
 
 function SimilarVenueCarousel({ venues }: { venues: Venue[] }) {
-  if (!venues.length) {
-    return <p className="mt-4 text-muted-foreground">Similar venues will appear as the venue catalogue grows.</p>;
-  }
-
   return (
-    <div className="-mx-4 mt-4 flex max-w-[calc(100%+2rem)] gap-4 overflow-x-auto px-4 pb-2 sm:mx-0 sm:max-w-full sm:px-0">
+    <div className="-mx-4 mt-3 flex max-w-[calc(100%+2rem)] gap-3 overflow-x-auto px-4 pb-1 sm:mx-0 sm:max-w-full sm:px-0">
       {venues.map((venue) => (
-        <Link key={venue.id} to={`/venues/${venue.slug}`} className="group w-[220px] shrink-0 rounded-2xl border border-nokta-border bg-white p-2 shadow-none transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-stone-950/5">
-          <div className="relative h-[110px] overflow-hidden rounded-xl bg-muted">
-            <img src={getVenueImage(venue)} alt={`${venue.name} interior`} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
-            {venue.rating ? (
-              <span className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-nokta-ink shadow-sm">
-                <Star className="h-3.5 w-3.5 fill-nokta-ink text-nokta-ink" />
-                {venue.rating}
-              </span>
-            ) : null}
-          </div>
-          <div className="px-1 pb-1 pt-3">
-            <h3 className="truncate text-sm font-semibold leading-5 text-nokta-ink">{venue.name}</h3>
-            <p className="mt-0.5 truncate text-xs leading-5 text-nokta-ink-muted">{venue.area}</p>
-          </div>
+        <Link key={venue.id} to={`/venues/${venue.slug}`} className="w-[186px] shrink-0 rounded-[14px] border border-nokta-border bg-white p-2 transition-colors hover:border-[oklch(0.8_0.03_50)]">
+          <img src={getVenueImage(venue)} alt={`${venue.name} interior`} className="h-[94px] w-full rounded-[10px] object-cover" />
+          <span className="mt-[9px] block truncate px-0.5 text-[13.5px] font-semibold text-nokta-ink">{venue.name}</span>
+          <span className="mb-1 mt-0.5 block truncate px-0.5 text-[12px] text-nokta-ink-muted">{[venue.area, venue.isClaimed ? "takes bookings" : null].filter(Boolean).join(" · ")}</span>
         </Link>
       ))}
     </div>
@@ -252,15 +208,5 @@ function SimilarVenueCarousel({ venues }: { venues: Venue[] }) {
 }
 
 function formatVerifiedDate(value: string): string {
-  return new Intl.DateTimeFormat("en-GB", {
-    day: "numeric",
-    month: "short",
-    year: "numeric",
-  }).format(new Date(value));
-}
-
-function formatCurrentStatus(status: ReturnType<typeof getVenueCurrentStatus>) {
-  if (status === "open") return "Open now";
-  if (status === "closed") return "Closed now";
-  return "Hours TBC";
+  return new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "short" }).format(new Date(value));
 }

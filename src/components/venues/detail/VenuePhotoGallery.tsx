@@ -2,60 +2,41 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { getVenueImage } from "@/lib/venueImages";
 import type { Venue } from "@/types/venue";
-import { ArrowLeft, Camera, ChevronLeft, ChevronRight, X } from "lucide-react";
+import { Camera, ChevronLeft, ChevronRight, X } from "lucide-react";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { FavouriteButton } from "@/components/venues/FavouriteButton";
 
+/**
+ * Hero strip inside the content column: one large photo and three small ones, with the
+ * gallery button in the bottom-right cell. Photos returns here as a button rather than a tab.
+ */
 export function PhotoGallery({ venue, images, onOpenImage }: { venue: Venue; images: string[]; onOpenImage: (index: number) => void }) {
   const primaryImage = images[0] ?? getVenueImage(venue);
   const galleryImages = images.length ? images : [primaryImage];
-  const galleryCount = galleryImages.length;
-  const [activeGalleryIndex, setActiveGalleryIndex] = useState(0);
-  const activeImage = galleryImages[activeGalleryIndex] ?? primaryImage;
-  const hasMultipleImages = galleryImages.length > 1;
+  const stripImages = [0, 1, 2, 3].map((index) => galleryImages[index] ?? galleryImages[index % galleryImages.length]);
 
   return (
-    <section className="relative bg-nokta-surface">
-      <Button asChild variant="secondary" size="icon" className="absolute left-3 top-3 z-20 h-10 w-10 rounded-full bg-stone-950/55 text-white backdrop-blur hover:bg-stone-950/70 sm:hidden" aria-label="Back to discover">
-        <Link to="/discover">
-          <ArrowLeft className="h-5 w-5" />
-        </Link>
-      </Button>
-      <FavouriteButton venueId={venue.id} venueName={venue.name} venue={venue} className="absolute right-3 top-3 z-20 h-10 w-10 bg-stone-950/55 text-white backdrop-blur hover:bg-stone-950/70 sm:hidden [&_svg.fill-foreground]:fill-white" />
-      <button type="button" className="block h-[220px] w-full overflow-hidden text-left sm:h-[340px]" onClick={() => onOpenImage(activeGalleryIndex)}>
-        <img src={activeImage} alt={`${venue.name} gallery ${activeGalleryIndex + 1}`} className="h-full w-full object-cover transition duration-700 hover:scale-[1.015]" />
-      </button>
-      {hasMultipleImages ? (
-        <>
-          <Button type="button" variant="secondary" size="icon" className="absolute left-3 top-1/2 h-10 w-10 -translate-y-1/2 rounded-full bg-white/90 text-nokta-ink shadow-lg backdrop-blur hover:bg-white" aria-label="Previous photo" onClick={() => setActiveGalleryIndex((index) => getPreviousImageIndex(index, galleryImages.length))}>
-            <ChevronLeft className="h-5 w-5" />
-          </Button>
-          <Button type="button" variant="secondary" size="icon" className="absolute right-3 top-1/2 h-10 w-10 -translate-y-1/2 rounded-full bg-white/90 text-nokta-ink shadow-lg backdrop-blur hover:bg-white" aria-label="Next photo" onClick={() => setActiveGalleryIndex((index) => getNextImageIndex(index, galleryImages.length))}>
-            <ChevronRight className="h-5 w-5" />
-          </Button>
-        </>
-      ) : null}
-      <PhotoCountBadge current={activeGalleryIndex + 1} total={galleryCount} />
+    <section className="grid h-[240px] grid-cols-[2fr_1fr_1fr] gap-[3px] overflow-hidden rounded-[14px]">
+      <HeroPhotoCell image={stripImages[0]} venue={venue} index={0} onOpenImage={onOpenImage} />
+      <HeroPhotoCell image={stripImages[1]} venue={venue} index={1} onOpenImage={onOpenImage} />
+      <div className="grid min-h-0 grid-rows-[minmax(0,1fr)_minmax(0,1fr)] gap-[3px]">
+        <HeroPhotoCell image={stripImages[2]} venue={venue} index={2} onOpenImage={onOpenImage} />
+        <div className="relative min-h-0">
+          <HeroPhotoCell image={stripImages[3]} venue={venue} index={3} onOpenImage={onOpenImage} />
+          <button type="button" className="absolute bottom-2.5 right-2.5 inline-flex min-h-[34px] max-w-[calc(100%-1.25rem)] items-center gap-[7px] whitespace-nowrap rounded-lg bg-white px-3 text-[12.5px] font-semibold text-nokta-ink shadow-sm transition-colors hover:bg-nokta-hover" onClick={() => onOpenImage(0)}>
+            <Camera className="h-3.5 w-3.5" />
+            All {galleryImages.length} photos
+          </button>
+        </div>
+      </div>
     </section>
   );
 }
 
-export function PhotosTab({ venue, images, onOpenImage }: { venue: Venue; images: string[]; onOpenImage: (index: number) => void }) {
+function HeroPhotoCell({ image, venue, index, onOpenImage }: { image: string; venue: Venue; index: number; onOpenImage: (index: number) => void }) {
   return (
-    <section>
-      <div className="mb-5 flex items-center gap-2">
-        <Camera className="h-5 w-5" />
-        <h2 className="text-2xl font-semibold">Photos</h2>
-      </div>
-      <div className="columns-1 gap-4 sm:columns-2 lg:columns-3">
-        {images.map((image, index) => (
-          <button key={`${image}-${index}`} type="button" className="mb-4 block w-full break-inside-avoid overflow-hidden rounded-xl border bg-card text-left" onClick={() => onOpenImage(index)}>
-            <img src={image} alt={`${venue.name} photo ${index + 1}`} className="w-full object-cover transition duration-500 hover:scale-[1.03]" />
-          </button>
-        ))}
-      </div>
-    </section>
+    <button type="button" className="block h-full min-h-0 w-full overflow-hidden bg-nokta-track text-left" onClick={() => onOpenImage(index)}>
+      <img src={image} alt={`${venue.name} photo ${index + 1}`} className="h-full w-full object-cover transition duration-500 hover:scale-[1.03]" />
+    </button>
   );
 }
 
@@ -130,14 +111,6 @@ export function PhotoLightbox({ venue, images, activeIndex, onChange, onClose }:
         ) : null}
       </div>
     </div>
-  );
-}
-
-function PhotoCountBadge({ current, total }: { current: number; total: number }) {
-  return (
-    <span className="absolute bottom-3 right-3 inline-flex items-center rounded-full bg-stone-950/75 px-2.5 py-1 text-xs font-medium text-white shadow-lg backdrop-blur">
-      {current} / {total}
-    </span>
   );
 }
 
