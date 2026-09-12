@@ -115,6 +115,42 @@ alter table public.recommend_shortlists enable row level security;
 alter table public.recommend_shortlist_picks enable row level security;
 alter table public.recommend_share_codes enable row level security;
 
+-- Cross-table checks live in security definer functions. A policy that
+-- subqueries the other table directly re-enters that table's policies, and
+-- because shortlists and share codes each need to consult the other, that
+-- cycles and Postgres raises 42P17. Running the inner read as the definer
+-- cuts the cycle. Both functions are narrow and return only a boolean.
+create or replace function public.owns_recommend_shortlist(shortlist uuid)
+returns boolean
+language sql
+security definer
+stable
+set search_path = public
+as $fn$
+  select exists (
+    select 1 from public.recommend_shortlists
+    where id = shortlist and user_id = auth.uid()
+  );
+$fn$;
+
+create or replace function public.recommend_shortlist_is_shared(shortlist uuid)
+returns boolean
+language sql
+security definer
+stable
+set search_path = public
+as $fn$
+  select exists (
+    select 1 from public.recommend_share_codes
+    where shortlist_id = shortlist
+  );
+$fn$;
+
+revoke all on function public.owns_recommend_shortlist(uuid) from public;
+revoke all on function public.recommend_shortlist_is_shared(uuid) from public;
+grant execute on function public.owns_recommend_shortlist(uuid) to anon, authenticated;
+grant execute on function public.recommend_shortlist_is_shared(uuid) to anon, authenticated;
+
 -- Owners manage their own shortlists.
 drop policy if exists "Users can manage their own shortlists" on public.recommend_shortlists;
 create policy "Users can manage their own shortlists"
@@ -127,20 +163,8 @@ drop policy if exists "Users can manage picks on their own shortlists" on public
 create policy "Users can manage picks on their own shortlists"
 on public.recommend_shortlist_picks
 for all
-using (
-  exists (
-    select 1 from public.recommend_shortlists
-    where recommend_shortlists.id = recommend_shortlist_picks.shortlist_id
-    and recommend_shortlists.user_id = auth.uid()
-  )
-)
-with check (
-  exists (
-    select 1 from public.recommend_shortlists
-    where recommend_shortlists.id = recommend_shortlist_picks.shortlist_id
-    and recommend_shortlists.user_id = auth.uid()
-  )
-);
+using (public.owns_recommend_shortlist(shortlist_id))
+with check (public.owns_recommend_shortlist(shortlist_id));
 
 -- Anyone holding a share code can read it, and through it the shortlist and its
 -- picks. This is the whole point of sharing: the recipient is not signed in.
@@ -156,33 +180,16 @@ create policy "Users can manage share codes for their own shortlists"
 on public.recommend_share_codes
 for all
 using (created_by = auth.uid())
-with check (
-  created_by = auth.uid()
-  and exists (
-    select 1 from public.recommend_shortlists
-    where recommend_shortlists.id = recommend_share_codes.shortlist_id
-    and recommend_shortlists.user_id = auth.uid()
-  )
-);
+with check (created_by = auth.uid() and public.owns_recommend_shortlist(shortlist_id));
 
 drop policy if exists "Anyone can read shared shortlists" on public.recommend_shortlists;
 create policy "Anyone can read shared shortlists"
 on public.recommend_shortlists
 for select
-using (
-  exists (
-    select 1 from public.recommend_share_codes
-    where recommend_share_codes.shortlist_id = recommend_shortlists.id
-  )
-);
+using (public.recommend_shortlist_is_shared(id));
 
 drop policy if exists "Anyone can read picks on shared shortlists" on public.recommend_shortlist_picks;
 create policy "Anyone can read picks on shared shortlists"
 on public.recommend_shortlist_picks
 for select
-using (
-  exists (
-    select 1 from public.recommend_share_codes
-    where recommend_share_codes.shortlist_id = recommend_shortlist_picks.shortlist_id
-  )
-);
+using (public.recommend_shortlist_is_shared(shortlist_id));
