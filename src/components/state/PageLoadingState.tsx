@@ -11,6 +11,12 @@ export function PageLoadingState({ message = "Loading..." }: { message?: string 
     return <DiscoverPageLoadingState />;
   }
 
+  // The recommend flow and shared shortlists render on a dark canvas, so the
+  // light shell below would flash the wrong colour before the route mounts.
+  if (pathname === "/recommend" || pathname.startsWith("/s/")) {
+    return <DarkCanvasLoadingState message={message} />;
+  }
+
   const isWorkspaceRoute = pathname.startsWith("/admin") || pathname.startsWith("/owner");
 
   return (
@@ -22,6 +28,21 @@ export function PageLoadingState({ message = "Loading..." }: { message?: string 
         </span>
         <span className="sr-only">{message}</span>
       </div>
+    </main>
+  );
+}
+
+/** Mirrors the recommend flow's own chrome: dark canvas, wordmark, progress hairline. */
+function DarkCanvasLoadingState({ message }: { message: string }) {
+  return (
+    <main className="flex min-h-[100dvh] flex-col items-center justify-center bg-[#141312] px-4" role="status" aria-label={message}>
+      <span className="font-brand text-2xl font-bold tracking-[-0.6px] text-white" aria-hidden="true">
+        nokta<span className="text-clay-accent">.</span>
+      </span>
+      <span className="mt-4 h-1 w-28 overflow-hidden rounded-full bg-white/15" aria-hidden="true">
+        <span className="block h-full w-1/2 animate-pulse rounded-full bg-clay-accent" />
+      </span>
+      <span className="sr-only">{message}</span>
     </main>
   );
 }

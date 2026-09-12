@@ -1,4 +1,4 @@
-import { RecommendCanvas, RecommendHeader } from "@/components/recommendations/flow/RecommendChrome";
+import { RecommendCanvas, RecommendError, RecommendHeader, RecommendLoading } from "@/components/recommendations/flow/RecommendChrome";
 import { RecommendEntryScreen } from "@/components/recommendations/flow/RecommendEntryScreen";
 import { RecommendNoMatchScreen } from "@/components/recommendations/flow/RecommendNoMatchScreen";
 import { RecommendQuestionScreen } from "@/components/recommendations/flow/RecommendQuestionScreen";
@@ -6,8 +6,6 @@ import { RecommendResultsScreen } from "@/components/recommendations/flow/Recomm
 import { RecommendSavedScreen } from "@/components/recommendations/flow/RecommendSavedScreen";
 import { RecommendShareScreen } from "@/components/recommendations/flow/RecommendShareScreen";
 import { PageMeta } from "@/components/seo/PageMeta";
-import { ErrorState } from "@/components/state/ErrorState";
-import { LoadingState } from "@/components/state/LoadingState";
 import { useAuth } from "@/context/AuthContext";
 import { useAppLocation } from "@/context/AppLocationContext";
 import { useVenuePreferences } from "@/context/VenuePreferencesContext";
@@ -126,9 +124,7 @@ export function RecommendPage() {
     return (
       <RecommendCanvas>
         <RecommendHeader progress="0%" stepLabel="Start" />
-        <div className="relative z-10 flex flex-1 items-center justify-center px-6 pb-16">
-          <LoadingState message="Loading venues..." />
-        </div>
+        <RecommendLoading message="Loading venues..." />
       </RecommendCanvas>
     );
   }
@@ -137,9 +133,7 @@ export function RecommendPage() {
     return (
       <RecommendCanvas>
         <RecommendHeader progress="0%" stepLabel="Start" />
-        <div className="relative z-10 flex flex-1 items-center justify-center px-6 pb-16">
-          <ErrorState message={error} />
-        </div>
+        <RecommendError message={error} />
       </RecommendCanvas>
     );
   }
