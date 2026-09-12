@@ -1,5 +1,6 @@
-import { createContext, type PropsWithChildren, useCallback, useContext, useEffect, useMemo, useState } from "react";
+import { createContext, type PropsWithChildren, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
 import type { User } from "@supabase/supabase-js";
+import { identifyPostHogUser, resetPostHogUser } from "@/lib/posthogClient";
 import { supabase, supabaseConfigError } from "@/lib/supabase";
 
 interface AuthContextValue {
@@ -68,6 +69,35 @@ export function AuthProvider({ children }: PropsWithChildren) {
       subscription.unsubscribe();
     };
   }, []);
+
+  /**
+   * Driven by the resolved session rather than the signIn/signOut callbacks, so a
+   * user returning with a stored session is identified too, not only one who just
+   * typed a password.
+   *
+   * Reset fires only on a real sign-out — a transition from identified to not.
+   * Calling it whenever `user` is null would throw away the anonymous id of every
+   * signed-out visitor on each page load, which is the history identify() exists
+   * to stitch together.
+   */
+  const identifiedUserId = useRef<string | null>(null);
+
+  useEffect(() => {
+    if (isLoading) return;
+
+    if (user) {
+      if (identifiedUserId.current !== user.id) {
+        identifyPostHogUser(user.id, user.email);
+        identifiedUserId.current = user.id;
+      }
+      return;
+    }
+
+    if (identifiedUserId.current) {
+      resetPostHogUser();
+      identifiedUserId.current = null;
+    }
+  }, [user, isLoading]);
 
   const signIn = useCallback(async (email: string, password: string) => {
     const client = ensureSupabase();
