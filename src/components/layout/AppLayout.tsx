@@ -6,7 +6,9 @@ import { Outlet, useLocation } from "react-router-dom";
 
 export function AppLayout() {
   const { pathname } = useLocation();
-  const isWorkspaceRoute = pathname.startsWith("/admin") || pathname.startsWith("/owner");
+  // Workspaces bring their own shell; the recommend flow and shared shortlists own
+  // the whole viewport with their own dark chrome. Both would fight the site header.
+  const hideSiteChrome = pathname.startsWith("/admin") || pathname.startsWith("/owner") || pathname === "/recommend" || pathname.startsWith("/s/");
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0 });
@@ -15,9 +17,9 @@ export function AppLayout() {
   return (
     <>
       <RouteAnalytics />
-      {isWorkspaceRoute ? null : <Header />}
+      {hideSiteChrome ? null : <Header />}
       <Outlet />
-      {isWorkspaceRoute ? null : <Footer />}
+      {hideSiteChrome ? null : <Footer />}
     </>
   );
 }
