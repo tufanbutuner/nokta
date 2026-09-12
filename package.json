@@ -15,7 +15,8 @@
     "seed:venues:london": "tsx scripts/seed-real-venues.ts data/london-venues.generated.json",
     "seed:venues:birmingham": "tsx scripts/seed-real-venues.ts data/birmingham-venues.seed.json",
     "seed:venues:manchester": "tsx scripts/seed-real-venues.ts data/manchester-venues.seed.json",
-    "seed:venues:leicester": "tsx scripts/seed-real-venues.ts data/leicester-venues.seed.json"
+    "seed:venues:leicester": "tsx scripts/seed-real-venues.ts data/leicester-venues.seed.json",
+    "check:metadata": "tsx scripts/check-metadata-parity.ts"
   },
   "dependencies": {
     "@radix-ui/react-select": "^2.3.7",
@@ -26,6 +27,7 @@
     "@tanstack/react-query": "^5.102.8",
     "@types/leaflet": "^1.9.22",
     "@vercel/analytics": "^2.0.1",
+    "@vercel/edge": "^1.3.3",
     "@vercel/speed-insights": "^2.0.0",
     "@vitejs/plugin-react": "6.1.0",
     "class-variance-authority": "0.7.1",

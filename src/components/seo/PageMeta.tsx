@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { brandConfig } from "@/config/brand";
+import { DEFAULT_OG_IMAGE } from "@/lib/pageMetadata";
 
 interface PageMetaProps {
   title: string;
@@ -13,7 +14,8 @@ const FALLBACK_SITE_URL = "https://nokta.uk";
 export function PageMeta({ title, description, canonicalPath, imageUrl }: PageMetaProps) {
   const siteUrl = getSiteUrl();
   const canonicalUrl = canonicalPath ? new URL(canonicalPath, siteUrl).toString() : undefined;
-  const image = imageUrl ? new URL(imageUrl, siteUrl).toString() : undefined;
+  // Always emit an image: a card with none renders as a small text-only preview.
+  const image = new URL(imageUrl ?? DEFAULT_OG_IMAGE, siteUrl).toString();
 
   return (
     <Helmet>
@@ -24,10 +26,12 @@ export function PageMeta({ title, description, canonicalPath, imageUrl }: PageMe
       <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />
       {canonicalUrl ? <meta property="og:url" content={canonicalUrl} /> : null}
-      {image ? <meta property="og:image" content={image} /> : null}
-      <meta name="twitter:card" content={image ? "summary_large_image" : "summary"} />
+      <meta property="og:image" content={image} />
+      <meta property="og:site_name" content={brandConfig.appName} />
+      <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={image} />
       <meta name="application-name" content={brandConfig.appName} />
     </Helmet>
   );
