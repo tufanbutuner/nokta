@@ -69,5 +69,6 @@ export interface VenueAnalyticsEventRow {
   anonymous_user_id: string | null;
   session_id: string | null;
   metadata: Record<string, unknown>;
+  environment: "production" | "preview" | "development";
   created_at: string;
 }
