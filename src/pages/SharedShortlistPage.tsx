@@ -1,8 +1,6 @@
-import { RecommendCanvas, RecommendHeader, OUTLINE_BUTTON, PRIMARY_BUTTON, RecommendEyebrow } from "@/components/recommendations/flow/RecommendChrome";
+import { OUTLINE_BUTTON, PRIMARY_BUTTON, RecommendCanvas, RecommendError, RecommendEyebrow, RecommendHeader, RecommendLoading } from "@/components/recommendations/flow/RecommendChrome";
 import { ROLE_COLORS, roleLabel, formatPickMeta } from "@/components/recommendations/flow/recommendPickMeta";
 import { PageMeta } from "@/components/seo/PageMeta";
-import { ErrorState } from "@/components/state/ErrorState";
-import { LoadingState } from "@/components/state/LoadingState";
 import { useVenues } from "@/hooks/useVenues";
 import { summariseAnswers } from "@/lib/recommendFlow";
 import { cn } from "@/lib/utils";
@@ -55,16 +53,13 @@ export function SharedShortlistPage() {
 
       <section className="relative z-10 flex flex-1 flex-col gap-[clamp(14px,2cqi,22px)] px-[clamp(18px,3.4cqi,40px)] pb-[clamp(18px,2.6cqi,30px)] pt-[clamp(8px,2cqi,20px)] motion-safe:animate-[rdFade_.3s_both]">
         {isLoading || venuesLoading ? (
-          <div className="flex flex-1 items-center justify-center">
-            <LoadingState message="Opening this shortlist..." />
-          </div>
+          <RecommendLoading message="Opening this shortlist..." />
         ) : error || !shortlist ? (
-          <div className="flex flex-1 flex-col items-center justify-center gap-5">
-            <ErrorState message={error ?? "This link has expired."} />
+          <RecommendError message={error ?? "This link has expired."}>
             <Link to="/recommend" className={cn(PRIMARY_BUTTON, "h-11 px-5 text-[14px]")}>
               Find your own three
             </Link>
-          </div>
+          </RecommendError>
         ) : (
           <>
             <div className="grid gap-2.5">
