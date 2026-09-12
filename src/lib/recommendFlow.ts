@@ -20,6 +20,20 @@ const OCCASION_LABELS: Record<RecommendationOccasion, string> = {
   "late-night": "a late one",
 };
 
+/**
+ * Titles need the bare noun, not the sentence form: OCCASION_LABELS reads
+ * "a date" so it fits "works for a date", which turns a shortlist name into
+ * "Quiet a date". These drop the article and pair cleanly after a vibe.
+ */
+const OCCASION_NOUNS: Record<RecommendationOccasion, string> = {
+  solo: "solo",
+  date: "date",
+  "small-group": "small group",
+  "big-group": "big group",
+  football: "match day",
+  "late-night": "late one",
+};
+
 const BUDGET_LABELS: Record<string, string> = {
   1: "under £20",
   2: "£20–30",
@@ -310,7 +324,7 @@ export function describeConflict(answers: RecommendAnswers, city: string): strin
 
 /** Auto-generated shortlist name from the answers, e.g. "Quiet date, £30–40". */
 export function buildShortlistName(answers: RecommendAnswers): string {
-  const lead = [answers.vibes[0] ? formatVibe(answers.vibes[0]) : null, answers.occasion ? formatOccasion(answers.occasion) : null].filter(Boolean).join(" ");
+  const lead = [answers.vibes[0] ? formatVibe(answers.vibes[0]).toLowerCase() : null, answers.occasion ? OCCASION_NOUNS[answers.occasion] : null].filter(Boolean).join(" ");
   const budget = answers.budget && answers.budget !== "any" ? formatBudget(answers.budget) : null;
   const name = [lead || "Tonight", budget].filter(Boolean).join(", ");
   return `${name.charAt(0).toUpperCase()}${name.slice(1)}`;
