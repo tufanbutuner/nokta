@@ -9,14 +9,22 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
+        // Match on the package directory, not a bare substring of the whole path:
+        // "leaflet" also appears inside "react-leaflet", and a home directory or
+        // dependency path containing "react" would otherwise land in vendor-react.
+        // Leaflet is deliberately left unnamed so it stays inside the lazy route
+        // chunks that use it, instead of being hoisted into the entry's preload
+        // graph and making its stylesheet render-blocking on every page.
         manualChunks(id) {
-          if (!id.includes("node_modules")) return;
-          if (id.includes("react") || id.includes("scheduler")) return "vendor-react";
-          if (id.includes("@supabase")) return "vendor-supabase";
-          if (id.includes("leaflet")) return "vendor-map";
-          if (id.includes("posthog") || id.includes("@vercel")) return "vendor-analytics";
-          if (id.includes("@radix-ui") || id.includes("lucide-react")) return "vendor-ui";
-          return "vendor";
+          const match = id.match(/node_modules\/(?:\.pnpm\/)?((?:@[^/]+\/)?[^/]+)/);
+          if (!match) return;
+          const pkg = match[1];
+
+          if (pkg === "react" || pkg === "react-dom" || pkg === "scheduler") return "vendor-react";
+          if (pkg.startsWith("@supabase/")) return "vendor-supabase";
+          if (pkg === "posthog-js" || pkg.startsWith("@vercel/")) return "vendor-analytics";
+          if (pkg.startsWith("@radix-ui/") || pkg === "lucide-react") return "vendor-ui";
+          return;
         },
       },
     },
