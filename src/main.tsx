@@ -8,7 +8,6 @@ import { AppErrorBoundary } from "@/components/state/AppErrorBoundary";
 import { initPostHog } from "@/lib/posthogClient";
 import { queryClient } from "@/lib/queryClient";
 import "@/styles.css";
-import "leaflet/dist/leaflet.css";
 import { QueryClientProvider } from "@tanstack/react-query";
 import React from "react";
 import ReactDOM from "react-dom/client";

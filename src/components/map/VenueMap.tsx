@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import type { ReactNode } from "react";
 import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
 import L from "leaflet";
+// Scoped to the map so pages without one do not pay for this stylesheet.
+import "leaflet/dist/leaflet.css";
 import { Button } from "@/components/ui/button";
 import { VenueMapMarker } from "@/components/map/VenueMapMarker";
 import { DEFAULT_CITY } from "@/lib/cities";
