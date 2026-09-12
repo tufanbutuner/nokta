@@ -1,3 +1,4 @@
+import { getAnalyticsEnvironment } from "@/lib/analyticsEnvironment";
 import { getAnonymousUserId, getSessionId } from "@/lib/analyticsIdentity";
 import { sanitiseAnalyticsMetadata } from "@/lib/analyticsSanitise";
 import { supabase } from "@/lib/supabase";
@@ -18,6 +19,8 @@ export async function insertVenueAnalyticsEvent(input: VenueAnalyticsEventInput)
     anonymous_user_id: getAnonymousUserId(),
     session_id: getSessionId(),
     metadata: sanitiseAnalyticsMetadata(input.metadata ?? {}),
+    // Stamped on write so reporting can count real traffic only.
+    environment: getAnalyticsEnvironment(),
   });
 
   if (error && import.meta.env.DEV) {

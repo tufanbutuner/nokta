@@ -1,3 +1,4 @@
+import type { AnalyticsEnvironment } from "@/lib/analyticsEnvironment";
 import { supabase, supabaseConfigError } from "@/lib/supabase";
 import type { VenueAnalyticsEventName, VenueAnalyticsEventRow, VenueAnalyticsSummary } from "@/types/analytics";
 
@@ -6,6 +7,12 @@ export interface AdminAnalyticsFilters {
   venueId?: string | null;
   from: string;
   to: string;
+  /**
+   * Which environment's traffic to report on. Defaults to production, so no
+   * caller can accidentally include local or preview browsing in a venue's
+   * numbers by forgetting to pass it.
+   */
+  environment?: AnalyticsEnvironment | "all";
 }
 
 export interface AdminAnalyticsDashboardSummary {
@@ -43,6 +50,9 @@ export async function getAdminVenueAnalyticsEvents(filters: AdminAnalyticsFilter
 
   if (filters.city) query = query.eq("city", filters.city);
   if (filters.venueId) query = query.eq("venue_id", filters.venueId);
+
+  const environment = filters.environment ?? "production";
+  if (environment !== "all") query = query.eq("environment", environment);
 
   const { data, error } = await query;
   if (error) throw new Error(`Could not load venue analytics: ${error.message}`);
