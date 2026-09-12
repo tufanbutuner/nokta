@@ -38,8 +38,17 @@ set environment = 'development'
 where created_at < now();
 
 -- The daily rollup gains the column so callers can group or filter by it.
+--
+-- Dropped and recreated rather than replaced: CREATE OR REPLACE VIEW can only
+-- append columns, so inserting `environment` ahead of `event_date` reads to
+-- Postgres as renaming the fourth column and fails with 42P16. Nothing selects
+-- from this view yet, so dropping it is safe and keeps the column order
+-- grouped with the other dimensions.
+--
 -- security_invoker stays on: the view must not widen who can read these rows.
-create or replace view public.venue_analytics_daily
+drop view if exists public.venue_analytics_daily;
+
+create view public.venue_analytics_daily
 with (security_invoker = true) as
 select
   venue_id,
