@@ -443,3 +443,34 @@ export interface VenueUpdateRequestRow {
   created_at: string;
   updated_at: string;
 }
+
+export interface RecommendShortlistRow {
+  id: string;
+  user_id: string;
+  name: string;
+  city: string;
+  occasion: string | null;
+  vibes: string[];
+  budget: string | null;
+  distance: string | null;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface RecommendShortlistPickRow {
+  id: string;
+  shortlist_id: string;
+  venue_id: string;
+  role: "safe" | "wildcard" | "closest";
+  match_label: string;
+  reason: string;
+  sort_order: number;
+  created_at: string;
+}
+
+export interface RecommendShareCodeRow {
+  code: string;
+  shortlist_id: string;
+  created_by: string;
+  created_at: string;
+}

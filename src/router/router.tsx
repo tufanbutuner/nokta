@@ -42,6 +42,7 @@ const OwnerRequestPromotedOfferPage = lazyPage(() => import("@/pages/owner/Owner
 const PrivacyPage = lazyPage(() => import("@/pages/PrivacyPage"), "PrivacyPage");
 const PromotedOfferPreviewPage = lazyPage(() => import("@/pages/PromotedOfferPreviewPage"), "PromotedOfferPreviewPage");
 const RecommendPage = lazyPage(() => import("@/pages/RecommendPage"), "RecommendPage");
+const SharedShortlistPage = lazyPage(() => import("@/pages/SharedShortlistPage"), "SharedShortlistPage");
 const RequestBookingPage = lazyPage(() => import("@/pages/RequestBookingPage"), "RequestBookingPage");
 const SavedPage = lazyPage(() => import("@/pages/SavedPage"), "SavedPage");
 const SignInPage = lazyPage(() => import("@/pages/SignInPage"), "SignInPage");
@@ -72,6 +73,7 @@ export const router = createBrowserRouter([
       { path: "/for-venues", element: routeElement(<ForVenuesPage />) },
       { path: "/cities/:citySlug", element: routeElement(<CityPage />) },
       { path: "/recommend", element: routeElement(<RecommendPage />) },
+      { path: "/s/:code", element: routeElement(<SharedShortlistPage />) },
       { path: "/saved", element: routeElement(<SavedPage />) },
       { path: "/suggest", element: routeElement(<SuggestVenuePage />) },
       { path: "/privacy", element: routeElement(<PrivacyPage />) },
