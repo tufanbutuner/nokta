@@ -17,8 +17,10 @@ const VIBE_LABELS = new Map(VIBE_OPTIONS.map((option) => [option.value, option.l
 
 /** Venue name with the category as a label beside it, rather than as a chip row below. */
 export function VenueTitleRow({ venue }: { venue: Venue }) {
+  // Centred, not baseline-aligned: the label is a bordered pill, so matching text
+  // baselines hangs its box below the name rather than beside it.
   return (
-    <div className="flex flex-wrap items-baseline gap-x-3 gap-y-2">
+    <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
       <h1 className="min-w-0 text-[28px] font-semibold leading-[1.05] tracking-[-0.6px] text-nokta-ink sm:text-[34px]">{venue.name}</h1>
       <span className="inline-flex h-6 shrink-0 items-center rounded-md border border-nokta-border bg-white px-2.5 text-[12.5px] font-semibold text-nokta-ink-subtle">{formatVenuePrimaryCategory(venue.primaryCategory)}</span>
     </div>

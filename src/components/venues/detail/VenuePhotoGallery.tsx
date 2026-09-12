@@ -22,9 +22,11 @@ export function PhotoGallery({ venue, images, onOpenImage }: { venue: Venue; ima
         <HeroPhotoCell image={stripImages[2]} venue={venue} index={2} onOpenImage={onOpenImage} />
         <div className="relative min-h-0">
           <HeroPhotoCell image={stripImages[3]} venue={venue} index={3} onOpenImage={onOpenImage} />
-          <button type="button" className="absolute bottom-2.5 right-2.5 inline-flex min-h-[34px] max-w-[calc(100%-1.25rem)] items-center gap-[7px] whitespace-nowrap rounded-lg bg-white px-3 text-[12.5px] font-semibold text-nokta-ink shadow-sm transition-colors hover:bg-nokta-hover" onClick={() => onOpenImage(0)}>
-            <Camera className="h-3.5 w-3.5" />
-            All {galleryImages.length} photos
+          <button type="button" aria-label={`View all ${galleryImages.length} photos`} className="absolute bottom-2.5 right-2.5 inline-flex min-h-[34px] max-w-[calc(100%-1.25rem)] items-center gap-[7px] whitespace-nowrap rounded-lg bg-white px-3 text-[12.5px] font-semibold text-nokta-ink shadow-sm transition-colors hover:bg-nokta-hover" onClick={() => onOpenImage(0)}>
+            <Camera className="h-3.5 w-3.5 shrink-0" />
+            {/* The cell is narrow on phones, so drop to the bare count rather than clip the label. */}
+            <span className="hidden sm:inline">All {galleryImages.length} photos</span>
+            <span className="sm:hidden">{galleryImages.length}</span>
           </button>
         </div>
       </div>
