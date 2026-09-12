@@ -76,6 +76,19 @@ the existing code rather than minting a second.
 The shared view at `/s/{code}` deliberately omits distance — the sender's
 location is never part of what gets shared.
 
+### RLS and recursion
+
+Shortlists and share codes each need to consult the other: a share code's write
+check asks "does this user own that shortlist?", and a shortlist's public read
+asks "is there a share code for it?". Expressed as direct subqueries, each one
+re-enters the other table's policies and Postgres raises
+`42P17: infinite recursion detected in policy`, which breaks sharing outright.
+
+Both checks therefore go through `security definer` functions
+(`owns_recommend_shortlist`, `recommend_shortlist_is_shared`). The inner read
+runs with the definer's rights, so it does not re-enter the caller's policies.
+Both return a boolean and never row data.
+
 ## URL as state
 
 The flow's whole position lives in the query string (`?screen=q&step=2&…`), so
