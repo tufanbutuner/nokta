@@ -114,6 +114,24 @@ for (const [label, appFn, edgeFn] of [
   }
 }
 
+/**
+ * The venue body links to a city page by slugging the venue's city name, so the
+ * edge's copy of createCitySlug must match the app's. A divergence would produce
+ * internal links that 404 for crawlers only.
+ */
+function extractSlugBody(source: string, fn: string): string {
+  const start = source.indexOf(fn);
+  if (start === -1) throw new Error(`Could not find ${fn}`);
+  return source
+    .slice(start, source.indexOf("\n}", start))
+    .replace(/^.*?\{/s, "")
+    .replace(/\s+/g, "");
+}
+
+if (extractSlugBody(readFileSync("src/lib/cities.ts", "utf8"), "export function createCitySlug") !== extractSlugBody(edgeMeta, "function createCitySlug")) {
+  problems.push("createCitySlug differs between src/lib/cities.ts and middleware.ts — venue body city links would not match the app's routes");
+}
+
 function extractCities(source: string, marker: string): string[] {
   const start = source.indexOf(marker);
   if (start === -1) throw new Error(`Could not find ${marker}`);
