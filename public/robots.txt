@@ -7,4 +7,4 @@ Disallow: /owner/
 Disallow: /booking-status/
 Disallow: /saved
 
-Sitemap: https://nokta.uk/sitemap.xml
+Sitemap: https://www.nokta.uk/sitemap.xml
