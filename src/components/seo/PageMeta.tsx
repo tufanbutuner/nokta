@@ -9,7 +9,14 @@ interface PageMetaProps {
   imageUrl?: string;
 }
 
-const FALLBACK_SITE_URL = "https://nokta.uk";
+/**
+ * The apex 308-redirects to www, so www is the canonical host — the one the edge
+ * middleware puts in every crawler canonical, and the one the sitemap lists. When
+ * this fell back to the apex, a page rendered by the client claimed an apex
+ * canonical while the same page served to a crawler claimed www, which is a split
+ * signal for the same URL.
+ */
+const FALLBACK_SITE_URL = "https://www.nokta.uk";
 
 export function PageMeta({ title, description, canonicalPath, imageUrl }: PageMetaProps) {
   const siteUrl = getSiteUrl();
