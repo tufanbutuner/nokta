@@ -121,6 +121,14 @@ function inactiveCityMetadata(cityName: string): PageMetadata {
   };
 }
 
+/** Mirrors getVenuePageMetadata in src/lib/pageMetadata.ts. */
+function venueMetadata(venue: { name: string; city: string; area: string; description?: string | null }): PageMetadata {
+  return {
+    title: `${venue.name} in ${venue.city} | nokta`,
+    description: venue.description?.trim() || `View opening hours, photos, features and booking details for ${venue.name} in ${venue.area}, ${venue.city}.`,
+  };
+}
+
 function escapeHtml(value: string): string {
   return value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 }
@@ -283,8 +291,7 @@ async function getVenueMetadata(slug: string, url: string): Promise<VenueLookup>
     return {
       status: "found",
       metadata: {
-        title: `${venue.name} in ${venue.city} | nokta`,
-        description: venue.description?.trim() || `View opening hours, photos, features and booking details for ${venue.name} in ${venue.area}, ${venue.city}.`,
+        ...venueMetadata(venue),
         image: venue.images?.[0],
         jsonLd: buildVenueJsonLd(venue, url),
       },
