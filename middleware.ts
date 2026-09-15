@@ -200,6 +200,27 @@ function buildOpeningHoursSpecification(hours: VenueRow["opening_hours"]) {
  * no review count behind it, and Google requires the count — publishing one without
  * it, or with a fabricated count, is a structured-data violation.
  */
+/**
+ * schema.org expects an ISO 3166-1 alpha-2 code, but the venues table stores a
+ * display name ("United Kingdom"). Anything unrecognised is passed through rather
+ * than forced to GB — a wrong code is worse than an unmapped name.
+ */
+const COUNTRY_CODES: Record<string, string> = {
+  "united kingdom": "GB",
+  england: "GB",
+  scotland: "GB",
+  wales: "GB",
+  "northern ireland": "GB",
+  uk: "GB",
+  gb: "GB",
+};
+
+function countryCode(country: string | null): string {
+  const value = country?.trim();
+  if (!value) return "GB";
+  return COUNTRY_CODES[value.toLowerCase()] ?? value;
+}
+
 function buildVenueJsonLd(venue: VenueRow, url: string): string {
   const images = (venue.images ?? []).filter(Boolean).map(absoluteUrl);
   const sameAs = [venue.website, venue.instagram].map((value) => value?.trim()).filter((value): value is string => Boolean(value));
@@ -225,7 +246,7 @@ function buildVenueJsonLd(venue: VenueRow, url: string): string {
       addressLocality: venue.city,
       ...(venue.area?.trim() ? { addressRegion: venue.area.trim() } : {}),
       ...(venue.postcode?.trim() ? { postalCode: venue.postcode.trim() } : {}),
-      addressCountry: venue.country?.trim() || "GB",
+      addressCountry: countryCode(venue.country),
     };
   }
 
