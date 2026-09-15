@@ -32,7 +32,21 @@ interface PageMetadata {
   title: string;
   description: string;
   image?: string;
+  /** Serialised schema.org JSON-LD for this page, if it has any. */
+  jsonLd?: string;
 }
+
+/**
+ * A venue lookup has three outcomes, and they must not be collapsed:
+ * "found" serves the venue, "missing" is a real 404, and "unavailable" (network
+ * error, bad credentials, timeout) falls back to a 200 with site defaults. Treating
+ * an outage as "missing" would 404 a live venue and have Google drop it from the
+ * index over a blip.
+ */
+type VenueLookup =
+  | { status: "found"; metadata: PageMetadata }
+  | { status: "missing" }
+  | { status: "unavailable" };
 
 const SITE_FALLBACK: PageMetadata = {
   title: `${BRAND} - Discover Social Venues Across the UK`,
@@ -80,69 +94,220 @@ function absoluteUrl(path: string): string {
   return path.startsWith("http") ? path : `${SITE_URL}${path.startsWith("/") ? path : `/${path}`}`;
 }
 
+interface VenueRow {
+  name: string;
+  slug: string;
+  city: string;
+  area: string;
+  address: string | null;
+  postcode: string | null;
+  country: string | null;
+  description: string | null;
+  images: string[] | null;
+  latitude: number | null;
+  longitude: number | null;
+  price_level: number | null;
+  phone: string | null;
+  website: string | null;
+  instagram: string | null;
+  business_status: string | null;
+  opening_hours: { day: string; open: string; close: string }[] | null;
+}
+
+const VENUE_COLUMNS =
+  "name,slug,city,area,address,postcode,country,description,images,latitude,longitude,price_level,phone,website,instagram,business_status,opening_hours";
+
+const SCHEMA_DAYS: Record<string, string> = {
+  monday: "Monday",
+  tuesday: "Tuesday",
+  wednesday: "Wednesday",
+  thursday: "Thursday",
+  friday: "Friday",
+  saturday: "Saturday",
+  sunday: "Sunday",
+};
+
+/**
+ * `</script>` anywhere inside the JSON would close the tag early and let the rest
+ * of the value be parsed as markup, so `<` is escaped. JSON.stringify handles the
+ * quoting; this covers the one case it does not.
+ */
+function serialiseJsonLd(value: unknown): string {
+  return JSON.stringify(value).replace(/</g, "\\u003c");
+}
+
+/** Unrecognised or half-filled day entries are dropped rather than guessed at. */
+function buildOpeningHoursSpecification(hours: VenueRow["opening_hours"]) {
+  if (!hours?.length) return undefined;
+
+  const specs = hours
+    .map((entry) => {
+      const day = SCHEMA_DAYS[entry.day?.trim().toLowerCase() ?? ""];
+      if (!day || !entry.open?.trim() || !entry.close?.trim()) return null;
+      return {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: `https://schema.org/${day}`,
+        opens: entry.open.trim(),
+        closes: entry.close.trim(),
+      };
+    })
+    .filter((spec): spec is NonNullable<typeof spec> => spec !== null);
+
+  return specs.length ? specs : undefined;
+}
+
+/**
+ * A `Restaurant` node for the venue. Only fields the record actually has are
+ * emitted: Google treats empty or placeholder values as a quality problem, and a
+ * partial-but-true node is worth more than a complete-looking invented one.
+ *
+ * `aggregateRating` is deliberately absent. The rating column is a bare number with
+ * no review count behind it, and Google requires the count — publishing one without
+ * it, or with a fabricated count, is a structured-data violation.
+ */
+function buildVenueJsonLd(venue: VenueRow, url: string): string {
+  const images = (venue.images ?? []).filter(Boolean).map(absoluteUrl);
+  const sameAs = [venue.website, venue.instagram].map((value) => value?.trim()).filter((value): value is string => Boolean(value));
+
+  const node: Record<string, unknown> = {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "@id": url,
+    name: venue.name,
+    url,
+  };
+
+  if (venue.description?.trim()) node.description = venue.description.trim();
+  if (images.length) node.image = images;
+  if (venue.phone?.trim()) node.telephone = venue.phone.trim();
+  if (sameAs.length) node.sameAs = sameAs;
+  if (venue.price_level) node.priceRange = "£".repeat(Math.min(Math.max(venue.price_level, 1), 4));
+
+  if (venue.address?.trim() || venue.postcode?.trim()) {
+    node.address = {
+      "@type": "PostalAddress",
+      ...(venue.address?.trim() ? { streetAddress: venue.address.trim() } : {}),
+      addressLocality: venue.city,
+      ...(venue.area?.trim() ? { addressRegion: venue.area.trim() } : {}),
+      ...(venue.postcode?.trim() ? { postalCode: venue.postcode.trim() } : {}),
+      addressCountry: venue.country?.trim() || "GB",
+    };
+  }
+
+  if (typeof venue.latitude === "number" && typeof venue.longitude === "number") {
+    node.geo = { "@type": "GeoCoordinates", latitude: venue.latitude, longitude: venue.longitude };
+  }
+
+  const openingHours = buildOpeningHoursSpecification(venue.opening_hours);
+  if (openingHours) node.openingHoursSpecification = openingHours;
+
+  return serialiseJsonLd(node);
+}
+
 /** A venue's own metadata, read straight from the public venues table. */
-async function getVenueMetadata(slug: string): Promise<PageMetadata | null> {
+async function getVenueMetadata(slug: string, url: string): Promise<VenueLookup> {
   const supabaseUrl = process.env.VITE_SUPABASE_URL;
   const supabaseKey = process.env.VITE_SUPABASE_ANON_KEY || process.env.VITE_SUPABASE_PUBLISHABLE_KEY;
-  if (!supabaseUrl || !supabaseKey) return null;
+  if (!supabaseUrl || !supabaseKey) return { status: "unavailable" };
 
   try {
-    const query = `${supabaseUrl}/rest/v1/venues?slug=eq.${encodeURIComponent(slug)}&select=name,city,area,description,images&limit=1`;
+    const query = `${supabaseUrl}/rest/v1/venues?slug=eq.${encodeURIComponent(slug)}&select=${VENUE_COLUMNS}&limit=1`;
     const response = await fetch(query, {
       headers: { apikey: supabaseKey, Authorization: `Bearer ${supabaseKey}` },
       signal: AbortSignal.timeout(2000),
     });
-    if (!response.ok) return null;
+    if (!response.ok) return { status: "unavailable" };
 
-    const rows = (await response.json()) as { name: string; city: string; area: string; description: string | null; images: string[] | null }[];
+    const rows = (await response.json()) as VenueRow[];
     const venue = rows[0];
-    if (!venue) return null;
+    // An empty result from a healthy query is the only outcome that genuinely means
+    // "no such venue" — every failure above is an outage and must not become a 404.
+    if (!venue) return { status: "missing" };
 
     return {
-      title: `${venue.name} in ${venue.city} | nokta`,
-      description: venue.description?.trim() || `View opening hours, photos, features and booking details for ${venue.name} in ${venue.area}, ${venue.city}.`,
-      image: venue.images?.[0],
+      status: "found",
+      metadata: {
+        title: `${venue.name} in ${venue.city} | nokta`,
+        description: venue.description?.trim() || `View opening hours, photos, features and booking details for ${venue.name} in ${venue.area}, ${venue.city}.`,
+        image: venue.images?.[0],
+        jsonLd: buildVenueJsonLd(venue, url),
+      },
     };
   } catch {
     // A slow or failing lookup must never block the page: fall back to site defaults.
-    return null;
+    return { status: "unavailable" };
   }
 }
 
-async function getMetadata(pathname: string): Promise<PageMetadata> {
+interface ResolvedPage {
+  metadata: PageMetadata;
+  /**
+   * True only for a venue slug the database confirmed does not exist. The response
+   * is then served with a 404 so Google drops the URL instead of indexing a shell
+   * page carrying generic site copy — a soft 404.
+   */
+  notFound: boolean;
+}
+
+/** Site-wide identity, attached to the pages whose content is fixed. */
+function buildSiteJsonLd(): string {
+  return serialiseJsonLd({
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${SITE_URL}/#website`,
+    name: BRAND,
+    url: SITE_URL,
+    description: SITE_FALLBACK.description,
+  });
+}
+
+async function getMetadata(pathname: string, url: string): Promise<ResolvedPage> {
   const normalised = pathname !== "/" && pathname.endsWith("/") ? pathname.slice(0, -1) : pathname;
 
   const staticPage = STATIC_PAGES[normalised];
-  if (staticPage) return staticPage;
+  if (staticPage) return { metadata: { ...staticPage, jsonLd: buildSiteJsonLd() }, notFound: false };
 
   const venueMatch = normalised.match(/^\/venues\/([^/]+)$/);
-  if (venueMatch) return (await getVenueMetadata(venueMatch[1])) ?? SITE_FALLBACK;
+  if (venueMatch) {
+    const lookup = await getVenueMetadata(venueMatch[1], url);
+    if (lookup.status === "found") return { metadata: lookup.metadata, notFound: false };
+    // An outage keeps the old behaviour: site defaults, still a 200.
+    return { metadata: SITE_FALLBACK, notFound: lookup.status === "missing" };
+  }
 
-  return SITE_FALLBACK;
+  return { metadata: SITE_FALLBACK, notFound: false };
 }
 
-function buildTags(metadata: PageMetadata, url: string): string {
+function buildTags(metadata: PageMetadata, url: string, notFound: boolean): string {
+  const usesDefaultImage = !metadata.image;
   const image = absoluteUrl(metadata.image ?? DEFAULT_OG_IMAGE);
   const title = escapeHtml(metadata.title);
   const description = escapeHtml(metadata.description);
 
-  return [
+  const tags = [
     `<title>${title}</title>`,
     `<meta name="description" content="${description}">`,
-    `<link rel="canonical" href="${escapeHtml(url)}">`,
+    // A page served as 404 must not nominate itself as canonical, and should ask
+    // not to be indexed at all.
+    notFound ? `<meta name="robots" content="noindex">` : `<link rel="canonical" href="${escapeHtml(url)}">`,
     `<meta property="og:site_name" content="${BRAND}">`,
     `<meta property="og:type" content="website">`,
     `<meta property="og:title" content="${title}">`,
     `<meta property="og:description" content="${description}">`,
     `<meta property="og:url" content="${escapeHtml(url)}">`,
     `<meta property="og:image" content="${escapeHtml(image)}">`,
-    `<meta property="og:image:width" content="1200">`,
-    `<meta property="og:image:height" content="630">`,
+    // The dimensions are only true of the site's own 1200x630 card. Venue photos
+    // are arbitrary sizes, and declaring the wrong ones makes some clients crop or
+    // skip the image outright.
+    ...(usesDefaultImage ? [`<meta property="og:image:width" content="1200">`, `<meta property="og:image:height" content="630">`] : []),
     `<meta name="twitter:card" content="summary_large_image">`,
     `<meta name="twitter:title" content="${title}">`,
     `<meta name="twitter:description" content="${description}">`,
     `<meta name="twitter:image" content="${escapeHtml(image)}">`,
-  ].join("\n    ");
+    ...(metadata.jsonLd ? [`<script type="application/ld+json">${metadata.jsonLd}</script>`] : []),
+  ];
+
+  return tags.join("\n    ");
 }
 
 export default async function middleware(request: Request) {
@@ -154,18 +319,20 @@ export default async function middleware(request: Request) {
   if (!response.ok) return next();
 
   const html = await response.text();
-  const metadata = await getMetadata(url.pathname);
   const canonical = `${SITE_URL}${url.pathname}`;
+  const { metadata, notFound } = await getMetadata(url.pathname, canonical);
 
   // Replace the placeholder title rather than leaving two in the document.
-  const withTags = html.replace(/<title>.*?<\/title>/i, "").replace("</head>", `  ${buildTags(metadata, canonical)}\n  </head>`);
+  const withTags = html.replace(/<title>.*?<\/title>/i, "").replace("</head>", `  ${buildTags(metadata, canonical, notFound)}\n  </head>`);
 
   return new Response(withTags, {
-    status: 200,
+    status: notFound ? 404 : 200,
     headers: {
       "content-type": "text/html; charset=utf-8",
       // Crawlers re-fetch on every share; caching keeps the Supabase lookup rare.
-      "cache-control": "public, max-age=0, s-maxage=3600, stale-while-revalidate=86400",
+      // A 404 is cached far more briefly: a venue added right after a crawl should
+      // start returning 200 quickly rather than sitting on a stale miss.
+      "cache-control": notFound ? "public, max-age=0, s-maxage=60" : "public, max-age=0, s-maxage=3600, stale-while-revalidate=86400",
       "x-nokta-prerender": "crawler",
     },
   });
