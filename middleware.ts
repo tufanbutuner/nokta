@@ -276,6 +276,43 @@ function buildVenueJsonLd(venue: VenueRow, url: string): string {
   return serialiseJsonLd(node);
 }
 
+/** The venues shown on a city page, for the crawler's listing and internal links. */
+interface CityVenueRow {
+  name: string;
+  slug: string;
+  area: string;
+}
+
+/**
+ * Venues in a city, for the city page's listing.
+ *
+ * Test venues are excluded to match `useVenues`, which hides them from everyone
+ * but admins — a crawler is the most public viewer there is. Permanently closed
+ * venues are excluded too: linking crawlers to a venue that no longer exists
+ * wastes crawl budget and puts a dead page in the index.
+ *
+ * Returns null on any failure. The city page still renders without its listing,
+ * which is worth more than failing the request.
+ */
+async function getCityVenues(cityName: string): Promise<CityVenueRow[] | null> {
+  const supabaseUrl = process.env.VITE_SUPABASE_URL;
+  const supabaseKey = process.env.VITE_SUPABASE_ANON_KEY || process.env.VITE_SUPABASE_PUBLISHABLE_KEY;
+  if (!supabaseUrl || !supabaseKey) return null;
+
+  try {
+    const query = `${supabaseUrl}/rest/v1/venues?city=eq.${encodeURIComponent(cityName)}&is_test=is.false&business_status=neq.permanently-closed&select=name,slug,area&order=name.asc&limit=100`;
+    const response = await fetch(query, {
+      headers: { apikey: supabaseKey, Authorization: `Bearer ${supabaseKey}` },
+      signal: AbortSignal.timeout(2000),
+    });
+    if (!response.ok) return null;
+
+    return (await response.json()) as CityVenueRow[];
+  } catch {
+    return null;
+  }
+}
+
 /** A venue's own metadata, read straight from the public venues table. */
 async function getVenueMetadata(slug: string, url: string): Promise<VenueLookup> {
   const supabaseUrl = process.env.VITE_SUPABASE_URL;
@@ -325,11 +362,11 @@ interface ResolvedPage {
  * A city page is a listing, so it is a `CollectionPage` rather than a place. The
  * breadcrumb is what earns the trail in search results.
  *
- * No `ItemList` of venues is emitted: the middleware does not fetch the city's
- * venues, and an ItemList that does not match what the page shows is worse than
- * none. Add one only alongside a real venue query.
+ * The `ItemList` is emitted only when the venue list was actually fetched, and it
+ * lists exactly what the page body shows. A list that disagrees with the visible
+ * content is a structured-data violation, so a failed lookup emits none.
  */
-function buildCityJsonLd(metadata: PageMetadata, cityName: string, url: string): string {
+function buildCityJsonLd(metadata: PageMetadata, cityName: string, url: string, venues: CityVenueRow[] | null): string {
   return serialiseJsonLd({
     "@context": "https://schema.org",
     "@type": "CollectionPage",
@@ -338,6 +375,20 @@ function buildCityJsonLd(metadata: PageMetadata, cityName: string, url: string):
     description: metadata.description,
     url,
     isPartOf: { "@id": `${SITE_URL}/#website` },
+    ...(venues?.length
+      ? {
+          mainEntity: {
+            "@type": "ItemList",
+            numberOfItems: venues.length,
+            itemListElement: venues.map((venue, index) => ({
+              "@type": "ListItem",
+              position: index + 1,
+              name: venue.name,
+              url: `${SITE_URL}/venues/${venue.slug}`,
+            })),
+          },
+        }
+      : {}),
     breadcrumb: {
       "@type": "BreadcrumbList",
       itemListElement: [
@@ -378,9 +429,19 @@ async function getMetadata(pathname: string, url: string): Promise<ResolvedPage>
     if (!city) return { metadata: { title: "City not found | nokta", description: "This nokta city page is not available." }, notFound: true };
 
     // A roadmap city still gets an indexable page: it ranks for the city name and
-    // routes that demand into the suggest flow.
+    // routes that demand into the suggest flow. It has no venues by definition, so
+    // it is not worth a query.
     const metadata = city.isActive ? cityMetadata(city.name) : inactiveCityMetadata(city.name);
-    return { metadata: { ...metadata, jsonLd: buildCityJsonLd(metadata, city.name, url) }, notFound: false };
+    const venues = city.isActive ? await getCityVenues(city.name) : null;
+
+    return {
+      metadata: {
+        ...metadata,
+        jsonLd: buildCityJsonLd(metadata, city.name, url, venues),
+        body: buildCityBody(city.name, metadata, venues),
+      },
+      notFound: false,
+    };
   }
 
   const venueMatch = normalised.match(/^\/venues\/([^/]+)$/);
@@ -458,6 +519,36 @@ function buildVenueBody(venue: VenueRow): string {
   // An internal link back to the city keeps crawlers moving through the catalogue
   // rather than treating each venue as a dead end.
   parts.push(`<p><a href="/cities/${escapeHtml(createCitySlug(venue.city))}">More venues in ${escapeHtml(venue.city)}</a></p>`);
+
+  return parts.join("\n      ");
+}
+
+/**
+ * Server-rendered body for a city page. The venue list is the point: it gives
+ * crawlers a path from the city page to every venue in that city, which is how
+ * the venue pages get discovered and recrawled.
+ */
+function buildCityBody(cityName: string, metadata: PageMetadata, venues: CityVenueRow[] | null): string {
+  const parts: string[] = [];
+
+  parts.push(`<nav aria-label="Breadcrumb"><a href="/discover">Discover</a> / <span>${escapeHtml(cityName)}</span></nav>`);
+  parts.push(`<h1>Venues in ${escapeHtml(cityName)}</h1>`);
+  parts.push(`<p>${escapeHtml(metadata.description)}</p>`);
+
+  if (venues?.length) {
+    // Name and area only. Each venue's description belongs on its own page, and
+    // repeating all of them here would duplicate that content onto the city page
+    // while adding tens of kilobytes to every crawl.
+    const items = venues
+      .map((venue) => {
+        const area = venue.area?.trim();
+        return `<li><a href="/venues/${escapeHtml(venue.slug)}">${escapeHtml(venue.name)}</a>${area ? ` — ${escapeHtml(area)}` : ""}</li>`;
+      })
+      .join("\n        ");
+    parts.push(`<h2>${venues.length === 1 ? "1 venue" : `${venues.length} venues`} in ${escapeHtml(cityName)}</h2>\n      <ul>\n        ${items}\n      </ul>`);
+  }
+
+  parts.push(`<p><a href="/discover?city=${encodeURIComponent(cityName)}">Open Discover</a></p>`);
 
   return parts.join("\n      ");
 }
