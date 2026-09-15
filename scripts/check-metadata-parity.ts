@@ -132,6 +132,27 @@ if (extractSlugBody(readFileSync("src/lib/cities.ts", "utf8"), "export function 
   problems.push("createCitySlug differs between src/lib/cities.ts and middleware.ts — venue body city links would not match the app's routes");
 }
 
+/**
+ * The canonical host is written down in four places: the middleware's SITE_URL,
+ * PageMeta's fallback, the sitemap generator's default, and robots.txt. They must
+ * agree. When PageMeta fell back to the apex while the middleware used www, the
+ * same page claimed one canonical to a crawler and a different one to a renderer —
+ * a split signal that is invisible unless both are compared.
+ */
+const CANONICAL_HOST = "https://www.nokta.uk";
+const hostSources: [string, string, string][] = [
+  ["middleware.ts SITE_URL", edgeMeta, 'const SITE_URL = "([^"]+)"'],
+  ["PageMeta.tsx FALLBACK_SITE_URL", readFileSync("src/components/seo/PageMeta.tsx", "utf8"), 'const FALLBACK_SITE_URL = "([^"]+)"'],
+  ["generate-sitemap.ts default", readFileSync("scripts/generate-sitemap.ts", "utf8"), '\\|\\| "(https://[^"]+)"'],
+  ["robots.txt Sitemap", readFileSync("public/robots.txt", "utf8"), "Sitemap: (https?://[^/\\s]+)"],
+];
+
+for (const [label, source, pattern] of hostSources) {
+  const found = source.match(new RegExp(pattern))?.[1];
+  if (!found) problems.push(`${label}: could not find the canonical host — fix the parser rather than letting it be skipped`);
+  else if (found.replace(/\/$/, "") !== CANONICAL_HOST) problems.push(`${label}: is ${found}, expected ${CANONICAL_HOST}`);
+}
+
 function extractCities(source: string, marker: string): string[] {
   const start = source.indexOf(marker);
   if (start === -1) throw new Error(`Could not find ${marker}`);
