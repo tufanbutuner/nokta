@@ -78,21 +78,39 @@ function extractTemplate(source: string, fn: string, field: "title" | "descripti
   const start = source.indexOf(fn);
   if (start === -1) throw new Error(`Could not find ${fn}`);
   const body = source.slice(start, source.indexOf("\n}", start));
-  const value = body.match(new RegExp(`${field}: \`([^\`]*)\``))?.[1];
+  const value = body.match(new RegExp(`${field}: (?:venue\\.description\\?\\.trim\\(\\) \\|\\| )?\`([^\`]*)\``))?.[1];
   if (!value) throw new Error(`Could not parse ${field} from ${fn}`);
-  // The app interpolates ${cityName}; the edge uses the same parameter name, so
-  // the templates compare directly once normalised.
-  return value.replace(/\$\{city(Name)?\}/g, "${city}");
+  // Both sides name their parameters differently (cityName vs city, and the venue
+  // fields are read off an object); normalise the interpolations so the templates
+  // compare on their copy alone.
+  return value.replace(/\$\{city(Name)?\}/g, "${city}").replace(/\$\{venue\.([a-zA-Z]+)\}/g, "${$1}");
 }
 
-for (const [appFn, edgeFn] of [
-  ["export function getCityPageMetadata", "function cityMetadata"],
-  ["export function getInactiveCityPageMetadata", "function inactiveCityMetadata"],
+/**
+ * A venue's description prefers the venue's own text and only falls back to the
+ * template. Comparing the fallback strings alone would miss the case where one
+ * renderer stops honouring the real description — the drift that actually matters,
+ * since it is what makes crawler and user content diverge on most venues.
+ */
+function usesRealDescription(source: string, fn: string): boolean {
+  const start = source.indexOf(fn);
+  if (start === -1) throw new Error(`Could not find ${fn}`);
+  return source.slice(start, source.indexOf("\n}", start)).includes("description?.trim() ||");
+}
+
+if (usesRealDescription(appMeta, "export function getVenuePageMetadata") !== usesRealDescription(edgeMeta, "function venueMetadata")) {
+  problems.push("venue description: one renderer prefers the venue's own description and the other does not");
+}
+
+for (const [label, appFn, edgeFn] of [
+  ["city", "export function getCityPageMetadata", "function cityMetadata"],
+  ["inactive city", "export function getInactiveCityPageMetadata", "function inactiveCityMetadata"],
+  ["venue", "export function getVenuePageMetadata", "function venueMetadata"],
 ] as const) {
   for (const field of ["title", "description"] as const) {
     const app = extractTemplate(appMeta, appFn, field);
     const edge = extractTemplate(edgeMeta, edgeFn, field);
-    if (app !== edge) problems.push(`city ${field} template differs (${appFn} vs ${edgeFn})\n  app:  ${app}\n  edge: ${edge}`);
+    if (app !== edge) problems.push(`${label} ${field} template differs (${appFn} vs ${edgeFn})\n  app:  ${app}\n  edge: ${edge}`);
   }
 }
 

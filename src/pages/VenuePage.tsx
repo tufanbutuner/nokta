@@ -18,6 +18,7 @@ import { useVenues } from "@/hooks/useVenues";
 import { trackEvent, trackVenueAnalyticsEvent } from "@/lib/analytics";
 import { getCityByName } from "@/lib/cities";
 import { formatDistanceMiles, getVenueDistanceMiles } from "@/lib/location";
+import { getVenuePageMetadata } from "@/lib/pageMetadata";
 import { cn } from "@/lib/utils";
 import { getVenueImage, getVenueImages } from "@/lib/venueImages";
 import { getApprovedVenueMedia } from "@/services/ownerVenueMediaService";
@@ -161,7 +162,7 @@ export function VenuePage() {
 
   return (
     <main className="bg-nokta-page-bg text-nokta-ink">
-      <PageMeta title={`${venue.name} in ${venue.city} | nokta`} description={`View category, opening hours, features, address, reviews and booking details for ${venue.name} in ${venue.city}.`} canonicalPath={`/venues/${venue.slug}`} imageUrl={galleryImages[0] ?? getVenueImage(venue)} />
+      <PageMeta {...getVenuePageMetadata(venue)} canonicalPath={`/venues/${venue.slug}`} imageUrl={galleryImages[0] ?? getVenueImage(venue)} />
 
       <PageContainer className="pb-28 pt-3 lg:pb-16">
         <PhotoGallery venue={venue} images={galleryImages} onOpenImage={setActiveImageIndex} />

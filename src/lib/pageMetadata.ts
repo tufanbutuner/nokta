@@ -85,3 +85,26 @@ export function getInactiveCityPageMetadata(cityName: string): PageMetadata {
     description: `We are adding verified social venues in ${cityName} soon.`,
   };
 }
+
+/** The fields a venue's metadata is built from, in both renderers. */
+export interface VenueMetadataInput {
+  name: string;
+  city: string;
+  area: string;
+  description?: string | null;
+}
+
+/**
+ * A venue's own description is used when it has one, and the template only fills
+ * the gap. The venue's own words describe it better than boilerplate can, and a
+ * page of near-identical descriptions is what search engines treat as thin content.
+ *
+ * Both renderers call this — `VenuePage` at runtime, and the edge middleware via
+ * its own restatement. `npm run check:metadata` compares the two.
+ */
+export function getVenuePageMetadata(venue: VenueMetadataInput): PageMetadata {
+  return {
+    title: `${venue.name} in ${venue.city} | nokta`,
+    description: venue.description?.trim() || `View opening hours, photos, features and booking details for ${venue.name} in ${venue.area}, ${venue.city}.`,
+  };
+}
