@@ -1,183 +1,375 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://nokta.uk</loc>
+    <loc>https://www.nokta.uk</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/discover</loc>
+    <loc>https://www.nokta.uk/discover</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/for-venues</loc>
+    <loc>https://www.nokta.uk/for-venues</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/recommend</loc>
+    <loc>https://www.nokta.uk/recommend</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/saved</loc>
+    <loc>https://www.nokta.uk/suggest</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/suggest</loc>
+    <loc>https://www.nokta.uk/privacy</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/sign-in</loc>
+    <loc>https://www.nokta.uk/terms</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/sign-up</loc>
+    <loc>https://www.nokta.uk/cities/london</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/privacy</loc>
+    <loc>https://www.nokta.uk/cities/birmingham</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/terms</loc>
+    <loc>https://www.nokta.uk/cities/manchester</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/cities/london</loc>
+    <loc>https://www.nokta.uk/cities/leicester</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/cities/birmingham</loc>
+    <loc>https://www.nokta.uk/venues/360-lounge-176-brompton-rd</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/cities/manchester</loc>
+    <loc>https://www.nokta.uk/venues/after-hours</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/cities/leicester</loc>
+    <loc>https://www.nokta.uk/venues/al-feena-leicester</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/venues/after-hours</loc>
+    <loc>https://www.nokta.uk/venues/al-zain-restaurant-and-lounge-19-21-high-st</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/venues/al-feena-leicester</loc>
+    <loc>https://www.nokta.uk/venues/amiri-restaurant-and-lounge-73-75-new-broadway</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/venues/amisa-lounge</loc>
+    <loc>https://www.nokta.uk/venues/amisa-lounge-86-steyne-rd</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/venues/argeela</loc>
+    <loc>https://www.nokta.uk/venues/amouage-lounge-32-34-cricklewood-broadway</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/venues/avan-lounge-manchester</loc>
+    <loc>https://www.nokta.uk/venues/angle-restaurant-and-lounge-166-trafalgar-rd</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/venues/baha-lounge</loc>
+    <loc>https://www.nokta.uk/venues/argeela</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/venues/blac-restaurant-birmingham</loc>
+    <loc>https://www.nokta.uk/venues/aroza-lounge-19-abbey-rd</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/venues/blacklist-lounge-london</loc>
+    <loc>https://www.nokta.uk/venues/arro-lounge-shisha-nine-elms</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/venues/brera-lounge</loc>
+    <loc>https://www.nokta.uk/venues/artisti-lounge-31-westbury-ave</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/venues/broski-lounge</loc>
+    <loc>https://www.nokta.uk/venues/avan-lounge-manchester</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/venues/cascade-leicester</loc>
+    <loc>https://www.nokta.uk/venues/baha-lounge</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/venues/coco-canary-wharf</loc>
+    <loc>https://www.nokta.uk/venues/blac-restaurant-birmingham</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/venues/double-apple-kitchen</loc>
+    <loc>https://www.nokta.uk/venues/black-moon-lounge-20-21-seven-ways-parade</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/venues/dubai-nights-lounge</loc>
+    <loc>https://www.nokta.uk/venues/blacklist-lounge-london-9-camden-high-st</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/venues/dubai-shisha-lounge-birmingham</loc>
+    <loc>https://www.nokta.uk/venues/bocca-lounge-south-kensington</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/venues/emperors-shisha-lounge-birmingham</loc>
+    <loc>https://www.nokta.uk/venues/bonzai-london-restaurant-and-lounge-7-stanhope-parade</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/venues/eurika-cambridge-heath</loc>
+    <loc>https://www.nokta.uk/venues/brera-lounge-canary-wharf-estate</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/venues/globe-lounge-forest-gate</loc>
+    <loc>https://www.nokta.uk/venues/brixtonia-lounge-35-brixton-station-rd</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/venues/habbibi-manchester</loc>
+    <loc>https://www.nokta.uk/venues/broski-lounge</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/venues/huqqa-lounge-park-royal</loc>
+    <loc>https://www.nokta.uk/venues/cafe-zahawi-shisha-bar-216-edgware-rd</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/venues/lokma-westfield-stratford</loc>
+    <loc>https://www.nokta.uk/venues/carlton-lounge-restaurant-bar-banqueting-kingsbury-garden-indian-food-232-kingsbury-rd</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/venues/luxor-lounge-birmingham</loc>
+    <loc>https://www.nokta.uk/venues/cascade-leicester</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/venues/mabel-leicester</loc>
+    <loc>https://www.nokta.uk/venues/cloud-shisha-hire-24-7-london-rd</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/venues/mabrouk-manchester</loc>
+    <loc>https://www.nokta.uk/venues/coco-canary-wharf-restaurant-and-lounge-14-hertsmere-rd</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/venues/majesty-lounge</loc>
+    <loc>https://www.nokta.uk/venues/coco-grill-and-lounge-34a-shad-thames</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/venues/majlis-leicester</loc>
+    <loc>https://www.nokta.uk/venues/cq-lounge-9-warspite-rd</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/venues/noya-london</loc>
+    <loc>https://www.nokta.uk/venues/darnalounge-garden-terrace</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/venues/patchi-park-royal</loc>
+    <loc>https://www.nokta.uk/venues/double-apple-kitchen</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/venues/rotana-shisha-lounge</loc>
+    <loc>https://www.nokta.uk/venues/dubai-nights-lounge-652-lea-bridge-rd</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/venues/rozana-manchester</loc>
+    <loc>https://www.nokta.uk/venues/dubai-shisha-lounge-birmingham</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/venues/sapores</loc>
+    <loc>https://www.nokta.uk/venues/emperors-shisha-lounge-birmingham</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/venues/shisha-garden-grill</loc>
+    <loc>https://www.nokta.uk/venues/eurika-cambridge-heath</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/venues/shisha-wala</loc>
+    <loc>https://www.nokta.uk/venues/fum-e-lounge-7-w-green-rd</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/venues/shishko-lounge</loc>
+    <loc>https://www.nokta.uk/venues/globe-lounge-84-woodgrange-rd</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/venues/sky-175-manchester</loc>
+    <loc>https://www.nokta.uk/venues/habbibi-manchester</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/venues/sky-lounge-leicester</loc>
+    <loc>https://www.nokta.uk/venues/hayaty-lounge-303-green-lanes</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/venues/smouk-leicester</loc>
+    <loc>https://www.nokta.uk/venues/hirmiz-caf-mayfair-private-shisha-21-lansdowne-row</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/venues/table-11-hounslow</loc>
+    <loc>https://www.nokta.uk/venues/huqqa-lounge-857-coronation-rd</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/venues/the-smoke-bureau-soho</loc>
+    <loc>https://www.nokta.uk/venues/kaboom-lounge-8-rendal-way</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/venues/tigerbay-shisha-lounge-kingsbury</loc>
+    <loc>https://www.nokta.uk/venues/kaze-lounge-300-creek-rd</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/venues/triumph-resto-lounge</loc>
+    <loc>https://www.nokta.uk/venues/kings-lounge-30-london-rd</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/venues/two-apples-shisha-manchester</loc>
+    <loc>https://www.nokta.uk/venues/kurdistan-lounge-216-edgware-rd</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/venues/u-wish-lounge</loc>
+    <loc>https://www.nokta.uk/venues/laika-shisha-lounge-at-zima-45-frith-st</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/venues/waterfront-london-vauxhall</loc>
+    <loc>https://www.nokta.uk/venues/lava-lounge-222-high-street-colliers-wood</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/venues/z-lounge-manchester</loc>
+    <loc>https://www.nokta.uk/venues/lit-lounge-uk-136-new-cross-rd</loc>
   </url>
   <url>
-    <loc>https://nokta.uk/venues/zouk-manchester</loc>
+    <loc>https://www.nokta.uk/venues/lokma-westfield-stratford</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/lounge-bar-middle-eight-66-great-queen-st</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/lush-lounge-norbury</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/luxor-lounge-birmingham</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/m-and-s-lounge-225-edgware-rd</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/mabel-leicester</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/mabrouk-manchester</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/majesty-lounge-bow</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/majlis-leicester</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/mamounia-lounge-37a-curzon-st</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/mayfair-shisha-clarges-st</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/mia-lounge-135-finchley-rd</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/mimis-lounge-and-bar-130-132-woolwich-church-st</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/mimo-s-lounge-bar-and-grill-141-tooting-high-st</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/mood-lounge-21-barretts-green-rd</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/moon-resto-lounge-34-high-st</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/moonshine-lounge-85-kingsland-high-st</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/nine-lounge-228-tunnel-ave</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/noya-london</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/o-s-smoke-shisha-lounge-145-city-rd</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/oasis-lounge-1-church-ln</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/osiris-lounge-108-woolwich-high-st</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/palm-riverside-wandsworth-best-shisha-lounge-and-hookah-bar-near-me-in-london-lebanese-restaurant-cocktail-bar-94-point-pleasant</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/patchi-park-royal</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/prodigy-lounge-232-church-ln</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/qabana-lounge-1120-harrow-rd</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/qualia-lounge-802-wickham-rd</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/roots-lounge-39-artillery-pl</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/rotana-shisha-lounge</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/rozana-manchester</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/sapores</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/shisha-delivery-13a-crawford-st</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/shisha-garden-grill-388-hackney-rd</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/shisha-nine-elms</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/shisha-wala</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/shishawi-tyburnia</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/shishko-lounge</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/sky-175-manchester</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/sky-lounge-concord-rd</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/sky-lounge-leicester</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/smoke-lab-best-shisha-lounge-and-hookah-bar-near-me-in-london-3-st-george-wharf</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/smouk-leicester</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/soor-lounge-london-best-shisha-and-hookah-bar-near-me-lebanese-restaurant-cocktail-bar-8-watford-wy</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/soul-lounge-76-clapham-high-st</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/sphinx-lounge-95-bloemfontein-rd</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/sundown-lounge-norbury</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/syon-lounge-london</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/table-11-hounslow</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/the-dalston-lounge-13-bradbury-st</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/the-lounge-bar-at-palm-beach-mayfair-30-berkeley-st</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/the-muse-lounge-182-walton-st</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/the-secret-garden-lounge-by-jojo-1-lexham-gardens</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/the-smoke-bureau-soho</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/tigerbay-shisha-lounge-sports-bar-london-indian-food-bar-desserts-beer-garden-234-kingsbury-rd</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/tigerbay-shisha-lounge-kingsbury</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/titanic-kitchen-and-lounge-469-high-rd-leytonstone</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/triumph-resto-lounge-78-tooting-high-st</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/two-apples-shisha-manchester</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/u-wish-lounge</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/vaporz-and-shisha-214-edgware-rd</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/vapourz-lounge-vape-shop-tooting-broadway-49-tooting-high-st</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/vu-lounge-bushey</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/waterfront-london-vauxhall</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/z-lounge-manchester</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/zouk-manchester</loc>
   </url>
 </urlset>
