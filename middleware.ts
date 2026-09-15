@@ -34,6 +34,8 @@ interface PageMetadata {
   image?: string;
   /** Serialised schema.org JSON-LD for this page, if it has any. */
   jsonLd?: string;
+  /** Server-rendered HTML for the app root, so the crawler has content to index. */
+  body?: string;
 }
 
 /**
@@ -155,10 +157,16 @@ interface VenueRow {
   instagram: string | null;
   business_status: string | null;
   opening_hours: { day: string; open: string; close: string }[] | null;
+  halal: boolean | null;
+  outdoor: boolean | null;
+  indoor: boolean | null;
+  food: boolean | null;
+  alcohol: boolean | null;
+  open_late: boolean | null;
 }
 
 const VENUE_COLUMNS =
-  "name,slug,city,area,address,postcode,country,description,images,latitude,longitude,price_level,phone,website,instagram,business_status,opening_hours";
+  "name,slug,city,area,address,postcode,country,description,images,latitude,longitude,price_level,phone,website,instagram,business_status,opening_hours,halal,outdoor,indoor,food,alcohol,open_late";
 
 const SCHEMA_DAYS: Record<string, string> = {
   monday: "Monday",
@@ -294,6 +302,7 @@ async function getVenueMetadata(slug: string, url: string): Promise<VenueLookup>
         ...venueMetadata(venue),
         image: venue.images?.[0],
         jsonLd: buildVenueJsonLd(venue, url),
+        body: buildVenueBody(venue),
       },
     };
   } catch {
@@ -385,6 +394,84 @@ async function getMetadata(pathname: string, url: string): Promise<ResolvedPage>
   return { metadata: SITE_FALLBACK, notFound: false };
 }
 
+/**
+ * Server-rendered body content for a crawler.
+ *
+ * Without this the crawler receives `<div id="root"></div>` and has nothing to
+ * index: every word on a venue page is written by React after the bundle runs.
+ * Googlebot renders JavaScript eventually, but most other crawlers do not, and
+ * even Google indexes server HTML sooner and more reliably.
+ *
+ * This is deliberately NOT a reimplementation of the React tree. It carries the
+ * same facts — name, description, address, hours, features — in plain semantic
+ * markup. Crawler and user HTML already differ (no map, tabs, reviews or booking
+ * controls here), and the standard to meet is that the content not be misleading,
+ * not that the DOM match. Chasing DOM equality would mean duplicating the app's
+ * layout components in the edge, which would drift silently and buy nothing.
+ *
+ * The markup is replaced by React on hydration, so it is never seen by a user.
+ */
+function buildVenueBody(venue: VenueRow): string {
+  const parts: string[] = [];
+
+  parts.push(`<nav aria-label="Breadcrumb"><a href="/discover">Discover</a> / <a href="/cities/${escapeHtml(createCitySlug(venue.city))}">${escapeHtml(venue.city)}</a> / <span>${escapeHtml(venue.name)}</span></nav>`);
+  parts.push(`<h1>${escapeHtml(venue.name)}</h1>`);
+  parts.push(`<p>${escapeHtml([venue.area, venue.city].filter(Boolean).join(", "))}</p>`);
+
+  if (venue.description?.trim()) parts.push(`<p>${escapeHtml(venue.description.trim())}</p>`);
+
+  const images = (venue.images ?? []).filter(Boolean).slice(0, 3);
+  // Alt text names the venue rather than describing the photo: the caption is not
+  // in the data, and a generic "venue photo" helps nobody using a screen reader.
+  if (images.length) parts.push(images.map((image, index) => `<img src="${escapeHtml(absoluteUrl(image))}" alt="${escapeHtml(venue.name)} in ${escapeHtml(venue.city)}${index ? ` (photo ${index + 1})` : ""}" width="800" height="600" loading="lazy">`).join("\n      "));
+
+  // The address column usually already ends with the city, so appending it again
+  // would read "178a Wandsworth Rd, London, London, SW8 2LA". Only the parts the
+  // street line does not already carry are added.
+  const street = venue.address?.trim();
+  const postcode = venue.postcode?.trim();
+  if (street) {
+    const hasCity = street.toLowerCase().includes(venue.city.toLowerCase());
+    const addressLine = [street, hasCity ? null : venue.city, postcode].filter(Boolean).map((part) => escapeHtml(part as string)).join(", ");
+    parts.push(`<h2>Address</h2>\n      <address>${addressLine}</address>`);
+  }
+  if (venue.phone?.trim()) parts.push(`<p>Phone: <a href="tel:${escapeHtml(venue.phone.replace(/\s+/g, ""))}">${escapeHtml(venue.phone.trim())}</a></p>`);
+
+  const hours = (venue.opening_hours ?? []).filter((entry) => SCHEMA_DAYS[entry.day?.trim().toLowerCase() ?? ""] && entry.open?.trim() && entry.close?.trim());
+  if (hours.length) {
+    const rows = hours.map((entry) => `<tr><th scope="row">${escapeHtml(SCHEMA_DAYS[entry.day.trim().toLowerCase()])}</th><td>${escapeHtml(entry.open.trim())}–${escapeHtml(entry.close.trim())}</td></tr>`).join("\n        ");
+    parts.push(`<h2>Opening hours</h2>\n      <table>\n        ${rows}\n      </table>`);
+  }
+
+  const features = [
+    venue.halal ? "Halal" : null,
+    venue.food ? "Food" : null,
+    venue.alcohol ? "Alcohol" : null,
+    venue.outdoor ? "Outdoor seating" : null,
+    venue.indoor ? "Indoor seating" : null,
+    venue.open_late ? "Open late" : null,
+  ].filter((feature): feature is string => feature !== null);
+  if (features.length) parts.push(`<h2>Features</h2>\n      <ul>${features.map((feature) => `<li>${escapeHtml(feature)}</li>`).join("")}</ul>`);
+
+  if (venue.website?.trim()) parts.push(`<p><a href="${escapeHtml(venue.website.trim())}" rel="nofollow noopener">Visit website</a></p>`);
+
+  // An internal link back to the city keeps crawlers moving through the catalogue
+  // rather than treating each venue as a dead end.
+  parts.push(`<p><a href="/cities/${escapeHtml(createCitySlug(venue.city))}">More venues in ${escapeHtml(venue.city)}</a></p>`);
+
+  return parts.join("\n      ");
+}
+
+/** Mirrors createCitySlug in src/lib/cities.ts. */
+function createCitySlug(cityName: string): string {
+  return cityName
+    .trim()
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
 function buildTags(metadata: PageMetadata, url: string, notFound: boolean): string {
   const usesDefaultImage = !metadata.image;
   const image = absoluteUrl(metadata.image ?? DEFAULT_OG_IMAGE);
@@ -432,7 +519,12 @@ export default async function middleware(request: Request) {
   // Replace the placeholder title rather than leaving two in the document.
   const withTags = html.replace(/<title>.*?<\/title>/i, "").replace("</head>", `  ${buildTags(metadata, canonical, notFound)}\n  </head>`);
 
-  return new Response(withTags, {
+  // React replaces the root's contents on hydration, so this is only ever seen by
+  // a crawler. If the root div is not found the page still serves — with an empty
+  // body, exactly as before — rather than failing the request.
+  const withBody = metadata.body ? withTags.replace('<div id="root"></div>', `<div id="root">\n      ${metadata.body}\n    </div>`) : withTags;
+
+  return new Response(withBody, {
     status: notFound ? 404 : 200,
     headers: {
       "content-type": "text/html; charset=utf-8",
