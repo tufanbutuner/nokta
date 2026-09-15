@@ -86,6 +86,41 @@ const STATIC_PAGES: Record<string, PageMetadata> = {
   },
 };
 
+/**
+ * Mirrors SUPPORTED_CITIES in src/data/supportedCities.ts, reduced to the fields
+ * the crawler response needs. Restated here for the same reason as the metadata
+ * table: the edge runtime cannot resolve the app's "@/" alias.
+ * `npm run check:metadata` compares the two and fails if they drift.
+ */
+const CITIES: { name: string; slug: string; isActive: boolean }[] = [
+  { name: "London", slug: "london", isActive: true },
+  { name: "Birmingham", slug: "birmingham", isActive: true },
+  { name: "Manchester", slug: "manchester", isActive: true },
+  { name: "Leicester", slug: "leicester", isActive: true },
+  { name: "Bradford", slug: "bradford", isActive: false },
+  { name: "Leeds", slug: "leeds", isActive: false },
+  { name: "Liverpool", slug: "liverpool", isActive: false },
+  { name: "Sheffield", slug: "sheffield", isActive: false },
+  { name: "Nottingham", slug: "nottingham", isActive: false },
+  { name: "Glasgow", slug: "glasgow", isActive: false },
+];
+
+/** Mirrors getCityPageMetadata in src/lib/pageMetadata.ts. */
+function cityMetadata(cityName: string): PageMetadata {
+  return {
+    title: `Venues in ${cityName} | nokta`,
+    description: `Explore social venues in ${cityName}, including lounges, late-night spots and shisha lounges. View venue details, photos and request bookings.`,
+  };
+}
+
+/** Mirrors getInactiveCityPageMetadata in src/lib/pageMetadata.ts. */
+function inactiveCityMetadata(cityName: string): PageMetadata {
+  return {
+    title: `${cityName} coming soon | nokta`,
+    description: `We are adding verified social venues in ${cityName} soon.`,
+  };
+}
+
 function escapeHtml(value: string): string {
   return value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 }
@@ -249,6 +284,34 @@ interface ResolvedPage {
   notFound: boolean;
 }
 
+/**
+ * A city page is a listing, so it is a `CollectionPage` rather than a place. The
+ * breadcrumb is what earns the trail in search results.
+ *
+ * No `ItemList` of venues is emitted: the middleware does not fetch the city's
+ * venues, and an ItemList that does not match what the page shows is worse than
+ * none. Add one only alongside a real venue query.
+ */
+function buildCityJsonLd(metadata: PageMetadata, cityName: string, url: string): string {
+  return serialiseJsonLd({
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": url,
+    name: metadata.title,
+    description: metadata.description,
+    url,
+    isPartOf: { "@id": `${SITE_URL}/#website` },
+    breadcrumb: {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: BRAND, item: SITE_URL },
+        { "@type": "ListItem", position: 2, name: "Discover", item: `${SITE_URL}/discover` },
+        { "@type": "ListItem", position: 3, name: cityName, item: url },
+      ],
+    },
+  });
+}
+
 /** Site-wide identity, attached to the pages whose content is fixed. */
 function buildSiteJsonLd(): string {
   return serialiseJsonLd({
@@ -266,6 +329,22 @@ async function getMetadata(pathname: string, url: string): Promise<ResolvedPage>
 
   const staticPage = STATIC_PAGES[normalised];
   if (staticPage) return { metadata: { ...staticPage, jsonLd: buildSiteJsonLd() }, notFound: false };
+
+  const cityMatch = normalised.match(/^\/cities\/([^/]+)$/);
+  if (cityMatch) {
+    // Slugs are matched exactly, because the app's getCityBySlug does. Accepting
+    // "/cities/LONDON" here while React renders "City not found" would serve the
+    // crawler a different page than the user gets.
+    const city = CITIES.find((entry) => entry.slug === cityMatch[1]);
+    // The city list is static, so an unknown slug is definitively a 404 — there is
+    // no lookup here that could fail and no outage case to protect against.
+    if (!city) return { metadata: { title: "City not found | nokta", description: "This nokta city page is not available." }, notFound: true };
+
+    // A roadmap city still gets an indexable page: it ranks for the city name and
+    // routes that demand into the suggest flow.
+    const metadata = city.isActive ? cityMetadata(city.name) : inactiveCityMetadata(city.name);
+    return { metadata: { ...metadata, jsonLd: buildCityJsonLd(metadata, city.name, url) }, notFound: false };
+  }
 
   const venueMatch = normalised.match(/^\/venues\/([^/]+)$/);
   if (venueMatch) {
