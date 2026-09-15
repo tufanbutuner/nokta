@@ -65,6 +65,54 @@ for (const route of edge.keys()) {
   if (!app.has(route)) problems.push(`${route}: present in middleware.ts but missing from pageMetadata.ts`);
 }
 
+/**
+ * City pages are templated rather than tabled, so parity means two things: the
+ * copy templates must match, and the city list the edge resolves slugs against
+ * must match the app's. A city added to one and not the other would 404 for
+ * crawlers while rendering fine for users.
+ */
+const appMeta = readFileSync("src/lib/pageMetadata.ts", "utf8");
+const edgeMeta = readFileSync("middleware.ts", "utf8");
+
+function extractTemplate(source: string, fn: string, field: "title" | "description"): string {
+  const start = source.indexOf(fn);
+  if (start === -1) throw new Error(`Could not find ${fn}`);
+  const body = source.slice(start, source.indexOf("\n}", start));
+  const value = body.match(new RegExp(`${field}: \`([^\`]*)\``))?.[1];
+  if (!value) throw new Error(`Could not parse ${field} from ${fn}`);
+  // The app interpolates ${cityName}; the edge uses the same parameter name, so
+  // the templates compare directly once normalised.
+  return value.replace(/\$\{city(Name)?\}/g, "${city}");
+}
+
+for (const [appFn, edgeFn] of [
+  ["export function getCityPageMetadata", "function cityMetadata"],
+  ["export function getInactiveCityPageMetadata", "function inactiveCityMetadata"],
+] as const) {
+  for (const field of ["title", "description"] as const) {
+    const app = extractTemplate(appMeta, appFn, field);
+    const edge = extractTemplate(edgeMeta, edgeFn, field);
+    if (app !== edge) problems.push(`city ${field} template differs (${appFn} vs ${edgeFn})\n  app:  ${app}\n  edge: ${edge}`);
+  }
+}
+
+function extractCities(source: string, marker: string): string[] {
+  const start = source.indexOf(marker);
+  if (start === -1) throw new Error(`Could not find ${marker}`);
+  const table = source.slice(start, source.indexOf("\n];", start));
+  const entries = [...table.matchAll(/slug: "([^"]+)"/g)].map(([, slug]) => slug);
+  const active = [...table.matchAll(/isActive: (true|false)/g)].map(([, value]) => value);
+  if (entries.length !== active.length) throw new Error(`Could not pair slugs with isActive in ${marker}`);
+  return entries.map((slug, index) => `${slug}:${active[index]}`);
+}
+
+const appCities = extractCities(readFileSync("src/data/supportedCities.ts", "utf8"), "export const SUPPORTED_CITIES");
+const edgeCities = extractCities(edgeMeta, "const CITIES");
+
+if (appCities.join(",") !== edgeCities.join(",")) {
+  problems.push(`city list differs between supportedCities.ts and middleware.ts\n  app:  ${appCities.join(", ")}\n  edge: ${edgeCities.join(", ")}`);
+}
+
 if (problems.length) {
   console.error("Static page metadata has drifted between the app and the edge middleware:\n");
   for (const problem of problems) console.error(`  - ${problem}`);

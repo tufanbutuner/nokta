@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { VenueGrid } from "@/components/venues/VenueGrid";
 import { useVenues } from "@/hooks/useVenues";
 import { getCityBySlug } from "@/lib/cities";
+import { getCityPageMetadata, getInactiveCityPageMetadata } from "@/lib/pageMetadata";
 
 export function CityPage() {
   const { citySlug = "" } = useParams();
@@ -31,11 +32,7 @@ export function CityPage() {
   if (!city.isActive) {
     return (
       <main>
-        <PageMeta
-          title={`${city.name} coming soon | nokta`}
-          description={`We are adding verified social venues in ${city.name} soon.`}
-          canonicalPath={`/cities/${city.slug}`}
-        />
+        <PageMeta {...getInactiveCityPageMetadata(city.name)} canonicalPath={`/cities/${city.slug}`} />
         <PageContainer className="py-16">
           <EmptyState
             title={`${city.name} coming soon`}
@@ -54,11 +51,7 @@ export function CityPage() {
 
   return (
     <main>
-      <PageMeta
-        title={`Venues in ${city.name} | nokta`}
-        description={`Explore social venues in ${city.name}, including lounges, late-night spots and shisha lounges. View venue details, photos and request bookings.`}
-        canonicalPath={`/cities/${city.slug}`}
-      />
+      <PageMeta {...getCityPageMetadata(city.name)} canonicalPath={`/cities/${city.slug}`} />
       <PageContainer className="py-12">
         <div className="mb-8 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
           <div>

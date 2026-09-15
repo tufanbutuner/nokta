@@ -63,3 +63,25 @@ export function getStaticPageMetadata(pathname: string): PageMetadata | null {
   const normalised = pathname !== "/" && pathname.endsWith("/") ? pathname.slice(0, -1) : pathname;
   return STATIC_PAGE_METADATA[normalised] ?? null;
 }
+
+/**
+ * City metadata is built rather than tabled: the copy is a template over the city
+ * list, so a table would have to be regenerated every time a city is added.
+ *
+ * Both renderers call these — `CityPage` at runtime, and the edge middleware via
+ * its own restatement. `npm run check:metadata` compares the two templates.
+ */
+export function getCityPageMetadata(cityName: string): PageMetadata {
+  return {
+    title: `Venues in ${cityName} | nokta`,
+    description: `Explore social venues in ${cityName}, including lounges, late-night spots and shisha lounges. View venue details, photos and request bookings.`,
+  };
+}
+
+/** A city on the roadmap: the page exists and is indexable, but has no venues yet. */
+export function getInactiveCityPageMetadata(cityName: string): PageMetadata {
+  return {
+    title: `${cityName} coming soon | nokta`,
+    description: `We are adding verified social venues in ${cityName} soon.`,
+  };
+}
