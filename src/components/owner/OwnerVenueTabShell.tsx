@@ -67,7 +67,7 @@ export function OwnerVenueTabShell({
           </div>
           {actions ? <div className="flex flex-wrap gap-2">{actions}</div> : null}
         </div>
-        <nav aria-label={`${venue.name} management`} className="mt-4 flex gap-[22px] overflow-x-auto text-[13.5px] [scrollbar-width:none]">
+        <nav aria-label={`${venue.name} management`} className="mt-4 flex gap-[22px] overflow-x-auto overflow-y-hidden scrollbar-none text-[13.5px]">
           {VENUE_TABS.map((tab) => (
             <NavLink
               key={tab.path}

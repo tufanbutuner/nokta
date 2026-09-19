@@ -1,5 +1,21 @@
 @import "tailwindcss";
 
+/**
+ * A row that scrolls sideways when it has to, without paying for a scrollbar
+ * track when it does not. On a platform set to always-show scrollbars the
+ * track is painted whether or not the row overflows.
+ *
+ * Swiping and keyboard scrolling still work — only the track is hidden.
+ */
+@utility scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 @theme {
   --font-primary: Outfit, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-brand: Outfit, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
