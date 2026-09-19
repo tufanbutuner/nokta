@@ -205,7 +205,7 @@ export function VenuePage() {
 
             <VenueOffersSection venue={venue} />
 
-            <div className="mt-7 flex gap-[22px] overflow-x-auto border-b border-nokta-border pb-[11px]">
+            <div className="mt-7 flex gap-[22px] overflow-x-auto overflow-y-hidden scrollbar-none border-b border-nokta-border pb-[11px]">
               {VENUE_TABS.map((tab) => (
                 <TabButton key={tab.value} label={tab.label} count={tab.value === "reviews" ? <ReviewCount venueId={venue.id} /> : null} isActive={activeTab === tab.value} onClick={() => selectTab(tab.value)} />
               ))}

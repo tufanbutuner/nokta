@@ -168,11 +168,11 @@ export function trackEvent(event: AnalyticsEvent, properties?: AnalyticsProperti
   }
 }
 
-export function trackPageView(path: string): void {
+export function trackPageView(path: string, routePattern?: string): void {
   try {
-    capturePostHogPageView(path);
+    capturePostHogPageView(path, routePattern);
     if (import.meta.env.DEV) {
-      console.info("[pageview]", path);
+      console.info("[pageview]", path, routePattern);
     }
   } catch {
     return;

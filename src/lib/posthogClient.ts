@@ -42,9 +42,19 @@ export function capturePostHogEvent(eventName: string, properties?: Record<strin
   posthog.capture(eventName, properties);
 }
 
-export function capturePostHogPageView(path: string) {
+/**
+ * `capture_pageview: false` means posthog-js attaches no URL properties of its
+ * own, and PostHog's own path breakdowns and web analytics views read
+ * `$current_url` rather than a custom property. Sending it keeps those working;
+ * `path` and `route_pattern` are what our own funnels are built on.
+ */
+export function capturePostHogPageView(path: string, routePattern?: string) {
   if (!posthogInitialised) return;
-  posthog.capture("$pageview", { path });
+  posthog.capture("$pageview", {
+    path,
+    route_pattern: routePattern,
+    $current_url: window.location.href,
+  });
 }
 
 /**
