@@ -74,7 +74,7 @@ export function ActionBar({ venue, shareLabel, onShare, onToggleSave, isSaved }:
   const iconButtonClass = "inline-flex h-11 w-11 items-center justify-center rounded-lg border border-nokta-border bg-white text-nokta-ink-subtle transition-colors hover:bg-nokta-hover";
 
   return (
-    <div className="mt-[18px] flex flex-wrap items-center gap-2">
+    <div className="relative mt-[18px] flex flex-wrap items-center gap-2">
       <Button asChild className="h-11 rounded-lg bg-nokta-ink px-[15px] text-sm font-medium text-white hover:bg-nokta-ink/90">
         <a href={getGoogleMapsDirectionsUrl(venue)} target="_blank" rel="noreferrer noopener" onClick={() => trackVenueAction(venue, "directions_clicked", "venue_directions_clicked", analyticsProperties)}>
           <Navigation className="mr-2 h-[15px] w-[15px]" />
@@ -101,14 +101,22 @@ export function ActionBar({ venue, shareLabel, onShare, onToggleSave, isSaved }:
         <Share2 className="h-4 w-4" />
       </button>
 
-      <div className="relative">
+      <div className="sm:relative">
         <button type="button" className={iconButtonClass} aria-label="More actions" aria-expanded={isMoreOpen} onClick={() => setIsMoreOpen((open) => !open)}>
           <MoreHorizontal className="h-4 w-4" />
         </button>
         {isMoreOpen ? (
           <>
             <button type="button" className="fixed inset-0 z-10 cursor-default" aria-label="Close menu" onClick={() => setIsMoreOpen(false)} />
-            <div className="absolute right-0 z-20 mt-2 min-w-[200px] overflow-hidden rounded-lg border border-nokta-border bg-white py-1 shadow-[0_8px_24px_rgba(28,25,23,0.12)]">
+            {/**
+             * The action row wraps on narrow viewports, so this button is not
+             * reliably the rightmost thing on its line, and right-0 against the
+             * button pushed a 200px menu off the left edge. Below sm the menu
+             * positions against the row instead, which already spans the page
+             * gutters; from sm up the row no longer wraps and it anchors to the
+             * button as before.
+             */}
+            <div className="absolute inset-x-0 top-full z-20 mt-2 max-w-[320px] overflow-hidden rounded-lg border border-nokta-border bg-white py-1 shadow-[0_8px_24px_rgba(28,25,23,0.12)] sm:inset-x-auto sm:right-0 sm:top-auto sm:min-w-[200px] sm:max-w-none">
               {venue.phone ? (
                 <a href={`tel:${venue.phone}`} className="flex items-center gap-2.5 px-3.5 py-2.5 text-[13px] font-medium text-nokta-ink hover:bg-nokta-hover" onClick={() => setIsMoreOpen(false)}>
                   <Phone className="h-4 w-4 text-nokta-ink-muted" />
