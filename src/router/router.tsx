@@ -4,7 +4,7 @@ import { RequireAdmin } from "@/components/auth/RequireAdmin";
 import { AppLayout } from "@/components/layout/AppLayout";
 import { PageLoadingState } from "@/components/state/PageLoadingState";
 import { AppErrorPage } from "@/pages/AppErrorPage";
-import { Navigate, createBrowserRouter, useLocation, useParams, useSearchParams } from "react-router-dom";
+import { Navigate, createBrowserRouter, useLocation, useParams, useSearchParams, type RouteObject } from "react-router-dom";
 
 const AccountConfirmationPage = lazyPage(() => import("@/pages/AccountConfirmationPage"), "AccountConfirmationPage");
 const AccountPage = lazyPage(() => import("@/pages/AccountPage"), "AccountPage");
@@ -63,7 +63,7 @@ function routeElement(element: ReactElement) {
   return <Suspense fallback={<PageLoadingState />}>{element}</Suspense>;
 }
 
-export const router = createBrowserRouter([
+export const routes: RouteObject[] = [
   {
     element: routeElement(<AppLayout />),
     errorElement: <AppErrorPage />,
@@ -391,7 +391,9 @@ export const router = createBrowserRouter([
       { path: "*", element: routeElement(<NotFoundPage />) },
     ],
   },
-]);
+];
+
+export const router = createBrowserRouter(routes);
 
 function AccountRoute() {
   const [searchParams] = useSearchParams();
