@@ -8,6 +8,7 @@ export type NotificationType =
   | "booking_alternative_accepted"
   | "booking_alternative_declined"
   | "booking_cancelled"
+  | "booking_reply"
   | "enquiry_submitted"
   | "media_upload_approved"
   | "media_upload_rejected"

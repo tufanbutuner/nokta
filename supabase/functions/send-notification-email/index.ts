@@ -14,6 +14,7 @@ type NotificationType =
   | "booking_alternative_accepted"
   | "booking_alternative_declined"
   | "booking_cancelled"
+  | "booking_reply"
   | "enquiry_submitted";
 
 interface NotificationRow {
@@ -291,6 +292,9 @@ function buildBookingEmail(notification: NotificationRow, booking: Record<string
       return renderEmail({ subject: "Customer declined your proposed booking time", lines: [`The customer declined your proposed booking time for ${venueName}.`, `Original request: ${requested}`, `Proposed: ${proposed}`, `Party size: ${party}`, `Customer: ${clean(booking.customer_name)}`, optional("Customer response", booking.customer_alternative_response_message)], actionUrl: absoluteUrl(`/owner/bookings?booking=${booking.id}`), actionLabel: "View booking", owner: true });
     case "booking_cancelled":
       return renderEmail({ subject: "Your booking was cancelled", lines: [`${venueName} cancelled this booking.`, ...common], actionUrl: statusUrl, actionLabel: "View booking status" });
+    case "booking_reply":
+      // A reply does not change the booking, so the status stays out of the subject.
+      return renderEmail({ subject: `${venueName} replied to your booking request`, lines: [`${venueName} replied to your booking request.`, optional("Venue message", booking.owner_response_message), "", ...common], actionUrl: statusUrl, actionLabel: "View booking status" });
     default:
       return buildGenericEmail(notification);
   }

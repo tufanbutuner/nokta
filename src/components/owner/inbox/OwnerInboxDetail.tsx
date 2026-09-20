@@ -23,11 +23,16 @@ export function OwnerInboxDetail({ item, venue, currentPlan, isSaving, onBack, o
   onSendReply: (message: string) => void;
 }) {
   const [reply, setReply] = useState("");
+  const [savedReply, setSavedReply] = useState("");
   const replyRef = useRef<HTMLTextAreaElement>(null);
   const locked = item.type === "enquiry" && !item.enquiry.hasFullAccess;
   const tone = getOwnerInboxStatusTone(item);
 
-  useEffect(() => setReply(item.type === "booking" ? item.booking.ownerResponseMessage ?? "" : item.enquiry.venueResponse ?? ""), [item]);
+  useEffect(() => {
+    const existing = item.type === "booking" ? item.booking.ownerResponseMessage ?? "" : item.enquiry.venueResponse ?? "";
+    setReply(existing);
+    setSavedReply(existing);
+  }, [item]);
 
   useEffect(() => {
     function handleKeyDown(event: KeyboardEvent) {
@@ -61,10 +66,20 @@ export function OwnerInboxDetail({ item, venue, currentPlan, isSaving, onBack, o
       </div>
 
       {item.type === "booking" && item.booking.status === "pending" ? (
-        <div className="flex flex-wrap gap-2">
-          <Button className="h-[38px] text-[13.5px]" disabled={isSaving} onClick={() => onBookingStatus("accepted", reply)}>Confirm</Button>
-          <Button variant="outline" className="h-[38px] text-[13.5px]" disabled={isSaving} onClick={onSuggestTime}>Suggest another time</Button>
-          <Button variant="outline" className="h-[38px] text-[13.5px]" disabled={isSaving} onClick={() => onBookingStatus("declined", reply)}>Decline</Button>
+        <div>
+          <div className="flex flex-wrap gap-2">
+            <Button className="h-[38px] text-[13.5px]" disabled={isSaving} onClick={() => onBookingStatus("accepted", reply)}>Confirm</Button>
+            <Button variant="outline" className="h-[38px] text-[13.5px]" disabled={isSaving} onClick={onSuggestTime}>Suggest another time</Button>
+            <Button variant="outline" className="h-[38px] text-[13.5px]" disabled={isSaving} onClick={() => onBookingStatus("declined", reply)}>Decline</Button>
+          </div>
+          {/**
+           * Confirm and Decline send whatever is in the reply box as their
+           * message, which is useful for "see you at 8" and actively misleading
+           * for "fully booked" — the customer is told the booking is confirmed
+           * and shown a message saying it is not. Say so where the decision is
+           * made, rather than leaving the box to look like a separate action.
+           */}
+          {reply.trim() && reply !== savedReply ? <p className="mt-2 text-xs text-muted-foreground">Confirm and Decline will send your reply as the message. To reply without deciding, use Send reply below.</p> : null}
         </div>
       ) : item.type === "enquiry" && !locked ? (
         <div className="flex flex-wrap gap-2">
@@ -105,7 +120,7 @@ export function OwnerInboxDetail({ item, venue, currentPlan, isSaving, onBack, o
           <section className="rounded-xl border bg-card p-[16px_18px]">
             <div className="flex flex-wrap items-baseline justify-between gap-2">
               <h3 className="text-[14px] font-semibold">Reply</h3>
-              <p className="text-xs text-muted-foreground">sent as {venue?.name ?? "your venue"}, copied to your email</p>
+              <p className="text-xs text-muted-foreground">sent as {venue?.name ?? "your venue"}; the customer is notified by email</p>
             </div>
             <Textarea ref={replyRef} value={reply} onChange={(event) => setReply(event.target.value)} placeholder="Write a reply…" className="mt-3 min-h-16 rounded-[9px] bg-background p-[11px_12px] text-[13px]" />
             <div className="mt-3 flex flex-wrap gap-2">
