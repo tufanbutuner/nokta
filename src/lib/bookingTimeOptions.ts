@@ -1,5 +1,13 @@
 import type { VenueBookingAvailability } from "@/types/bookingAvailability";
 
+/**
+ * Shown when a venue has published no availability, or before it has loaded.
+ * A booking request is a request either way, so offering the usual evening
+ * slots keeps the field a list of times to pick from rather than a clock the
+ * customer has to guess at.
+ */
+export const FALLBACK_TIME_OPTIONS = ["17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00", "20:30", "21:00", "21:30", "22:00", "22:30", "23:00"];
+
 export function getBookingTimeOptions(input: { availability: VenueBookingAvailability; selectedDate: string; intervalMinutes?: number; now?: Date }): string[] {
   if (!input.selectedDate) return [];
   const interval = input.intervalMinutes ?? 30;

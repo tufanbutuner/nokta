@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Select } from "@/components/ui/select";
 import { Sheet, SheetClose, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { useVenueBookingGate } from "@/hooks/useVenueBookingGate";
-import { getBookingTimeOptions } from "@/lib/bookingTimeOptions";
+import { FALLBACK_TIME_OPTIONS, getBookingTimeOptions } from "@/lib/bookingTimeOptions";
 import { trackEvent, trackVenueAnalyticsEvent } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 import { getVenueBookingAvailability } from "@/services/bookingAvailabilityService";
@@ -14,7 +14,6 @@ import { useEffect, useState, type FormEvent } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { getVenueAnalyticsProperties } from "./venueDetailAnalytics";
 
-const FALLBACK_TIME_OPTIONS = ["17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00", "20:30", "21:00", "21:30", "22:00", "22:30", "23:00"];
 const PARTY_SIZE_OPTIONS = Array.from({ length: 20 }, (_, index) => index + 1);
 
 /**
