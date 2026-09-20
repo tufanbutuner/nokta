@@ -155,12 +155,10 @@ export function MobileBookingCta({ venue }: { venue: Venue }) {
  * Still used by RequestBookingPage, which keeps its own gate for venues that turned
  * requests off after the customer landed on the form.
  */
-export function BookingUnavailableCard({ venue, state, className, compact = false }: { venue: Venue; state: "unclaimed" | "disabled" | "dormant"; className?: string; compact?: boolean }) {
+export function BookingUnavailableCard({ venue, state, className, compact = false }: { venue: Venue; state: "unclaimed" | "disabled"; className?: string; compact?: boolean }) {
   const content = state === "unclaimed"
     ? { title: "Books directly, not through nokta", body: `${venue.name} hasn't joined nokta yet, so we can't take a booking for them. Contact them and they'll answer straight away.` }
-    : state === "disabled"
-      ? { title: "Takes enquiries, not booking requests", body: `${venue.name} hasn't switched on date-and-time booking. Send an enquiry or contact them directly.` }
-      : { title: "Calling is faster right now", body: `${venue.name} has been slow to reply on nokta lately. Contact them directly for the quickest answer.` };
+    : { title: "Takes enquiries, not booking requests", body: `${venue.name} hasn't switched on date-and-time booking. Send an enquiry or contact them directly.` };
   return (
     <aside className={cn("rounded-2xl border border-nokta-border bg-white p-5 shadow-sm shadow-stone-950/5", compact && "border-0 p-0 shadow-none", className)}>
       <div className="flex items-start gap-3"><span className="inline-flex h-8 w-8 flex-none items-center justify-center rounded-full bg-nokta-page-bg"><AlertCircle className="h-4 w-4 text-nokta-accent" /></span><div><h2 className="text-[15px] font-semibold text-nokta-ink">{content.title}</h2><p className="mt-2 text-sm leading-6 text-nokta-ink-muted">{content.body}</p></div></div>

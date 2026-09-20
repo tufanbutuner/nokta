@@ -49,12 +49,22 @@ export async function getVenueBookingGate(venueId: string): Promise<VenueBooking
   const { data, error } = await client.from("public_venue_booking_states").select("*").eq("venue_id", venueId).maybeSingle();
   if (error) throw new Error(`Could not load booking status: ${error.message}`);
   if (!data) throw new Error("Could not load booking status for this venue.");
-  if (!["live", "unclaimed", "disabled", "dormant"].includes(data.state as string)) throw new Error("The venue returned an invalid booking status.");
+
+  /**
+   * A state this build does not know about is not a reason to refuse a booking.
+   * The view is deployed separately from the app, so during a rollout it can
+   * still return a state that has since been retired; treating that as an error
+   * blocks the request the customer came to make. The two states that describe
+   * what a venue cannot receive are explicit, and anything else is treated as
+   * live.
+   */
+  const state: VenueBookingGate["state"] = data.state === "unclaimed" || data.state === "disabled" ? data.state : "live";
+
   return {
     venueId: data.venue_id as string,
     isClaimed: Boolean(data.is_claimed),
     bookingRequestsEnabled: Boolean(data.booking_requests_enabled),
     responsive: Boolean(data.responsive),
-    state: data.state as VenueBookingGate["state"],
+    state,
   };
 }
