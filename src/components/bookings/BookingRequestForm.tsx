@@ -5,7 +5,7 @@ import { Select } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { validateCreateBookingRequestInput } from "@/lib/bookingRequestValidation";
 import { checkBookingAvailability } from "@/lib/bookingAvailabilityValidation";
-import { getBookingTimeOptions } from "@/lib/bookingTimeOptions";
+import { FALLBACK_TIME_OPTIONS, getBookingTimeOptions } from "@/lib/bookingTimeOptions";
 import type { VenueBookingAvailability } from "@/types/bookingAvailability";
 import type { CreateBookingRequestInput } from "@/types/bookingRequests";
 
@@ -41,7 +41,15 @@ export function BookingRequestForm({
   const [showErrors, setShowErrors] = useState(false);
   const validation = useMemo(() => validateCreateBookingRequestInput(values), [values]);
   const availabilityCheck = useMemo(() => availability && values.requestedDate && values.requestedTime ? checkBookingAvailability({ availability, requestedDate: values.requestedDate, requestedTime: values.requestedTime, partySize: values.partySize }) : null, [availability, values.partySize, values.requestedDate, values.requestedTime]);
-  const timeOptions = useMemo(() => availability && values.requestedDate ? getBookingTimeOptions({ availability, selectedDate: values.requestedDate }) : [], [availability, values.requestedDate]);
+  /**
+   * Match the sidebar card: always a list of times to choose from. Falling back
+   * to a bare clock input before availability loads made the same booking look
+   * like two different forms depending on where it was started.
+   */
+  const timeOptions = useMemo(() => {
+    const available = availability && values.requestedDate ? getBookingTimeOptions({ availability, selectedDate: values.requestedDate }) : [];
+    return available.length ? available : FALLBACK_TIME_OPTIONS;
+  }, [availability, values.requestedDate]);
   const disabled = availability?.settings.bookingRequestsEnabled === false;
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -80,11 +88,7 @@ export function BookingRequestForm({
           <Input className="text-base sm:text-sm" type="date" value={values.requestedDate} onChange={(event) => update("requestedDate", event.target.value)} />
         </Field>
         <Field label="Time" error={showErrors ? validation.errors.requestedTime : undefined}>
-          {availability && values.requestedDate ? (
-            <Select className="text-base sm:text-sm" value={values.requestedTime} placeholder={timeOptions.length ? "Choose a time" : "No times available"} onValueChange={(time) => update("requestedTime", time)} options={timeOptions.map((time) => ({ label: time, value: time }))} disabled={!timeOptions.length} />
-          ) : (
-            <Input className="text-base sm:text-sm" type="time" value={values.requestedTime} onChange={(event) => update("requestedTime", event.target.value)} />
-          )}
+          <Select className="text-base sm:text-sm" value={values.requestedTime} placeholder="Choose a time" onValueChange={(time) => update("requestedTime", time)} options={timeOptions.map((time) => ({ label: time, value: time }))} disabled={!values.requestedDate} />
         </Field>
         <Field label="Occasion" error={showErrors ? validation.errors.occasion : undefined}>
           <Select value={values.occasion ?? "General"} onValueChange={(occasion) => update("occasion", occasion)} options={OCCASION_OPTIONS.map((occasion) => ({ label: occasion, value: occasion }))} />

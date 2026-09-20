@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Select } from "@/components/ui/select";
 import { Sheet, SheetClose, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { useVenueBookingGate } from "@/hooks/useVenueBookingGate";
-import { getBookingTimeOptions } from "@/lib/bookingTimeOptions";
+import { FALLBACK_TIME_OPTIONS, getBookingTimeOptions } from "@/lib/bookingTimeOptions";
 import { trackEvent, trackVenueAnalyticsEvent } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 import { getVenueBookingAvailability } from "@/services/bookingAvailabilityService";
@@ -14,7 +14,6 @@ import { useEffect, useState, type FormEvent } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { getVenueAnalyticsProperties } from "./venueDetailAnalytics";
 
-const FALLBACK_TIME_OPTIONS = ["17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00", "20:30", "21:00", "21:30", "22:00", "22:30", "23:00"];
 const PARTY_SIZE_OPTIONS = Array.from({ length: 20 }, (_, index) => index + 1);
 
 /**
@@ -155,12 +154,10 @@ export function MobileBookingCta({ venue }: { venue: Venue }) {
  * Still used by RequestBookingPage, which keeps its own gate for venues that turned
  * requests off after the customer landed on the form.
  */
-export function BookingUnavailableCard({ venue, state, className, compact = false }: { venue: Venue; state: "unclaimed" | "disabled" | "dormant"; className?: string; compact?: boolean }) {
+export function BookingUnavailableCard({ venue, state, className, compact = false }: { venue: Venue; state: "unclaimed" | "disabled"; className?: string; compact?: boolean }) {
   const content = state === "unclaimed"
     ? { title: "Books directly, not through nokta", body: `${venue.name} hasn't joined nokta yet, so we can't take a booking for them. Contact them and they'll answer straight away.` }
-    : state === "disabled"
-      ? { title: "Takes enquiries, not booking requests", body: `${venue.name} hasn't switched on date-and-time booking. Send an enquiry or contact them directly.` }
-      : { title: "Calling is faster right now", body: `${venue.name} has been slow to reply on nokta lately. Contact them directly for the quickest answer.` };
+    : { title: "Takes enquiries, not booking requests", body: `${venue.name} hasn't switched on date-and-time booking. Send an enquiry or contact them directly.` };
   return (
     <aside className={cn("rounded-2xl border border-nokta-border bg-white p-5 shadow-sm shadow-stone-950/5", compact && "border-0 p-0 shadow-none", className)}>
       <div className="flex items-start gap-3"><span className="inline-flex h-8 w-8 flex-none items-center justify-center rounded-full bg-nokta-page-bg"><AlertCircle className="h-4 w-4 text-nokta-accent" /></span><div><h2 className="text-[15px] font-semibold text-nokta-ink">{content.title}</h2><p className="mt-2 text-sm leading-6 text-nokta-ink-muted">{content.body}</p></div></div>
