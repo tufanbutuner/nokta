@@ -30,7 +30,9 @@ export function PhotoGallery({ venue, images, onOpenImage }: { venue: Venue; ima
   const allPhotosButton = (
     <button type="button" aria-label={`View all ${images.length} photos`} className="absolute bottom-2.5 right-2.5 inline-flex min-h-[34px] max-w-[calc(100%-1.25rem)] items-center gap-[7px] whitespace-nowrap rounded-lg bg-white px-3 text-[12.5px] font-semibold text-nokta-ink shadow-sm transition-colors hover:bg-nokta-hover" onClick={() => onOpenImage(0)}>
       <Camera className="h-3.5 w-3.5 shrink-0" />
-      All {images.length} photos
+      {/* Phones share the corner with the position dots, so show the bare count there. */}
+      <span className="hidden sm:inline">All {images.length} photos</span>
+      <span className="sm:hidden">{images.length}</span>
     </button>
   );
 
@@ -51,7 +53,7 @@ export function PhotoGallery({ venue, images, onOpenImage }: { venue: Venue; ima
 
   return (
     <>
-      <MobilePhotoCarousel venue={venue} images={images} onOpenImage={onOpenImage} />
+      <MobilePhotoCarousel venue={venue} images={images} onOpenImage={onOpenImage} allPhotosButton={allPhotosButton} />
 
       <section className={cn("relative hidden h-[240px] gap-[3px] overflow-hidden rounded-[14px] sm:grid", columnsClassName)}>
         <HeroPhotoCell image={stripImages[0]} venue={venue} index={0} onOpenImage={onOpenImage} />
@@ -83,9 +85,21 @@ export function PhotoGallery({ venue, images, onOpenImage }: { venue: Venue; ima
 
 /**
  * The phone gallery: every photo in a scroll-snapping row, with dots showing position. Tapping
- * a photo still opens the lightbox, so swiping browses and tapping zooms.
+ * a photo still opens the lightbox, so swiping browses and tapping zooms. The photo-count
+ * button rides along in the corner, because swiping one photo at a time is a slow way to reach
+ * the last one and the dots alone do not say that a full gallery exists.
  */
-function MobilePhotoCarousel({ venue, images, onOpenImage }: { venue: Venue; images: string[]; onOpenImage: (index: number) => void }) {
+function MobilePhotoCarousel({
+  venue,
+  images,
+  onOpenImage,
+  allPhotosButton,
+}: {
+  venue: Venue;
+  images: string[];
+  onOpenImage: (index: number) => void;
+  allPhotosButton: React.ReactNode;
+}) {
   const [activeIndex, setActiveIndex] = useState(0);
 
   /** Derive the active dot from scroll position so it tracks a swipe without controlling it. */
@@ -115,13 +129,16 @@ function MobilePhotoCarousel({ venue, images, onOpenImage }: { venue: Venue; ima
         ))}
       </div>
 
+      {/* Dots sit to the left so they clear the photo-count button in the corner. */}
       {images.length > 1 ? (
-        <div className="pointer-events-none absolute bottom-3 left-1/2 flex -translate-x-1/2 items-center gap-1.5 rounded-full bg-stone-950/45 px-2.5 py-1.5" aria-hidden="true">
+        <div className="pointer-events-none absolute bottom-3.5 left-3 flex items-center gap-1.5 rounded-full bg-stone-950/45 px-2.5 py-1.5" aria-hidden="true">
           {images.map((image, index) => (
             <span key={`${image}-dot-${index}`} className={cn("h-1.5 rounded-full bg-white transition-all", index === activeIndex ? "w-4" : "w-1.5 opacity-50")} />
           ))}
         </div>
       ) : null}
+
+      {allPhotosButton}
     </section>
   );
 }
