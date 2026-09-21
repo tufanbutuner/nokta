@@ -4,11 +4,11 @@ import { formatDistanceMiles, getVenueDistanceMiles } from "@/lib/location";
 import { getVenueCurrentStatus } from "@/lib/openingHours";
 import { cn } from "@/lib/utils";
 import { formatPriceLevel } from "@/lib/venueFilters";
-import { getVenueImage } from "@/lib/venueImages";
 import { Link } from "react-router-dom";
 import type { UserLocation } from "@/types/location";
 import type { VenueRatingSummary } from "@/types/reviews";
 import type { Venue } from "@/types/venue";
+import { VenueImage } from "@/components/venues/VenueImage";
 
 export function VenueMapResultList({
   venues,
@@ -51,7 +51,7 @@ export function VenueMapResultList({
                 }
               }}
             >
-              <img src={getVenueImage(venue)} alt={`${venue.name} interior`} className="h-[72px] w-[88px] rounded-lg object-cover" />
+              <VenueImage venue={venue} alt={`${venue.name} interior`} className="h-[72px] w-[88px] rounded-lg object-cover" />
               <div className="min-w-0">
                 <Link to={`/venues/${venue.slug}`} className="block truncate text-sm font-semibold leading-5 text-nokta-ink hover:text-nokta-accent" onClick={(event) => event.stopPropagation()}>
                   {venue.name}

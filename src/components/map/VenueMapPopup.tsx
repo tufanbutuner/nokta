@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button";
 import { FavouriteButton } from "@/components/venues/FavouriteButton";
 import { VenuePrice } from "@/components/venues/VenuePrice";
 import { formatVenuePrimaryCategory } from "@/lib/venueCategoryLabels";
-import { getVenueImage } from "@/lib/venueImages";
 import type { Venue } from "@/types/venue";
+import { VenueImage } from "@/components/venues/VenueImage";
 
 /** A compact VenueCard: same tokens, type scale and meta line, sized for a map popup. */
 export function VenueMapPopup({ venue }: { venue: Venue }) {
@@ -13,7 +13,7 @@ export function VenueMapPopup({ venue }: { venue: Venue }) {
     <div className="w-[224px] p-2">
       <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-muted">
         <Link to={`/venues/${venue.slug}`} className="block h-full">
-          <img src={getVenueImage(venue)} alt={`${venue.name} interior`} className="h-full w-full object-cover" />
+          <VenueImage venue={venue} alt={`${venue.name} interior`} className="h-full w-full object-cover" />
         </Link>
         {venue.rating ? (
           <span className="absolute left-2 top-2 inline-flex items-center gap-1 rounded-full bg-white px-2 py-0.5 text-[11px] font-semibold text-nokta-ink shadow-sm">

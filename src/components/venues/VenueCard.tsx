@@ -7,7 +7,7 @@ import { FavouriteButton } from "@/components/venues/FavouriteButton";
 import { VenuePrice } from "@/components/venues/VenuePrice";
 import { formatVenuePrimaryCategory } from "@/lib/venueCategoryLabels";
 import { getVenueCurrentStatus } from "@/lib/openingHours";
-import { getVenueImage } from "@/lib/venueImages";
+import { VenueImage } from "@/components/venues/VenueImage";
 import type { UserLocation } from "@/types/location";
 import { Venue } from "@/types/venue";
 
@@ -18,8 +18,8 @@ export function VenueCard({ venue, userLocation }: { venue: Venue; userLocation?
     <Card className="group rounded-2xl border-nokta-border bg-nokta-surface p-2 shadow-none transition duration-200 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-stone-950/5">
       <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-muted">
         <Link to={`/venues/${venue.slug}`} className="block h-full">
-          <img
-            src={getVenueImage(venue)}
+          <VenueImage
+            venue={venue}
             alt={`${venue.name} interior`}
             className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
           />

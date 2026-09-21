@@ -15,7 +15,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { useVenues } from "@/hooks/useVenues";
 import { brandConfig } from "@/config/brand";
 import { DEFAULT_CITY, getActiveCities } from "@/lib/cities";
-import { getVenueImage } from "@/lib/venueImages";
+import { VenueImage } from "@/components/venues/VenueImage";
 import { getVenueCurrentStatus } from "@/lib/openingHours";
 import { formatVenuePrimaryCategoryPlural } from "@/lib/venueCategoryLabels";
 import { formatVenuePrimaryCategory } from "@/lib/venueCategoryLabels";
@@ -300,8 +300,8 @@ function LandingVenueCard({ venue }: { venue: Venue }) {
       <CardMark className="-bottom-12 -right-10 h-32 w-32 opacity-[0.04]" />
       <div className="relative h-[190px] overflow-hidden rounded-xl bg-muted">
         <Link to={`/venues/${venue.slug}`} className="block h-full">
-          <img
-            src={getVenueImage(venue)}
+          <VenueImage
+            venue={venue}
             alt={`${venue.name} interior`}
             className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
           />

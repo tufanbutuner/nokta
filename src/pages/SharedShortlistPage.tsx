@@ -4,11 +4,11 @@ import { PageMeta } from "@/components/seo/PageMeta";
 import { useVenues } from "@/hooks/useVenues";
 import { summariseAnswers } from "@/lib/recommendFlow";
 import { cn } from "@/lib/utils";
-import { getVenueImage } from "@/lib/venueImages";
 import { getSharedRecommendShortlist } from "@/services/recommendShortlistService";
 import type { RecommendShortlist } from "@/types/recommendFlow";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { VenueImage } from "@/components/venues/VenueImage";
 
 /**
  * The public end of a share link. The recipient is not signed in, so this reads
@@ -81,7 +81,7 @@ export function SharedShortlistPage() {
                       </span>
                       <span className="whitespace-nowrap font-mono text-[12px] font-semibold text-white/55">{pick.matchLabel}</span>
                     </div>
-                    <img src={getVenueImage(venue)} alt={`${venue.name} interior`} className="h-[clamp(74px,9cqi,104px)] w-full rounded-[10px] object-cover" />
+                    <VenueImage venue={venue} alt={`${venue.name} interior`} className="h-[clamp(74px,9cqi,104px)] w-full rounded-[10px] object-cover" />
                     <div className="grid gap-1">
                       <h2 className="text-[clamp(17px,2.1cqi,21px)] font-semibold leading-tight tracking-[-0.4px]">{venue.name}</h2>
                       {/* Distance is deliberately absent: the sender's location is never shared. */}

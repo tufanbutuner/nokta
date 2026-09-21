@@ -1,10 +1,10 @@
 import { OUTLINE_BUTTON, PRIMARY_BUTTON, RecommendEyebrow } from "@/components/recommendations/flow/RecommendChrome";
 import { ROLE_COLORS, roleLabel, formatPickMeta } from "@/components/recommendations/flow/recommendPickMeta";
 import { cn } from "@/lib/utils";
-import { getVenueImage } from "@/lib/venueImages";
 import type { RecommendPick } from "@/types/recommendFlow";
 import { Check } from "lucide-react";
 import { Link } from "react-router-dom";
+import { VenueImage } from "@/components/venues/VenueImage";
 
 export function RecommendSavedScreen({
   picks,
@@ -46,7 +46,7 @@ export function RecommendSavedScreen({
       <div className="grid gap-2.5">
         {picks.map((pick) => (
           <div key={pick.venue.id} className="flex flex-wrap items-center gap-[13px] rounded-[13px] border border-white/[.13] bg-white/[.04] p-[clamp(10px,1.2cqi,13px)]">
-            <img src={getVenueImage(pick.venue)} alt={`${pick.venue.name} interior`} className="h-[clamp(52px,6cqi,66px)] w-[clamp(52px,6cqi,66px)] flex-none rounded-[9px] object-cover" />
+            <VenueImage venue={pick.venue} alt={`${pick.venue.name} interior`} className="h-[clamp(52px,6cqi,66px)] w-[clamp(52px,6cqi,66px)] flex-none rounded-[9px] object-cover" />
             <div className="grid min-w-0 flex-1 gap-0.5">
               <div className="flex flex-wrap items-center gap-2.5">
                 <span className="text-[10px] font-bold uppercase tracking-[0.13em]" style={{ color: ROLE_COLORS[pick.role] }}>
