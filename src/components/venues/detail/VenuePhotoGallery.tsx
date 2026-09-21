@@ -23,6 +23,37 @@ export function PhotoGallery({ venue, images, onOpenImage }: { venue: Venue; ima
   }
 
   const stripImages = images.slice(0, 4);
+  const allPhotosButton = (
+    <button type="button" aria-label={`View all ${images.length} photos`} className="absolute bottom-2.5 right-2.5 inline-flex min-h-[34px] max-w-[calc(100%-1.25rem)] items-center gap-[7px] whitespace-nowrap rounded-lg bg-white px-3 text-[12.5px] font-semibold text-nokta-ink shadow-sm transition-colors hover:bg-nokta-hover" onClick={() => onOpenImage(0)}>
+      <Camera className="h-3.5 w-3.5 shrink-0" />
+      {/* The cell is narrow on phones, so drop to the bare count rather than clip the label. */}
+      <span className="hidden sm:inline">All {images.length} photos</span>
+      <span className="sm:hidden">{images.length}</span>
+    </button>
+  );
+
+  /**
+   * The strip adapts to how many photos we actually have. An empty cell reads as a photo that
+   * failed to load, so a venue with one to three photos gets a layout that fills instead.
+   */
+  if (stripImages.length < 4) {
+    return (
+      <section className={cn("relative grid h-[240px] gap-[3px] overflow-hidden rounded-[14px]", stripImages.length === 1 ? "grid-cols-1" : stripImages.length === 2 ? "grid-cols-2" : "grid-cols-[2fr_1fr]")}>
+        <HeroPhotoCell image={stripImages[0]} venue={venue} index={0} onOpenImage={onOpenImage} />
+
+        {stripImages.length === 2 ? <HeroPhotoCell image={stripImages[1]} venue={venue} index={1} onOpenImage={onOpenImage} /> : null}
+
+        {stripImages.length === 3 ? (
+          <div className="grid min-h-0 grid-rows-[minmax(0,1fr)_minmax(0,1fr)] gap-[3px]">
+            <HeroPhotoCell image={stripImages[1]} venue={venue} index={1} onOpenImage={onOpenImage} />
+            <HeroPhotoCell image={stripImages[2]} venue={venue} index={2} onOpenImage={onOpenImage} />
+          </div>
+        ) : null}
+
+        {allPhotosButton}
+      </section>
+    );
+  }
 
   return (
     <section className="grid h-[240px] grid-cols-[2fr_1fr_1fr] gap-[3px] overflow-hidden rounded-[14px]">
@@ -32,24 +63,14 @@ export function PhotoGallery({ venue, images, onOpenImage }: { venue: Venue; ima
         <HeroPhotoCell image={stripImages[2]} venue={venue} index={2} onOpenImage={onOpenImage} />
         <div className="relative min-h-0">
           <HeroPhotoCell image={stripImages[3]} venue={venue} index={3} onOpenImage={onOpenImage} />
-          <button type="button" aria-label={`View all ${images.length} photos`} className="absolute bottom-2.5 right-2.5 inline-flex min-h-[34px] max-w-[calc(100%-1.25rem)] items-center gap-[7px] whitespace-nowrap rounded-lg bg-white px-3 text-[12.5px] font-semibold text-nokta-ink shadow-sm transition-colors hover:bg-nokta-hover" onClick={() => onOpenImage(0)}>
-            <Camera className="h-3.5 w-3.5 shrink-0" />
-            {/* The cell is narrow on phones, so drop to the bare count rather than clip the label. */}
-            <span className="hidden sm:inline">All {images.length} photos</span>
-            <span className="sm:hidden">{images.length}</span>
-          </button>
+          {allPhotosButton}
         </div>
       </div>
     </section>
   );
 }
 
-function HeroPhotoCell({ image, venue, index, onOpenImage }: { image: string | undefined; venue: Venue; index: number; onOpenImage: (index: number) => void }) {
-  /** Fewer than four photos leaves empty cells, which stay as plain tinted tiles. */
-  if (!image) {
-    return <div className="h-full min-h-0 w-full bg-nokta-track" />;
-  }
-
+function HeroPhotoCell({ image, venue, index, onOpenImage }: { image: string; venue: Venue; index: number; onOpenImage: (index: number) => void }) {
   return (
     <button type="button" className="block h-full min-h-0 w-full overflow-hidden bg-nokta-track text-left" onClick={() => onOpenImage(index)}>
       <img src={image} alt={`${venue.name} photo ${index + 1}`} className="h-full w-full object-cover transition duration-500 hover:scale-[1.03]" />

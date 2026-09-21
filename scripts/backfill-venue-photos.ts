@@ -23,6 +23,7 @@
 import { createClient } from "@supabase/supabase-js";
 import { config } from "dotenv";
 import crypto from "node:crypto";
+import { classifyPhoto } from "./lib/venuePhotoQuality";
 
 config({ path: ".env.local", quiet: true });
 config({ quiet: true });
@@ -63,6 +64,14 @@ type FoundPhoto = {
   url: string;
   source: "website" | "google-places";
   attribution?: string;
+};
+
+type GradedPhoto = {
+  candidate: FoundPhoto;
+  image: { buffer: Buffer; contentType: string; extension: string };
+  isWordmark: boolean;
+  heroWorthy: boolean;
+  pixels: number;
 };
 
 type Options = {
@@ -318,6 +327,35 @@ async function main() {
 
   const supabase = createClient(supabaseUrl, serviceRoleKey);
 
+  /** Downloads each candidate and keeps the ones whose pixels look like venue photography. */
+  async function gradeCandidates(candidates: FoundPhoto[]) {
+    const graded: GradedPhoto[] = [];
+
+    for (const candidate of candidates) {
+      if (graded.length >= TARGET_PHOTO_COUNT * 2) break;
+
+      const image = await downloadImage(candidate.url);
+      if (!image) continue;
+
+      const verdict = await classifyPhoto(image.buffer);
+
+      if (verdict.kind === "unreadable" || verdict.kind === "too-small" || verdict.kind === "blank") {
+        console.log(`  skipped ${verdict.kind} image (${verdict.reason})`);
+        continue;
+      }
+
+      graded.push({
+        candidate,
+        image,
+        isWordmark: verdict.kind === "wordmark",
+        heroWorthy: verdict.kind === "photo" && verdict.heroWorthy,
+        pixels: verdict.kind === "photo" ? verdict.width * verdict.height : 0,
+      });
+    }
+
+    return graded;
+  }
+
   /**
    * A venue we found nothing for must still lose its seeded stock photos, otherwise the site
    * keeps showing a lounge that is not this venue. Clearing `images` hands it to the branded
@@ -360,32 +398,52 @@ async function main() {
   for (const [index, venue] of queue.entries()) {
     console.log(`[${index + 1}/${queue.length}] ${venue.name} — ${venue.city}`);
 
-    const websitePhotos = await findWebsitePhotos(venue);
-    let candidates = websitePhotos;
+    const candidates = await findWebsitePhotos(venue);
 
-    if (candidates.length < 3) {
+    /**
+     * Download and look at every candidate before picking: scraped pages mix real photography
+     * with header wordmarks and blank spacers, and we only find that out from the pixels.
+     */
+    const graded = await gradeCandidates(candidates);
+
+    /**
+     * Only real photographs count towards the threshold. A site that serves nothing but its
+     * logo would otherwise leave the venue with a wordmark where its hero shot belongs, so we
+     * top up from Places whenever the website did not yield enough actual photos.
+     */
+    if (graded.filter((entry) => !entry.isWordmark).length < 3) {
       const placesPhotos = await findPlacesPhotos(venue, placesApiKey);
-      candidates = [...candidates, ...placesPhotos];
+      graded.push(...(await gradeCandidates(placesPhotos)));
     }
 
-    if (!candidates.length) {
+    if (!graded.length) {
       console.log("  no photos found, falling back to the branded placeholder");
       await clearStockImages(venue, options.dryRun);
       summary.skipped += 1;
       continue;
     }
 
+    /**
+     * Real photography leads, and a wordmark only ever trails the gallery, so a venue never
+     * shows its logo where a picture of the room should be.
+     */
+    const ranked = graded
+      .sort((left, right) => {
+        if (left.isWordmark !== right.isWordmark) return left.isWordmark ? 1 : -1;
+        if (left.heroWorthy !== right.heroWorthy) return left.heroWorthy ? -1 : 1;
+        return right.pixels - left.pixels;
+      })
+      .slice(0, TARGET_PHOTO_COUNT);
+
+    const wordmarkCount = ranked.filter((entry) => entry.isWordmark).length;
+    if (wordmarkCount) console.log(`  ${wordmarkCount} wordmark(s) moved to the end of the gallery`);
+
     const uploadedUrls: string[] = [];
     const attributions: string[] = [];
     let usedWebsite = false;
     let usedPlaces = false;
 
-    for (const candidate of candidates) {
-      if (uploadedUrls.length >= TARGET_PHOTO_COUNT) break;
-
-      const image = await downloadImage(candidate.url);
-      if (!image) continue;
-
+    for (const { candidate, image } of ranked) {
       const digest = crypto.createHash("sha1").update(image.buffer).digest("hex").slice(0, 12);
       const storagePath = `${STORAGE_PREFIX}/${venue.id}/${digest}.${image.extension}`;
 
