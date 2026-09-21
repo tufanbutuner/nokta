@@ -26,47 +26,61 @@ export function PhotoGallery({ venue, images, onOpenImage }: { venue: Venue; ima
   const allPhotosButton = (
     <button type="button" aria-label={`View all ${images.length} photos`} className="absolute bottom-2.5 right-2.5 inline-flex min-h-[34px] max-w-[calc(100%-1.25rem)] items-center gap-[7px] whitespace-nowrap rounded-lg bg-white px-3 text-[12.5px] font-semibold text-nokta-ink shadow-sm transition-colors hover:bg-nokta-hover" onClick={() => onOpenImage(0)}>
       <Camera className="h-3.5 w-3.5 shrink-0" />
-      {/* The cell is narrow on phones, so drop to the bare count rather than clip the label. */}
-      <span className="hidden sm:inline">All {images.length} photos</span>
-      <span className="sm:hidden">{images.length}</span>
+      All {images.length} photos
     </button>
   );
 
   /**
-   * The strip adapts to how many photos we actually have. An empty cell reads as a photo that
-   * failed to load, so a venue with one to three photos gets a layout that fills instead.
+   * Phones show the hero photo alone: splitting 375px across four cells left the side ones
+   * around 85px wide, too small to read as photographs. The rest of the strip appears from the
+   * `sm` breakpoint up, and the count button opens the full gallery either way.
+   *
+   * The strip also adapts to how many photos we actually have, since an empty cell reads as a
+   * photo that failed to load.
    */
-  if (stripImages.length < 4) {
-    return (
-      <section className={cn("relative grid h-[240px] gap-[3px] overflow-hidden rounded-[14px]", stripImages.length === 1 ? "grid-cols-1" : stripImages.length === 2 ? "grid-cols-2" : "grid-cols-[2fr_1fr]")}>
-        <HeroPhotoCell image={stripImages[0]} venue={venue} index={0} onOpenImage={onOpenImage} />
-
-        {stripImages.length === 2 ? <HeroPhotoCell image={stripImages[1]} venue={venue} index={1} onOpenImage={onOpenImage} /> : null}
-
-        {stripImages.length === 3 ? (
-          <div className="grid min-h-0 grid-rows-[minmax(0,1fr)_minmax(0,1fr)] gap-[3px]">
-            <HeroPhotoCell image={stripImages[1]} venue={venue} index={1} onOpenImage={onOpenImage} />
-            <HeroPhotoCell image={stripImages[2]} venue={venue} index={2} onOpenImage={onOpenImage} />
-          </div>
-        ) : null}
-
-        {allPhotosButton}
-      </section>
-    );
-  }
+  const columnsClassName =
+    stripImages.length === 1
+      ? "grid-cols-1"
+      : stripImages.length === 2
+        ? "sm:grid-cols-2"
+        : stripImages.length === 3
+          ? "sm:grid-cols-[2fr_1fr]"
+          : "sm:grid-cols-[2fr_1fr_1fr]";
 
   return (
-    <section className="grid h-[240px] grid-cols-[2fr_1fr_1fr] gap-[3px] overflow-hidden rounded-[14px]">
+    <section className={cn("relative grid h-[240px] grid-cols-1 gap-[3px] overflow-hidden rounded-[14px]", columnsClassName)}>
       <HeroPhotoCell image={stripImages[0]} venue={venue} index={0} onOpenImage={onOpenImage} />
-      <HeroPhotoCell image={stripImages[1]} venue={venue} index={1} onOpenImage={onOpenImage} />
-      <div className="grid min-h-0 grid-rows-[minmax(0,1fr)_minmax(0,1fr)] gap-[3px]">
-        <HeroPhotoCell image={stripImages[2]} venue={venue} index={2} onOpenImage={onOpenImage} />
-        <div className="relative min-h-0">
-          <HeroPhotoCell image={stripImages[3]} venue={venue} index={3} onOpenImage={onOpenImage} />
-          {allPhotosButton}
+
+      {stripImages.length === 2 ? <SecondaryCell image={stripImages[1]} venue={venue} index={1} onOpenImage={onOpenImage} /> : null}
+
+      {stripImages.length === 3 ? (
+        <div className="hidden min-h-0 grid-rows-[minmax(0,1fr)_minmax(0,1fr)] gap-[3px] sm:grid">
+          <HeroPhotoCell image={stripImages[1]} venue={venue} index={1} onOpenImage={onOpenImage} />
+          <HeroPhotoCell image={stripImages[2]} venue={venue} index={2} onOpenImage={onOpenImage} />
         </div>
-      </div>
+      ) : null}
+
+      {stripImages.length >= 4 ? (
+        <>
+          <SecondaryCell image={stripImages[1]} venue={venue} index={1} onOpenImage={onOpenImage} />
+          <div className="hidden min-h-0 grid-rows-[minmax(0,1fr)_minmax(0,1fr)] gap-[3px] sm:grid">
+            <HeroPhotoCell image={stripImages[2]} venue={venue} index={2} onOpenImage={onOpenImage} />
+            <HeroPhotoCell image={stripImages[3]} venue={venue} index={3} onOpenImage={onOpenImage} />
+          </div>
+        </>
+      ) : null}
+
+      {allPhotosButton}
     </section>
+  );
+}
+
+/** A strip cell that only appears once there is room for it beside the hero photo. */
+function SecondaryCell(props: { image: string; venue: Venue; index: number; onOpenImage: (index: number) => void }) {
+  return (
+    <div className="hidden min-h-0 sm:block">
+      <HeroPhotoCell {...props} />
+    </div>
   );
 }
 
