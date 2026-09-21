@@ -3,7 +3,6 @@ import { ReviewSection } from "@/components/reviews/ReviewSection";
 import { cn } from "@/lib/utils";
 import { getGroupedOpeningHours, getTodayOpeningLabel } from "@/lib/openingHours";
 import { getVenueAmenities, type VenueAmenityIcon } from "@/lib/venueAmenities";
-import { getVenueImage } from "@/lib/venueImages";
 import { formatPenceAsPrice } from "@/lib/venueMenuValidation";
 import { getPublicVenueMenu } from "@/services/venueMenuService";
 import type { Venue } from "@/types/venue";
@@ -11,6 +10,7 @@ import type { VenueMenu } from "@/types/venueMenu";
 import { Armchair, Clock, Martini, Umbrella, Users, Utensils } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { VenueImage } from "@/components/venues/VenueImage";
 
 const AMENITY_ICONS: Record<VenueAmenityIcon, typeof Clock> = {
   awning: Umbrella,
@@ -198,7 +198,7 @@ function SimilarVenueCarousel({ venues }: { venues: Venue[] }) {
     <div className="-mx-4 mt-3 flex max-w-[calc(100%+2rem)] gap-3 overflow-x-auto px-4 pb-1 sm:mx-0 sm:max-w-full sm:px-0">
       {venues.map((venue) => (
         <Link key={venue.id} to={`/venues/${venue.slug}`} className="w-[186px] shrink-0 rounded-[14px] border border-nokta-border bg-white p-2 transition-colors hover:border-[oklch(0.8_0.03_50)]">
-          <img src={getVenueImage(venue)} alt={`${venue.name} interior`} className="h-[94px] w-full rounded-[10px] object-cover" />
+          <VenueImage venue={venue} alt={`${venue.name} interior`} className="h-[94px] w-full rounded-[10px] object-cover" />
           <span className="mt-[9px] block truncate px-0.5 text-[13.5px] font-semibold text-nokta-ink">{venue.name}</span>
           <span className="mb-1 mt-0.5 block truncate px-0.5 text-[12px] text-nokta-ink-muted">{[venue.area, venue.isClaimed ? "takes bookings" : null].filter(Boolean).join(" · ")}</span>
         </Link>

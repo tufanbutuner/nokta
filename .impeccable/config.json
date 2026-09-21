@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "broken-image",
+        "value": "*",
+        "files": [
+          "scripts/backfill-venue-photos.ts"
+        ],
+        "createdAt": "2026-09-21T14:27:36.254Z",
+        "reason": "Node scraper: <img> is a regex literal for parsing remote HTML, not rendered JSX"
+      }
+    ]
+  }
+}

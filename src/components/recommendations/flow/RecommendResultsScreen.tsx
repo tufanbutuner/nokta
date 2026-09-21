@@ -1,10 +1,10 @@
 import { OUTLINE_BUTTON, PRIMARY_BUTTON, RecommendEyebrow, TEXT_LINK } from "@/components/recommendations/flow/RecommendChrome";
 import { ROLE_COLORS, roleLabel, formatPickMeta } from "@/components/recommendations/flow/recommendPickMeta";
 import { cn } from "@/lib/utils";
-import { getVenueImage } from "@/lib/venueImages";
 import type { RecommendPick } from "@/types/recommendFlow";
 import { Heart } from "lucide-react";
 import { Link } from "react-router-dom";
+import { VenueImage } from "@/components/venues/VenueImage";
 
 export function RecommendResultsScreen({
   picks,
@@ -73,7 +73,7 @@ export function RecommendResultsScreen({
                 <span className="whitespace-nowrap font-mono text-[12px] font-semibold text-white/55">{pick.match}</span>
               </div>
 
-              <img src={getVenueImage(pick.venue)} alt={`${pick.venue.name} interior`} className="h-[clamp(74px,9cqi,104px)] w-full rounded-[10px] object-cover" />
+              <VenueImage venue={pick.venue} alt={`${pick.venue.name} interior`} className="h-[clamp(74px,9cqi,104px)] w-full rounded-[10px] object-cover" />
 
               <div className="grid gap-1">
                 <h2 className="text-[clamp(17px,2.1cqi,21px)] font-semibold leading-tight tracking-[-0.4px]">{pick.venue.name}</h2>

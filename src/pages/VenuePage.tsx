@@ -20,7 +20,7 @@ import { getCityByName } from "@/lib/cities";
 import { formatDistanceMiles, getVenueDistanceMiles } from "@/lib/location";
 import { getVenuePageMetadata } from "@/lib/pageMetadata";
 import { cn } from "@/lib/utils";
-import { getVenueImage, getVenueImages } from "@/lib/venueImages";
+import { getVenueImages } from "@/lib/venueImages";
 import { getApprovedVenueMedia } from "@/services/ownerVenueMediaService";
 import { useEffect, useState } from "react";
 import { Link, useParams, useSearchParams } from "react-router-dom";
@@ -162,7 +162,7 @@ export function VenuePage() {
 
   return (
     <main className="bg-nokta-page-bg text-nokta-ink">
-      <PageMeta {...getVenuePageMetadata(venue)} canonicalPath={`/venues/${venue.slug}`} imageUrl={galleryImages[0] ?? getVenueImage(venue)} />
+      <PageMeta {...getVenuePageMetadata(venue)} canonicalPath={`/venues/${venue.slug}`} imageUrl={galleryImages[0]} />
 
       <PageContainer className="pb-28 pt-3 lg:pb-16">
         <PhotoGallery venue={venue} images={galleryImages} onOpenImage={setActiveImageIndex} />

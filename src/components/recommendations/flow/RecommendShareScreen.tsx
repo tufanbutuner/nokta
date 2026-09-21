@@ -1,8 +1,8 @@
 import { PRIMARY_BUTTON, RecommendEyebrow, TEXT_LINK } from "@/components/recommendations/flow/RecommendChrome";
 import { ROLE_COLORS, roleLabel, formatPickShortMeta } from "@/components/recommendations/flow/recommendPickMeta";
 import { cn } from "@/lib/utils";
-import { getVenueImage } from "@/lib/venueImages";
 import type { RecommendPick } from "@/types/recommendFlow";
+import { VenueImage } from "@/components/venues/VenueImage";
 
 export function RecommendShareScreen({
   picks,
@@ -48,7 +48,7 @@ export function RecommendShareScreen({
         <div className="mt-3.5 grid grid-cols-1 gap-2 min-[520px]:grid-cols-3">
           {picks.map((pick) => (
             <div key={pick.venue.id} className="grid gap-1.5">
-              <img src={getVenueImage(pick.venue)} alt={`${pick.venue.name} interior`} className="w-full rounded-lg object-cover [aspect-ratio:4/3]" />
+              <VenueImage venue={pick.venue} alt={`${pick.venue.name} interior`} className="w-full rounded-lg object-cover [aspect-ratio:4/3]" />
               <span className="text-[9.5px] font-bold uppercase tracking-[0.13em]" style={{ color: ROLE_COLORS[pick.role] }}>
                 {roleLabel(pick.role, pick.miles)}
               </span>

@@ -4,10 +4,10 @@ import { VenuePrice } from "@/components/venues/VenuePrice";
 import { trackEvent, trackVenueAnalyticsEvent } from "@/lib/analytics";
 import { getVenueCurrentStatus } from "@/lib/openingHours";
 import { formatVenuePrimaryCategory } from "@/lib/venueCategoryLabels";
-import { getVenueImage } from "@/lib/venueImages";
 import { Star } from "lucide-react";
 import type { FeaturedPlacement } from "@/types/featuredPlacements";
 import type { Venue } from "@/types/venue";
+import { VenueImage } from "@/components/venues/VenueImage";
 
 export function FeaturedVenueCard({
   venue,
@@ -47,7 +47,7 @@ export function FeaturedVenueCard({
       className="group block rounded-2xl border border-nokta-border bg-nokta-surface p-2 shadow-none transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-stone-950/5"
     >
       <div className="relative h-40 overflow-hidden rounded-xl bg-muted">
-        <img src={getVenueImage(venue)} alt={`${venue.name} interior`} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+        <VenueImage venue={venue} alt={`${venue.name} interior`} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
         {venue.rating ? (
           <span className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-nokta-ink shadow-sm">
             <Star className="h-3.5 w-3.5 fill-clay-accent text-clay-accent" />

@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { getVenueImage } from "@/lib/venueImages";
+import { VenuePlaceholder } from "@/components/venues/VenueImage";
 import type { Venue } from "@/types/venue";
 import { Camera, ChevronLeft, ChevronRight, X } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -10,9 +10,19 @@ import { useEffect, useState } from "react";
  * gallery button in the bottom-right cell. Photos returns here as a button rather than a tab.
  */
 export function PhotoGallery({ venue, images, onOpenImage }: { venue: Venue; images: string[]; onOpenImage: (index: number) => void }) {
-  const primaryImage = images[0] ?? getVenueImage(venue);
-  const galleryImages = images.length ? images : [primaryImage];
-  const stripImages = [0, 1, 2, 3].map((index) => galleryImages[index] ?? galleryImages[index % galleryImages.length]);
+  /**
+   * We never pad the strip with stock photos, so a venue with no photos gets a single branded
+   * tile and one with a few keeps its real count instead of repeating shots to fill the cells.
+   */
+  if (!images.length) {
+    return (
+      <section className="h-[240px] overflow-hidden rounded-[14px] [container-type:inline-size]">
+        <VenuePlaceholder venue={venue} className="h-full w-full" monogramClassName="text-[clamp(32px,9cqi,56px)]" />
+      </section>
+    );
+  }
+
+  const stripImages = images.slice(0, 4);
 
   return (
     <section className="grid h-[240px] grid-cols-[2fr_1fr_1fr] gap-[3px] overflow-hidden rounded-[14px]">
@@ -22,11 +32,11 @@ export function PhotoGallery({ venue, images, onOpenImage }: { venue: Venue; ima
         <HeroPhotoCell image={stripImages[2]} venue={venue} index={2} onOpenImage={onOpenImage} />
         <div className="relative min-h-0">
           <HeroPhotoCell image={stripImages[3]} venue={venue} index={3} onOpenImage={onOpenImage} />
-          <button type="button" aria-label={`View all ${galleryImages.length} photos`} className="absolute bottom-2.5 right-2.5 inline-flex min-h-[34px] max-w-[calc(100%-1.25rem)] items-center gap-[7px] whitespace-nowrap rounded-lg bg-white px-3 text-[12.5px] font-semibold text-nokta-ink shadow-sm transition-colors hover:bg-nokta-hover" onClick={() => onOpenImage(0)}>
+          <button type="button" aria-label={`View all ${images.length} photos`} className="absolute bottom-2.5 right-2.5 inline-flex min-h-[34px] max-w-[calc(100%-1.25rem)] items-center gap-[7px] whitespace-nowrap rounded-lg bg-white px-3 text-[12.5px] font-semibold text-nokta-ink shadow-sm transition-colors hover:bg-nokta-hover" onClick={() => onOpenImage(0)}>
             <Camera className="h-3.5 w-3.5 shrink-0" />
             {/* The cell is narrow on phones, so drop to the bare count rather than clip the label. */}
-            <span className="hidden sm:inline">All {galleryImages.length} photos</span>
-            <span className="sm:hidden">{galleryImages.length}</span>
+            <span className="hidden sm:inline">All {images.length} photos</span>
+            <span className="sm:hidden">{images.length}</span>
           </button>
         </div>
       </div>
@@ -34,7 +44,12 @@ export function PhotoGallery({ venue, images, onOpenImage }: { venue: Venue; ima
   );
 }
 
-function HeroPhotoCell({ image, venue, index, onOpenImage }: { image: string; venue: Venue; index: number; onOpenImage: (index: number) => void }) {
+function HeroPhotoCell({ image, venue, index, onOpenImage }: { image: string | undefined; venue: Venue; index: number; onOpenImage: (index: number) => void }) {
+  /** Fewer than four photos leaves empty cells, which stay as plain tinted tiles. */
+  if (!image) {
+    return <div className="h-full min-h-0 w-full bg-nokta-track" />;
+  }
+
   return (
     <button type="button" className="block h-full min-h-0 w-full overflow-hidden bg-nokta-track text-left" onClick={() => onOpenImage(index)}>
       <img src={image} alt={`${venue.name} photo ${index + 1}`} className="h-full w-full object-cover transition duration-500 hover:scale-[1.03]" />
@@ -43,7 +58,7 @@ function HeroPhotoCell({ image, venue, index, onOpenImage }: { image: string; ve
 }
 
 export function PhotoLightbox({ venue, images, activeIndex, onChange, onClose }: { venue: Venue; images: string[]; activeIndex: number; onChange: (index: number) => void; onClose: () => void }) {
-  const activeImage = images[activeIndex] ?? images[0] ?? getVenueImage(venue);
+  const activeImage = images[activeIndex] ?? images[0];
   const hasMultipleImages = images.length > 1;
 
   useEffect(() => {
