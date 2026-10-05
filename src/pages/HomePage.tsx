@@ -1,6 +1,6 @@
 import { useMemo, useState, type FormEvent } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { ArrowRight, ChevronRight, Search, Star } from "lucide-react";
+import { ArrowRight, ChevronRight, Map, Search, Star, X } from "lucide-react";
 import { HomepageFeaturedVenues } from "@/components/featured/HomepageFeaturedVenues";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { HomepageOffersSection } from "@/components/offers/HomepageOffersSection";
@@ -9,7 +9,6 @@ import { PageMeta } from "@/components/seo/PageMeta";
 import { FavouriteButton } from "@/components/venues/FavouriteButton";
 import { VenueGrid } from "@/components/venues/VenueGrid";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { ErrorState } from "@/components/state/ErrorState";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -19,34 +18,32 @@ import { DEFAULT_CITY, getActiveCities } from "@/lib/cities";
 import { VenueImage } from "@/components/venues/VenueImage";
 import { getVenueCurrentStatus } from "@/lib/openingHours";
 import { formatVenuePrimaryCategory } from "@/lib/venueCategoryLabels";
+import { filterVenues } from "@/lib/filterVenues";
+import { filtersToSearchParams, INITIAL_VENUE_FILTERS } from "@/lib/venueFilters";
+import { cn } from "@/lib/utils";
 import type { Venue } from "@/types/venue";
+import type { VenueFilterState } from "@/types/filters";
 
-const quickFilters: Array<{ label: string; params: Record<string, string> }> = [
-  { label: "Open now", params: { status: "open" } },
-  { label: "Good for groups", params: { vibes: "groups" } },
-  { label: "Outdoor seating", params: { features: "outdoor" } },
-  { label: "£ Budget", params: { price: "1" } },
-  { label: "Top rated", params: { rating: "4" } },
-];
+const HOMEPAGE_VENUE_LIMIT = 8;
 
 export function HomePage() {
   const navigate = useNavigate();
-  const [query, setQuery] = useState("");
-  const [selectedCity, setSelectedCity] = useState(DEFAULT_CITY);
+  const [filters, setFilters] = useState<VenueFilterState>(INITIAL_VENUE_FILTERS);
   const { venues, isLoading, error } = useVenues();
-  const featured = venues.slice(0, 4);
+  const filteredVenues = useMemo(() => filterVenues(venues, filters), [venues, filters]);
+  const visibleVenues = filteredVenues.slice(0, HOMEPAGE_VENUE_LIMIT);
   const areaCards = useMemo(() => getAreaCards(venues, DEFAULT_CITY), [venues]);
   const cityCards = useMemo(() => getCityCards(venues), [venues]);
+  const discoverPath = useMemo(() => buildDiscoverPath(filters), [filters]);
+  const mapPath = useMemo(() => buildDiscoverPath(filters, "map"), [filters]);
 
   function handleSearchSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const params = new URLSearchParams({ city: selectedCity });
+    navigate(discoverPath);
+  }
 
-    if (query.trim()) {
-      params.set("q", query.trim());
-    }
-
-    navigate(`/discover?${params.toString()}`);
+  function clearSearchFilters() {
+    setFilters({ ...INITIAL_VENUE_FILTERS, city: filters.city });
   }
 
   return (
@@ -56,25 +53,24 @@ export function HomePage() {
         description="Find lounges, restaurants, bars and cafes across the UK, starting with shisha lounges. View venue details, photos, opening info and request bookings."
         canonicalPath="/"
       />
-      <section>
-        <PageContainer className="py-12 sm:py-16 lg:py-20">
-          <div className="relative isolate mx-auto max-w-5xl px-4 py-12 text-center sm:px-8 sm:py-16 lg:py-20">
-            <span aria-hidden="true" className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[24rem] w-[24rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-clay-accent opacity-[0.08] sm:h-[30rem] sm:w-[30rem] lg:h-[34rem] lg:w-[34rem]" />
-            <h1 className="mx-auto max-w-4xl text-4xl font-bold leading-[1.02] sm:text-6xl lg:text-7xl">
-              Find the right spot
-              <span className="mt-1 block text-clay-accent">before you head out</span>
-            </h1>
-            <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
-              Search shisha lounges across the UK, compare the details, then book with more confidence.
-            </p>
+      <section className="border-b border-nokta-border bg-nokta-surface-alt">
+        <PageContainer className="py-8 sm:py-10">
+          <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+            <div className="max-w-xl">
+              <p className="text-sm font-semibold text-clay-accent">Discover somewhere worth going</p>
+              <h1 className="mt-2 text-3xl font-bold leading-tight sm:text-4xl">Find your next spot</h1>
+              <p className="mt-2 text-sm leading-6 text-muted-foreground sm:text-base">
+                Browse shisha lounges, restaurants and social venues across the UK.
+              </p>
+            </div>
 
-            <form className="mx-auto mt-8 max-w-3xl rounded-2xl border bg-card p-2 shadow-xl shadow-stone-950/5" onSubmit={handleSearchSubmit}>
+            <form className="w-full max-w-3xl rounded-2xl border border-nokta-border bg-white p-2 shadow-lg shadow-stone-950/5" onSubmit={handleSearchSubmit}>
               <div className="grid grid-cols-[minmax(0,1fr)_auto] gap-2 sm:grid-cols-[minmax(0,1fr)_11rem_auto] sm:gap-0">
                 <div className="relative col-span-2 sm:col-span-1">
                   <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
                   <Input
-                    value={query}
-                    onChange={(event) => setQuery(event.target.value)}
+                    value={filters.query}
+                    onChange={(event) => setFilters({ ...filters, query: event.target.value })}
                     className="min-w-0 border-0 bg-transparent pl-9 shadow-none focus-visible:ring-0"
                     placeholder="Search venues, areas or vibes..."
                     aria-label="Search venues, areas or vibes"
@@ -82,8 +78,8 @@ export function HomePage() {
                 </div>
                 <CitySelector
                   id="homepage-city"
-                  value={selectedCity}
-                  onChange={setSelectedCity}
+                  value={filters.city}
+                  onChange={(city) => setFilters({ ...filters, city, area: "all" })}
                   className="h-10 rounded-lg border-nokta-border-input bg-white focus:ring-0 focus:ring-offset-0 focus-visible:bg-nokta-accent-tint/40 sm:rounded-none sm:border-y-0 sm:border-r-0"
                 />
                 <Button type="submit" className="h-10 gap-2 bg-clay-accent px-4 text-white hover:bg-clay-accent-hover sm:ml-2 sm:w-24">
@@ -92,40 +88,87 @@ export function HomePage() {
                 </Button>
               </div>
             </form>
-
-            <div className="mx-auto mt-4 flex max-w-3xl flex-wrap justify-center gap-2">
-              {quickFilters.map((filter) => (
-                <Link key={filter.label} to={buildDiscoverPath(selectedCity, filter.params)}>
-                  <Badge variant="outline" className="border-transparent bg-foreground/5 px-3 py-1.5 text-xs font-medium text-foreground/75 hover:bg-foreground/10">
-                    {filter.label}
-                  </Badge>
-                </Link>
-              ))}
-            </div>
           </div>
 
+          <div className="mt-5 flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            <HomepageFilterChip
+              label="Open now"
+              active={filters.openNow}
+              onClick={() => setFilters({ ...filters, openNow: !filters.openNow })}
+            />
+            <HomepageFilterChip
+              label="Good for groups"
+              active={filters.vibes.includes("groups")}
+              onClick={() =>
+                setFilters({
+                  ...filters,
+                  vibes: filters.vibes.includes("groups") ? filters.vibes.filter((vibe) => vibe !== "groups") : [...filters.vibes, "groups"],
+                })
+              }
+            />
+            <HomepageFilterChip
+              label="Outdoor seating"
+              active={filters.features.outdoor}
+              onClick={() => setFilters({ ...filters, features: { ...filters.features, outdoor: !filters.features.outdoor } })}
+            />
+            <HomepageFilterChip
+              label="£ Budget"
+              active={filters.priceLevel === 1}
+              onClick={() => setFilters({ ...filters, priceLevel: filters.priceLevel === 1 ? "all" : 1 })}
+            />
+            <HomepageFilterChip
+              label="Top rated"
+              active={filters.minRating === 4}
+              onClick={() => setFilters({ ...filters, minRating: filters.minRating === 4 ? "all" : 4 })}
+            />
+          </div>
         </PageContainer>
       </section>
 
-      <PageContainer className="space-y-14 py-10 sm:space-y-16 sm:py-14">
-        {isLoading ? <HomepagePromoSectionSkeleton title="Featured venues" /> : !error ? <HomepageFeaturedVenues venues={venues} /> : null}
-        {isLoading ? <HomepagePromoSectionSkeleton title="Latest venue offers" /> : !error ? <HomepageOffersSection venues={venues} /> : null}
-
+      <PageContainer className="space-y-14 py-8 sm:space-y-16 sm:py-12">
         <section>
-          <div className="mb-6 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
+          <div className="mb-5 flex items-end justify-between gap-4">
             <div>
-              <p className="text-sm text-clay-accent">Explore venues</p>
-              <h2 className="mt-1 text-3xl font-semibold">Book-worthy venues</h2>
+              <h2 className="text-2xl font-semibold sm:text-3xl">Places in {filters.city}</h2>
+              {!isLoading && !error ? (
+                <p className="mt-1 text-sm text-muted-foreground">
+                  {filteredVenues.length === 1 ? "1 venue" : `${filteredVenues.length} venues`} matching your search
+                </p>
+              ) : null}
             </div>
-            <Button asChild variant="outline" className="w-fit">
-              <Link to="/discover">
+            <Button asChild variant="ghost" className="hidden shrink-0 sm:inline-flex">
+              <Link to={discoverPath}>
                 View all
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
           </div>
-          {isLoading ? <LandingVenueGridSkeleton /> : error ? <ErrorState message={error} /> : <LandingVenueGrid venues={featured} />}
+          {isLoading ? (
+            <LandingVenueGridSkeleton />
+          ) : error ? (
+            <ErrorState message={error} />
+          ) : visibleVenues.length ? (
+            <LandingVenueGrid venues={visibleVenues} />
+          ) : (
+            <div className="rounded-2xl border border-dashed border-nokta-border bg-nokta-surface-alt px-6 py-14 text-center">
+              <h3 className="text-xl font-semibold">No venues match those filters</h3>
+              <p className="mt-2 text-sm text-muted-foreground">Try a different city or remove one of the filters.</p>
+              <Button type="button" variant="outline" className="mt-5" onClick={clearSearchFilters}>Clear filters</Button>
+            </div>
+          )}
+
+          <div className="mt-6 flex justify-center">
+            <Button asChild className="h-11 rounded-full bg-nokta-ink px-5 text-white shadow-xl shadow-stone-950/15 hover:bg-nokta-ink/90">
+              <Link to={mapPath}>
+                <Map className="mr-2 h-4 w-4" />
+                Show map
+              </Link>
+            </Button>
+          </div>
         </section>
+
+        {isLoading ? <HomepagePromoSectionSkeleton title="Featured venues" /> : !error ? <HomepageFeaturedVenues venues={venues} /> : null}
+        {isLoading ? <HomepagePromoSectionSkeleton title="Latest venue offers" /> : !error ? <HomepageOffersSection venues={venues} /> : null}
 
         <section>
           <div className="mb-6">
@@ -196,9 +239,30 @@ export function HomePage() {
   );
 }
 
-function buildDiscoverPath(city: string, params: Record<string, string>) {
-  const searchParams = new URLSearchParams({ city, ...params });
-  return `/discover?${searchParams.toString()}`;
+function buildDiscoverPath(filters: VenueFilterState, view?: "map") {
+  const searchParams = filtersToSearchParams(filters);
+  if (view) searchParams.set("view", view);
+  const query = searchParams.toString();
+  return query ? `/discover?${query}` : "/discover";
+}
+
+function HomepageFilterChip({ label, active, onClick }: { label: string; active: boolean; onClick: () => void }) {
+  return (
+    <button
+      type="button"
+      aria-pressed={active}
+      onClick={onClick}
+      className={cn(
+        "inline-flex h-9 shrink-0 items-center gap-1.5 rounded-full border px-3.5 text-sm font-semibold transition-colors",
+        active
+          ? "border-nokta-ink bg-nokta-ink text-white hover:bg-nokta-ink/90"
+          : "border-nokta-border bg-white text-nokta-ink-subtle hover:border-nokta-border-input hover:text-nokta-ink",
+      )}
+    >
+      {label}
+      {active ? <X className="h-3.5 w-3.5" /> : null}
+    </button>
+  );
 }
 
 function LandingVenueGrid({ venues }: { venues: Venue[] }) {
