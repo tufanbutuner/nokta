@@ -9,16 +9,19 @@
     "build": "npm run generate:sitemap && vite build",
     "preview": "vite preview",
     "generate:sitemap": "tsx scripts/generate-sitemap.ts",
-    "discover:venues:london": "tsx scripts/discover-london-venues.ts",
+    "discover:venues": "tsx scripts/discover-venues.ts",
+    "discover:venues:london": "tsx scripts/discover-venues.ts --city=london",
+    "discover:venues:tranche1": "tsx scripts/discover-venues.ts --tranche=1",
     "seed:demo-venues": "tsx scripts/seed-venues.ts",
     "seed:venues": "tsx scripts/seed-real-venues.ts",
-    "seed:venues:london": "tsx scripts/seed-real-venues.ts data/london-venues.generated.json",
+    "seed:venues:london": "tsx scripts/seed-real-venues.ts data/venues/london.generated.json",
     "seed:venues:birmingham": "tsx scripts/seed-real-venues.ts data/birmingham-venues.seed.json",
     "seed:venues:manchester": "tsx scripts/seed-real-venues.ts data/manchester-venues.seed.json",
     "seed:venues:leicester": "tsx scripts/seed-real-venues.ts data/leicester-venues.seed.json",
     "check:metadata": "tsx scripts/check-metadata-parity.ts",
     "check:crawler-body": "tsx scripts/check-crawler-body.ts",
-    "check:seo": "npm run check:metadata && npm run check:crawler-body"
+    "check:seo": "npm run check:metadata && npm run check:crawler-body",
+    "reconcile:venues": "tsx scripts/reconcile-venues.ts"
   },
   "dependencies": {
     "@radix-ui/react-select": "^2.3.7",

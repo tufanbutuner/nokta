@@ -1,0 +1,2787 @@
+[
+  {
+    "id": "waterfront-london-vauxhall-riverside-restaurant-and-bar",
+    "slug": "waterfront-london-vauxhall-riverside-restaurant-and-bar",
+    "name": "Waterfront London Vauxhall Riverside Restaurant & Bar",
+    "description": "Waterfront London Vauxhall Riverside Restaurant & Bar is a spot for shisha in Nine Elms, London with food and drinks, outdoor seating. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "London",
+    "area": "Nine Elms",
+    "address": "3 St George Wharf, London SW8 2LE",
+    "postcode": "SW8 2LE",
+    "latitude": 51.4862618,
+    "longitude": -0.1261377,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "13:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Monday",
+        "open": "13:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "13:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "13:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "13:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Friday",
+        "open": "13:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "13:00",
+        "close": "22:30"
+      }
+    ],
+    "website": "https://www.thewaterfront.london/index.html?utm_source=Organic&utm_medium=GMB_Listing_George_Wharf&utm_id=Google",
+    "instagram": null,
+    "phone": "07445 842888",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T17:42:56.751Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.thewaterfront.london/index.html?utm_source=Organic&utm_medium=GMB_Listing_George_Wharf&utm_id=Google",
+      "otherSource": "https://maps.google.com/?cid=1488778902560091577&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "zima-soho-restaurant",
+    "slug": "zima-soho-restaurant",
+    "name": "ZIMA Soho Restaurant",
+    "description": "ZIMA Soho Restaurant is a spot for shisha in Soho, London with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "London",
+    "area": "Soho",
+    "address": "45 Frith St, London W1D 4SD",
+    "postcode": "W1D 4SD",
+    "latitude": 51.513385899999996,
+    "longitude": -0.13151469999999998,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "21:30"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "22:30"
+      }
+    ],
+    "website": "http://zima.restaurant/",
+    "instagram": null,
+    "phone": "020 7494 9111",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T17:42:56.751Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://zima.restaurant/",
+      "otherSource": "https://maps.google.com/?cid=2762255650525254513&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "zima-bar-and-karaoke-soho",
+    "slug": "zima-bar-and-karaoke-soho",
+    "name": "ZIMA Bar & Karaoke",
+    "description": "ZIMA Bar & Karaoke is a spot for shisha in Soho, London with drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "London",
+    "area": "Soho",
+    "address": "45 Frith St, London W1D 4SD",
+    "postcode": "W1D 4SD",
+    "latitude": 51.5133562,
+    "longitude": -0.1315179,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Friday",
+        "open": "18:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "18:00",
+        "close": "01:00"
+      }
+    ],
+    "website": "https://www.zima.restaurant/",
+    "instagram": null,
+    "phone": "020 7494 9111",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T17:42:56.751Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.zima.restaurant/",
+      "otherSource": "https://maps.google.com/?cid=12264403191969061700&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "sara-cafe-marylebone",
+    "slug": "sara-cafe-marylebone",
+    "name": "Sara Cafe",
+    "description": "Sara Cafe is a spot for shisha in Marylebone, London with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "London",
+    "area": "Marylebone",
+    "address": "13A Crawford St, London W1U 6BZ",
+    "postcode": "W1U 6BZ",
+    "latitude": 51.520043699999995,
+    "longitude": -0.1586313,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "09:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "09:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "09:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "09:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "09:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "01:00"
+      }
+    ],
+    "website": "http://www.shishadelivery.com/",
+    "instagram": null,
+    "phone": "020 7486 5666",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T17:42:56.751Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.shishadelivery.com/",
+      "otherSource": "https://maps.google.com/?cid=16064768220896071469&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "palm-palace-caf-and-restaurant-paddington",
+    "slug": "palm-palace-caf-and-restaurant-paddington",
+    "name": "Palm Palace Café & Restaurant",
+    "description": "Palm Palace Café & Restaurant is a spot for shisha in Paddington, London with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "London",
+    "area": "Paddington",
+    "address": "84 Edgware Rd, London W2 2EA",
+    "postcode": "W2 2EA",
+    "latitude": 51.5154103,
+    "longitude": -0.16312759999999998,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "08:00",
+        "close": "03:30"
+      },
+      {
+        "day": "Monday",
+        "open": "08:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "08:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "08:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "08:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Friday",
+        "open": "08:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "08:00",
+        "close": "03:30"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "020 7262 4779",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T17:42:56.751Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=14516903667482089471&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "khaleej-cafe-marylebone",
+    "slug": "khaleej-cafe-marylebone",
+    "name": "Khaleej Cafe",
+    "description": "Khaleej Cafe is a spot for shisha in Marylebone, London with food, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "London",
+    "area": "Marylebone",
+    "address": "2 Crawford St, London W1U 6AY",
+    "postcode": "W1U 6AY",
+    "latitude": 51.5204022,
+    "longitude": -0.1573485,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:30",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "14:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "14:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "14:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "14:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "13:00",
+        "close": "23:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T17:42:56.751Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=18090354830773568174&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "kibele-restaurant-fitzrovia",
+    "slug": "kibele-restaurant-fitzrovia",
+    "name": "Kibele Restaurant",
+    "description": "Kibele Restaurant is a spot for shisha in Fitzrovia, London with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "London",
+    "area": "Fitzrovia",
+    "address": "175-177 Great Portland St, London W1W 5PJ",
+    "postcode": "W1W 5PJ",
+    "latitude": 51.521897599999996,
+    "longitude": -0.1437173,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "01:00"
+      }
+    ],
+    "website": "https://kibele.co.uk/",
+    "instagram": null,
+    "phone": "020 7436 0600",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T17:42:56.751Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://kibele.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=10463756064369860623&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "darna-restaurant-london",
+    "slug": "darna-restaurant-london",
+    "name": "Darna Restaurant",
+    "description": "Darna Restaurant is a spot for shisha in Paddington, London with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "London",
+    "area": "Paddington",
+    "address": "436 Edgware Rd, London W2 1EG",
+    "postcode": "W2 1EG",
+    "latitude": 51.523015,
+    "longitude": -0.1741479,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "10:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "10:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "10:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "10:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "10:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "10:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "10:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "https://www.instagram.com/darnalounge.ldn/",
+    "instagram": null,
+    "phone": "07389 893332",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T17:42:56.751Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.instagram.com/darnalounge.ldn/",
+      "otherSource": "https://maps.google.com/?cid=7171139178588714344&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "vapebar-paddington",
+    "slug": "vapebar-paddington",
+    "name": "VAPEBAR",
+    "description": "VAPEBAR is a spot for shisha in Paddington, London with late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "London",
+    "area": "Paddington",
+    "address": "185 Edgware Rd, Tyburnia, London W2 1ET",
+    "postcode": "W2 1ET",
+    "latitude": 51.518352,
+    "longitude": -0.16806179999999998,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "03:00"
+      }
+    ],
+    "website": "https://tinyurl.com/3k4ukswb",
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T17:42:56.751Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://tinyurl.com/3k4ukswb",
+      "otherSource": "https://maps.google.com/?cid=5428055640817970689&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "salt-whisky-bar-and-dining-room-paddington",
+    "slug": "salt-whisky-bar-and-dining-room-paddington",
+    "name": "Salt Whisky Bar and Dining Room",
+    "description": "Salt Whisky Bar and Dining Room is a spot for shisha in Paddington, London with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "London",
+    "area": "Paddington",
+    "address": "82 Seymour St, Tyburnia, London W2 2JB",
+    "postcode": "W2 2JB",
+    "latitude": 51.5142732,
+    "longitude": -0.1620179,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "13:00",
+        "close": "02:30"
+      },
+      {
+        "day": "Monday",
+        "open": "13:00",
+        "close": "02:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "13:00",
+        "close": "02:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "13:00",
+        "close": "02:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "13:00",
+        "close": "02:30"
+      },
+      {
+        "day": "Friday",
+        "open": "13:00",
+        "close": "02:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "13:00",
+        "close": "02:30"
+      }
+    ],
+    "website": "http://www.saltbar.com/",
+    "instagram": null,
+    "phone": "020 7402 1155",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T17:42:56.751Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.saltbar.com/",
+      "otherSource": "https://maps.google.com/?cid=15955318879883005824&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "chateau-d-erbil-restaurant-paddington",
+    "slug": "chateau-d-erbil-restaurant-paddington",
+    "name": "Chateau d'Erbil Restaurant مطعم قلعه اربيل",
+    "description": "Chateau d'Erbil Restaurant مطعم قلعه اربيل is a spot for shisha in Paddington, London with food, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "London",
+    "area": "Paddington",
+    "address": "179-181 Edgware Rd, Tyburnia, London W2 1ET",
+    "postcode": "W2 1ET",
+    "latitude": 51.518273699999995,
+    "longitude": -0.1678711,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "09:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "09:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "09:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "09:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "09:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "00:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "020 7262 4127",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T17:42:56.751Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=15132228100082889584&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "cafe-helen-paddington",
+    "slug": "cafe-helen-paddington",
+    "name": "Cafe Helen",
+    "description": "Cafe Helen is a spot for shisha in Paddington, London with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "London",
+    "area": "Paddington",
+    "address": "105A Edgware Rd, Tyburnia, London W2 2HX",
+    "postcode": "W2 2HX",
+    "latitude": 51.516358499999996,
+    "longitude": -0.16530160000000002,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "05:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "05:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "05:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "05:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "05:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "06:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "06:00"
+      }
+    ],
+    "website": "https://cafehelen.website/",
+    "instagram": null,
+    "phone": "020 7402 2072",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T17:42:56.751Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://cafehelen.website/",
+      "otherSource": "https://maps.google.com/?cid=1047605968004628459&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "sapores-restaurant-camden-town",
+    "slug": "sapores-restaurant-camden-town",
+    "name": "Sapores Restaurant",
+    "description": "Sapores Restaurant is a spot for shisha in Camden Town, London with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "London",
+    "area": "Camden Town",
+    "address": "51 Camden High St, London NW1 7JH",
+    "postcode": "NW1 7JH",
+    "latitude": 51.5356764,
+    "longitude": -0.1398871,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:00",
+        "close": "01:00"
+      }
+    ],
+    "website": "http://sapores.co.uk/",
+    "instagram": null,
+    "phone": "020 7388 1973",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T17:42:56.751Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://sapores.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=5576283889609913556&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "kaso-rooftop-bar-and-kitchen-whitechapel",
+    "slug": "kaso-rooftop-bar-and-kitchen-whitechapel",
+    "name": "Kaso Rooftop Bar & Kitchen",
+    "description": "Kaso Rooftop Bar & Kitchen is a spot for shisha in Whitechapel, London with drinks, outdoor seating, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "London",
+    "area": "Whitechapel",
+    "address": "100 Shoreditch High St, London E1 6JQ",
+    "postcode": "E1 6JQ",
+    "latitude": 51.5254663,
+    "longitude": -0.0772795,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": true,
+    "food": false,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "outdoor",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:00",
+        "close": "00:00"
+      }
+    ],
+    "website": "https://www.onehundredshoreditch.com/eat-drink/kaso-rooftop/?utm_source=google&utm_medium=local&utm_campaign=bar-therooftop",
+    "instagram": null,
+    "phone": "020 7613 9800",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T17:42:56.751Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.onehundredshoreditch.com/eat-drink/kaso-rooftop/?utm_source=google&utm_medium=local&utm_campaign=bar-therooftop",
+      "otherSource": "https://maps.google.com/?cid=15382228642057276367&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "the-light-bar-and-dining-whitechapel",
+    "slug": "the-light-bar-and-dining-whitechapel",
+    "name": "The Light Bar & Dining",
+    "description": "The Light Bar & Dining is a spot for shisha in Whitechapel, London with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "London",
+    "area": "Whitechapel",
+    "address": "233 Shoreditch High St, London E1 6PJ",
+    "postcode": "E1 6PJ",
+    "latitude": 51.522141399999995,
+    "longitude": -0.07833,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "https://www.lightbarlondon.com/",
+    "instagram": null,
+    "phone": "020 8194 1685",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T17:42:56.751Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.lightbarlondon.com/",
+      "otherSource": "https://maps.google.com/?cid=8262437448730115347&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "love-cafe-islington",
+    "slug": "love-cafe-islington",
+    "name": "LOVE CAFE ️",
+    "description": "LOVE CAFE ️ is a spot for shisha in Islington, London with food, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "London",
+    "area": "Islington",
+    "address": "318 Caledonian Rd, London N1 1BB",
+    "postcode": "N1 1BB",
+    "latitude": 51.5401038,
+    "longitude": -0.11662009999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "09:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "09:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "09:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "09:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "09:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "00:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07894 064238",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T17:42:56.751Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=1319473256052633083&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "vera-cruz-lebanese-grill-and-cafe-brixton",
+    "slug": "vera-cruz-lebanese-grill-and-cafe-brixton",
+    "name": "Vera Cruz Lebanese Grill and Cafe",
+    "description": "Vera Cruz Lebanese Grill and Cafe is a spot for shisha in Brixton, London with food, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "London",
+    "area": "Brixton",
+    "address": "2, Arlington Parade, Brixton Hill, London SW2 1RH",
+    "postcode": "SW2 1RH",
+    "latitude": 51.4591284,
+    "longitude": -0.11725709999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "07:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "07:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "07:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "07:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "07:30",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "01:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "020 7733 4810",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T17:42:56.751Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=2589354522476576188&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "lotus-bar-clapham",
+    "slug": "lotus-bar-clapham",
+    "name": "Lotus Bar",
+    "description": "Lotus Bar is a spot for shisha in Clapham, London with food and drinks, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "London",
+    "area": "Clapham",
+    "address": "76 Clapham High St, London SW4 7UL",
+    "postcode": "SW4 7UL",
+    "latitude": 51.463592899999995,
+    "longitude": -0.1335057,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Monday",
+        "open": "18:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "18:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "18:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "18:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "02:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "15:00",
+        "close": "02:30"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "020 7720 2516",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T17:42:56.751Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=4453633220625663304&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "sultan-cafe-fulham",
+    "slug": "sultan-cafe-fulham",
+    "name": "Sultan Cafe",
+    "description": "Sultan Cafe is a spot for shisha in Fulham, London with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "London",
+    "area": "Fulham",
+    "address": "250B North End Rd, London SW6 1NJ",
+    "postcode": "SW6 1NJ",
+    "latitude": 51.4845422,
+    "longitude": -0.20208689999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "04:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "04:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "04:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "04:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "04:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "04:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "04:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07468 498206",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T17:42:56.751Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=11208651220489682038&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "cafe-havana-streatham",
+    "slug": "cafe-havana-streatham",
+    "name": "Cafe Havana",
+    "description": "Cafe Havana is a spot for shisha in Streatham, London with late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "London",
+    "area": "Streatham",
+    "address": "1347 London Rd, Norbury, London SW16 4BE",
+    "postcode": "SW16 4BE",
+    "latitude": 51.4074695,
+    "longitude": -0.1216367,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "https://usplace.top/cafe-havana-2",
+    "instagram": null,
+    "phone": "020 7175 0211",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T17:42:56.751Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://usplace.top/cafe-havana-2",
+      "otherSource": "https://maps.google.com/?cid=16155601848328507718&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "al-farah-cafe-tooting",
+    "slug": "al-farah-cafe-tooting",
+    "name": "Al Farah Cafe",
+    "description": "Al Farah Cafe is a spot for shisha in Tooting, London with food, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "London",
+    "area": "Tooting",
+    "address": "137 Mitcham Rd, London SW17 9PE",
+    "postcode": "SW17 9PE",
+    "latitude": 51.4249571,
+    "longitude": -0.16362179999999998,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "01:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "020 7018 5680",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T17:42:56.751Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=1418708193584435235&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "north-pole-bar-and-grill-greenwich",
+    "slug": "north-pole-bar-and-grill-greenwich",
+    "name": "North Pole Bar and Grill",
+    "description": "North Pole Bar and Grill is a spot for shisha in Greenwich, London with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "London",
+    "area": "Greenwich",
+    "address": "131 Greenwich High Rd, London SE10 8JA",
+    "postcode": "SE10 8JA",
+    "latitude": 51.47690000000001,
+    "longitude": -0.016783,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "00:30"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "01:00"
+      }
+    ],
+    "website": "http://www.northpolegreenwich.co.uk/",
+    "instagram": null,
+    "phone": "020 8079 7465",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T17:42:56.751Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.northpolegreenwich.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=4311060466019309313&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "lokanta-bar-and-grill-greenwich",
+    "slug": "lokanta-bar-and-grill-greenwich",
+    "name": "Lokanta Bar and Grill",
+    "description": "Lokanta Bar and Grill is a spot for shisha in Greenwich, London with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "London",
+    "area": "Greenwich",
+    "address": "11 - 13 Greenwich Church St, London SE10 9BJ",
+    "postcode": "SE10 9BJ",
+    "latitude": 51.4809834,
+    "longitude": -0.009898299999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "00:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "00:30"
+      }
+    ],
+    "website": "http://www.lokantagreenwich.co.uk/",
+    "instagram": null,
+    "phone": "020 8858 2348",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T17:42:56.751Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.lokantagreenwich.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=835252537901420329&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "tigerbay-hanger-lane-restaurant-bar-west-london-park-royal-ealing",
+    "slug": "tigerbay-hanger-lane-restaurant-bar-west-london-park-royal-ealing",
+    "name": "TIGERBAY HANGER LANE | RESTAURANT | BAR | WEST LONDON | PARK ROYAL",
+    "description": "TIGERBAY HANGER LANE RESTAURANT BAR WEST LONDON PARK ROYAL is a spot for shisha in Ealing, London with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "London",
+    "area": "Ealing",
+    "address": "11 Royal Parade, Hanger Ln, London W5 1ET",
+    "postcode": "W5 1ET",
+    "latitude": 51.529604500000005,
+    "longitude": -0.29337389999999997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "03:30"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "03:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "03:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "03:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "03:30"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "04:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "04:30"
+      }
+    ],
+    "website": "http://www.tigerbayhangerlane.co.uk/",
+    "instagram": null,
+    "phone": "07927 333319",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T17:42:56.751Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.tigerbayhangerlane.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=13041020974866558402&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "bamboo-restaurant-willesden",
+    "slug": "bamboo-restaurant-willesden",
+    "name": "Bamboo restaurant",
+    "description": "Bamboo restaurant is a spot for shisha in Willesden, London with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "London",
+    "area": "Willesden",
+    "address": "823 Western Rd, London NW10 7LT",
+    "postcode": "NW10 7LT",
+    "latitude": 51.5283981,
+    "longitude": -0.2712346,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "15:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Friday",
+        "open": "15:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "15:00",
+        "close": "02:30"
+      }
+    ],
+    "website": "http://www.bamboolounge.uk/",
+    "instagram": null,
+    "phone": "07833 333873",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T17:42:56.751Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.bamboolounge.uk/",
+      "otherSource": "https://maps.google.com/?cid=11788832530599698475&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "boof-restaurant-ealing",
+    "slug": "boof-restaurant-ealing",
+    "name": "Boof Restaurant (Ealing)",
+    "description": "Boof Restaurant (Ealing) is a spot for shisha in Ealing, London with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "London",
+    "area": "Ealing",
+    "address": "57 New Broadway, London W5 5AH",
+    "postcode": "W5 5AH",
+    "latitude": 51.512617999999996,
+    "longitude": -0.307351,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://www.boofrestaurant.co.uk/ealing/?mtm_campaign=Business%20Profiles&mtm_kwd=Google%20Business",
+    "instagram": null,
+    "phone": "020 8567 5577",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T17:42:56.751Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.boofrestaurant.co.uk/ealing/?mtm_campaign=Business%20Profiles&mtm_kwd=Google%20Business",
+      "otherSource": "https://maps.google.com/?cid=9256504103215389403&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "the-castlebar-ealing-west-ealing",
+    "slug": "the-castlebar-ealing-west-ealing",
+    "name": "The Castlebar - Ealing",
+    "description": "The Castlebar - Ealing is a spot for shisha in West Ealing, London with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "London",
+    "area": "West Ealing",
+    "address": "84 Uxbridge Rd, London W13 8RA",
+    "postcode": "W13 8RA",
+    "latitude": 51.5117026,
+    "longitude": -0.3154027,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "10:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "10:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "10:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "10:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "10:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "10:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "10:00",
+        "close": "01:00"
+      }
+    ],
+    "website": "https://www.thecastlebar.uk/",
+    "instagram": null,
+    "phone": "020 8567 3819",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T17:42:56.751Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.thecastlebar.uk/",
+      "otherSource": "https://maps.google.com/?cid=8591831269922743742&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "aquarium-persian-restaurant-acton",
+    "slug": "aquarium-persian-restaurant-acton",
+    "name": "Aquarium Persian Restaurant",
+    "description": "Aquarium Persian Restaurant is a spot for shisha in Acton, London with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "London",
+    "area": "Acton",
+    "address": "4, The Broadway, Gunnersbury Ln, London W3 8HR",
+    "postcode": "W3 8HR",
+    "latitude": 51.502483299999994,
+    "longitude": -0.28097,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "http://aquariumpersianrestaurants.com/",
+    "instagram": null,
+    "phone": "020 8992 8204",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T17:42:56.751Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://aquariumpersianrestaurants.com/",
+      "otherSource": "https://maps.google.com/?cid=9893616333655943696&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "rara-bar-and-grill-northfields-ealing",
+    "slug": "rara-bar-and-grill-northfields-ealing",
+    "name": "RARA Bar & Grill Northfields",
+    "description": "RARA Bar & Grill Northfields is a spot for shisha in Ealing, London with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "London",
+    "area": "Ealing",
+    "address": "264 Northfield Ave, London W5 4UB",
+    "postcode": "W5 4UB",
+    "latitude": 51.4989425,
+    "longitude": -0.314859,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "00:00"
+      }
+    ],
+    "website": "https://www.rarabarandgrill.com/northfields/",
+    "instagram": null,
+    "phone": "07301 287185",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T17:42:56.751Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.rarabarandgrill.com/northfields/",
+      "otherSource": "https://maps.google.com/?cid=13465843242697848643&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "alborz-cafe-west-kensington",
+    "slug": "alborz-cafe-west-kensington",
+    "name": "Alborz Cafe",
+    "description": "Alborz Cafe is a spot for shisha in West Kensington, London with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "London",
+    "area": "West Kensington",
+    "address": "13 Hammersmith Rd, London W14 8XJ",
+    "postcode": "W14 8XJ",
+    "latitude": 51.4958185,
+    "longitude": -0.208644,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "15:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "15:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "15:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "15:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "15:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "15:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "15:30",
+        "close": "23:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07860 471842",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T17:42:56.751Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=16318332950440967122&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "hamadia-restaurant-and-sweet-willesden",
+    "slug": "hamadia-restaurant-and-sweet-willesden",
+    "name": "Hamadia Restaurant and Sweet مطعم وحلويات الحميدية",
+    "description": "Hamadia Restaurant and Sweet مطعم وحلويات الحميدية is a spot for shisha in Willesden, London with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "London",
+    "area": "Willesden",
+    "address": "Unit 6, 26-28 Standard Rd, London NW10 6EU",
+    "postcode": "NW10 6EU",
+    "latitude": 51.5286261,
+    "longitude": -0.26309679999999996,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Monday",
+        "open": "10:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "10:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "10:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "10:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "10:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "23:30"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T17:42:56.751Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=1418806134738368292&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "piano-restaurant-chiswick",
+    "slug": "piano-restaurant-chiswick",
+    "name": "Piano Restaurant",
+    "description": "Piano Restaurant is a spot for shisha in Chiswick, London with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "London",
+    "area": "Chiswick",
+    "address": "80-82 Chiswick High Rd., Chiswick, London W4 1SY",
+    "postcode": "W4 1SY",
+    "latitude": 51.4931408,
+    "longitude": -0.2502348,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "00:00"
+      }
+    ],
+    "website": "http://pianorestaurant.co.uk/",
+    "instagram": null,
+    "phone": "020 8994 4440",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T17:42:56.752Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://pianorestaurant.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=15704299452792748918&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "wazir-restaurant-ilford",
+    "slug": "wazir-restaurant-ilford",
+    "name": "Wazir Restaurant",
+    "description": "Wazir Restaurant is a spot for shisha in Ilford, London with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "London",
+    "area": "Ilford",
+    "address": "55, 57 Cranbrook Rd, London IG1 4PG",
+    "postcode": "IG1 4PG",
+    "latitude": 51.56021,
+    "longitude": 0.06952799999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "08:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "08:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "08:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "08:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "08:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "08:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "08:00",
+        "close": "01:00"
+      }
+    ],
+    "website": "https://www.wazirrestaurant.uk/",
+    "instagram": null,
+    "phone": "020 8478 0500",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T17:42:56.752Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.wazirrestaurant.uk/",
+      "otherSource": "https://maps.google.com/?cid=2326628601469522239&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "lokma-turkish-grill-and-bar-bermondsey",
+    "slug": "lokma-turkish-grill-and-bar-bermondsey",
+    "name": "Lokma Turkish Grill & Bar",
+    "description": "Lokma Turkish Grill & Bar is a spot for shisha in Bermondsey, London with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "London",
+    "area": "Bermondsey",
+    "address": "11 Bermondsey Sq, London SE1 3UN",
+    "postcode": "SE1 3UN",
+    "latitude": 51.4976221,
+    "longitude": -0.0801689,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "00:00"
+      }
+    ],
+    "website": "https://www.lokmarestaurant.com/",
+    "instagram": null,
+    "phone": "020 7407 2991",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T17:42:56.752Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.lokmarestaurant.com/",
+      "otherSource": "https://maps.google.com/?cid=5507689130365319425&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  }
+]
