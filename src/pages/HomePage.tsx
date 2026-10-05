@@ -1,9 +1,10 @@
 import { useMemo, useState, type FormEvent } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { ArrowRight, ChevronRight, MapPin, Search, Star } from "lucide-react";
+import { ArrowRight, ChevronRight, Search, Star } from "lucide-react";
 import { HomepageFeaturedVenues } from "@/components/featured/HomepageFeaturedVenues";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { HomepageOffersSection } from "@/components/offers/HomepageOffersSection";
+import { CitySelector } from "@/components/search/CitySelector";
 import { PageMeta } from "@/components/seo/PageMeta";
 import { FavouriteButton } from "@/components/venues/FavouriteButton";
 import { VenueGrid } from "@/components/venues/VenueGrid";
@@ -17,41 +18,21 @@ import { brandConfig } from "@/config/brand";
 import { DEFAULT_CITY, getActiveCities } from "@/lib/cities";
 import { VenueImage } from "@/components/venues/VenueImage";
 import { getVenueCurrentStatus } from "@/lib/openingHours";
-import { formatVenuePrimaryCategoryPlural } from "@/lib/venueCategoryLabels";
 import { formatVenuePrimaryCategory } from "@/lib/venueCategoryLabels";
 import type { Venue } from "@/types/venue";
 
-const quickFilters = [
-  { label: "Open tonight", to: "/discover?city=London&status=open" },
-  { label: "Good for groups", to: "/discover?city=London&vibe=groups" },
-  { label: "Outdoor spots", to: "/discover?city=London&vibe=outdoor" },
-  { label: "Under £20", to: "/discover?city=London&price=1" },
-  { label: "Near me", to: "/discover?city=London&sort=nearest" },
-] as const;
-
-const CITY_DESCRIPTIONS: Record<string, string> = {
-  London: "Explore social venues across London by area, vibe, price and distance.",
-  Birmingham: "Find lounges and late-night social venues across Birmingham.",
-  Manchester: "Discover social venues across Manchester for casual nights, groups and late plans.",
-  Leicester: "Browse social venues across Leicester by vibe, features and location.",
-  Glasgow: "Find shisha lounges and late-night social venues across Glasgow.",
-  Leeds: "Discover social venues across Leeds, from Chapeltown to the city centre.",
-  Bradford: "Browse shisha lounges and social spots across Bradford by area and vibe.",
-  Sheffield: "Explore social venues across Sheffield for groups, dates and late plans.",
-  Liverpool: "Find lounges and late-night social venues across Liverpool.",
-  Nottingham: "Discover shisha lounges and social venues across Nottingham.",
-};
-
-const categoryEntrypoints = [
-  { label: "Shisha lounges", category: "shisha_lounge", status: "live", description: "Bookable lounges, late-night spots and places with shisha menus." },
-  { label: "Restaurants", category: "restaurant", status: "Coming soon", description: "Dinner-first venues for dates, birthdays and group tables." },
-  { label: "Bars", category: "bar", status: "Coming soon", description: "Social bars and evening venues for drinks-led plans." },
-  { label: "Cafes", category: "cafe", status: "Coming soon", description: "Daytime cafes, dessert spots and casual catch-ups." },
-] as const;
+const quickFilters: Array<{ label: string; params: Record<string, string> }> = [
+  { label: "Open now", params: { status: "open" } },
+  { label: "Good for groups", params: { vibes: "groups" } },
+  { label: "Outdoor seating", params: { features: "outdoor" } },
+  { label: "£ Budget", params: { price: "1" } },
+  { label: "Top rated", params: { rating: "4" } },
+];
 
 export function HomePage() {
   const navigate = useNavigate();
   const [query, setQuery] = useState("");
+  const [selectedCity, setSelectedCity] = useState(DEFAULT_CITY);
   const { venues, isLoading, error } = useVenues();
   const featured = venues.slice(0, 4);
   const areaCards = useMemo(() => getAreaCards(venues, DEFAULT_CITY), [venues]);
@@ -59,13 +40,13 @@ export function HomePage() {
 
   function handleSearchSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const params = new URLSearchParams();
+    const params = new URLSearchParams({ city: selectedCity });
 
     if (query.trim()) {
       params.set("q", query.trim());
     }
 
-    navigate(params.toString() ? `/discover?${params.toString()}` : "/discover");
+    navigate(`/discover?${params.toString()}`);
   }
 
   return (
@@ -84,32 +65,37 @@ export function HomePage() {
               <span className="mt-1 block text-clay-accent">before you head out</span>
             </h1>
             <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
-              Search shisha lounges, restaurants, bars and cafes across the UK, compare the details, then book with more confidence.
+              Search shisha lounges across the UK, compare the details, then book with more confidence.
             </p>
 
             <form className="mx-auto mt-8 max-w-3xl rounded-2xl border bg-card p-2 shadow-xl shadow-stone-950/5" onSubmit={handleSearchSubmit}>
-              <div className="relative">
-                <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-                <Input
-                  value={query}
-                  onChange={(event) => setQuery(event.target.value)}
-                  className="min-w-0 border-0 bg-transparent pl-9 pr-14 shadow-none focus-visible:ring-0 sm:pr-56"
-                  placeholder="Search venues, areas or vibes..."
-                />
-                <div className="absolute right-28 top-1/2 hidden h-8 -translate-y-1/2 items-center gap-2 border-l px-4 text-sm text-muted-foreground sm:flex">
-                  <MapPin className="h-4 w-4" />
-                  London
+              <div className="grid grid-cols-[minmax(0,1fr)_auto] gap-2 sm:grid-cols-[minmax(0,1fr)_11rem_auto] sm:gap-0">
+                <div className="relative col-span-2 sm:col-span-1">
+                  <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+                  <Input
+                    value={query}
+                    onChange={(event) => setQuery(event.target.value)}
+                    className="min-w-0 border-0 bg-transparent pl-9 shadow-none focus-visible:ring-0"
+                    placeholder="Search venues, areas or vibes..."
+                    aria-label="Search venues, areas or vibes"
+                  />
                 </div>
-                <Button type="submit" className="absolute right-0 top-1/2 h-10 w-10 -translate-y-1/2 bg-clay-accent px-0 text-white hover:bg-clay-accent-hover sm:w-24 sm:px-4">
-                  <Search className="h-4 w-4 sm:hidden" />
-                  <span className="sr-only sm:not-sr-only">Explore</span>
+                <CitySelector
+                  id="homepage-city"
+                  value={selectedCity}
+                  onChange={setSelectedCity}
+                  className="h-10 rounded-lg border-nokta-border-input bg-white focus:ring-0 focus:ring-offset-0 focus-visible:bg-nokta-accent-tint/40 sm:rounded-none sm:border-y-0 sm:border-r-0"
+                />
+                <Button type="submit" className="h-10 gap-2 bg-clay-accent px-4 text-white hover:bg-clay-accent-hover sm:ml-2 sm:w-24">
+                  <Search className="h-4 w-4" />
+                  <span>Explore</span>
                 </Button>
               </div>
             </form>
 
             <div className="mx-auto mt-4 flex max-w-3xl flex-wrap justify-center gap-2">
               {quickFilters.map((filter) => (
-                <Link key={filter.label} to={filter.to}>
+                <Link key={filter.label} to={buildDiscoverPath(selectedCity, filter.params)}>
                   <Badge variant="outline" className="border-transparent bg-foreground/5 px-3 py-1.5 text-xs font-medium text-foreground/75 hover:bg-foreground/10">
                     {filter.label}
                   </Badge>
@@ -122,47 +108,13 @@ export function HomePage() {
       </section>
 
       <PageContainer className="space-y-14 py-10 sm:space-y-16 sm:py-14">
-        <section>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {categoryEntrypoints.map((category) => {
-              const count = venues.filter((venue) => venue.primaryCategory === category.category).length;
-              const isLive = category.status === "live";
-
-              return (
-                <Link
-                  key={category.category}
-                  to={isLive ? `/discover?category=${category.category}` : "#"}
-                  className="group relative isolate overflow-hidden rounded-2xl border border-nokta-border bg-card p-5 transition hover:-translate-y-0.5 hover:border-nokta-border-input"
-                  aria-disabled={!isLive}
-                  onClick={(event) => {
-                    if (!isLive) event.preventDefault();
-                  }}
-                >
-                  <CardMark className="-bottom-10 -right-9 h-32 w-32 opacity-[0.055]" />
-                  <div className="flex items-start justify-between gap-4">
-                    <h3 className="font-semibold text-nokta-ink">{category.label}</h3>
-                    <span className={isLive ? "rounded-full bg-nokta-accent-tint px-2.5 py-1 text-xs font-semibold text-nokta-accent-dark" : "rounded-full bg-foreground/5 px-2.5 py-1 text-xs font-semibold text-muted-foreground"}>
-                      {isLive ? `${count} live` : category.status}
-                    </span>
-                  </div>
-                  <p className="mt-4 text-sm leading-6 text-nokta-ink-subtle">{category.description}</p>
-                  <div className="mt-5 flex items-center gap-2 text-sm font-semibold text-clay-accent">
-                    {isLive ? formatVenuePrimaryCategoryPlural(category.category) : "Planned category"}
-                    <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
-        </section>
-
         {isLoading ? <HomepagePromoSectionSkeleton title="Featured venues" /> : !error ? <HomepageFeaturedVenues venues={venues} /> : null}
         {isLoading ? <HomepagePromoSectionSkeleton title="Latest venue offers" /> : !error ? <HomepageOffersSection venues={venues} /> : null}
 
         <section>
           <div className="mb-6 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
             <div>
-              <p className="text-sm text-clay-accent">Popular near you</p>
+              <p className="text-sm text-clay-accent">Explore venues</p>
               <h2 className="mt-1 text-3xl font-semibold">Book-worthy venues</h2>
             </div>
             <Button asChild variant="outline" className="w-fit">
@@ -175,40 +127,44 @@ export function HomePage() {
           {isLoading ? <LandingVenueGridSkeleton /> : error ? <ErrorState message={error} /> : <LandingVenueGrid venues={featured} />}
         </section>
 
-        <section className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-          <div>
+        <section>
+          <div className="mb-6">
             <h2 className="text-3xl font-semibold">Browse by place</h2>
-            <p className="mt-3 max-w-md text-sm leading-6 text-muted-foreground">
+            <p className="mt-2 max-w-2xl text-sm leading-6 text-muted-foreground">
               Start with a city, or jump straight into the London areas people already search for.
             </p>
           </div>
-          <div className="grid gap-3 sm:grid-cols-2">
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
             {cityCards.map((city) => (
-              <article key={city.slug} className="relative isolate overflow-hidden rounded-xl border bg-card p-5 transition hover:-translate-y-0.5 hover:border-nokta-border-input">
+              <Link
+                key={city.slug}
+                to={`/cities/${city.slug}`}
+                className="group relative isolate overflow-hidden rounded-xl border bg-card p-4 transition hover:-translate-y-0.5 hover:border-nokta-border-input"
+              >
                 <CardMark className="-bottom-12 -right-10 h-32 w-32 opacity-[0.04]" />
                 <div className="flex items-start justify-between gap-4">
                   <div>
                     <h3 className="font-semibold">{city.name}</h3>
                     <p className="mt-1 text-sm text-muted-foreground">{city.count === 1 ? "1 venue listed" : `${city.count} venues listed`}</p>
                   </div>
-                  <ChevronRight className="mt-1 h-4 w-4 text-muted-foreground" />
+                  <ChevronRight className="mt-1 h-4 w-4 text-muted-foreground transition group-hover:translate-x-0.5 group-hover:text-foreground" />
                 </div>
-                <p className="mt-4 text-sm leading-6 text-muted-foreground">{city.description}</p>
-                <div className="mt-5 flex flex-wrap gap-2">
-                  <Button asChild variant="outline" size="sm">
-                    <Link to={`/cities/${city.slug}`}>City page</Link>
-                  </Button>
-                  <Button asChild size="sm">
-                    <Link to={`/discover?city=${encodeURIComponent(city.name)}`}>Discover</Link>
-                  </Button>
-                </div>
-              </article>
+              </Link>
             ))}
+          </div>
+
+          <div className="mb-3 mt-8 flex items-center justify-between gap-4">
+            <h3 className="text-lg font-semibold">Popular London areas</h3>
+            <Link to="/discover?city=London" className="text-sm font-semibold text-clay-accent hover:text-clay-accent-hover">
+              View all
+            </Link>
+          </div>
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-6">
             {areaCards.map((area) => (
               <Link
                 key={area.name}
                 to={`/discover?area=${encodeURIComponent(area.name)}`}
-                className="group flex items-center justify-between rounded-xl border bg-background px-4 py-3 transition hover:border-nokta-border-input"
+                className="group flex items-center justify-between rounded-xl border bg-background px-4 py-3 transition hover:-translate-y-0.5 hover:border-nokta-border-input"
               >
                 <span>
                   <span className="block font-semibold">{area.name}</span>
@@ -228,7 +184,7 @@ export function HomePage() {
           </p>
           <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
             <Button asChild className="bg-clay-accent text-white hover:bg-clay-accent-hover">
-              <Link to="/discover">Get started free</Link>
+              <Link to="/discover">Explore venues</Link>
             </Button>
             <Button asChild variant="outline" className="border-background/25 text-background hover:bg-background/10">
               <Link to="/recommend">Find a recommendation</Link>
@@ -238,6 +194,11 @@ export function HomePage() {
       </PageContainer>
     </main>
   );
+}
+
+function buildDiscoverPath(city: string, params: Record<string, string>) {
+  const searchParams = new URLSearchParams({ city, ...params });
+  return `/discover?${searchParams.toString()}`;
 }
 
 function LandingVenueGrid({ venues }: { venues: Venue[] }) {
@@ -300,6 +261,7 @@ function LandingVenueGridSkeleton() {
 
 function LandingVenueCard({ venue }: { venue: Venue }) {
   const currentStatus = getVenueCurrentStatus(venue);
+  const currentStatusLabel = formatLandingStatus(currentStatus);
 
   return (
     <article className="group relative isolate overflow-hidden rounded-2xl border border-nokta-border bg-nokta-surface p-2 shadow-none transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-stone-950/5">
@@ -325,20 +287,22 @@ function LandingVenueCard({ venue }: { venue: Venue }) {
           <h3 className="truncate text-[15px] font-semibold leading-5 text-nokta-ink">{venue.name}</h3>
           <p className="mt-0.5 truncate text-[13px] leading-5 text-nokta-ink-muted">{venue.area} · {formatVenuePrimaryCategory(venue.primaryCategory)}</p>
         </Link>
-        <div className="mt-4 flex items-center justify-between gap-3">
-          <span className="text-[13px] font-medium text-nokta-ink-muted">{venue.priceFrom ? `£${venue.priceFrom}+` : "Price TBC"}</span>
-          <span
-            className={
-              currentStatus === "open"
-                ? "rounded-full bg-nokta-accent-tint px-2.5 py-1 text-xs font-semibold text-nokta-accent-dark"
-                : currentStatus === "closed"
-                  ? "rounded-full bg-red-950/10 px-2.5 py-1 text-xs font-semibold text-red-700"
-                  : "rounded-full bg-muted px-2.5 py-1 text-xs font-semibold text-muted-foreground"
-            }
-          >
-            {formatLandingStatus(currentStatus)}
-          </span>
-        </div>
+        {venue.priceFrom || currentStatusLabel ? (
+          <div className="mt-4 flex items-center justify-between gap-3">
+            {venue.priceFrom ? <span className="text-[13px] font-medium text-nokta-ink-muted">£{venue.priceFrom}+</span> : null}
+            {currentStatusLabel ? (
+              <span
+                className={
+                  currentStatus === "open"
+                    ? "ml-auto rounded-full bg-nokta-accent-tint px-2.5 py-1 text-xs font-semibold text-nokta-accent-dark"
+                    : "ml-auto rounded-full bg-red-950/10 px-2.5 py-1 text-xs font-semibold text-red-700"
+                }
+              >
+                {currentStatusLabel}
+              </span>
+            ) : null}
+          </div>
+        ) : null}
       </div>
     </article>
   );
@@ -357,7 +321,7 @@ function formatLandingStatus(status: ReturnType<typeof getVenueCurrentStatus>) {
     return "Closed";
   }
 
-  return "Hours TBC";
+  return null;
 }
 
 function getAreaCards(venues: Venue[], city: string) {
@@ -390,7 +354,6 @@ function getCityCards(venues: Venue[]) {
     return {
       ...city,
       count,
-      description: CITY_DESCRIPTIONS[city.name] ?? `Explore social venues across ${city.name}.`,
     };
   });
 }

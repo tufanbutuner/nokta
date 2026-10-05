@@ -72,7 +72,7 @@ export function FeaturedVenueCard({
 function StatusPill({ status }: { status: ReturnType<typeof getVenueCurrentStatus> }) {
   if (status === "open") return <span className="rounded-full bg-nokta-accent-tint px-2.5 py-1 text-xs font-semibold text-nokta-accent-dark">Open</span>;
   if (status === "closed") return <span className="rounded-full bg-red-950/10 px-2.5 py-1 text-xs font-semibold text-red-700">Closed</span>;
-  return <span className="rounded-full bg-muted px-2.5 py-1 text-xs font-semibold text-muted-foreground">Hours TBC</span>;
+  return null;
 }
 
 function getSourceSurface(variant: "homepage" | "discover" | "city") {

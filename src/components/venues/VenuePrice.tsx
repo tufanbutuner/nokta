@@ -5,7 +5,7 @@ export function VenuePrice({ level, from }: { level: PriceLevel; from?: number |
   return (
     <span className="text-sm text-muted-foreground">
       {formatPriceLevel(level)}
-      {from ? ` · Shisha £${from}+` : " · Price TBC"}
+      {from ? ` · Shisha £${from}+` : null}
     </span>
   );
 }

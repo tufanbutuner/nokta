@@ -68,9 +68,8 @@ export function DiscoverPage() {
     { open: 0, closed: 0, unknown: 0 },
   );
   const statusCountLabel = [
-    `${venueStatusCounts.open} open`,
-    `${venueStatusCounts.closed} closed`,
-    venueStatusCounts.unknown ? `${venueStatusCounts.unknown} TBC` : null,
+    venueStatusCounts.open ? `${venueStatusCounts.open} open` : null,
+    venueStatusCounts.closed ? `${venueStatusCounts.closed} closed` : null,
   ]
     .filter((item): item is string => Boolean(item))
     .join(" · ");

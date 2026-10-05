@@ -184,7 +184,14 @@ export function Header() {
           <SheetTitle>Menu</SheetTitle>
           <SheetClose onClick={() => setMobileMenuOpen(false)} aria-label="Close menu" />
         </SheetHeader>
-        <nav className="flex flex-col">
+        <nav
+          className="flex flex-col"
+          onClick={(event) => {
+            if (event.target instanceof Element && event.target.closest("a")) {
+              setMobileMenuOpen(false);
+            }
+          }}
+        >
           <NavLink to="/discover" className={mobileNavLinkClass}>
             Discover
           </NavLink>

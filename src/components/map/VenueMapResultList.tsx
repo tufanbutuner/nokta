@@ -30,6 +30,7 @@ export function VenueMapResultList({
         const distanceLabel = userLocation ? formatDistanceMiles(getVenueDistanceMiles(venue, userLocation)).replace(" away", "") : null;
         const reviewSummary = reviewSummaries[venue.id];
         const rating = reviewSummary?.averageRating ?? venue.rating ?? null;
+        const currentStatus = getVenueCurrentStatus(venue);
 
         return (
           <Card
@@ -61,15 +62,17 @@ export function VenueMapResultList({
                   {distanceLabel ? <span> • {distanceLabel}</span> : null}
                   <span> • {formatPriceLevel(venue.priceLevel)}</span>
                 </p>
-                <div className="mt-2 flex items-center gap-2">
-                  {rating ? (
-                    <span className="inline-flex items-center gap-1 text-xs font-semibold text-nokta-ink">
-                      <Star className="h-3 w-3 fill-nokta-ink text-nokta-ink" />
-                      {rating}
-                    </span>
-                  ) : null}
-                  <CurrentStatusBadge status={getVenueCurrentStatus(venue)} />
-                </div>
+                {rating || currentStatus !== "unknown" ? (
+                  <div className="mt-2 flex items-center gap-2">
+                    {rating ? (
+                      <span className="inline-flex items-center gap-1 text-xs font-semibold text-nokta-ink">
+                        <Star className="h-3 w-3 fill-nokta-ink text-nokta-ink" />
+                        {rating}
+                      </span>
+                    ) : null}
+                    <CurrentStatusBadge status={currentStatus} />
+                  </div>
+                ) : null}
               </div>
             </div>
           </Card>
@@ -80,13 +83,14 @@ export function VenueMapResultList({
 }
 
 function CurrentStatusBadge({ status }: { status: ReturnType<typeof getVenueCurrentStatus> }) {
+  if (status === "unknown") return null;
+
   return (
     <span
       className={cn(
         "inline-flex h-5 shrink-0 items-center rounded-full px-2 text-[11px] font-semibold",
         status === "open" && "bg-nokta-accent-tint text-nokta-accent-dark",
         status === "closed" && "bg-red-950/10 text-red-700",
-        status === "unknown" && "bg-foreground/5 text-muted-foreground",
       )}
     >
       {getCurrentStatusLabel(status)}
@@ -103,5 +107,5 @@ function getCurrentStatusLabel(status: ReturnType<typeof getVenueCurrentStatus>)
     return "Closed";
   }
 
-  return "Hours TBC";
+  return "";
 }
