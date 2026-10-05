@@ -1,0 +1,708 @@
+[
+  {
+    "id": "cafe-rudy-s-manningham",
+    "slug": "cafe-rudy-s-manningham",
+    "name": "Cafe Rudy’s",
+    "description": "Cafe Rudy’s is a spot for shisha in Manningham, Bradford with food, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bradford",
+    "area": "Manningham",
+    "address": "44 Mortimer St, Bradford BD8 9RL",
+    "postcode": "BD8 9RL",
+    "latitude": 53.798764999999996,
+    "longitude": -1.7908985,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "10:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "10:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "10:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "10:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "10:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "10:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "10:00",
+        "close": "02:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "01274 488082",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:01.740Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=12056366092148645156&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "junoon-cafe-city-centre",
+    "slug": "junoon-cafe-city-centre",
+    "name": "Junoon Cafe",
+    "description": "Junoon Cafe is a spot for shisha in City Centre, Bradford with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bradford",
+    "area": "City Centre",
+    "address": "1st Floor, 156 Grattan Rd, Bradford BD1 2JL",
+    "postcode": "BD1 2JL",
+    "latitude": 53.7950708,
+    "longitude": -1.7635484,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "https://junooncafe.co.uk/?utm_source=google&utm_medium=local&utm_campaign=1&utm_content=primary",
+    "instagram": null,
+    "phone": "01274 449066",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:01.740Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://junooncafe.co.uk/?utm_source=google&utm_medium=local&utm_campaign=1&utm_content=primary",
+      "otherSource": "https://maps.google.com/?cid=10684836117455812785&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "hukkabaz-cafe-great-horton",
+    "slug": "hukkabaz-cafe-great-horton",
+    "name": "Hukkabaz cafe",
+    "description": "Hukkabaz cafe is a spot for shisha in Great Horton, Bradford with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bradford",
+    "area": "Great Horton",
+    "address": "Morley St, Bradford BD7 1AQ",
+    "postcode": "BD7 1AQ",
+    "latitude": 53.791062800000006,
+    "longitude": -1.7578632,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "03:00"
+      }
+    ],
+    "website": "http://hukkabaz.co.uk/",
+    "instagram": null,
+    "phone": "07938 383811",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:01.740Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://hukkabaz.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=4053720448646229869&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "habibi-cafe-bar-city-centre",
+    "slug": "habibi-cafe-bar-city-centre",
+    "name": "Habibi Cafe Bar",
+    "description": "Habibi Cafe Bar is a spot for shisha in City Centre, Bradford with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bradford",
+    "area": "City Centre",
+    "address": "Bradford BD1 2RD",
+    "postcode": "BD1 2RD",
+    "latitude": 53.7959757,
+    "longitude": -1.7595205999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:01.740Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=4638569397684711167&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "vanilla-rooms-by-akbar-s-desserts-and-food-bradford-moor",
+    "slug": "vanilla-rooms-by-akbar-s-desserts-and-food-bradford-moor",
+    "name": "Vanilla Rooms by Akbar's - Desserts And Food",
+    "description": "Vanilla Rooms by Akbar's - Desserts And Food is a spot for shisha in Bradford Moor, Bradford with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bradford",
+    "area": "Bradford Moor",
+    "address": "524 Leeds Rd, Bradford BD3 9SB",
+    "postcode": "BD3 9SB",
+    "latitude": 53.7922215,
+    "longitude": -1.7338319,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "14:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "14:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "14:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "14:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "14:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "00:00"
+      }
+    ],
+    "website": "http://www.vanillarooms.com/",
+    "instagram": null,
+    "phone": "01274 734849",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:01.741Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.vanillarooms.com/",
+      "otherSource": "https://maps.google.com/?cid=8925839084190791007&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "caf-c-line-great-horton",
+    "slug": "caf-c-line-great-horton",
+    "name": "Café Céline",
+    "description": "Café Céline is a spot for shisha in Great Horton, Bradford with food, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bradford",
+    "area": "Great Horton",
+    "address": "111 Great Horton Rd, Bradford BD7 1PS",
+    "postcode": "BD7 1PS",
+    "latitude": 53.7892641,
+    "longitude": -1.7683662999999998,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "10:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "10:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "10:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "10:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "10:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "10:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "10:00",
+        "close": "01:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "01274 442780",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:01.741Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=2333028276954855936&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "cafe-iynaa-broomfields",
+    "slug": "cafe-iynaa-broomfields",
+    "name": "Cafe Iynaa",
+    "description": "Cafe Iynaa is a spot for shisha in Broomfields, Bradford with food, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bradford",
+    "area": "Broomfields",
+    "address": "St Anne’s church rooms, Guy St, Broomfields, Bradford BD4 7BB",
+    "postcode": "BD4 7BB",
+    "latitude": 53.789363099999996,
+    "longitude": -1.7486067,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:00",
+        "close": "02:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:01.741Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=2528936611580216321&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "azizam-restaurant-little-horton",
+    "slug": "azizam-restaurant-little-horton",
+    "name": "Azizam Restaurant",
+    "description": "Azizam Restaurant is a spot for shisha in Little Horton, Bradford with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bradford",
+    "area": "Little Horton",
+    "address": "1 Park Ln, Bradford BD5 0JQ",
+    "postcode": "BD5 0JQ",
+    "latitude": 53.7855663,
+    "longitude": -1.7593538,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://azizampersian.co.uk/",
+    "instagram": null,
+    "phone": "01274 780878",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:01.741Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://azizampersian.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=7748636886172606190&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "classic-persian-restaurant-little-horton",
+    "slug": "classic-persian-restaurant-little-horton",
+    "name": "Classic Persian Restaurant",
+    "description": "Classic Persian Restaurant is a spot for shisha in Little Horton, Bradford with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bradford",
+    "area": "Little Horton",
+    "address": "368 Little Horton Ln, Bradford BD5 0NB",
+    "postcode": "BD5 0NB",
+    "latitude": 53.7834326,
+    "longitude": -1.7639338999999998,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "23:30"
+      }
+    ],
+    "website": "http://www.classic-persian.co.uk/",
+    "instagram": null,
+    "phone": "01274 728828",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:01.741Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.classic-persian.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=13299020676069944395&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  }
+]

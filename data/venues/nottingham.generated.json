@@ -1,0 +1,852 @@
+[
+  {
+    "id": "hukka-lounge-radford",
+    "slug": "hukka-lounge-radford",
+    "name": "Hukka Lounge",
+    "description": "Hukka Lounge is a spot for shisha in Radford, Nottingham with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Nottingham",
+    "area": "Radford",
+    "address": "154 Alfreton Rd, Radford, Nottingham NG7 3NS",
+    "postcode": "NG7 3NS",
+    "latitude": 52.958790699999994,
+    "longitude": -1.1669886,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "15:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "15:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "15:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "15:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "15:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "01:00"
+      }
+    ],
+    "website": "https://hukkalounge.com/",
+    "instagram": null,
+    "phone": "0115 919 0826",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:35.646Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://hukkalounge.com/",
+      "otherSource": "https://maps.google.com/?cid=9634453463334651380&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "sham-shisha-lounge-city-centre",
+    "slug": "sham-shisha-lounge-city-centre",
+    "name": "Sham Shisha Lounge",
+    "description": "Sham Shisha Lounge is a spot for shisha in City Centre, Nottingham with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Nottingham",
+    "area": "City Centre",
+    "address": "3 Hockley, Nottingham NG1 1FH",
+    "postcode": "NG1 1FH",
+    "latitude": 52.9538268,
+    "longitude": -1.1409211,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "https://www.instagram.com/shamloungenotts?igsh=c3I3enh0dzhrbG45&utm_source=qr",
+    "instagram": null,
+    "phone": "0115 941 2407",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:35.646Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.instagram.com/shamloungenotts?igsh=c3I3enh0dzhrbG45&utm_source=qr",
+      "otherSource": "https://maps.google.com/?cid=11791405301980382192&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "al-rayyan-lounge-nottingham-radford",
+    "slug": "al-rayyan-lounge-nottingham-radford",
+    "name": "Al Rayyan Lounge Nottingham",
+    "description": "Al Rayyan Lounge Nottingham is a spot for shisha in Radford, Nottingham with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Nottingham",
+    "area": "Radford",
+    "address": "113 Alfreton Rd, Radford, Nottingham NG7 3JL",
+    "postcode": "NG7 3JL",
+    "latitude": 52.957626999999995,
+    "longitude": -1.1656319000000002,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "15:00",
+        "close": "03:30"
+      },
+      {
+        "day": "Monday",
+        "open": "15:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "15:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "15:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "15:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Friday",
+        "open": "15:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "15:00",
+        "close": "01:30"
+      }
+    ],
+    "website": "https://www.alrayyanlounge.com/",
+    "instagram": null,
+    "phone": "0115 648 6747",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:35.646Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.alrayyanlounge.com/",
+      "otherSource": "https://maps.google.com/?cid=9883282499564406746&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "billionz-lounge-and-restaurant-city-centre",
+    "slug": "billionz-lounge-and-restaurant-city-centre",
+    "name": "Billionz Lounge & Restaurant",
+    "description": "Billionz Lounge & Restaurant is a spot for shisha in City Centre, Nottingham with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Nottingham",
+    "area": "City Centre",
+    "address": "21 Trinity Walk, Nottingham NG1 2AN",
+    "postcode": "NG1 2AN",
+    "latitude": 52.955261099999994,
+    "longitude": -1.1488391,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "https://billionz.co.uk/",
+    "instagram": null,
+    "phone": "07388 864991",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:35.646Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://billionz.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=18203833926378111627&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "the-backyard-shisha-lounge-radford",
+    "slug": "the-backyard-shisha-lounge-radford",
+    "name": "The Backyard Shisha Lounge",
+    "description": "The Backyard Shisha Lounge is a spot for shisha in Radford, Nottingham. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Nottingham",
+    "area": "Radford",
+    "address": "117A Hartley Rd, Radford, Nottingham NG7 3AQ",
+    "postcode": "NG7 3AQ",
+    "latitude": 52.960139399999996,
+    "longitude": -1.1759343,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "15:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Monday",
+        "open": "15:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "15:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "15:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "15:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Friday",
+        "open": "15:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "15:00",
+        "close": "03:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07538 448203",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:35.646Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=6808347778028424347&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "afrah-lounge-bilborough",
+    "slug": "afrah-lounge-bilborough",
+    "name": "Afrah Lounge",
+    "description": "Afrah Lounge is a spot for shisha in Bilborough, Nottingham. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Nottingham",
+    "area": "Bilborough",
+    "address": "Adco Business Centre, Nottingham NG8 5AH",
+    "postcode": "NG8 5AH",
+    "latitude": 52.9666633,
+    "longitude": -1.180472,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [],
+    "website": "https://afrahlounge.co.uk/",
+    "instagram": null,
+    "phone": "0115 795 0153",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:35.646Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://afrahlounge.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=6780145089590845534&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "shisha-delivery-nottingham-city-centre",
+    "slug": "shisha-delivery-nottingham-city-centre",
+    "name": "Shisha Delivery Nottingham",
+    "description": "Shisha Delivery Nottingham is a spot for shisha in City Centre, Nottingham. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Nottingham",
+    "area": "City Centre",
+    "address": "Wollaton St, Nottingham NG1 5FW",
+    "postcode": "NG1 5FW",
+    "latitude": 52.955942199999996,
+    "longitude": -1.1591827,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "http://www.shishadeliverynottingham.co.uk/",
+    "instagram": null,
+    "phone": "07308 080100",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:35.646Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.shishadeliverynottingham.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=17090169016006616985&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "shisha-corner-sneinton",
+    "slug": "shisha-corner-sneinton",
+    "name": "Shisha Corner",
+    "description": "Shisha Corner is a spot for shisha in Sneinton, Nottingham. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Nottingham",
+    "area": "Sneinton",
+    "address": "120A Sneinton Blvd, Sneinton, Nottingham NG2 4FJ",
+    "postcode": "NG2 4FJ",
+    "latitude": 52.951378399999996,
+    "longitude": -1.1235813,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "22:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07918 149995",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:35.646Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=4364286445292027319&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "passan-s-tea-room-and-cocktail-lounge-city-centre",
+    "slug": "passan-s-tea-room-and-cocktail-lounge-city-centre",
+    "name": "Passan's Tea Room & Cocktail Lounge",
+    "description": "Passan's Tea Room & Cocktail Lounge is a spot for shisha in City Centre, Nottingham with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Nottingham",
+    "area": "City Centre",
+    "address": "22-26 Carrington St., Nottingham NG1 7FF",
+    "postcode": "NG1 7FF",
+    "latitude": 52.948862500000004,
+    "longitude": -1.1481685,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "10:00",
+        "close": "18:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "20:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "20:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "20:00"
+      },
+      {
+        "day": "Friday",
+        "open": "10:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "10:00",
+        "close": "00:00"
+      }
+    ],
+    "website": "https://passans.com/",
+    "instagram": null,
+    "phone": "07344 264660",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:35.646Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://passans.com/",
+      "otherSource": "https://maps.google.com/?cid=12701731475260981088&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "haus-of-aura-lounge-mapperley",
+    "slug": "haus-of-aura-lounge-mapperley",
+    "name": "Haus Of Aura Lounge",
+    "description": "Haus Of Aura Lounge is a spot for shisha in Mapperley, Nottingham. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Nottingham",
+    "area": "Mapperley",
+    "address": "465 Westdale Ln W, Mapperley, Nottingham NG3 6DH",
+    "postcode": "NG3 6DH",
+    "latitude": 52.9851384,
+    "longitude": -1.1192838999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Monday",
+        "open": "10:00",
+        "close": "19:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "10:00",
+        "close": "18:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "10:00",
+        "close": "19:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "10:00",
+        "close": "19:00"
+      },
+      {
+        "day": "Friday",
+        "open": "10:00",
+        "close": "18:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "10:00",
+        "close": "16:00"
+      }
+    ],
+    "website": "https://haus-of-aura-lounge.book.app/",
+    "instagram": null,
+    "phone": "0115 646 4056",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:35.646Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://haus-of-aura-lounge.book.app/",
+      "otherSource": "https://maps.google.com/?cid=13455680964621922276&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "tanning-lounge-mapperley",
+    "slug": "tanning-lounge-mapperley",
+    "name": "Tanning Lounge",
+    "description": "Tanning Lounge is a spot for shisha in Mapperley, Nottingham. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Nottingham",
+    "area": "Mapperley",
+    "address": "972 Woodborough Rd, Mapperley, Nottingham NG3 5QR",
+    "postcode": "NG3 5QR",
+    "latitude": 52.9852383,
+    "longitude": -1.119643,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "10:00",
+        "close": "16:00"
+      },
+      {
+        "day": "Monday",
+        "open": "09:00",
+        "close": "20:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "09:00",
+        "close": "20:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "09:00",
+        "close": "20:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "09:00",
+        "close": "20:00"
+      },
+      {
+        "day": "Friday",
+        "open": "09:00",
+        "close": "20:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "10:00",
+        "close": "18:00"
+      }
+    ],
+    "website": "https://online.salontracker.co.uk//TanLoungeMapperley",
+    "instagram": null,
+    "phone": "0115 648 0811",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:35.646Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://online.salontracker.co.uk//TanLoungeMapperley",
+      "otherSource": "https://maps.google.com/?cid=13264812277550093374&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  }
+]

@@ -1,0 +1,1075 @@
+[
+  {
+    "id": "love66-restaurant-city-centre",
+    "slug": "love66-restaurant-city-centre",
+    "name": "Love66 restaurant",
+    "description": "Love66 restaurant is a spot for shisha in City Centre, Liverpool with food, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Liverpool",
+    "area": "City Centre",
+    "address": "80 Duke St, Liverpool L1 5AA",
+    "postcode": "L1 5AA",
+    "latitude": 53.4015661,
+    "longitude": -2.981509,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:30",
+        "close": "01:45"
+      },
+      {
+        "day": "Monday",
+        "open": "16:30",
+        "close": "01:45"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:30",
+        "close": "01:45"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:30",
+        "close": "01:45"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:30",
+        "close": "01:45"
+      },
+      {
+        "day": "Friday",
+        "open": "16:30",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:30",
+        "close": "02:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "0151 458 5606",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:25.001Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=17280974749492642444&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "soho-bar-liverpool-city-centre",
+    "slug": "soho-bar-liverpool-city-centre",
+    "name": "Soho Bar Liverpool",
+    "description": "Soho Bar Liverpool is a spot for shisha in City Centre, Liverpool with drinks. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Liverpool",
+    "area": "City Centre",
+    "address": "UNIT 1, Concert Square, Concert St, Liverpool L1 4NR",
+    "postcode": "L1 4NR",
+    "latitude": 53.4034568,
+    "longitude": -2.9802826,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Friday",
+        "open": "11:30",
+        "close": "04:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "10:30",
+        "close": "04:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "0151 351 6706",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:25.001Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=15608014302085883081&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "gulf-house-restaurant-city-centre",
+    "slug": "gulf-house-restaurant-city-centre",
+    "name": "Gulf House Restaurant",
+    "description": "Gulf House Restaurant is a spot for shisha in City Centre, Liverpool with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Liverpool",
+    "area": "City Centre",
+    "address": "74 Tradewind Square, Liverpool L1 5BG",
+    "postcode": "L1 5BG",
+    "latitude": 53.4002572,
+    "longitude": -2.9786452999999997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "13:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "13:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "13:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "13:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "13:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "13:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "13:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://ghrestaurant.com/",
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:25.001Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://ghrestaurant.com/",
+      "otherSource": "https://maps.google.com/?cid=7620148563819314667&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "sky-bar-city-centre",
+    "slug": "sky-bar-city-centre",
+    "name": "Sky Bar",
+    "description": "Sky Bar is a spot for shisha in City Centre, Liverpool with drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Liverpool",
+    "area": "City Centre",
+    "address": "Old Hall St, Liverpool L3 9LQ",
+    "postcode": "L3 9LQ",
+    "latitude": 53.409568699999994,
+    "longitude": -2.9954028,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "https://ginorestaurants.com/our-restaurants/sky-bar-liverpool/",
+    "instagram": null,
+    "phone": "0151 832 4517",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:25.001Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://ginorestaurants.com/our-restaurants/sky-bar-liverpool/",
+      "otherSource": "https://maps.google.com/?cid=8084727209880262663&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "boom-battle-bar-liverpool-city-centre",
+    "slug": "boom-battle-bar-liverpool-city-centre",
+    "name": "Boom Battle Bar Liverpool",
+    "description": "Boom Battle Bar Liverpool is a spot for shisha in City Centre, Liverpool with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Liverpool",
+    "area": "City Centre",
+    "address": "101-110 St George's Pl, Liverpool L1 1LU",
+    "postcode": "L1 1LU",
+    "latitude": 53.4070514,
+    "longitude": -2.9815060000000004,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "00:00"
+      }
+    ],
+    "website": "https://boombattlebar.com/uk/liverpool/?utm_source=GMB&utm_medium=search&utm_campaign=GMB",
+    "instagram": null,
+    "phone": "0151 832 4499",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:25.001Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://boombattlebar.com/uk/liverpool/?utm_source=GMB&utm_medium=search&utm_campaign=GMB",
+      "otherSource": "https://maps.google.com/?cid=17051543413777678627&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "istanbul-breeze-restaurant-city-centre",
+    "slug": "istanbul-breeze-restaurant-city-centre",
+    "name": "Istanbul Breeze restaurant",
+    "description": "Istanbul Breeze restaurant is a spot for shisha in City Centre, Liverpool with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Liverpool",
+    "area": "City Centre",
+    "address": "Unit 4 Queen Square, Liverpool L1 1RH",
+    "postcode": "L1 1RH",
+    "latitude": 53.40794820000001,
+    "longitude": -2.9833271,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "http://istanbulbreeze.uk/",
+    "instagram": null,
+    "phone": "0151 708 8890",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:25.001Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://istanbulbreeze.uk/",
+      "otherSource": "https://maps.google.com/?cid=11755054855142890655&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "labranda-turkish-bbq-bar-and-grill-liverpool-city-centre",
+    "slug": "labranda-turkish-bbq-bar-and-grill-liverpool-city-centre",
+    "name": "Labranda Turkish BBQ Bar & Grill Liverpool",
+    "description": "Labranda Turkish BBQ Bar & Grill Liverpool is a spot for shisha in City Centre, Liverpool with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Liverpool",
+    "area": "City Centre",
+    "address": "49 Hardman St, Liverpool L1 9AS",
+    "postcode": "L1 9AS",
+    "latitude": 53.4016988,
+    "longitude": -2.9707892,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "10:30",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "10:30",
+        "close": "22:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "10:30",
+        "close": "22:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "10:30",
+        "close": "22:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "10:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "10:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "10:30",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://www.labranda.co.uk/",
+    "instagram": null,
+    "phone": "0151 384 1362",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:25.001Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.labranda.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=12599244233727820537&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "middle-eastern-restaurant-liverpool-toxteth",
+    "slug": "middle-eastern-restaurant-liverpool-toxteth",
+    "name": "Middle Eastern Restaurant Liverpool",
+    "description": "Middle Eastern Restaurant Liverpool is a spot for shisha in Toxteth, Liverpool with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Liverpool",
+    "area": "Toxteth",
+    "address": "104 Lodge Ln, Toxteth, Liverpool L8 0QN",
+    "postcode": "L8 0QN",
+    "latitude": 53.3944246,
+    "longitude": -2.9496091,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "10:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "10:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "10:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "10:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "10:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "10:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "10:00",
+        "close": "22:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "0151 363 1988",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:25.001Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=14977154912823495904&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "aleppo-restaurant-toxteth",
+    "slug": "aleppo-restaurant-toxteth",
+    "name": "Aleppo Restaurant",
+    "description": "Aleppo Restaurant is a spot for shisha in Toxteth, Liverpool with food, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Liverpool",
+    "area": "Toxteth",
+    "address": "103Lodge Ln, Toxteth, Liverpool L8 0QD",
+    "postcode": "L8 0QD",
+    "latitude": 53.394386999999995,
+    "longitude": -2.9492149999999997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "11:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "11:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "11:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:00",
+        "close": "01:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "0151 733 0000",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:25.001Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=5566625789023641374&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "al-dente-restaurant-and-bar-aigburth",
+    "slug": "al-dente-restaurant-and-bar-aigburth",
+    "name": "Al Dente Restaurant & Bar",
+    "description": "Al Dente Restaurant & Bar is a spot for shisha in Aigburth, Liverpool with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Liverpool",
+    "area": "Aigburth",
+    "address": "1 Lark Ln, Liverpool L17 8UN",
+    "postcode": "L17 8UN",
+    "latitude": 53.379657800000004,
+    "longitude": -2.948188,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "22:00"
+      }
+    ],
+    "website": "https://www.aldenterestaurant.co.uk/",
+    "instagram": null,
+    "phone": "0151 727 2111",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:25.001Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.aldenterestaurant.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=15106468762881680054&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "anar-turkish-bbq-restaurant-fairfield",
+    "slug": "anar-turkish-bbq-restaurant-fairfield",
+    "name": "Anar Turkish BBQ Restaurant",
+    "description": "Anar Turkish BBQ Restaurant is a spot for shisha in Fairfield, Liverpool with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Liverpool",
+    "area": "Fairfield",
+    "address": "130 Prescot Rd, Fairfield, Liverpool L7 0JB",
+    "postcode": "L7 0JB",
+    "latitude": 53.413363499999996,
+    "longitude": -2.9371801000000004,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "22:00"
+      }
+    ],
+    "website": "https://anarturkishbbqrestaurant.co.uk/",
+    "instagram": null,
+    "phone": "0151 363 9300",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:25.001Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://anarturkishbbqrestaurant.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=1597473058094825456&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "luminous-bar-and-restaurant-wavertree",
+    "slug": "luminous-bar-and-restaurant-wavertree",
+    "name": "Luminous Bar & Restaurant",
+    "description": "Luminous Bar & Restaurant is a spot for shisha in Wavertree, Liverpool with food and drinks. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Liverpool",
+    "area": "Wavertree",
+    "address": "256-258 Smithdown Rd, Liverpool L15 5AH",
+    "postcode": "L15 5AH",
+    "latitude": 53.389778899999996,
+    "longitude": -2.9253780999999996,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "13:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "21:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "21:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "21:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "21:30"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "13:00",
+        "close": "22:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "0151 458 2810",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:25.001Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=17378956584425187402&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "elif-lark-lane-turkish-bbq-restaurant-aigburth",
+    "slug": "elif-lark-lane-turkish-bbq-restaurant-aigburth",
+    "name": "Elif Lark Lane Turkish BBQ Restaurant",
+    "description": "Elif Lark Lane Turkish BBQ Restaurant is a spot for shisha in Aigburth, Liverpool with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Liverpool",
+    "area": "Aigburth",
+    "address": "6 Lark Ln, Liverpool L17 8US",
+    "postcode": "L17 8US",
+    "latitude": 53.3801013,
+    "longitude": -2.9471274999999997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "22:30"
+      }
+    ],
+    "website": "http://www.eliflarklane.com/",
+    "instagram": null,
+    "phone": "0151 728 7362",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:25.001Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.eliflarklane.com/",
+      "otherSource": "https://maps.google.com/?cid=986622682264054559&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  }
+]

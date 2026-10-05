@@ -1,0 +1,924 @@
+[
+  {
+    "id": "zaitoon-restaurant-fir-vale",
+    "slug": "zaitoon-restaurant-fir-vale",
+    "name": "Zaitoon Restaurant",
+    "description": "Zaitoon Restaurant is a spot for shisha in Fir Vale, Sheffield with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Sheffield",
+    "area": "Fir Vale",
+    "address": "72 Spital Hill, Sheffield S4 7LG",
+    "postcode": "S4 7LG",
+    "latitude": 53.3916581,
+    "longitude": -1.4581229999999998,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "21:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07424 708370",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:12.257Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=14896822980332995857&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "kurdistan-restaurant-fir-vale",
+    "slug": "kurdistan-restaurant-fir-vale",
+    "name": "Kurdistan Restaurant",
+    "description": "Kurdistan Restaurant is a spot for shisha in Fir Vale, Sheffield with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Sheffield",
+    "area": "Fir Vale",
+    "address": "34 Spital Hill, Sheffield S4 7LG",
+    "postcode": "S4 7LG",
+    "latitude": 53.3909351,
+    "longitude": -1.4586622999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "21:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "0114 270 6874",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:12.257Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=5617499561163750320&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "khushi-pakistani-restaurant-woodseats",
+    "slug": "khushi-pakistani-restaurant-woodseats",
+    "name": "Khushi - Pakistani Restaurant",
+    "description": "Khushi - Pakistani Restaurant is a spot for shisha in Woodseats, Sheffield with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Sheffield",
+    "area": "Woodseats",
+    "address": "798 Chesterfield Rd, Woodseats, Sheffield S8 0SF",
+    "postcode": "S8 0SF",
+    "latitude": 53.341599599999995,
+    "longitude": -1.4786008,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://www.khushidining.co.uk/",
+    "instagram": null,
+    "phone": "0114 349 6348",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:12.257Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.khushidining.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=544211243243233815&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "grand-kerala-restaurant-sheffield-city-centre",
+    "slug": "grand-kerala-restaurant-sheffield-city-centre",
+    "name": "Grand Kerala Restaurant",
+    "description": "Grand Kerala Restaurant is a spot for shisha in Sheffield City Centre, Sheffield with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Sheffield",
+    "area": "Sheffield City Centre",
+    "address": "33 Carver St, Sheffield City Centre, Sheffield S1 4FS",
+    "postcode": "S1 4FS",
+    "latitude": 53.3804106,
+    "longitude": -1.4738259,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "08:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "08:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "08:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "08:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "08:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "08:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "08:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://www.grandkerala.co.uk/",
+    "instagram": null,
+    "phone": "0114 698 4784",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:12.257Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.grandkerala.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=14705889508398497017&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "alura-bar-and-bistro-sheffield-city-centre",
+    "slug": "alura-bar-and-bistro-sheffield-city-centre",
+    "name": "Alura Bar & Bistro",
+    "description": "Alura Bar & Bistro is a spot for shisha in Sheffield City Centre, Sheffield with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Sheffield",
+    "area": "Sheffield City Centre",
+    "address": "49 Wellington St, Sheffield City Centre, Sheffield S1 4HG",
+    "postcode": "S1 4HG",
+    "latitude": 53.378083999999994,
+    "longitude": -1.4763461999999998,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "20:00"
+      },
+      {
+        "day": "Monday",
+        "open": "09:00",
+        "close": "18:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "09:00",
+        "close": "18:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "09:00",
+        "close": "18:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "09:00",
+        "close": "18:00"
+      },
+      {
+        "day": "Friday",
+        "open": "09:00",
+        "close": "20:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "20:00"
+      }
+    ],
+    "website": "http://alurabarandbistro.co.uk/",
+    "instagram": null,
+    "phone": "0114 550 9009",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:12.257Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://alurabarandbistro.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=4788704682475473656&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "mezwaani-restro-bar-sharrow",
+    "slug": "mezwaani-restro-bar-sharrow",
+    "name": "Mezwaani Restro Bar",
+    "description": "Mezwaani Restro Bar is a spot for shisha in Sharrow, Sheffield with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Sheffield",
+    "area": "Sharrow",
+    "address": "519 Ecclesall Rd, Sharrow, Sheffield S11 8PR",
+    "postcode": "S11 8PR",
+    "latitude": 53.368945599999996,
+    "longitude": -1.4962191999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "15:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "15:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "15:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "15:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:30",
+        "close": "22:30"
+      }
+    ],
+    "website": "http://www.mezwaani.com/",
+    "instagram": null,
+    "phone": "0114 478 6172",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:12.257Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.mezwaani.com/",
+      "otherSource": "https://maps.google.com/?cid=6845806426823634043&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "norooz-restaurant-highfield",
+    "slug": "norooz-restaurant-highfield",
+    "name": "Norooz Restaurant",
+    "description": "Norooz Restaurant is a spot for shisha in Highfield, Sheffield with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Sheffield",
+    "area": "Highfield",
+    "address": "140 London Rd, Highfield, Sheffield S2 4LT",
+    "postcode": "S2 4LT",
+    "latitude": 53.3698628,
+    "longitude": -1.4775731,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "11:30",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "11:30",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:30",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:30",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:30",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "11:30",
+        "close": "22:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:30",
+        "close": "22:00"
+      }
+    ],
+    "website": "https://norooz.co.uk/",
+    "instagram": null,
+    "phone": "0114 255 5522",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:12.257Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://norooz.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=2626773517914385303&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "desi-cafe-sheffield-highfield",
+    "slug": "desi-cafe-sheffield-highfield",
+    "name": "Desi Cafe sheffield",
+    "description": "Desi Cafe sheffield is a spot for shisha in Highfield, Sheffield with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Sheffield",
+    "area": "Highfield",
+    "address": "144 London Rd, Highfield, Sheffield S2 4LT",
+    "postcode": "S2 4LT",
+    "latitude": 53.3697495,
+    "longitude": -1.4775734999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "16:00"
+      },
+      {
+        "day": "Monday",
+        "open": "09:00",
+        "close": "16:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "09:00",
+        "close": "16:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "09:00",
+        "close": "16:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "09:00",
+        "close": "16:00"
+      },
+      {
+        "day": "Friday",
+        "open": "09:00",
+        "close": "16:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "16:00"
+      }
+    ],
+    "website": "https://www.facebook.com/Desi-Cafe-1902032626718779/",
+    "instagram": null,
+    "phone": "0114 216 8539",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:12.257Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.facebook.com/Desi-Cafe-1902032626718779/",
+      "otherSource": "https://maps.google.com/?cid=9449879535659125870&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "broomhill-grind-kitchen-cafe",
+    "slug": "broomhill-grind-kitchen-cafe",
+    "name": "Broomhill Grind Kitchen Cafe",
+    "description": "Broomhill Grind Kitchen Cafe is a spot for shisha in Broomhill, Sheffield with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Sheffield",
+    "area": "Broomhill",
+    "address": "184 Whitham Rd, Sheffield S10 2SS",
+    "postcode": "S10 2SS",
+    "latitude": 53.377992,
+    "longitude": -1.4998084999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "17:00"
+      },
+      {
+        "day": "Monday",
+        "open": "08:00",
+        "close": "17:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "08:00",
+        "close": "17:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "08:00",
+        "close": "17:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "08:00",
+        "close": "17:00"
+      },
+      {
+        "day": "Friday",
+        "open": "08:00",
+        "close": "17:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "08:00",
+        "close": "17:00"
+      }
+    ],
+    "website": "https://broomhillgrind.com/",
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:12.257Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://broomhillgrind.com/",
+      "otherSource": "https://maps.google.com/?cid=7008636320571905291&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "cats-caf-bar-sheffield-broomhill",
+    "slug": "cats-caf-bar-sheffield-broomhill",
+    "name": "Cats | Café-Bar | Sheffield",
+    "description": "Cats Café-Bar Sheffield is a spot for shisha in Broomhill, Sheffield with drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Sheffield",
+    "area": "Broomhill",
+    "address": "465 Glossop Rd, Sheffield S10 2QE",
+    "postcode": "S10 2QE",
+    "latitude": 53.3766586,
+    "longitude": -1.5004722,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Monday",
+        "open": "08:00",
+        "close": "15:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "08:00",
+        "close": "15:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "08:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "08:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Friday",
+        "open": "08:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "08:00",
+        "close": "23:30"
+      }
+    ],
+    "website": "https://www.welovecats.uk/",
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:12.257Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.welovecats.uk/",
+      "otherSource": "https://maps.google.com/?cid=9840080465646775101&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "uk-charcoal-grill-restaurant-firth-park",
+    "slug": "uk-charcoal-grill-restaurant-firth-park",
+    "name": "UK Charcoal Grill Restaurant",
+    "description": "UK Charcoal Grill Restaurant is a spot for shisha in Firth Park, Sheffield with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Sheffield",
+    "area": "Firth Park",
+    "address": "164 Firth Park Rd, Sheffield S5 6WP",
+    "postcode": "S5 6WP",
+    "latitude": 53.4091658,
+    "longitude": -1.4482378999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "11:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "11:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "11:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:00",
+        "close": "22:00"
+      }
+    ],
+    "website": "https://www.pagehallcharcoalgrill.co.uk/",
+    "instagram": null,
+    "phone": "0114 418 9270",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:12.257Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.pagehallcharcoalgrill.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=6030670172551192976&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  }
+]

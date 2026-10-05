@@ -1,0 +1,1138 @@
+[
+  {
+    "id": "sky-lounge-liverpool-city-centre",
+    "slug": "sky-lounge-liverpool-city-centre",
+    "name": "Sky Lounge Liverpool",
+    "description": "Sky Lounge Liverpool is a spot for shisha in City Centre, Liverpool with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Liverpool",
+    "area": "City Centre",
+    "address": "Unite, 2d Queen Square, Liverpool L1 1RH",
+    "postcode": "L1 1RH",
+    "latitude": 53.4076999,
+    "longitude": -2.9835254,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "http://skyloungeliverpool.co.uk/",
+    "instagram": null,
+    "phone": "07577 763886",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:25.000Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://skyloungeliverpool.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=13285333076993208020&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "lunar-bar-and-lounge-city-centre",
+    "slug": "lunar-bar-and-lounge-city-centre",
+    "name": "Lunar Bar & Lounge",
+    "description": "Lunar Bar & Lounge is a spot for shisha in City Centre, Liverpool with late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Liverpool",
+    "area": "City Centre",
+    "address": "124 Bold St, Liverpool L1 4JA",
+    "postcode": "L1 4JA",
+    "latitude": 53.401944699999994,
+    "longitude": -2.9763227,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "https://lunar-bar-and-lounge.com/",
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:25.000Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://lunar-bar-and-lounge.com/",
+      "otherSource": "https://maps.google.com/?cid=18188899780693481776&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "reem-lounge-city-centre",
+    "slug": "reem-lounge-city-centre",
+    "name": "مطعم ومقهى الريم Reem Lounge",
+    "description": "مطعم ومقهى الريم Reem Lounge is a spot for shisha in City Centre, Liverpool with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Liverpool",
+    "area": "City Centre",
+    "address": "9 Madison Sq, Liverpool L1 5FD",
+    "postcode": "L1 5FD",
+    "latitude": 53.400271399999994,
+    "longitude": -2.9787499,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "01:00"
+      }
+    ],
+    "website": "http://www.reemlounge.com/",
+    "instagram": null,
+    "phone": "07448 952142",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:25.000Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.reemlounge.com/",
+      "otherSource": "https://maps.google.com/?cid=11270397535638054661&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "zodiac-shisha-lounge-city-centre",
+    "slug": "zodiac-shisha-lounge-city-centre",
+    "name": "Zodiac Shisha Lounge",
+    "description": "Zodiac Shisha Lounge is a spot for shisha in City Centre, Liverpool with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Liverpool",
+    "area": "City Centre",
+    "address": "13-21 Seel St, Liverpool L1 4AU",
+    "postcode": "L1 4AU",
+    "latitude": 53.4029544,
+    "longitude": -2.9813742999999997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Friday",
+        "open": "15:00",
+        "close": "02:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "15:00",
+        "close": "02:30"
+      }
+    ],
+    "website": "http://facebook.com/zodiacliverpool",
+    "instagram": null,
+    "phone": "0151 739 3711",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:25.001Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://facebook.com/zodiacliverpool",
+      "otherSource": "https://maps.google.com/?cid=15397796085367573909&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "habibiz-lounge-bar-kensington",
+    "slug": "habibiz-lounge-bar-kensington",
+    "name": "Habibiz Lounge Bar",
+    "description": "Habibiz Lounge Bar is a spot for shisha in Kensington, Liverpool with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Liverpool",
+    "area": "Kensington",
+    "address": "7 Myrtle St, Liverpool L7 7DN",
+    "postcode": "L7 7DN",
+    "latitude": 53.401428300000006,
+    "longitude": -2.9682951,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Monday",
+        "open": "14:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "14:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "14:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "14:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Friday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "https://www.instagram.com/habibizlounge_liverpool?igsh=MTc5bnRxM2NhMTU3bQ==&utm_source=qr",
+    "instagram": null,
+    "phone": "07767 417703",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:25.001Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.instagram.com/habibizlounge_liverpool?igsh=MTc5bnRxM2NhMTU3bQ==&utm_source=qr",
+      "otherSource": "https://maps.google.com/?cid=15783821035612773548&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "infinity-shisha-lounge-city-centre",
+    "slug": "infinity-shisha-lounge-city-centre",
+    "name": "Infinity Shisha Lounge",
+    "description": "Infinity Shisha Lounge is a spot for shisha in City Centre, Liverpool with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Liverpool",
+    "area": "City Centre",
+    "address": "53 London Rd, Liverpool L3 8HY",
+    "postcode": "L3 8HY",
+    "latitude": 53.40939650000001,
+    "longitude": -2.9758416000000003,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "11:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Monday",
+        "open": "11:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Friday",
+        "open": "11:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:00",
+        "close": "03:00"
+      }
+    ],
+    "website": "https://instagram.com/infinitylounge_?utm_medium=copy_link",
+    "instagram": null,
+    "phone": "07490 447476",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:25.001Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://instagram.com/infinitylounge_?utm_medium=copy_link",
+      "otherSource": "https://maps.google.com/?cid=15581142231931451306&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "tarab-shisha-lounge-city-centre",
+    "slug": "tarab-shisha-lounge-city-centre",
+    "name": "Tarab Shisha Lounge",
+    "description": "Tarab Shisha Lounge is a spot for shisha in City Centre, Liverpool with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Liverpool",
+    "area": "City Centre",
+    "address": "45-47 London Rd, Liverpool L3 8HY",
+    "postcode": "L3 8HY",
+    "latitude": 53.4094864,
+    "longitude": -2.9761997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "11:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Monday",
+        "open": "11:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Friday",
+        "open": "11:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:00",
+        "close": "03:00"
+      }
+    ],
+    "website": "https://instagram.com/tarabloungeliverpool?utm_medium=copy_link",
+    "instagram": null,
+    "phone": "07312 655621",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:25.001Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://instagram.com/tarabloungeliverpool?utm_medium=copy_link",
+      "otherSource": "https://maps.google.com/?cid=13239959343557601139&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "vicolo-lounge-city-centre",
+    "slug": "vicolo-lounge-city-centre",
+    "name": "Vicolo lounge",
+    "description": "Vicolo lounge is a spot for shisha in City Centre, Liverpool with late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Liverpool",
+    "area": "City Centre",
+    "address": "27a London Rd, Liverpool L3 8HR",
+    "postcode": "L3 8HR",
+    "latitude": 53.4094543,
+    "longitude": -2.9771441999999997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "02:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07481 419324",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:25.001Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=15234628557199442134&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "the-lounge-and-bar-city-centre",
+    "slug": "the-lounge-and-bar-city-centre",
+    "name": "The Lounge & Bar",
+    "description": "The Lounge & Bar is a spot for shisha in City Centre, Liverpool with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Liverpool",
+    "area": "City Centre",
+    "address": "N John St, Liverpool L2 6RR",
+    "postcode": "L2 6RR",
+    "latitude": 53.4060157,
+    "longitude": -2.9882508,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [],
+    "website": "https://thelounges.co.uk/",
+    "instagram": null,
+    "phone": "0151 668 0478",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:25.001Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://thelounges.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=360124888879624402&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "shisha-city-centre",
+    "slug": "shisha-city-centre",
+    "name": "Shisha",
+    "description": "Shisha is a spot for shisha in City Centre, Liverpool with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Liverpool",
+    "area": "City Centre",
+    "address": "15 Parr St, Liverpool L1 4JJ",
+    "postcode": "L1 4JJ",
+    "latitude": 53.4018075,
+    "longitude": -2.9796465,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:25.001Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=15799963322197575236&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "the-yard-lounge-tuebrook",
+    "slug": "the-yard-lounge-tuebrook",
+    "name": "The Yard Lounge",
+    "description": "The Yard Lounge is a spot for shisha in Tuebrook, Liverpool with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Liverpool",
+    "area": "Tuebrook",
+    "address": "W Derby Rd, Tuebrook, Liverpool L6 4BR",
+    "postcode": "L6 4BR",
+    "latitude": 53.4235125,
+    "longitude": -2.9350677999999997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:25.001Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=5793988181080177219&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "the-grand-lounge-bar-aintree",
+    "slug": "the-grand-lounge-bar-aintree",
+    "name": "The Grand Lounge Bar",
+    "description": "The Grand Lounge Bar is a spot for shisha in Aintree, Liverpool with drinks, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Liverpool",
+    "area": "Aintree",
+    "address": "92 Moss Ln, Liverpool L9 8AW",
+    "postcode": "L9 8AW",
+    "latitude": 53.4632843,
+    "longitude": -2.9704150000000005,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "14:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "14:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "14:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "14:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "14:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "00:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07522 955152",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:25.001Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=17979495316727571026&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "milo-lounge-aigburth",
+    "slug": "milo-lounge-aigburth",
+    "name": "Milo Lounge",
+    "description": "Milo Lounge is a spot for shisha in Aigburth, Liverpool with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Liverpool",
+    "area": "Aigburth",
+    "address": "90 Lark Ln, Liverpool L17 8UU",
+    "postcode": "L17 8UU",
+    "latitude": 53.38225320000001,
+    "longitude": -2.9441566999999997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://thelounges.co.uk/milo/",
+    "instagram": null,
+    "phone": "0151 727 2285",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:25.001Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://thelounges.co.uk/milo/",
+      "otherSource": "https://maps.google.com/?cid=14463741006192989186&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "deco-lounge-city-centre",
+    "slug": "deco-lounge-city-centre",
+    "name": "Deco Lounge",
+    "description": "Deco Lounge is a spot for shisha in City Centre, Liverpool with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Liverpool",
+    "area": "City Centre",
+    "address": "65-67 Bold St, Liverpool L1 4EZ",
+    "postcode": "L1 4EZ",
+    "latitude": 53.40295,
+    "longitude": -2.9775652,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "09:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "00:00"
+      }
+    ],
+    "website": "https://thelounges.co.uk/deco",
+    "instagram": null,
+    "phone": "0151 294 2926",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:25.001Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://thelounges.co.uk/deco",
+      "otherSource": "https://maps.google.com/?cid=3550547483559986645&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "sip-lounge-city-centre",
+    "slug": "sip-lounge-city-centre",
+    "name": "Sip Lounge",
+    "description": "Sip Lounge is a spot for shisha in City Centre, Liverpool with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Liverpool",
+    "area": "City Centre",
+    "address": "120 Bold St, Liverpool L1 4JA",
+    "postcode": "L1 4JA",
+    "latitude": 53.4020158,
+    "longitude": -2.9764532,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "10:00",
+        "close": "20:00"
+      },
+      {
+        "day": "Monday",
+        "open": "10:00",
+        "close": "20:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "10:00",
+        "close": "20:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "10:00",
+        "close": "20:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "10:00",
+        "close": "20:00"
+      },
+      {
+        "day": "Friday",
+        "open": "10:00",
+        "close": "20:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "10:00",
+        "close": "20:00"
+      }
+    ],
+    "website": "https://www.siplounge.co.uk/",
+    "instagram": null,
+    "phone": "0151 319 2498",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:25.001Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.siplounge.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=10178270480854615&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  }
+]

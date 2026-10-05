@@ -1,0 +1,1783 @@
+[
+  {
+    "id": "riviera-lounge-chapeltown",
+    "slug": "riviera-lounge-chapeltown",
+    "name": "Riviera lounge",
+    "description": "Riviera lounge is a spot for shisha in Chapeltown, Leeds with food and drinks, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leeds",
+    "area": "Chapeltown",
+    "address": "Manor St, Leeds LS7 1PZ",
+    "postcode": "LS7 1PZ",
+    "latitude": 53.8081798,
+    "longitude": -1.5335046,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:00",
+        "close": "03:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07346 680789",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:46:51.573Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=9438697904850531385&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "nora-lounge-woodhouse",
+    "slug": "nora-lounge-woodhouse",
+    "name": "Nora Lounge",
+    "description": "Nora Lounge is a spot for shisha in Woodhouse, Leeds with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leeds",
+    "area": "Woodhouse",
+    "address": "67 Raglan Rd, Woodhouse, Leeds LS2 9DZ",
+    "postcode": "LS2 9DZ",
+    "latitude": 53.8111712,
+    "longitude": -1.5561272,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "01:00"
+      }
+    ],
+    "website": "http://noralounge.co.uk/",
+    "instagram": null,
+    "phone": "0113 531 3386",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:46:51.577Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://noralounge.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=11478773191755285029&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "billions-lounge-chapeltown",
+    "slug": "billions-lounge-chapeltown",
+    "name": "Billions Lounge",
+    "description": "Billions Lounge is a spot for shisha in Chapeltown, Leeds with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leeds",
+    "area": "Chapeltown",
+    "address": "28 Cross Stamford St, Leeds LS7 1BA",
+    "postcode": "LS7 1BA",
+    "latitude": 53.8047383,
+    "longitude": -1.5315824999999998,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "15:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "15:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "15:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "15:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "15:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "15:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "15:00",
+        "close": "03:00"
+      }
+    ],
+    "website": "https://billionslounge.com/",
+    "instagram": null,
+    "phone": "0113 210 9926",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:46:51.579Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://billionslounge.com/",
+      "otherSource": "https://maps.google.com/?cid=7766611207052492423&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "moonlight-lounge-chapeltown",
+    "slug": "moonlight-lounge-chapeltown",
+    "name": "Moonlight lounge",
+    "description": "Moonlight lounge is a spot for shisha in Chapeltown, Leeds. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leeds",
+    "area": "Chapeltown",
+    "address": "1st Floor, Bristol St, Leeds LS7 1DH",
+    "postcode": "LS7 1DH",
+    "latitude": 53.8050862,
+    "longitude": -1.532613,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "03:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:46:51.579Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=1039918309487325900&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "emerald-lounge-chapeltown",
+    "slug": "emerald-lounge-chapeltown",
+    "name": "Emerald lounge",
+    "description": "Emerald lounge is a spot for shisha in Chapeltown, Leeds with late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leeds",
+    "area": "Chapeltown",
+    "address": "Cross Stamford St, Leeds LS7 1BA",
+    "postcode": "LS7 1BA",
+    "latitude": 53.8055236,
+    "longitude": -1.5307669,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "14:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "03:00"
+      }
+    ],
+    "website": "https://www.emerald-lounge.co.uk/",
+    "instagram": null,
+    "phone": "0113 300 3229",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:46:51.579Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.emerald-lounge.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=2098435455384678218&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "casablanca-lounge-burmantofts",
+    "slug": "casablanca-lounge-burmantofts",
+    "name": "Casablanca Lounge",
+    "description": "Casablanca Lounge is a spot for shisha in Burmantofts, Leeds. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leeds",
+    "area": "Burmantofts",
+    "address": "Unit 1 Telephone Pl, Leeds LS9 7NB",
+    "postcode": "LS9 7NB",
+    "latitude": 53.80442,
+    "longitude": -1.5306225,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "03:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07462 805202",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:46:51.579Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=16365709193542120113&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "cairo-lounge-burmantofts",
+    "slug": "cairo-lounge-burmantofts",
+    "name": "Cairo Lounge",
+    "description": "Cairo Lounge is a spot for shisha in Burmantofts, Leeds with food and drinks, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leeds",
+    "area": "Burmantofts",
+    "address": "20 Cromwell St, Leeds LS9 7SS",
+    "postcode": "LS9 7SS",
+    "latitude": 53.802468499999996,
+    "longitude": -1.5282244000000003,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "14:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "03:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "0113 440 7880",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:46:51.579Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=10519040651084963339&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "mazzika-lounge-leeds-woodhouse",
+    "slug": "mazzika-lounge-leeds-woodhouse",
+    "name": "Mazzika Lounge Leeds",
+    "description": "Mazzika Lounge Leeds is a spot for shisha in Woodhouse, Leeds with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leeds",
+    "area": "Woodhouse",
+    "address": "45 Westfield Rd, Woodhouse, Leeds LS3 1DG",
+    "postcode": "LS3 1DG",
+    "latitude": 53.8030366,
+    "longitude": -1.5658101,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "03:00"
+      }
+    ],
+    "website": "https://mazzikafood.co.uk/order-now",
+    "instagram": null,
+    "phone": "07388 684121",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:46:51.579Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://mazzikafood.co.uk/order-now",
+      "otherSource": "https://maps.google.com/?cid=5587534730488527648&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "sky-lounge-granary-wharf",
+    "slug": "sky-lounge-granary-wharf",
+    "name": "Sky Lounge",
+    "description": "Sky Lounge is a spot for shisha in Granary Wharf, Leeds with drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leeds",
+    "area": "Granary Wharf",
+    "address": "Granary Wharf, Leeds LS1 4BR",
+    "postcode": "LS1 4BR",
+    "latitude": 53.7934969,
+    "longitude": -1.5497969,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "11:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "14:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "14:00",
+        "close": "00:30"
+      },
+      {
+        "day": "Friday",
+        "open": "14:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:00",
+        "close": "01:30"
+      }
+    ],
+    "website": "https://www.leedsskylounge.co.uk/",
+    "instagram": null,
+    "phone": "0113 241 1043",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:46:51.579Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.leedsskylounge.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=2020318060177923576&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "panda-lounge-burmantofts",
+    "slug": "panda-lounge-burmantofts",
+    "name": "Panda Lounge",
+    "description": "Panda Lounge is a spot for shisha in Burmantofts, Leeds with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leeds",
+    "area": "Burmantofts",
+    "address": "56 Mabgate, Leeds LS9 7EA",
+    "postcode": "LS9 7EA",
+    "latitude": 53.8010216,
+    "longitude": -1.5314122,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [],
+    "website": null,
+    "instagram": null,
+    "phone": "07490 540097",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:46:51.580Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=18432927963952090962&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "shasha-lounge-burley",
+    "slug": "shasha-lounge-burley",
+    "name": "ShaSha lounge",
+    "description": "ShaSha lounge is a spot for shisha in Burley, Leeds with late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leeds",
+    "area": "Burley",
+    "address": "164 Cardigan Rd, Burley, Leeds LS6 1LL",
+    "postcode": "LS6 1LL",
+    "latitude": 53.810325399999996,
+    "longitude": -1.5752902,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "02:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07404 469682",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:46:51.580Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=291537574559556982&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "phantom-the-lounge-harehills",
+    "slug": "phantom-the-lounge-harehills",
+    "name": "Phantom The Lounge",
+    "description": "Phantom The Lounge is a spot for shisha in Harehills, Leeds with food, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leeds",
+    "area": "Harehills",
+    "address": "Roseville Rd, Leeds LS8 5DT",
+    "postcode": "LS8 5DT",
+    "latitude": 53.8062277,
+    "longitude": -1.5289625999999998,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:00",
+        "close": "02:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07459 199723",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:46:51.580Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=2494208218203135156&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "babylon-shisha-lounge-burmantofts",
+    "slug": "babylon-shisha-lounge-burmantofts",
+    "name": "Babylon Shisha Lounge",
+    "description": "Babylon Shisha Lounge is a spot for shisha in Burmantofts, Leeds with food and drinks. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leeds",
+    "area": "Burmantofts",
+    "address": "11a Cherry Row, Leeds LS9 7LY",
+    "postcode": "LS9 7LY",
+    "latitude": 53.8039717,
+    "longitude": -1.5291538,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Monday",
+        "open": "14:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "14:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "14:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "14:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Friday",
+        "open": "14:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "03:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07378 446856",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:46:51.580Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=9244268830746123193&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "atmosphere-lounge-burmantofts",
+    "slug": "atmosphere-lounge-burmantofts",
+    "name": "Atmosphere Lounge",
+    "description": "Atmosphere Lounge is a spot for shisha in Burmantofts, Leeds with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leeds",
+    "area": "Burmantofts",
+    "address": "yellow doors, 13 Cherry Row, Leeds LS9 7LY",
+    "postcode": "LS9 7LY",
+    "latitude": 53.8039202,
+    "longitude": -1.5291233,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "10:00",
+        "close": "06:00"
+      },
+      {
+        "day": "Monday",
+        "open": "10:00",
+        "close": "06:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "10:00",
+        "close": "06:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "10:00",
+        "close": "06:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "10:00",
+        "close": "06:00"
+      },
+      {
+        "day": "Friday",
+        "open": "10:00",
+        "close": "06:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "10:00",
+        "close": "06:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07747 230843",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:46:51.580Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=3715452974304667337&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "babel-shisha-lounge-burmantofts",
+    "slug": "babel-shisha-lounge-burmantofts",
+    "name": "Babel Shisha Lounge",
+    "description": "Babel Shisha Lounge is a spot for shisha in Burmantofts, Leeds with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leeds",
+    "area": "Burmantofts",
+    "address": "unit 3 Telephone Pl, Leeds LS9 7NB",
+    "postcode": "LS9 7NB",
+    "latitude": 53.804296699999995,
+    "longitude": -1.5311093,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "13:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Monday",
+        "open": "13:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "13:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "13:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "13:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Friday",
+        "open": "13:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "13:00",
+        "close": "03:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "0113 294 2565",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:46:51.580Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=8926921096709311853&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "rendezvu-cafe-and-shisha-lounge-woodhouse",
+    "slug": "rendezvu-cafe-and-shisha-lounge-woodhouse",
+    "name": "RendezVu Cafe & Shisha Lounge",
+    "description": "RendezVu Cafe & Shisha Lounge is a spot for shisha in Woodhouse, Leeds with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leeds",
+    "area": "Woodhouse",
+    "address": "201 Clarendon Rd, Woodhouse, Leeds LS2 9DT",
+    "postcode": "LS2 9DT",
+    "latitude": 53.8103665,
+    "longitude": -1.5576979,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "18:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "18:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "18:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "18:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "18:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "18:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "18:00",
+        "close": "01:00"
+      }
+    ],
+    "website": "https://instagram.com/rendezvulounge?igshid=YmMyMTA2M2Y=/",
+    "instagram": null,
+    "phone": "07841 087800",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:46:51.580Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://instagram.com/rendezvulounge?igshid=YmMyMTA2M2Y=/",
+      "otherSource": "https://maps.google.com/?cid=9603647714443669606&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "lawa-lounge-burmantofts",
+    "slug": "lawa-lounge-burmantofts",
+    "name": "Lawa Lounge",
+    "description": "Lawa Lounge is a spot for shisha in Burmantofts, Leeds with drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leeds",
+    "area": "Burmantofts",
+    "address": "Unit 2 Telephone Pl, Leeds LS9 7NB",
+    "postcode": "LS9 7NB",
+    "latitude": 53.8046132,
+    "longitude": -1.5308245999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Monday",
+        "open": "14:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "14:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "14:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "14:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Friday",
+        "open": "14:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "03:00"
+      }
+    ],
+    "website": "https://lawalounge.com/",
+    "instagram": null,
+    "phone": "07384 333971",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:46:51.580Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://lawalounge.com/",
+      "otherSource": "https://maps.google.com/?cid=14016777836789707597&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "karma-shisha-lounge-harehills",
+    "slug": "karma-shisha-lounge-harehills",
+    "name": "Karma Shisha Lounge",
+    "description": "Karma Shisha Lounge is a spot for shisha in Harehills, Leeds with late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leeds",
+    "area": "Harehills",
+    "address": "Roseville House, 53B Roseville Rd, Harehills, Leeds LS8 5DT",
+    "postcode": "LS8 5DT",
+    "latitude": 53.8093371,
+    "longitude": -1.5259256,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "18:00",
+        "close": "02:30"
+      },
+      {
+        "day": "Monday",
+        "open": "18:00",
+        "close": "02:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "18:00",
+        "close": "02:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "18:00",
+        "close": "02:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "18:00",
+        "close": "02:30"
+      },
+      {
+        "day": "Friday",
+        "open": "18:00",
+        "close": "02:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "18:00",
+        "close": "02:30"
+      }
+    ],
+    "website": "https://linktr.ee/karmaloungeleeds",
+    "instagram": null,
+    "phone": "0113 805 1775",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:46:51.580Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://linktr.ee/karmaloungeleeds",
+      "otherSource": "https://maps.google.com/?cid=7981582200667819270&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "mr-moustache-lounge-roundhay",
+    "slug": "mr-moustache-lounge-roundhay",
+    "name": "Mr Moustache Lounge",
+    "description": "Mr Moustache Lounge is a spot for shisha in Roundhay, Leeds with food, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leeds",
+    "area": "Roundhay",
+    "address": "627 Roundhay Rd, Roundhay, Leeds LS8 4AR",
+    "postcode": "LS8 4AR",
+    "latitude": 53.825352099999996,
+    "longitude": -1.5078969,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "10:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "10:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "10:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "10:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "10:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Friday",
+        "open": "10:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "10:00",
+        "close": "01:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07396 921111",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:46:51.580Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=16283237462391045070&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "diamond-lounge-burmantofts",
+    "slug": "diamond-lounge-burmantofts",
+    "name": "Diamond Lounge",
+    "description": "Diamond Lounge is a spot for shisha in Burmantofts, Leeds with late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leeds",
+    "area": "Burmantofts",
+    "address": "1 Dolly Ln, Leeds LS9 7EB",
+    "postcode": "LS9 7EB",
+    "latitude": 53.8053947,
+    "longitude": -1.5288705,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "03:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07301 980014",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:46:51.580Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=15261928501143905856&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "harehills-lane-shisha-bar-lounge",
+    "slug": "harehills-lane-shisha-bar-lounge",
+    "name": "Harehills Lane Shisha Bar Lounge",
+    "description": "Harehills Lane Shisha Bar Lounge is a spot for shisha in Harehills, Leeds. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leeds",
+    "area": "Harehills",
+    "address": "Harehills, Leeds LS8 5DH",
+    "postcode": "LS8 5DH",
+    "latitude": 53.811828299999995,
+    "longitude": -1.5125069999999998,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:46:51.580Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=16768212242255358318&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "pasha-shisha-express-burley",
+    "slug": "pasha-shisha-express-burley",
+    "name": "Pasha Shisha Express",
+    "description": "Pasha Shisha Express is a spot for shisha in Burley, Leeds. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leeds",
+    "area": "Burley",
+    "address": "164 Cardigan Rd, Burley, Leeds LS6 1LL",
+    "postcode": "LS6 1LL",
+    "latitude": 53.810325399999996,
+    "longitude": -1.5752902,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:46:51.580Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=16145821205638444462&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "hesco-lounge-roundhay",
+    "slug": "hesco-lounge-roundhay",
+    "name": "Hesco Lounge",
+    "description": "Hesco Lounge is a spot for shisha in Roundhay, Leeds with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leeds",
+    "area": "Roundhay",
+    "address": "62 Street Ln, Roundhay, Leeds LS8 2DQ",
+    "postcode": "LS8 2DQ",
+    "latitude": 53.844223299999996,
+    "longitude": -1.5077941,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "09:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "00:00"
+      }
+    ],
+    "website": "https://thelounges.co.uk/hesco",
+    "instagram": null,
+    "phone": "0113 831 2640",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:46:51.580Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://thelounges.co.uk/hesco",
+      "otherSource": "https://maps.google.com/?cid=15329500474759521946&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  }
+]

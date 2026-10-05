@@ -91,6 +91,12 @@ type SeedVenue = Record<string, unknown> & { id: string; slug: string; name: str
 /** Curated venues keyed for lookup, plus which of them a run actually matched. */
 type CuratedIndex = { byKey: Map<string, SeedVenue>; matched: Set<string>; all: SeedVenue[] };
 
+/** A UK postcode anywhere in the address, which a foreign address will not have. */
+const UK_POSTCODE = /\b[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}\b/i;
+
+/** Countries whose cities share a name with a UK one; seen in real results. */
+const NON_UK_ADDRESS = /\b(australia|usa|united states|canada|new zealand|south africa|ireland|nsw|qld|victoria \d)\b/i;
+
 /** A place plus the query context it was found through, so area fallback has something to use. */
 type Candidate = { place: GooglePlace; queriedArea: string; cityName: string; citySlug: string };
 
@@ -347,10 +353,15 @@ function isUsablePlace(place: GooglePlace, city: DiscoveryCity) {
   const address = place.formattedAddress?.toLowerCase() ?? "";
   const hasLocation = typeof place.location?.latitude === "number" && typeof place.location?.longitude === "number";
   const inCatchment = city.addressMatchers.some((matcher) => address.includes(matcher.toLowerCase()));
+  // Several UK city names exist abroad, and a location bias is a preference, not a filter:
+  // a "shisha lounge Liverpool" search returned a venue in Liverpool, New South Wales, whose
+  // address contains "liverpool" and so passed the catchment check. Require a UK postcode and
+  // reject an address that names another country.
+  const isUk = UK_POSTCODE.test(place.formattedAddress ?? "") && !NON_UK_ADDRESS.test(address);
   const looksRelevant = /shisha|hookah|sheesha|sisha|lounge|cafe|café|restaurant|bar/.test(name);
   // Permanently-closed venues are hidden from users anyway, so do not seed new ones.
   const isOpen = place.businessStatus !== "CLOSED_PERMANENTLY";
-  return Boolean(place.id && hasLocation && inCatchment && looksRelevant && isOpen);
+  return Boolean(place.id && hasLocation && isUk && inCatchment && looksRelevant && isOpen);
 }
 
 function isExplicitShishaVenue(place: GooglePlace) {

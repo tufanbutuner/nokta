@@ -162,7 +162,19 @@ export function isAddressFragment(value: string) {
   if (/^(rear of|front of|unit|flat|suite|floor|basement|ground floor|opposite|next to|behind|above|below|c\/o)\b/i.test(trimmed)) return true;
   // A single word that only qualifies a place name ("Greater", as in Greater Manchester) or
   // repeats the category ("Shisha") is a sliced address line, not a neighbourhood.
-  return /^(greater|central|north|south|east|west|upper|lower|inner|outer|shisha|hookah|lounge|cafe|restaurant|bar)$/i.test(trimmed);
+  if (/^(greater|central|north|south|east|west|upper|lower|inner|outer|shisha|hookah|lounge|cafe|restaurant|bar)$/i.test(trimmed)) return true;
+  // A named building, estate or business park is a premises, not an area: "Waverley House",
+  // "Adco Business Centre". Google returns these as localities for venues inside them.
+  // "City Centre" is excluded by name: it is the one "centre" that IS an area, and several
+  // city tables produce it deliberately.
+  if (!/^city (centre|center)$/i.test(trimmed)) {
+    if (/\b(house|court|business centre|business center|business park|retail park|industrial estate|mill|works|chambers|buildings?|arcade|plaza|tower|block)$/i.test(trimmed)) return true;
+  }
+  // A student-accommodation or serviced-office operator name, returned as a locality for a
+  // venue in its building.
+  if (/^(unite|ibis|premier inn|travelodge|regus|wework)$/i.test(trimmed)) return true;
+  // A lowercase first letter means a sliced address line, never a place name: "yellow doors".
+  return /^[a-z]/.test(trimmed);
 }
 
 /** True for anything that looks like a street line rather than a neighbourhood. */
