@@ -1,0 +1,502 @@
+[
+  {
+    "id": "blac-restaurant-birmingham",
+    "slug": "blac-restaurant-birmingham",
+    "name": "Blac Restaurant",
+    "description": "Sparkhill restaurant and lounge with a dedicated shisha lounge alongside global food, desserts and a polished evening setting.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "Sparkhill",
+    "address": "512 Stratford Rd, Birmingham B11 4AH",
+    "postcode": "B11 4AH",
+    "latitude": 52.453415299999996,
+    "longitude": -1.8657789999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 3,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "luxury",
+      "date-night",
+      "quiet"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "00:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "00:30"
+      }
+    ],
+    "website": "https://blacrestaurant.co.uk/",
+    "instagram": null,
+    "phone": "0121 820 0797",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:00.075Z",
+    "dataSources": {
+      "officialWebsite": "https://blacrestaurant.co.uk/",
+      "shishaPageUrl": "https://blacrestaurant.co.uk/about-us/",
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=6064931142686994108&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Official website confirms Birmingham address, phone and dedicated shisha lounge. Opening hours, shisha prices, alcohol policy and outdoor seating still need direct verification. Generic stock image placeholder should be replaced with owned or venue-approved media."
+  },
+  {
+    "id": "mughal-e-azam-restaurant-and-banqueting-sparkhill",
+    "slug": "mughal-e-azam-restaurant-and-banqueting-sparkhill",
+    "name": "Mughal-e-Azam Restaurant & Banqueting",
+    "description": "Mughal-e-Azam Restaurant & Banqueting is a spot for shisha in Sparkhill, Birmingham with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "Sparkhill",
+    "address": "Stratford Rd, Birmingham B11 4DA",
+    "postcode": "B11 4DA",
+    "latitude": 52.4429662,
+    "longitude": -1.8559826,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "http://www.mughaleazam.co.uk/",
+    "instagram": null,
+    "phone": "0121 777 9348",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:00.076Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.mughaleazam.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=12324039518811686887&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "ladana-caf-sparkhill",
+    "slug": "ladana-caf-sparkhill",
+    "name": "Ladana Café",
+    "description": "Ladana Café is a spot for shisha in Sparkhill, Birmingham with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "Sparkhill",
+    "address": "388 Stratford Rd, Birmingham B11 4AB",
+    "postcode": "B11 4AB",
+    "latitude": 52.457496299999995,
+    "longitude": -1.8691441999999998,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "10:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "09:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "09:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "09:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "09:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "09:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "01:00"
+      }
+    ],
+    "website": "https://ladanacafe.com/",
+    "instagram": null,
+    "phone": "0121 688 0341",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:00.076Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://ladanacafe.com/",
+      "otherSource": "https://maps.google.com/?cid=15498392325125150924&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "rajbari-kitchen-small-heath",
+    "slug": "rajbari-kitchen-small-heath",
+    "name": "Rajbari kitchen",
+    "description": "Rajbari kitchen is a spot for shisha in Small Heath, Birmingham with food, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "Small Heath",
+    "address": "528 Coventry Rd, Small Heath, Birmingham B10 0UN",
+    "postcode": "B10 0UN",
+    "latitude": 52.469090099999995,
+    "longitude": -1.8564183,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "10:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "10:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "10:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "10:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "10:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "10:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "10:00",
+        "close": "23:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "0121 753 5874",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:00.076Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=4253987794256452656&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "shkar-restaurant-handsworth",
+    "slug": "shkar-restaurant-handsworth",
+    "name": "Shkar Restaurant",
+    "description": "Shkar Restaurant is a spot for shisha in Handsworth, Birmingham with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "Handsworth",
+    "address": "85 Soho Rd, Handsworth, Birmingham B21 9SP",
+    "postcode": "B21 9SP",
+    "latitude": 52.5018403,
+    "longitude": -1.9284366,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "11:30",
+        "close": "21:00"
+      },
+      {
+        "day": "Monday",
+        "open": "11:30",
+        "close": "21:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:30",
+        "close": "21:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:30",
+        "close": "21:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:30",
+        "close": "21:00"
+      },
+      {
+        "day": "Friday",
+        "open": "11:30",
+        "close": "21:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:30",
+        "close": "21:00"
+      }
+    ],
+    "website": "https://shkarrestaurant.com/",
+    "instagram": null,
+    "phone": "0121 820 7482",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:00.076Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://shkarrestaurant.com/",
+      "otherSource": "https://maps.google.com/?cid=12276485845044410280&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "koko-restaurant-erdington",
+    "slug": "koko-restaurant-erdington",
+    "name": "Koko restaurant",
+    "description": "Koko restaurant is a spot for shisha in Erdington, Birmingham with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "Erdington",
+    "address": "100 Tyburn Rd, Birmingham B24 8LD",
+    "postcode": "B24 8LD",
+    "latitude": 52.508235000000006,
+    "longitude": -1.8550187999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "13:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "13:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "https://kokobirmingham.com/",
+    "instagram": null,
+    "phone": "0121 655 0355",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:00.076Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://kokobirmingham.com/",
+      "otherSource": "https://maps.google.com/?cid=7686095994552559971&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  }
+]

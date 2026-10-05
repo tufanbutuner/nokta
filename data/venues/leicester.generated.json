@@ -1,0 +1,2307 @@
+[
+  {
+    "id": "sky-lounge-leicester-city-centre",
+    "slug": "sky-lounge-leicester-city-centre",
+    "name": "Sky Lounge Leicester",
+    "description": "Sky Lounge Leicester is a spot for shisha in City Centre, Leicester with late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leicester",
+    "area": "City Centre",
+    "address": "63 Bedford St S, Leicester LE1 3JR",
+    "postcode": "LE1 3JR",
+    "latitude": 52.6399714,
+    "longitude": -1.1290314,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "https://www.instagram.com/skyloungeleicester/",
+    "instagram": null,
+    "phone": "0116 332 8639",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:42.868Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.instagram.com/skyloungeleicester/",
+      "otherSource": "https://maps.google.com/?cid=6094521350146859569&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "smouk-shisha-breakfast-brunch-steakhouse-desserts-lounge-leicester-city-centre",
+    "slug": "smouk-shisha-breakfast-brunch-steakhouse-desserts-lounge-leicester-city-centre",
+    "name": "SMOUK Shisha | Breakfast | Brunch | Steakhouse | Desserts | Lounge Leicester",
+    "description": "SMOUK Shisha Breakfast Brunch Steakhouse Desserts Lounge Leicester is a spot for shisha in City Centre, Leicester with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leicester",
+    "area": "City Centre",
+    "address": "Garden St, Leicester LE1 3TE",
+    "postcode": "LE1 3TE",
+    "latitude": 52.639997799999996,
+    "longitude": -1.1320945999999998,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "10:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "10:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "10:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "10:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "10:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "10:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "10:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "https://www.smoukleicester.co.uk/leicester/?mtm_campaign=Business%20Profiles&mtm_kwd=Google%20Business",
+    "instagram": null,
+    "phone": "0116 482 6912",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:42.870Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.smoukleicester.co.uk/leicester/?mtm_campaign=Business%20Profiles&mtm_kwd=Google%20Business",
+      "otherSource": "https://maps.google.com/?cid=4489677128238247510&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "sultan-shisha-lounge-city-centre",
+    "slug": "sultan-shisha-lounge-city-centre",
+    "name": "Sultan Shisha Lounge",
+    "description": "Sultan Shisha Lounge is a spot for shisha in City Centre, Leicester with food, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leicester",
+    "area": "City Centre",
+    "address": "57 Humberstone Gate, Leicester LE1 1WB",
+    "postcode": "LE1 1WB",
+    "latitude": 52.6360901,
+    "longitude": -1.1293898000000002,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "01:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "0116 507 9497",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:42.870Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=9654213553843226100&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "amoura-l-shisha-l-turkish-l-coffee-l-mocktails-l-desserts-l-live-football-city-centre",
+    "slug": "amoura-l-shisha-l-turkish-l-coffee-l-mocktails-l-desserts-l-live-football-city-centre",
+    "name": "Amoura l Shisha l Turkish l Coffee l Mocktails l Desserts l Live Football",
+    "description": "Amoura l Shisha l Turkish l Coffee l Mocktails l Desserts l Live Football is a spot for shisha in City Centre, Leicester with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leicester",
+    "area": "City Centre",
+    "address": "25 Royal E St, Leicester LE1 3UH",
+    "postcode": "LE1 3UH",
+    "latitude": 52.6408303,
+    "longitude": -1.1306661999999998,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night",
+      "live_sport"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "football",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "https://amoura.co.uk/",
+    "instagram": null,
+    "phone": "07789 483576",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:42.870Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://amoura.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=10552051367194051179&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "majlis-cafe-and-shisha-lounge-city-centre",
+    "slug": "majlis-cafe-and-shisha-lounge-city-centre",
+    "name": "Majlis - Cafe & Shisha Lounge",
+    "description": "Majlis - Cafe & Shisha Lounge is a spot for shisha in City Centre, Leicester with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leicester",
+    "area": "City Centre",
+    "address": "16 Old Milton St, Leicester LE1 3RL",
+    "postcode": "LE1 3RL",
+    "latitude": 52.639700100000006,
+    "longitude": -1.1289293,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "http://majlisshisha.co.uk/",
+    "instagram": null,
+    "phone": "0116 253 2019",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:42.870Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://majlisshisha.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=3746186324854646726&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "mabel-lounge-city-centre",
+    "slug": "mabel-lounge-city-centre",
+    "name": "Mabel Lounge",
+    "description": "Mabel Lounge is a spot for shisha in City Centre, Leicester with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leicester",
+    "area": "City Centre",
+    "address": "161 Belgrave Gate, Leicester LE1 3HS",
+    "postcode": "LE1 3HS",
+    "latitude": 52.640136999999996,
+    "longitude": -1.1300824,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "08:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "08:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "08:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "08:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "08:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "08:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "08:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "https://mabellounge.co.uk/",
+    "instagram": null,
+    "phone": "07379 361512",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:42.870Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://mabellounge.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=339226629969366676&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "cascade-lounge-highfields",
+    "slug": "cascade-lounge-highfields",
+    "name": "Cascade Lounge",
+    "description": "Cascade Lounge is a spot for shisha in Highfields, Leicester with late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leicester",
+    "area": "Highfields",
+    "address": "58A London Rd, Leicester LE2 0QD",
+    "postcode": "LE2 0QD",
+    "latitude": 52.630284599999996,
+    "longitude": -1.1236285,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "http://www.cascadelounge.co.uk/",
+    "instagram": null,
+    "phone": "0116 224 4342",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:42.870Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.cascadelounge.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=7286886751852215240&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "bukhoor-lounge-evington",
+    "slug": "bukhoor-lounge-evington",
+    "name": "Bukhoor Lounge",
+    "description": "Bukhoor Lounge is a spot for shisha in Evington, Leicester with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leicester",
+    "area": "Evington",
+    "address": "Edward St, Leicester LE5 3FG",
+    "postcode": "LE5 3FG",
+    "latitude": 52.6397811,
+    "longitude": -1.1141824999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "04:00"
+      },
+      {
+        "day": "Monday",
+        "open": "14:00",
+        "close": "04:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "14:00",
+        "close": "04:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "14:00",
+        "close": "04:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "14:00",
+        "close": "04:00"
+      },
+      {
+        "day": "Friday",
+        "open": "14:00",
+        "close": "04:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "04:30"
+      }
+    ],
+    "website": "https://vunyu.com/bukhoor-lounge-493165-web",
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:42.870Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://vunyu.com/bukhoor-lounge-493165-web",
+      "otherSource": "https://maps.google.com/?cid=6596976029686419390&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "la-huqqah-turkish-shishaa-smash-burger-mocktails-evington",
+    "slug": "la-huqqah-turkish-shishaa-smash-burger-mocktails-evington",
+    "name": "LA HUQQAH |TURKISH| SHISHAA |SMASH BURGER| MOCKTAILS",
+    "description": "LA HUQQAH TURKISH SHISHAA SMASH BURGER MOCKTAILS is a spot for shisha in Evington, Leicester with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leicester",
+    "area": "Evington",
+    "address": "88 Hastings Rd, Leicester LE5 0NU",
+    "postcode": "LE5 0NU",
+    "latitude": 52.645121499999995,
+    "longitude": -1.1009856,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:30",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "18:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "18:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "18:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "18:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:30",
+        "close": "01:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:30",
+        "close": "01:30"
+      }
+    ],
+    "website": "http://www.lahuqqah.co.uk/",
+    "instagram": null,
+    "phone": "07475 660692",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:42.870Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.lahuqqah.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=13925680299906367201&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "embassy-lounge-westcotes",
+    "slug": "embassy-lounge-westcotes",
+    "name": "Embassy Lounge",
+    "description": "Embassy Lounge is a spot for shisha in Westcotes, Leicester. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leicester",
+    "area": "Westcotes",
+    "address": "7 Woodgate, Leicester LE3 5GH",
+    "postcode": "LE3 5GH",
+    "latitude": 52.643678699999995,
+    "longitude": -1.1452345,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [],
+    "website": "https://embassyshishaloungeltd.co.uk/",
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:42.871Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://embassyshishaloungeltd.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=11030868522782767934&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "apr-s-lounge-city-centre",
+    "slug": "apr-s-lounge-city-centre",
+    "name": "Après Lounge",
+    "description": "Après Lounge is a spot for shisha in City Centre, Leicester with drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leicester",
+    "area": "City Centre",
+    "address": "94 High St, Leicester LE1 5YP",
+    "postcode": "LE1 5YP",
+    "latitude": 52.635263200000004,
+    "longitude": -1.1379034,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Friday",
+        "open": "15:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "15:00",
+        "close": "03:00"
+      }
+    ],
+    "website": "http://www.apreslounge.co.uk/",
+    "instagram": null,
+    "phone": "0116 262 6975",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:42.871Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.apreslounge.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=12054233843226255125&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "steak-and-lounge-restaurant-city-centre",
+    "slug": "steak-and-lounge-restaurant-city-centre",
+    "name": "Steak & Lounge Restaurant",
+    "description": "Steak & Lounge Restaurant is a spot for shisha in City Centre, Leicester with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leicester",
+    "area": "City Centre",
+    "address": "43 Abbey St, Leicester LE1 3TE",
+    "postcode": "LE1 3TE",
+    "latitude": 52.6399255,
+    "longitude": -1.1322999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "15:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "15:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://steaknlounge.co.uk/",
+    "instagram": null,
+    "phone": "0116 262 2666",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:42.871Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://steaknlounge.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=3170463128060530348&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "aq-lounge-city-centre",
+    "slug": "aq-lounge-city-centre",
+    "name": "AQ lounge",
+    "description": "AQ lounge is a spot for shisha in City Centre, Leicester with drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leicester",
+    "area": "City Centre",
+    "address": "24A Belgrave Gate, Leicester LE1 3GP",
+    "postcode": "LE1 3GP",
+    "latitude": 52.637552299999996,
+    "longitude": -1.1327236,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "00:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Monday",
+        "open": "15:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "15:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "15:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "15:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "15:00",
+        "close": "00:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "15:00",
+        "close": "23:30"
+      }
+    ],
+    "website": "https://aqlounge.com/",
+    "instagram": null,
+    "phone": "07746 964475",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:42.871Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://aqlounge.com/",
+      "otherSource": "https://maps.google.com/?cid=4646047511794548152&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "secret-garden-bar-and-lounge-westcotes",
+    "slug": "secret-garden-bar-and-lounge-westcotes",
+    "name": "Secret Garden Bar & Lounge",
+    "description": "Secret Garden Bar & Lounge is a spot for shisha in Westcotes, Leicester with food and drinks, outdoor seating. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leicester",
+    "area": "Westcotes",
+    "address": "66 Braunstone Gate, Leicester LE3 5LG",
+    "postcode": "LE3 5LG",
+    "latitude": 52.6306369,
+    "longitude": -1.1468616,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": true,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "outdoor",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "18:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "18:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "18:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "18:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Friday",
+        "open": "18:00",
+        "close": "04:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "18:00",
+        "close": "04:00"
+      }
+    ],
+    "website": "https://secretgardenleicester.co.uk/",
+    "instagram": null,
+    "phone": "07832 993643",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:42.871Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://secretgardenleicester.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=16992972277991514762&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "shisharoo-highfields",
+    "slug": "shisharoo-highfields",
+    "name": "ShishaRoo",
+    "description": "ShishaRoo is a spot for shisha in Highfields, Leicester with late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leicester",
+    "area": "Highfields",
+    "address": "1 Conway Rd, Leicester LE2 1PE",
+    "postcode": "LE2 1PE",
+    "latitude": 52.624199,
+    "longitude": -1.106466,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "15:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "18:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "18:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "18:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "18:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "00:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07493 909599",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:42.871Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=5179369041662646092&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "babley-shisha-evington",
+    "slug": "babley-shisha-evington",
+    "name": "BABLEY SHISHA",
+    "description": "BABLEY SHISHA is a spot for shisha in Evington, Leicester with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leicester",
+    "area": "Evington",
+    "address": "22 Babley, Shisha, Humberstone Rd, Leicester LE5 0AR",
+    "postcode": "LE5 0AR",
+    "latitude": 52.6374939,
+    "longitude": -1.1259797,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "07:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "07:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "07:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "07:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "07:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "07:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "07:00",
+        "close": "23:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07404 812981",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:42.871Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=2406125149284134226&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "embassy-shisha-lounge-ltd-city-centre",
+    "slug": "embassy-shisha-lounge-ltd-city-centre",
+    "name": "Embassy Shisha Lounge Ltd",
+    "description": "Embassy Shisha Lounge Ltd is a spot for shisha in City Centre, Leicester. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leicester",
+    "area": "City Centre",
+    "address": "253, 255 Belgrave Gate, Leicester LE1 3HU",
+    "postcode": "LE1 3HU",
+    "latitude": 52.6431775,
+    "longitude": -1.1274505,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:42.871Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=16036149020529146838&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "lounge-cafe-bar-and-restaurant-aylestone",
+    "slug": "lounge-cafe-bar-and-restaurant-aylestone",
+    "name": "Lounge Cafe Bar & Restaurant",
+    "description": "Lounge Cafe Bar & Restaurant is a spot for shisha in Aylestone, Leicester with food and drinks, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leicester",
+    "area": "Aylestone",
+    "address": "731-733 Aylestone Rd, Aylestone, Leicester LE2 8TG",
+    "postcode": "LE2 8TG",
+    "latitude": 52.602656499999995,
+    "longitude": -1.1553263999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Monday",
+        "open": "12:30",
+        "close": "23:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:30",
+        "close": "23:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:30",
+        "close": "23:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:30",
+        "close": "23:30"
+      },
+      {
+        "day": "Friday",
+        "open": "12:30",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:30",
+        "close": "00:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "0116 222 6812",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:42.871Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=8751706197575786383&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "the-golden-lounge-belgrave",
+    "slug": "the-golden-lounge-belgrave",
+    "name": "The Golden Lounge",
+    "description": "The Golden Lounge is a spot for shisha in Belgrave, Leicester with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leicester",
+    "area": "Belgrave",
+    "address": "59a Belgrave Rd, Leicester LE4 6AS",
+    "postcode": "LE4 6AS",
+    "latitude": 52.648433600000004,
+    "longitude": -1.1232875,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "17:30",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:30",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:30",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:30",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:30",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:30",
+        "close": "02:00"
+      }
+    ],
+    "website": "https://www.thegoldenlounge.uk/",
+    "instagram": null,
+    "phone": "0116 319 5505",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:42.871Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.thegoldenlounge.uk/",
+      "otherSource": "https://maps.google.com/?cid=15665296926926754324&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "mansah-lounge-syston",
+    "slug": "mansah-lounge-syston",
+    "name": "Mansah lounge",
+    "description": "Mansah lounge is a spot for shisha in Syston, Leicester with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leicester",
+    "area": "Syston",
+    "address": "1173 Melton Rd, Syston, Leicester LE7 2JS",
+    "postcode": "LE7 2JS",
+    "latitude": 52.6969947,
+    "longitude": -1.0754274,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "21:30"
+      },
+      {
+        "day": "Monday",
+        "open": "14:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "14:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "14:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "14:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "14:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "00:00"
+      }
+    ],
+    "website": "https://linktr.ee/mansahlounge",
+    "instagram": null,
+    "phone": "0116 260 9464",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:42.871Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://linktr.ee/mansahlounge",
+      "otherSource": "https://maps.google.com/?cid=9129535779693334291&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "ivy-lounge-city-centre",
+    "slug": "ivy-lounge-city-centre",
+    "name": "Ivy Lounge",
+    "description": "Ivy Lounge is a spot for shisha in City Centre, Leicester with drinks. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leicester",
+    "area": "City Centre",
+    "address": "44-46 Cank St, Leicester LE1 5GW",
+    "postcode": "LE1 5GW",
+    "latitude": 52.6345418,
+    "longitude": -1.1347038000000003,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [],
+    "website": null,
+    "instagram": null,
+    "phone": "07753 207372",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:42.872Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=12488825653523675442&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "shisha-drop-evington",
+    "slug": "shisha-drop-evington",
+    "name": "Shisha Drop",
+    "description": "Shisha Drop is a spot for shisha in Evington, Leicester. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leicester",
+    "area": "Evington",
+    "address": "unit 13T, 195 Gwendolen Rd, Leicester LE5 5FN",
+    "postcode": "LE5 5FN",
+    "latitude": 52.629384599999995,
+    "longitude": -1.0978413,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "18:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "18:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "18:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "13:00",
+        "close": "22:00"
+      }
+    ],
+    "website": "https://shishadropleicester.co.uk/tAsL",
+    "instagram": null,
+    "phone": "07961 464031",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:42.872Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://shishadropleicester.co.uk/tAsL",
+      "otherSource": "https://maps.google.com/?cid=12670322498977454685&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "apex-lounge-and-bar-westcotes",
+    "slug": "apex-lounge-and-bar-westcotes",
+    "name": "Apex Lounge & Bar",
+    "description": "Apex Lounge & Bar is a spot for shisha in Westcotes, Leicester with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leicester",
+    "area": "Westcotes",
+    "address": "203 Narborough Rd, Leicester LE3 0PE",
+    "postcode": "LE3 0PE",
+    "latitude": 52.6238998,
+    "longitude": -1.153899,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "15:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "14:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "14:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "14:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "14:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Friday",
+        "open": "14:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "23:30"
+      }
+    ],
+    "website": "http://www.apexloungeandbar.co.uk/",
+    "instagram": null,
+    "phone": "0116 332 6884",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:42.872Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.apexloungeandbar.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=11280621985705278022&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "dial-a-shisha-highfields",
+    "slug": "dial-a-shisha-highfields",
+    "name": "Dial A Shisha",
+    "description": "Dial A Shisha is a spot for shisha in Highfields, Leicester. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leicester",
+    "area": "Highfields",
+    "address": "Unit 84 Conduit St, Leicester LE2 0JN",
+    "postcode": "LE2 0JN",
+    "latitude": 52.6317428,
+    "longitude": -1.1219488,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "18:30",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "18:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "18:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "18:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "18:00",
+        "close": "22:00"
+      }
+    ],
+    "website": "http://www.dialashisha.co.uk/",
+    "instagram": null,
+    "phone": "07504 873379",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:42.872Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.dialashisha.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=8787009506811596506&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "atmos-central-vape-e-cig-and-coffee-lounge-westcotes",
+    "slug": "atmos-central-vape-e-cig-and-coffee-lounge-westcotes",
+    "name": "Atmos Central Vape/E-Cig & Coffee Lounge",
+    "description": "Atmos Central Vape/E-Cig & Coffee Lounge is a spot for shisha in Westcotes, Leicester with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leicester",
+    "area": "Westcotes",
+    "address": "286 Narborough Rd, Leicester LE3 2AQ",
+    "postcode": "LE3 2AQ",
+    "latitude": 52.621269299999994,
+    "longitude": -1.1562808,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Monday",
+        "open": "11:00",
+        "close": "17:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:00",
+        "close": "17:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:00",
+        "close": "17:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:00",
+        "close": "17:00"
+      },
+      {
+        "day": "Friday",
+        "open": "11:00",
+        "close": "17:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:00",
+        "close": "17:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07967 229923",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:42.872Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=9236800584380056275&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "cardamom-lounge-narborough",
+    "slug": "cardamom-lounge-narborough",
+    "name": "Cardamom Lounge",
+    "description": "Cardamom Lounge is a spot for shisha in Narborough, Leicester with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leicester",
+    "area": "Narborough",
+    "address": "58 Leicester Rd, Narborough, Leicester LE19 2DG",
+    "postcode": "LE19 2DG",
+    "latitude": 52.5754126,
+    "longitude": -1.1996145,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "17:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:30",
+        "close": "23:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:30",
+        "close": "23:30"
+      }
+    ],
+    "website": "https://cardamom-lounge.co.uk/",
+    "instagram": null,
+    "phone": "0116 286 6600",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:42.872Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://cardamom-lounge.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=10836834900106034398&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "sports-lounge-oadby-bar-and-grill",
+    "slug": "sports-lounge-oadby-bar-and-grill",
+    "name": "Sports Lounge Oadby Bar & Grill",
+    "description": "Sports Lounge Oadby Bar & Grill is a spot for shisha in Oadby, Leicester with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leicester",
+    "area": "Oadby",
+    "address": "115 London Rd, Oadby, Leicester LE2 5DP",
+    "postcode": "LE2 5DP",
+    "latitude": 52.5967044,
+    "longitude": -1.0750866,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night",
+      "live_sport"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "football",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "15:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "15:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "15:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "15:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Friday",
+        "open": "15:00",
+        "close": "00:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "00:30"
+      }
+    ],
+    "website": "https://sportsloungeoadby.co.uk/",
+    "instagram": null,
+    "phone": "07723 429450",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:42.872Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://sportsloungeoadby.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=9362796868062432158&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "the-west-end-lounge-westcotes",
+    "slug": "the-west-end-lounge-westcotes",
+    "name": "The West End Lounge",
+    "description": "The West End Lounge is a spot for shisha in Westcotes, Leicester with drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leicester",
+    "area": "Westcotes",
+    "address": "25-27 Braunstone Gate, Leicester LE3 5LH",
+    "postcode": "LE3 5LH",
+    "latitude": 52.6314698,
+    "longitude": -1.1451301999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "11:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "14:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "14:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "14:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "14:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "https://thewestendlounge.co.uk/",
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:42.872Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://thewestendlounge.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=7922235409416548694&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "the-civic-community-lounge-braunstone-town",
+    "slug": "the-civic-community-lounge-braunstone-town",
+    "name": "The Civic Community Lounge",
+    "description": "The Civic Community Lounge is a spot for shisha in Braunstone Town, Leicester with food and drinks. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leicester",
+    "area": "Braunstone Town",
+    "address": "209 Kingsway, Braunstone Town, Leicester LE3 2PP",
+    "postcode": "LE3 2PP",
+    "latitude": 52.613618499999994,
+    "longitude": -1.1811653,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "09:00",
+        "close": "14:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "09:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "23:30"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "0116 289 0045",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:42.872Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=9699591530596988635&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "lounge-bar-highfields",
+    "slug": "lounge-bar-highfields",
+    "name": "Lounge Bar",
+    "description": "Lounge Bar is a spot for shisha in Highfields, Leicester with drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leicester",
+    "area": "Highfields",
+    "address": "451 Saffron Ln, Leicester LE2 6UG",
+    "postcode": "LE2 6UG",
+    "latitude": 52.604269699999996,
+    "longitude": -1.1390832,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "11:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:00",
+        "close": "23:30"
+      }
+    ],
+    "website": "http://lounge-bar.edan.io/",
+    "instagram": null,
+    "phone": "0116 283 7777",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:42.872Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://lounge-bar.edan.io/",
+      "otherSource": "https://maps.google.com/?cid=1221007752870972553&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  }
+]

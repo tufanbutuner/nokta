@@ -153,7 +153,13 @@ function isSameCity(value: string, cityName: string) {
  * "Dune lounge, Rear of, 204 Lea Bridge Rd". It reads like an area but names no place.
  */
 export function isAddressFragment(value: string) {
-  return /^(rear of|front of|unit|flat|suite|floor|basement|ground floor|opposite|next to|behind|above|below|c\/o)\b/i.test(value.trim());
+  const trimmed = value.trim();
+  // A leading "unit"/"flat"/etc. is a fragment whether or not more text follows it, so
+  // "Unit 14 Piccadilly" and "unit 13T" are caught as well as a bare "Unit 6".
+  if (/^(rear of|front of|unit|flat|suite|floor|basement|ground floor|opposite|next to|behind|above|below|c\/o)\b/i.test(trimmed)) return true;
+  // A single word that only qualifies a place name ("Greater", as in Greater Manchester) or
+  // repeats the category ("Shisha") is a sliced address line, not a neighbourhood.
+  return /^(greater|central|north|south|east|west|upper|lower|inner|outer|shisha|hookah|lounge|cafe|restaurant|bar)$/i.test(trimmed);
 }
 
 /** True for anything that looks like a street line rather than a neighbourhood. */

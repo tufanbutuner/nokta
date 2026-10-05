@@ -76,9 +76,48 @@ const LONDON_DISTRICTS: Record<string, string> = {
   SE25: "South Norwood", SE26: "Sydenham", SE28: "Thamesmead",
 };
 
+/**
+ * Birmingham districts. The shisha trade clusters along the Stratford Road and Coventry Road
+ * corridors, so B10–B12 and B5 carry most of it.
+ */
+const BIRMINGHAM_DISTRICTS: Record<string, string> = {
+  B1: "City Centre", B2: "City Centre", B3: "City Centre", B4: "City Centre",
+  B5: "Highgate", B6: "Aston", B7: "Nechells", B8: "Washwood Heath",
+  B9: "Bordesley Green", B10: "Small Heath", B11: "Sparkhill", B12: "Balsall Heath",
+  B13: "Moseley", B14: "Kings Heath", B15: "Edgbaston", B16: "Ladywood",
+  B17: "Harborne", B18: "Jewellery Quarter", B19: "Lozells", B20: "Handsworth Wood",
+  B21: "Handsworth", B23: "Erdington", B24: "Erdington", B25: "Yardley",
+  B26: "Sheldon", B27: "Acocks Green", B28: "Hall Green", B29: "Selly Oak",
+  B30: "Kings Norton", B31: "Northfield", B32: "Quinton", B33: "Stechford",
+  B34: "Shard End", B36: "Castle Bromwich", B42: "Perry Barr", B44: "Kingstanding",
+};
+
+/**
+ * Manchester districts. M14 (Rusholme, the Curry Mile) and M8 (Cheetham Hill) are the two
+ * areas that matter most for shisha.
+ */
+const MANCHESTER_DISTRICTS: Record<string, string> = {
+  M1: "City Centre", M2: "City Centre", M3: "Spinningfields", M4: "Northern Quarter",
+  M5: "Salford", M6: "Salford", M7: "Broughton", M8: "Cheetham Hill",
+  M9: "Blackley", M11: "Clayton", M12: "Ardwick", M13: "Longsight",
+  M14: "Rusholme", M15: "Hulme", M16: "Whalley Range", M17: "Trafford Park",
+  M18: "Gorton", M19: "Levenshulme", M20: "Didsbury", M21: "Chorlton",
+  M22: "Wythenshawe", M23: "Baguley", M25: "Prestwich", M30: "Eccles",
+  M32: "Stretford", M33: "Sale", M40: "Miles Platting",
+};
+
+/** Leicester districts. LE1 is the centre; LE2 and LE4 hold Highfields and Belgrave. */
+const LEICESTER_DISTRICTS: Record<string, string> = {
+  LE1: "City Centre", LE2: "Highfields", LE3: "Westcotes", LE4: "Belgrave",
+  LE5: "Evington", LE9: "Narborough", LE16: "Market Harborough", LE18: "Wigston",
+};
+
 /** Per-city tables, keyed by the slug used in SUPPORTED_CITIES. */
 const DISTRICTS_BY_CITY: Record<string, Record<string, string>> = {
   london: LONDON_DISTRICTS,
+  birmingham: BIRMINGHAM_DISTRICTS,
+  manchester: MANCHESTER_DISTRICTS,
+  leicester: LEICESTER_DISTRICTS,
 };
 
 /**

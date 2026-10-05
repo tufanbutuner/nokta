@@ -1,0 +1,2616 @@
+[
+  {
+    "id": "the-rooftop-lounge-manchester-cheetham-hill",
+    "slug": "the-rooftop-lounge-manchester-cheetham-hill",
+    "name": "The Rooftop Lounge Manchester",
+    "description": "The Rooftop Lounge Manchester is a spot for shisha in Cheetham Hill, Manchester with food and drinks, outdoor seating, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Manchester",
+    "area": "Cheetham Hill",
+    "address": "137-139 Cheetham Hill Rd, Cheetham Hill, Manchester M8 8LY",
+    "postcode": "M8 8LY",
+    "latitude": 53.4946102,
+    "longitude": -2.2393984,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": true,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "outdoor",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "http://www.therooftoplounge.co.uk/",
+    "instagram": null,
+    "phone": "07398 092122",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:24.593Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.therooftoplounge.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=11072627550883748190&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "al-qaza-shisha-rusholme",
+    "slug": "al-qaza-shisha-rusholme",
+    "name": "Al Qaza Shisha",
+    "description": "Al Qaza Shisha is a spot for shisha in Rusholme, Manchester with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Manchester",
+    "area": "Rusholme",
+    "address": "119 Wilmslow Rd, Manchester M14 5AN",
+    "postcode": "M14 5AN",
+    "latitude": 53.454794799999995,
+    "longitude": -2.2246167999999997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "15:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "14:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "15:00",
+        "close": "03:00"
+      }
+    ],
+    "website": "https://www.instagram.com/alqazamcr/?hl=en-gb",
+    "instagram": null,
+    "phone": "0161 224 9288",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:24.594Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.instagram.com/alqazamcr/?hl=en-gb",
+      "otherSource": "https://maps.google.com/?cid=962942988084210081&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "qalyan-shisha-lounge-rusholme",
+    "slug": "qalyan-shisha-lounge-rusholme",
+    "name": "Qalyan Shisha Lounge",
+    "description": "Qalyan Shisha Lounge is a spot for shisha in Rusholme, Manchester with late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Manchester",
+    "area": "Rusholme",
+    "address": "17 Anson Rd, Manchester M14 5BZ",
+    "postcode": "M14 5BZ",
+    "latitude": 53.456428499999994,
+    "longitude": -2.2154095000000003,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "15:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "15:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "15:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "15:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "15:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "15:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "15:00",
+        "close": "01:00"
+      }
+    ],
+    "website": "http://www.qalyanlounge.co.uk/",
+    "instagram": null,
+    "phone": "07783 535191",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:24.594Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.qalyanlounge.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=6810898156487047716&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "elma-lounge-manchester-salford",
+    "slug": "elma-lounge-manchester-salford",
+    "name": "Elma lounge Manchester",
+    "description": "Elma lounge Manchester is a spot for shisha in Salford, Manchester with late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Manchester",
+    "area": "Salford",
+    "address": "7B Adelphi St, Salford M3 6GH",
+    "postcode": "M3 6GH",
+    "latitude": 53.485520300000005,
+    "longitude": -2.2650652,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "01:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07867 260700",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:24.595Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=5730470517296084523&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "arnero-shisha-cafe-city-centre",
+    "slug": "arnero-shisha-cafe-city-centre",
+    "name": "Arnero Shisha Cafe",
+    "description": "Arnero Shisha Cafe is a spot for shisha in City Centre, Manchester with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Manchester",
+    "area": "City Centre",
+    "address": "25 Sackville St, Greater, Manchester M1 3LZ",
+    "postcode": "M1 3LZ",
+    "latitude": 53.477455899999995,
+    "longitude": -2.237707,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "https://www.arneroshishacafe.co.uk/",
+    "instagram": null,
+    "phone": "07460 360054",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:24.595Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.arneroshishacafe.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=11784187234202450933&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "movida-shisha-lounge-rusholme",
+    "slug": "movida-shisha-lounge-rusholme",
+    "name": "Movida Shisha Lounge",
+    "description": "Movida Shisha Lounge is a spot for shisha in Rusholme, Manchester. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Manchester",
+    "area": "Rusholme",
+    "address": "110 Wilmslow Rd, Rusholme, Manchester M14 5AJ",
+    "postcode": "M14 5AJ",
+    "latitude": 53.4533306,
+    "longitude": -2.2237101999999997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "03:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07932 577878",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:24.595Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=16054894279435216841&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "empire-lounge-rusholme",
+    "slug": "empire-lounge-rusholme",
+    "name": "Empire Lounge",
+    "description": "Empire Lounge is a spot for shisha in Rusholme, Manchester with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Manchester",
+    "area": "Rusholme",
+    "address": "499 Claremont Rd, Manchester M14 5WU",
+    "postcode": "M14 5WU",
+    "latitude": 53.4530464,
+    "longitude": -2.2237579,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Monday",
+        "open": "14:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "14:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "14:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "14:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Friday",
+        "open": "14:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "03:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "0161 225 5444",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:24.595Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=12152516759852969959&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "lux-lounge-chorlton-cum-hardy",
+    "slug": "lux-lounge-chorlton-cum-hardy",
+    "name": "Lux Lounge",
+    "description": "Lux Lounge is a spot for shisha in Chorlton-cum-Hardy, Manchester with drinks, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Manchester",
+    "area": "Chorlton-cum-Hardy",
+    "address": "380 Barlow Moor Rd, Chorlton-cum-Hardy, Manchester M21 8AZ",
+    "postcode": "M21 8AZ",
+    "latitude": 53.4385233,
+    "longitude": -2.2743591999999997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "luxury",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "00:30"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "00:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "00:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "00:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "00:30"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "00:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "00:30"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "0161 881 5935",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:24.595Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=3100741145729180203&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "aura-lounge-rusholme",
+    "slug": "aura-lounge-rusholme",
+    "name": "Aura Lounge",
+    "description": "Aura Lounge is a spot for shisha in Rusholme, Manchester with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Manchester",
+    "area": "Rusholme",
+    "address": "72 Wilmslow Rd, Manchester M14 5AL",
+    "postcode": "M14 5AL",
+    "latitude": 53.454631,
+    "longitude": -2.2250327,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "04:00"
+      },
+      {
+        "day": "Monday",
+        "open": "09:00",
+        "close": "04:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "09:00",
+        "close": "04:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "09:00",
+        "close": "04:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "09:00",
+        "close": "04:00"
+      },
+      {
+        "day": "Friday",
+        "open": "09:00",
+        "close": "04:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "04:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:24.595Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=12606662090820850448&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "avan-lounge-restaurant-and-shisha-bar-cheetham-hill",
+    "slug": "avan-lounge-restaurant-and-shisha-bar-cheetham-hill",
+    "name": "Avan Lounge Restaurant & Shisha Bar",
+    "description": "Avan Lounge Restaurant & Shisha Bar is a spot for shisha in Cheetham Hill, Manchester with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Manchester",
+    "area": "Cheetham Hill",
+    "address": "165 Great Ducie St, Cheetham Hill, Manchester M3 1FF",
+    "postcode": "M3 1FF",
+    "latitude": 53.491953599999995,
+    "longitude": -2.2489562,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "17:00",
+        "close": "04:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "04:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:00",
+        "close": "04:00"
+      }
+    ],
+    "website": "https://avanlounge.co.uk/",
+    "instagram": null,
+    "phone": "0161 388 7932",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:24.595Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://avanlounge.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=13165503119118578344&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "shookah-lounge-persian-cafe-and-restaurant-chorlton-cum-hardy",
+    "slug": "shookah-lounge-persian-cafe-and-restaurant-chorlton-cum-hardy",
+    "name": "Shookah Lounge persian cafe & restaurant",
+    "description": "Shookah Lounge persian cafe & restaurant is a spot for shisha in Chorlton-cum-Hardy, Manchester with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Manchester",
+    "area": "Chorlton-cum-Hardy",
+    "address": "320 Barlow Moor Rd, Chorlton-cum-Hardy, Manchester M21 8AY",
+    "postcode": "M21 8AY",
+    "latitude": 53.4369021,
+    "longitude": -2.2735797,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "13:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "13:00",
+        "close": "00:00"
+      }
+    ],
+    "website": "https://shookahlounge.co.uk/",
+    "instagram": null,
+    "phone": "0161 943 7670",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:24.595Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://shookahlounge.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=13984025022307381086&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "huqqa-lounge-rusholme",
+    "slug": "huqqa-lounge-rusholme",
+    "name": "Huqqa Lounge",
+    "description": "Huqqa Lounge is a spot for shisha in Rusholme, Manchester with food and drinks. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Manchester",
+    "area": "Rusholme",
+    "address": "98 Wilmslow Rd, Rusholme, Manchester M14 5AL",
+    "postcode": "M14 5AL",
+    "latitude": 53.4537353,
+    "longitude": -2.2245035,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "10:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Monday",
+        "open": "10:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "10:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "10:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "10:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Friday",
+        "open": "10:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "10:00",
+        "close": "23:30"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:24.595Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=527795776907041460&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "basrah-lounge-trafford-park",
+    "slug": "basrah-lounge-trafford-park",
+    "name": "Basrah Lounge",
+    "description": "Basrah Lounge is a spot for shisha in Trafford Park, Manchester with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Manchester",
+    "area": "Trafford Park",
+    "address": "Third Ave, Trafford Park, Stretford, Manchester M17 1DQ",
+    "postcode": "M17 1DQ",
+    "latitude": 53.4641032,
+    "longitude": -2.3098218,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "13:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "13:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "https://www.basrahlounge.com/",
+    "instagram": null,
+    "phone": "0161 641 1159",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:24.595Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.basrahlounge.com/",
+      "otherSource": "https://maps.google.com/?cid=8247537284596680967&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "eden-shisha-lounge-hire-and-events-manchester-and-cheshire-ardwick",
+    "slug": "eden-shisha-lounge-hire-and-events-manchester-and-cheshire-ardwick",
+    "name": "Eden Shisha Lounge Hire & Events Manchester And Cheshire",
+    "description": "Eden Shisha Lounge Hire & Events Manchester And Cheshire is a spot for shisha in Ardwick, Manchester with drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Manchester",
+    "area": "Ardwick",
+    "address": "384 Redgate Ln, Manchester M12 4RX",
+    "postcode": "M12 4RX",
+    "latitude": 53.464661899999996,
+    "longitude": -2.1990255999999997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "18:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "18:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "18:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "18:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "18:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "18:00",
+        "close": "01:30"
+      }
+    ],
+    "website": "http://www.edenshishamcr.co.uk/",
+    "instagram": null,
+    "phone": "07588 356168",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:24.595Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.edenshishamcr.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=13401238435862511727&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "layali-lounge-rusholme",
+    "slug": "layali-lounge-rusholme",
+    "name": "Layali Lounge",
+    "description": "Layali Lounge is a spot for shisha in Rusholme, Manchester. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Manchester",
+    "area": "Rusholme",
+    "address": "118 Wilmslow Rd, Manchester M14 5AJ",
+    "postcode": "M14 5AJ",
+    "latitude": 53.453212699999995,
+    "longitude": -2.2235109,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "10:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Monday",
+        "open": "10:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "10:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "10:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "10:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Friday",
+        "open": "10:00",
+        "close": "03:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "10:00",
+        "close": "03:30"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07446 843481",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:24.595Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=1502800241138945496&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "efendi-lounge-cafe-longsight",
+    "slug": "efendi-lounge-cafe-longsight",
+    "name": "Efendi lounge cafe",
+    "description": "Efendi lounge cafe is a spot for shisha in Longsight, Manchester with food, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Manchester",
+    "area": "Longsight",
+    "address": "183 Dickenson Rd, Longsight, Manchester M13 0YN",
+    "postcode": "M13 0YN",
+    "latitude": 53.4542248,
+    "longitude": -2.2105449,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "15:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "15:00",
+        "close": "01:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:24.595Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=12325763245540019719&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "chillz-restaurant-bar-and-lounge-salford",
+    "slug": "chillz-restaurant-bar-and-lounge-salford",
+    "name": "Chillz Restaurant Bar and Lounge",
+    "description": "Chillz Restaurant Bar and Lounge is a spot for shisha in Salford, Manchester with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Manchester",
+    "area": "Salford",
+    "address": "1-7 Chapel St, Salford, Manchester M3 7NJ",
+    "postcode": "M3 7NJ",
+    "latitude": 53.4858347,
+    "longitude": -2.2457153,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "04:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "04:00"
+      }
+    ],
+    "website": "http://www.chillzrestaurant.co.uk/",
+    "instagram": null,
+    "phone": "0161 536 3411",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:24.595Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.chillzrestaurant.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=15832357374679343580&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "mabrouk-lounge-chorlton",
+    "slug": "mabrouk-lounge-chorlton",
+    "name": "Mabrouk Lounge",
+    "description": "Mabrouk Lounge is a spot for shisha in Chorlton, Manchester with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Manchester",
+    "area": "Chorlton",
+    "address": "414-416 Wilbraham Rd, Manchester M21 0SD",
+    "postcode": "M21 0SD",
+    "latitude": 53.4427078,
+    "longitude": -2.271918,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "https://mabrouklounge.co.uk/",
+    "instagram": null,
+    "phone": "0161 641 3681",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:24.595Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://mabrouklounge.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=10967578704221446642&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "coco-lounge-withington",
+    "slug": "coco-lounge-withington",
+    "name": "COCO LOUNGE",
+    "description": "COCO LOUNGE is a spot for shisha in Withington, Manchester with food, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Manchester",
+    "area": "Withington",
+    "address": "28 Burton Rd, Withington, Manchester M20 3EB",
+    "postcode": "M20 3EB",
+    "latitude": 53.4329093,
+    "longitude": -2.2327228,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "11:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "11:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "11:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:00",
+        "close": "02:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "0161 279 2323",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:24.595Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=4667199837790558352&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "mazaj-lounge-manchester-wythenshawe",
+    "slug": "mazaj-lounge-manchester-wythenshawe",
+    "name": "Mazaj Lounge Manchester",
+    "description": "Mazaj Lounge Manchester is a spot for shisha in Wythenshawe, Manchester with food, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Manchester",
+    "area": "Wythenshawe",
+    "address": "Yewtree Ln, Wythenshawe, Manchester M23 0FF",
+    "postcode": "M23 0FF",
+    "latitude": 53.412364,
+    "longitude": -2.2793124,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "11:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "11:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "11:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:00",
+        "close": "02:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07970 009005",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:24.595Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=5100931252318994247&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "platinum-lounge-longsight",
+    "slug": "platinum-lounge-longsight",
+    "name": "Platinum lounge",
+    "description": "Platinum lounge is a spot for shisha in Longsight, Manchester with drinks, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Manchester",
+    "area": "Longsight",
+    "address": "618D Stockport Rd, Longsight, Manchester M13 0RQ",
+    "postcode": "M13 0RQ",
+    "latitude": 53.4554167,
+    "longitude": -2.1989536,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:00",
+        "close": "02:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:24.595Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=16594534096048910107&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "vibe-lounge-cheetham-hill",
+    "slug": "vibe-lounge-cheetham-hill",
+    "name": "Vibe Lounge",
+    "description": "Vibe Lounge is a spot for shisha in Cheetham Hill, Manchester with food, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Manchester",
+    "area": "Cheetham Hill",
+    "address": "15 Broughton St, Cheetham Hill, Manchester M8 8LZ",
+    "postcode": "M8 8LZ",
+    "latitude": 53.495591399999995,
+    "longitude": -2.2395538,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:30",
+        "close": "03:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:30",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "14:30",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:30",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:30",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:30",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:30",
+        "close": "03:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07722 194822",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:24.595Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=12199377484066498900&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "ivy-lounge-cheetham-hill",
+    "slug": "ivy-lounge-cheetham-hill",
+    "name": "Ivy lounge",
+    "description": "Ivy lounge is a spot for shisha in Cheetham Hill, Manchester with late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Manchester",
+    "area": "Cheetham Hill",
+    "address": "210 Cheetham Hill Rd, Cheetham Hill, Manchester M8 8LW",
+    "postcode": "M8 8LW",
+    "latitude": 53.4964401,
+    "longitude": -2.2375027999999997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "18:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "18:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "18:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "18:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "18:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "18:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "18:00",
+        "close": "01:00"
+      }
+    ],
+    "website": "https://www.instagram.com/ivy_lounge1/?next=",
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:24.595Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.instagram.com/ivy_lounge1/?next=",
+      "otherSource": "https://maps.google.com/?cid=6993868428053670795&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "two-apples-shisha-manchester",
+    "slug": "two-apples-shisha-manchester",
+    "name": "Two Apples Shisha",
+    "description": "Cheetham Hill shisha lounge with food, desserts, mocktails, sports screens and a group-friendly lounge setup.",
+    "country": "United Kingdom",
+    "city": "Manchester",
+    "area": "Cheetham Hill",
+    "address": "103 Queens Rd, Cheetham Hill, Manchester M8 8UT",
+    "postcode": "M8 8UT",
+    "latitude": 53.5012503,
+    "longitude": -2.231386,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "football",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "15:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "15:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "15:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "15:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "15:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "15:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "15:00",
+        "close": "00:00"
+      }
+    ],
+    "website": null,
+    "instagram": "https://www.instagram.com/twoapplesmanchester/",
+    "phone": "0161 278 7264",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:24.595Z",
+    "dataSources": {
+      "officialWebsite": "https://twoapples.co.uk/",
+      "instagram": "https://www.instagram.com/twoapplesmanchester/",
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=14925492857163959809&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Official website confirms address, phone, food/dessert/mocktail offer and shisha lounge positioning. Opening hours, shisha prices and outdoor seating still need direct verification. Generic stock image placeholder should be replaced with owned or venue-approved media."
+  },
+  {
+    "id": "ekelipse-lounge-cheetham-hill",
+    "slug": "ekelipse-lounge-cheetham-hill",
+    "name": "EKELIPSE LOUNGE",
+    "description": "EKELIPSE LOUNGE is a spot for shisha in Cheetham Hill, Manchester with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Manchester",
+    "area": "Cheetham Hill",
+    "address": "Unit 1, 163-165 Great Ducie St, Cheetham Hill, Manchester M3 1FF",
+    "postcode": "M3 1FF",
+    "latitude": 53.4915556,
+    "longitude": -2.2484946999999997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "17:00",
+        "close": "04:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "04:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:00",
+        "close": "04:00"
+      }
+    ],
+    "website": "https://ekelipselounge.com/",
+    "instagram": null,
+    "phone": "07722 726017",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:24.595Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://ekelipselounge.com/",
+      "otherSource": "https://maps.google.com/?cid=8504155114636086511&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "amazonia-lounge-cheetham-hill",
+    "slug": "amazonia-lounge-cheetham-hill",
+    "name": "Amazonia Lounge",
+    "description": "Amazonia Lounge is a spot for shisha in Cheetham Hill, Manchester with drinks, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Manchester",
+    "area": "Cheetham Hill",
+    "address": "65, 67 Bury New Rd, Cheetham Hill, Manchester M8 8FX",
+    "postcode": "M8 8FX",
+    "latitude": 53.4943568,
+    "longitude": -2.2508983,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "13:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "13:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "13:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "13:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "13:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "13:00",
+        "close": "03:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:24.595Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=18044170374845497881&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "rumaan-dial-a-shisha-cheetham-hill",
+    "slug": "rumaan-dial-a-shisha-cheetham-hill",
+    "name": "Rumaan Dial A Shisha",
+    "description": "Rumaan Dial A Shisha is a spot for shisha in Cheetham Hill, Manchester with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Manchester",
+    "area": "Cheetham Hill",
+    "address": "Cheetham Hill Rd, Cheetham Hill, Manchester M4 4EW",
+    "postcode": "M4 4EW",
+    "latitude": 53.489112999999996,
+    "longitude": -2.2423933,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:00",
+        "close": "00:00"
+      }
+    ],
+    "website": "http://www.rumaan.co.uk/",
+    "instagram": null,
+    "phone": "07802 520259",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:24.595Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.rumaan.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=18151222602706270023&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "shisha-town-mcr-levenshulme",
+    "slug": "shisha-town-mcr-levenshulme",
+    "name": "Shisha Town MCR",
+    "description": "Shisha Town MCR is a spot for shisha in Levenshulme, Manchester. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Manchester",
+    "area": "Levenshulme",
+    "address": "921 Stockport Rd, Manchester M19 3PZ",
+    "postcode": "M19 3PZ",
+    "latitude": 53.442555399999996,
+    "longitude": -2.1901466,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "11:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "11:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "11:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:00",
+        "close": "22:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07544 339000",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:24.595Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=10369311254129298299&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "expo-lounge-didsbury",
+    "slug": "expo-lounge-didsbury",
+    "name": "Expo Lounge",
+    "description": "Expo Lounge is a spot for shisha in Didsbury, Manchester with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Manchester",
+    "area": "Didsbury",
+    "address": "766 Wilmslow Rd, Didsbury, Manchester M20 2DR",
+    "postcode": "M20 2DR",
+    "latitude": 53.41592060000001,
+    "longitude": -2.2321850999999997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://thelounges.co.uk/expo/",
+    "instagram": null,
+    "phone": "0161 448 2141",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:24.596Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://thelounges.co.uk/expo/",
+      "otherSource": "https://maps.google.com/?cid=13812172142987554945&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "kaijah-lounge-blackley",
+    "slug": "kaijah-lounge-blackley",
+    "name": "KAIJAH LOUNGE",
+    "description": "KAIJAH LOUNGE is a spot for shisha in Blackley, Manchester with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Manchester",
+    "area": "Blackley",
+    "address": "120 Moston Ln, Manchester M9 4HU",
+    "postcode": "M9 4HU",
+    "latitude": 53.5132494,
+    "longitude": -2.2073103,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "https://www.instagram.com/kaijahlounge/",
+    "instagram": null,
+    "phone": "07838 277330",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:24.596Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.instagram.com/kaijahlounge/",
+      "otherSource": "https://maps.google.com/?cid=13447183888266402196&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "hookah-shisha-sheesha-and-pipes-city-centre",
+    "slug": "hookah-shisha-sheesha-and-pipes-city-centre",
+    "name": "Hookah, Shisha, Sheesha & Pipes",
+    "description": "Hookah, Shisha, Sheesha & Pipes is a spot for shisha in City Centre, Manchester. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Manchester",
+    "area": "City Centre",
+    "address": "Unit 14 Piccadilly, Manchester M1 4AJ",
+    "postcode": "M1 4AJ",
+    "latitude": 53.480138999999994,
+    "longitude": -2.2378753,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Monday",
+        "open": "07:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "07:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "07:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "07:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Friday",
+        "open": "07:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "22:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "0161 236 9763",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:24.596Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=17141252822496948399&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "shisha-and-waterpipes-city-centre",
+    "slug": "shisha-and-waterpipes-city-centre",
+    "name": "Shisha and Waterpipes",
+    "description": "Shisha and Waterpipes is a spot for shisha in City Centre, Manchester. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Manchester",
+    "area": "City Centre",
+    "address": "53 Piccadilly, Manchester M1 2AP",
+    "postcode": "M1 2AP",
+    "latitude": 53.481025599999995,
+    "longitude": -2.2349796,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:30",
+        "close": "20:00"
+      },
+      {
+        "day": "Monday",
+        "open": "08:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "08:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "08:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "08:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Friday",
+        "open": "08:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "22:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "0161 641 3031",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:24.596Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=2939570521173625315&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  }
+]
