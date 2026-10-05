@@ -128,7 +128,15 @@ export function VenuePage() {
   const city = getCityByName(venue.city);
   const distanceLabel = userLocation ? formatDistanceMiles(getVenueDistanceMiles(venue, userLocation)).replace(" away", "") : null;
   const galleryImages = approvedMediaImages.length ? approvedMediaImages : getVenueImages(venue);
-  const similarVenues = venues.filter((candidate) => candidate.id !== venue.id && (candidate.area === venue.area || candidate.vibes.some((vibe) => venue.vibes.includes(vibe)))).slice(0, 6);
+  // Same city first: matching on area or a shared vibe alone put a Chelsea venue under
+  // "Similar in Jewellery Quarter", because "City Centre" exists in seven cities and almost
+  // every venue shares the "casual" and "groups" vibes. Prefer the same area, then fall back
+  // to the rest of the city.
+  const similarVenues = venues
+    .filter((candidate) => candidate.id !== venue.id && candidate.city === venue.city)
+    .filter((candidate) => candidate.area === venue.area || candidate.vibes.some((vibe) => venue.vibes.includes(vibe)))
+    .sort((a, b) => Number(b.area === venue.area) - Number(a.area === venue.area))
+    .slice(0, 6);
 
   /** Tabs live in the URL so a tab is linkable and the back button works. */
   function selectTab(tab: VenueDetailTab) {
