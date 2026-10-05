@@ -17,6 +17,13 @@
  * Sources: Royal Mail district definitions and the commonly used names for them. Where a
  * district spans several neighbourhoods, the name people would search for is preferred over
  * the strictly correct postal one.
+ *
+ * Known limitation: a district is coarser than a neighbourhood, so several areas can collapse
+ * into one name. Nottingham's NG7 covers Hyson Green, Radford, Forest Fields and Lenton, and
+ * Glasgow's G1 covers both the city centre and Merchant City. The result is always a real
+ * place, just a broader one than the venue's own neighbourhood — which only matters when the
+ * district table is reached, i.e. when Google gave us no locality of its own. Splitting a
+ * district needs the postcode sector (the digit after the space), which we do not store.
  */
 
 const LONDON_DISTRICTS: Record<string, string> = {
@@ -112,12 +119,78 @@ const LEICESTER_DISTRICTS: Record<string, string> = {
   LE5: "Evington", LE9: "Narborough", LE16: "Market Harborough", LE18: "Wigston",
 };
 
+/**
+ * Glasgow districts. G41/G42 (Pollokshields, Govanhill) hold most of the shisha trade, with
+ * Finnieston and the West End for the bar-led venues.
+ */
+const GLASGOW_DISTRICTS: Record<string, string> = {
+  G1: "City Centre", G2: "City Centre", G3: "Finnieston", G4: "Townhead",
+  G5: "Gorbals", G11: "Partick", G12: "Hillhead", G13: "Knightswood",
+  G14: "Whiteinch", G20: "Maryhill", G21: "Springburn", G22: "Possilpark",
+  G31: "Dennistoun", G32: "Shettleston", G33: "Cranhill", G40: "Bridgeton",
+  G41: "Pollokshields", G42: "Govanhill", G43: "Shawlands", G44: "Cathcart",
+  G45: "Castlemilk", G46: "Giffnock", G51: "Govan", G52: "Cardonald",
+  G53: "Pollok", G61: "Bearsden", G73: "Rutherglen",
+};
+
+/** Leeds districts. LS6 (Hyde Park, Headingley) and LS8/LS9 (Harehills) matter most here. */
+const LEEDS_DISTRICTS: Record<string, string> = {
+  LS1: "City Centre", LS2: "City Centre", LS3: "Burley", LS4: "Kirkstall",
+  LS5: "Hawksworth", LS6: "Headingley", LS7: "Chapeltown", LS8: "Harehills",
+  LS9: "Burmantofts", LS10: "Hunslet", LS11: "Beeston", LS12: "Armley",
+  LS13: "Bramley", LS14: "Seacroft", LS15: "Cross Gates", LS16: "Adel",
+  LS17: "Alwoodley", LS18: "Horsforth", LS19: "Yeadon", LS26: "Rothwell",
+  LS27: "Morley", LS28: "Pudsey",
+};
+
+/** Bradford districts. BD8/BD9 cover Manningham and Girlington. */
+const BRADFORD_DISTRICTS: Record<string, string> = {
+  BD1: "City Centre", BD2: "Bolton", BD3: "Bradford Moor", BD4: "Tong",
+  BD5: "Little Horton", BD6: "Wibsey", BD7: "Great Horton", BD8: "Manningham",
+  BD9: "Heaton", BD10: "Idle", BD12: "Wyke", BD13: "Queensbury",
+  BD14: "Clayton", BD15: "Allerton", BD16: "Bingley", BD17: "Baildon",
+  BD18: "Shipley", BD21: "Keighley",
+};
+
+/** Sheffield districts. S2 (London Road) and S3/S4 (Burngreave) carry most venues. */
+const SHEFFIELD_DISTRICTS: Record<string, string> = {
+  S1: "City Centre", S2: "Highfield", S3: "Burngreave", S4: "Fir Vale",
+  S5: "Firth Park", S6: "Hillsborough", S7: "Nether Edge", S8: "Woodseats",
+  S9: "Attercliffe", S10: "Broomhill", S11: "Ecclesall", S12: "Gleadless",
+  S13: "Woodhouse", S14: "Gleadless Valley", S17: "Dore", S20: "Beighton",
+  S35: "Chapeltown", S36: "Stocksbridge",
+};
+
+/** Liverpool districts. L8 (Toxteth) and L7/L15 (Kensington, Wavertree) are the key ones. */
+const LIVERPOOL_DISTRICTS: Record<string, string> = {
+  L1: "City Centre", L2: "City Centre", L3: "City Centre", L4: "Walton",
+  L5: "Everton", L6: "Fairfield", L7: "Kensington", L8: "Toxteth",
+  L9: "Aintree", L11: "Norris Green", L12: "West Derby", L13: "Old Swan",
+  L14: "Broadgreen", L15: "Wavertree", L16: "Childwall", L17: "Aigburth",
+  L18: "Mossley Hill", L19: "Garston", L20: "Bootle", L21: "Litherland",
+  L22: "Waterloo", L23: "Crosby", L24: "Speke", L25: "Woolton",
+};
+
+/** Nottingham districts. NG7 (Hyson Green, Radford, Lenton) dominates. */
+const NOTTINGHAM_DISTRICTS: Record<string, string> = {
+  NG1: "City Centre", NG2: "West Bridgford", NG3: "Sneinton", NG4: "Carlton",
+  NG5: "Sherwood", NG6: "Bulwell", NG7: "Hyson Green", NG8: "Bilborough",
+  NG9: "Beeston", NG10: "Long Eaton", NG11: "Clifton", NG16: "Eastwood",
+  NG17: "Sutton-in-Ashfield",
+};
+
 /** Per-city tables, keyed by the slug used in SUPPORTED_CITIES. */
 const DISTRICTS_BY_CITY: Record<string, Record<string, string>> = {
   london: LONDON_DISTRICTS,
   birmingham: BIRMINGHAM_DISTRICTS,
   manchester: MANCHESTER_DISTRICTS,
   leicester: LEICESTER_DISTRICTS,
+  glasgow: GLASGOW_DISTRICTS,
+  leeds: LEEDS_DISTRICTS,
+  bradford: BRADFORD_DISTRICTS,
+  sheffield: SHEFFIELD_DISTRICTS,
+  liverpool: LIVERPOOL_DISTRICTS,
+  nottingham: NOTTINGHAM_DISTRICTS,
 };
 
 /**
