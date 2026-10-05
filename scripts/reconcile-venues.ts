@@ -299,7 +299,7 @@ function printPlan(plan: Plan, areasOnly: boolean) {
   if (plan.inserts.length) {
     console.log(`\n--- inserts ---`);
     for (const venue of plan.inserts.slice(0, 25)) {
-      console.log(`  ${venue.slug}  (${venue.area}) ${venue.address.slice(0, 44)}`);
+      console.log(`  ${venue.slug}  (${venue.area}) ${String(venue.address ?? "").slice(0, 44)}`);
     }
     if (plan.inserts.length > 25) console.log(`  ...and ${plan.inserts.length - 25} more`);
   }

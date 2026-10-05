@@ -200,9 +200,10 @@ function mergeCurated(venue: SeedVenue, curated: CuratedIndex): SeedVenue {
 
   const merged: SeedVenue = { ...venue };
   for (const field of CURATED_FIELDS) {
-    const value = existing[field];
+    const value: unknown = existing[field];
     const isEmpty = value === null || value === undefined || (Array.isArray(value) && value.length === 0);
-    if (!isEmpty) merged[field] = value;
+    // SeedVenue is an open record, so a curated field is copied across as-is.
+    if (!isEmpty) (merged as Record<string, unknown>)[field] = value;
   }
 
   // Keep the curated slug and id: they are already seeded in Supabase and referenced by
