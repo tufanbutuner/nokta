@@ -111,6 +111,9 @@ function areaFromAddress(address: string, cityName: string) {
     if (!part) continue;
     if (isSameCity(part, cityName)) continue;
     if (isStreetLike(part)) continue;
+    // The components path rejects address fragments; this path must too, or a "Unit 1," in the
+    // address line becomes the area.
+    if (isAddressFragment(part)) continue;
     // A London address often reads "Soho, London W1D" — the part before the city is the area.
     return part;
   }
