@@ -1,0 +1,663 @@
+[
+  {
+    "id": "saracens-cafe-city-centre",
+    "slug": "saracens-cafe-city-centre",
+    "name": "Saracens Cafe",
+    "description": "Saracens Cafe is a spot for shisha in City Centre, Nottingham with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Nottingham",
+    "area": "City Centre",
+    "address": "86-88 Lower Parliament St, Nottingham NG1 1EH",
+    "postcode": "NG1 1EH",
+    "latitude": 52.954777299999996,
+    "longitude": -1.1415212,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "13:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "13:00",
+        "close": "01:00"
+      }
+    ],
+    "website": "http://mysaracens.co.uk/",
+    "instagram": null,
+    "phone": "0115 850 1850",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:35.647Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://mysaracens.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=9479544998078519075&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "mag-mug-cafe-radford",
+    "slug": "mag-mug-cafe-radford",
+    "name": "Mag Mug Cafe",
+    "description": "Mag Mug Cafe is a spot for shisha in Radford, Nottingham with food, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Nottingham",
+    "area": "Radford",
+    "address": "2 Canning Circus, Ilkeston Rd, Radford, Nottingham NG7 3GD",
+    "postcode": "NG7 3GD",
+    "latitude": 52.955976799999995,
+    "longitude": -1.1623229,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:30",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:30",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:30",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:30",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:30",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:30",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:30",
+        "close": "03:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07475 272766",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:35.647Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=10948382372584274169&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "layali-restaurant-city-centre",
+    "slug": "layali-restaurant-city-centre",
+    "name": "Layali Restaurant",
+    "description": "Layali Restaurant is a spot for shisha in City Centre, Nottingham with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Nottingham",
+    "area": "City Centre",
+    "address": "7-9, 7 Hockley, Nottingham NG1 1FH",
+    "postcode": "NG1 1FH",
+    "latitude": 52.9538454,
+    "longitude": -1.1407196,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "13:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "13:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "13:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "13:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "13:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "13:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "13:00",
+        "close": "00:00"
+      }
+    ],
+    "website": "https://layalidowntown.co.uk/storemenu",
+    "instagram": null,
+    "phone": "0115 950 2666",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:35.647Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://layalidowntown.co.uk/storemenu",
+      "otherSource": "https://maps.google.com/?cid=14817300296671082155&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "sashas-bar-arnold",
+    "slug": "sashas-bar-arnold",
+    "name": "Sashas Bar",
+    "description": "Sashas Bar is a spot for shisha in Arnold, Nottingham with drinks, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Nottingham",
+    "area": "Arnold",
+    "address": "46 Front St, Arnold, Nottingham NG5 7EL",
+    "postcode": "NG5 7EL",
+    "latitude": 53.002305899999996,
+    "longitude": -1.1284600999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "10:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "09:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "09:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "09:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "09:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "09:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "01:30"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "0115 920 8872",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:35.647Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=1620254161379861941&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "mood-steakhouse-and-asian-restaurant-nottingham-mapperley",
+    "slug": "mood-steakhouse-and-asian-restaurant-nottingham-mapperley",
+    "name": "Mood Steakhouse and Asian Restaurant Nottingham",
+    "description": "Mood Steakhouse and Asian Restaurant Nottingham is a spot for shisha in Mapperley, Nottingham with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Nottingham",
+    "area": "Mapperley",
+    "address": "948 Woodborough Rd, Mapperley, Nottingham NG3 5QS",
+    "postcode": "NG3 5QS",
+    "latitude": 52.9848788,
+    "longitude": -1.1202568,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:30",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "09:30",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "09:30",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "09:30",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "09:30",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "09:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:30",
+        "close": "23:00"
+      }
+    ],
+    "website": "http://moodnottingham.com/",
+    "instagram": null,
+    "phone": "07723 420091",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:35.647Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://moodnottingham.com/",
+      "otherSource": "https://maps.google.com/?cid=16829958150940240035&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "fusion-sports-bar-city-centre",
+    "slug": "fusion-sports-bar-city-centre",
+    "name": "Fusion Sports Bar",
+    "description": "Fusion Sports Bar is a spot for shisha in City Centre, Nottingham with drinks, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Nottingham",
+    "area": "City Centre",
+    "address": "22 St James's St, Nottingham NG1 6FG",
+    "postcode": "NG1 6FG",
+    "latitude": 52.952969599999996,
+    "longitude": -1.1525239999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails",
+      "late_night",
+      "live_sport"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "football",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "04:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "04:30"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07746 120845",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:35.647Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=210602699808893353&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "n-shi-restaurants-nottingham-restaurant-and-cocktail-bar-city-centre",
+    "slug": "n-shi-restaurants-nottingham-restaurant-and-cocktail-bar-city-centre",
+    "name": "Nōshi Restaurants - Nottingham | Restaurant and Cocktail Bar",
+    "description": "Nōshi Restaurants - Nottingham Restaurant and Cocktail Bar is a spot for shisha in City Centre, Nottingham with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Nottingham",
+    "area": "City Centre",
+    "address": "Trinity Sq, Nottingham NG1 4AF",
+    "postcode": "NG1 4AF",
+    "latitude": 52.9558293,
+    "longitude": -1.1488243999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "00:00"
+      }
+    ],
+    "website": "https://noshirestaurants.co.uk/",
+    "instagram": null,
+    "phone": "0115 990 1003",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:35.647Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://noshirestaurants.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=10651833888785687334&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "jamcaf-city-centre",
+    "slug": "jamcaf-city-centre",
+    "name": "Jamcafé",
+    "description": "Jamcafé is a spot for shisha in City Centre, Nottingham with drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Nottingham",
+    "area": "City Centre",
+    "address": "12 Heathcoat St, Nottingham NG1 3AA",
+    "postcode": "NG1 3AA",
+    "latitude": 52.954077,
+    "longitude": -1.1432717,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "15:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "https://www.jamcafe.co.uk/",
+    "instagram": null,
+    "phone": "(778) 440-4489",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:35.647Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.jamcafe.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=6645268812478197341&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  }
+]

@@ -1,0 +1,1058 @@
+[
+  {
+    "id": "layalina-lounge-kinning-park",
+    "slug": "layalina-lounge-kinning-park",
+    "name": "Layalina lounge",
+    "description": "Layalina lounge is a spot for shisha in Kinning Park, Glasgow with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Glasgow",
+    "area": "Kinning Park",
+    "address": "71-73 Kingston St, Kinning Park, Glasgow G5 8BJ",
+    "postcode": "G5 8BJ",
+    "latitude": 55.8537092,
+    "longitude": -4.2625158999999995,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "13:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "13:00",
+        "close": "00:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "13:00",
+        "close": "00:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "13:00",
+        "close": "00:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "13:00",
+        "close": "00:30"
+      },
+      {
+        "day": "Friday",
+        "open": "13:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "13:00",
+        "close": "01:30"
+      }
+    ],
+    "website": "https://layalinalounge.uk/",
+    "instagram": null,
+    "phone": "07466 764200",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:43:47.793Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://layalinalounge.uk/",
+      "otherSource": "https://maps.google.com/?cid=3727651733643927985&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "oasis-lounge-kinning-park",
+    "slug": "oasis-lounge-kinning-park",
+    "name": "Oasis Lounge",
+    "description": "Oasis Lounge is a spot for shisha in Kinning Park, Glasgow with drinks, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Glasgow",
+    "area": "Kinning Park",
+    "address": "111 Nelson St, Kinning Park, Glasgow G5 8DZ",
+    "postcode": "G5 8DZ",
+    "latitude": 55.852995,
+    "longitude": -4.262493,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "15:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "15:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "15:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "15:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "15:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "15:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "15:00",
+        "close": "01:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "0141 429 5746",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:43:47.796Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=2763894115436124863&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "elixir-lounge-and-restaurant-kinning-park",
+    "slug": "elixir-lounge-and-restaurant-kinning-park",
+    "name": "Elixir Lounge & Restaurant",
+    "description": "Elixir Lounge & Restaurant is a spot for shisha in Kinning Park, Glasgow with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Glasgow",
+    "area": "Kinning Park",
+    "address": "78 Wallace St, Kinning Park, Glasgow G5 8DU",
+    "postcode": "G5 8DU",
+    "latitude": 55.8522049,
+    "longitude": -4.262004999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "15:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "15:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "15:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "15:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "15:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "15:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "15:00",
+        "close": "01:00"
+      }
+    ],
+    "website": "https://elixirloungeandrestaurant.com/",
+    "instagram": null,
+    "phone": "0141 230 7498",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:43:47.796Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://elixirloungeandrestaurant.com/",
+      "otherSource": "https://maps.google.com/?cid=14277608309695590408&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "pasha-shisha-cafe-city-centre",
+    "slug": "pasha-shisha-cafe-city-centre",
+    "name": "Pasha Shisha Cafe",
+    "description": "Pasha Shisha Cafe is a spot for shisha in City Centre, Glasgow with late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Glasgow",
+    "area": "City Centre",
+    "address": "21 Martha St, Glasgow G1 2BS",
+    "postcode": "G1 2BS",
+    "latitude": 55.861932599999996,
+    "longitude": -4.247481700000001,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:00",
+        "close": "00:00"
+      }
+    ],
+    "website": "https://www.instagram.com/pashaashishacafe/",
+    "instagram": null,
+    "phone": "0141 237 8040",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:43:47.796Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.instagram.com/pashaashishacafe/",
+      "otherSource": "https://maps.google.com/?cid=10629641985553201097&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "kings-lounge-shisha-bar-kinning-park",
+    "slug": "kings-lounge-shisha-bar-kinning-park",
+    "name": "Kings Lounge Shisha Bar",
+    "description": "Kings Lounge Shisha Bar is a spot for shisha in Kinning Park, Glasgow with late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Glasgow",
+    "area": "Kinning Park",
+    "address": "232 Paisley Rd, Springfield Quay, Kinning Park, Glasgow G5 8NG",
+    "postcode": "G5 8NG",
+    "latitude": 55.8540342,
+    "longitude": -4.2717878,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "14:30",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "https://web.dojo.app/create_booking/vendor/CCRwZ9dtTirWpQmKKTdvHmUxqjeWUXGsdLz0I7FL-9Y_restaurant",
+    "instagram": null,
+    "phone": "07485 984244",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:43:47.796Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://web.dojo.app/create_booking/vendor/CCRwZ9dtTirWpQmKKTdvHmUxqjeWUXGsdLz0I7FL-9Y_restaurant",
+      "otherSource": "https://maps.google.com/?cid=11170278326238804299&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "urban-lounge-glasgow-gorbals",
+    "slug": "urban-lounge-glasgow-gorbals",
+    "name": "Urban Lounge Glasgow",
+    "description": "Urban Lounge Glasgow is a spot for shisha in Gorbals, Glasgow with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Glasgow",
+    "area": "Gorbals",
+    "address": "451 Lawmoor St, Glasgow G5 0TT",
+    "postcode": "G5 0TT",
+    "latitude": 55.8410241,
+    "longitude": -4.2472673,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "https://urbanloungeglasgow.com/",
+    "instagram": null,
+    "phone": "0141 482 4704",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:43:47.797Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://urbanloungeglasgow.com/",
+      "otherSource": "https://maps.google.com/?cid=7676297231239307965&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "la-marina-lounge-rutherglen",
+    "slug": "la-marina-lounge-rutherglen",
+    "name": "La Marina lounge",
+    "description": "La Marina lounge is a spot for shisha in Rutherglen, Glasgow with late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Glasgow",
+    "area": "Rutherglen",
+    "address": "18 Chapel St, Rutherglen, Glasgow G73 1JE",
+    "postcode": "G73 1JE",
+    "latitude": 55.8288012,
+    "longitude": -4.2216308,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "13:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "13:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "13:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "13:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "13:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "13:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "13:00",
+        "close": "01:00"
+      }
+    ],
+    "website": "https://www.instagram.com/lamarina.lounge?igsh=NzBmMjdhZWRiYQ==",
+    "instagram": null,
+    "phone": "07301 933287",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:43:47.797Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.instagram.com/lamarina.lounge?igsh=NzBmMjdhZWRiYQ==",
+      "otherSource": "https://maps.google.com/?cid=1478412409533885360&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "142b-lounge-nightclub-city-centre",
+    "slug": "142b-lounge-nightclub-city-centre",
+    "name": "142B Lounge Nightclub",
+    "description": "142B Lounge Nightclub is a spot for shisha in City Centre, Glasgow with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Glasgow",
+    "area": "City Centre",
+    "address": "142b St Vincent St, Glasgow G2 5LA",
+    "postcode": "G2 5LA",
+    "latitude": 55.8618664,
+    "longitude": -4.2585657,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "luxury",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "19:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "13:00",
+        "close": "03:00"
+      }
+    ],
+    "website": "http://142blounge.com/",
+    "instagram": null,
+    "phone": "07500 875755",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:43:47.797Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://142blounge.com/",
+      "otherSource": "https://maps.google.com/?cid=7756634161454563535&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "nova-shisha-govan",
+    "slug": "nova-shisha-govan",
+    "name": "Nova Shisha",
+    "description": "Nova Shisha is a spot for shisha in Govan, Glasgow. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Glasgow",
+    "area": "Govan",
+    "address": "380 Paisley Rd W, Glasgow G51 1BG",
+    "postcode": "G51 1BG",
+    "latitude": 55.851853299999995,
+    "longitude": -4.2955236999999995,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "13:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "22:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07472 220470",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:43:47.797Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=1109139684041287486&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "vip-shisha-lounge-gorbals",
+    "slug": "vip-shisha-lounge-gorbals",
+    "name": "VIP Shisha Lounge",
+    "description": "VIP Shisha Lounge is a spot for shisha in Gorbals, Glasgow. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Glasgow",
+    "area": "Gorbals",
+    "address": "92 Kilbirnie St, Glasgow G5 8JD",
+    "postcode": "G5 8JD",
+    "latitude": 55.8472018,
+    "longitude": -4.2642349,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "luxury"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "03:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:43:47.798Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=13435805867350649483&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "l-and-a-shisha-shop-govan",
+    "slug": "l-and-a-shisha-shop-govan",
+    "name": "L & A Shisha Shop",
+    "description": "L & A Shisha Shop is a spot for shisha in Govan, Glasgow. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Glasgow",
+    "area": "Govan",
+    "address": "311 Paisley Rd W, Glasgow G51 1LU",
+    "postcode": "G51 1LU",
+    "latitude": 55.8519679,
+    "longitude": -4.2915863,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "23:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:43:47.798Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=17131249775017044701&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "ibrox-vapes-and-shisha-centre-govan",
+    "slug": "ibrox-vapes-and-shisha-centre-govan",
+    "name": "Ibrox Vapes & Shisha Centre",
+    "description": "Ibrox Vapes & Shisha Centre is a spot for shisha in Govan, Glasgow. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Glasgow",
+    "area": "Govan",
+    "address": "382 Paisley Rd W, Glasgow G51 1BG",
+    "postcode": "G51 1BG",
+    "latitude": 55.8518719,
+    "longitude": -4.2956164,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "10:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Monday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "22:00"
+      }
+    ],
+    "website": "https://www.tiktok.com/@ibrox.vapes.shisha?_t=8mBlXJPnClc&_r=1",
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:43:47.798Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.tiktok.com/@ibrox.vapes.shisha?_t=8mBlXJPnClc&_r=1",
+      "otherSource": "https://maps.google.com/?cid=626264393320706499&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "the-quay-lounge-limited-finnieston",
+    "slug": "the-quay-lounge-limited-finnieston",
+    "name": "The Quay Lounge Limited",
+    "description": "The Quay Lounge Limited is a spot for shisha in Finnieston, Glasgow with drinks. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Glasgow",
+    "area": "Finnieston",
+    "address": "9 Royal Cres, Finnieston, Glasgow G3 7SP",
+    "postcode": "G3 7SP",
+    "latitude": 55.8659782,
+    "longitude": -4.2817357,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:43:47.798Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=15463302793675127210&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "shisha-on-wheels-glasgow-pollokshields",
+    "slug": "shisha-on-wheels-glasgow-pollokshields",
+    "name": "Shisha on wheels Glasgow",
+    "description": "Shisha on wheels Glasgow is a spot for shisha in Pollokshields, Glasgow. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Glasgow",
+    "area": "Pollokshields",
+    "address": "33 St Andrews Rd, Glasgow G41 1PF",
+    "postcode": "G41 1PF",
+    "latitude": 55.844590600000004,
+    "longitude": -4.2689674,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [],
+    "website": null,
+    "instagram": null,
+    "phone": "0141 429 0312",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:43:47.798Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=2864074855211498585&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  }
+]

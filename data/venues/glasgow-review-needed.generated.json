@@ -1,0 +1,1440 @@
+[
+  {
+    "id": "rooz-cafe-bridgeton",
+    "slug": "rooz-cafe-bridgeton",
+    "name": "Rooz cafe",
+    "description": "Rooz cafe is a spot for shisha in Bridgeton, Glasgow with late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Glasgow",
+    "area": "Bridgeton",
+    "address": "Unit 1, 577 Gallowgate, Glasgow G40 2PE",
+    "postcode": "G40 2PE",
+    "latitude": 55.855096700000004,
+    "longitude": -4.2228924999999995,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "00:00"
+      }
+    ],
+    "website": "https://sultanresturant.co.uk/",
+    "instagram": null,
+    "phone": "07490 494948",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:43:47.798Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://sultanresturant.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=15563981365838716218&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "sham-cafe-bridgeton",
+    "slug": "sham-cafe-bridgeton",
+    "name": "Sham Cafe",
+    "description": "Sham Cafe is a spot for shisha in Bridgeton, Glasgow with food, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Glasgow",
+    "area": "Bridgeton",
+    "address": "2 Kent St, Glasgow G40 2SP",
+    "postcode": "G40 2SP",
+    "latitude": 55.855412799999996,
+    "longitude": -4.237692,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "14:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "14:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "14:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "14:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "14:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "00:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07460 436317",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:43:47.798Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=1229977512041584018&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "hawana-cafe-bridgeton",
+    "slug": "hawana-cafe-bridgeton",
+    "name": "Hawana Cafe",
+    "description": "Hawana Cafe is a spot for shisha in Bridgeton, Glasgow with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Glasgow",
+    "area": "Bridgeton",
+    "address": "593 Gallowgate, Glasgow G40 2PE",
+    "postcode": "G40 2PE",
+    "latitude": 55.8549302,
+    "longitude": -4.222442099999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:30",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:30",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:30",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:30",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:30",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:30",
+        "close": "00:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:30",
+        "close": "00:30"
+      }
+    ],
+    "website": "https://hawanacafe.co.uk/order-now",
+    "instagram": null,
+    "phone": "07404 458090",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:43:47.798Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://hawanacafe.co.uk/order-now",
+      "otherSource": "https://maps.google.com/?cid=7747759041682125716&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "richmond-restaurant-and-cafe-kinning-park",
+    "slug": "richmond-restaurant-and-cafe-kinning-park",
+    "name": "Richmond Restaurant And Cafe",
+    "description": "Richmond Restaurant And Cafe is a spot for shisha in Kinning Park, Glasgow with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Glasgow",
+    "area": "Kinning Park",
+    "address": "46 Tradeston St, Kinning Park, Glasgow G5 8BH",
+    "postcode": "G5 8BH",
+    "latitude": 55.8539423,
+    "longitude": -4.2633564,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:30",
+        "close": "23:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "0141 391 1835",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:43:47.798Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=2196063225548944038&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "red-sky-bar-finnieston-quay",
+    "slug": "red-sky-bar-finnieston-quay",
+    "name": "Red Sky Bar",
+    "description": "Red Sky Bar is a spot for shisha in Finnieston Quay, Glasgow with drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Glasgow",
+    "area": "Finnieston Quay",
+    "address": "25 Tunnel St, Finnieston Quay, Glasgow G3 8HL",
+    "postcode": "G3 8HL",
+    "latitude": 55.8585188,
+    "longitude": -4.2825651,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [],
+    "website": "https://www.redskybar.com/",
+    "instagram": null,
+    "phone": "0141 471 1687",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:43:47.798Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.redskybar.com/",
+      "otherSource": "https://maps.google.com/?cid=3220218992488169085&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "million-cafe-kinning-park",
+    "slug": "million-cafe-kinning-park",
+    "name": "Million Cafe",
+    "description": "Million Cafe is a spot for shisha in Kinning Park, Glasgow with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Glasgow",
+    "area": "Kinning Park",
+    "address": "256 Paisley Rd, Springfield Quay, Kinning Park, Glasgow G5 8NG",
+    "postcode": "G5 8NG",
+    "latitude": 55.853939,
+    "longitude": -4.2723607,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "14:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "14:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "14:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "14:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "14:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "23:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "0141 467 1473",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:43:47.798Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=2094977586588340782&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "rumi-restaurant-city-centre",
+    "slug": "rumi-restaurant-city-centre",
+    "name": "Rumi Restaurant",
+    "description": "Rumi Restaurant is a spot for shisha in City Centre, Glasgow with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Glasgow",
+    "area": "City Centre",
+    "address": "96-98 Hope St, Glasgow G2 6PH",
+    "postcode": "G2 6PH",
+    "latitude": 55.8608659,
+    "longitude": -4.2582989,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "22:00"
+      }
+    ],
+    "website": "https://www.rumirestaurant.info/",
+    "instagram": null,
+    "phone": "0141 846 0704",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:43:47.798Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.rumirestaurant.info/",
+      "otherSource": "https://maps.google.com/?cid=14075496495599226603&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "naranj-restaurant-gorbals",
+    "slug": "naranj-restaurant-gorbals",
+    "name": "NARANJ Restaurant",
+    "description": "NARANJ Restaurant is a spot for shisha in Gorbals, Glasgow with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Glasgow",
+    "area": "Gorbals",
+    "address": "7/9 Clyde Pl, Glasgow G5 8AB",
+    "postcode": "G5 8AB",
+    "latitude": 55.8546894,
+    "longitude": -4.2589782,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://naranj.co.uk/",
+    "instagram": null,
+    "phone": "0141 237 3663",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:43:47.798Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://naranj.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=2926821856236474702&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "turkiye-efes-restaurant-city-centre",
+    "slug": "turkiye-efes-restaurant-city-centre",
+    "name": "Turkiye EFES Restaurant",
+    "description": "Turkiye EFES Restaurant is a spot for shisha in City Centre, Glasgow with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Glasgow",
+    "area": "City Centre",
+    "address": "97-99 Candleriggs, Glasgow G1 1NP",
+    "postcode": "G1 1NP",
+    "latitude": 55.8589326,
+    "longitude": -4.2456314,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "10:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "01:00"
+      }
+    ],
+    "website": "https://turkiyeglasgow.co.uk/",
+    "instagram": null,
+    "phone": "0141 553 1577",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:43:47.798Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://turkiyeglasgow.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=9050534398280384210&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "damasqino-restaurant-and-cafe-city-centre",
+    "slug": "damasqino-restaurant-and-cafe-city-centre",
+    "name": "Damasqino Restaurant & Cafe",
+    "description": "Damasqino Restaurant & Cafe is a spot for shisha in City Centre, Glasgow with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Glasgow",
+    "area": "City Centre",
+    "address": "94 Saltmarket, Glasgow G1 5LD",
+    "postcode": "G1 5LD",
+    "latitude": 55.8555029,
+    "longitude": -4.2453402,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://www.damasqino.co.uk/",
+    "instagram": null,
+    "phone": "0141 552 2900",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:43:47.798Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.damasqino.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=16763984454026850384&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "the-social-hub-restaurant-and-bar-glasgow-city-centre",
+    "slug": "the-social-hub-restaurant-and-bar-glasgow-city-centre",
+    "name": "The Social Hub Restaurant & Bar Glasgow",
+    "description": "The Social Hub Restaurant & Bar Glasgow is a spot for shisha in City Centre, Glasgow with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Glasgow",
+    "area": "City Centre",
+    "address": "15 Candleriggs, Glasgow G1 1TQ",
+    "postcode": "G1 1TQ",
+    "latitude": 55.858012699999996,
+    "longitude": -4.2477745,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "08:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "07:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "07:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "07:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "07:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "07:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "08:00",
+        "close": "00:00"
+      }
+    ],
+    "website": "https://www.thesocialhub.co/glasgow/eat-and-drink/",
+    "instagram": null,
+    "phone": "0141 536 0788",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:43:47.798Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.thesocialhub.co/glasgow/eat-and-drink/",
+      "otherSource": "https://maps.google.com/?cid=1863265855684079680&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "taphouse-bar-and-kitchen-finnieston",
+    "slug": "taphouse-bar-and-kitchen-finnieston",
+    "name": "Taphouse Bar & Kitchen",
+    "description": "Taphouse Bar & Kitchen is a spot for shisha in Finnieston, Glasgow with drinks, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Glasgow",
+    "area": "Finnieston",
+    "address": "1046 Argyle St, Finnieston, Glasgow G3 8LY",
+    "postcode": "G3 8LY",
+    "latitude": 55.864439999999995,
+    "longitude": -4.282896,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "00:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:43:47.798Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=17367766594447501355&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "walnut-bar-and-restaurant-partick",
+    "slug": "walnut-bar-and-restaurant-partick",
+    "name": "Walnut Bar & Restaurant",
+    "description": "Walnut Bar & Restaurant is a spot for shisha in Partick, Glasgow with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Glasgow",
+    "area": "Partick",
+    "address": "231 Crow Rd, Glasgow G11 7PZ",
+    "postcode": "G11 7PZ",
+    "latitude": 55.8755576,
+    "longitude": -4.3195619,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "22:00"
+      }
+    ],
+    "website": "https://walnut-bar.com/",
+    "instagram": null,
+    "phone": "07488 905590",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:43:47.798Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://walnut-bar.com/",
+      "otherSource": "https://maps.google.com/?cid=8388730579438542966&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "ryan-s-bar-govanhill",
+    "slug": "ryan-s-bar-govanhill",
+    "name": "Ryan's Bar",
+    "description": "Ryan's Bar is a spot for shisha in Govanhill, Glasgow with drinks, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Glasgow",
+    "area": "Govanhill",
+    "address": "165 Allison St, Govanhill, Glasgow G42 8RX",
+    "postcode": "G42 8RX",
+    "latitude": 55.8364117,
+    "longitude": -4.2633016,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "15:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "00:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "0141 237 1120",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:43:47.798Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=1094446343001688082&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "the-variety-bar-city-centre",
+    "slug": "the-variety-bar-city-centre",
+    "name": "The Variety Bar",
+    "description": "The Variety Bar is a spot for shisha in City Centre, Glasgow with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Glasgow",
+    "area": "City Centre",
+    "address": "401 Sauchiehall St, Glasgow G2 3LG",
+    "postcode": "G2 3LG",
+    "latitude": 55.8658922,
+    "longitude": -4.2682987,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "01:00"
+      }
+    ],
+    "website": "https://varietybarglasgow.co.uk/",
+    "instagram": null,
+    "phone": "0141 332 4449",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:43:47.798Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://varietybarglasgow.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=3618262168284971463&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "buck-s-bar-city-centre",
+    "slug": "buck-s-bar-city-centre",
+    "name": "Buck's Bar",
+    "description": "Buck's Bar is a spot for shisha in City Centre, Glasgow with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Glasgow",
+    "area": "City Centre",
+    "address": "111 W Regent St, Glasgow G2 2RU",
+    "postcode": "G2 2RU",
+    "latitude": 55.8633702,
+    "longitude": -4.2596741,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "11:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "11:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "11:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:00",
+        "close": "00:00"
+      }
+    ],
+    "website": "http://www.bucksbar.co.uk/",
+    "instagram": null,
+    "phone": "0141 648 4842",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:43:47.799Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.bucksbar.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=4447181710768121208&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "radio-glasgow-bar-city-centre",
+    "slug": "radio-glasgow-bar-city-centre",
+    "name": "Radio Glasgow Bar",
+    "description": "Radio Glasgow Bar is a spot for shisha in City Centre, Glasgow with drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Glasgow",
+    "area": "City Centre",
+    "address": "373 Sauchiehall St, Glasgow G2 3HU",
+    "postcode": "G2 3HU",
+    "latitude": 55.8657414,
+    "longitude": -4.2670692,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Monday",
+        "open": "15:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "15:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "15:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "03:00"
+      }
+    ],
+    "website": "https://radioglasgow.uk/",
+    "instagram": null,
+    "phone": "0141 737 1171",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:43:47.799Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://radioglasgow.uk/",
+      "otherSource": "https://maps.google.com/?cid=4358269965024613503&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "tiki-bar-and-darts-den-city-centre",
+    "slug": "tiki-bar-and-darts-den-city-centre",
+    "name": "Tiki Bar & Darts Den",
+    "description": "Tiki Bar & Darts Den is a spot for shisha in City Centre, Glasgow with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Glasgow",
+    "area": "City Centre",
+    "address": "214 Bath St, Glasgow G2 4HW",
+    "postcode": "G2 4HW",
+    "latitude": 55.8648715,
+    "longitude": -4.2643701,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "00:00"
+      }
+    ],
+    "website": "http://www.tikibarglasgow.com/",
+    "instagram": null,
+    "phone": "0141 332 1341",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:43:47.799Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.tikibarglasgow.com/",
+      "otherSource": "https://maps.google.com/?cid=12794592837421513798&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  }
+]

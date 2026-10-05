@@ -1,0 +1,411 @@
+[
+  {
+    "id": "kandou-persian-restaurant-ltd-harehills",
+    "slug": "kandou-persian-restaurant-ltd-harehills",
+    "name": "Kandou Persian restaurant ltd",
+    "description": "Kandou Persian restaurant ltd is a spot for shisha in Harehills, Leeds with food, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leeds",
+    "area": "Harehills",
+    "address": "85a Roseville Rd, Leeds LS8 5DT",
+    "postcode": "LS8 5DT",
+    "latitude": 53.806837,
+    "longitude": -1.5290209,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "02:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "0113 300 3067",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:46:51.581Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=7746615821908335148&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "gzing-restaurant-burmantofts",
+    "slug": "gzing-restaurant-burmantofts",
+    "name": "Gzing Restaurant خواردنگەی گزنگ",
+    "description": "Gzing Restaurant خواردنگەی گزنگ is a spot for shisha in Burmantofts, Leeds with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leeds",
+    "area": "Burmantofts",
+    "address": "Cherry Row, Leeds LS9 7LY",
+    "postcode": "LS9 7LY",
+    "latitude": 53.804400699999995,
+    "longitude": -1.5278810999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "21:00"
+      }
+    ],
+    "website": "https://gzingrestaurant.shop/",
+    "instagram": null,
+    "phone": "0113 243 6161",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:46:51.581Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://gzingrestaurant.shop/",
+      "otherSource": "https://maps.google.com/?cid=4271284867530055189&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "sky-bar-and-grill-headingley",
+    "slug": "sky-bar-and-grill-headingley",
+    "name": "Sky Bar & Grill",
+    "description": "Sky Bar & Grill is a spot for shisha in Headingley, Leeds with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leeds",
+    "area": "Headingley",
+    "address": "45 Queen's Rd, Leeds LS6 1HY",
+    "postcode": "LS6 1HY",
+    "latitude": 53.810704199999996,
+    "longitude": -1.5697621,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://skybargrill.com/",
+    "instagram": null,
+    "phone": "0113 547 3720",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:46:51.581Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://skybargrill.com/",
+      "otherSource": "https://maps.google.com/?cid=17379298877775948042&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "hyde-cafe-and-bar-headingley",
+    "slug": "hyde-cafe-and-bar-headingley",
+    "name": "Hyde Cafe & Bar",
+    "description": "Hyde Cafe & Bar is a spot for shisha in Headingley, Leeds with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leeds",
+    "area": "Headingley",
+    "address": "6 Headingley Ln., Headingley, Leeds LS6 2AS",
+    "postcode": "LS6 2AS",
+    "latitude": 53.814930499999996,
+    "longitude": -1.5618071,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "08:00",
+        "close": "17:00"
+      },
+      {
+        "day": "Monday",
+        "open": "08:00",
+        "close": "17:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "08:00",
+        "close": "17:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "08:00",
+        "close": "17:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "08:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "08:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "08:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://www.instagram.com/hydeleeds?igsh=MTJ1cGxwYzgzOThnMQ==",
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:46:51.581Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.instagram.com/hydeleeds?igsh=MTJ1cGxwYzgzOThnMQ==",
+      "otherSource": "https://maps.google.com/?cid=15783790657723584070&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "residence-cafe-bar-headingley",
+    "slug": "residence-cafe-bar-headingley",
+    "name": "Residence Cafe Bar Headingley",
+    "description": "Residence Cafe Bar Headingley is a spot for shisha in Headingley, Leeds with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leeds",
+    "area": "Headingley",
+    "address": "5 North Ln, Headingley, Leeds LS6 3HG",
+    "postcode": "LS6 3HG",
+    "latitude": 53.8210838,
+    "longitude": -1.5780330999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:30",
+        "close": "16:00"
+      },
+      {
+        "day": "Monday",
+        "open": "09:30",
+        "close": "16:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "09:30",
+        "close": "16:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "09:30",
+        "close": "16:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "09:30",
+        "close": "16:00"
+      },
+      {
+        "day": "Friday",
+        "open": "09:30",
+        "close": "16:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:30",
+        "close": "16:00"
+      }
+    ],
+    "website": "http://residenceheadingley.co.uk/",
+    "instagram": null,
+    "phone": "0113 210 2822",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:46:51.581Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://residenceheadingley.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=441364685966075221&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  }
+]

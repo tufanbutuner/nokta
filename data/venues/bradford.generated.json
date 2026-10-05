@@ -1,0 +1,1060 @@
+[
+  {
+    "id": "empire-lounge-city-centre",
+    "slug": "empire-lounge-city-centre",
+    "name": "Empire Lounge",
+    "description": "Empire Lounge is a spot for shisha in City Centre, Bradford with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bradford",
+    "area": "City Centre",
+    "address": "37 Grattan Rd, Bradford BD1 2LU",
+    "postcode": "BD1 2LU",
+    "latitude": 53.794818299999996,
+    "longitude": -1.7582575999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "15:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Monday",
+        "open": "15:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "15:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "15:00",
+        "close": "05:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "15:00",
+        "close": "05:00"
+      },
+      {
+        "day": "Friday",
+        "open": "15:00",
+        "close": "05:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "15:00",
+        "close": "05:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:01.739Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=12554115232964849486&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "ballr-lounge-city-centre",
+    "slug": "ballr-lounge-city-centre",
+    "name": "Ballr Lounge",
+    "description": "Ballr Lounge is a spot for shisha in City Centre, Bradford. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bradford",
+    "area": "City Centre",
+    "address": "49 Westgate, Bradford BD1 2RD",
+    "postcode": "BD1 2RD",
+    "latitude": 53.7960072,
+    "longitude": -1.7592486999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "18:00",
+        "close": "06:00"
+      },
+      {
+        "day": "Monday",
+        "open": "18:00",
+        "close": "06:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "18:00",
+        "close": "06:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "18:00",
+        "close": "06:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "18:00",
+        "close": "06:00"
+      },
+      {
+        "day": "Friday",
+        "open": "18:00",
+        "close": "06:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "18:00",
+        "close": "06:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07523 964425",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:01.739Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=3071080405423232333&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "rehana-lounge-manningham",
+    "slug": "rehana-lounge-manningham",
+    "name": "Rehana lounge",
+    "description": "Rehana lounge is a spot for shisha in Manningham, Bradford. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bradford",
+    "area": "Manningham",
+    "address": "36 City Rd, Bradford BD8 8ER",
+    "postcode": "BD8 8ER",
+    "latitude": 53.798437799999995,
+    "longitude": -1.7644947,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "20:00"
+      },
+      {
+        "day": "Monday",
+        "open": "14:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "14:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "14:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "14:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "14:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "23:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07455 953018",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:01.739Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=204929228527871727&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "awa-lounge-great-horton",
+    "slug": "awa-lounge-great-horton",
+    "name": "Awa Lounge",
+    "description": "Awa Lounge is a spot for shisha in Great Horton, Bradford with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bradford",
+    "area": "Great Horton",
+    "address": "1 Hey St, Bradford BD7 1DQ",
+    "postcode": "BD7 1DQ",
+    "latitude": 53.793917199999996,
+    "longitude": -1.7652849,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Monday",
+        "open": "14:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "14:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "14:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "14:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Friday",
+        "open": "14:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "03:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07448 043912",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:01.739Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=3727060539721658044&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "phantom-the-lounge-bradford-great-horton",
+    "slug": "phantom-the-lounge-bradford-great-horton",
+    "name": "Phantom The Lounge Bradford",
+    "description": "Phantom The Lounge Bradford is a spot for shisha in Great Horton, Bradford with food, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bradford",
+    "area": "Great Horton",
+    "address": "10 Hey St, Bradford BD7 1DQ",
+    "postcode": "BD7 1DQ",
+    "latitude": 53.794038699999994,
+    "longitude": -1.7661513,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "18:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "18:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "18:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "18:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "18:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "18:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "18:00",
+        "close": "02:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07459 199723",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:01.739Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=16509381698777921850&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "pasha-shisha-bradford-moor",
+    "slug": "pasha-shisha-bradford-moor",
+    "name": "Pasha Shisha",
+    "description": "Pasha Shisha is a spot for shisha in Bradford Moor, Bradford with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bradford",
+    "area": "Bradford Moor",
+    "address": "20 Edderthorpe St, Bradford BD3 9RA",
+    "postcode": "BD3 9RA",
+    "latitude": 53.7918241,
+    "longitude": -1.7378965,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "https://pashashisha.uk/",
+    "instagram": null,
+    "phone": "01274 733484",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:01.740Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://pashashisha.uk/",
+      "otherSource": "https://maps.google.com/?cid=7060991232154797580&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "a2-lounge-and-bar-little-horton",
+    "slug": "a2-lounge-and-bar-little-horton",
+    "name": "A2 LOUNGE and Bar",
+    "description": "A2 LOUNGE and Bar is a spot for shisha in Little Horton, Bradford with late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bradford",
+    "area": "Little Horton",
+    "address": "Wilton St, Bradford BD5 0AX",
+    "postcode": "BD5 0AX",
+    "latitude": 53.7904255,
+    "longitude": -1.7587830999999998,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "02:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:01.740Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=15925686742659298718&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "dzire-lounge-bradford-moor",
+    "slug": "dzire-lounge-bradford-moor",
+    "name": "Dzire lounge",
+    "description": "Dzire lounge is a spot for shisha in Bradford Moor, Bradford with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bradford",
+    "area": "Bradford Moor",
+    "address": "900 Leeds Rd, Bradford BD3 8EZ",
+    "postcode": "BD3 8EZ",
+    "latitude": 53.792022599999996,
+    "longitude": -1.7260651999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "https://www.dzirelounge.co.uk/",
+    "instagram": null,
+    "phone": "07380 795289",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:01.740Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.dzirelounge.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=12541445661283334161&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "lagos-lounge-bradford-city-centre",
+    "slug": "lagos-lounge-bradford-city-centre",
+    "name": "Lagos Lounge Bradford",
+    "description": "Lagos Lounge Bradford is a spot for shisha in City Centre, Bradford with drinks, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bradford",
+    "area": "City Centre",
+    "address": "14 Sackville St, Bradford BD1 2AJ",
+    "postcode": "BD1 2AJ",
+    "latitude": 53.794562199999994,
+    "longitude": -1.7571618000000002,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "18:00",
+        "close": "06:00"
+      },
+      {
+        "day": "Monday",
+        "open": "18:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "18:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "18:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "18:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "15:00",
+        "close": "06:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "18:00",
+        "close": "06:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:01.740Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=12172507005868947657&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "mist-lounge-great-horton",
+    "slug": "mist-lounge-great-horton",
+    "name": "Mist Lounge",
+    "description": "Mist Lounge is a spot for shisha in Great Horton, Bradford with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bradford",
+    "area": "Great Horton",
+    "address": "Opposite to Rajas takeaway, 137 Great Horton Rd, Bradford BD7 1QG",
+    "postcode": "BD7 1QG",
+    "latitude": 53.788136699999995,
+    "longitude": -1.7704037,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "01:30"
+      }
+    ],
+    "website": "http://mistloungebradford.uk/",
+    "instagram": null,
+    "phone": "01274 397458",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:01.740Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://mistloungebradford.uk/",
+      "otherSource": "https://maps.google.com/?cid=11107530197549097574&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "the-shisha-shop-bradford-city-centre",
+    "slug": "the-shisha-shop-bradford-city-centre",
+    "name": "The Shisha Shop Bradford",
+    "description": "The Shisha Shop Bradford is a spot for shisha in City Centre, Bradford. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bradford",
+    "area": "City Centre",
+    "address": "61 Leeds Rd, Bradford BD1 5DY",
+    "postcode": "BD1 5DY",
+    "latitude": 53.7934298,
+    "longitude": -1.745984,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "13:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "13:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "13:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "13:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "13:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "13:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "13:00",
+        "close": "23:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07466 392838",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:01.740Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=4397669431289580831&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "amor-lounge-great-horton",
+    "slug": "amor-lounge-great-horton",
+    "name": "Amoré lounge",
+    "description": "Amoré lounge is a spot for shisha in Great Horton, Bradford with late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bradford",
+    "area": "Great Horton",
+    "address": "159 Richmond Rd, Bradford BD7 1DL",
+    "postcode": "BD7 1DL",
+    "latitude": 53.7940171,
+    "longitude": -1.7673172,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "00:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:01.740Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=3376617415390088465&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "azka-lounge-laisterdyke",
+    "slug": "azka-lounge-laisterdyke",
+    "name": "Azka Lounge",
+    "description": "Azka Lounge is a spot for shisha in Laisterdyke, Bradford with late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bradford",
+    "area": "Laisterdyke",
+    "address": "1260 Leeds Rd, Laisterdyke, Bradford BD3 8LF",
+    "postcode": "BD3 8LF",
+    "latitude": 53.794271800000004,
+    "longitude": -1.7153570999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "01:00"
+      }
+    ],
+    "website": "https://azkalounge.co.uk/",
+    "instagram": null,
+    "phone": "07424 146960",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:46:51.580Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://azkalounge.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=17533363718171159008&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  }
+]

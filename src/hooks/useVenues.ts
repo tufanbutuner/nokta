@@ -12,14 +12,16 @@ interface UseVenuesResult {
 
 export function useVenues(): UseVenuesResult {
   const { isLoading: isLoadingAuth } = useAuth();
-  const { isAdmin: canSeeTestVenues, isLoading: isLoadingAdmin } = useIsAdmin();
+  const { isAdmin: canSeeHiddenVenues, isLoading: isLoadingAdmin } = useIsAdmin();
   const query = useQuery({
     queryKey: ["venues"],
     queryFn: getVenues,
     enabled: !isLoadingAuth,
   });
 
-  const venues = canSeeTestVenues ? query.data ?? [] : (query.data ?? []).filter((venue) => !venue.isTest);
+  const venues = canSeeHiddenVenues
+    ? query.data ?? []
+    : (query.data ?? []).filter((venue) => !venue.isTest && venue.businessStatus !== "permanently-closed");
   const error = query.error instanceof Error ? query.error.message : query.error ? "Could not load venues." : null;
 
   return { venues, isLoading: isLoadingAuth || isLoadingAdmin || query.isPending, error };

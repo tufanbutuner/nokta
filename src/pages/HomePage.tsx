@@ -34,6 +34,12 @@ const CITY_DESCRIPTIONS: Record<string, string> = {
   Birmingham: "Find lounges and late-night social venues across Birmingham.",
   Manchester: "Discover social venues across Manchester for casual nights, groups and late plans.",
   Leicester: "Browse social venues across Leicester by vibe, features and location.",
+  Glasgow: "Find shisha lounges and late-night social venues across Glasgow.",
+  Leeds: "Discover social venues across Leeds, from Chapeltown to the city centre.",
+  Bradford: "Browse shisha lounges and social spots across Bradford by area and vibe.",
+  Sheffield: "Explore social venues across Sheffield for groups, dates and late plans.",
+  Liverpool: "Find lounges and late-night social venues across Liverpool.",
+  Nottingham: "Discover shisha lounges and social venues across Nottingham.",
 };
 
 const categoryEntrypoints = [

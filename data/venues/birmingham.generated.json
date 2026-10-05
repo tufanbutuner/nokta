@@ -1,0 +1,3843 @@
+[
+  {
+    "id": "bora-bora-lounge-highgate",
+    "slug": "bora-bora-lounge-highgate",
+    "name": "Bora Bora lounge",
+    "description": "Bora Bora lounge is a spot for shisha in Highgate, Birmingham with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "Highgate",
+    "address": "100 Barford St, Birmingham B5 6AH",
+    "postcode": "B5 6AH",
+    "latitude": 52.4715097,
+    "longitude": -1.8914003,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "18:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "18:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "18:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "18:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "18:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "18:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "18:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "https://boraboralounge0296.s4shops.com/",
+    "instagram": null,
+    "phone": "07985 286399",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:00.071Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://boraboralounge0296.s4shops.com/",
+      "otherSource": "https://maps.google.com/?cid=14697704022541986027&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "aura-lounge-birmingham-highgate",
+    "slug": "aura-lounge-birmingham-highgate",
+    "name": "Aura Lounge Birmingham",
+    "description": "Aura Lounge Birmingham is a spot for shisha in Highgate, Birmingham with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "Highgate",
+    "address": "111-119 Bishop St, Birmingham B5 6JL",
+    "postcode": "B5 6JL",
+    "latitude": 52.470981099999996,
+    "longitude": -1.8932791,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "13:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "13:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "13:00",
+        "close": "03:00"
+      }
+    ],
+    "website": "http://www.instagram.com/aurabirmingham_",
+    "instagram": null,
+    "phone": "0121 655 0100",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:00.072Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.instagram.com/aurabirmingham_",
+      "otherSource": "https://maps.google.com/?cid=3066978264731819546&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "fumari-lounge-city-centre",
+    "slug": "fumari-lounge-city-centre",
+    "name": "Fumari Lounge",
+    "description": "Fumari Lounge is a spot for shisha in City Centre, Birmingham with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "City Centre",
+    "address": "19-20 Princip St, Birmingham B4 6LE",
+    "postcode": "B4 6LE",
+    "latitude": 52.4880317,
+    "longitude": -1.8954415000000002,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "https://fumarilounge.co.uk/",
+    "instagram": null,
+    "phone": "0121 517 7777",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:00.073Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://fumarilounge.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=9418198786279166383&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "sahara-shisha-lounge-birmingham-highgate",
+    "slug": "sahara-shisha-lounge-birmingham-highgate",
+    "name": "Sahara Shisha Lounge Birmingham",
+    "description": "Sahara Shisha Lounge Birmingham is a spot for shisha in Highgate, Birmingham with late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "Highgate",
+    "address": "42 New Bartholomew St, Birmingham B5 5QS",
+    "postcode": "B5 5QS",
+    "latitude": 52.4791289,
+    "longitude": -1.8894286,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "15:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "15:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "15:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "15:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "15:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "15:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "15:00",
+        "close": "03:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "0121 655 6660",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:00.073Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=11742727638460737090&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "ayaa-lounge-lozells",
+    "slug": "ayaa-lounge-lozells",
+    "name": "Ayaa Lounge",
+    "description": "Ayaa Lounge is a spot for shisha in Lozells, Birmingham with late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "Lozells",
+    "address": "10 Hatchett St, Birmingham B19 3NY",
+    "postcode": "B19 3NY",
+    "latitude": 52.4917199,
+    "longitude": -1.8958487000000002,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "03:00"
+      }
+    ],
+    "website": "http://www.ayaalounge.co.uk/",
+    "instagram": null,
+    "phone": "07466 576746",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:00.073Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.ayaalounge.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=5957777434552847655&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "u-wish-lounge",
+    "slug": "u-wish-lounge",
+    "name": "U Wish Lounge",
+    "description": "Jewellery Quarter lounge with premium shisha, live music, private booths, food, cocktails and mocktails.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "Jewellery Quarter",
+    "address": "81 Eyre St, Birmingham B18 7AD",
+    "postcode": "B18 7AD",
+    "latitude": 52.484699299999996,
+    "longitude": -1.9268785000000002,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 3,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "party",
+      "groups",
+      "date-night",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "15:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Monday",
+        "open": "15:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "15:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "15:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "15:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Friday",
+        "open": "15:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "15:00",
+        "close": "01:30"
+      }
+    ],
+    "website": "https://uwishlounge.co.uk/",
+    "instagram": "https://www.instagram.com/uwishshishalounge/",
+    "phone": "07397 287088",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:00.073Z",
+    "dataSources": {
+      "officialWebsite": "https://uwishlounge.co.uk/",
+      "instagram": "https://www.instagram.com/uwishshishalounge/",
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=15547172526158968635&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Official website confirms shisha, food, cocktails/mocktails, address, phone, Instagram and daily opening hours. Shisha prices and outdoor seating still need direct verification. Generic stock image placeholder should be replaced with owned or venue-approved media."
+  },
+  {
+    "id": "l-mirage-lounge-balsall-heath",
+    "slug": "l-mirage-lounge-balsall-heath",
+    "name": "Lè Mirage Lounge",
+    "description": "Lè Mirage Lounge is a spot for shisha in Balsall Heath, Birmingham with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "Balsall Heath",
+    "address": "31 Warner St, Birmingham B12 0JG",
+    "postcode": "B12 0JG",
+    "latitude": 52.471917,
+    "longitude": -1.8802341999999996,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "15:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "15:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "15:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "15:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "15:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "15:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "15:00",
+        "close": "03:00"
+      }
+    ],
+    "website": "http://www.lemiragelounge.co.uk/",
+    "instagram": null,
+    "phone": "0121 771 4881",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:00.073Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.lemiragelounge.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=12748780846108984573&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "beirut-nites-shisha-lounge-lozells",
+    "slug": "beirut-nites-shisha-lounge-lozells",
+    "name": "Beirut Nites Shisha Lounge",
+    "description": "Beirut Nites Shisha Lounge is a spot for shisha in Lozells, Birmingham with late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "Lozells",
+    "address": "87 New Summer St, Birmingham B19 3TE",
+    "postcode": "B19 3TE",
+    "latitude": 52.4894127,
+    "longitude": -1.8972995,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "03:00"
+      }
+    ],
+    "website": "https://www.instagram.com/beirutnites?igsh=M3NpOTJoOGhzd29l&utm_source=qr",
+    "instagram": null,
+    "phone": "07490 882303",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:00.073Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.instagram.com/beirutnites?igsh=M3NpOTJoOGhzd29l&utm_source=qr",
+      "otherSource": "https://maps.google.com/?cid=8722871034063066376&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "amazonia-lounge-balsall-heath",
+    "slug": "amazonia-lounge-balsall-heath",
+    "name": "Amazonia Lounge",
+    "description": "Amazonia Lounge is a spot for shisha in Balsall Heath, Birmingham with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "Balsall Heath",
+    "address": "55 Stanhope St, Birmingham B12 0UX",
+    "postcode": "B12 0UX",
+    "latitude": 52.4673824,
+    "longitude": -1.8872227,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "04:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "04:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:00.073Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=7014572722215728222&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "emperors-shisha-lounge-cafe-birmingham-balsall-heath",
+    "slug": "emperors-shisha-lounge-cafe-birmingham-balsall-heath",
+    "name": "Emperors Shisha Lounge Cafe Birmingham",
+    "description": "Emperors Shisha Lounge Cafe Birmingham is a spot for shisha in Balsall Heath, Birmingham with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "Balsall Heath",
+    "address": "15 Studley St, Balsall Heath, Birmingham B12 8JB",
+    "postcode": "B12 8JB",
+    "latitude": 52.458798699999996,
+    "longitude": -1.8755877999999997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "14:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "03:00"
+      }
+    ],
+    "website": "http://www.emperorscafe.co.uk/",
+    "instagram": null,
+    "phone": "0121 798 1727",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:00.074Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.emperorscafe.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=7809257744811234086&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "abu-dhabi-cafe-lounge-highgate",
+    "slug": "abu-dhabi-cafe-lounge-highgate",
+    "name": "Abu Dhabi Cafe Lounge",
+    "description": "Abu Dhabi Cafe Lounge is a spot for shisha in Highgate, Birmingham with food and drinks. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "Highgate",
+    "address": "186 Barford St, Birmingham B5 7EP",
+    "postcode": "B5 7EP",
+    "latitude": 52.469813699999996,
+    "longitude": -1.8929159999999996,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "17:00",
+        "close": "05:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "05:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "05:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "05:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "05:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "05:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:00",
+        "close": "05:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07835 245596",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:00.074Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=7903072622237691349&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "jungle-shisha-lounge-ladywood",
+    "slug": "jungle-shisha-lounge-ladywood",
+    "name": "Jungle Shisha Lounge",
+    "description": "Jungle Shisha Lounge is a spot for shisha in Ladywood, Birmingham with drinks, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "Ladywood",
+    "address": "215 Monument Rd, Birmingham B16 8UU",
+    "postcode": "B16 8UU",
+    "latitude": 52.4723074,
+    "longitude": -1.9313254999999998,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "15:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "15:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "15:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "15:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "15:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Friday",
+        "open": "15:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "15:00",
+        "close": "02:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "0121 243 0924",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:00.074Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=6993252235498626593&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "mist-shisha-birmingham-deritend",
+    "slug": "mist-shisha-birmingham-deritend",
+    "name": "Mist Shisha Birmingham",
+    "description": "Mist Shisha Birmingham is a spot for shisha in Deritend, Birmingham with late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "Deritend",
+    "address": "1 Adelaide St, Deritend, Birmingham B12 0SH",
+    "postcode": "B12 0SH",
+    "latitude": 52.4702359,
+    "longitude": -1.8882169999999998,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "15:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "15:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "15:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "15:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "15:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "15:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "15:00",
+        "close": "01:00"
+      }
+    ],
+    "website": "https://mistbirmingham.com/",
+    "instagram": null,
+    "phone": "07927 152498",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:00.074Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://mistbirmingham.com/",
+      "otherSource": "https://maps.google.com/?cid=1892312011215444783&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "arabesque-restaurant-and-shisha-lounge-balsall-heath",
+    "slug": "arabesque-restaurant-and-shisha-lounge-balsall-heath",
+    "name": "Arabesque Restaurant & Shisha Lounge",
+    "description": "Arabesque Restaurant & Shisha Lounge is a spot for shisha in Balsall Heath, Birmingham with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "Balsall Heath",
+    "address": "86 Leopold St, Birmingham B12 0UD",
+    "postcode": "B12 0UD",
+    "latitude": 52.4670261,
+    "longitude": -1.8842367,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:00",
+        "close": "03:00"
+      }
+    ],
+    "website": "https://www.facebook.com/arabesquebirmingham",
+    "instagram": null,
+    "phone": "0121 753 0481",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:00.074Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.facebook.com/arabesquebirmingham",
+      "otherSource": "https://maps.google.com/?cid=677865521712775188&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "the-executive-lounge-best-entertainment-centre-in-birmingham-highgate",
+    "slug": "the-executive-lounge-best-entertainment-centre-in-birmingham-highgate",
+    "name": "The Executive Lounge | Best Entertainment Centre in Birmingham",
+    "description": "The Executive Lounge Best Entertainment Centre in Birmingham is a spot for shisha in Highgate, Birmingham with drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "Highgate",
+    "address": "18 Bordesley St, Birmingham B5 5PJ",
+    "postcode": "B5 5PJ",
+    "latitude": 52.4784724,
+    "longitude": -1.8887858000000002,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "03:00"
+      }
+    ],
+    "website": "https://the-executive-lounge.co.uk/",
+    "instagram": null,
+    "phone": "0121 616 2686",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:00.074Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://the-executive-lounge.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=6425237734155542643&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "lavista-lounge-lozells",
+    "slug": "lavista-lounge-lozells",
+    "name": "Lavista lounge",
+    "description": "Lavista lounge is a spot for shisha in Lozells, Birmingham with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "Lozells",
+    "address": "77 Buckingham St, Birmingham B19 3HU",
+    "postcode": "B19 3HU",
+    "latitude": 52.489471699999996,
+    "longitude": -1.9050994999999997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "05:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "05:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "05:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "05:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "05:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "05:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "05:00"
+      }
+    ],
+    "website": "http://www.la-vista.co.uk/",
+    "instagram": null,
+    "phone": "07856 275665",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:00.074Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.la-vista.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=15937007091997101126&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "throne-shisha-lounge-highgate",
+    "slug": "throne-shisha-lounge-highgate",
+    "name": "Throne Shisha Lounge",
+    "description": "Throne Shisha Lounge is a spot for shisha in Highgate, Birmingham with late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "Highgate",
+    "address": "73 Hill St, Birmingham B5 4AN",
+    "postcode": "B5 4AN",
+    "latitude": 52.4769599,
+    "longitude": -1.9004404000000001,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "15:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "15:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "15:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "15:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "15:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "15:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "15:00",
+        "close": "03:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07707 378115",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:00.074Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=12331103324810657830&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "hookahs-shisha-birmingham-balsall-heath",
+    "slug": "hookahs-shisha-birmingham-balsall-heath",
+    "name": "Hookahs Shisha Birmingham",
+    "description": "Hookahs Shisha Birmingham is a spot for shisha in Balsall Heath, Birmingham with late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "Balsall Heath",
+    "address": "478 Moseley Rd, Balsall Heath, Birmingham B12 9AN",
+    "postcode": "B12 9AN",
+    "latitude": 52.45778,
+    "longitude": -1.8850575,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "03:00"
+      }
+    ],
+    "website": "https://www.instagram.com/hookahs_bham/?hl=en",
+    "instagram": null,
+    "phone": "0121 440 8154",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:00.074Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.instagram.com/hookahs_bham/?hl=en",
+      "otherSource": "https://maps.google.com/?cid=14298561559196695122&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "angel-lounge-lozells",
+    "slug": "angel-lounge-lozells",
+    "name": "Angel lounge",
+    "description": "Angel lounge is a spot for shisha in Lozells, Birmingham with late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "Lozells",
+    "address": "91-96 Hampton St, Birmingham B19 3LU",
+    "postcode": "B19 3LU",
+    "latitude": 52.4887948,
+    "longitude": -1.9031660999999997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "03:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:00.074Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=6239957340452207520&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "rotana-shisha-lounge",
+    "slug": "rotana-shisha-lounge",
+    "name": "Rotana Shisha Lounge",
+    "description": "Premium alcohol-free shisha lounge in Highgate with food, desserts, mocktails, live sports and late weekend hours.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "Highgate",
+    "address": "1-3 Vaughton St S, Birmingham B12 0YN",
+    "postcode": "B12 0YN",
+    "latitude": 52.467912299999995,
+    "longitude": -1.8927498999999999,
+    "rating": null,
+    "priceFrom": 13,
+    "priceLevel": 1,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "luxury",
+      "date-night",
+      "football",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "13:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "13:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "13:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "13:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "04:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "04:00"
+      }
+    ],
+    "website": "https://rotanashishalounge.com/",
+    "instagram": "https://www.instagram.com/rotanaloungebham/",
+    "phone": "0121 798 0283",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:00.074Z",
+    "dataSources": {
+      "officialWebsite": "https://rotanashishalounge.com/",
+      "instagram": "https://www.instagram.com/rotanaloungebham/",
+      "shishaMenuUrl": "https://rotanashishalounge.com/",
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=7234832333215460584&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Official website confirms address, shisha menu pricing, food, mocktails, live sports and opening hours. Phone number still needs direct verification. Generic stock image placeholder should be replaced with owned or venue-approved media."
+  },
+  {
+    "id": "le-jardin-caf-and-shisha-jewellery-quarter",
+    "slug": "le-jardin-caf-and-shisha-jewellery-quarter",
+    "name": "Le Jardin Café and Shisha",
+    "description": "Le Jardin Café and Shisha is a spot for shisha in Jewellery Quarter, Birmingham with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "Jewellery Quarter",
+    "address": "19-21 Pitsford St, Birmingham B18 6LJ",
+    "postcode": "B18 6LJ",
+    "latitude": 52.4889173,
+    "longitude": -1.9136604,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "14:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "00:00"
+      }
+    ],
+    "website": "https://www.instagram.com/lejardin.jq?igsh=YnZiZHYwOHU3NHZ3",
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:00.075Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.instagram.com/lejardin.jq?igsh=YnZiZHYwOHU3NHZ3",
+      "otherSource": "https://maps.google.com/?cid=6215020131053663954&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "bijou-restaurant-and-shisha-lounge-balsall-heath",
+    "slug": "bijou-restaurant-and-shisha-lounge-balsall-heath",
+    "name": "Bijou Restaurant and Shisha Lounge",
+    "description": "Bijou Restaurant and Shisha Lounge is a spot for shisha in Balsall Heath, Birmingham with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "Balsall Heath",
+    "address": "352 Ladypool Rd, Balsall Heath, Birmingham B12 8JY",
+    "postcode": "B12 8JY",
+    "latitude": 52.4538161,
+    "longitude": -1.8776505000000001,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "00:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "00:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "00:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "00:30"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:00",
+        "close": "01:30"
+      }
+    ],
+    "website": "https://bijoulounge.com/",
+    "instagram": null,
+    "phone": "0121 628 4921",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:00.075Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://bijoulounge.com/",
+      "otherSource": "https://maps.google.com/?cid=6417762462434964815&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "luxor-lounge-shisha-coffee-mocktails-grill-food-burger-restaurant-dessert-birmingham-sparkbrook",
+    "slug": "luxor-lounge-shisha-coffee-mocktails-grill-food-burger-restaurant-dessert-birmingham-sparkbrook",
+    "name": "Luxor lounge | Shisha | Coffee | Mocktails | Grill food | Burger | Restaurant | Dessert | Birmingham",
+    "description": "Luxor lounge Shisha Coffee Mocktails Grill food Burger Restaurant Dessert Birmingham is a spot for shisha in Sparkbrook, Birmingham with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "Sparkbrook",
+    "address": "207 Stratford Rd, Sparkbrook, Birmingham B11 1QT",
+    "postcode": "B11 1QT",
+    "latitude": 52.46196260000001,
+    "longitude": -1.8745528,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "luxury",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Monday",
+        "open": "14:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "14:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "14:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "14:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Friday",
+        "open": "14:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "03:00"
+      }
+    ],
+    "website": "https://luxorlounge.co.uk/",
+    "instagram": null,
+    "phone": "07366 557515",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:00.075Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://luxorlounge.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=3940074760789070387&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "o-lounge-highgate",
+    "slug": "o-lounge-highgate",
+    "name": "O Lounge",
+    "description": "O Lounge is a spot for shisha in Highgate, Birmingham with late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "Highgate",
+    "address": "19 Bordesley St, Birmingham B5 5PJ",
+    "postcode": "B5 5PJ",
+    "latitude": 52.4783992,
+    "longitude": -1.8885767999999998,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "https://olounge.co.uk/services/celebration-lounge/",
+    "instagram": null,
+    "phone": "0121 633 0133",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:00.075Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://olounge.co.uk/services/celebration-lounge/",
+      "otherSource": "https://maps.google.com/?cid=2926899362584084701&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "dream-lounge-small-heath",
+    "slug": "dream-lounge-small-heath",
+    "name": "Dream Lounge",
+    "description": "Dream Lounge is a spot for shisha in Small Heath, Birmingham with late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "Small Heath",
+    "address": "5 Henshaw Rd, Birmingham B10 0TD",
+    "postcode": "B10 0TD",
+    "latitude": 52.4700157,
+    "longitude": -1.8604629000000001,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "18:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "18:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "18:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "18:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "18:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "18:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "18:00",
+        "close": "01:00"
+      }
+    ],
+    "website": "https://instagram.com/dreamxlounge?utm_medium=copy_link",
+    "instagram": null,
+    "phone": "07508 418309",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:00.075Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://instagram.com/dreamxlounge?utm_medium=copy_link",
+      "otherSource": "https://maps.google.com/?cid=10603927825988977939&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "lounge-king-s-heath",
+    "slug": "lounge-king-s-heath",
+    "name": "LOUNGE ®",
+    "description": "LOUNGE ® is a spot for shisha in King's Heath, Birmingham with food and drinks. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "King's Heath",
+    "address": "6-8 Alcester Rd S, King's Heath, Birmingham B14 7PU",
+    "postcode": "B14 7PU",
+    "latitude": 52.432216399999994,
+    "longitude": -1.8932019,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "23:30"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07463 658863",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:00.075Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=7468028400283979346&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "mazaj-lounge-and-restaurant-balsall-heath",
+    "slug": "mazaj-lounge-and-restaurant-balsall-heath",
+    "name": "Mazaj Lounge & Restaurant",
+    "description": "Mazaj Lounge & Restaurant is a spot for shisha in Balsall Heath, Birmingham with food, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "Balsall Heath",
+    "address": "531 Moseley Rd, Balsall Heath, Birmingham B12 9BU",
+    "postcode": "B12 9BU",
+    "latitude": 52.456672499999996,
+    "longitude": -1.8860963999999998,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "07:30",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "07:30",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "07:30",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "07:30",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "07:30",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "07:30",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "07:30",
+        "close": "02:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07403 142201",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:00.075Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=11107888411818402616&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "dubai-shisha-lounge-birmingham",
+    "slug": "dubai-shisha-lounge-birmingham",
+    "name": "Dubai Shisha Lounge",
+    "description": "Stratford Road shisha lounge with Mediterranean food, desserts and drinks available through its own ordering/contact site.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "Springfield",
+    "address": "647 Stratford Rd, Birmingham B11 4DY",
+    "postcode": "B11 4DY",
+    "latitude": 52.4477139,
+    "longitude": -1.8612407999999996,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "05:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "05:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "05:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "05:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "05:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "05:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "05:00"
+      }
+    ],
+    "website": "http://dubaishishalounge.com/",
+    "instagram": null,
+    "phone": "07565 656500",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:00.075Z",
+    "dataSources": {
+      "officialWebsite": "http://dubaishishalounge.com/",
+      "contactUrl": "https://dubaishishalounge.co.uk/ContactUs",
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=2525371980821808888&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Official contact page confirms address, phone and food/drink categories. Opening hours, shisha pricing, alcohol policy and outdoor seating still need direct verification before marking verified. Generic stock image placeholder should be replaced with owned or venue-approved media."
+  },
+  {
+    "id": "the-function-shisha-tyseley",
+    "slug": "the-function-shisha-tyseley",
+    "name": "The Function Shisha",
+    "description": "The Function Shisha is a spot for shisha in Tyseley, Birmingham. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "Tyseley",
+    "address": "Warwick Rd, Tyseley, Birmingham B11 2HP",
+    "postcode": "B11 2HP",
+    "latitude": 52.453148999999996,
+    "longitude": -1.8536119999999998,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "18:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "18:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "18:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "18:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "18:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "23:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07352 275315",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:00.075Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=18249434384835235012&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "habibi-s-shisha-lounge-hall-green",
+    "slug": "habibi-s-shisha-lounge-hall-green",
+    "name": "Habibi’s Shisha Lounge",
+    "description": "Habibi’s Shisha Lounge is a spot for shisha in Hall Green, Birmingham with drinks. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "Hall Green",
+    "address": "1116a Stratford Rd, Birmingham B28 8AE",
+    "postcode": "B28 8AE",
+    "latitude": 52.4391873,
+    "longitude": -1.8478274,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [],
+    "website": null,
+    "instagram": null,
+    "phone": "07391 757427",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:00.075Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=13018542400608713351&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "shisha-sparkbrook",
+    "slug": "shisha-sparkbrook",
+    "name": "Shisha",
+    "description": "Shisha is a spot for shisha in Sparkbrook, Birmingham with food, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "Sparkbrook",
+    "address": "Stratford Rd, Sparkbrook, Birmingham B11 1AG",
+    "postcode": "B11 1AG",
+    "latitude": 52.4640324,
+    "longitude": -1.8769814999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "00:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "02:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:00.075Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=11974344546712903298&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "majlis-shisha-lounge-balsall-heath",
+    "slug": "majlis-shisha-lounge-balsall-heath",
+    "name": "Majlis Shisha Lounge",
+    "description": "Majlis Shisha Lounge is a spot for shisha in Balsall Heath, Birmingham with late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "Balsall Heath",
+    "address": "352 Moseley Rd, Balsall Heath, Birmingham B12 9AZ",
+    "postcode": "B12 9AZ",
+    "latitude": 52.461501999999996,
+    "longitude": -1.8834168,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "03:00"
+      }
+    ],
+    "website": "https://www.instagram.com/majlis_lounge_/",
+    "instagram": null,
+    "phone": "07426 924443",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:00.075Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.instagram.com/majlis_lounge_/",
+      "otherSource": "https://maps.google.com/?cid=2861959923689202344&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "shisha-wala",
+    "slug": "shisha-wala",
+    "name": "Shisha Wala",
+    "description": "Traditional Coventry Road shisha lounge with food, sports, board games and group-friendly seating.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "Hay Mills",
+    "address": "1066 Coventry Rd, Birmingham B25 8DP",
+    "postcode": "B25 8DP",
+    "latitude": 52.4636107,
+    "longitude": -1.8350392999999998,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "football"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:30",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "11:30",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:30",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:30",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:30",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "11:30",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:30",
+        "close": "02:00"
+      }
+    ],
+    "website": "https://shisha-wala.co.uk/",
+    "instagram": null,
+    "phone": "0121 245 2229",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:00.075Z",
+    "dataSources": {
+      "officialWebsite": "https://shisha-wala.co.uk/",
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=10856320879871521626&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Official website confirms shisha lounge positioning, food, sports/board games, address, phone and opening hours. Prices, alcohol policy and outdoor seating still need direct verification. Generic stock image placeholder should be replaced with owned or venue-approved media."
+  },
+  {
+    "id": "ranya-lounge-balsall-heath",
+    "slug": "ranya-lounge-balsall-heath",
+    "name": "Ranya Lounge",
+    "description": "Ranya Lounge is a spot for shisha in Balsall Heath, Birmingham. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "Balsall Heath",
+    "address": "316 Highgate Rd, Balsall Heath, Birmingham B12 8ED",
+    "postcode": "B12 8ED",
+    "latitude": 52.4585599,
+    "longitude": -1.8722838,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "17:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:00",
+        "close": "03:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07882 802515",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:00.075Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=7961705553510972835&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "malibu-restaurant-and-lounge-cobham-buisness-centre",
+    "slug": "malibu-restaurant-and-lounge-cobham-buisness-centre",
+    "name": "Malibu Restaurant & Lounge",
+    "description": "Malibu Restaurant & Lounge is a spot for shisha in cobham buisness centre, Birmingham with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "cobham buisness centre",
+    "address": "2, cobham buisness centre, Bordesley Green Rd, Birmingham B9 4UP",
+    "postcode": "B9 4UP",
+    "latitude": 52.480503399999996,
+    "longitude": -1.8561811999999998,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "15:00",
+        "close": "05:00"
+      },
+      {
+        "day": "Monday",
+        "open": "15:00",
+        "close": "05:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "15:00",
+        "close": "05:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "15:00",
+        "close": "05:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "15:00",
+        "close": "05:00"
+      },
+      {
+        "day": "Friday",
+        "open": "15:00",
+        "close": "05:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "15:00",
+        "close": "05:00"
+      }
+    ],
+    "website": "http://maliburestaurantlounge.co.uk/",
+    "instagram": null,
+    "phone": "07546 027504",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:00.075Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://maliburestaurantlounge.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=49262781348082366&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "morocco-shisha-lounge-ward-end",
+    "slug": "morocco-shisha-lounge-ward-end",
+    "name": "Morocco Shisha Lounge",
+    "description": "Morocco Shisha Lounge is a spot for shisha in Ward End, Birmingham with food, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "Ward End",
+    "address": "616 Washwood Heath Rd, Ward End, Birmingham B8 2HG",
+    "postcode": "B8 2HG",
+    "latitude": 52.49371920000001,
+    "longitude": -1.8334106000000001,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "02:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07828 614433",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:00.075Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=15633883517512777173&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "darkside-shisha-lounge-small-heath",
+    "slug": "darkside-shisha-lounge-small-heath",
+    "name": "DARKSIDE SHISHA LOUNGE",
+    "description": "DARKSIDE SHISHA LOUNGE is a spot for shisha in Small Heath, Birmingham with late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "Small Heath",
+    "address": "55a Muntz St, Small Heath, Birmingham B10 9SN",
+    "postcode": "B10 9SN",
+    "latitude": 52.4707734,
+    "longitude": -1.8565295000000002,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "https://thedarkside.uk/",
+    "instagram": null,
+    "phone": "07586 418180",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:00.075Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://thedarkside.uk/",
+      "otherSource": "https://maps.google.com/?cid=4376283815089518418&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "sorrento-lounge-moseley",
+    "slug": "sorrento-lounge-moseley",
+    "name": "Sorrento Lounge",
+    "description": "Sorrento Lounge is a spot for shisha in Moseley, Birmingham with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "Moseley",
+    "address": "91a Alcester Rd, Moseley, Birmingham B13 8DD",
+    "postcode": "B13 8DD",
+    "latitude": 52.4478933,
+    "longitude": -1.8884512999999998,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://thelounges.co.uk/sorrento/",
+    "instagram": null,
+    "phone": "0121 442 6623",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:00.075Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://thelounges.co.uk/sorrento/",
+      "otherSource": "https://maps.google.com/?cid=4601453757119797075&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "highgate-shisha-shop-balsall-heath",
+    "slug": "highgate-shisha-shop-balsall-heath",
+    "name": "Highgate Shisha Shop",
+    "description": "Highgate Shisha Shop is a spot for shisha in Balsall Heath, Birmingham with food, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "Balsall Heath",
+    "address": "310A Highgate Rd, Balsall Heath, Birmingham B12 8ED",
+    "postcode": "B12 8ED",
+    "latitude": 52.458645999999995,
+    "longitude": -1.8724953999999998,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "14:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "14:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "14:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "14:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "14:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "00:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07882 802515",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:00.075Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=15288252698346200473&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "sultan-lounge-islington-row-middleway",
+    "slug": "sultan-lounge-islington-row-middleway",
+    "name": "Sultan Lounge",
+    "description": "Sultan Lounge is a spot for shisha in Islington Row Middleway, Birmingham with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "Islington Row Middleway",
+    "address": "Enfield House, Enfield Rd, Islington Row Middleway, Birmingham B15 1QA",
+    "postcode": "B15 1QA",
+    "latitude": 52.471236600000005,
+    "longitude": -1.9131938,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "https://www.sultanlounge.co.uk/",
+    "instagram": null,
+    "phone": "0121 455 7824",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:00.075Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.sultanlounge.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=5464062960951854067&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "afro-restaurant-and-lounge-birmingham-lozells",
+    "slug": "afro-restaurant-and-lounge-birmingham-lozells",
+    "name": "AFRO! Restaurant & Lounge Birmingham",
+    "description": "AFRO! Restaurant & Lounge Birmingham is a spot for shisha in Lozells, Birmingham with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "Lozells",
+    "address": "77 Mott St, Birmingham B19 3HE",
+    "postcode": "B19 3HE",
+    "latitude": 52.4889064,
+    "longitude": -1.9046446,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "14:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "14:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "14:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "02:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "https://afro.co.uk/",
+    "instagram": null,
+    "phone": "0121 817 6999",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:00.075Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://afro.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=16162528078205883736&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "44loungebirmingham-lozells",
+    "slug": "44loungebirmingham-lozells",
+    "name": "44loungebirmingham",
+    "description": "44loungebirmingham is a spot for shisha in Lozells, Birmingham with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "Lozells",
+    "address": "44 Howard St, Birmingham B19 3HH",
+    "postcode": "B19 3HH",
+    "latitude": 52.4887826,
+    "longitude": -1.9039429,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "04:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "14:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "14:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "14:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Friday",
+        "open": "14:00",
+        "close": "04:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "04:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07424 143682",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:00.075Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=15690642174449462877&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "suli-lounge-handsworth",
+    "slug": "suli-lounge-handsworth",
+    "name": "SULI LOUNGE",
+    "description": "SULI LOUNGE is a spot for shisha in Handsworth, Birmingham with food, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "Handsworth",
+    "address": "345 Soho Rd, Birmingham B21 9SE",
+    "postcode": "B21 9SE",
+    "latitude": 52.5041069,
+    "longitude": -1.9392313,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "13:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "13:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "13:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "13:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "13:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "13:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "13:00",
+        "close": "01:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07737 486216",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:00.075Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=3195272192442121406&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "sylhet-lounge-eatery-handsworth",
+    "slug": "sylhet-lounge-eatery-handsworth",
+    "name": "Sylhet Lounge Eatery",
+    "description": "Sylhet Lounge Eatery is a spot for shisha in Handsworth, Birmingham with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "Handsworth",
+    "address": "139 Lozells Rd, Handsworth, Birmingham B19 2TP",
+    "postcode": "B19 2TP",
+    "latitude": 52.5030651,
+    "longitude": -1.9079448,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "23:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "0121 257 4203",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:00.075Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=3472776710446021079&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "sheesha-garden-selly-oak",
+    "slug": "sheesha-garden-selly-oak",
+    "name": "Sheesha Garden",
+    "description": "Sheesha Garden is a spot for shisha in Selly Oak, Birmingham with outdoor seating, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "Selly Oak",
+    "address": "525 Bristol Rd, Selly Oak, Birmingham B29 6AU",
+    "postcode": "B29 6AU",
+    "latitude": 52.4461626,
+    "longitude": -1.932258,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": true,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "outdoor"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "01:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:00.075Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=17403423312148151261&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "spice-lounge-erdington",
+    "slug": "spice-lounge-erdington",
+    "name": "Spice lounge",
+    "description": "Spice lounge is a spot for shisha in Erdington, Birmingham with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "Erdington",
+    "address": "14 Wood End Rd, Birmingham B24 8AD",
+    "postcode": "B24 8AD",
+    "latitude": 52.5211061,
+    "longitude": -1.8432488999999996,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "22:00"
+      }
+    ],
+    "website": "https://spiceloungeerdington.co.uk/",
+    "instagram": null,
+    "phone": "0121 682 7713",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:00.075Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://spiceloungeerdington.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=7241383456024210505&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "one-six-three-lounge-erdington",
+    "slug": "one-six-three-lounge-erdington",
+    "name": "One Six Three Lounge",
+    "description": "One Six Three Lounge is a spot for shisha in Erdington, Birmingham with food and drinks, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "Erdington",
+    "address": "163 Reservoir Rd, Erdington, Birmingham B23 6DN",
+    "postcode": "B23 6DN",
+    "latitude": 52.5247874,
+    "longitude": -1.8584739,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "20:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "20:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "20:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "20:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "00:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07983 015061",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:00.075Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=11318938200249796537&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  }
+]

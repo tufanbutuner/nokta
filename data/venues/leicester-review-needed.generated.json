@@ -1,0 +1,583 @@
+[
+  {
+    "id": "la-maison-cafe-i-breakfast-i-brunch-i-coffee-i-mocktails-i-desserts-i-french-toast-i-live-football-city-centre",
+    "slug": "la-maison-cafe-i-breakfast-i-brunch-i-coffee-i-mocktails-i-desserts-i-french-toast-i-live-football-city-centre",
+    "name": "La Maison Cafe I Breakfast I Brunch I Coffee I Mocktails I Desserts I French Toast I Live Football",
+    "description": "La Maison Cafe I Breakfast I Brunch I Coffee I Mocktails I Desserts I French Toast I Live Football is a spot for shisha in City Centre, Leicester with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leicester",
+    "area": "City Centre",
+    "address": "43 Abbey St, Leicester LE1 3TE",
+    "postcode": "LE1 3TE",
+    "latitude": 52.6399379,
+    "longitude": -1.1323566,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "live_sport"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "football",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "10:00",
+        "close": "17:00"
+      },
+      {
+        "day": "Monday",
+        "open": "10:00",
+        "close": "17:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "10:00",
+        "close": "17:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "10:00",
+        "close": "17:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "10:00",
+        "close": "17:00"
+      },
+      {
+        "day": "Friday",
+        "open": "10:00",
+        "close": "17:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "10:00",
+        "close": "17:00"
+      }
+    ],
+    "website": "https://www.lamaisoncafe.co.uk/leicester/?mtm_campaign=Business%20Profiles&mtm_kwd=Google%20Business",
+    "instagram": null,
+    "phone": "0116 431 5524",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:42.872Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.lamaisoncafe.co.uk/leicester/?mtm_campaign=Business%20Profiles&mtm_kwd=Google%20Business",
+      "otherSource": "https://maps.google.com/?cid=7994586629305348370&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "authentic-turkish-restaurant-evington",
+    "slug": "authentic-turkish-restaurant-evington",
+    "name": "Authentic Turkish Restaurant",
+    "description": "Authentic Turkish Restaurant is a spot for shisha in Evington, Leicester with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leicester",
+    "area": "Evington",
+    "address": "42 Main St, Evington, Leicester LE5 6DN",
+    "postcode": "LE5 6DN",
+    "latitude": 52.621325299999995,
+    "longitude": -1.0745299,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:42.872Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=10908811743346997240&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "eden-cafe-bar-evington",
+    "slug": "eden-cafe-bar-evington",
+    "name": "Eden Cafe Bar",
+    "description": "Eden Cafe Bar is a spot for shisha in Evington, Leicester with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leicester",
+    "area": "Evington",
+    "address": "11 Main St, Evington, Leicester LE5 6DN",
+    "postcode": "LE5 6DN",
+    "latitude": 52.6209333,
+    "longitude": -1.0764696,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Monday",
+        "open": "09:00",
+        "close": "14:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "09:00",
+        "close": "14:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "09:00",
+        "close": "14:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "09:00",
+        "close": "14:00"
+      },
+      {
+        "day": "Friday",
+        "open": "09:00",
+        "close": "14:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "14:00"
+      }
+    ],
+    "website": "https://www.edencafebar.uk/",
+    "instagram": null,
+    "phone": "07515 143903",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:42.872Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.edencafebar.uk/",
+      "otherSource": "https://maps.google.com/?cid=17715854208858773908&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "nine-bar-westcotes",
+    "slug": "nine-bar-westcotes",
+    "name": "Nine Bar",
+    "description": "Nine Bar is a spot for shisha in Westcotes, Leicester with drinks, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leicester",
+    "area": "Westcotes",
+    "address": "74 Narborough Rd, Leicester LE3 0BS",
+    "postcode": "LE3 0BS",
+    "latitude": 52.628317499999994,
+    "longitude": -1.149241,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "00:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:42.872Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=15838625458643744335&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "oases-bar-westcotes",
+    "slug": "oases-bar-westcotes",
+    "name": "Oases Bar",
+    "description": "Oases Bar is a spot for shisha in Westcotes, Leicester with drinks. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leicester",
+    "area": "Westcotes",
+    "address": "144-146 Narborough Rd, Leicester LE3 0BT",
+    "postcode": "LE3 0BT",
+    "latitude": 52.6262179,
+    "longitude": -1.1509665,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:00",
+        "close": "23:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07877 587962",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:42.872Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=18350040614188737468&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "starbuzz-cafe-westcotes",
+    "slug": "starbuzz-cafe-westcotes",
+    "name": "Starbuzz Cafe",
+    "description": "Starbuzz Cafe is a spot for shisha in Westcotes, Leicester with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leicester",
+    "area": "Westcotes",
+    "address": "Leicester LE3 0BH",
+    "postcode": "LE3 0BH",
+    "latitude": 52.626069,
+    "longitude": -1.1510109,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:42.872Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=1885588037691844930&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "the-melton-restaurant-belgrave",
+    "slug": "the-melton-restaurant-belgrave",
+    "name": "The Melton Restaurant",
+    "description": "The Melton Restaurant is a spot for shisha in Belgrave, Leicester with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leicester",
+    "area": "Belgrave",
+    "address": "197 Melton Rd, Belgrave, Leicester LE4 6QT",
+    "postcode": "LE4 6QT",
+    "latitude": 52.656817,
+    "longitude": -1.1166235,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:30",
+        "close": "23:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:30",
+        "close": "23:30"
+      }
+    ],
+    "website": "https://meltonrestaurant.co.uk/",
+    "instagram": null,
+    "phone": "0116 319 5170",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:42.872Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://meltonrestaurant.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=7284962251335389626&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "tiranga-restaurant-and-bar-belgrave",
+    "slug": "tiranga-restaurant-and-bar-belgrave",
+    "name": "Tiranga Restaurant And Bar.",
+    "description": "Tiranga Restaurant And Bar. is a spot for shisha in Belgrave, Leicester with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Leicester",
+    "area": "Belgrave",
+    "address": "119, 121 Melton Rd, Leicester LE4 6QS",
+    "postcode": "LE4 6QS",
+    "latitude": 52.654657799999995,
+    "longitude": -1.1186447,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "18:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Monday",
+        "open": "18:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "18:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "18:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "18:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Friday",
+        "open": "18:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "18:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "http://tiranga.co.uk/",
+    "instagram": null,
+    "phone": "0116 261 1002",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:23:42.872Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://tiranga.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=3192659515959672697&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  }
+]

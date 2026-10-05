@@ -44,7 +44,7 @@ export const SUPPORTED_CITIES: SupportedCity[] = [
     latitude: 53.7938,
     longitude: -1.7564,
     defaultZoom: 12,
-    isActive: false,
+    isActive: true,
   },
   {
     name: "Leeds",
@@ -53,7 +53,7 @@ export const SUPPORTED_CITIES: SupportedCity[] = [
     latitude: 53.8008,
     longitude: -1.5491,
     defaultZoom: 12,
-    isActive: false,
+    isActive: true,
   },
   {
     name: "Liverpool",
@@ -62,7 +62,7 @@ export const SUPPORTED_CITIES: SupportedCity[] = [
     latitude: 53.4084,
     longitude: -2.9916,
     defaultZoom: 12,
-    isActive: false,
+    isActive: true,
   },
   {
     name: "Sheffield",
@@ -71,7 +71,7 @@ export const SUPPORTED_CITIES: SupportedCity[] = [
     latitude: 53.3811,
     longitude: -1.4701,
     defaultZoom: 12,
-    isActive: false,
+    isActive: true,
   },
   {
     name: "Nottingham",
@@ -80,7 +80,7 @@ export const SUPPORTED_CITIES: SupportedCity[] = [
     latitude: 52.9548,
     longitude: -1.1581,
     defaultZoom: 12,
-    isActive: false,
+    isActive: true,
   },
   {
     name: "Glasgow",
@@ -89,6 +89,6 @@ export const SUPPORTED_CITIES: SupportedCity[] = [
     latitude: 55.8642,
     longitude: -4.2518,
     defaultZoom: 12,
-    isActive: false,
+    isActive: true,
   },
 ];

@@ -1,0 +1,1367 @@
+[
+  {
+    "id": "agha-lounge-burngreave",
+    "slug": "agha-lounge-burngreave",
+    "name": "Agha Lounge",
+    "description": "Agha Lounge is a spot for shisha in Burngreave, Sheffield with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Sheffield",
+    "area": "Burngreave",
+    "address": "5 N Bank, Sheffield S3 8JT",
+    "postcode": "S3 8JT",
+    "latitude": 53.3860392,
+    "longitude": -1.4619233999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "http://aghalounge.com/",
+    "instagram": null,
+    "phone": "07799 709192",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:12.256Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://aghalounge.com/",
+      "otherSource": "https://maps.google.com/?cid=10423163604197627901&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "jaan-lounge-burngreave",
+    "slug": "jaan-lounge-burngreave",
+    "name": "Jaan Lounge",
+    "description": "Jaan Lounge is a spot for shisha in Burngreave, Sheffield with drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Sheffield",
+    "area": "Burngreave",
+    "address": "1, Waverley House, 10 Joiner St, Sheffield S3 8GW",
+    "postcode": "S3 8GW",
+    "latitude": 53.387267599999994,
+    "longitude": -1.4638147,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "https://www.jaanlounge.com/menu",
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:12.257Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.jaanlounge.com/menu",
+      "otherSource": "https://maps.google.com/?cid=12564085764354316956&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "azuri-lounge-sheffield-attercliffe",
+    "slug": "azuri-lounge-sheffield-attercliffe",
+    "name": "Azuri Lounge Sheffield",
+    "description": "Azuri Lounge Sheffield is a spot for shisha in Attercliffe, Sheffield with food, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Sheffield",
+    "area": "Attercliffe",
+    "address": "638 Attercliffe Rd, Attercliffe, Sheffield S9 3RN",
+    "postcode": "S9 3RN",
+    "latitude": 53.393284300000005,
+    "longitude": -1.4327439,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "03:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07825 813966",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:12.257Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=18236234149424995316&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "hashtag-shisha-lounge-highfield",
+    "slug": "hashtag-shisha-lounge-highfield",
+    "name": "Hashtag Shisha Lounge",
+    "description": "Hashtag Shisha Lounge is a spot for shisha in Highfield, Sheffield with late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Sheffield",
+    "area": "Highfield",
+    "address": "110 John St, Highfield, Sheffield S2 4QU",
+    "postcode": "S2 4QU",
+    "latitude": 53.3707886,
+    "longitude": -1.4729158,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:00",
+        "close": "02:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "0114 470 2103",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:12.257Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=6726934117094123085&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "alura-turkish-grill-and-lounge-sharrow",
+    "slug": "alura-turkish-grill-and-lounge-sharrow",
+    "name": "Alura Turkish Grill & Lounge",
+    "description": "Alura Turkish Grill & Lounge is a spot for shisha in Sharrow, Sheffield with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Sheffield",
+    "area": "Sharrow",
+    "address": "293-295 Ecclesall Rd, Sharrow, Sheffield S11 8NX",
+    "postcode": "S11 8NX",
+    "latitude": 53.371333199999995,
+    "longitude": -1.4884591,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "00:00"
+      }
+    ],
+    "website": "https://alurasheffield.co.uk/",
+    "instagram": null,
+    "phone": "0114 399 5784",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:12.257Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://alurasheffield.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=1319278527388662453&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "dubai-nights-shisha-lounge-fir-vale",
+    "slug": "dubai-nights-shisha-lounge-fir-vale",
+    "name": "Dubai Nights Shisha Lounge",
+    "description": "Dubai Nights Shisha Lounge is a spot for shisha in Fir Vale, Sheffield with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Sheffield",
+    "area": "Fir Vale",
+    "address": "15 Sutherland St, Sheffield S4 7WG",
+    "postcode": "S4 7WG",
+    "latitude": 53.390400799999995,
+    "longitude": -1.4490874,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "https://m.facebook.com/pages/category/Hookah-Lounge/Dubai-Nights-%D9%84%D9%8A%D8%A7%D9%84%D9%8A-%D8%AF%D8%A8%D9%8A-2030634183856490/?locale2=en_GB",
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:12.257Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://m.facebook.com/pages/category/Hookah-Lounge/Dubai-Nights-%D9%84%D9%8A%D8%A7%D9%84%D9%8A-%D8%AF%D8%A8%D9%8A-2030634183856490/?locale2=en_GB",
+      "otherSource": "https://maps.google.com/?cid=5630202512982509607&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "mvp-lounge-burngreave",
+    "slug": "mvp-lounge-burngreave",
+    "name": "MVP Lounge",
+    "description": "MVP Lounge is a spot for shisha in Burngreave, Sheffield with drinks. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Sheffield",
+    "area": "Burngreave",
+    "address": "2 Stanley St, Sheffield S3 8HJ",
+    "postcode": "S3 8HJ",
+    "latitude": 53.3871973,
+    "longitude": -1.4629625,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [],
+    "website": null,
+    "instagram": null,
+    "phone": "07933 001761",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:12.257Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=5885053886394681346&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "lounge418-broomhall",
+    "slug": "lounge418-broomhall",
+    "name": "Lounge418",
+    "description": "Lounge418 is a spot for shisha in Broomhall, Sheffield with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Sheffield",
+    "area": "Broomhall",
+    "address": "418 Ecclesall Rd, Broomhall, Sheffield S11 8PJ",
+    "postcode": "S11 8PJ",
+    "latitude": 53.369963899999995,
+    "longitude": -1.4934262999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "http://www.lounge418.co.uk/",
+    "instagram": null,
+    "phone": "0114 296 6017",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:12.257Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.lounge418.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=7492949440015902546&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "basra-cafe-lounge-fir-vale",
+    "slug": "basra-cafe-lounge-fir-vale",
+    "name": "Basra Cafe Lounge",
+    "description": "Basra Cafe Lounge is a spot for shisha in Fir Vale, Sheffield with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Sheffield",
+    "area": "Fir Vale",
+    "address": "109 Spital Hill, Sheffield S4 7LD",
+    "postcode": "S4 7LD",
+    "latitude": 53.3902169,
+    "longitude": -1.4594525999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:00",
+        "close": "23:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07386 129190",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:12.257Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=8679735641157186534&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "elios-lounge-and-bar-attercliffe",
+    "slug": "elios-lounge-and-bar-attercliffe",
+    "name": "Elios Lounge & Bar",
+    "description": "Elios Lounge & Bar is a spot for shisha in Attercliffe, Sheffield with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Sheffield",
+    "area": "Attercliffe",
+    "address": "732 Attercliffe Rd, Attercliffe, Sheffield S9 3RQ",
+    "postcode": "S9 3RQ",
+    "latitude": 53.3949211,
+    "longitude": -1.43074,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "11:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "11:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:00",
+        "close": "03:30"
+      },
+      {
+        "day": "Friday",
+        "open": "11:00",
+        "close": "03:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:00",
+        "close": "03:30"
+      }
+    ],
+    "website": "http://www.elioslounge.co.uk/",
+    "instagram": null,
+    "phone": "07943 729092",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:12.257Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.elioslounge.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=16816391693280683756&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "sky-lounge-broomhall",
+    "slug": "sky-lounge-broomhall",
+    "name": "Sky Lounge",
+    "description": "Sky Lounge is a spot for shisha in Broomhall, Sheffield with late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Sheffield",
+    "area": "Broomhall",
+    "address": "Unit 13, The Plaza, 8 Fitzwilliam St, Broomhall, Sheffield S1 4JB",
+    "postcode": "S1 4JB",
+    "latitude": 53.37971950000001,
+    "longitude": -1.4804017999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "18:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "18:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "18:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "18:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "02:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07789 281698",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:12.257Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=12093263995684422419&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "j3-lounge-attercliffe",
+    "slug": "j3-lounge-attercliffe",
+    "name": "J3 Lounge",
+    "description": "J3 Lounge is a spot for shisha in Attercliffe, Sheffield with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Sheffield",
+    "area": "Attercliffe",
+    "address": "575 Attercliffe Rd, Attercliffe, Sheffield S9 3RB",
+    "postcode": "S9 3RB",
+    "latitude": 53.392694399999996,
+    "longitude": -1.4342317,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "15:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Monday",
+        "open": "15:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "15:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "15:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "15:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Friday",
+        "open": "15:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "15:00",
+        "close": "03:00"
+      }
+    ],
+    "website": "https://www.j3lounge.co.uk/",
+    "instagram": null,
+    "phone": "07491 773773",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:12.257Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.j3lounge.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=9800489284790219912&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "samara-lounge-attercliffe",
+    "slug": "samara-lounge-attercliffe",
+    "name": "Samara Lounge",
+    "description": "Samara Lounge is a spot for shisha in Attercliffe, Sheffield with late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Sheffield",
+    "area": "Attercliffe",
+    "address": "762-764 Attercliffe Rd, Attercliffe, Sheffield S9 3RQ",
+    "postcode": "S9 3RQ",
+    "latitude": 53.3951995,
+    "longitude": -1.430099,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Monday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "14:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "03:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07881 694254",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:12.257Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=17301709071436554922&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "mojo-cafe-lounge-nether-edge",
+    "slug": "mojo-cafe-lounge-nether-edge",
+    "name": "Mojo cafe-lounge",
+    "description": "Mojo cafe-lounge is a spot for shisha in Nether Edge, Sheffield with late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Sheffield",
+    "area": "Nether Edge",
+    "address": "Abbeydale Rd, Nether Edge, Sheffield S7 1FJ",
+    "postcode": "S7 1FJ",
+    "latitude": 53.362825799999996,
+    "longitude": -1.4774722,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "13:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Monday",
+        "open": "13:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "13:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "13:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "13:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "13:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "13:00",
+        "close": "03:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07599 413949",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:12.257Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=12367042606323138724&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "pasha-lounge-highfield",
+    "slug": "pasha-lounge-highfield",
+    "name": "Pasha lounge",
+    "description": "Pasha lounge is a spot for shisha in Highfield, Sheffield with late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Sheffield",
+    "area": "Highfield",
+    "address": "300 London Rd, Highfield, Sheffield S2 4NA",
+    "postcode": "S2 4NA",
+    "latitude": 53.3667513,
+    "longitude": -1.4752371,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "02:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:12.257Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=1179198004377508915&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "king-shisha-store-sheffield-burngreave",
+    "slug": "king-shisha-store-sheffield-burngreave",
+    "name": "King shisha store Sheffield",
+    "description": "King shisha store Sheffield is a spot for shisha in Burngreave, Sheffield. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Sheffield",
+    "area": "Burngreave",
+    "address": "8-10 Stanley St, Sheffield S3 8HJ",
+    "postcode": "S3 8HJ",
+    "latitude": 53.3872937,
+    "longitude": -1.4633947999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [],
+    "website": null,
+    "instagram": null,
+    "phone": "07933 001761",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:12.257Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=3097723238512281189&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "zorro-lounge-stocksbridge",
+    "slug": "zorro-lounge-stocksbridge",
+    "name": "Zorro Lounge",
+    "description": "Zorro Lounge is a spot for shisha in Stocksbridge, Sheffield with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Sheffield",
+    "area": "Stocksbridge",
+    "address": "6 Fox Valley Way, Stocksbridge, Sheffield S36 2AE",
+    "postcode": "S36 2AE",
+    "latitude": 53.482949,
+    "longitude": -1.5898797,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://thelounges.co.uk/zorro/",
+    "instagram": null,
+    "phone": "0114 288 4282",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:12.257Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://thelounges.co.uk/zorro/",
+      "otherSource": "https://maps.google.com/?cid=12403679547723857024&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "urban-lounge-and-cafe-darnall",
+    "slug": "urban-lounge-and-cafe-darnall",
+    "name": "Urban Lounge & Cafe",
+    "description": "Urban Lounge & Cafe is a spot for shisha in Darnall, Sheffield with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Sheffield",
+    "area": "Darnall",
+    "address": "630 Prince of Wales Rd, Darnall, Sheffield S9 4ER",
+    "postcode": "S9 4ER",
+    "latitude": 53.3795312,
+    "longitude": -1.4100546,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-05T18:47:12.257Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=2451271285873553585&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  }
+]

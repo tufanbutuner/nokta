@@ -332,6 +332,10 @@ async function getVenueMetadata(slug: string, url: string): Promise<VenueLookup>
     // An empty result from a healthy query is the only outcome that genuinely means
     // "no such venue" — every failure above is an outage and must not become a 404.
     if (!venue) return { status: "missing" };
+    // A permanently-closed venue is deliberately hidden from the app, so the crawler
+    // must not keep the URL indexed either — treat it as gone rather than serving a
+    // page users can no longer reach. It stays in the database for reference.
+    if (venue.business_status === "permanently-closed") return { status: "missing" };
 
     return {
       status: "found",
