@@ -12,14 +12,18 @@ interface UseVenueResult {
 
 export function useVenue(slug?: string): UseVenueResult {
   const { isLoading: isLoadingAuth } = useAuth();
-  const { isAdmin: canSeeTestVenues, isLoading: isLoadingAdmin } = useIsAdmin();
+  const { isAdmin: canSeeHiddenVenues, isLoading: isLoadingAdmin } = useIsAdmin();
   const query = useQuery({
     queryKey: ["venue", slug],
     queryFn: () => getVenueBySlug(slug ?? ""),
     enabled: !isLoadingAuth && Boolean(slug),
   });
 
-  const venue = query.data?.isTest && !canSeeTestVenues ? null : query.data ?? null;
+  // Permanently-closed venues are kept in the database for reference, but showing
+  // one to a user is misleading: the listing implies somewhere they can still go.
+  // Admins keep seeing them so the records stay manageable.
+  const isHiddenFromUsers = query.data?.isTest || query.data?.businessStatus === "permanently-closed";
+  const venue = isHiddenFromUsers && !canSeeHiddenVenues ? null : query.data ?? null;
   const error = query.error instanceof Error ? query.error.message : query.error ? "Could not load venue." : null;
 
   return { venue, isLoading: isLoadingAuth || isLoadingAdmin || (Boolean(slug) && query.isPending), error };
