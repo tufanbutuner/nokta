@@ -51,6 +51,42 @@ export const EXCLUDED_VENUES: ExcludedVenue[] = [
     slug: "eye-cloud-vape-shisha-grinder-bong-gift-shop-st-pauls",
     reason: "Shop selling shisha products, not a lounge to sit and smoke in.",
   },
+  {
+    slug: "shisha-delivery-13a-crawford-st",
+    reason: "Delivery service (Google primaryType: shipping_service), not a venue to visit.",
+  },
+  {
+    slug: "shisha-delivery-nottingham-city-centre",
+    reason: "Delivery service (Google primaryType: shipping_service), not a venue to visit.",
+  },
+  {
+    slug: "shisha-wholesale-manchester-roe-lee",
+    reason: "Wholesaler (Google primaryType: wholesaler), not a venue to visit.",
+  },
+  {
+    slug: "eden-shisha-lounge-hire-and-events-manchester-and-cheshire-ardwick",
+    reason: "Equipment hire and events service (Google primaryType: shipping_service), not a fixed venue.",
+  },
+  {
+    slug: "the-shisha-shop-bradford-city-centre",
+    reason: "Shop selling shisha products (Google primaryType: store), not a lounge.",
+  },
+  {
+    slug: "l-and-a-shisha-shop-govan",
+    reason: "Shop selling shisha products (Google primaryType: store), not a lounge.",
+  },
+  {
+    slug: "highgate-shisha-shop-balsall-heath",
+    reason: "Shop selling shisha products (Google primaryType: store), not a lounge.",
+  },
+  {
+    slug: "king-shisha-store-sheffield-burngreave",
+    reason: "Shop selling shisha products (Google primaryType: store), not a lounge.",
+  },
+  {
+    slug: "amalfi-lounge-online-darwen",
+    reason: "Takeaway (Google primaryType: meal_takeaway), not a shisha lounge.",
+  },
 ];
 
 const EXCLUDED_SLUGS = new Set(EXCLUDED_VENUES.map((entry) => entry.slug.toLowerCase()));

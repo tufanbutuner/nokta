@@ -1194,49 +1194,6 @@
     "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
   },
   {
-    "id": "king-shisha-store-sheffield-burngreave",
-    "slug": "king-shisha-store-sheffield-burngreave",
-    "name": "King shisha store Sheffield",
-    "description": "King shisha store Sheffield is a spot for shisha in Burngreave, Sheffield. Check directly with the venue before travelling or booking.",
-    "country": "United Kingdom",
-    "city": "Sheffield",
-    "area": "Burngreave",
-    "address": "8-10 Stanley St, Sheffield S3 8HJ",
-    "postcode": "S3 8HJ",
-    "latitude": 53.3872937,
-    "longitude": -1.4633947999999999,
-    "rating": null,
-    "priceFrom": null,
-    "priceLevel": 2,
-    "primaryCategory": "shisha_lounge",
-    "secondaryCategories": [
-      "shisha",
-      "groups"
-    ],
-    "indoor": true,
-    "outdoor": false,
-    "food": false,
-    "alcohol": false,
-    "openLate": false,
-    "vibes": [
-      "casual",
-      "groups"
-    ],
-    "images": [],
-    "openingHours": [],
-    "website": null,
-    "instagram": null,
-    "phone": "07933 001761",
-    "businessStatus": "open",
-    "verificationStatus": "partially-verified",
-    "lastVerifiedAt": "2026-10-05T18:47:12.257Z",
-    "dataSources": {
-      "directorySource": "Google Places API Text Search",
-      "otherSource": "https://maps.google.com/?cid=3097723238512281189&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-    },
-    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
-  },
-  {
     "id": "zorro-lounge-stocksbridge",
     "slug": "zorro-lounge-stocksbridge",
     "name": "Zorro Lounge",
