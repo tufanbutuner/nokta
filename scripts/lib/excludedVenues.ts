@@ -87,6 +87,82 @@ export const EXCLUDED_VENUES: ExcludedVenue[] = [
     slug: "amalfi-lounge-online-darwen",
     reason: "Takeaway (Google primaryType: meal_takeaway), not a shisha lounge.",
   },
+  {
+    slug: "hookah-shisha-sheesha-and-pipes-city-centre",
+    reason: "Shop selling shisha products (Google primaryType: store), not a venue to visit.",
+  },
+  {
+    slug: "shisha-town-mcr-levenshulme",
+    reason: "Shop selling shisha products (Google primaryType: store), not a venue to visit.",
+  },
+  {
+    slug: "shisha-on-wheels-glasgow-pollokshields",
+    reason: "Shop selling shisha products (Google primaryType: store), not a venue to visit.",
+  },
+  {
+    slug: "vaporz-and-shisha-214-edgware-rd",
+    reason: "Shop selling shisha products (Google primaryType: store), not a venue to visit.",
+  },
+  {
+    slug: "foji-s-ice-lounge-burslem",
+    reason: "Dessert shop (Google primaryType: dessert_shop), not a venue to visit.",
+  },
+  {
+    slug: "dial-a-shisha-highfields",
+    reason: "Delivery service (Google primaryType: shipping_service), not a venue to visit.",
+  },
+  {
+    slug: "rumaan-dial-a-shisha-cheetham-hill",
+    reason: "Delivery service (Google primaryType: shipping_service), not a venue to visit.",
+  },
+  {
+    slug: "babley-shisha-evington",
+    reason: "Shop selling shisha products (Google primaryType: store), not a venue to visit.",
+  },
+  {
+    slug: "shisharoo-highfields",
+    reason: "Delivery service (Google primaryType: shipping_service), not a venue to visit.",
+  },
+  {
+    slug: "shisha-drop-evington",
+    reason: "Delivery service (Google primaryType: shipping_service), not a venue to visit.",
+  },
+  {
+    slug: "shisha-corner-sneinton",
+    reason: "Shop selling shisha products (Google primaryType: store), not a venue to visit.",
+  },
+  {
+    slug: "shisha-planet-leagrave",
+    reason: "Shop selling shisha products (Google primaryType: store), not a venue to visit.",
+  },
+  {
+    slug: "shisha-and-sweet-paan-centre-bedfodshire",
+    reason: "Shop selling shisha products (Google primaryType: store), not a venue to visit.",
+  },
+  {
+    slug: "shisha-coco-mammut-foleshill",
+    reason: "Shop selling shisha products (Google primaryType: store), not a venue to visit.",
+  },
+  {
+    slug: "imjustshisha-office-14",
+    reason: "Delivery service (Google primaryType: shipping_service), not a venue to visit.",
+  },
+  {
+    slug: "shisha-house-newcastle-fenham",
+    reason: "Shop selling shisha products (Google primaryType: store), not a venue to visit.",
+  },
+  {
+    slug: "exhale-shisha-fenham",
+    reason: "Shop selling shisha products (Google primaryType: store), not a venue to visit.",
+  },
+  {
+    slug: "mu-assel-dial-a-shisha-town-centre",
+    reason: "Shop selling shisha products (Google primaryType: store), not a venue to visit.",
+  },
+  {
+    slug: "dial-me-a-shisha-heaton",
+    reason: "Delivery service (Google primaryType: shipping_service), not a venue to visit.",
+  },
 ];
 
 const EXCLUDED_SLUGS = new Set(EXCLUDED_VENUES.map((entry) => entry.slug.toLowerCase()));

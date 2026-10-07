@@ -783,48 +783,5 @@
       "otherSource": "https://maps.google.com/?cid=15463302793675127210&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
     },
     "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
-  },
-  {
-    "id": "shisha-on-wheels-glasgow-pollokshields",
-    "slug": "shisha-on-wheels-glasgow-pollokshields",
-    "name": "Shisha on wheels Glasgow",
-    "description": "Shisha on wheels Glasgow is a spot for shisha in Pollokshields, Glasgow. Check directly with the venue before travelling or booking.",
-    "country": "United Kingdom",
-    "city": "Glasgow",
-    "area": "Pollokshields",
-    "address": "33 St Andrews Rd, Glasgow G41 1PF",
-    "postcode": "G41 1PF",
-    "latitude": 55.844590600000004,
-    "longitude": -4.2689674,
-    "rating": null,
-    "priceFrom": null,
-    "priceLevel": 2,
-    "primaryCategory": "shisha_lounge",
-    "secondaryCategories": [
-      "shisha",
-      "groups"
-    ],
-    "indoor": true,
-    "outdoor": false,
-    "food": false,
-    "alcohol": false,
-    "openLate": false,
-    "vibes": [
-      "casual",
-      "groups"
-    ],
-    "images": [],
-    "openingHours": [],
-    "website": null,
-    "instagram": null,
-    "phone": "0141 429 0312",
-    "businessStatus": "open",
-    "verificationStatus": "partially-verified",
-    "lastVerifiedAt": "2026-10-05T18:43:47.798Z",
-    "dataSources": {
-      "directorySource": "Google Places API Text Search",
-      "otherSource": "https://maps.google.com/?cid=2864074855211498585&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-    },
-    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
   }
 ]

@@ -29,6 +29,7 @@ import path from "node:path";
 import { SUPPORTED_CITIES } from "../src/data/supportedCities";
 import { DISCOVERY_CITIES, getCitiesInTranche, getDiscoveryCity, type DiscoveryCity } from "./lib/discoveryCities";
 import { isExcludedVenue } from "./lib/excludedVenues";
+import { isVisitableVenue } from "./lib/venueTypes";
 import { resolveArea, stripCitySuffix, type AddressComponent } from "./lib/venueArea";
 
 config({ path: ".env.local", quiet: true });
@@ -46,6 +47,7 @@ const FIELD_MASK = [
   "places.location",
   "places.businessStatus",
   "places.types",
+  "places.primaryType",
   "places.websiteUri",
   "places.nationalPhoneNumber",
   "places.internationalPhoneNumber",
@@ -75,6 +77,7 @@ type GooglePlace = {
   location?: { latitude?: number; longitude?: number };
   businessStatus?: "OPERATIONAL" | "CLOSED_TEMPORARILY" | "CLOSED_PERMANENTLY";
   types?: string[];
+  primaryType?: string;
   websiteUri?: string;
   nationalPhoneNumber?: string;
   internationalPhoneNumber?: string;
@@ -367,7 +370,7 @@ function isUsablePlace(place: GooglePlace, city: DiscoveryCity) {
   const looksRelevant = /shisha|hookah|sheesha|sisha|lounge|cafe|café|restaurant|bar/.test(name);
   // Permanently-closed venues are hidden from users anyway, so do not seed new ones.
   const isOpen = place.businessStatus !== "CLOSED_PERMANENTLY";
-  return Boolean(place.id && hasLocation && isUk && inCatchment && looksRelevant && isOpen);
+  return Boolean(place.id && hasLocation && isUk && inCatchment && looksRelevant && isOpen && isVisitableVenue(place));
 }
 
 function isExplicitShishaVenue(place: GooglePlace) {
