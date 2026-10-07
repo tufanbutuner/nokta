@@ -129,7 +129,7 @@ export function HomePage() {
         <section>
           <div className="mb-5 flex items-end justify-between gap-4">
             <div>
-              <h2 className="text-2xl font-semibold sm:text-3xl">Places in {filters.city}</h2>
+              <h2 className="text-2xl font-semibold sm:text-3xl">{filters.query.trim() ? "Places across the UK" : `Places in ${filters.city}`}</h2>
               {!isLoading && !error ? (
                 <p className="mt-1 text-sm text-muted-foreground">
                   {filteredVenues.length === 1 ? "1 venue" : `${filteredVenues.length} venues`} matching your search
@@ -148,7 +148,7 @@ export function HomePage() {
           ) : error ? (
             <ErrorState message={error} />
           ) : visibleVenues.length ? (
-            <LandingVenueGrid venues={visibleVenues} />
+            <LandingVenueGrid venues={visibleVenues} showCity={Boolean(filters.query.trim())} />
           ) : (
             <div className="rounded-2xl border border-dashed border-nokta-border bg-nokta-surface-alt px-6 py-14 text-center">
               <h3 className="text-xl font-semibold">No venues match those filters</h3>
@@ -265,15 +265,15 @@ function HomepageFilterChip({ label, active, onClick }: { label: string; active:
   );
 }
 
-function LandingVenueGrid({ venues }: { venues: Venue[] }) {
+function LandingVenueGrid({ venues, showCity = false }: { venues: Venue[]; showCity?: boolean }) {
   if (!venues.length) {
-    return <VenueGrid venues={venues} />;
+    return <VenueGrid venues={venues} showCity={showCity} />;
   }
 
   return (
     <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
       {venues.map((venue) => (
-        <LandingVenueCard key={venue.id} venue={venue} />
+        <LandingVenueCard key={venue.id} venue={venue} showCity={showCity} />
       ))}
     </div>
   );
@@ -323,9 +323,11 @@ function LandingVenueGridSkeleton() {
   );
 }
 
-function LandingVenueCard({ venue }: { venue: Venue }) {
+function LandingVenueCard({ venue, showCity = false }: { venue: Venue; showCity?: boolean }) {
   const currentStatus = getVenueCurrentStatus(venue);
   const currentStatusLabel = formatLandingStatus(currentStatus);
+  // A search spans every city, so the area alone would not say where the venue is.
+  const location = showCity && venue.city && venue.city !== venue.area ? `${venue.area}, ${venue.city}` : venue.area;
 
   return (
     <article className="group relative isolate overflow-hidden rounded-2xl border border-nokta-border bg-nokta-surface p-2 shadow-none transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-stone-950/5">
@@ -349,7 +351,7 @@ function LandingVenueCard({ venue }: { venue: Venue }) {
       <div className="px-2 pb-2 pt-3">
         <Link to={`/venues/${venue.slug}`} className="block">
           <h3 className="truncate text-[15px] font-semibold leading-5 text-nokta-ink">{venue.name}</h3>
-          <p className="mt-0.5 truncate text-[13px] leading-5 text-nokta-ink-muted">{venue.area} · {formatVenuePrimaryCategory(venue.primaryCategory)}</p>
+          <p className="mt-0.5 truncate text-[13px] leading-5 text-nokta-ink-muted">{location} · {formatVenuePrimaryCategory(venue.primaryCategory)}</p>
         </Link>
         {venue.priceFrom || currentStatusLabel ? (
           <div className="mt-4 flex items-center justify-between gap-3">

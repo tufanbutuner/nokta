@@ -3,15 +3,21 @@ import type { VenueFilterState } from "@/types/filters";
 import { isVenueOpenNow } from "@/lib/openingHours";
 
 export function filterVenues(venues: Venue[], filters: VenueFilterState): Venue[] {
+  const query = filters.query.trim().toLowerCase();
+  // A typed search looks across the whole country. Someone searching a venue by name rarely
+  // knows or cares which city it is filed under, and silently hiding a match because the city
+  // selector says London reads as "we do not have it" rather than "it is in Birmingham".
+  // The city and area selectors still apply while the search box is empty.
+  const searchIsGlobal = query.length > 0;
+
   return venues.filter((venue) => {
-    const query = filters.query.trim().toLowerCase();
     const searchableVibes = venue.vibes.map((vibe) => vibe.replace("-", " ")).join(" ");
     const haystack = `${venue.name} ${venue.city} ${venue.area} ${venue.description} ${searchableVibes}`.toLowerCase();
 
     const matchesCountry = venue.country === filters.country;
-    const matchesCity = venue.city === filters.city;
+    const matchesCity = searchIsGlobal || venue.city === filters.city;
     const matchesQuery = !query || haystack.includes(query);
-    const matchesArea = filters.area === "all" || venue.area === filters.area;
+    const matchesArea = searchIsGlobal || filters.area === "all" || venue.area === filters.area;
     const matchesCategory =
       filters.primaryCategories.length === 0 ||
       filters.primaryCategories.some((category) => venue.primaryCategory === category || venue.secondaryCategories.includes(getSecondaryCategoryMatch(category)));

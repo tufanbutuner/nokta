@@ -163,6 +163,8 @@ export function isAddressFragment(value: string) {
   // A single word that only qualifies a place name ("Greater", as in Greater Manchester) or
   // repeats the category ("Shisha") is a sliced address line, not a neighbourhood.
   if (/^(greater|central|north|south|east|west|upper|lower|inner|outer|shisha|hookah|lounge|cafe|restaurant|bar)$/i.test(trimmed)) return true;
+  // A floor or level inside a building is a position in a premises, not a place: "First floor".
+  if (/^(first|second|third|fourth|ground|lower|upper|basement|top|mezzanine)\s+(floor|level)$/i.test(trimmed)) return true;
   // A named building, estate or business park is a premises, not an area: "Waverley House",
   // "Adco Business Centre". Google returns these as localities for venues inside them.
   // "City Centre" is excluded by name: it is the one "centre" that IS an area, and several

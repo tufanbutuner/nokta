@@ -16,12 +16,15 @@ export function VenueMapResultList({
   userLocation,
   reviewSummaries = {},
   onSelectVenue,
+  showCity = false,
 }: {
   venues: Venue[];
   selectedVenueId?: string;
   userLocation?: UserLocation | null;
   reviewSummaries?: Record<string, VenueRatingSummary>;
   onSelectVenue: (venue: Venue) => void;
+  /** A search spans every city, so the area alone would not say where a venue is. */
+  showCity?: boolean;
 }) {
   return (
     <div className="space-y-2">
@@ -58,7 +61,7 @@ export function VenueMapResultList({
                   {venue.name}
                 </Link>
                 <p className="mt-0.5 truncate text-xs leading-4 text-nokta-ink-muted">
-                  {venue.area}
+                  {showCity && venue.city && venue.city !== venue.area ? `${venue.area}, ${venue.city}` : venue.area}
                   {distanceLabel ? <span> • {distanceLabel}</span> : null}
                   <span> • {formatPriceLevel(venue.priceLevel)}</span>
                 </p>

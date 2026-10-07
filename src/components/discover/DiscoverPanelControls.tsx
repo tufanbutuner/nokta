@@ -53,6 +53,9 @@ export function DiscoveryFilterChips({
 }
 
 export function ActiveFilterChips({ filters, onClear }: { filters: VenueFilterState; onClear: () => void }) {
+  // A search runs across every city, so the city and area chips would claim a narrowing that
+  // is not being applied.
+  const isSearching = Boolean(filters.query.trim());
   const showChips = filters.query.trim() || filters.city !== DEFAULT_CITY || filters.area !== "all" || filters.primaryCategories.length || filters.vibes.length;
 
   if (!showChips) return null;
@@ -60,8 +63,9 @@ export function ActiveFilterChips({ filters, onClear }: { filters: VenueFilterSt
   return (
     <div className="flex flex-wrap items-center gap-1.5">
       {filters.query.trim() ? <ActiveFilterBadge>Search: {filters.query.trim()}</ActiveFilterBadge> : null}
-      {filters.city !== DEFAULT_CITY ? <ActiveFilterBadge>{filters.city}</ActiveFilterBadge> : null}
-      {filters.area !== "all" ? <ActiveFilterBadge>{filters.area}</ActiveFilterBadge> : null}
+      {isSearching ? <ActiveFilterBadge>All cities</ActiveFilterBadge> : null}
+      {!isSearching && filters.city !== DEFAULT_CITY ? <ActiveFilterBadge>{filters.city}</ActiveFilterBadge> : null}
+      {!isSearching && filters.area !== "all" ? <ActiveFilterBadge>{filters.area}</ActiveFilterBadge> : null}
       {filters.primaryCategories.map((category) => (
         <ActiveFilterBadge key={category}>{formatVenuePrimaryCategory(category)}</ActiveFilterBadge>
       ))}

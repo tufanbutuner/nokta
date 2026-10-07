@@ -49,7 +49,7 @@ export function SavedPage() {
         ) : preferencesError ? (
           <ErrorState message={preferencesError} />
         ) : savedVenues.length ? (
-          <VenueGrid venues={savedVenues} />
+          <VenueGrid venues={savedVenues} showCity />
         ) : (
           <SavedEmptyState showSignInCta={!user} />
         )}

@@ -27,7 +27,7 @@ export function RecentlyViewedVenues({ venues }: { venues: Venue[] }) {
           </Link>
         </Button>
       </div>
-      <VenueGrid venues={recentlyViewedVenues} />
+      <VenueGrid venues={recentlyViewedVenues} showCity />
     </section>
   );
 }

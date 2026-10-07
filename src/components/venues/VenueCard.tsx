@@ -11,8 +11,14 @@ import { VenueImage } from "@/components/venues/VenueImage";
 import type { UserLocation } from "@/types/location";
 import { Venue } from "@/types/venue";
 
-export function VenueCard({ venue, userLocation }: { venue: Venue; userLocation?: UserLocation | null }) {
+/**
+ * `showCity` adds the city to the location line. It is off by default because the city is
+ * redundant while browsing one city, but a search spans the whole country and "Roath" alone
+ * does not tell anyone the venue is in Cardiff.
+ */
+export function VenueCard({ venue, userLocation, showCity = false }: { venue: Venue; userLocation?: UserLocation | null; showCity?: boolean }) {
   const currentStatus = getVenueCurrentStatus(venue);
+  const location = showCity && venue.city && venue.city !== venue.area ? `${venue.area}, ${venue.city}` : venue.area;
 
   return (
     <Card className="group rounded-2xl border-nokta-border bg-nokta-surface p-2 shadow-none transition duration-200 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-stone-950/5">
@@ -36,7 +42,7 @@ export function VenueCard({ venue, userLocation }: { venue: Venue; userLocation?
         <Link to={`/venues/${venue.slug}`} className="block">
           <div>
             <h3 className="truncate text-[15px] font-semibold leading-5 text-nokta-ink">{venue.name}</h3>
-            <p className="mt-0.5 truncate text-[13px] font-normal leading-5 text-nokta-ink-muted">{venue.area} · {formatVenuePrimaryCategory(venue.primaryCategory)}</p>
+            <p className="mt-0.5 truncate text-[13px] font-normal leading-5 text-nokta-ink-muted">{location} · {formatVenuePrimaryCategory(venue.primaryCategory)}</p>
             <div className="mt-4 flex items-center justify-between gap-3 text-[13px] font-medium text-nokta-ink-muted">
               <span className="flex min-w-0 flex-wrap items-center gap-x-2 gap-y-1">
                 <VenuePrice level={venue.priceLevel} from={venue.priceFrom} />

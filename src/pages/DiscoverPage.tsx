@@ -58,7 +58,13 @@ export function DiscoverPage() {
   const { summaries: reviewSummaries } = useVenueReviewSummaries(venueIds);
   const resultLabel =
     sortedVenues.length === 0 ? "No venues" : sortedVenues.length === 1 ? "1 venue" : `${sortedVenues.length} venues`;
-  const resultContextLabel = savedLocation ? `${resultLabel} near ${savedLocation.label}` : resultLabel;
+  // A search runs across every city, so a "near <saved location>" label would misdescribe it.
+  const isSearching = Boolean(filters.query.trim());
+  const resultContextLabel = isSearching
+    ? `${resultLabel} across the UK`
+    : savedLocation
+      ? `${resultLabel} near ${savedLocation.label}`
+      : resultLabel;
   const venueStatusCounts = sortedVenues.reduce(
     (counts, venue) => {
       const currentStatus = getVenueCurrentStatus(venue);
@@ -191,6 +197,7 @@ export function DiscoverPage() {
                   <DiscoverFeaturedVenues city={filters.city} area={filters.area} venues={sortedVenues} />
                   <VenueMapResultList
                     venues={sortedVenues}
+                    showCity={Boolean(filters.query.trim())}
                     selectedVenueId={selectedVenueId}
                     userLocation={userLocation}
                     reviewSummaries={reviewSummaries}
