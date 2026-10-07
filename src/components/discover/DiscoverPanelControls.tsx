@@ -1,10 +1,10 @@
 import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
-import { SlidersHorizontal, X } from "lucide-react";
+import { ChevronDown, SlidersHorizontal, X } from "lucide-react";
 import { EmptyState } from "@/components/state/EmptyState";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { DEFAULT_CITY } from "@/lib/cities";
+import { DEFAULT_CITY, getActiveCities } from "@/lib/cities";
 import { cn } from "@/lib/utils";
 import { formatVibe, hasActiveFilters } from "@/lib/venueFilters";
 import { formatVenuePrimaryCategory } from "@/lib/venueCategoryLabels";
@@ -23,8 +23,15 @@ export function DiscoveryFilterChips({
   onChange: (filters: VenueFilterState) => void;
   onToggleFilters: () => void;
 }) {
+  // A search spans every city, so the city control would claim a narrowing that is not applied.
+  const isSearching = Boolean(filters.query.trim());
+
   return (
     <div className="flex flex-wrap gap-1.5">
+      {/* City comes first and always shows its value: results are filtered by it from the
+          moment the page loads, and leaving that only in the Filters panel made the default
+          look like "everywhere" when it was really London. */}
+      <CityChip city={filters.city} disabled={isSearching} onChange={(city) => onChange({ ...filters, city, area: "all" })} />
       <FilterChip active={filters.openNow} label="Open now" onClick={() => onChange({ ...filters, openNow: !filters.openNow })} />
       <FilterChip active={filters.priceLevel === 1} label="£ Budget" onClick={() => onChange({ ...filters, priceLevel: filters.priceLevel === 1 ? "all" : 1 })} />
       <FilterChip active={filters.minRating === 4} label="Rating 4+" onClick={() => onChange({ ...filters, minRating: filters.minRating === 4 ? "all" : 4 })} />
@@ -110,6 +117,39 @@ export function getAdvancedFilterCount(filters: VenueFilterState) {
     filters.minRating !== "all",
     Object.values(filters.features).some(Boolean),
   ].filter(Boolean).length;
+}
+
+/**
+ * The city, styled as a chip but backed by a native select so the whole list is reachable in one
+ * tap on a phone. It reads as selected because it always is — unlike the other chips, there is
+ * no "off" state, so it carries the ink background whatever the value.
+ */
+function CityChip({ city, disabled, onChange }: { city: string; disabled: boolean; onChange: (city: string) => void }) {
+  const cities = getActiveCities();
+
+  return (
+    <div className="relative inline-flex">
+      <select
+        aria-label="City"
+        value={city}
+        disabled={disabled}
+        onChange={(event) => onChange(event.target.value)}
+        className={cn(
+          "h-8 cursor-pointer appearance-none rounded-full bg-nokta-ink py-0 pl-3 pr-7 text-xs font-semibold text-white transition-colors hover:bg-nokta-ink/90",
+          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nokta-ink focus-visible:ring-offset-2",
+          disabled && "cursor-not-allowed opacity-50",
+        )}
+        title={disabled ? "A search covers every city" : undefined}
+      >
+        {cities.map((entry) => (
+          <option key={entry.slug} value={entry.name}>
+            {entry.name}
+          </option>
+        ))}
+      </select>
+      <ChevronDown className="pointer-events-none absolute right-2 top-1/2 h-3 w-3 -translate-y-1/2 text-white" aria-hidden />
+    </div>
+  );
 }
 
 function FilterChip({ active, label, onClick }: { active: boolean; label: string; onClick: () => void }) {
