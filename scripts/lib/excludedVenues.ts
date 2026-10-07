@@ -23,6 +23,26 @@ export const EXCLUDED_VENUES: ExcludedVenue[] = [
     slug: "lounge-bohemia-by-appointment-shoreditch",
     reason: "Cocktail bar, not a shisha venue. Matched only on the word 'lounge' in its name.",
   },
+  {
+    slug: "142b-lounge-nightclub-city-centre",
+    reason: "Nightclub, not a shisha venue. Matched on 'lounge' in its name.",
+  },
+  {
+    slug: "sky-blue-vape-lounge-earlsdon",
+    reason: "Vape shop, not a shisha lounge. Matched on 'lounge' in its name.",
+  },
+  {
+    slug: "sky-blue-vape-lounge-foleshill",
+    reason: "Vape shop, not a shisha lounge. Matched on 'lounge' in its name.",
+  },
+  {
+    slug: "vapourz-lounge-vape-shop-tooting-broadway-49-tooting-high-st",
+    reason: "Vape shop, not a shisha lounge. Matched on 'lounge' in its name.",
+  },
+  {
+    slug: "atmos-central-vape-e-cig-and-coffee-lounge-westcotes",
+    reason: "Vape and e-cigarette shop, not a shisha lounge. Matched on 'lounge' in its name.",
+  },
 ];
 
 const EXCLUDED_SLUGS = new Set(EXCLUDED_VENUES.map((entry) => entry.slug.toLowerCase()));
