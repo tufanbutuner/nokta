@@ -9,6 +9,14 @@ import { useEffect, useRef, useState } from "react";
 const SWIPE_THRESHOLD_PX = 45;
 
 /**
+ * Gallery height, shared by the mobile carousel, the desktop mosaic and the empty-state tile so
+ * they cannot drift apart. It grows with the viewport: at 240px the small mosaic cells cropped
+ * venue interiors down to an unreadable sliver, and photographs are the main thing someone
+ * judges a venue on.
+ */
+const GALLERY_HEIGHT = "h-[300px] md:h-[380px] lg:h-[440px]";
+
+/**
  * Venue photos at the top of the content column: a swipeable carousel on phones, and a mosaic
  * of one large photo and up to three small ones from the `sm` breakpoint up, with the gallery
  * button in its bottom-right cell. Photos returns here as a button rather than a tab.
@@ -20,7 +28,7 @@ export function PhotoGallery({ venue, images, onOpenImage }: { venue: Venue; ima
    */
   if (!images.length) {
     return (
-      <section className="h-[240px] overflow-hidden rounded-[14px] [container-type:inline-size]">
+      <section className={cn(GALLERY_HEIGHT, "overflow-hidden rounded-[14px] [container-type:inline-size]")}>
         <VenuePlaceholder venue={venue} className="h-full w-full" monogramClassName="text-[clamp(32px,9cqi,56px)]" />
       </section>
     );
@@ -55,7 +63,7 @@ export function PhotoGallery({ venue, images, onOpenImage }: { venue: Venue; ima
     <>
       <MobilePhotoCarousel venue={venue} images={images} onOpenImage={onOpenImage} allPhotosButton={allPhotosButton} />
 
-      <section className={cn("relative hidden h-[240px] gap-[3px] overflow-hidden rounded-[14px] sm:grid", columnsClassName)}>
+      <section className={cn("relative hidden gap-[3px] overflow-hidden rounded-[14px] sm:grid", GALLERY_HEIGHT, columnsClassName)}>
         <HeroPhotoCell image={stripImages[0]} venue={venue} index={0} onOpenImage={onOpenImage} />
 
         {stripImages.length === 2 ? <HeroPhotoCell image={stripImages[1]} venue={venue} index={1} onOpenImage={onOpenImage} /> : null}
@@ -112,7 +120,7 @@ function MobilePhotoCarousel({
   return (
     <section className="relative sm:hidden">
       <div
-        className="flex h-[240px] snap-x snap-mandatory overflow-x-auto overflow-y-hidden rounded-[14px] [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        className={cn(GALLERY_HEIGHT, "flex snap-x snap-mandatory overflow-x-auto overflow-y-hidden rounded-[14px] [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden")}
         onScroll={handleScroll}
         aria-label={`${venue.name} photos, swipe to browse`}
       >
