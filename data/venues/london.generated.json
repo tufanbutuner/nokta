@@ -256,8 +256,8 @@
   {
     "id": "hirmiz-caf-mayfair-private-shisha-london",
     "slug": "hirmiz-caf-mayfair-private-shisha-london",
-    "name": "Hirmiz Café Mayfair- Private Shisha",
-    "description": "Hirmiz Café Mayfair- Private Shisha is a spot for shisha in Mayfair, London with food. Check directly with the venue before travelling or booking.",
+    "name": "Hirmiz Caf\u00e9 Mayfair- Private Shisha",
+    "description": "Hirmiz Caf\u00e9 Mayfair- Private Shisha is a spot for shisha in Mayfair, London with food. Check directly with the venue before travelling or booking.",
     "country": "United Kingdom",
     "city": "London",
     "area": "Mayfair",
@@ -1755,8 +1755,8 @@
   {
     "id": "shisha-battersea",
     "slug": "shisha-battersea",
-    "name": "Shisha ع الرايق شيشه",
-    "description": "Shisha ع الرايق شيشه is a spot for shisha in Battersea, London with food. Check directly with the venue before travelling or booking.",
+    "name": "Shisha \u0639 \u0627\u0644\u0631\u0627\u064a\u0642 \u0634\u064a\u0634\u0647",
+    "description": "Shisha \u0639 \u0627\u0644\u0631\u0627\u064a\u0642 \u0634\u064a\u0634\u0647 is a spot for shisha in Battersea, London with food. Check directly with the venue before travelling or booking.",
     "country": "United Kingdom",
     "city": "London",
     "area": "Battersea",
@@ -3089,8 +3089,8 @@
   {
     "id": "fum-e-lounge-south-tottenham",
     "slug": "fum-e-lounge-south-tottenham",
-    "name": "Fumée Lounge",
-    "description": "Fumée Lounge is a spot for shisha in South Tottenham, London with food and drinks, late opening. Check directly with the venue before travelling or booking.",
+    "name": "Fum\u00e9e Lounge",
+    "description": "Fum\u00e9e Lounge is a spot for shisha in South Tottenham, London with food and drinks, late opening. Check directly with the venue before travelling or booking.",
     "country": "United Kingdom",
     "city": "London",
     "area": "South Tottenham",
@@ -3412,91 +3412,6 @@
       "directorySource": "Google Places API Text Search",
       "officialWebsite": "https://oasislounge.london/",
       "otherSource": "https://maps.google.com/?cid=11750027733322116185&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-    },
-    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
-  },
-  {
-    "id": "lounge-bohemia-by-appointment-shoreditch",
-    "slug": "lounge-bohemia-by-appointment-shoreditch",
-    "name": "LOUNGE BOHEMIA - by appointment",
-    "description": "LOUNGE BOHEMIA - by appointment is a spot for shisha in Shoreditch, London with food and drinks, late opening. Check the venue website before travelling or booking.",
-    "country": "United Kingdom",
-    "city": "London",
-    "area": "Shoreditch",
-    "address": "1e Great Eastern St, London EC2A 3EJ",
-    "postcode": "EC2A 3EJ",
-    "latitude": 51.522844,
-    "longitude": -0.078126,
-    "rating": null,
-    "priceFrom": null,
-    "priceLevel": 2,
-    "primaryCategory": "shisha_lounge",
-    "secondaryCategories": [
-      "shisha",
-      "groups",
-      "food",
-      "cocktails",
-      "late_night"
-    ],
-    "indoor": true,
-    "outdoor": false,
-    "food": true,
-    "alcohol": true,
-    "openLate": true,
-    "vibes": [
-      "casual",
-      "groups",
-      "late-night",
-      "date-night"
-    ],
-    "images": [],
-    "openingHours": [
-      {
-        "day": "Sunday",
-        "open": "18:00",
-        "close": "23:00"
-      },
-      {
-        "day": "Monday",
-        "open": "18:00",
-        "close": "00:00"
-      },
-      {
-        "day": "Tuesday",
-        "open": "18:00",
-        "close": "00:00"
-      },
-      {
-        "day": "Wednesday",
-        "open": "18:00",
-        "close": "00:00"
-      },
-      {
-        "day": "Thursday",
-        "open": "18:00",
-        "close": "00:00"
-      },
-      {
-        "day": "Friday",
-        "open": "18:00",
-        "close": "00:00"
-      },
-      {
-        "day": "Saturday",
-        "open": "18:00",
-        "close": "00:00"
-      }
-    ],
-    "website": "http://www.loungebohemia.com/",
-    "instagram": null,
-    "phone": "07720 707000",
-    "businessStatus": "open",
-    "verificationStatus": "partially-verified",
-    "lastVerifiedAt": "2026-10-05T17:42:56.750Z",
-    "dataSources": {
-      "directorySource": "Google Places API Text Search",
-      "officialWebsite": "http://www.loungebohemia.com/",
-      "otherSource": "https://maps.google.com/?cid=13790060879355730850&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
     },
     "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
   },
@@ -6182,8 +6097,8 @@
   {
     "id": "luna-lounge-by-r-e-manor-park",
     "slug": "luna-lounge-by-r-e-manor-park",
-    "name": "Luna Lounge by RÜE",
-    "description": "Luna Lounge by RÜE is a spot for shisha in Manor Park, London with late opening. Check directly with the venue before travelling or booking.",
+    "name": "Luna Lounge by R\u00dcE",
+    "description": "Luna Lounge by R\u00dcE is a spot for shisha in Manor Park, London with late opening. Check directly with the venue before travelling or booking.",
     "country": "United Kingdom",
     "city": "London",
     "area": "Manor Park",

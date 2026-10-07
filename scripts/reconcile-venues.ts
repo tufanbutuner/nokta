@@ -29,6 +29,7 @@ import { createClient } from "@supabase/supabase-js";
 import { config } from "dotenv";
 import fs from "node:fs";
 import path from "node:path";
+import { isExcludedVenue } from "./lib/excludedVenues";
 
 config({ path: ".env.local", quiet: true });
 config({ quiet: true });
@@ -142,6 +143,9 @@ function buildPlan(discovered: DiscoveredVenue[], existing: VenueRow[], areasOnl
   const matchedRowIds = new Set<string>();
 
   for (const venue of discovered) {
+    // A venue excluded by hand is skipped even if it is still sitting in the file, so a stale
+    // generated file cannot reinstate something that was deliberately removed.
+    if (isExcludedVenue(venue.slug)) continue;
     const cid = cidFrom(venue.dataSources as Record<string, unknown>);
     let row: VenueRow | undefined;
     let matchedBy = "";

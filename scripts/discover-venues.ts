@@ -28,6 +28,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { SUPPORTED_CITIES } from "../src/data/supportedCities";
 import { DISCOVERY_CITIES, getCitiesInTranche, getDiscoveryCity, type DiscoveryCity } from "./lib/discoveryCities";
+import { isExcludedVenue } from "./lib/excludedVenues";
 import { resolveArea, stripCitySuffix, type AddressComponent } from "./lib/venueArea";
 
 config({ path: ".env.local", quiet: true });
@@ -174,8 +175,13 @@ function writeCityOutput(city: DiscoveryCity, candidates: Candidate[]) {
   const curated: CuratedIndex = mergePath ? readCuratedSeed(mergePath) : { byKey: new Map(), matched: new Set(), all: [] };
 
   const slugCounts = new Map<string, number>();
-  const confirmedVenues = confirmed.map((candidate) => mergeCurated(toSeedVenue(candidate, slugCounts), curated));
-  const ambiguousVenues = ambiguous.map((candidate) => mergeCurated(toSeedVenue(candidate, slugCounts), curated));
+  // Venues rejected by hand must not come back on the next run.
+  const confirmedVenues = confirmed
+    .map((candidate) => mergeCurated(toSeedVenue(candidate, slugCounts), curated))
+    .filter((venue) => !isExcludedVenue(venue.slug));
+  const ambiguousVenues = ambiguous
+    .map((candidate) => mergeCurated(toSeedVenue(candidate, slugCounts), curated))
+    .filter((venue) => !isExcludedVenue(venue.slug));
 
   const outputPath = path.resolve(process.cwd(), `${OUTPUT_DIR}/${city.slug}.generated.json`);
   const reviewPath = path.resolve(process.cwd(), `${OUTPUT_DIR}/${city.slug}-review-needed.generated.json`);
