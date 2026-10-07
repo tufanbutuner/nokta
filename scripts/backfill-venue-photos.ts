@@ -252,6 +252,10 @@ async function findWebsitePhotos(venue: VenueRow): Promise<FoundPhoto[]> {
 }
 
 async function findPlacesPhotos(venue: VenueRow, apiKey: string): Promise<FoundPhoto[]> {
+  // Once the photo quota is gone, every further search spends a Text Search call for photos
+  // we cannot download. Stop asking.
+  if (placesQuotaExhausted) return [];
+
   let payload: { places?: Array<{ photos?: Array<{ name?: string; authorAttributions?: Array<{ displayName?: string }> }> }> };
 
   try {
@@ -291,10 +295,25 @@ async function findPlacesPhotos(venue: VenueRow, apiKey: string): Promise<FoundP
   });
 }
 
+/** Set once a Places quota refuses a download, so the run can stop instead of grinding on. */
+let placesQuotaExhausted = false;
+
 async function downloadImage(url: string) {
   try {
     const response = await fetchWithTimeout(url);
-    if (!response.ok) return null;
+    if (!response.ok) {
+      // A 429 from the photo-media endpoint is the daily or monthly Places quota, not a
+      // missing image. Treating it as "no photos found" hid a quota stop behind a result
+      // that looks like the venue simply has no imagery, which is a very different thing.
+      if (response.status === 429 && url.includes("places.googleapis.com")) {
+        if (!placesQuotaExhausted) {
+          console.warn("\n  !! Google Places photo quota exhausted — remaining venues will be skipped.");
+          console.warn("     Check the per-day limit at console.cloud.google.com/google/maps-apis/quotas\n");
+        }
+        placesQuotaExhausted = true;
+      }
+      return null;
+    }
 
     const contentType = (response.headers.get("content-type") ?? "").split(";")[0].trim().toLowerCase();
     const extension = ALLOWED_CONTENT_TYPES[contentType];
