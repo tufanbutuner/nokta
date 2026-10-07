@@ -98,7 +98,7 @@ export const SUPPORTED_CITIES: SupportedCity[] = [
     latitude: 51.8787,
     longitude: -0.4200,
     defaultZoom: 12,
-    isActive: false,
+    isActive: true,
   },
   {
     name: "Slough",
@@ -107,7 +107,7 @@ export const SUPPORTED_CITIES: SupportedCity[] = [
     latitude: 51.5105,
     longitude: -0.5950,
     defaultZoom: 12,
-    isActive: false,
+    isActive: true,
   },
   {
     name: "Reading",
@@ -116,7 +116,7 @@ export const SUPPORTED_CITIES: SupportedCity[] = [
     latitude: 51.4543,
     longitude: -0.9781,
     defaultZoom: 12,
-    isActive: false,
+    isActive: true,
   },
   {
     name: "Watford",
@@ -125,7 +125,7 @@ export const SUPPORTED_CITIES: SupportedCity[] = [
     latitude: 51.6565,
     longitude: -0.3903,
     defaultZoom: 12,
-    isActive: false,
+    isActive: true,
   },
   {
     name: "Coventry",
@@ -134,7 +134,7 @@ export const SUPPORTED_CITIES: SupportedCity[] = [
     latitude: 52.4068,
     longitude: -1.5197,
     defaultZoom: 12,
-    isActive: false,
+    isActive: true,
   },
   {
     name: "Wolverhampton",
@@ -143,7 +143,7 @@ export const SUPPORTED_CITIES: SupportedCity[] = [
     latitude: 52.5870,
     longitude: -2.1288,
     defaultZoom: 12,
-    isActive: false,
+    isActive: true,
   },
   {
     name: "Bristol",
@@ -152,7 +152,7 @@ export const SUPPORTED_CITIES: SupportedCity[] = [
     latitude: 51.4545,
     longitude: -2.5879,
     defaultZoom: 12,
-    isActive: false,
+    isActive: true,
   },
   {
     name: "Derby",
@@ -161,7 +161,7 @@ export const SUPPORTED_CITIES: SupportedCity[] = [
     latitude: 52.9226,
     longitude: -1.4746,
     defaultZoom: 12,
-    isActive: false,
+    isActive: true,
   },
   {
     name: "Stoke-on-Trent",
@@ -170,7 +170,7 @@ export const SUPPORTED_CITIES: SupportedCity[] = [
     latitude: 53.0027,
     longitude: -2.1794,
     defaultZoom: 12,
-    isActive: false,
+    isActive: true,
   },
   {
     name: "Newcastle upon Tyne",
@@ -179,7 +179,7 @@ export const SUPPORTED_CITIES: SupportedCity[] = [
     latitude: 54.9783,
     longitude: -1.6178,
     defaultZoom: 12,
-    isActive: false,
+    isActive: true,
   },
   {
     name: "Bolton",
@@ -188,7 +188,7 @@ export const SUPPORTED_CITIES: SupportedCity[] = [
     latitude: 53.5769,
     longitude: -2.4282,
     defaultZoom: 12,
-    isActive: false,
+    isActive: true,
   },
   {
     name: "Blackburn",
@@ -197,7 +197,7 @@ export const SUPPORTED_CITIES: SupportedCity[] = [
     latitude: 53.7486,
     longitude: -2.4820,
     defaultZoom: 12,
-    isActive: false,
+    isActive: true,
   },
   {
     name: "Preston",
@@ -206,7 +206,7 @@ export const SUPPORTED_CITIES: SupportedCity[] = [
     latitude: 53.7632,
     longitude: -2.7031,
     defaultZoom: 12,
-    isActive: false,
+    isActive: true,
   },
   {
     name: "Oldham",
@@ -215,7 +215,7 @@ export const SUPPORTED_CITIES: SupportedCity[] = [
     latitude: 53.5409,
     longitude: -2.1114,
     defaultZoom: 12,
-    isActive: false,
+    isActive: true,
   },
   {
     name: "Cardiff",
@@ -224,6 +224,6 @@ export const SUPPORTED_CITIES: SupportedCity[] = [
     latitude: 51.4816,
     longitude: -3.1791,
     defaultZoom: 12,
-    isActive: false,
+    isActive: true,
   },
 ];
