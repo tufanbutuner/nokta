@@ -35,7 +35,10 @@ export function SortSelect({
           ...option,
           label: option.value === "nearest" && !userLocation && !inline ? "Distance - set location first" : option.label,
         }))}
-        className={cn(inline ? "h-8 w-auto min-w-28 border-0 bg-transparent px-0 text-[13px] font-semibold text-nokta-ink shadow-none focus-visible:ring-0" : "w-full")}
+        // No minimum width inline: `min-w-28` held the trigger at 112px, so "Distance" and
+        // "Recommended" took the same room as "Price: low to high" and left a gap before the
+        // chevron. Let it size to whichever label is selected, as the city chip does.
+        className={cn(inline ? "h-8 w-auto gap-1 border-0 bg-transparent px-0 text-[13px] font-semibold text-nokta-ink shadow-none focus-visible:ring-0" : "w-full")}
       />
       {!inline && value === "nearest" && !userLocation ? (
         <p className="text-xs text-muted-foreground">Use my location to sort by nearest.</p>
