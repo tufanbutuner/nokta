@@ -43,6 +43,14 @@ export const EXCLUDED_VENUES: ExcludedVenue[] = [
     slug: "atmos-central-vape-e-cig-and-coffee-lounge-westcotes",
     reason: "Vape and e-cigarette shop, not a shisha lounge. Matched on 'lounge' in its name.",
   },
+  {
+    slug: "ibrox-vapes-and-shisha-centre-govan",
+    reason: "Shop selling shisha products, not a lounge to sit and smoke in.",
+  },
+  {
+    slug: "eye-cloud-vape-shisha-grinder-bong-gift-shop-st-pauls",
+    reason: "Shop selling shisha products, not a lounge to sit and smoke in.",
+  },
 ];
 
 const EXCLUDED_SLUGS = new Set(EXCLUDED_VENUES.map((entry) => entry.slug.toLowerCase()));
