@@ -123,22 +123,30 @@ export function getAdvancedFilterCount(filters: VenueFilterState) {
  * The city, styled as a chip but backed by a native select so the whole list is reachable in one
  * tap on a phone. It reads as selected because it always is — unlike the other chips, there is
  * no "off" state, so it carries the ink background whatever the value.
+ *
+ * The chip is sized by the selected name rendered as text, with the select laid transparently
+ * over it. A bare select takes the width of its longest option, so "Newcastle upon Tyne" made
+ * the chip 154px wide — twice the neighbouring chips — even while it read "London".
  */
 function CityChip({ city, disabled, onChange }: { city: string; disabled: boolean; onChange: (city: string) => void }) {
   const cities = getActiveCities();
 
   return (
-    <div className="relative inline-flex">
+    <div
+      className={cn(
+        "relative inline-flex h-8 items-center gap-1.5 rounded-full bg-nokta-ink pl-3 pr-2.5 text-xs font-semibold text-white transition-colors",
+        disabled ? "opacity-50" : "hover:bg-nokta-ink/90",
+        "focus-within:outline-none focus-within:ring-2 focus-within:ring-nokta-ink focus-within:ring-offset-2",
+      )}
+    >
+      <span className="whitespace-nowrap">{city}</span>
+      <ChevronDown className="h-3 w-3 shrink-0" aria-hidden />
       <select
         aria-label="City"
         value={city}
         disabled={disabled}
         onChange={(event) => onChange(event.target.value)}
-        className={cn(
-          "h-8 cursor-pointer appearance-none rounded-full bg-nokta-ink py-0 pl-3 pr-7 text-xs font-semibold text-white transition-colors hover:bg-nokta-ink/90",
-          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nokta-ink focus-visible:ring-offset-2",
-          disabled && "cursor-not-allowed opacity-50",
-        )}
+        className={cn("absolute inset-0 h-full w-full cursor-pointer appearance-none opacity-0", disabled && "cursor-not-allowed")}
         title={disabled ? "A search covers every city" : undefined}
       >
         {cities.map((entry) => (
@@ -147,7 +155,6 @@ function CityChip({ city, disabled, onChange }: { city: string; disabled: boolea
           </option>
         ))}
       </select>
-      <ChevronDown className="pointer-events-none absolute right-2 top-1/2 h-3 w-3 -translate-y-1/2 text-white" aria-hidden />
     </div>
   );
 }
