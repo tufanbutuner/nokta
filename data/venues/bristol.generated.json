@@ -1,0 +1,935 @@
+[
+  {
+    "id": "ritorno-lounge-v-shed",
+    "slug": "ritorno-lounge-v-shed",
+    "name": "Ritorno Lounge",
+    "description": "Ritorno Lounge is a spot for shisha in V-Shed, Bristol with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bristol",
+    "area": "V-Shed",
+    "address": "Unit 3, V-Shed, Canon's Rd, Bristol BS1 5UH",
+    "postcode": "BS1 5UH",
+    "latitude": 51.450054099999996,
+    "longitude": -2.5986978,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "09:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "00:00"
+      }
+    ],
+    "website": "https://thelounges.co.uk/ritorno",
+    "instagram": null,
+    "phone": "0117 203 2236",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:22.267Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://thelounges.co.uk/ritorno",
+      "otherSource": "https://maps.google.com/?cid=12926730196376903632&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "ezo-cafe-lounge-bishopston",
+    "slug": "ezo-cafe-lounge-bishopston",
+    "name": "Ezo Cafe Lounge",
+    "description": "Ezo Cafe Lounge is a spot for shisha in Bishopston, Bristol with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bristol",
+    "area": "Bishopston",
+    "address": "6, The Promenade, Gloucester Rd, Bishopston, Bristol BS7 8AL",
+    "postcode": "BS7 8AL",
+    "latitude": 51.4719889,
+    "longitude": -2.592303,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "19:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "11:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:00",
+        "close": "01:00"
+      }
+    ],
+    "website": "https://ezocafelounge.co.uk/",
+    "instagram": null,
+    "phone": "0117 944 2005",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:22.267Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://ezocafelounge.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=13820788798952542789&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "pasha-lounge-horfield",
+    "slug": "pasha-lounge-horfield",
+    "name": "PASHA Lounge",
+    "description": "PASHA Lounge is a spot for shisha in Horfield, Bristol with food, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bristol",
+    "area": "Horfield",
+    "address": "408 Gloucester Rd, Bristol BS7 8TR",
+    "postcode": "BS7 8TR",
+    "latitude": 51.484509599999996,
+    "longitude": -2.586623,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "11:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "02:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07389 145847",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:22.268Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=17183603111983752615&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "avana-lounge-bishopston",
+    "slug": "avana-lounge-bishopston",
+    "name": "Avana Lounge",
+    "description": "Avana Lounge is a spot for shisha in Bishopston, Bristol with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bristol",
+    "area": "Bishopston",
+    "address": "260 Gloucester Rd, Bishopston, Bristol BS7 8PB",
+    "postcode": "BS7 8PB",
+    "latitude": 51.480443699999995,
+    "longitude": -2.5890394999999997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "15:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "15:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "15:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "15:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "15:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "15:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "15:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "https://go.nordqr.com/avanalounge/",
+    "instagram": null,
+    "phone": "07577 923576",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:22.268Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://go.nordqr.com/avanalounge/",
+      "otherSource": "https://maps.google.com/?cid=4288323603144222544&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "maryam-lounge-easton",
+    "slug": "maryam-lounge-easton",
+    "name": "MARYAM LOUNGE",
+    "description": "MARYAM LOUNGE is a spot for shisha in Easton, Bristol with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bristol",
+    "area": "Easton",
+    "address": "5 Robert St, Easton, Bristol BS5 6NJ",
+    "postcode": "BS5 6NJ",
+    "latitude": 51.469206299999996,
+    "longitude": -2.566574,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Friday",
+        "open": "00:00",
+        "close": "17:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:22.268Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=11035705504734419671&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "lounge-southville",
+    "slug": "lounge-southville",
+    "name": "Lounge",
+    "description": "Lounge is a spot for shisha in Southville, Bristol with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bristol",
+    "area": "Southville",
+    "address": "227, 231 North St, Southville, Bristol BS3 1JJ",
+    "postcode": "BS3 1JJ",
+    "latitude": 51.4411869,
+    "longitude": -2.6122723999999997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "22:00"
+      }
+    ],
+    "website": "https://thelounges.co.uk/lounge/",
+    "instagram": null,
+    "phone": "0117 963 7340",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:22.268Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://thelounges.co.uk/lounge/",
+      "otherSource": "https://maps.google.com/?cid=7941368098930387233&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "miro-lounge-arno-s-vale",
+    "slug": "miro-lounge-arno-s-vale",
+    "name": "Miro Lounge",
+    "description": "Miro Lounge is a spot for shisha in Arno's Vale, Bristol with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bristol",
+    "area": "Arno's Vale",
+    "address": "Unit 3.1, The Paintworks, Bath Rd, Arno's Vale, Bristol BS4 3EH",
+    "postcode": "BS4 3EH",
+    "latitude": 51.443027,
+    "longitude": -2.5683281,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "09:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "00:00"
+      }
+    ],
+    "website": "https://thelounges.co.uk/miro",
+    "instagram": null,
+    "phone": "0117 203 2604",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:22.268Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://thelounges.co.uk/miro",
+      "otherSource": "https://maps.google.com/?cid=9086164673442807912&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "lazz-lounge-bristol-meze-bar-bishopston",
+    "slug": "lazz-lounge-bristol-meze-bar-bishopston",
+    "name": "Lazz Lounge Bristol Meze Bar",
+    "description": "Lazz Lounge Bristol Meze Bar is a spot for shisha in Bishopston, Bristol with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bristol",
+    "area": "Bishopston",
+    "address": "272 Gloucester Rd, Bishopston, Bristol BS7 8PB",
+    "postcode": "BS7 8PB",
+    "latitude": 51.4807139,
+    "longitude": -2.5888174,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [],
+    "website": "http://www.lazzbristolmezebar.co.uk/",
+    "instagram": null,
+    "phone": "07562 214049",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:22.268Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.lazzbristolmezebar.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=4582859947958580225&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "shisha-lounge-easton",
+    "slug": "shisha-lounge-easton",
+    "name": "SHISHA LOUNGE",
+    "description": "SHISHA LOUNGE is a spot for shisha in Easton, Bristol. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bristol",
+    "area": "Easton",
+    "address": "Easton, Bristol BS5 0NW",
+    "postcode": "BS5 0NW",
+    "latitude": 51.4666265,
+    "longitude": -2.568743,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:22.268Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=3284367544714957170&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "eye-cloud-vape-shisha-grinder-bong-gift-shop-st-pauls",
+    "slug": "eye-cloud-vape-shisha-grinder-bong-gift-shop-st-pauls",
+    "name": "Eye Cloud Vape, Shisha, Grinder, Bong Gift Shop",
+    "description": "Eye Cloud Vape, Shisha, Grinder, Bong Gift Shop is a spot for shisha in St Pauls, Bristol. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bristol",
+    "area": "St Pauls",
+    "address": "50 Old Market St, Bristol BS2 0ER",
+    "postcode": "BS2 0ER",
+    "latitude": 51.4561438,
+    "longitude": -2.5805583,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "11:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "10:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "10:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "10:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "10:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "10:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "10:00",
+        "close": "23:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "0117 329 8975",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:22.268Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=8252723329065230004&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "mas-shisha-lounge-city-centre",
+    "slug": "mas-shisha-lounge-city-centre",
+    "name": "MAS Shisha Lounge",
+    "description": "MAS Shisha Lounge is a spot for shisha in City Centre, Bristol. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bristol",
+    "area": "City Centre",
+    "address": "Bristol BS1 2LE",
+    "postcode": "BS1 2LE",
+    "latitude": 51.456551399999995,
+    "longitude": -2.5930372,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:22.268Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=4328464825865234284&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "grupo-lounge-bedminster",
+    "slug": "grupo-lounge-bedminster",
+    "name": "Grupo Lounge",
+    "description": "Grupo Lounge is a spot for shisha in Bedminster, Bristol with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bristol",
+    "area": "Bedminster",
+    "address": "8 Canford Ln, Bristol BS9 3DH",
+    "postcode": "BS9 3DH",
+    "latitude": 51.4929183,
+    "longitude": -2.6192639,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://thelounges.co.uk/grupo/",
+    "instagram": null,
+    "phone": "0117 950 0279",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:22.269Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://thelounges.co.uk/grupo/",
+      "otherSource": "https://maps.google.com/?cid=3589867734881811943&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "porto-lounge-fishponds",
+    "slug": "porto-lounge-fishponds",
+    "name": "Porto Lounge",
+    "description": "Porto Lounge is a spot for shisha in Fishponds, Bristol with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bristol",
+    "area": "Fishponds",
+    "address": "784 &, 782A Fishponds Rd, Bristol BS16 3TT",
+    "postcode": "BS16 3TT",
+    "latitude": 51.480379299999996,
+    "longitude": -2.5287154999999997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://thelounges.co.uk/porto/",
+    "instagram": null,
+    "phone": "0117 902 4567",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:22.269Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://thelounges.co.uk/porto/",
+      "otherSource": "https://maps.google.com/?cid=10903990894589808278&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  }
+]

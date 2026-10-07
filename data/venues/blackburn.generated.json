@@ -1,0 +1,1017 @@
+[
+  {
+    "id": "tufaha-lounge-witton",
+    "slug": "tufaha-lounge-witton",
+    "name": "Tufaha Lounge",
+    "description": "Tufaha Lounge is a spot for shisha in Witton, Blackburn with late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Blackburn",
+    "area": "Witton",
+    "address": "40 Darwen St, Blackburn BB2 2BH",
+    "postcode": "BB2 2BH",
+    "latitude": 53.746245300000005,
+    "longitude": -2.4826661,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:30",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:30",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:30",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:30",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:30",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:30",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:30",
+        "close": "01:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07721 440251",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:05.374Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=11196645183625379787&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "arabian-lounge-shisha-witton",
+    "slug": "arabian-lounge-shisha-witton",
+    "name": "Arabian Lounge shisha",
+    "description": "Arabian Lounge shisha is a spot for shisha in Witton, Blackburn with food, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Blackburn",
+    "area": "Witton",
+    "address": "39 King St, Blackburn BB2 2DH",
+    "postcode": "BB2 2DH",
+    "latitude": 53.746220099999995,
+    "longitude": -2.486957,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "18:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "18:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "18:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "18:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "18:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "18:00",
+        "close": "02:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07707 845747",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:05.374Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=2753948384353314859&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "dahna-lounge-witton",
+    "slug": "dahna-lounge-witton",
+    "name": "Dahna Lounge",
+    "description": "Dahna Lounge is a spot for shisha in Witton, Blackburn with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Blackburn",
+    "area": "Witton",
+    "address": "1 Barton St, Blackburn BB2 1LJ",
+    "postcode": "BB2 1LJ",
+    "latitude": 53.7478753,
+    "longitude": -2.4860327,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:00",
+        "close": "03:00"
+      }
+    ],
+    "website": "http://dahnalounge.com/",
+    "instagram": null,
+    "phone": "01254 665973",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:05.374Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://dahnalounge.com/",
+      "otherSource": "https://maps.google.com/?cid=8500906298519133821&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "q-lounge",
+    "slug": "q-lounge",
+    "name": "Q Lounge",
+    "description": "Q Lounge is a spot for shisha in Q Lounge, Blackburn with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Blackburn",
+    "area": "Q Lounge",
+    "address": "Q Lounge, St Peter St, Blackburn BB2 2HB",
+    "postcode": "BB2 2HB",
+    "latitude": 53.746479799999996,
+    "longitude": -2.4831765999999997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "https://qviplounge.y-p08.co.uk/gallery",
+    "instagram": null,
+    "phone": "01254 965965",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:05.374Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://qviplounge.y-p08.co.uk/gallery",
+      "otherSource": "https://maps.google.com/?cid=15691442175396507794&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "cube-shisha-witton",
+    "slug": "cube-shisha-witton",
+    "name": "Cube Shisha",
+    "description": "Cube Shisha is a spot for shisha in Witton, Blackburn with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Blackburn",
+    "area": "Witton",
+    "address": "1, 32 Darwen St, Blackburn BB2 2BY",
+    "postcode": "BB2 2BY",
+    "latitude": 53.7466642,
+    "longitude": -2.4829123,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:00",
+        "close": "00:50"
+      }
+    ],
+    "website": "https://cubeblackburn.co.uk/weZk",
+    "instagram": null,
+    "phone": "07581 401349",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:05.374Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://cubeblackburn.co.uk/weZk",
+      "otherSource": "https://maps.google.com/?cid=18156080212888494791&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "chai-lounge-cafe-witton",
+    "slug": "chai-lounge-cafe-witton",
+    "name": "Chai lounge cafe",
+    "description": "Chai lounge cafe is a spot for shisha in Witton, Blackburn with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Blackburn",
+    "area": "Witton",
+    "address": "21 New Bank Rd, Blackburn BB2 6JW",
+    "postcode": "BB2 6JW",
+    "latitude": 53.7518003,
+    "longitude": -2.5031589,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "08:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Monday",
+        "open": "08:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "08:00",
+        "close": "19:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "08:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "08:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Friday",
+        "open": "08:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "08:00",
+        "close": "21:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07961 703131",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:05.375Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=8067594349782528952&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "lounge-55-darwen",
+    "slug": "lounge-55-darwen",
+    "name": "Lounge 55",
+    "description": "Lounge 55 is a spot for shisha in Darwen, Blackburn with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Blackburn",
+    "area": "Darwen",
+    "address": "47 Bolton Rd, Darwen BB3 1DD",
+    "postcode": "BB3 1DD",
+    "latitude": 53.6933602,
+    "longitude": -2.4666201,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Monday",
+        "open": "08:30",
+        "close": "17:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "08:30",
+        "close": "17:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "09:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "09:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Friday",
+        "open": "09:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "21:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:05.375Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=5368785970670949006&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "shisha-wholesale-manchester-roe-lee",
+    "slug": "shisha-wholesale-manchester-roe-lee",
+    "name": "Shisha Wholesale Manchester",
+    "description": "Shisha Wholesale Manchester is a spot for shisha in Roe Lee, Blackburn. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Blackburn",
+    "area": "Roe Lee",
+    "address": "Unit 5, Roe Lee, Blackburn BB1 9SU",
+    "postcode": "BB1 9SU",
+    "latitude": 53.7670592,
+    "longitude": -2.4776295,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "10:00",
+        "close": "18:00"
+      },
+      {
+        "day": "Monday",
+        "open": "10:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "10:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "10:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "10:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Friday",
+        "open": "10:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "10:00",
+        "close": "21:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07877 946657",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:05.375Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=15100894530537778334&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "sheeshaholics-town-centre",
+    "slug": "sheeshaholics-town-centre",
+    "name": "sheeshaholics",
+    "description": "sheeshaholics is a spot for shisha in Town Centre, Blackburn. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Blackburn",
+    "area": "Town Centre",
+    "address": "Unit L, Florence Mill, Whalley New Rd, Blackburn BB1 9SR",
+    "postcode": "BB1 9SR",
+    "latitude": 53.764869399999995,
+    "longitude": -2.4739508,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Monday",
+        "open": "10:00",
+        "close": "17:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "10:00",
+        "close": "17:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "10:00",
+        "close": "17:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "10:00",
+        "close": "17:00"
+      },
+      {
+        "day": "Friday",
+        "open": "10:00",
+        "close": "17:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07759 466531",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:05.375Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=971092214216371676&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "mellows-lounge-bar-and-eatery-great-harwood",
+    "slug": "mellows-lounge-bar-and-eatery-great-harwood",
+    "name": "Mellows Lounge Bar & Eatery",
+    "description": "Mellows Lounge Bar & Eatery is a spot for shisha in Great Harwood, Blackburn with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Blackburn",
+    "area": "Great Harwood",
+    "address": "12 Queen St, Great Harwood, Blackburn BB6 7QQ",
+    "postcode": "BB6 7QQ",
+    "latitude": 53.7858944,
+    "longitude": -2.4078665000000004,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "13:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "https://mellows2maxxvibes.co.uk/",
+    "instagram": null,
+    "phone": "07598 484665",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:05.375Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://mellows2maxxvibes.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=10888246237200081003&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "sound-lounge-extra-darwen",
+    "slug": "sound-lounge-extra-darwen",
+    "name": "Sound Lounge Extra",
+    "description": "Sound Lounge Extra is a spot for shisha in Darwen, Blackburn with drinks, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Blackburn",
+    "area": "Darwen",
+    "address": "1AB, Wellington Fold, Darwen BB3 1PU",
+    "postcode": "BB3 1PU",
+    "latitude": 53.6964435,
+    "longitude": -2.4691923,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "14:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "06:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "02:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07456 532941",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:05.375Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=5620818090686557237&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "zest-caf-lounge-darwen",
+    "slug": "zest-caf-lounge-darwen",
+    "name": "Zest Café Lounge",
+    "description": "Zest Café Lounge is a spot for shisha in Darwen, Blackburn with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Blackburn",
+    "area": "Darwen",
+    "address": "63, Mayfield Flats, Junction St, Darwen BB3 2PR",
+    "postcode": "BB3 2PR",
+    "latitude": 53.686054299999995,
+    "longitude": -2.4619326999999998,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Monday",
+        "open": "08:30",
+        "close": "14:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "08:30",
+        "close": "14:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "08:30",
+        "close": "14:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "08:30",
+        "close": "14:00"
+      },
+      {
+        "day": "Friday",
+        "open": "08:30",
+        "close": "14:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "08:30",
+        "close": "14:00"
+      }
+    ],
+    "website": "http://www.zestcafelounge.co.uk/",
+    "instagram": null,
+    "phone": "01254 873322",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:05.375Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.zestcafelounge.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=7119213092725428864&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "amalfi-lounge-online-darwen",
+    "slug": "amalfi-lounge-online-darwen",
+    "name": "Amalfi Lounge online",
+    "description": "Amalfi Lounge online is a spot for shisha in Darwen, Blackburn with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Blackburn",
+    "area": "Darwen",
+    "address": "189 Duckworth St, Darwen BB3 1AU",
+    "postcode": "BB3 1AU",
+    "latitude": 53.6977966,
+    "longitude": -2.4697869999999997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "23:30"
+      }
+    ],
+    "website": "http://amalfionline.co.uk/",
+    "instagram": null,
+    "phone": "01254 786851",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:05.375Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://amalfionline.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=8860749245073653717&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  }
+]

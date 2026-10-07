@@ -1,0 +1,738 @@
+[
+  {
+    "id": "al-marrakech-dessert-cafe-lounge-plough-inn",
+    "slug": "al-marrakech-dessert-cafe-lounge-plough-inn",
+    "name": "Al Marrakech - Dessert / Cafe Lounge",
+    "description": "Al Marrakech - Dessert / Cafe Lounge is a spot for shisha in Plough Inn, Oldham with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Oldham",
+    "area": "Plough Inn",
+    "address": "Plough Inn, 334 Manchester St, Oldham OL9 6HQ",
+    "postcode": "OL9 6HQ",
+    "latitude": 53.536874499999996,
+    "longitude": -2.1296699,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "15:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "03:00"
+      }
+    ],
+    "website": "https://almarrakechlounge.com/",
+    "instagram": null,
+    "phone": "07395 018636",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:20.336Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://almarrakechlounge.com/",
+      "otherSource": "https://maps.google.com/?cid=9704375970639787690&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "babylon-night-shisha-lounge-glodwick",
+    "slug": "babylon-night-shisha-lounge-glodwick",
+    "name": "Babylon Night Shisha Lounge",
+    "description": "Babylon Night Shisha Lounge is a spot for shisha in Glodwick, Oldham with late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Oldham",
+    "area": "Glodwick",
+    "address": "Manchester St, Oldham OL8 1UF",
+    "postcode": "OL8 1UF",
+    "latitude": 53.5385472,
+    "longitude": -2.1245562,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "03:00"
+      }
+    ],
+    "website": "https://linktr.ee/babylonnight",
+    "instagram": null,
+    "phone": "0161 221 2627",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:20.336Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://linktr.ee/babylonnight",
+      "otherSource": "https://maps.google.com/?cid=14301158934120938222&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "eminence-lounge",
+    "slug": "eminence-lounge",
+    "name": "Eminence Lounge",
+    "description": "Eminence Lounge is a spot for shisha in Eminence Lounge, Oldham with drinks, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Oldham",
+    "area": "Eminence Lounge",
+    "address": "Eminence Lounge, Waddington St, Oldham OL9 6QH",
+    "postcode": "OL9 6QH",
+    "latitude": 53.5475809,
+    "longitude": -2.1288055,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "17:30",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:30",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:30",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:30",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:30",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:30",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:30",
+        "close": "02:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "0161 710 1522",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:20.336Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=12776755898621530793&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "molino-lounge-town-hall",
+    "slug": "molino-lounge-town-hall",
+    "name": "Molino Lounge",
+    "description": "Molino Lounge is a spot for shisha in Town Hall, Oldham with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Oldham",
+    "area": "Town Hall",
+    "address": "Town Hall, 4 Yorkshire St, Oldham OL1 1RA",
+    "postcode": "OL1 1RA",
+    "latitude": 53.5416386,
+    "longitude": -2.1110595,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://thelounges.co.uk/molino/",
+    "instagram": null,
+    "phone": "0161 627 5793",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:20.336Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://thelounges.co.uk/molino/",
+      "otherSource": "https://maps.google.com/?cid=4117587409602510219&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "luminous-lounge-town-centre",
+    "slug": "luminous-lounge-town-centre",
+    "name": "Luminous Lounge",
+    "description": "Luminous Lounge is a spot for shisha in Town Centre, Oldham with late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Oldham",
+    "area": "Town Centre",
+    "address": "341 Rochdale Rd, Oldham OL1 2HD",
+    "postcode": "OL1 2HD",
+    "latitude": 53.550863199999995,
+    "longitude": -2.1203651999999997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:00",
+        "close": "02:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07749 996434",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:20.336Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=12889243322274446429&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "dubai-shisha-dubai-cafe-town-centre",
+    "slug": "dubai-shisha-dubai-cafe-town-centre",
+    "name": "Dubai Shisha Dubai Cafe",
+    "description": "Dubai Shisha Dubai Cafe is a spot for shisha in Town Centre, Oldham with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Oldham",
+    "area": "Town Centre",
+    "address": "Shaw Rd, Oldham OL1 3HZ",
+    "postcode": "OL1 3HZ",
+    "latitude": 53.5468361,
+    "longitude": -2.1008256999999997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "15:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Monday",
+        "open": "15:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "15:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "15:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "15:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Friday",
+        "open": "15:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "15:00",
+        "close": "04:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07930 302424",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:20.336Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=9391736267308816810&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "k-s-lounge-bar-grill-and-indian-restaurant-springhead",
+    "slug": "k-s-lounge-bar-grill-and-indian-restaurant-springhead",
+    "name": "K's Lounge - Bar, Grill & Indian Restaurant",
+    "description": "K's Lounge - Bar, Grill & Indian Restaurant is a spot for shisha in Springhead, Oldham with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Oldham",
+    "area": "Springhead",
+    "address": "187 Oldham Rd, Springhead, Oldham OL4 4QJ",
+    "postcode": "OL4 4QJ",
+    "latitude": 53.537644799999995,
+    "longitude": -2.0605186,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "09:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "09:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "09:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "09:30",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "09:30",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:30",
+        "close": "01:00"
+      }
+    ],
+    "website": "https://kslounge.co.uk/",
+    "instagram": null,
+    "phone": "0161 691 1700",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:20.336Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://kslounge.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=7801702836267639283&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "shisha-club-manchester",
+    "slug": "shisha-club-manchester",
+    "name": "Shisha Club Manchester",
+    "description": "Shisha Club Manchester is a spot for shisha in Manchester, Oldham. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Oldham",
+    "area": "Manchester",
+    "address": "253 Featherstall Rd N, Oldham, Manchester OL1 2NJ",
+    "postcode": "OL1 2NJ",
+    "latitude": 53.5486571,
+    "longitude": -2.1251762,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "luxury"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "10:30",
+        "close": "21:00"
+      },
+      {
+        "day": "Monday",
+        "open": "10:30",
+        "close": "21:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "10:30",
+        "close": "21:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "10:30",
+        "close": "21:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "10:30",
+        "close": "21:30"
+      },
+      {
+        "day": "Friday",
+        "open": "10:30",
+        "close": "21:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "10:30",
+        "close": "21:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07909 950995",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:20.337Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=1537290524363133198&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "zaraks-grill-lounge-lees",
+    "slug": "zaraks-grill-lounge-lees",
+    "name": "Zaraks Grill Lounge",
+    "description": "Zaraks Grill Lounge is a spot for shisha in Lees, Oldham with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Oldham",
+    "area": "Lees",
+    "address": "26 Bottom O' Th' Moor, Oldham OL4 1JZ",
+    "postcode": "OL4 1JZ",
+    "latitude": 53.5435859,
+    "longitude": -2.0981940999999997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://www.zaraksgrilllounge.co.uk/menu",
+    "instagram": null,
+    "phone": "0161 628 0004",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:20.337Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.zaraksgrilllounge.co.uk/menu",
+      "otherSource": "https://maps.google.com/?cid=1689449199921548969&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  }
+]

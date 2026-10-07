@@ -1,0 +1,584 @@
+[
+  {
+    "id": "coconut-bar-and-kitchen-town-centre",
+    "slug": "coconut-bar-and-kitchen-town-centre",
+    "name": "Coconut Bar & Kitchen",
+    "description": "Coconut Bar & Kitchen is a spot for shisha in Town Centre, Reading with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Reading",
+    "area": "Town Centre",
+    "address": "62 St Mary's Butts, Reading RG1 2LG",
+    "postcode": "RG1 2LG",
+    "latitude": 51.4549775,
+    "longitude": -0.9747294000000001,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "00:30",
+        "close": "02:00"
+      },
+      {
+        "day": "Sunday",
+        "open": "11:30",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:30",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:30",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:30",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "00:30",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "11:30",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "00:30",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:30",
+        "close": "00:00"
+      }
+    ],
+    "website": "http://www.coconutbarkitchen.co.uk/",
+    "instagram": null,
+    "phone": "0118 959 8877",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:39.771Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.coconutbarkitchen.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=18189213664165339458&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "the-face-bar-town-centre",
+    "slug": "the-face-bar-town-centre",
+    "name": "The Face Bar",
+    "description": "The Face Bar is a spot for shisha in Town Centre, Reading with drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Reading",
+    "area": "Town Centre",
+    "address": "Ambrose Pl, Reading RG1 7JE",
+    "postcode": "RG1 7JE",
+    "latitude": 51.4556142,
+    "longitude": -0.9819293000000001,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "04:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "04:00"
+      }
+    ],
+    "website": "https://www.hirethefacebar.com/",
+    "instagram": null,
+    "phone": "07776 258215",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:39.771Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.hirethefacebar.com/",
+      "otherSource": "https://maps.google.com/?cid=12426289548644282775&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "milk-bar-reading-town-centre",
+    "slug": "milk-bar-reading-town-centre",
+    "name": "Milk Bar Reading",
+    "description": "Milk Bar Reading is a spot for shisha in Town Centre, Reading with drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Reading",
+    "area": "Town Centre",
+    "address": "8 Merchants Pl, Reading RG1 1DT",
+    "postcode": "RG1 1DT",
+    "latitude": 51.4573636,
+    "longitude": -0.9734394,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:00",
+        "close": "00:00"
+      }
+    ],
+    "website": "http://www.milkreading.co.uk/",
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:39.771Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.milkreading.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=688236834642113372&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "the-cocktail-club-cocktail-bar-in-reading-town-centre",
+    "slug": "the-cocktail-club-cocktail-bar-in-reading-town-centre",
+    "name": "The Cocktail Club - Cocktail Bar in Reading",
+    "description": "The Cocktail Club - Cocktail Bar in Reading is a spot for shisha in Town Centre, Reading with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Reading",
+    "area": "Town Centre",
+    "address": "5-6 Gun St, Reading RG1 2JR",
+    "postcode": "RG1 2JR",
+    "latitude": 51.453807399999995,
+    "longitude": -0.9730525000000001,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "luxury",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "00:30"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "02:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "02:30"
+      }
+    ],
+    "website": "https://www.thecocktailclub.com/bars/reading?utm_medium=organic&utm_source=gbp&utm_campaign=homepage",
+    "instagram": null,
+    "phone": "020 7749 3955",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:39.771Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.thecocktailclub.com/bars/reading?utm_medium=organic&utm_source=gbp&utm_campaign=homepage",
+      "otherSource": "https://maps.google.com/?cid=303450587138586137&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "earley-cafe",
+    "slug": "earley-cafe",
+    "name": "Earley Cafe",
+    "description": "Earley Cafe is a spot for shisha in Earley, Reading with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Reading",
+    "area": "Earley",
+    "address": "121 Wokingham Rd, Reading RG6 1LH",
+    "postcode": "RG6 1LH",
+    "latitude": 51.448042699999995,
+    "longitude": -0.9360421,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "16:00"
+      },
+      {
+        "day": "Monday",
+        "open": "08:00",
+        "close": "16:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "08:00",
+        "close": "16:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "08:00",
+        "close": "16:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "08:00",
+        "close": "16:00"
+      },
+      {
+        "day": "Friday",
+        "open": "08:00",
+        "close": "16:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "08:00",
+        "close": "16:00"
+      }
+    ],
+    "website": "http://www.earlycafe.co.uk/",
+    "instagram": null,
+    "phone": "0118 375 0900",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:39.771Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.earlycafe.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=16206044864679604363&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "rustic-cafe-lower-earley",
+    "slug": "rustic-cafe-lower-earley",
+    "name": "Rustic Cafe",
+    "description": "Rustic Cafe is a spot for shisha in Lower Earley, Reading with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Reading",
+    "area": "Lower Earley",
+    "address": "14 Maiden Pl, Lower Earley, Earley, Reading RG6 3HD",
+    "postcode": "RG6 3HD",
+    "latitude": 51.428340899999995,
+    "longitude": -0.9135802,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "10:00",
+        "close": "16:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "10:00",
+        "close": "16:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "10:00",
+        "close": "16:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "10:00",
+        "close": "16:00"
+      },
+      {
+        "day": "Friday",
+        "open": "10:00",
+        "close": "17:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "10:00",
+        "close": "17:00"
+      }
+    ],
+    "website": "http://www.rusticcafelowerearley.co.uk/",
+    "instagram": null,
+    "phone": "0118 966 6399",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:39.771Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.rusticcafelowerearley.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=3299979176521899059&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "angel-bar-and-supper-club-caversham-reading",
+    "slug": "angel-bar-and-supper-club-caversham-reading",
+    "name": "Angel Bar & Supper Club - Caversham - Reading",
+    "description": "Angel Bar & Supper Club - Caversham - Reading is a spot for shisha in Caversham, Reading with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Reading",
+    "area": "Caversham",
+    "address": "18 Prospect St, Reading RG4 8JG",
+    "postcode": "RG4 8JG",
+    "latitude": 51.467967599999994,
+    "longitude": -0.9726096,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "luxury",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "10:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "14:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://www.angelbar.co.uk/",
+    "instagram": null,
+    "phone": "0118 229 5042",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:39.771Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.angelbar.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=802900554857972580&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  }
+]

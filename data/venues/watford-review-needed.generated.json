@@ -1,0 +1,555 @@
+[
+  {
+    "id": "kandahar-restaurant-north-watford",
+    "slug": "kandahar-restaurant-north-watford",
+    "name": "Kandahar restaurant",
+    "description": "Kandahar restaurant is a spot for shisha in North Watford, Watford with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Watford",
+    "area": "North Watford",
+    "address": "246 St Albans Rd, Watford WD24 4AX",
+    "postcode": "WD24 4AX",
+    "latitude": 51.6718317,
+    "longitude": -0.39607129999999996,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "http://kandahar-restaurant.co.uk/",
+    "instagram": null,
+    "phone": "01923 608866",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:47.796Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://kandahar-restaurant.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=3252340595918951974&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "canvas-bar-and-nightclub-town-centre",
+    "slug": "canvas-bar-and-nightclub-town-centre",
+    "name": "Canvas Bar & Nightclub",
+    "description": "Canvas Bar & Nightclub is a spot for shisha in Town Centre, Watford with drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Watford",
+    "area": "Town Centre",
+    "address": "83 The Parade, High St, Watford WD17 1LN",
+    "postcode": "WD17 1LN",
+    "latitude": 51.658252399999995,
+    "longitude": -0.39997879999999997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "luxury",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Friday",
+        "open": "20:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "20:00",
+        "close": "03:00"
+      }
+    ],
+    "website": "https://www.canvaswatford.co.uk/",
+    "instagram": null,
+    "phone": "07957 245210",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:47.796Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.canvaswatford.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=17638577253359890292&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "opuz-kitchen-and-bar-watford-west-watford",
+    "slug": "opuz-kitchen-and-bar-watford-west-watford",
+    "name": "Opuz Kitchen & Bar Watford",
+    "description": "Opuz Kitchen & Bar Watford is a spot for shisha in West Watford, Watford with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Watford",
+    "area": "West Watford",
+    "address": "7 King St, Watford WD18 0BW",
+    "postcode": "WD18 0BW",
+    "latitude": 51.653715299999995,
+    "longitude": -0.3942861,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://watford.opuzkitchenandbar.com/",
+    "instagram": null,
+    "phone": "01923 227978",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:47.796Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://watford.opuzkitchenandbar.com/",
+      "otherSource": "https://maps.google.com/?cid=13255636759583252904&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "asah-restaurant-town-centre",
+    "slug": "asah-restaurant-town-centre",
+    "name": "ASAH RESTAURANT",
+    "description": "ASAH RESTAURANT is a spot for shisha in Town Centre, Watford with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Watford",
+    "area": "Town Centre",
+    "address": "92 Queen's Rd, Watford WD17 2LA",
+    "postcode": "WD17 2LA",
+    "latitude": 51.6580857,
+    "longitude": -0.3926374,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://web.dojo.app/create_booking/vendor/ErZKRdish4W_JXMdQcVKMzzAqm_nLcnZfsLog_msrpQ_restaurant",
+    "instagram": null,
+    "phone": "07300 868208",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:47.796Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://web.dojo.app/create_booking/vendor/ErZKRdish4W_JXMdQcVKMzzAqm_nLcnZfsLog_msrpQ_restaurant",
+      "otherSource": "https://maps.google.com/?cid=14175358565860422968&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "aysu-restaurant-watford-town-centre",
+    "slug": "aysu-restaurant-watford-town-centre",
+    "name": "Aysu Restaurant Watford",
+    "description": "Aysu Restaurant Watford is a spot for shisha in Town Centre, Watford with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Watford",
+    "area": "Town Centre",
+    "address": "152-154 High St, Watford WD17 2EN",
+    "postcode": "WD17 2EN",
+    "latitude": 51.6534118,
+    "longitude": -0.39292279999999996,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://aysurestaurant.co.uk/",
+    "instagram": null,
+    "phone": "01923 590230",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:47.796Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://aysurestaurant.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=17399458378632127156&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "olive-hill-restaurant-north-watford",
+    "slug": "olive-hill-restaurant-north-watford",
+    "name": "Olive Hill Restaurant",
+    "description": "Olive Hill Restaurant is a spot for shisha in North Watford, Watford with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Watford",
+    "area": "North Watford",
+    "address": "163-165, 163-165 St Albans Rd, Watford WD24 5BD",
+    "postcode": "WD24 5BD",
+    "latitude": 51.668010599999995,
+    "longitude": -0.3980912,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "21:30"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://olivehillrestaurant.co.uk/",
+    "instagram": null,
+    "phone": "01923 510304",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:47.796Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://olivehillrestaurant.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=7696040329885047941&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "dunnings-bar-north-watford",
+    "slug": "dunnings-bar-north-watford",
+    "name": "Dunnings Bar",
+    "description": "Dunnings Bar is a spot for shisha in North Watford, Watford with drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Watford",
+    "area": "North Watford",
+    "address": "153 St Albans Rd, Watford WD24 5BB",
+    "postcode": "WD24 5BB",
+    "latitude": 51.6674327,
+    "longitude": -0.3983027,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "11:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "11:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "11:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "https://dunningsbar.com/",
+    "instagram": null,
+    "phone": "01923 442500",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:47.796Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://dunningsbar.com/",
+      "otherSource": "https://maps.google.com/?cid=1751938707720504745&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  }
+]

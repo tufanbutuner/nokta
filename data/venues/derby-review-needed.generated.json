@@ -1,0 +1,631 @@
+[
+  {
+    "id": "cafe-ashiana-city-centre",
+    "slug": "cafe-ashiana-city-centre",
+    "name": "Cafe Ashiana",
+    "description": "Cafe Ashiana is a spot for shisha in City Centre, Derby with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Derby",
+    "area": "City Centre",
+    "address": "30 - 32 Curzon St, Derby DE1 1LL",
+    "postcode": "DE1 1LL",
+    "latitude": 52.922335999999994,
+    "longitude": -1.4823279999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "15:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "15:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "15:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "15:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "15:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "15:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "15:00",
+        "close": "03:00"
+      }
+    ],
+    "website": "http://www.cafeashiana.com/",
+    "instagram": null,
+    "phone": "01332 291212",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:30.752Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.cafeashiana.com/",
+      "otherSource": "https://maps.google.com/?cid=17037007957643126328&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "istanbul-restaurant-city-centre",
+    "slug": "istanbul-restaurant-city-centre",
+    "name": "Istanbul Restaurant",
+    "description": "Istanbul Restaurant is a spot for shisha in City Centre, Derby with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Derby",
+    "area": "City Centre",
+    "address": "98 St Peter's St, Derby DE1 1SR",
+    "postcode": "DE1 1SR",
+    "latitude": 52.9193011,
+    "longitude": -1.4753929,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "10:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "10:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "10:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "10:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "10:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "10:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "10:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://www.istanbulrestaurantderby.co.uk/",
+    "instagram": null,
+    "phone": "01332 590425",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:30.752Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.istanbulrestaurantderby.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=16718304108525283403&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "dubai-downtown-cafe-city-centre",
+    "slug": "dubai-downtown-cafe-city-centre",
+    "name": "DUBAI DOWNTOWN CAFE",
+    "description": "DUBAI DOWNTOWN CAFE is a spot for shisha in City Centre, Derby with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Derby",
+    "area": "City Centre",
+    "address": "3 City Rd, Derby DE1 3RQ",
+    "postcode": "DE1 3RQ",
+    "latitude": 52.928063099999996,
+    "longitude": -1.4745644,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:30.752Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=10918724625174201148&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "istanbul-restaurant-normanton-road",
+    "slug": "istanbul-restaurant-normanton-road",
+    "name": "ISTANBUL RESTAURANT NORMANTON ROAD",
+    "description": "ISTANBUL RESTAURANT NORMANTON ROAD is a spot for shisha in Normanton, Derby with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Derby",
+    "area": "Normanton",
+    "address": "166 Normanton Rd, Derby DE23 6UX",
+    "postcode": "DE23 6UX",
+    "latitude": 52.9137299,
+    "longitude": -1.4769413,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://istanbulrestaurantnormantononline.co.uk/GEEy",
+    "instagram": null,
+    "phone": "01332 341020",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:30.752Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://istanbulrestaurantnormantononline.co.uk/GEEy",
+      "otherSource": "https://maps.google.com/?cid=3496716782943299627&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "the-pear-tree-inn-bar-and-grill-derby-normanton",
+    "slug": "the-pear-tree-inn-bar-and-grill-derby-normanton",
+    "name": "The Pear Tree Inn Bar & Grill Derby",
+    "description": "The Pear Tree Inn Bar & Grill Derby is a spot for shisha in Normanton, Derby with food and drinks, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Derby",
+    "area": "Normanton",
+    "address": "155 St Thomas Rd, Normanton, Derby DE23 8RH",
+    "postcode": "DE23 8RH",
+    "latitude": 52.903004800000005,
+    "longitude": -1.4780303,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "01:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "01332 230115",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:30.752Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=17265360255201496315&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "the-olive-tree-bar-and-grill-derby-spondon",
+    "slug": "the-olive-tree-bar-and-grill-derby-spondon",
+    "name": "The Olive Tree Bar & Grill Derby",
+    "description": "The Olive Tree Bar & Grill Derby is a spot for shisha in Spondon, Derby with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Derby",
+    "area": "Spondon",
+    "address": "Station Rd, Spondon, Derby DE21 7NE",
+    "postcode": "DE21 7NE",
+    "latitude": 52.9134036,
+    "longitude": -1.4110736,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "00:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "00:30"
+      }
+    ],
+    "website": "https://www.facebook.com/profile.php?id=61566390191118",
+    "instagram": null,
+    "phone": "01332 304469",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:30.752Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.facebook.com/profile.php?id=61566390191118",
+      "otherSource": "https://maps.google.com/?cid=16365212632213614919&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "aura-cafe-burton-on-trent",
+    "slug": "aura-cafe-burton-on-trent",
+    "name": "Aura Cafe",
+    "description": "Aura Cafe is a spot for shisha in Burton-on-Trent, Derby with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Derby",
+    "area": "Burton-on-Trent",
+    "address": "12 Derby St, Burton upon Trent, Burton-on-Trent DE14 2LA",
+    "postcode": "DE14 2LA",
+    "latitude": 52.807762499999995,
+    "longitude": -1.6430307,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "03:00"
+      }
+    ],
+    "website": "https://auracafeburton.co.uk/",
+    "instagram": null,
+    "phone": "07760 557357",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:30.752Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://auracafeburton.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=3969953862346323851&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "the-grand-cafe-and-restaurant-alvaston",
+    "slug": "the-grand-cafe-and-restaurant-alvaston",
+    "name": "The Grand Cafe and Restaurant",
+    "description": "The Grand Cafe and Restaurant is a spot for shisha in Alvaston, Derby with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Derby",
+    "area": "Alvaston",
+    "address": "1262 London Rd, Alvaston, Derby DE24 8QP",
+    "postcode": "DE24 8QP",
+    "latitude": 52.8971946,
+    "longitude": -1.4295775,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "11:00",
+        "close": "20:00"
+      },
+      {
+        "day": "Monday",
+        "open": "09:00",
+        "close": "20:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "09:00",
+        "close": "20:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "09:00",
+        "close": "20:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "09:00",
+        "close": "20:00"
+      },
+      {
+        "day": "Friday",
+        "open": "09:00",
+        "close": "20:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "20:00"
+      }
+    ],
+    "website": "https://www.thegrandcafeandrestaurant.co.uk/",
+    "instagram": null,
+    "phone": "07832 653255",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:30.752Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.thegrandcafeandrestaurant.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=7779336519346444629&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  }
+]

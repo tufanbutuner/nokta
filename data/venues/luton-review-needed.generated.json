@@ -1,0 +1,324 @@
+[
+  {
+    "id": "bk-restaurant-town-centre",
+    "slug": "bk-restaurant-town-centre",
+    "name": "BK Restaurant",
+    "description": "BK Restaurant is a spot for shisha in Town Centre, Luton with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Luton",
+    "area": "Town Centre",
+    "address": "149, 153 Dunstable Rd, Luton LU1 1BW",
+    "postcode": "LU1 1BW",
+    "latitude": 51.88425470000001,
+    "longitude": -0.42741350000000006,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://bkgroups.uk/home/",
+    "instagram": null,
+    "phone": "01582 340470",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:19.136Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://bkgroups.uk/home/",
+      "otherSource": "https://maps.google.com/?cid=15028082215434066171&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "caf-grill-leagrave",
+    "slug": "caf-grill-leagrave",
+    "name": "Café Grill",
+    "description": "Café Grill is a spot for shisha in Leagrave, Luton with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Luton",
+    "area": "Leagrave",
+    "address": "126 Leagrave Rd, Luton LU4 8HX",
+    "postcode": "LU4 8HX",
+    "latitude": 51.888170699999996,
+    "longitude": -0.43165899999999996,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "07:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "07:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "07:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "07:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "07:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "07:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "07:00",
+        "close": "22:00"
+      }
+    ],
+    "website": "http://cafegrill.uk/",
+    "instagram": null,
+    "phone": "01582 967050",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:19.136Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://cafegrill.uk/",
+      "otherSource": "https://maps.google.com/?cid=15245687459168920005&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "dallow-fish-bar-town-centre",
+    "slug": "dallow-fish-bar-town-centre",
+    "name": "Dallow Fish Bar",
+    "description": "Dallow Fish Bar is a spot for shisha in Town Centre, Luton with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Luton",
+    "area": "Town Centre",
+    "address": "497 Dallow Rd, Luton LU1 1UN",
+    "postcode": "LU1 1UN",
+    "latitude": 51.884441699999996,
+    "longitude": -0.4529929,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Monday",
+        "open": "11:30",
+        "close": "21:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:30",
+        "close": "21:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:30",
+        "close": "21:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:30",
+        "close": "21:30"
+      },
+      {
+        "day": "Friday",
+        "open": "11:30",
+        "close": "21:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "21:30"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "01582 722662",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:19.136Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=7200815611429741041&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "mano-coffee-wine-bar-town-centre",
+    "slug": "mano-coffee-wine-bar-town-centre",
+    "name": "Mano Coffee/ Wine Bar",
+    "description": "Mano Coffee/ Wine Bar is a spot for shisha in Town Centre, Luton with food and drinks. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Luton",
+    "area": "Town Centre",
+    "address": "25 George St., Luton LU1 2AF",
+    "postcode": "LU1 2AF",
+    "latitude": 51.878236300000005,
+    "longitude": -0.41498809999999997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "20:30"
+      },
+      {
+        "day": "Monday",
+        "open": "08:30",
+        "close": "21:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "08:30",
+        "close": "21:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "08:30",
+        "close": "21:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "08:30",
+        "close": "21:00"
+      },
+      {
+        "day": "Friday",
+        "open": "08:30",
+        "close": "21:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "21:30"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07759 273199",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:19.137Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=10410880849416656586&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  }
+]

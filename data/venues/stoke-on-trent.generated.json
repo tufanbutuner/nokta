@@ -1,0 +1,648 @@
+[
+  {
+    "id": "stoke-shisha-hanley",
+    "slug": "stoke-shisha-hanley",
+    "name": "Stoke shisha",
+    "description": "Stoke shisha is a spot for shisha in Hanley, Stoke-on-Trent. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Stoke-on-Trent",
+    "area": "Hanley",
+    "address": "19-21 Piccadilly, Hanley, Stoke-on-Trent ST1 1EN",
+    "postcode": "ST1 1EN",
+    "latitude": 53.024957,
+    "longitude": -2.1767979,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "04:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "03:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "03:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "03:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "03:30"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "03:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "04:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:40.352Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=5846482812313523061&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "cairo-lounge-hanley",
+    "slug": "cairo-lounge-hanley",
+    "name": "Cairo Lounge",
+    "description": "Cairo Lounge is a spot for shisha in Hanley, Stoke-on-Trent. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Stoke-on-Trent",
+    "area": "Hanley",
+    "address": "19a Piccadilly, Hanley, Stoke-on-Trent ST1 1EN",
+    "postcode": "ST1 1EN",
+    "latitude": 53.024957,
+    "longitude": -2.1767979,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "15:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Friday",
+        "open": "15:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "15:00",
+        "close": "03:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07833 553390",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:40.352Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=4186292999698118369&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "rotana-stoke-shisha-lounge-tunstall",
+    "slug": "rotana-stoke-shisha-lounge-tunstall",
+    "name": "Rotana Stoke Shisha Lounge",
+    "description": "Rotana Stoke Shisha Lounge is a spot for shisha in Tunstall, Stoke-on-Trent. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Stoke-on-Trent",
+    "area": "Tunstall",
+    "address": "231b Scotia Rd, Tunstall, Stoke-on-Trent ST6 4HG",
+    "postcode": "ST6 4HG",
+    "latitude": 53.054246199999994,
+    "longitude": -2.2020909,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "13:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Monday",
+        "open": "13:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "13:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "13:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "13:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Friday",
+        "open": "13:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "13:00",
+        "close": "03:00"
+      }
+    ],
+    "website": "https://rotanastoke.com/",
+    "instagram": null,
+    "phone": "07576 615862",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:40.352Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://rotanastoke.com/",
+      "otherSource": "https://maps.google.com/?cid=8063378978479853536&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "slice-lounge-hanley",
+    "slug": "slice-lounge-hanley",
+    "name": "Slice Lounge",
+    "description": "Slice Lounge is a spot for shisha in Hanley, Stoke-on-Trent with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Stoke-on-Trent",
+    "area": "Hanley",
+    "address": "62 Piccadilly, Hanley, Stoke-on-Trent ST1 1HX",
+    "postcode": "ST1 1HX",
+    "latitude": 53.0243557,
+    "longitude": -2.1776027,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "15:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "02:30"
+      }
+    ],
+    "website": "http://www.slicelounge.co.uk/",
+    "instagram": null,
+    "phone": "07561 297242",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:40.352Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.slicelounge.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=12617071650634948486&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "bosphorus-cheshire-restaurant-bar-and-shisha-alsager",
+    "slug": "bosphorus-cheshire-restaurant-bar-and-shisha-alsager",
+    "name": "Bosphorus Cheshire Restaurant Bar & Shisha",
+    "description": "Bosphorus Cheshire Restaurant Bar & Shisha is a spot for shisha in Alsager, Stoke-on-Trent with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Stoke-on-Trent",
+    "area": "Alsager",
+    "address": "2 Lawton Rd, Alsager, Stoke-on-Trent ST7 2AF",
+    "postcode": "ST7 2AF",
+    "latitude": 53.095945199999996,
+    "longitude": -2.3042200999999998,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "11:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:00",
+        "close": "01:30"
+      }
+    ],
+    "website": "https://bosphoruscheshire.co.uk/",
+    "instagram": null,
+    "phone": "01270 814692",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:40.352Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://bosphoruscheshire.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=11152156755560080130&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "rania-cafe-shisha-lounge-burslem",
+    "slug": "rania-cafe-shisha-lounge-burslem",
+    "name": "Rania Cafe - Shisha Lounge",
+    "description": "Rania Cafe - Shisha Lounge is a spot for shisha in Burslem, Stoke-on-Trent with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Stoke-on-Trent",
+    "area": "Burslem",
+    "address": "76 Waterloo Rd, Burslem, Stoke-on-Trent ST6 3EX",
+    "postcode": "ST6 3EX",
+    "latitude": 53.0425114,
+    "longitude": -2.1939713,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "15:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Monday",
+        "open": "15:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "15:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "15:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "15:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Friday",
+        "open": "15:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "15:00",
+        "close": "03:00"
+      }
+    ],
+    "website": "https://www.instagram.com/raniacaffe?igsh=MW04YjA1cTNjdG94Mg==",
+    "instagram": null,
+    "phone": "07360 860109",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:40.352Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.instagram.com/raniacaffe?igsh=MW04YjA1cTNjdG94Mg==",
+      "otherSource": "https://maps.google.com/?cid=7752955827463705281&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "the-ember-lounge-stoke",
+    "slug": "the-ember-lounge-stoke",
+    "name": "The Ember Lounge",
+    "description": "The Ember Lounge is a spot for shisha in Stoke, Stoke-on-Trent with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Stoke-on-Trent",
+    "area": "Stoke",
+    "address": "College Rd, Stoke-on-Trent ST4 2DE",
+    "postcode": "ST4 2DE",
+    "latitude": 53.0095333,
+    "longitude": -2.1798216999999998,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "17:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:00",
+        "close": "22:00"
+      }
+    ],
+    "website": "https://www.staffsunion.com/venues/ember_lounge/",
+    "instagram": null,
+    "phone": "01782 294368",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:40.352Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.staffsunion.com/venues/ember_lounge/",
+      "otherSource": "https://maps.google.com/?cid=1554067751947160388&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "foji-s-ice-lounge-burslem",
+    "slug": "foji-s-ice-lounge-burslem",
+    "name": "Foji's Ice Lounge burslem",
+    "description": "Foji's Ice Lounge burslem is a spot for shisha in Burslem, Stoke-on-Trent with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Stoke-on-Trent",
+    "area": "Burslem",
+    "address": "15 Market Pl, Burslem, Stoke-on-Trent ST6 3AA",
+    "postcode": "ST6 3AA",
+    "latitude": 53.0457002,
+    "longitude": -2.1968069999999997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "21:30"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "21:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "21:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "21:30"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "21:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "21:30"
+      }
+    ],
+    "website": "http://www.fojisicelounge.uk/",
+    "instagram": null,
+    "phone": "01782 278703",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:40.352Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.fojisicelounge.uk/",
+      "otherSource": "https://maps.google.com/?cid=4920842113304459899&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  }
+]

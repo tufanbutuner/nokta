@@ -1,0 +1,837 @@
+[
+  {
+    "id": "celeste-shisha-and-cocktails-the-village",
+    "slug": "celeste-shisha-and-cocktails-the-village",
+    "name": "Celeste - Shisha & Cocktails",
+    "description": "Celeste - Shisha & Cocktails is a spot for shisha in The Village, Reading with drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Reading",
+    "area": "The Village",
+    "address": "The Village, 19-23 King St, Reading RG1 2HG",
+    "postcode": "RG1 2HG",
+    "latitude": 51.4542008,
+    "longitude": -0.9695165999999998,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "11:30",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "11:30",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:30",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:30",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:30",
+        "close": "02:30"
+      },
+      {
+        "day": "Friday",
+        "open": "11:30",
+        "close": "02:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:30",
+        "close": "02:30"
+      }
+    ],
+    "website": "https://celestebar.co.uk/",
+    "instagram": null,
+    "phone": "0118 405 0163",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:39.770Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://celestebar.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=333573377276689726&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "dua-lounge-tilehurst",
+    "slug": "dua-lounge-tilehurst",
+    "name": "Dua Lounge",
+    "description": "Dua Lounge is a spot for shisha in Tilehurst, Reading with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Reading",
+    "area": "Tilehurst",
+    "address": "355 Oxford Rd, Reading RG30 1AY",
+    "postcode": "RG30 1AY",
+    "latitude": 51.456236200000006,
+    "longitude": -0.9941261999999998,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "15:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "15:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "15:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "15:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "15:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "15:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "15:00",
+        "close": "00:00"
+      }
+    ],
+    "website": "https://duaflavours.co.uk/dua-lounge-reading/",
+    "instagram": null,
+    "phone": "07462 529410",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:39.770Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://duaflavours.co.uk/dua-lounge-reading/",
+      "otherSource": "https://maps.google.com/?cid=718538760530129729&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "shisha-lounge-the-drop-the-village",
+    "slug": "shisha-lounge-the-drop-the-village",
+    "name": "Shisha Lounge @ The drop",
+    "description": "Shisha Lounge @ The drop is a spot for shisha in The Village, Reading. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Reading",
+    "area": "The Village",
+    "address": "The Village, Unit 5a, Reading RG1 2HG",
+    "postcode": "RG1 2HG",
+    "latitude": 51.4546299,
+    "longitude": -0.9696328000000001,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:39.770Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=14460289755212635195&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "chillim-shisha-bar-and-lounge-reading-tilehurst",
+    "slug": "chillim-shisha-bar-and-lounge-reading-tilehurst",
+    "name": "Chillim Shisha Bar & Lounge Reading",
+    "description": "Chillim Shisha Bar & Lounge Reading is a spot for shisha in Tilehurst, Reading with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Reading",
+    "area": "Tilehurst",
+    "address": "598-600 Oxford Rd, Reading RG30 1EG",
+    "postcode": "RG30 1EG",
+    "latitude": 51.459044399999996,
+    "longitude": -1.0046666,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://social.quandoo.com/en/groups/chillim-shisha-bar-lounge-reading-99999",
+    "instagram": null,
+    "phone": "0118 377 5830",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:39.770Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://social.quandoo.com/en/groups/chillim-shisha-bar-lounge-reading-99999",
+      "otherSource": "https://maps.google.com/?cid=8611882200882144754&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "shisha-house-walk-through-yo-momoz",
+    "slug": "shisha-house-walk-through-yo-momoz",
+    "name": "Shisha House",
+    "description": "Shisha House is a spot for shisha in Walk through Yo Momoz, Reading with late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Reading",
+    "area": "Walk through Yo Momoz",
+    "address": "Walk through Yo Momoz, 83 Wokingham Rd, Reading RG6 1LH",
+    "postcode": "RG6 1LH",
+    "latitude": 51.448700099999996,
+    "longitude": -0.9370446000000001,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "18:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "18:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "18:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "18:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "18:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "18:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "18:00",
+        "close": "00:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07920 747132",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:39.770Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=11285116965013927609&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "the-good-brothers-cafe-lounge-earley",
+    "slug": "the-good-brothers-cafe-lounge-earley",
+    "name": "The Good Brothers Cafe Lounge",
+    "description": "The Good Brothers Cafe Lounge is a spot for shisha in Earley, Reading with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Reading",
+    "area": "Earley",
+    "address": "183 Wokingham Rd, Reading RG6 1LT",
+    "postcode": "RG6 1LT",
+    "latitude": 51.442840999999994,
+    "longitude": -0.9318966000000001,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "17:00"
+      },
+      {
+        "day": "Monday",
+        "open": "08:00",
+        "close": "17:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "08:00",
+        "close": "17:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "08:00",
+        "close": "17:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "08:00",
+        "close": "17:00"
+      },
+      {
+        "day": "Friday",
+        "open": "08:00",
+        "close": "17:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "08:00",
+        "close": "17:00"
+      }
+    ],
+    "website": "https://goodbrothershalal.co.uk/",
+    "instagram": null,
+    "phone": "07751 291268",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:39.770Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://goodbrothershalal.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=10561900604483452068&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "monkey-lounge-town-centre",
+    "slug": "monkey-lounge-town-centre",
+    "name": "Monkey Lounge",
+    "description": "Monkey Lounge is a spot for shisha in Town Centre, Reading with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Reading",
+    "area": "Town Centre",
+    "address": "30 Erleigh Rd, Reading RG1 5NA",
+    "postcode": "RG1 5NA",
+    "latitude": 51.449523899999996,
+    "longitude": -0.9510891,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "09:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "15:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "15:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "15:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Friday",
+        "open": "15:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "23:30"
+      }
+    ],
+    "website": "https://monkeylounge.uk/",
+    "instagram": null,
+    "phone": "0118 966 4222",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:39.770Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://monkeylounge.uk/",
+      "otherSource": "https://maps.google.com/?cid=1778458663187428743&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "cocoa-lounge-cafe-ltd-town-centre",
+    "slug": "cocoa-lounge-cafe-ltd-town-centre",
+    "name": "Cocoa Lounge Cafe Ltd",
+    "description": "Cocoa Lounge Cafe Ltd is a spot for shisha in Town Centre, Reading with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Reading",
+    "area": "Town Centre",
+    "address": "14-16 Oxford Rd, Reading RG1 7LA",
+    "postcode": "RG1 7LA",
+    "latitude": 51.4554967,
+    "longitude": -0.9763266999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [],
+    "website": null,
+    "instagram": null,
+    "phone": "0118 956 1649",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:39.770Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=17954424690545949994&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "zorba-s-shisha-and-kebab-town-centre",
+    "slug": "zorba-s-shisha-and-kebab-town-centre",
+    "name": "Zorba's Shisha & Kebab",
+    "description": "Zorba's Shisha & Kebab is a spot for shisha in Town Centre, Reading with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Reading",
+    "area": "Town Centre",
+    "address": "17a, 16 Station Rd, Reading RG1 1DN",
+    "postcode": "RG1 1DN",
+    "latitude": 51.4574214,
+    "longitude": -0.9719181000000001,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "17:30",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:30",
+        "close": "03:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:30",
+        "close": "03:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:30",
+        "close": "03:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:30",
+        "close": "03:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:30",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:30",
+        "close": "03:00"
+      }
+    ],
+    "website": "https://zorbasshishakebab.co.uk/",
+    "instagram": null,
+    "phone": "0118 956 6717",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:39.770Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://zorbasshishakebab.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=18049925284385960086&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "alto-lounge-caversham",
+    "slug": "alto-lounge-caversham",
+    "name": "Alto Lounge",
+    "description": "Alto Lounge is a spot for shisha in Caversham, Reading with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Reading",
+    "area": "Caversham",
+    "address": "32A, 32 Church St, Reading RG4 8AU",
+    "postcode": "RG4 8AU",
+    "latitude": 51.467845,
+    "longitude": -0.9749215999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://thelounges.co.uk/alto/",
+    "instagram": null,
+    "phone": "0118 947 3522",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:39.770Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://thelounges.co.uk/alto/",
+      "otherSource": "https://maps.google.com/?cid=18207442705138589988&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "bosco-lounge-woodley",
+    "slug": "bosco-lounge-woodley",
+    "name": "Bosco Lounge",
+    "description": "Bosco Lounge is a spot for shisha in Woodley, Reading with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Reading",
+    "area": "Woodley",
+    "address": "55 Crockhamwell Rd, Woodley, Reading RG5 3JP",
+    "postcode": "RG5 3JP",
+    "latitude": 51.451634399999996,
+    "longitude": -0.9061923000000001,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://thelounges.co.uk/bosco/",
+    "instagram": null,
+    "phone": "0118 969 6293",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:39.771Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://thelounges.co.uk/bosco/",
+      "otherSource": "https://maps.google.com/?cid=345908166844540798&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  }
+]

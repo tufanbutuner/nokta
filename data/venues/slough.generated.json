@@ -1,0 +1,1049 @@
+[
+  {
+    "id": "akaya-lounge-town-centre",
+    "slug": "akaya-lounge-town-centre",
+    "name": "Akaya Lounge",
+    "description": "Akaya Lounge is a spot for shisha in Town Centre, Slough with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Slough",
+    "area": "Town Centre",
+    "address": "307, 309 High St, Slough SL1 1BD",
+    "postcode": "SL1 1BD",
+    "latitude": 51.507408899999994,
+    "longitude": -0.5857234000000001,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "https://akayaloungeslough.co.uk/",
+    "instagram": null,
+    "phone": "01753 369123",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:30.304Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://akayaloungeslough.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=12731535886071125308&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "flavaz-shisha-lounge-upton-lea",
+    "slug": "flavaz-shisha-lounge-upton-lea",
+    "name": "Flavaz Shisha Lounge",
+    "description": "Flavaz Shisha Lounge is a spot for shisha in Upton Lea, Slough with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Slough",
+    "area": "Upton Lea",
+    "address": "110 Stoke Rd, Slough SL2 5AP",
+    "postcode": "SL2 5AP",
+    "latitude": 51.515713399999996,
+    "longitude": -0.5910951999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "18:00",
+        "close": "01:45"
+      },
+      {
+        "day": "Monday",
+        "open": "18:00",
+        "close": "01:45"
+      },
+      {
+        "day": "Tuesday",
+        "open": "18:00",
+        "close": "01:45"
+      },
+      {
+        "day": "Wednesday",
+        "open": "18:00",
+        "close": "01:45"
+      },
+      {
+        "day": "Thursday",
+        "open": "18:00",
+        "close": "01:45"
+      },
+      {
+        "day": "Friday",
+        "open": "18:00",
+        "close": "01:45"
+      },
+      {
+        "day": "Saturday",
+        "open": "18:00",
+        "close": "01:45"
+      }
+    ],
+    "website": "http://www.flavazlounge.com/",
+    "instagram": null,
+    "phone": "07438 970883",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:30.304Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.flavazlounge.com/",
+      "otherSource": "https://maps.google.com/?cid=13446015739103809658&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "haveli-grill-and-lounge-town-centre",
+    "slug": "haveli-grill-and-lounge-town-centre",
+    "name": "Haveli Grill & Lounge",
+    "description": "Haveli Grill & Lounge is a spot for shisha in Town Centre, Slough with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Slough",
+    "area": "Town Centre",
+    "address": "The Urban Building, 3-9 Albert St, Slough SL1 2BE",
+    "postcode": "SL1 2BE",
+    "latitude": 51.5060423,
+    "longitude": -0.5966832,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "08:00",
+        "close": "18:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "08:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "08:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "08:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Friday",
+        "open": "08:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "23:30"
+      }
+    ],
+    "website": "http://www.haveli.co.uk/",
+    "instagram": null,
+    "phone": "01753 297560",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:30.305Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.haveli.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=6011347594939877899&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "lounge-16-town-centre",
+    "slug": "lounge-16-town-centre",
+    "name": "Lounge 16",
+    "description": "Lounge 16 is a spot for shisha in Town Centre, Slough with late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Slough",
+    "area": "Town Centre",
+    "address": "16 Park St, Slough SL1 1PD",
+    "postcode": "SL1 1PD",
+    "latitude": 51.5074942,
+    "longitude": -0.5912999999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "18:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "18:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "18:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "18:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "18:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "18:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "18:00",
+        "close": "02:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07405 677800",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:30.305Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=10015877565580874324&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "dolce-shisha-lounge-town-centre",
+    "slug": "dolce-shisha-lounge-town-centre",
+    "name": "Dolce Shisha Lounge",
+    "description": "Dolce Shisha Lounge is a spot for shisha in Town Centre, Slough with late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Slough",
+    "area": "Town Centre",
+    "address": "4c Park St, Slough SL1 1PD",
+    "postcode": "SL1 1PD",
+    "latitude": 51.507861999999996,
+    "longitude": -0.5911961,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "02:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07864 848878",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:30.305Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=10340995570192167895&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "t5-shisha-lounge-crown-mdw",
+    "slug": "t5-shisha-lounge-crown-mdw",
+    "name": "T5 Shisha Lounge",
+    "description": "T5 Shisha Lounge is a spot for shisha in Crown Mdw, Slough with food and drinks, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Slough",
+    "area": "Crown Mdw",
+    "address": "Crown Mdw, Slough SL3 0LU",
+    "postcode": "SL3 0LU",
+    "latitude": 51.486435099999994,
+    "longitude": -0.5307010999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "11:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "11:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "11:30",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:30",
+        "close": "00:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07376 822042",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:30.306Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=7468011056789894998&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "azzaro-lounge-upton-lea",
+    "slug": "azzaro-lounge-upton-lea",
+    "name": "Azzaro Lounge",
+    "description": "Azzaro Lounge is a spot for shisha in Upton Lea, Slough with late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Slough",
+    "area": "Upton Lea",
+    "address": "Wexham Rd, Slough SL2 5HS",
+    "postcode": "SL2 5HS",
+    "latitude": 51.518802199999996,
+    "longitude": -0.5794064,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "01:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "01753 911948",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:30.306Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=3857877851177018398&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "atlantis-lounge-and-restaurant-holiday-inn-express-heathrow-t5",
+    "slug": "atlantis-lounge-and-restaurant-holiday-inn-express-heathrow-t5",
+    "name": "Atlantis Lounge and Restaurant",
+    "description": "Atlantis Lounge and Restaurant is a spot for shisha in Holiday Inn Express Heathrow T5, Slough with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Slough",
+    "area": "Holiday Inn Express Heathrow T5",
+    "address": "Holiday Inn Express Heathrow T5, 5 London Rd, Slough SL3 8QB",
+    "postcode": "SL3 8QB",
+    "latitude": 51.4889343,
+    "longitude": -0.535768,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "13:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "15:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "15:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "13:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "https://www.atlantislounge.co.uk/",
+    "instagram": null,
+    "phone": "07492 799999",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:30.306Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.atlantislounge.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=180793674534342710&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "deco-bar-and-lounge-town-centre",
+    "slug": "deco-bar-and-lounge-town-centre",
+    "name": "Deco Bar & Lounge",
+    "description": "Deco Bar & Lounge is a spot for shisha in Town Centre, Slough with drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Slough",
+    "area": "Town Centre",
+    "address": "277 High St, Slough SL1 1BN",
+    "postcode": "SL1 1BN",
+    "latitude": 51.5077066,
+    "longitude": -0.5874673,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "18:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "18:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "18:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "18:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "18:00",
+        "close": "02:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "18:00",
+        "close": "02:30"
+      }
+    ],
+    "website": "http://www.decobarlounge.co.uk/",
+    "instagram": null,
+    "phone": "01753 941135",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:30.306Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.decobarlounge.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=18015904183947257376&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "red-lion-shisha-lounge-burnham",
+    "slug": "red-lion-shisha-lounge-burnham",
+    "name": "Red Lion Shisha Lounge",
+    "description": "Red Lion Shisha Lounge is a spot for shisha in Burnham, Slough with late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Slough",
+    "area": "Burnham",
+    "address": "High St, Burnham, Slough SL1 7JZ",
+    "postcode": "SL1 7JZ",
+    "latitude": 51.5353707,
+    "longitude": -0.6590446999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "05:30",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "05:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "05:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "05:00",
+        "close": "01:00"
+      }
+    ],
+    "website": "https://redlionshisha.co.uk/",
+    "instagram": null,
+    "phone": "07455 239836",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:30.306Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://redlionshisha.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=7078754652362020147&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "rara-shisha-bar-and-grill-taplow-burnham",
+    "slug": "rara-shisha-bar-and-grill-taplow-burnham",
+    "name": "RARA Shisha, Bar & Grill Taplow",
+    "description": "RARA Shisha, Bar & Grill Taplow is a spot for shisha in Burnham, Slough with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Slough",
+    "area": "Burnham",
+    "address": "Taplow Common Rd, Burnham, Slough SL1 8LR",
+    "postcode": "SL1 8LR",
+    "latitude": 51.540945,
+    "longitude": -0.6720737,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:00",
+        "close": "01:00"
+      }
+    ],
+    "website": "https://www.rarabarandgrill.com/taplow/",
+    "instagram": null,
+    "phone": "07506 053151",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:30.306Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.rarabarandgrill.com/taplow/",
+      "otherSource": "https://maps.google.com/?cid=17178369526107570309&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "lounge13-windsor",
+    "slug": "lounge13-windsor",
+    "name": "Lounge13",
+    "description": "Lounge13 is a spot for shisha in Windsor, Slough with drinks. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Slough",
+    "area": "Windsor",
+    "address": "13A High St, Windsor SL4 1LD",
+    "postcode": "SL4 1LD",
+    "latitude": 51.4815839,
+    "longitude": -0.6067469,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:00",
+        "close": "23:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07980 613309",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:30.306Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=11764899008298078895&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "mango-lounge-windsor",
+    "slug": "mango-lounge-windsor",
+    "name": "Mango Lounge Windsor",
+    "description": "Mango Lounge Windsor is a spot for shisha in Windsor, Slough with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Slough",
+    "area": "Windsor",
+    "address": "9 Datchet Rd, Windsor SL4 1QB",
+    "postcode": "SL4 1QB",
+    "latitude": 51.4853367,
+    "longitude": -0.6070928999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "13:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "13:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "13:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "13:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "13:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "13:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "13:00",
+        "close": "22:30"
+      }
+    ],
+    "website": "http://mangoloungewindsor.co.uk/",
+    "instagram": null,
+    "phone": "01753 855576",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:30.307Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://mangoloungewindsor.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=16460333622544010574&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  }
+]

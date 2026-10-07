@@ -1,0 +1,871 @@
+[
+  {
+    "id": "3sixty-restaurant-and-sky-bar-fenham",
+    "slug": "3sixty-restaurant-and-sky-bar-fenham",
+    "name": "3SIXTY Restaurant & Sky Bar",
+    "description": "3SIXTY Restaurant & Sky Bar is a spot for shisha in Fenham, Newcastle upon Tyne with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Newcastle upon Tyne",
+    "area": "Fenham",
+    "address": "27 Rutherford St, Newcastle upon Tyne NE4 5BJ",
+    "postcode": "NE4 5BJ",
+    "latitude": 54.9713176,
+    "longitude": -1.6219972999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "00:00"
+      }
+    ],
+    "website": "https://www.3sixtynewcastle.co.uk/",
+    "instagram": null,
+    "phone": "0191 933 8591",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:50.370Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.3sixtynewcastle.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=16408442564168734918&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "the-mirage-cafe-fenham",
+    "slug": "the-mirage-cafe-fenham",
+    "name": "The Mirage Cafe",
+    "description": "The Mirage Cafe is a spot for shisha in Fenham, Newcastle upon Tyne with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Newcastle upon Tyne",
+    "area": "Fenham",
+    "address": "500 Westgate Rd, Newcastle upon Tyne NE4 9BL",
+    "postcode": "NE4 9BL",
+    "latitude": 54.9752169,
+    "longitude": -1.6502580999999998,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "http://themiragenewcastle.co.uk/",
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:50.370Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://themiragenewcastle.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=10388986133087890398&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "alsham-restaurant-fenham",
+    "slug": "alsham-restaurant-fenham",
+    "name": "Alsham Restaurant _ مطعم الشام",
+    "description": "Alsham Restaurant _ مطعم الشام is a spot for shisha in Fenham, Newcastle upon Tyne with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Newcastle upon Tyne",
+    "area": "Fenham",
+    "address": "35-43 George St, Newcastle upon Tyne NE4 7JN",
+    "postcode": "NE4 7JN",
+    "latitude": 54.9670087,
+    "longitude": -1.6254872999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "10:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "10:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "10:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "10:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "10:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "10:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "10:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://alshamtakeaway.co.uk/",
+    "instagram": null,
+    "phone": "0191 273 2349",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:50.370Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://alshamtakeaway.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=4705484287532873769&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "persia-restaurant-city-centre",
+    "slug": "persia-restaurant-city-centre",
+    "name": "Persia Restaurant",
+    "description": "Persia Restaurant is a spot for shisha in City Centre, Newcastle upon Tyne with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Newcastle upon Tyne",
+    "area": "City Centre",
+    "address": "14 Marlborough Cres, Newcastle upon Tyne NE1 4EE",
+    "postcode": "NE1 4EE",
+    "latitude": 54.9682469,
+    "longitude": -1.6221611,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "00:00"
+      }
+    ],
+    "website": "https://persiarestaurantonline.co.uk/",
+    "instagram": null,
+    "phone": "0191 649 9033",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:50.370Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://persiarestaurantonline.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=12952808690607676013&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "zio-bar-and-grill-jesmond",
+    "slug": "zio-bar-and-grill-jesmond",
+    "name": "Zio Bar & Grill",
+    "description": "Zio Bar & Grill is a spot for shisha in Jesmond, Newcastle upon Tyne with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Newcastle upon Tyne",
+    "area": "Jesmond",
+    "address": "89-99 Jesmond Rd, Jesmond, Newcastle upon Tyne NE2 1PR",
+    "postcode": "NE2 1PR",
+    "latitude": 54.983675399999996,
+    "longitude": -1.6021702999999998,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [],
+    "website": "https://www.hinewcastle.co.uk/fratellos-jesmond/",
+    "instagram": null,
+    "phone": "0191 212 5500",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:50.370Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.hinewcastle.co.uk/fratellos-jesmond/",
+      "otherSource": "https://maps.google.com/?cid=5876660141869599864&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "geisha-fusion-restaurant-benton",
+    "slug": "geisha-fusion-restaurant-benton",
+    "name": "Geisha Fusion Restaurant",
+    "description": "Geisha Fusion Restaurant is a spot for shisha in Benton, Newcastle upon Tyne with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Newcastle upon Tyne",
+    "area": "Benton",
+    "address": "Front St, Benton, Newcastle upon Tyne NE12 8AE",
+    "postcode": "NE12 8AE",
+    "latitude": 55.0108685,
+    "longitude": -1.5716900999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "19:30"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "http://www.geisharestaurants.co.uk/fusion",
+    "instagram": null,
+    "phone": "0191 300 4641",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:50.370Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.geisharestaurants.co.uk/fusion",
+      "otherSource": "https://maps.google.com/?cid=15265661748183056963&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "geisha-asia-restaurant-jesmond",
+    "slug": "geisha-asia-restaurant-jesmond",
+    "name": "Geisha Asia Restaurant",
+    "description": "Geisha Asia Restaurant is a spot for shisha in Jesmond, Newcastle upon Tyne with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Newcastle upon Tyne",
+    "area": "Jesmond",
+    "address": "Front St, Benton Ln, Newcastle upon Tyne NE12 8AE",
+    "postcode": "NE12 8AE",
+    "latitude": 55.010877,
+    "longitude": -1.5716689,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "http://www.geisharestaurants.co.uk/",
+    "instagram": null,
+    "phone": "0191 607 1100",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:50.371Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.geisharestaurants.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=465011909474721587&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "spy-bar-jesmond",
+    "slug": "spy-bar-jesmond",
+    "name": "Spy Bar",
+    "description": "Spy Bar is a spot for shisha in Jesmond, Newcastle upon Tyne with drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Newcastle upon Tyne",
+    "area": "Jesmond",
+    "address": "82-86 Osborne Rd, Jesmond, Newcastle upon Tyne NE2 2AP",
+    "postcode": "NE2 2AP",
+    "latitude": 54.9916974,
+    "longitude": -1.6036659,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://www.spybarjesmond.co.uk/",
+    "instagram": null,
+    "phone": "0191 281 3361",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:50.371Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.spybarjesmond.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=508095043014459087&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "bar-blanc-jesmond",
+    "slug": "bar-blanc-jesmond",
+    "name": "Bar Blanc",
+    "description": "Bar Blanc is a spot for shisha in Jesmond, Newcastle upon Tyne with drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Newcastle upon Tyne",
+    "area": "Jesmond",
+    "address": "38-42 Osborne Rd, Jesmond, Newcastle upon Tyne NE2 2AL",
+    "postcode": "NE2 2AL",
+    "latitude": 54.990019600000004,
+    "longitude": -1.6043863999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "10:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Monday",
+        "open": "10:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "10:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "10:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "10:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "10:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "10:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "http://www.barblanc.co.uk/",
+    "instagram": null,
+    "phone": "0191 281 5126",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:50.371Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.barblanc.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=8686139594099833652&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "the-palm-restaurant-fenham",
+    "slug": "the-palm-restaurant-fenham",
+    "name": "The Palm Restaurant",
+    "description": "The Palm Restaurant is a spot for shisha in Fenham, Newcastle upon Tyne with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Newcastle upon Tyne",
+    "area": "Fenham",
+    "address": "448 West Rd, Fenham, Newcastle upon Tyne NE5 2ER",
+    "postcode": "NE5 2ER",
+    "latitude": 54.979625,
+    "longitude": -1.672318,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "00:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "http://thepalmrestaurantncl.co.uk/",
+    "instagram": null,
+    "phone": "07404 089522",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:50.371Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://thepalmrestaurantncl.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=14738452317989662323&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "lebanese-grill-restaurant-city-centre",
+    "slug": "lebanese-grill-restaurant-city-centre",
+    "name": "Lebanese Grill Restaurant",
+    "description": "Lebanese Grill Restaurant is a spot for shisha in City Centre, Newcastle upon Tyne with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Newcastle upon Tyne",
+    "area": "City Centre",
+    "address": "Newcastle upon Tyne NE1 4EU",
+    "postcode": "NE1 4EU",
+    "latitude": 54.9688855,
+    "longitude": -1.6209244999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "22:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:50.371Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=5603430219117392814&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  }
+]

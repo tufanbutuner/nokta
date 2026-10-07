@@ -2612,5 +2612,254 @@
       "otherSource": "https://maps.google.com/?cid=2939570521173625315&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
     },
     "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "billy-s-bar-failsworth",
+    "slug": "billy-s-bar-failsworth",
+    "name": "Billy's Bar",
+    "description": "Billy's Bar is a spot for shisha in Manchester, Oldham with drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Manchester",
+    "area": "Failsworth",
+    "address": "Poplar St, Failsworth, Manchester M35 0HY",
+    "postcode": "M35 0HY",
+    "latitude": 53.503686699999996,
+    "longitude": -2.1704555,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "10:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "10:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "10:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "10:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "10:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "10:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "10:00",
+        "close": "00:00"
+      }
+    ],
+    "website": "http://www.billysbarfailsworth.co.uk/",
+    "instagram": null,
+    "phone": "0161 566 3277",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:20.337Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.billysbarfailsworth.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=14262770212408491212&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "desi-lounge-restaurant-failsworth",
+    "slug": "desi-lounge-restaurant-failsworth",
+    "name": "Desi Lounge Restaurant",
+    "description": "Desi Lounge Restaurant is a spot for shisha in Manchester, Oldham with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Manchester",
+    "area": "Failsworth",
+    "address": "236-238 Oldham Rd, Failsworth, Manchester M35 0HB",
+    "postcode": "M35 0HB",
+    "latitude": 53.506938899999994,
+    "longitude": -2.1657956,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "17:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://ugc.production.linktr.ee/4a867efd-8fbf-4245-845d-5e1c63e120ae_Desi-Lounge-Takeout-menuCRVD2010221.pdf",
+    "instagram": null,
+    "phone": "0161 683 0723",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:20.337Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://ugc.production.linktr.ee/4a867efd-8fbf-4245-845d-5e1c63e120ae_Desi-Lounge-Takeout-menuCRVD2010221.pdf",
+      "otherSource": "https://maps.google.com/?cid=10127922959950929689&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "shanky-s-resturant-bar-and-lounge-failsworth",
+    "slug": "shanky-s-resturant-bar-and-lounge-failsworth",
+    "name": "Shanky's Resturant, Bar & Lounge",
+    "description": "Shanky's Resturant, Bar & Lounge is a spot for shisha in Manchester, Oldham with food, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Manchester",
+    "area": "Failsworth",
+    "address": "476-478 Oldham Rd, Failsworth, Manchester M35 0FH",
+    "postcode": "M35 0FH",
+    "latitude": 53.5109214,
+    "longitude": -2.1569849,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "03:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07831 148970",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:20.337Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=7780731116818213523&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
   }
 ]

@@ -1,0 +1,561 @@
+[
+  {
+    "id": "derby-shisha-lounge-city-centre",
+    "slug": "derby-shisha-lounge-city-centre",
+    "name": "Derby shisha lounge",
+    "description": "Derby shisha lounge is a spot for shisha in City Centre, Derby with late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Derby",
+    "area": "City Centre",
+    "address": "7 Burton Rd, Derby DE1 1TG",
+    "postcode": "DE1 1TG",
+    "latitude": 52.916782000000005,
+    "longitude": -1.4793266999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "02:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07869 855985",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:30.751Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=13661923115445115534&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "the-royce-lounge-city-centre",
+    "slug": "the-royce-lounge-city-centre",
+    "name": "The Royce Lounge",
+    "description": "The Royce Lounge is a spot for shisha in City Centre, Derby with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Derby",
+    "area": "City Centre",
+    "address": "136-142 London Rd, Derby DE1 2SR",
+    "postcode": "DE1 2SR",
+    "latitude": 52.914538,
+    "longitude": -1.4666459,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "18:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "18:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "18:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "18:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "18:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "18:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "18:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "https://theroycelounge.co.uk/",
+    "instagram": null,
+    "phone": "01332 974499",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:30.752Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://theroycelounge.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=12571543180297171678&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "uzmania-grill-dessert-and-shisha-city-centre",
+    "slug": "uzmania-grill-dessert-and-shisha-city-centre",
+    "name": "UzMania Grill, Dessert and Shisha",
+    "description": "UzMania Grill, Dessert and Shisha is a spot for shisha in City Centre, Derby with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Derby",
+    "area": "City Centre",
+    "address": "29 East St, Derby DE1 2AL",
+    "postcode": "DE1 2AL",
+    "latitude": 52.9208894,
+    "longitude": -1.4748298,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "13:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "11:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://uzmaniadessertgrill.co.uk/",
+    "instagram": null,
+    "phone": "0330 050 6997",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:30.752Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://uzmaniadessertgrill.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=6515709268429007773&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "carnero-lounge-city-centre",
+    "slug": "carnero-lounge-city-centre",
+    "name": "Carnero Lounge",
+    "description": "Carnero Lounge is a spot for shisha in City Centre, Derby with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Derby",
+    "area": "City Centre",
+    "address": "10 St Peter's St, Derby DE1 1SH",
+    "postcode": "DE1 1SH",
+    "latitude": 52.921407099999996,
+    "longitude": -1.4766546,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://thelounges.co.uk/carnero/",
+    "instagram": null,
+    "phone": "01332 349662",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:30.752Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://thelounges.co.uk/carnero/",
+      "otherSource": "https://maps.google.com/?cid=15839788167180629984&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "imjustshisha-office-14",
+    "slug": "imjustshisha-office-14",
+    "name": "Imjustshisha",
+    "description": "Imjustshisha is a spot for shisha in Office 14, Derby. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Derby",
+    "area": "Office 14",
+    "address": "Office 14, 32 Friar Gate, Derby DE1 1BX",
+    "postcode": "DE1 1BX",
+    "latitude": 52.9240028,
+    "longitude": -1.4851097,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "23:30"
+      }
+    ],
+    "website": "http://www.imjustshisha.co.uk/",
+    "instagram": null,
+    "phone": "07592 183740",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:30.752Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.imjustshisha.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=1103267377584243640&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "shisha-bae-city-centre",
+    "slug": "shisha-bae-city-centre",
+    "name": "Shisha Bae",
+    "description": "Shisha Bae is a spot for shisha in City Centre, Derby. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Derby",
+    "area": "City Centre",
+    "address": "137 London Rd, Derby DE1 2QN",
+    "postcode": "DE1 2QN",
+    "latitude": 52.9154398,
+    "longitude": -1.4673938,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "15:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "15:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "15:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "15:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "15:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "15:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "15:00",
+        "close": "22:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "01332 383383",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:30.752Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=14307879194411979862&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "the-cosmetic-lounge-littleover",
+    "slug": "the-cosmetic-lounge-littleover",
+    "name": "The Cosmetic Lounge",
+    "description": "The Cosmetic Lounge is a spot for shisha in Littleover, Derby. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Derby",
+    "area": "Littleover",
+    "address": "20 Highfield Rd, Littleover, Derby DE23 1DG",
+    "postcode": "DE23 1DG",
+    "latitude": 52.8971412,
+    "longitude": -1.5072451,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Monday",
+        "open": "09:00",
+        "close": "19:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "09:00",
+        "close": "17:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "09:00",
+        "close": "17:00"
+      },
+      {
+        "day": "Friday",
+        "open": "09:00",
+        "close": "20:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "17:00"
+      }
+    ],
+    "website": "https://www.thecosmeticloungederby.com/",
+    "instagram": null,
+    "phone": "07752 614616",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:30.752Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.thecosmeticloungederby.com/",
+      "otherSource": "https://maps.google.com/?cid=6684078895607579071&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  }
+]

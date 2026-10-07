@@ -1,0 +1,411 @@
+[
+  {
+    "id": "24-mocktails-bar-mocktails-lees",
+    "slug": "24-mocktails-bar-mocktails-lees",
+    "name": "@24 Mocktails Bar - Mocktails -",
+    "description": "@24 Mocktails Bar - Mocktails - is a spot for shisha in Lees, Oldham with food and drinks, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Oldham",
+    "area": "Lees",
+    "address": "24a Bottom O' Th' Moor, Oldham OL4 1JZ",
+    "postcode": "OL4 1JZ",
+    "latitude": 53.543637200000006,
+    "longitude": -2.0983872,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "01:30"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "0161 566 2166",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:20.337Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=2270303214350190199&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "getlizzy-restaurant-town-centre",
+    "slug": "getlizzy-restaurant-town-centre",
+    "name": "Getlizzy Restaurant",
+    "description": "Getlizzy Restaurant is a spot for shisha in Town Centre, Oldham with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Oldham",
+    "area": "Town Centre",
+    "address": "7 Fairbottom St, Oldham OL1 3SW",
+    "postcode": "OL1 3SW",
+    "latitude": 53.542798999999995,
+    "longitude": -2.1084055,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "17:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:30",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://getlizzy.co.uk/",
+    "instagram": null,
+    "phone": "07418 365775",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:20.337Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://getlizzy.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=456794866372728093&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "shish-cafe-lees",
+    "slug": "shish-cafe-lees",
+    "name": "Shish Cafe",
+    "description": "Shish Cafe is a spot for shisha in Lees, Oldham with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Oldham",
+    "area": "Lees",
+    "address": "173-175 Lees Rd, Oldham OL4 1JP",
+    "postcode": "OL4 1JP",
+    "latitude": 53.5417644,
+    "longitude": -2.092686,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "00:00"
+      }
+    ],
+    "website": "https://shishcafeoldham.co.uk/",
+    "instagram": null,
+    "phone": "0161 222 7860",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:20.337Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://shishcafeoldham.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=600666090781763409&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "cafe-east-oldham-town-centre",
+    "slug": "cafe-east-oldham-town-centre",
+    "name": "Cafe East Oldham",
+    "description": "Cafe East Oldham is a spot for shisha in Town Centre, Oldham with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Oldham",
+    "area": "Town Centre",
+    "address": "13 Yorkshire St, Oldham OL1 3RZ",
+    "postcode": "OL1 3RZ",
+    "latitude": 53.5421809,
+    "longitude": -2.1109469,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://cafeeastoldham.com/storemenu",
+    "instagram": null,
+    "phone": "0161 616 8888",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:20.337Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://cafeeastoldham.com/storemenu",
+      "otherSource": "https://maps.google.com/?cid=276382834955853564&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "the-palm-restaurant-chadderton",
+    "slug": "the-palm-restaurant-chadderton",
+    "name": "The Palm Restaurant",
+    "description": "The Palm Restaurant is a spot for shisha in Chadderton, Oldham with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Oldham",
+    "area": "Chadderton",
+    "address": "Middleton Rd, Chadderton, Oldham OL9 6JN",
+    "postcode": "OL9 6JN",
+    "latitude": 53.54480720000001,
+    "longitude": -2.1391345,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "13:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "13:30",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://thepalmoldham.com/",
+    "instagram": null,
+    "phone": "0161 612 3552",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:20.337Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://thepalmoldham.com/",
+      "otherSource": "https://maps.google.com/?cid=8187062496260949468&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  }
+]

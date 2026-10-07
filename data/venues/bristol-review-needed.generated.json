@@ -1,0 +1,862 @@
+[
+  {
+    "id": "nova-bar-city-centre",
+    "slug": "nova-bar-city-centre",
+    "name": "Nova Bar",
+    "description": "Nova Bar is a spot for shisha in City Centre, Bristol with drinks, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bristol",
+    "area": "City Centre",
+    "address": "41، 43 Baldwin St, Bristol BS1 1RB",
+    "postcode": "BS1 1RB",
+    "latitude": 51.453368499999996,
+    "longitude": -2.5949643,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "15:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Monday",
+        "open": "15:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "15:00",
+        "close": "02:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "15:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "15:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "15:00",
+        "close": "02:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "15:00",
+        "close": "02:30"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07444 225379",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:22.269Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=4728632212190410509&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "cafe-atlas-city-centre",
+    "slug": "cafe-atlas-city-centre",
+    "name": "Cafe Atlas",
+    "description": "Cafe Atlas is a spot for shisha in City Centre, Bristol with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bristol",
+    "area": "City Centre",
+    "address": "23-27 Glass Arcade, St Nicholas St, Bristol BS1 1LJ",
+    "postcode": "BS1 1LJ",
+    "latitude": 51.4542035,
+    "longitude": -2.5931791,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "16:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "16:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "16:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "16:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "16:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "16:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:22.269Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=15530674387961805666&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "anaya-restaurant-st-pauls",
+    "slug": "anaya-restaurant-st-pauls",
+    "name": "Anaya Restaurant",
+    "description": "Anaya Restaurant is a spot for shisha in St Pauls, Bristol with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bristol",
+    "area": "St Pauls",
+    "address": "49-51 West St, Bristol BS2 0BZ",
+    "postcode": "BS2 0BZ",
+    "latitude": 51.457109499999994,
+    "longitude": -2.5779717,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "22:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "0117 985 0972",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:22.269Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=10018416065121813019&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "lona-grill-house-and-juice-bar-bishopston",
+    "slug": "lona-grill-house-and-juice-bar-bishopston",
+    "name": "Lona Grill House & Juice Bar",
+    "description": "Lona Grill House & Juice Bar is a spot for shisha in Bishopston, Bristol with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bristol",
+    "area": "Bishopston",
+    "address": "281 Gloucester Rd, Bishopston, Bristol BS7 8NY",
+    "postcode": "BS7 8NY",
+    "latitude": 51.47965190000001,
+    "longitude": -2.5890212000000004,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "21:30"
+      },
+      {
+        "day": "Monday",
+        "open": "15:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "15:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "22:30"
+      }
+    ],
+    "website": "http://www.lonagrillhouse.com/",
+    "instagram": null,
+    "phone": "0117 942 6100",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:22.269Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.lonagrillhouse.com/",
+      "otherSource": "https://maps.google.com/?cid=14059349578685597594&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "the-terrace-grill-restaurant-bristol-marriott-hotel-city-centre",
+    "slug": "the-terrace-grill-restaurant-bristol-marriott-hotel-city-centre",
+    "name": "The Terrace Grill Restaurant",
+    "description": "The Terrace Grill Restaurant is a spot for shisha in Bristol Marriott Hotel City Centre, Bristol with food, outdoor seating. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bristol",
+    "area": "Bristol Marriott Hotel City Centre",
+    "address": "Bristol Marriott Hotel City Centre, 2 Lower Castle St, Bristol BS1 3AD",
+    "postcode": "BS1 3AD",
+    "latitude": 51.456084,
+    "longitude": -2.5846047999999997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": true,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "outdoor",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Friday",
+        "open": "18:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "18:00",
+        "close": "22:00"
+      }
+    ],
+    "website": "https://www.marriott.co.uk/default.mi",
+    "instagram": null,
+    "phone": "0117 929 4281",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:22.269Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.marriott.co.uk/default.mi",
+      "otherSource": "https://maps.google.com/?cid=7604680882307844087&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "khyber-restaurant-easton",
+    "slug": "khyber-restaurant-easton",
+    "name": "Khyber Restaurant",
+    "description": "Khyber Restaurant is a spot for shisha in Easton, Bristol with food, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bristol",
+    "area": "Easton",
+    "address": "266 Stapleton Rd, Easton, Bristol BS5 0NP",
+    "postcode": "BS5 0NP",
+    "latitude": 51.4663408,
+    "longitude": -2.5689913,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "11:00",
+        "close": "00:30"
+      },
+      {
+        "day": "Monday",
+        "open": "11:00",
+        "close": "00:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:00",
+        "close": "00:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:00",
+        "close": "00:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:00",
+        "close": "00:30"
+      },
+      {
+        "day": "Friday",
+        "open": "11:00",
+        "close": "00:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:00",
+        "close": "00:30"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "0117 462 5597",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:22.269Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=13754057040476209602&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "barwaaqo-restaurant-saint-jude-s",
+    "slug": "barwaaqo-restaurant-saint-jude-s",
+    "name": "Barwaaqo Restaurant",
+    "description": "Barwaaqo Restaurant is a spot for shisha in Saint Jude's, Bristol with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bristol",
+    "area": "Saint Jude's",
+    "address": "85-87 Stapleton Rd, St Jude's, Bristol BS5 0QF",
+    "postcode": "BS5 0QF",
+    "latitude": 51.4609336,
+    "longitude": -2.573487,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "05:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "05:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "05:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "05:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "05:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "05:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "05:30",
+        "close": "23:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "0117 985 7050",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:22.269Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=9873553933789800708&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "the-spot-kitchen-and-bar-saint-paul-s",
+    "slug": "the-spot-kitchen-and-bar-saint-paul-s",
+    "name": "The Spot Kitchen & Bar",
+    "description": "The Spot Kitchen & Bar is a spot for shisha in Saint Paul's, Bristol with food and drinks. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bristol",
+    "area": "Saint Paul's",
+    "address": "Bond St, St Paul's, Bristol BS1 3LE",
+    "postcode": "BS1 3LE",
+    "latitude": 51.4598338,
+    "longitude": -2.5898101,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "07:30",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "06:30",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "06:30",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "06:30",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "06:30",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "06:30",
+        "close": "22:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "07:30",
+        "close": "22:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "0117 924 5000",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:22.269Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=1466582684476041797&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "mandi-palace-restaurant-saint-jude-s",
+    "slug": "mandi-palace-restaurant-saint-jude-s",
+    "name": "Mandi Palace Restaurant",
+    "description": "Mandi Palace Restaurant is a spot for shisha in Saint Jude's, Bristol with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bristol",
+    "area": "Saint Jude's",
+    "address": "52 Stapleton Rd, St Jude's, Bristol BS5 0RA",
+    "postcode": "BS5 0RA",
+    "latitude": 51.4602697,
+    "longitude": -2.5749581999999998,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "10:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "10:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "10:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "10:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "10:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "10:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "10:00",
+        "close": "22:00"
+      }
+    ],
+    "website": "https://yemenfoodltd.com/",
+    "instagram": null,
+    "phone": "07880 229908",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:22.269Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://yemenfoodltd.com/",
+      "otherSource": "https://maps.google.com/?cid=17267828270706426415&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "kibou-japanese-restaurant-and-bar-clifton",
+    "slug": "kibou-japanese-restaurant-and-bar-clifton",
+    "name": "KIBOU Japanese Restaurant & Bar - Clifton",
+    "description": "KIBOU Japanese Restaurant & Bar - Clifton is a spot for shisha in Clifton, Bristol with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bristol",
+    "area": "Clifton",
+    "address": "16 King's Rd, Clifton, Bristol BS8 4AB",
+    "postcode": "BS8 4AB",
+    "latitude": 51.455681,
+    "longitude": -2.6186358,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "00:00"
+      }
+    ],
+    "website": "https://kibou.co.uk/locations/kibou-clifton/?utm_source=GoogleMyBusiness&utm_medium=organic&utm_campaign=GMB",
+    "instagram": null,
+    "phone": "0117 450 2930",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:22.269Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://kibou.co.uk/locations/kibou-clifton/?utm_source=GoogleMyBusiness&utm_medium=organic&utm_campaign=GMB",
+      "otherSource": "https://maps.google.com/?cid=11975554211379082704&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "izakaya-clifton-japanese-bar-redland",
+    "slug": "izakaya-clifton-japanese-bar-redland",
+    "name": "Izakaya Clifton Japanese Bar",
+    "description": "Izakaya Clifton Japanese Bar is a spot for shisha in Redland, Bristol with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bristol",
+    "area": "Redland",
+    "address": "59 Apsley Rd, Redland, Bristol BS8 2SW",
+    "postcode": "BS8 2SW",
+    "latitude": 51.468239499999996,
+    "longitude": -2.6139223,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Thursday",
+        "open": "17:30",
+        "close": "21:30"
+      },
+      {
+        "day": "Friday",
+        "open": "17:30",
+        "close": "21:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "15:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:00",
+        "close": "21:30"
+      }
+    ],
+    "website": "https://www.izakayabristol.co.uk/",
+    "instagram": null,
+    "phone": "07777 611337",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:22.269Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.izakayabristol.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=12611555509907384426&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  }
+]

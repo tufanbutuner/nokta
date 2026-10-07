@@ -1,0 +1,984 @@
+[
+  {
+    "id": "sky-lounge-shisha-coventry-the-old-fire-station",
+    "slug": "sky-lounge-shisha-coventry-the-old-fire-station",
+    "name": "Sky Lounge Shisha Coventry",
+    "description": "Sky Lounge Shisha Coventry is a spot for shisha in The Old FIre Station, Coventry with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Coventry",
+    "area": "The Old FIre Station",
+    "address": "Sky Lounge Rooftop, The Old FIre Station, Hales Street, Coventry CV1 1JA",
+    "postcode": "CV1 1JA",
+    "latitude": 52.4106351,
+    "longitude": -1.507761,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "11:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "11:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "11:00",
+        "close": "04:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:00",
+        "close": "04:00"
+      }
+    ],
+    "website": "http://skyloungeshisha.com/",
+    "instagram": null,
+    "phone": "07831 766065",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:59.745Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://skyloungeshisha.com/",
+      "otherSource": "https://maps.google.com/?cid=5356125775072632670&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "pyramid-lounge-city-centre",
+    "slug": "pyramid-lounge-city-centre",
+    "name": "Pyramid Lounge",
+    "description": "Pyramid Lounge is a spot for shisha in City Centre, Coventry with late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Coventry",
+    "area": "City Centre",
+    "address": "120 Hood St, Coventry CV1 5PX",
+    "postcode": "CV1 5PX",
+    "latitude": 52.4087734,
+    "longitude": -1.498788,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "https://www.facebook.com/pyramidcoventry/",
+    "instagram": null,
+    "phone": "07939 896933",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:59.746Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.facebook.com/pyramidcoventry/",
+      "otherSource": "https://maps.google.com/?cid=13914077445678153909&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "mi-amor-lounge-city-centre",
+    "slug": "mi-amor-lounge-city-centre",
+    "name": "Mi amor lounge",
+    "description": "Mi amor lounge is a spot for shisha in City Centre, Coventry with late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Coventry",
+    "area": "City Centre",
+    "address": "1 Tower St, Coventry CV1 1JS",
+    "postcode": "CV1 1JS",
+    "latitude": 52.4125108,
+    "longitude": -1.5090086999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "00:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07466 451566",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:59.746Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=7894566889842870696&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "she-lounge-old-fire-station",
+    "slug": "she-lounge-old-fire-station",
+    "name": "She Lounge",
+    "description": "She Lounge is a spot for shisha in Old Fire Station, Coventry with drinks, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Coventry",
+    "area": "Old Fire Station",
+    "address": "2nd Floor, Old Fire Station, Hales St, Coventry CV1 1JA",
+    "postcode": "CV1 1JA",
+    "latitude": 52.410622,
+    "longitude": -1.5077299,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "11:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "11:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "11:00",
+        "close": "04:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:00",
+        "close": "04:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07831 766065",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:59.746Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=7837076950070897296&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "kilimanjaro-lounge-city-centre",
+    "slug": "kilimanjaro-lounge-city-centre",
+    "name": "Kilimanjaro Lounge",
+    "description": "Kilimanjaro Lounge is a spot for shisha in City Centre, Coventry with drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Coventry",
+    "area": "City Centre",
+    "address": "116 Far Gosford St, Coventry CV1 5EA",
+    "postcode": "CV1 5EA",
+    "latitude": 52.4077906,
+    "longitude": -1.4948495,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "17:00",
+        "close": "03:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "03:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "03:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "03:30"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "03:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:00",
+        "close": "03:30"
+      }
+    ],
+    "website": "http://www.habibirestaurant.co.uk/",
+    "instagram": null,
+    "phone": "07438 271732",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:59.746Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.habibirestaurant.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=11976154845566298341&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "i-boss-lounge-restaurant-bar-pub-and-live-music-longford",
+    "slug": "i-boss-lounge-restaurant-bar-pub-and-live-music-longford",
+    "name": "I Boss Lounge Restaurant Bar Pub and Live Music",
+    "description": "I Boss Lounge Restaurant Bar Pub and Live Music is a spot for shisha in Longford, Coventry with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Coventry",
+    "area": "Longford",
+    "address": "1-3 Rowley's Green Ln, Longford, Coventry CV6 6AN",
+    "postcode": "CV6 6AN",
+    "latitude": 52.4514188,
+    "longitude": -1.4967218,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "17:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:00",
+        "close": "03:00"
+      }
+    ],
+    "website": "http://www.ibosslounge.com/",
+    "instagram": null,
+    "phone": "07591 191757",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:59.746Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.ibosslounge.com/",
+      "otherSource": "https://maps.google.com/?cid=14471023467354611229&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "moods-shisha-garden-city-centre",
+    "slug": "moods-shisha-garden-city-centre",
+    "name": "MOODS Shisha Garden",
+    "description": "MOODS Shisha Garden is a spot for shisha in City Centre, Coventry with drinks, outdoor seating. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Coventry",
+    "area": "City Centre",
+    "address": "14c Butts, Coventry CV1 3GR",
+    "postcode": "CV1 3GR",
+    "latitude": 52.4048439,
+    "longitude": -1.520912,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": true,
+    "food": false,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "outdoor",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://cdn.me-qr.com/pdf/2891673.pdf",
+    "instagram": null,
+    "phone": "024 7622 9551",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:59.746Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://cdn.me-qr.com/pdf/2891673.pdf",
+      "otherSource": "https://maps.google.com/?cid=5033969920269368044&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "shisha-coco-mammut-foleshill",
+    "slug": "shisha-coco-mammut-foleshill",
+    "name": "Shisha Coco mammut",
+    "description": "Shisha Coco mammut is a spot for shisha in Foleshill, Coventry with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Coventry",
+    "area": "Foleshill",
+    "address": "300E Foleshill Rd, Foleshill, Coventry CV6 5AH",
+    "postcode": "CV6 5AH",
+    "latitude": 52.426248199999996,
+    "longitude": -1.5009181,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "13:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Monday",
+        "open": "12:30",
+        "close": "22:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:30",
+        "close": "22:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:30",
+        "close": "22:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:30",
+        "close": "22:30"
+      },
+      {
+        "day": "Friday",
+        "open": "12:30",
+        "close": "22:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "13:00",
+        "close": "22:30"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07723 376771",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:59.746Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=14915737706445295666&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "sky-blue-vape-lounge-foleshill",
+    "slug": "sky-blue-vape-lounge-foleshill",
+    "name": "Sky Blue Vape Lounge - Foleshill",
+    "description": "Sky Blue Vape Lounge - Foleshill is a spot for shisha in Foleshill, Coventry. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Coventry",
+    "area": "Foleshill",
+    "address": "994 Foleshill Rd, Coventry CV6 6EN",
+    "postcode": "CV6 6EN",
+    "latitude": 52.442777799999995,
+    "longitude": -1.4894444,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "10:00",
+        "close": "16:00"
+      },
+      {
+        "day": "Monday",
+        "open": "10:00",
+        "close": "18:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "10:00",
+        "close": "18:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "10:00",
+        "close": "18:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "10:00",
+        "close": "18:00"
+      },
+      {
+        "day": "Friday",
+        "open": "10:00",
+        "close": "18:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "10:00",
+        "close": "18:00"
+      }
+    ],
+    "website": "http://www.skybluevape.co.uk/",
+    "instagram": null,
+    "phone": "024 7668 8586",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:59.746Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.skybluevape.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=2475077661701674250&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "shisha-delivered-city-centre",
+    "slug": "shisha-delivered-city-centre",
+    "name": "Shisha Delivered",
+    "description": "Shisha Delivered is a spot for shisha in City Centre, Coventry with late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Coventry",
+    "area": "City Centre",
+    "address": "Smithford Way, Coventry CV1 1QX",
+    "postcode": "CV1 1QX",
+    "latitude": 52.409259299999995,
+    "longitude": -1.5114855999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "18:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "18:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "18:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "18:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "18:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "18:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "18:00",
+        "close": "00:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07846 113064",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:59.746Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=10711647554357431733&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "sky-blue-vape-lounge-earlsdon",
+    "slug": "sky-blue-vape-lounge-earlsdon",
+    "name": "Sky Blue Vape Lounge - Earlsdon",
+    "description": "Sky Blue Vape Lounge - Earlsdon is a spot for shisha in Earlsdon, Coventry. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Coventry",
+    "area": "Earlsdon",
+    "address": "171 Albany Rd, Earlsdon, Coventry CV5 6NE",
+    "postcode": "CV5 6NE",
+    "latitude": 52.4006486,
+    "longitude": -1.5279870999999998,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "10:00",
+        "close": "16:00"
+      },
+      {
+        "day": "Monday",
+        "open": "10:00",
+        "close": "18:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "10:00",
+        "close": "18:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "10:00",
+        "close": "18:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "10:00",
+        "close": "18:00"
+      },
+      {
+        "day": "Friday",
+        "open": "10:00",
+        "close": "18:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "10:00",
+        "close": "18:00"
+      }
+    ],
+    "website": "http://www.skybluevape.co.uk/",
+    "instagram": null,
+    "phone": "024 7671 5239",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:59.746Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.skybluevape.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=9695996439338525791&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "the-rupee-lounge-canley",
+    "slug": "the-rupee-lounge-canley",
+    "name": "The Rupee Lounge",
+    "description": "The Rupee Lounge is a spot for shisha in Canley, Coventry with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Coventry",
+    "area": "Canley",
+    "address": "9 Gramercy Park, Coventry CV4 9AE",
+    "postcode": "CV4 9AE",
+    "latitude": 52.4117217,
+    "longitude": -1.5975937999999998,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "17:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:30",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:30",
+        "close": "00:00"
+      }
+    ],
+    "website": "http://www.therupeelounge.co.uk/",
+    "instagram": null,
+    "phone": "024 7642 2277",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:59.746Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.therupeelounge.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=16172877312678542291&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  }
+]

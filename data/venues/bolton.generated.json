@@ -1,0 +1,986 @@
+[
+  {
+    "id": "blue-lounge-great-lever",
+    "slug": "blue-lounge-great-lever",
+    "name": "Blue Lounge",
+    "description": "Blue Lounge is a spot for shisha in Great Lever, Bolton with food, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bolton",
+    "area": "Great Lever",
+    "address": "154 Derby St, Bolton BL3 6JR",
+    "postcode": "BL3 6JR",
+    "latitude": 53.570839899999996,
+    "longitude": -2.4382270999999998,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "13:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "13:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "13:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "13:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "13:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "13:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "13:00",
+        "close": "02:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07714 195758",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:57.886Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=5922562409152807644&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "rizla-s-shisha-lounge-garage",
+    "slug": "rizla-s-shisha-lounge-garage",
+    "name": "Rizla’s Shisha Lounge شيشه كافيه",
+    "description": "Rizla’s Shisha Lounge شيشه كافيه is a spot for shisha in Garage, Bolton with late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bolton",
+    "area": "Garage",
+    "address": "Rizla’s Cafe Lounge (AML, Garage, Basil St, Bolton BL3 6HP",
+    "postcode": "BL3 6HP",
+    "latitude": 53.5714558,
+    "longitude": -2.4355694999999997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:00",
+        "close": "01:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "01204 963883",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:57.887Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=5274734650543923659&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "ekam-cafe-n-lounge-town-centre",
+    "slug": "ekam-cafe-n-lounge-town-centre",
+    "name": "EKAM CAFE N LOUNGE",
+    "description": "EKAM CAFE N LOUNGE is a spot for shisha in Town Centre, Bolton with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bolton",
+    "area": "Town Centre",
+    "address": "Unit 2-5, provincial House, Infirmary St, Bolton BL1 1JN",
+    "postcode": "BL1 1JN",
+    "latitude": 53.577719599999995,
+    "longitude": -2.4275243,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "14:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "14:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "14:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "14:00",
+        "close": "04:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "04:00"
+      }
+    ],
+    "website": "https://www.ekamhospitalitygroup.com/",
+    "instagram": null,
+    "phone": "01204 565720",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:57.887Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.ekamhospitalitygroup.com/",
+      "otherSource": "https://maps.google.com/?cid=11616248691836141154&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "arianna-lounge-great-lever",
+    "slug": "arianna-lounge-great-lever",
+    "name": "Arianna Lounge",
+    "description": "Arianna Lounge is a spot for shisha in Great Lever, Bolton with late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bolton",
+    "area": "Great Lever",
+    "address": "Tannery House, Nelson St, Bolton BL3 2JW",
+    "postcode": "BL3 2JW",
+    "latitude": 53.568280599999994,
+    "longitude": -2.4223567,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "19:00",
+        "close": "02:30"
+      },
+      {
+        "day": "Monday",
+        "open": "19:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "19:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "19:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "19:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "19:00",
+        "close": "02:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "19:00",
+        "close": "02:30"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07459 919909",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:57.887Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=1214797155416556253&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "the-xhale-lounge",
+    "slug": "the-xhale-lounge",
+    "name": "The Xhale Lounge",
+    "description": "The Xhale Lounge is a spot for shisha in The Xhale Lounge, Bolton with food, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bolton",
+    "area": "The Xhale Lounge",
+    "address": "The Xhale Lounge, Gilnow Ln, Bolton BL3 5EL",
+    "postcode": "BL3 5EL",
+    "latitude": 53.574520199999995,
+    "longitude": -2.4479466999999997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:00",
+        "close": "02:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07522 879135",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:57.887Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=12216815316521480835&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "nova-lounge-bolton-great-lever",
+    "slug": "nova-lounge-bolton-great-lever",
+    "name": "Nova lounge bolton",
+    "description": "Nova lounge bolton is a spot for shisha in Great Lever, Bolton with late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bolton",
+    "area": "Great Lever",
+    "address": "Gilnow Ln, Bolton BL3 5EL",
+    "postcode": "BL3 5EL",
+    "latitude": 53.5745496,
+    "longitude": -2.4479671,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "02:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:57.887Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=17164713521056896370&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "right-lines-smoothie-lounge-great-lever",
+    "slug": "right-lines-smoothie-lounge-great-lever",
+    "name": "Right Lines Smoothie Lounge",
+    "description": "Right Lines Smoothie Lounge is a spot for shisha in Great Lever, Bolton with drinks. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bolton",
+    "area": "Great Lever",
+    "address": "122-124 St Helens Rd, Bolton BL3 3PJ",
+    "postcode": "BL3 3PJ",
+    "latitude": 53.5643627,
+    "longitude": -2.4493245999999997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:57.887Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=13010424022051937465&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "blanco-lounge-horwich",
+    "slug": "blanco-lounge-horwich",
+    "name": "Blanco Lounge",
+    "description": "Blanco Lounge is a spot for shisha in Horwich, Bolton with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bolton",
+    "area": "Horwich",
+    "address": "unit 21a, 81 The Linkway, Horwich, Bolton BL6 6JA",
+    "postcode": "BL6 6JA",
+    "latitude": 53.5831528,
+    "longitude": -2.5360343999999997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://thelounges.co.uk/blanco",
+    "instagram": null,
+    "phone": "01204 201423",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:57.887Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://thelounges.co.uk/blanco",
+      "otherSource": "https://maps.google.com/?cid=3927729256282077858&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "hookah-paani-great-lever",
+    "slug": "hookah-paani-great-lever",
+    "name": "Hookah Paani",
+    "description": "Hookah Paani is a spot for shisha in Great Lever, Bolton with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bolton",
+    "area": "Great Lever",
+    "address": "132 St Helens Rd, Bolton BL3 3PJ",
+    "postcode": "BL3 3PJ",
+    "latitude": 53.5641836,
+    "longitude": -2.4496956,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [],
+    "website": null,
+    "instagram": null,
+    "phone": "07888 170597",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:57.887Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=13845746127910654062&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "dial-me-a-shisha-heaton",
+    "slug": "dial-me-a-shisha-heaton",
+    "name": "Dial Me A Shisha",
+    "description": "Dial Me A Shisha is a spot for shisha in Heaton, Bolton. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bolton",
+    "area": "Heaton",
+    "address": "21 Hastings Rd, Heaton, Bolton BL1 4NQ",
+    "postcode": "BL1 4NQ",
+    "latitude": 53.581705799999995,
+    "longitude": -2.4575421,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "18:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "18:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "18:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "18:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "18:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Friday",
+        "open": "18:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "23:30"
+      }
+    ],
+    "website": "https://dial-me-a-shisha.ueniweb.com/",
+    "instagram": null,
+    "phone": "07843 857353",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:57.887Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://dial-me-a-shisha.ueniweb.com/",
+      "otherSource": "https://maps.google.com/?cid=17782234191885270198&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "2372-grill-restaurant-and-lounge-town-centre",
+    "slug": "2372-grill-restaurant-and-lounge-town-centre",
+    "name": "2372 grill Restaurant & Lounge",
+    "description": "2372 grill Restaurant & Lounge is a spot for shisha in Town Centre, Bolton with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bolton",
+    "area": "Town Centre",
+    "address": "24 Bath St, Bolton BL1 2DJ",
+    "postcode": "BL1 2DJ",
+    "latitude": 53.582489599999995,
+    "longitude": -2.4311708,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "13:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "21:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "15:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "15:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "http://nigeriangrill.co.uk/",
+    "instagram": null,
+    "phone": "07459 639297",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:57.887Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://nigeriangrill.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=8957265944376665472&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "mu-assel-dial-a-shisha-town-centre",
+    "slug": "mu-assel-dial-a-shisha-town-centre",
+    "name": "MU'ASSEL DIAL A SHISHA",
+    "description": "MU'ASSEL DIAL A SHISHA is a spot for shisha in Town Centre, Bolton. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bolton",
+    "area": "Town Centre",
+    "address": "156 Chorley Old Rd, Bolton BL1 3AT",
+    "postcode": "BL1 3AT",
+    "latitude": 53.5845937,
+    "longitude": -2.446871,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "11:00",
+        "close": "17:00"
+      },
+      {
+        "day": "Monday",
+        "open": "10:00",
+        "close": "19:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "10:00",
+        "close": "19:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "10:00",
+        "close": "19:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "10:00",
+        "close": "19:00"
+      },
+      {
+        "day": "Friday",
+        "open": "10:00",
+        "close": "19:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "10:00",
+        "close": "19:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07400 498717",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:57.887Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=16340843578287738249&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "royal-sports-lounge-farnworth",
+    "slug": "royal-sports-lounge-farnworth",
+    "name": "Royal Sports Lounge",
+    "description": "Royal Sports Lounge is a spot for shisha in Farnworth, Bolton. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bolton",
+    "area": "Farnworth",
+    "address": "Farnworth Park Industrial Park, Wellington St, Farnworth, Bolton BL4 7BY",
+    "postcode": "BL4 7BY",
+    "latitude": 53.550204,
+    "longitude": -2.3988432,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "live_sport"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "football"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "23:30"
+      }
+    ],
+    "website": "http://www.royalsportslounge.co.uk/",
+    "instagram": null,
+    "phone": "07707 395710",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:57.887Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.royalsportslounge.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=8802678730945188620&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  }
+]

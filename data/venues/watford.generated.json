@@ -1,0 +1,815 @@
+[
+  {
+    "id": "canvas-shisha-lounge-town-centre",
+    "slug": "canvas-shisha-lounge-town-centre",
+    "name": "Canvas Shisha Lounge",
+    "description": "Canvas Shisha Lounge is a spot for shisha in Town Centre, Watford. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Watford",
+    "area": "Town Centre",
+    "address": "The Parade, High St, Watford WD17 1LN",
+    "postcode": "WD17 1LN",
+    "latitude": 51.6579578,
+    "longitude": -0.3998812,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [],
+    "website": null,
+    "instagram": null,
+    "phone": "01923 609872",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:47.795Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=15320762562177786672&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "144-lounge-town-centre",
+    "slug": "144-lounge-town-centre",
+    "name": "144 Lounge",
+    "description": "144 Lounge is a spot for shisha in Town Centre, Watford with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Watford",
+    "area": "Town Centre",
+    "address": "144 Lounge, 144 High St, Watford WD17 2EN",
+    "postcode": "WD17 2EN",
+    "latitude": 51.6536955,
+    "longitude": -0.3931715,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "http://facebook.com/144lounge",
+    "instagram": null,
+    "phone": "01923 463926",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:47.795Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://facebook.com/144lounge",
+      "otherSource": "https://maps.google.com/?cid=1780111177337323502&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "nana-s-restaurant-and-lounge-town-centre",
+    "slug": "nana-s-restaurant-and-lounge-town-centre",
+    "name": "Nana's Restaurant & Lounge",
+    "description": "Nana's Restaurant & Lounge is a spot for shisha in Town Centre, Watford with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Watford",
+    "area": "Town Centre",
+    "address": "129 St Albans Rd, Watford WD17 1RA",
+    "postcode": "WD17 1RA",
+    "latitude": 51.665294599999996,
+    "longitude": -0.39940749999999997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "00:01"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "00:00"
+      }
+    ],
+    "website": "https://nanasrestaurantwatford.co.uk/",
+    "instagram": null,
+    "phone": "01923 440055",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:47.795Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://nanasrestaurantwatford.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=16937257622686487245&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "the-lounge-town-centre",
+    "slug": "the-lounge-town-centre",
+    "name": "The Lounge",
+    "description": "The Lounge is a spot for shisha in Town Centre, Watford with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Watford",
+    "area": "Town Centre",
+    "address": "69 High St, Watford WD17 2DL",
+    "postcode": "WD17 2DL",
+    "latitude": 51.6556148,
+    "longitude": -0.39625849999999996,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "11:30",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "11:30",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:30",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:30",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:30",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "11:30",
+        "close": "22:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "10:00",
+        "close": "22:00"
+      }
+    ],
+    "website": "https://thelounges.co.uk/",
+    "instagram": null,
+    "phone": "0870 850 8573",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:47.795Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://thelounges.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=6959499804559492762&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "cassio-lounge-town-centre",
+    "slug": "cassio-lounge-town-centre",
+    "name": "Cassio Lounge",
+    "description": "Cassio Lounge is a spot for shisha in Town Centre, Watford with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Watford",
+    "area": "Town Centre",
+    "address": "57-29 High St, Watford WD17 2DJ",
+    "postcode": "WD17 2DJ",
+    "latitude": 51.6556175,
+    "longitude": -0.3962655,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "09:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "00:00"
+      }
+    ],
+    "website": "https://thelounges.co.uk/cassio/",
+    "instagram": null,
+    "phone": "01923 229530",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:47.796Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://thelounges.co.uk/cassio/",
+      "otherSource": "https://maps.google.com/?cid=2151515071968880073&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "noa-lounge-north-watford",
+    "slug": "noa-lounge-north-watford",
+    "name": "Noa Lounge",
+    "description": "Noa Lounge is a spot for shisha in North Watford, Watford with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Watford",
+    "area": "North Watford",
+    "address": "328 St Albans Rd, Watford WD24 6PQ",
+    "postcode": "WD24 6PQ",
+    "latitude": 51.674290299999996,
+    "longitude": -0.39633369999999996,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:30",
+        "close": "23:30"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:00",
+        "close": "00:00"
+      }
+    ],
+    "website": "http://www.noalounge.com/",
+    "instagram": null,
+    "phone": "01923 461518",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:47.796Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.noalounge.com/",
+      "otherSource": "https://maps.google.com/?cid=17668174516477651940&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "vu-lounge-london",
+    "slug": "vu-lounge-london",
+    "name": "Vu Lounge",
+    "description": "Vu Lounge is a spot for shisha in London, Watford with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Watford",
+    "area": "London",
+    "address": "High Street Bushey, Country Club, Bushey, London WD23 1TT",
+    "postcode": "WD23 1TT",
+    "latitude": 51.6433894,
+    "longitude": -0.3623973,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "https://www.vulounge.co.uk/",
+    "instagram": null,
+    "phone": "01923 608540",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:47.796Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.vulounge.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=14343931649324103872&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "the-g-lounge-north-watford",
+    "slug": "the-g-lounge-north-watford",
+    "name": "The G Lounge",
+    "description": "The G Lounge is a spot for shisha in North Watford, Watford with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Watford",
+    "area": "North Watford",
+    "address": "272 St Albans Rd, Watford WD24 6PE",
+    "postcode": "WD24 6PE",
+    "latitude": 51.672567699999995,
+    "longitude": -0.39603499999999997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "20:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "13:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Friday",
+        "open": "13:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "13:00",
+        "close": "21:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "01923 573346",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:47.796Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=3596302985214701253&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "spice-lounge-west-watford",
+    "slug": "spice-lounge-west-watford",
+    "name": "Spice Lounge",
+    "description": "Spice Lounge is a spot for shisha in West Watford, Watford with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Watford",
+    "area": "West Watford",
+    "address": "36 Market St, Watford WD18 0PY",
+    "postcode": "WD18 0PY",
+    "latitude": 51.6545269,
+    "longitude": -0.3992194,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "17:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:00",
+        "close": "00:00"
+      }
+    ],
+    "website": "https://www.spiceloungewatford.com/home",
+    "instagram": null,
+    "phone": "01923 236500",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:47.796Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.spiceloungewatford.com/home",
+      "otherSource": "https://maps.google.com/?cid=3473856664140879005&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "iberia-lounge-town-centre",
+    "slug": "iberia-lounge-town-centre",
+    "name": "Iberia Lounge",
+    "description": "Iberia Lounge is a spot for shisha in Town Centre, Watford with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Watford",
+    "area": "Town Centre",
+    "address": "85 Queen's Rd, Watford WD17 2QN",
+    "postcode": "WD17 2QN",
+    "latitude": 51.6579993,
+    "longitude": -0.3923472,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "21:30"
+      },
+      {
+        "day": "Monday",
+        "open": "07:30",
+        "close": "22:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "07:30",
+        "close": "22:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "07:30",
+        "close": "22:30"
+      },
+      {
+        "day": "Friday",
+        "open": "07:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "08:30",
+        "close": "23:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07429 034628",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:47.796Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=10337528634901352362&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "frankies-shisha-ltd-north-watford",
+    "slug": "frankies-shisha-ltd-north-watford",
+    "name": "Frankies Shisha Ltd",
+    "description": "Frankies Shisha Ltd is a spot for shisha in North Watford, Watford. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Watford",
+    "area": "North Watford",
+    "address": "175 St Albans Rd, Watford WD24 5BD",
+    "postcode": "WD24 5BD",
+    "latitude": 51.6684221,
+    "longitude": -0.3981441,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:47.796Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=13246688743628636552&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  }
+]

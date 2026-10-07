@@ -1,0 +1,704 @@
+[
+  {
+    "id": "selam-restaurant-and-cafe-roath",
+    "slug": "selam-restaurant-and-cafe-roath",
+    "name": "Selam Restaurant and Cafe",
+    "description": "Selam Restaurant and Cafe is a spot for shisha in Roath, Cardiff with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Cardiff",
+    "area": "Roath",
+    "address": "37 Broadway, Cardiff CF24 1QE",
+    "postcode": "CF24 1QE",
+    "latitude": 51.4879411,
+    "longitude": -3.1564134,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Monday",
+        "open": "13:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "13:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "13:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "13:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Friday",
+        "open": "13:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "13:00",
+        "close": "21:00"
+      }
+    ],
+    "website": "https://ukmappi.org/details/selam-restaurant-and-cafe-ChIJ57b",
+    "instagram": null,
+    "phone": "07833 213326",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:30.370Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://ukmappi.org/details/selam-restaurant-and-cafe-ChIJ57b",
+      "otherSource": "https://maps.google.com/?cid=2690358153472872793&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "cleopatra-cafe-roath",
+    "slug": "cleopatra-cafe-roath",
+    "name": "Cleopatra Cafe",
+    "description": "Cleopatra Cafe is a spot for shisha in Roath, Cardiff with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Cardiff",
+    "area": "Roath",
+    "address": "122 Crwys Rd, Cardiff CF24 4NR",
+    "postcode": "CF24 4NR",
+    "latitude": 51.4965317,
+    "longitude": -3.1806456,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [],
+    "website": "https://www.facebook.com/profile.php?id=100063533953556",
+    "instagram": null,
+    "phone": "07427 636733",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:30.370Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.facebook.com/profile.php?id=100063533953556",
+      "otherSource": "https://maps.google.com/?cid=15516375596219173557&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "shaam-nights-restaurant-roath",
+    "slug": "shaam-nights-restaurant-roath",
+    "name": "Shaam nights restaurant",
+    "description": "Shaam nights restaurant is a spot for shisha in Roath, Cardiff with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Cardiff",
+    "area": "Roath",
+    "address": "116 City Rd, Roath, Cardiff CF24 3DQ",
+    "postcode": "CF24 3DQ",
+    "latitude": 51.4891037,
+    "longitude": -3.1681326,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "14:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "22:00"
+      }
+    ],
+    "website": "https://shaamnights.com/",
+    "instagram": null,
+    "phone": "029 2048 2824",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:30.370Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://shaamnights.com/",
+      "otherSource": "https://maps.google.com/?cid=6468271470772623033&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "levant-grill-restaurant-and-takeaway-roath",
+    "slug": "levant-grill-restaurant-and-takeaway-roath",
+    "name": "Levant Grill Restaurant & Takeaway",
+    "description": "Levant Grill Restaurant & Takeaway is a spot for shisha in Roath, Cardiff with food, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Cardiff",
+    "area": "Roath",
+    "address": "222 City Rd, Cardiff CF24 3JH",
+    "postcode": "CF24 3JH",
+    "latitude": 51.4918009,
+    "longitude": -3.1709129,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "01:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:30.370Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=5916890605683495837&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "urban-bar-and-kitchen-roath",
+    "slug": "urban-bar-and-kitchen-roath",
+    "name": "Urban Bar & Kitchen",
+    "description": "Urban Bar & Kitchen is a spot for shisha in Roath, Cardiff with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Cardiff",
+    "area": "Roath",
+    "address": "24-26 Newport Rd, Cardiff CF24 0DD",
+    "postcode": "CF24 0DD",
+    "latitude": 51.4838093,
+    "longitude": -3.1674311,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "11:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "11:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "11:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:00",
+        "close": "22:00"
+      }
+    ],
+    "website": "https://restaurants.accor.com/gb/restaurant-6622_R001-first-floor-restaurant-cardiff.shtml",
+    "instagram": null,
+    "phone": "029 2043 5000",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:30.370Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://restaurants.accor.com/gb/restaurant-6622_R001-first-floor-restaurant-cardiff.shtml",
+      "otherSource": "https://maps.google.com/?cid=5062528468599004869&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "bar-105-roath",
+    "slug": "bar-105-roath",
+    "name": "Bar 105",
+    "description": "Bar 105 is a spot for shisha in Roath, Cardiff with drinks, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Cardiff",
+    "area": "Roath",
+    "address": "105 Cathays Terrace, Cardiff CF24 4HU",
+    "postcode": "CF24 4HU",
+    "latitude": 51.494326199999996,
+    "longitude": -3.1820705,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "17:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:00",
+        "close": "01:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07951 989877",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:30.370Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=14478980492923998549&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "sonder-bar-and-bistro-pontcanna",
+    "slug": "sonder-bar-and-bistro-pontcanna",
+    "name": "Sonder Bar & Bistro",
+    "description": "Sonder Bar & Bistro is a spot for shisha in Pontcanna, Cardiff with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Cardiff",
+    "area": "Pontcanna",
+    "address": "72 Llandaff Rd, Pontcanna, Cardiff CF11 9NL",
+    "postcode": "CF11 9NL",
+    "latitude": 51.4841242,
+    "longitude": -3.2029867,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "10:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "10:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://www.sonderbarandbistro.com/",
+    "instagram": null,
+    "phone": "07751 623002",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:30.370Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.sonderbarandbistro.com/",
+      "otherSource": "https://maps.google.com/?cid=10962911481537869642&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "saffron-cafe-riverside",
+    "slug": "saffron-cafe-riverside",
+    "name": "Saffron Cafe",
+    "description": "Saffron Cafe is a spot for shisha in Riverside, Cardiff with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Cardiff",
+    "area": "Riverside",
+    "address": "269 Cowbridge Rd E, Cardiff CF11 9AP",
+    "postcode": "CF11 9AP",
+    "latitude": 51.4815128,
+    "longitude": -3.2013387,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "15:00"
+      },
+      {
+        "day": "Monday",
+        "open": "08:00",
+        "close": "16:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "08:00",
+        "close": "16:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "08:00",
+        "close": "16:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "08:00",
+        "close": "16:00"
+      },
+      {
+        "day": "Friday",
+        "open": "08:00",
+        "close": "16:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "08:00",
+        "close": "16:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "029 2023 1295",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:30.370Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=6028454701027210089&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "the-everest-bar-and-eatery-city-centre",
+    "slug": "the-everest-bar-and-eatery-city-centre",
+    "name": "The Everest Bar & Eatery",
+    "description": "The Everest Bar & Eatery is a spot for shisha in City Centre, Cardiff with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Cardiff",
+    "area": "City Centre",
+    "address": "8 The Friary, Cardiff CF10 3FA",
+    "postcode": "CF10 3FA",
+    "latitude": 51.4824207,
+    "longitude": -3.1779272000000005,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "11:00",
+        "close": "00:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:00",
+        "close": "00:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:00",
+        "close": "00:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:00",
+        "close": "00:30"
+      },
+      {
+        "day": "Friday",
+        "open": "11:00",
+        "close": "00:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:00",
+        "close": "00:30"
+      }
+    ],
+    "website": "https://theeverestbareatery.com/",
+    "instagram": null,
+    "phone": "029 2297 0309",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:30.370Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://theeverestbareatery.com/",
+      "otherSource": "https://maps.google.com/?cid=5647149611402317103&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  }
+]

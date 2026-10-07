@@ -1,0 +1,1347 @@
+[
+  {
+    "id": "lounge-33-town-centre",
+    "slug": "lounge-33-town-centre",
+    "name": "Lounge-33",
+    "description": "Lounge-33 is a spot for shisha in Town Centre, Luton with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Luton",
+    "area": "Town Centre",
+    "address": "4 Cumberland St, Luton LU1 3BW",
+    "postcode": "LU1 3BW",
+    "latitude": 51.876570699999995,
+    "longitude": -0.4109115,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "01:00"
+      }
+    ],
+    "website": "https://lounge-33.co.uk/",
+    "instagram": null,
+    "phone": "01582 518276",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:19.132Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://lounge-33.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=9889099658365767367&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "kaya-lounge-bury-park",
+    "slug": "kaya-lounge-bury-park",
+    "name": "KAYA Lounge",
+    "description": "KAYA Lounge is a spot for shisha in Bury Park, Luton with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Luton",
+    "area": "Bury Park",
+    "address": "10 Marsh Rd, Luton LU3 2NH",
+    "postcode": "LU3 2NH",
+    "latitude": 51.899408799999996,
+    "longitude": -0.4467267,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "04:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "04:00"
+      }
+    ],
+    "website": "https://www.instagram.com/kayalounge.uk/?hl=en",
+    "instagram": null,
+    "phone": "01582 291396",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:19.134Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.instagram.com/kayalounge.uk/?hl=en",
+      "otherSource": "https://maps.google.com/?cid=790358481802539511&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "arabella-lounge-rooftop",
+    "slug": "arabella-lounge-rooftop",
+    "name": "Arabella Lounge",
+    "description": "Arabella Lounge is a spot for shisha in Rooftop, Luton with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Luton",
+    "area": "Rooftop",
+    "address": "Rooftop, Nadeem Plaza, 172 Dunstable Rd, Luton LU4 8FG",
+    "postcode": "LU4 8FG",
+    "latitude": 51.886347799999996,
+    "longitude": -0.4298165,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "15:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "15:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "15:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "15:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "15:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "15:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "15:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "http://www.arabellalounge.co.uk/",
+    "instagram": null,
+    "phone": "01582 482844",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:19.135Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.arabellalounge.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=6883988676423048982&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "noor-lounge-bury-park",
+    "slug": "noor-lounge-bury-park",
+    "name": "Noor Lounge",
+    "description": "Noor Lounge is a spot for shisha in Bury Park, Luton with food, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Luton",
+    "area": "Bury Park",
+    "address": "60 Bishopscote Rd, Luton LU3 1PB",
+    "postcode": "LU3 1PB",
+    "latitude": 51.898260799999996,
+    "longitude": -0.4367159,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "15:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "15:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "15:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "15:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "15:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "15:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "15:00",
+        "close": "00:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07795 191486",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:19.135Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=14416780947566633105&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "my-lounge-luton-london-luton-airport",
+    "slug": "my-lounge-luton-london-luton-airport",
+    "name": "My Lounge Luton",
+    "description": "My Lounge Luton is a spot for shisha in London Luton Airport, Luton with drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Luton",
+    "area": "London Luton Airport",
+    "address": "Room 9, London Luton Airport, Easy Way, Luton LU2 9LU",
+    "postcode": "LU2 9LU",
+    "latitude": 51.8806551,
+    "longitude": -0.37495940000000005,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "04:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Monday",
+        "open": "04:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "04:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "04:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "04:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Friday",
+        "open": "04:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "04:00",
+        "close": "21:00"
+      }
+    ],
+    "website": "https://no1lounges.com/lounges-by-location/my-lounge-at-luton-airport/",
+    "instagram": null,
+    "phone": "020 3283 8449",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:19.135Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://no1lounges.com/lounges-by-location/my-lounge-at-luton-airport/",
+      "otherSource": "https://maps.google.com/?cid=3727107557855390954&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "shisha-planet-leagrave",
+    "slug": "shisha-planet-leagrave",
+    "name": "Shisha Planet",
+    "description": "Shisha Planet is a spot for shisha in Leagrave, Luton with food, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Luton",
+    "area": "Leagrave",
+    "address": "15 Leagrave Rd, Luton LU4 8HT",
+    "postcode": "LU4 8HT",
+    "latitude": 51.886782399999994,
+    "longitude": -0.4301113,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "00:30"
+      },
+      {
+        "day": "Monday",
+        "open": "11:00",
+        "close": "00:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:00",
+        "close": "00:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:00",
+        "close": "00:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:00",
+        "close": "00:30"
+      },
+      {
+        "day": "Friday",
+        "open": "11:00",
+        "close": "00:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:00",
+        "close": "00:30"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07950 624865",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:19.135Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=8354451827514694428&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "no1-lounge-at-luton-airport-london-luton-airport",
+    "slug": "no1-lounge-at-luton-airport-london-luton-airport",
+    "name": "No1 Lounge at Luton Airport",
+    "description": "No1 Lounge at Luton Airport is a spot for shisha in London Luton Airport, Luton with drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Luton",
+    "area": "London Luton Airport",
+    "address": "Gate 17, London Luton Airport, Airport Way, Luton LU2 9LY",
+    "postcode": "LU2 9LY",
+    "latitude": 51.8809283,
+    "longitude": -0.37551969999999996,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "04:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Monday",
+        "open": "04:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "04:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "04:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "04:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Friday",
+        "open": "04:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "04:00",
+        "close": "21:00"
+      }
+    ],
+    "website": "https://no1lounges.com/lounges-by-location/no1-lounge-at-luton-airport/",
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:19.135Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://no1lounges.com/lounges-by-location/no1-lounge-at-luton-airport/",
+      "otherSource": "https://maps.google.com/?cid=17152310471905503691&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "shisha-and-sweet-paan-centre-bedfodshire",
+    "slug": "shisha-and-sweet-paan-centre-bedfodshire",
+    "name": "Shisha&sweet paan centre",
+    "description": "Shisha&sweet paan centre is a spot for shisha in Bedfodshire, Luton with late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Luton",
+    "area": "Bedfodshire",
+    "address": "24 Leagrave Rd, Bedfodshire, Luton LU4 8HZ",
+    "postcode": "LU4 8HZ",
+    "latitude": 51.8869222,
+    "longitude": -0.42992179999999997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "11:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "11:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "11:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:00",
+        "close": "00:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07466 112185",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:19.136Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=15034611599833912900&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "aspire-lounge-london-luton-airport",
+    "slug": "aspire-lounge-london-luton-airport",
+    "name": "Aspire Lounge",
+    "description": "Aspire Lounge is a spot for shisha in London Luton Airport, Luton with drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Luton",
+    "area": "London Luton Airport",
+    "address": "Swissport GB LTD Room 9, London Luton Airport, Easy Way, Luton LU2 9LU",
+    "postcode": "LU2 9LU",
+    "latitude": 51.8798725,
+    "longitude": -0.3753353,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "04:00",
+        "close": "20:30"
+      },
+      {
+        "day": "Monday",
+        "open": "04:00",
+        "close": "20:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "04:00",
+        "close": "20:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "04:00",
+        "close": "20:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "04:00",
+        "close": "20:30"
+      },
+      {
+        "day": "Friday",
+        "open": "04:00",
+        "close": "20:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "04:00",
+        "close": "20:30"
+      }
+    ],
+    "website": "https://www.executivelounges.com/airport-lounges/luton-aspire-airport-lounge",
+    "instagram": null,
+    "phone": "0161 694 7220",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:19.136Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.executivelounges.com/airport-lounges/luton-aspire-airport-lounge",
+      "otherSource": "https://maps.google.com/?cid=9488829463459259283&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "the-illyrians-restaurant-and-lounge-town-centre",
+    "slug": "the-illyrians-restaurant-and-lounge-town-centre",
+    "name": "The Illyrians Restaurant & Lounge",
+    "description": "The Illyrians Restaurant & Lounge is a spot for shisha in Town Centre, Luton with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Luton",
+    "area": "Town Centre",
+    "address": "93 Windmill Rd, Luton LU1 3XW",
+    "postcode": "LU1 3XW",
+    "latitude": 51.875177699999995,
+    "longitude": -0.4027176,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "02:30"
+      },
+      {
+        "day": "Monday",
+        "open": "09:00",
+        "close": "00:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "09:00",
+        "close": "00:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "09:00",
+        "close": "00:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "09:00",
+        "close": "02:30"
+      },
+      {
+        "day": "Friday",
+        "open": "09:00",
+        "close": "02:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "02:30"
+      }
+    ],
+    "website": "https://www.instagram.com/the_illyrians_lounge/",
+    "instagram": null,
+    "phone": "01582 513859",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:19.136Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.instagram.com/the_illyrians_lounge/",
+      "otherSource": "https://maps.google.com/?cid=211213600504892992&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "kumba-lounge-town-centre",
+    "slug": "kumba-lounge-town-centre",
+    "name": "Kumba Lounge",
+    "description": "Kumba Lounge is a spot for shisha in Town Centre, Luton with drinks. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Luton",
+    "area": "Town Centre",
+    "address": "9 Chapel St, Luton LU1 2SE",
+    "postcode": "LU1 2SE",
+    "latitude": 51.877788599999995,
+    "longitude": -0.41551669999999996,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Friday",
+        "open": "22:00",
+        "close": "05:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "22:00",
+        "close": "05:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07450 825349",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:19.136Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=9804815792913395600&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "irmak-lounge-dunstable",
+    "slug": "irmak-lounge-dunstable",
+    "name": "Irmak Lounge",
+    "description": "Irmak Lounge is a spot for shisha in Dunstable, Luton with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Luton",
+    "area": "Dunstable",
+    "address": "218 High St N, Dunstable LU6 1AU",
+    "postcode": "LU6 1AU",
+    "latitude": 51.893952399999996,
+    "longitude": -0.5318087,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "15:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "15:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "15:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "15:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "15:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "15:00",
+        "close": "01:30"
+      }
+    ],
+    "website": "https://www.irmaklounge.com/",
+    "instagram": null,
+    "phone": "01582 325233",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:19.136Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.irmaklounge.com/",
+      "otherSource": "https://maps.google.com/?cid=5876578464204747377&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "bar-coffee-lounge-parllaku-stopsley",
+    "slug": "bar-coffee-lounge-parllaku-stopsley",
+    "name": "Bar Coffee Lounge Parllaku",
+    "description": "Bar Coffee Lounge Parllaku is a spot for shisha in Stopsley, Luton with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Luton",
+    "area": "Stopsley",
+    "address": "45 Dudley St, Luton LU2 0NP",
+    "postcode": "LU2 0NP",
+    "latitude": 51.8844778,
+    "longitude": -0.4155905,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "06:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "06:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "06:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "06:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "06:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "06:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "06:00",
+        "close": "22:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:19.136Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=18106840086926446716&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "armando-arabu-lounge-town-centre",
+    "slug": "armando-arabu-lounge-town-centre",
+    "name": "Armando arabu lounge",
+    "description": "Armando arabu lounge is a spot for shisha in Town Centre, Luton with drinks. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Luton",
+    "area": "Town Centre",
+    "address": "12 Dunstable Rd, Luton LU1 1DY",
+    "postcode": "LU1 1DY",
+    "latitude": 51.8803785,
+    "longitude": -0.42231739999999995,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:19.136Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=16954819218829946351&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "r-d-bar-and-lounge-luton-stopsley",
+    "slug": "r-d-bar-and-lounge-luton-stopsley",
+    "name": "Ròdó Bar and Lounge (Luton)",
+    "description": "Ròdó Bar and Lounge (Luton) is a spot for shisha in Stopsley, Luton with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Luton",
+    "area": "Stopsley",
+    "address": "21 High Town Rd, Luton LU2 0BW",
+    "postcode": "LU2 0BW",
+    "latitude": 51.883874,
+    "longitude": -0.41305719999999996,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "13:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "13:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "13:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "13:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "13:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "15:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "13:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "https://rodobarandlounge.com/",
+    "instagram": null,
+    "phone": "01582 456111",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:19.136Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://rodobarandlounge.com/",
+      "otherSource": "https://maps.google.com/?cid=2144252909464368399&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "apata-lounge-town-centre",
+    "slug": "apata-lounge-town-centre",
+    "name": "Apata Lounge",
+    "description": "Apata Lounge is a spot for shisha in Town Centre, Luton with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Luton",
+    "area": "Town Centre",
+    "address": "48 Alma St, Luton LU1 2PL",
+    "postcode": "LU1 2PL",
+    "latitude": 51.880501599999995,
+    "longitude": -0.41963659999999997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "13:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Monday",
+        "open": "11:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "11:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://emmamamacuisineonline.co.uk/",
+    "instagram": null,
+    "phone": "07930 551361",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:19.136Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://emmamamacuisineonline.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=2841766436375902370&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "kohl-lounge-dunstable",
+    "slug": "kohl-lounge-dunstable",
+    "name": "KOHL LOUNGE",
+    "description": "KOHL LOUNGE is a spot for shisha in Dunstable, Luton with drinks, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Luton",
+    "area": "Dunstable",
+    "address": "Church St, Dunstable LU5 4RT",
+    "postcode": "LU5 4RT",
+    "latitude": 51.8869675,
+    "longitude": -0.5174327,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "08:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "08:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "08:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "08:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "08:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "08:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "08:00",
+        "close": "00:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "01234 866676",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:19.136Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=1234725024675758827&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  }
+]

@@ -6674,5 +6674,87 @@
       "otherSource": "https://maps.google.com/?cid=17718834850257280175&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
     },
     "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "oltian-shisha-and-bakery-hendon",
+    "slug": "oltian-shisha-and-bakery-hendon",
+    "name": "Oltian Shisha & Bakery",
+    "description": "Oltian Shisha & Bakery is a spot for shisha in London, Watford with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "London",
+    "area": "Hendon",
+    "address": "2 Watford Wy, London NW4 3AD",
+    "postcode": "NW4 3AD",
+    "latitude": 51.583185,
+    "longitude": -0.22695330000000002,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "07:30",
+        "close": "21:00"
+      },
+      {
+        "day": "Monday",
+        "open": "05:30",
+        "close": "23:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "05:30",
+        "close": "23:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "05:30",
+        "close": "23:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "05:30",
+        "close": "23:30"
+      },
+      {
+        "day": "Friday",
+        "open": "05:30",
+        "close": "23:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "05:30",
+        "close": "23:30"
+      }
+    ],
+    "website": "https://oltianbakeryandshisha.co.uk/",
+    "instagram": null,
+    "phone": "07886 708924",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:47.796Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://oltianbakeryandshisha.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=2040124310192300785&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
   }
 ]

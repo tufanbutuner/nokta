@@ -1,0 +1,1458 @@
+[
+  {
+    "id": "aryana-restaurant-city-centre",
+    "slug": "aryana-restaurant-city-centre",
+    "name": "aryana restaurant",
+    "description": "aryana restaurant is a spot for shisha in City Centre, Wolverhampton with food, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Wolverhampton",
+    "area": "City Centre",
+    "address": "35, 37 School St, Wolverhampton WV1 4LR",
+    "postcode": "WV1 4LR",
+    "latitude": 52.584144699999996,
+    "longitude": -2.131656,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "00:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "01902 427654",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:11.010Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=2367036654987413389&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "istanbul-restaurant-city-centre",
+    "slug": "istanbul-restaurant-city-centre",
+    "name": "Istanbul Restaurant",
+    "description": "Istanbul Restaurant is a spot for shisha in City Centre, Wolverhampton with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Wolverhampton",
+    "area": "City Centre",
+    "address": "Herian House, Fold St, Wolverhampton WV1 4LP",
+    "postcode": "WV1 4LP",
+    "latitude": 52.5839524,
+    "longitude": -2.1328574,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://istanbulrestaurantwolverhampton.com/",
+    "instagram": null,
+    "phone": "01902 427225",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:11.010Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://istanbulrestaurantwolverhampton.com/",
+      "otherSource": "https://maps.google.com/?cid=7509119547964336897&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "shawarma-station-restaurant-city-centre",
+    "slug": "shawarma-station-restaurant-city-centre",
+    "name": "Shawarma Station Restaurant",
+    "description": "Shawarma Station Restaurant is a spot for shisha in City Centre, Wolverhampton with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Wolverhampton",
+    "area": "City Centre",
+    "address": "Next to the Flower Shop, 38 Queen St, Wolverhampton WV1 3JW",
+    "postcode": "WV1 3JW",
+    "latitude": 52.5858912,
+    "longitude": -2.1236903,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "10:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "10:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "10:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "10:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "10:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "10:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "10:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://www.facebook.com/Shawarmastation2021-101003045585109",
+    "instagram": null,
+    "phone": "01902 427523",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:11.010Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.facebook.com/Shawarmastation2021-101003045585109",
+      "otherSource": "https://maps.google.com/?cid=16376069940964844838&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "the-mountain-bar-and-grill-city-centre",
+    "slug": "the-mountain-bar-and-grill-city-centre",
+    "name": "The Mountain Bar and Grill",
+    "description": "The Mountain Bar and Grill is a spot for shisha in City Centre, Wolverhampton with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Wolverhampton",
+    "area": "City Centre",
+    "address": "46 Queen St, Wolverhampton WV1 3BJ",
+    "postcode": "WV1 3BJ",
+    "latitude": 52.5856577,
+    "longitude": -2.1237095999999998,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "13:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "15:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "13:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://www.facebook.com/profile.php?id=61554005410504",
+    "instagram": null,
+    "phone": "01902 964774",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:11.010Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.facebook.com/profile.php?id=61554005410504",
+      "otherSource": "https://maps.google.com/?cid=8071032341845028568&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "de-fusion-bar-and-restaurant-exchange-vault",
+    "slug": "de-fusion-bar-and-restaurant-exchange-vault",
+    "name": "De Fusion Bar and Restaurant",
+    "description": "De Fusion Bar and Restaurant is a spot for shisha in Exchange Vault, Wolverhampton with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Wolverhampton",
+    "area": "Exchange Vault",
+    "address": "Exchange Vault, Exchange St, Wolverhampton WV1 1TS",
+    "postcode": "WV1 1TS",
+    "latitude": 52.5863975,
+    "longitude": -2.1287708999999997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "22:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "22:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "22:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Friday",
+        "open": "22:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "22:00",
+        "close": "03:00"
+      }
+    ],
+    "website": "https://www.defusionrestaurant.co.uk/",
+    "instagram": null,
+    "phone": "01902 421333",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:11.010Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.defusionrestaurant.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=13946469134341991638&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "calif-bar-city-centre",
+    "slug": "calif-bar-city-centre",
+    "name": "Calif Bar",
+    "description": "Calif Bar is a spot for shisha in City Centre, Wolverhampton with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Wolverhampton",
+    "area": "City Centre",
+    "address": "Scholars Walk, 179 Stafford St, Wolverhampton WV1 1NA",
+    "postcode": "WV1 1NA",
+    "latitude": 52.5881487,
+    "longitude": -2.1261319999999997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "13:00",
+        "close": "02:30"
+      },
+      {
+        "day": "Monday",
+        "open": "13:00",
+        "close": "02:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "13:00",
+        "close": "02:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "13:00",
+        "close": "02:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "13:00",
+        "close": "02:30"
+      },
+      {
+        "day": "Friday",
+        "open": "13:00",
+        "close": "02:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "13:00",
+        "close": "02:30"
+      }
+    ],
+    "website": "https://califbarwolverhampton.co.uk/",
+    "instagram": null,
+    "phone": "01902 424750",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:11.010Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://califbarwolverhampton.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=198837902311043372&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "whitmore-reans-bar-grill-and-restaurant",
+    "slug": "whitmore-reans-bar-grill-and-restaurant",
+    "name": "Whitmore Reans Bar Grill and Restaurant",
+    "description": "Whitmore Reans Bar Grill and Restaurant is a spot for shisha in Whitmore Reans, Wolverhampton with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Wolverhampton",
+    "area": "Whitmore Reans",
+    "address": "Bitterne Dr, Wolverhampton WV6 0QN",
+    "postcode": "WV6 0QN",
+    "latitude": 52.5945583,
+    "longitude": -2.1422352,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "22:30"
+      }
+    ],
+    "website": "http://whitmorereans.co.uk/",
+    "instagram": null,
+    "phone": "01902 831656",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:11.011Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://whitmorereans.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=1368742220753448757&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "jacks-cafe-and-bar-blakenhall",
+    "slug": "jacks-cafe-and-bar-blakenhall",
+    "name": "Jacks Cafe & Bar",
+    "description": "Jacks Cafe & Bar is a spot for shisha in Blakenhall, Wolverhampton with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Wolverhampton",
+    "area": "Blakenhall",
+    "address": "Frederick St, Wolverhampton WV2 4DU",
+    "postcode": "WV2 4DU",
+    "latitude": 52.5787383,
+    "longitude": -2.1273639,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "08:30",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "07:30",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "07:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "07:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "07:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "07:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "07:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "http://www.jackscafeandbar.co.uk/",
+    "instagram": null,
+    "phone": "01902 870781",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:11.011Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.jackscafeandbar.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=4777405414412993210&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "kazbar-and-grill-queens-arms",
+    "slug": "kazbar-and-grill-queens-arms",
+    "name": "Kazbar and Grill",
+    "description": "Kazbar and Grill is a spot for shisha in Queens Arms, Wolverhampton with food and drinks. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Wolverhampton",
+    "area": "Queens Arms",
+    "address": "Queens Arms, 13 Graiseley Row, Wolverhampton WV2 4HJ",
+    "postcode": "WV2 4HJ",
+    "latitude": 52.5770321,
+    "longitude": -2.1323273,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:30",
+        "close": "23:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "01902 423317",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:11.011Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=13703561979915873203&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "rumi-cafe-and-grill-wednesfield",
+    "slug": "rumi-cafe-and-grill-wednesfield",
+    "name": "Rumi Cafe and Grill",
+    "description": "Rumi Cafe and Grill is a spot for shisha in Wednesfield, Wolverhampton with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Wolverhampton",
+    "area": "Wednesfield",
+    "address": "1A Rookery St, Wolverhampton WV11 1UN",
+    "postcode": "WV11 1UN",
+    "latitude": 52.5986602,
+    "longitude": -2.0868259,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "08:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "08:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "08:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "08:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "08:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "08:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "08:00",
+        "close": "23:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "01902 863131",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:11.011Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=3698160014476583355&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "haveli-bar-and-grill-bradley",
+    "slug": "haveli-bar-and-grill-bradley",
+    "name": "HAVELI BAR & Grill",
+    "description": "HAVELI BAR & Grill is a spot for shisha in Bradley, Wolverhampton with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Wolverhampton",
+    "area": "Bradley",
+    "address": "122 Highfields Rd, Bradley, Bilston WV14 0LH",
+    "postcode": "WV14 0LH",
+    "latitude": 52.5576565,
+    "longitude": -2.0714273,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "15:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Friday",
+        "open": "15:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "15:00",
+        "close": "00:00"
+      }
+    ],
+    "website": "http://havelibar-grill-restaurant.co.uk/",
+    "instagram": null,
+    "phone": "01902 382182",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:11.011Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://havelibar-grill-restaurant.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=16866615844757029345&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "triangle-bar-and-grill-bradley",
+    "slug": "triangle-bar-and-grill-bradley",
+    "name": "Triangle Bar & Grill",
+    "description": "Triangle Bar & Grill is a spot for shisha in Bradley, Wolverhampton with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Wolverhampton",
+    "area": "Bradley",
+    "address": "Bank St, Bradley, Bilston WV14 8PA",
+    "postcode": "WV14 8PA",
+    "latitude": 52.5577226,
+    "longitude": -2.0708448,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "http://www.thetrianglebarandgrill.co.uk/",
+    "instagram": null,
+    "phone": "01902 682681",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:11.011Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.thetrianglebarandgrill.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=7356761294591098456&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "cafe-metro-bar-bilston",
+    "slug": "cafe-metro-bar-bilston",
+    "name": "Cafe Metro Bar",
+    "description": "Cafe Metro Bar is a spot for shisha in Bilston, Wolverhampton with drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Wolverhampton",
+    "area": "Bilston",
+    "address": "46 Church St, Bilston WV14 0AH",
+    "postcode": "WV14 0AH",
+    "latitude": 52.5657627,
+    "longitude": -2.0746229,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "15:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "20:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "http://www.cafe-metro.co.uk/",
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:11.011Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.cafe-metro.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=10288954017451284868&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "the-grapes-bar-and-grill-bilston",
+    "slug": "the-grapes-bar-and-grill-bilston",
+    "name": "The Grapes Bar and Grill",
+    "description": "The Grapes Bar and Grill is a spot for shisha in Bilston, Wolverhampton with food and drinks. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Wolverhampton",
+    "area": "Bilston",
+    "address": "Moseley Rd, Bilston WV14 6JG",
+    "postcode": "WV14 6JG",
+    "latitude": 52.579305299999994,
+    "longitude": -2.0762459,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "23:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "01902 470504",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:11.011Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=12356905249319836907&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "the-ash-tree-bar-and-grill-wolverhampton-blakenhall",
+    "slug": "the-ash-tree-bar-and-grill-wolverhampton-blakenhall",
+    "name": "The Ash Tree Bar and Grill, Wolverhampton",
+    "description": "The Ash Tree Bar and Grill, Wolverhampton is a spot for shisha in Blakenhall, Wolverhampton with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Wolverhampton",
+    "area": "Blakenhall",
+    "address": "269 Dudley Rd, Wolverhampton WV2 3JU",
+    "postcode": "WV2 3JU",
+    "latitude": 52.567777799999995,
+    "longitude": -2.1233333,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "13:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "15:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "15:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "15:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "15:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "15:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "13:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://ashtreewolverhampton.co.uk/",
+    "instagram": null,
+    "phone": "01902 960838",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:11.011Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://ashtreewolverhampton.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=8767611951353468871&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "the-boat-bar-and-grill-wednesfield",
+    "slug": "the-boat-bar-and-grill-wednesfield",
+    "name": "The Boat Bar & Grill",
+    "description": "The Boat Bar & Grill is a spot for shisha in Wednesfield, Wolverhampton with drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Wolverhampton",
+    "area": "Wednesfield",
+    "address": "29 Church St, Wednesfield, Wolverhampton WV11 1SS",
+    "postcode": "WV11 1SS",
+    "latitude": 52.5999571,
+    "longitude": -2.0837193,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "15:00",
+        "close": "00:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "00:30"
+      }
+    ],
+    "website": "https://www.theboatwolverhampton.com/",
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:11.011Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.theboatwolverhampton.com/",
+      "otherSource": "https://maps.google.com/?cid=575763912482728283&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "uday-s-indian-restaurant-blakenhall",
+    "slug": "uday-s-indian-restaurant-blakenhall",
+    "name": "Uday's Indian Restaurant",
+    "description": "Uday's Indian Restaurant is a spot for shisha in Blakenhall, Wolverhampton with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Wolverhampton",
+    "area": "Blakenhall",
+    "address": "381 Dudley Rd, Wolverhampton WV2 3AY",
+    "postcode": "WV2 3AY",
+    "latitude": 52.571243499999994,
+    "longitude": -2.1250114,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "21:45"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "21:45"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "21:45"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "21:45"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "21:45"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "22:30"
+      }
+    ],
+    "website": "http://www.udaysrestaurant.co.uk/",
+    "instagram": null,
+    "phone": "01902 822288",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:11.011Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.udaysrestaurant.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=4884500641949903955&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "the-coast-restaurant-bar-dudley",
+    "slug": "the-coast-restaurant-bar-dudley",
+    "name": "The Coast Restaurant Bar",
+    "description": "The Coast Restaurant Bar is a spot for shisha in Dudley, Wolverhampton with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Wolverhampton",
+    "area": "Dudley",
+    "address": "32 King St, Dudley DY2 8NY",
+    "postcode": "DY2 8NY",
+    "latitude": 52.509257899999994,
+    "longitude": -2.0824441,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "10:30"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "15:00",
+        "close": "02:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "02:30"
+      }
+    ],
+    "website": "https://thecoastrestaurantandbar.com/",
+    "instagram": null,
+    "phone": "01384 234320",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:11.012Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://thecoastrestaurantandbar.com/",
+      "otherSource": "https://maps.google.com/?cid=11548808922588401645&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  }
+]

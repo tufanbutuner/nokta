@@ -1,0 +1,894 @@
+[
+  {
+    "id": "king-restaurant-burslem",
+    "slug": "king-restaurant-burslem",
+    "name": "King restaurant",
+    "description": "King restaurant is a spot for shisha in Burslem, Stoke-on-Trent with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Stoke-on-Trent",
+    "area": "Burslem",
+    "address": "89 Waterloo Rd, Burslem, Stoke-on-Trent ST6 2EN",
+    "postcode": "ST6 2EN",
+    "latitude": 53.0421603,
+    "longitude": -2.1932359,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "11:30",
+        "close": "21:00"
+      },
+      {
+        "day": "Monday",
+        "open": "11:30",
+        "close": "21:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:30",
+        "close": "21:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:30",
+        "close": "21:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:30",
+        "close": "21:00"
+      },
+      {
+        "day": "Friday",
+        "open": "11:30",
+        "close": "21:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:30",
+        "close": "21:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "01782 818118",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:40.352Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=295219127078538894&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "rotana-restaurant-stoke-tunstall",
+    "slug": "rotana-restaurant-stoke-tunstall",
+    "name": "Rotana restaurant stoke",
+    "description": "Rotana restaurant stoke is a spot for shisha in Tunstall, Stoke-on-Trent with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Stoke-on-Trent",
+    "area": "Tunstall",
+    "address": "Scotia Rd, Tunstall, Stoke-on-Trent ST6 4EZ",
+    "postcode": "ST6 4EZ",
+    "latitude": 53.0542873,
+    "longitude": -2.2018600999999998,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "23:30"
+      }
+    ],
+    "website": "https://rotanastoke.com/",
+    "instagram": null,
+    "phone": "07576 615862",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:40.353Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://rotanastoke.com/",
+      "otherSource": "https://maps.google.com/?cid=11427196744399650939&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "the-moroccan-cafe-longton-exchange",
+    "slug": "the-moroccan-cafe-longton-exchange",
+    "name": "The Moroccan Cafe",
+    "description": "The Moroccan Cafe is a spot for shisha in Longton Exchange, Stoke-on-Trent with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Stoke-on-Trent",
+    "area": "Longton Exchange",
+    "address": "20 Bennett Precinct, Longton Exchange, Stoke-on-Trent ST3 2JA",
+    "postcode": "ST3 2JA",
+    "latitude": 52.9880566,
+    "longitude": -2.1351424999999997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "11:00",
+        "close": "18:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "10:00",
+        "close": "18:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "10:00",
+        "close": "18:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "10:00",
+        "close": "18:00"
+      },
+      {
+        "day": "Friday",
+        "open": "10:00",
+        "close": "18:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "10:00",
+        "close": "18:00"
+      }
+    ],
+    "website": "https://www.ubereats.com/gb/store/the-moroccan-cafe/olV5TD-vXVCz7s-4Mf3oZg?diningMode=PICKUP&pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMlNUMyUyMDVBUyUyMiUyQyUyMnJlZmVyZW5jZSUyMiUzQSUyMkNoSUpuNW1HWFk1cGVrZ1JXem9jY1Y3ZER1ZyUyMiUyQyUyMnJlZmVyZW5jZVR5cGUlMjIlM0ElMjJnb29nbGVfcGxhY2VzJTIyJTJDJTIybGF0aXR1ZGUlMjIlM0E1Mi45OTg1MzIxJTJDJTIybG9uZ2l0dWRlJTIyJTNBLTIuMTMyMzg5JTdE",
+    "instagram": null,
+    "phone": "07405 885914",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:40.353Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.ubereats.com/gb/store/the-moroccan-cafe/olV5TD-vXVCz7s-4Mf3oZg?diningMode=PICKUP&pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMlNUMyUyMDVBUyUyMiUyQyUyMnJlZmVyZW5jZSUyMiUzQSUyMkNoSUpuNW1HWFk1cGVrZ1JXem9jY1Y3ZER1ZyUyMiUyQyUyMnJlZmVyZW5jZVR5cGUlMjIlM0ElMjJnb29nbGVfcGxhY2VzJTIyJTJDJTIybGF0aXR1ZGUlMjIlM0E1Mi45OTg1MzIxJTJDJTIybG9uZ2l0dWRlJTIyJTNBLTIuMTMyMzg5JTdE",
+      "otherSource": "https://maps.google.com/?cid=2135008369456704784&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "salahuddin-restaurant-hanley",
+    "slug": "salahuddin-restaurant-hanley",
+    "name": "SALAHUDDIN RESTAURANT",
+    "description": "SALAHUDDIN RESTAURANT is a spot for shisha in Hanley, Stoke-on-Trent with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Stoke-on-Trent",
+    "area": "Hanley",
+    "address": "90 Town Rd, Hanley, Stoke-on-Trent ST1 2LD",
+    "postcode": "ST1 2LD",
+    "latitude": 53.0305032,
+    "longitude": -2.1742279,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "11:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Monday",
+        "open": "11:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "11:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:00",
+        "close": "22:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "01782 214036",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:40.353Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=15753696046299403502&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "desire-cocktail-bar-hanley",
+    "slug": "desire-cocktail-bar-hanley",
+    "name": "Desire Cocktail Bar",
+    "description": "Desire Cocktail Bar is a spot for shisha in Hanley, Stoke-on-Trent with drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Stoke-on-Trent",
+    "area": "Hanley",
+    "address": "57 Piccadilly, Hanley, Stoke-on-Trent ST1 1HR",
+    "postcode": "ST1 1HR",
+    "latitude": 53.024057899999995,
+    "longitude": -2.1775172,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "00:00"
+      }
+    ],
+    "website": "https://www.desirecocktailbar.com/",
+    "instagram": null,
+    "phone": "01782 308349",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:40.353Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.desirecocktailbar.com/",
+      "otherSource": "https://maps.google.com/?cid=7622006948424052132&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "hawasana-afghan-restaurant-stoke",
+    "slug": "hawasana-afghan-restaurant-stoke",
+    "name": "Hawasana Afghan Restaurant",
+    "description": "Hawasana Afghan Restaurant is a spot for shisha in Stoke, Stoke-on-Trent with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Stoke-on-Trent",
+    "area": "Stoke",
+    "address": "77 Stoke Rd, Stoke-on-Trent ST4 2RW",
+    "postcode": "ST4 2RW",
+    "latitude": 53.0106112,
+    "longitude": -2.1839434,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "14:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "14:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "14:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "14:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "14:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://hawasana.net/storemenu",
+    "instagram": null,
+    "phone": "01782 911141",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:40.353Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://hawasana.net/storemenu",
+      "otherSource": "https://maps.google.com/?cid=7543616618222395876&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "today-restaurant-burslem",
+    "slug": "today-restaurant-burslem",
+    "name": "Today restaurant",
+    "description": "Today restaurant is a spot for shisha in Burslem, Stoke-on-Trent with food, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Stoke-on-Trent",
+    "area": "Burslem",
+    "address": "85 Waterloo Rd, Burslem, Stoke-on-Trent ST6 2EN",
+    "postcode": "ST6 2EN",
+    "latitude": 53.0422843,
+    "longitude": -2.1933468,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "11:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "11:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "11:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:00",
+        "close": "01:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07432 137393",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:40.353Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=13939883795482247239&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "ian-fraser-lemmy-kilmister-bar-burslem",
+    "slug": "ian-fraser-lemmy-kilmister-bar-burslem",
+    "name": "Ian Fraser 'Lemmy' Kilmister Bar",
+    "description": "Ian Fraser 'Lemmy' Kilmister Bar is a spot for shisha in Burslem, Stoke-on-Trent with drinks. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Stoke-on-Trent",
+    "area": "Burslem",
+    "address": "6 Market Pl, Burslem, Stoke-on-Trent ST6 4AT",
+    "postcode": "ST6 4AT",
+    "latitude": 53.046219,
+    "longitude": -2.197815,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "11:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "14:00",
+        "close": "20:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:00",
+        "close": "23:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:40.353Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=11351449000735711040&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "ali-s-kitchen-restaurant-and-bar-longton-exchange",
+    "slug": "ali-s-kitchen-restaurant-and-bar-longton-exchange",
+    "name": "Ali's Kitchen Restaurant And Bar",
+    "description": "Ali's Kitchen Restaurant And Bar is a spot for shisha in Longton Exchange, Stoke-on-Trent with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Stoke-on-Trent",
+    "area": "Longton Exchange",
+    "address": "40a The Strand, Longton Exchange, Stoke-on-Trent ST3 2JN",
+    "postcode": "ST3 2JN",
+    "latitude": 52.988051299999995,
+    "longitude": -2.1371105,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "08:00",
+        "close": "14:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "08:00",
+        "close": "14:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "08:00",
+        "close": "14:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "23:30"
+      }
+    ],
+    "website": "https://aliskitchen2022.co.uk/storemenu",
+    "instagram": null,
+    "phone": "01782 432323",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:40.353Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://aliskitchen2022.co.uk/storemenu",
+      "otherSource": "https://maps.google.com/?cid=67152652347092805&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "cafe-nur-tunstall",
+    "slug": "cafe-nur-tunstall",
+    "name": "Cafe Nur",
+    "description": "Cafe Nur is a spot for shisha in Tunstall, Stoke-on-Trent with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Stoke-on-Trent",
+    "area": "Tunstall",
+    "address": "121 High St, Tunstall, Stoke-on-Trent ST6 5TA",
+    "postcode": "ST6 5TA",
+    "latitude": 53.0579283,
+    "longitude": -2.2103979,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "10:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "10:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "10:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "10:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "10:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "10:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "10:00",
+        "close": "22:00"
+      }
+    ],
+    "website": "https://cafenur.co.uk/",
+    "instagram": null,
+    "phone": "01782 871426",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:40.353Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://cafenur.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=9336100051520218465&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "hello-juice-restaurant-hanley",
+    "slug": "hello-juice-restaurant-hanley",
+    "name": "Hello Juice Restaurant",
+    "description": "Hello Juice Restaurant is a spot for shisha in Hanley, Stoke-on-Trent with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Stoke-on-Trent",
+    "area": "Hanley",
+    "address": "30 Snow Hill, Hanley, Stoke-on-Trent ST1 4LT",
+    "postcode": "ST1 4LT",
+    "latitude": 53.018407499999995,
+    "longitude": -2.183434,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "10:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "10:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "10:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "10:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "10:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "10:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "10:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://hellojuice.uk/",
+    "instagram": null,
+    "phone": "01782 651561",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:40.353Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://hellojuice.uk/",
+      "otherSource": "https://maps.google.com/?cid=18428582327102426701&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  }
+]

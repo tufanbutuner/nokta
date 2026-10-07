@@ -1,0 +1,555 @@
+[
+  {
+    "id": "chickaros-slough-halal-restaurant-upton-lea",
+    "slug": "chickaros-slough-halal-restaurant-upton-lea",
+    "name": "Chickaros Slough (Halal Restaurant)",
+    "description": "Chickaros Slough (Halal Restaurant) is a spot for shisha in Upton Lea, Slough with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Slough",
+    "area": "Upton Lea",
+    "address": "328 Farnham Rd, Slough SL2 1BT",
+    "postcode": "SL2 1BT",
+    "latitude": 51.5260156,
+    "longitude": -0.615593,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "00:00"
+      }
+    ],
+    "website": "https://www.slough-restaurants.co.uk/",
+    "instagram": null,
+    "phone": "01753 357235",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:30.307Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.slough-restaurants.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=2996456145412329483&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "damascene-restaurant-town-centre",
+    "slug": "damascene-restaurant-town-centre",
+    "name": "Damascene Restaurant",
+    "description": "Damascene Restaurant is a spot for shisha in Town Centre, Slough with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Slough",
+    "area": "Town Centre",
+    "address": "248 High St, Slough SL1 1JU",
+    "postcode": "SL1 1JU",
+    "latitude": 51.507596,
+    "longitude": -0.5881356999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://www.damascene-slough.co.uk/",
+    "instagram": null,
+    "phone": "01753 523555",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:30.307Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.damascene-slough.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=10339604548329805606&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "izmir-turkish-restaurant-farnham-common",
+    "slug": "izmir-turkish-restaurant-farnham-common",
+    "name": "Izmir Turkish Restaurant, Farnham Common",
+    "description": "Izmir Turkish Restaurant, Farnham Common is a spot for shisha in Farnham Common, Slough with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Slough",
+    "area": "Farnham Common",
+    "address": "6 The Broadway, Farnham Common, Slough SL2 3PQ",
+    "postcode": "SL2 3PQ",
+    "latitude": 51.5547097,
+    "longitude": -0.615505,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "23:30"
+      }
+    ],
+    "website": "http://izmirfarnham.co.uk/",
+    "instagram": null,
+    "phone": "01753 646088",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:30.307Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://izmirfarnham.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=3068173532652277124&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "chor-bazaarr-restaurant-and-bar-cippenham",
+    "slug": "chor-bazaarr-restaurant-and-bar-cippenham",
+    "name": "Chor Bazaarr Restaurant & Bar",
+    "description": "Chor Bazaarr Restaurant & Bar is a spot for shisha in Cippenham, Slough with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Slough",
+    "area": "Cippenham",
+    "address": "7 Station Rd, Cippenham, Slough SL1 6JJ",
+    "postcode": "SL1 6JJ",
+    "latitude": 51.5207364,
+    "longitude": -0.6454356,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "00:00"
+      }
+    ],
+    "website": "https://www.chorbazaarr.co.uk/",
+    "instagram": null,
+    "phone": "01753 336007",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:30.307Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.chorbazaarr.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=13480468460456592000&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "yakamoz-turkish-restaurant-burnham",
+    "slug": "yakamoz-turkish-restaurant-burnham",
+    "name": "Yakamoz Turkish Restaurant",
+    "description": "Yakamoz Turkish Restaurant is a spot for shisha in Burnham, Slough with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Slough",
+    "area": "Burnham",
+    "address": "89 High St, Burnham, Slough SL1 7JZ",
+    "postcode": "SL1 7JZ",
+    "latitude": 51.5346347,
+    "longitude": -0.6589993,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:30",
+        "close": "21:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:30",
+        "close": "21:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:30",
+        "close": "21:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:30",
+        "close": "21:30"
+      },
+      {
+        "day": "Friday",
+        "open": "12:30",
+        "close": "22:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:30",
+        "close": "22:00"
+      }
+    ],
+    "website": "https://yakamozrestaurant.co.uk/",
+    "instagram": null,
+    "phone": "01628 319616",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:30.307Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://yakamozrestaurant.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=5877245309907423436&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "lee-lee-restaurant-and-cocktail-bar-windsor",
+    "slug": "lee-lee-restaurant-and-cocktail-bar-windsor",
+    "name": "LEE LEE restaurant & cocktail bar",
+    "description": "LEE LEE restaurant & cocktail bar is a spot for shisha in Windsor, Slough with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Slough",
+    "area": "Windsor",
+    "address": "65 St. Leonards Rd, Windsor SL4 3BX",
+    "postcode": "SL4 3BX",
+    "latitude": 51.4776829,
+    "longitude": -0.6127888,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "19:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "13:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "13:00",
+        "close": "00:00"
+      }
+    ],
+    "website": "https://findleelee.com/",
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:30.307Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://findleelee.com/",
+      "otherSource": "https://maps.google.com/?cid=16183845110191640558&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "al-fassia-restaurant-windsor",
+    "slug": "al-fassia-restaurant-windsor",
+    "name": "Al Fassia Restaurant",
+    "description": "Al Fassia Restaurant is a spot for shisha in Windsor, Slough with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Slough",
+    "area": "Windsor",
+    "address": "27 St. Leonards Rd, Windsor SL4 3BP",
+    "postcode": "SL4 3BP",
+    "latitude": 51.4793149,
+    "longitude": -0.6122945,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "22:00"
+      }
+    ],
+    "website": "http://www.alfassiarestaurant.com/",
+    "instagram": null,
+    "phone": "01753 855370",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:30.307Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.alfassiarestaurant.com/",
+      "otherSource": "https://maps.google.com/?cid=5404707136931655554&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  }
+]

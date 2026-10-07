@@ -1,0 +1,619 @@
+[
+  {
+    "id": "khalid-s-cafe-and-lounge-blakenhall",
+    "slug": "khalid-s-cafe-and-lounge-blakenhall",
+    "name": "Khalid’s Cafe and Lounge",
+    "description": "Khalid’s Cafe and Lounge is a spot for shisha in Blakenhall, Wolverhampton with late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Wolverhampton",
+    "area": "Blakenhall",
+    "address": "Frederick St, Wolverhampton WV2 4DU",
+    "postcode": "WV2 4DU",
+    "latitude": 52.5787586,
+    "longitude": -2.1276527,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "02:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "01902 219704",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:11.009Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=18249453341535674395&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "lupo-lounge-city-centre",
+    "slug": "lupo-lounge-city-centre",
+    "name": "Lupo Lounge",
+    "description": "Lupo Lounge is a spot for shisha in City Centre, Wolverhampton with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Wolverhampton",
+    "area": "City Centre",
+    "address": "12-13 Dudley St, Wolverhampton WV1 3EY",
+    "postcode": "WV1 3EY",
+    "latitude": 52.584992199999995,
+    "longitude": -2.1265847,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://thelounges.co.uk/lupo/",
+    "instagram": null,
+    "phone": "01902 429073",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:11.010Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://thelounges.co.uk/lupo/",
+      "otherSource": "https://maps.google.com/?cid=7289125581385140724&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "the-lounge-ltd-city-centre",
+    "slug": "the-lounge-ltd-city-centre",
+    "name": "The Lounge Ltd",
+    "description": "The Lounge Ltd is a spot for shisha in City Centre, Wolverhampton. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Wolverhampton",
+    "area": "City Centre",
+    "address": "51 Lichfield St, Wolverhampton WV1 1EQ",
+    "postcode": "WV1 1EQ",
+    "latitude": 52.587482699999995,
+    "longitude": -2.1243985999999997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:11.010Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=10176717085143970158&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "moonberry-lounge-city-centre",
+    "slug": "moonberry-lounge-city-centre",
+    "name": "Moonberry Lounge",
+    "description": "Moonberry Lounge is a spot for shisha in City Centre, Wolverhampton with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Wolverhampton",
+    "area": "City Centre",
+    "address": "179 Stafford St, Wolverhampton WV1 1NA",
+    "postcode": "WV1 1NA",
+    "latitude": 52.5881487,
+    "longitude": -2.1261319999999997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "13:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "13:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "13:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "13:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "13:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "13:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "13:00",
+        "close": "22:00"
+      }
+    ],
+    "website": "http://moonberrylounge.co.uk/",
+    "instagram": null,
+    "phone": "01902 424750",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:11.010Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://moonberrylounge.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=8219250229630706907&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "canalside-lounge-penn-fields",
+    "slug": "canalside-lounge-penn-fields",
+    "name": "Canalside Lounge",
+    "description": "Canalside Lounge is a spot for shisha in Penn Fields, Wolverhampton with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Wolverhampton",
+    "area": "Penn Fields",
+    "address": "8 Castlecroft Ln, Wolverhampton WV3 8JU",
+    "postcode": "WV3 8JU",
+    "latitude": 52.579299999999996,
+    "longitude": -2.1958021,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://www.canalsidelounge.co.uk/",
+    "instagram": null,
+    "phone": "01902 761360",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:11.010Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.canalsidelounge.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=4277712982697976574&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "darshan-lounge-city-centre",
+    "slug": "darshan-lounge-city-centre",
+    "name": "Darshan Lounge",
+    "description": "Darshan Lounge is a spot for shisha in City Centre, Wolverhampton with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Wolverhampton",
+    "area": "City Centre",
+    "address": "35 - 37 School St, Wolverhampton WV1 4LR",
+    "postcode": "WV1 4LR",
+    "latitude": 52.584144699999996,
+    "longitude": -2.131656,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "22:30"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "01902 427654",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:11.010Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=2040149877306217871&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "curry-lounge-bilston",
+    "slug": "curry-lounge-bilston",
+    "name": "Curry Lounge",
+    "description": "Curry Lounge is a spot for shisha in Bilston, Wolverhampton with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Wolverhampton",
+    "area": "Bilston",
+    "address": "2 Upper Ettingshall Rd, Bilston WV14 9QZ",
+    "postcode": "WV14 9QZ",
+    "latitude": 52.5459227,
+    "longitude": -2.0974296999999997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:00",
+        "close": "00:00"
+      }
+    ],
+    "website": "https://curryloungebilston.com/?utm_source=GMBwebsite&utm_medium=organic&utm_campaign=Google%20My%20Business",
+    "instagram": null,
+    "phone": "01902 663006",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:11.010Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://curryloungebilston.com/?utm_source=GMBwebsite&utm_medium=organic&utm_campaign=Google%20My%20Business",
+      "otherSource": "https://maps.google.com/?cid=13503043821923324180&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "masala-lounge-wednesfield",
+    "slug": "masala-lounge-wednesfield",
+    "name": "Masala Lounge",
+    "description": "Masala Lounge is a spot for shisha in Wednesfield, Wolverhampton with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Wolverhampton",
+    "area": "Wednesfield",
+    "address": "43 Lichfield Rd, Wolverhampton WV11 1TW",
+    "postcode": "WV11 1TW",
+    "latitude": 52.602551299999995,
+    "longitude": -2.0800082,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "17:00",
+        "close": "23:49"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "23:49"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "23:49"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "23:49"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "23:49"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "00:20"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:00",
+        "close": "00:20"
+      }
+    ],
+    "website": "https://themasalalounge.co.uk/storemenu",
+    "instagram": null,
+    "phone": "01902 865934",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:11.010Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://themasalalounge.co.uk/storemenu",
+      "otherSource": "https://maps.google.com/?cid=3263509935362394038&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  }
+]

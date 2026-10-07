@@ -135,6 +135,152 @@ export const DISCOVERY_CITIES: DiscoveryCity[] = [
     ],
     addressMatchers: ["nottingham", "nottinghamshire"],
   },
+  {
+    slug: "luton",
+    radiusKm: 12,
+    tranche: 4,
+    areas: [
+      "Luton Town Centre", "Bury Park", "Dallow Road", "High Town", "Leagrave",
+      "Dunstable", "Stopsley",
+    ],
+    addressMatchers: ["luton", "dunstable", "bedfordshire"],
+  },
+  {
+    slug: "slough",
+    radiusKm: 12,
+    tranche: 4,
+    areas: [
+      "Slough Town Centre", "Chalvey", "Langley Slough", "Farnham Road", "Cippenham",
+      "Burnham", "Windsor",
+    ],
+    addressMatchers: ["slough", "berkshire", "windsor"],
+  },
+  {
+    slug: "reading",
+    radiusKm: 12,
+    tranche: 4,
+    areas: [
+      "Reading Town Centre", "Oxford Road Reading", "Whitley", "Earley", "Caversham",
+      "Tilehurst",
+    ],
+    addressMatchers: ["reading", "berkshire"],
+  },
+  {
+    slug: "watford",
+    radiusKm: 12,
+    tranche: 4,
+    areas: [
+      "Watford Town Centre", "North Watford", "Bushey", "Garston Watford", "Croxley Green",
+    ],
+    addressMatchers: ["watford", "bushey", "hertfordshire"],
+  },
+  {
+    slug: "coventry",
+    radiusKm: 14,
+    tranche: 4,
+    areas: [
+      "Coventry City Centre", "Foleshill", "Hillfields", "Earlsdon", "Stoke Coventry",
+      "Radford Coventry", "Canley", "Tile Hill",
+    ],
+    addressMatchers: ["coventry", "west midlands"],
+  },
+  {
+    slug: "wolverhampton",
+    radiusKm: 14,
+    tranche: 4,
+    areas: [
+      "Wolverhampton City Centre", "Whitmore Reans", "Penn", "Bilston", "Wednesfield",
+      "Blakenhall", "Dudley",
+    ],
+    addressMatchers: ["wolverhampton", "bilston", "dudley", "west midlands"],
+  },
+  {
+    slug: "bristol",
+    radiusKm: 14,
+    tranche: 4,
+    areas: [
+      "Bristol City Centre", "Easton Bristol", "St Pauls Bristol", "Stokes Croft",
+      "Bedminster", "Clifton Bristol", "Fishponds",
+    ],
+    addressMatchers: ["bristol", "avon"],
+  },
+  {
+    slug: "derby",
+    radiusKm: 12,
+    tranche: 4,
+    areas: [
+      "Derby City Centre", "Normanton Derby", "Pear Tree", "Alvaston", "Allenton",
+      "Littleover",
+    ],
+    addressMatchers: ["derby", "derbyshire"],
+  },
+  {
+    slug: "stoke-on-trent",
+    radiusKm: 14,
+    tranche: 4,
+    areas: [
+      "Hanley Stoke", "Stoke-on-Trent City Centre", "Shelton Stoke", "Burslem", "Longton",
+      "Tunstall",
+    ],
+    addressMatchers: ["stoke-on-trent", "stoke on trent", "hanley", "staffordshire"],
+  },
+  {
+    slug: "newcastle",
+    radiusKm: 14,
+    tranche: 4,
+    areas: [
+      "Newcastle City Centre", "Jesmond", "Fenham", "Heaton Newcastle", "Byker",
+      "Gateshead", "Elswick",
+    ],
+    addressMatchers: ["newcastle", "gateshead", "tyne and wear", "tyne & wear"],
+  },
+  {
+    slug: "bolton",
+    radiusKm: 12,
+    tranche: 4,
+    areas: [
+      "Bolton Town Centre", "Great Lever", "Deane", "Halliwell", "Farnworth",
+    ],
+    addressMatchers: ["bolton", "farnworth", "greater manchester"],
+  },
+  {
+    slug: "blackburn",
+    radiusKm: 12,
+    tranche: 4,
+    areas: [
+      "Blackburn Town Centre", "Whalley Range Blackburn", "Audley Blackburn", "Little Harwood",
+      "Darwen",
+    ],
+    addressMatchers: ["blackburn", "darwen", "lancashire"],
+  },
+  {
+    slug: "preston",
+    radiusKm: 12,
+    tranche: 4,
+    areas: [
+      "Preston City Centre", "Deepdale", "Fishwick", "Frenchwood", "Ashton-on-Ribble",
+    ],
+    addressMatchers: ["preston", "lancashire"],
+  },
+  {
+    slug: "oldham",
+    radiusKm: 12,
+    tranche: 4,
+    areas: [
+      "Oldham Town Centre", "Glodwick", "Werneth", "Chadderton", "Failsworth",
+    ],
+    addressMatchers: ["oldham", "chadderton", "failsworth", "greater manchester"],
+  },
+  {
+    slug: "cardiff",
+    radiusKm: 14,
+    tranche: 4,
+    areas: [
+      "Cardiff City Centre", "Riverside Cardiff", "Grangetown", "Roath", "Cathays",
+      "Canton Cardiff", "Butetown",
+    ],
+    addressMatchers: ["cardiff", "caerdydd", "south glamorgan"],
+  },
 ];
 
 export function getDiscoveryCity(slug: string) {

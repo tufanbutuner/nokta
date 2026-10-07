@@ -1,0 +1,1398 @@
+[
+  {
+    "id": "lyalena-lounge-roath",
+    "slug": "lyalena-lounge-roath",
+    "name": "Lyalena Lounge",
+    "description": "Lyalena Lounge is a spot for shisha in Roath, Cardiff with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Cardiff",
+    "area": "Roath",
+    "address": "119-121 City Rd, Cardiff CF24 3BP",
+    "postcode": "CF24 3BP",
+    "latitude": 51.489227199999995,
+    "longitude": -3.1688449,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "https://www.lyalenalounge.co.uk/",
+    "instagram": null,
+    "phone": "029 2049 9090",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:30.368Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.lyalenalounge.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=3972515069312134974&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "mocka-lounge-city-centre",
+    "slug": "mocka-lounge-city-centre",
+    "name": "Mocka Lounge",
+    "description": "Mocka Lounge is a spot for shisha in City Centre, Cardiff with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Cardiff",
+    "area": "City Centre",
+    "address": "1-2 Mill Ln, Cardiff CF10 1FL",
+    "postcode": "CF10 1FL",
+    "latitude": 51.477026599999995,
+    "longitude": -3.1763109000000003,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "00:30"
+      },
+      {
+        "day": "Monday",
+        "open": "12:30",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:30",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:30",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "03:00"
+      }
+    ],
+    "website": "http://www.mockalounge.co.uk/",
+    "instagram": null,
+    "phone": "029 2022 1292",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:30.369Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.mockalounge.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=4924678345906659040&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "castello-shisha-lounge-first-floor",
+    "slug": "castello-shisha-lounge-first-floor",
+    "name": "Castello Shisha Lounge",
+    "description": "Castello Shisha Lounge is a spot for shisha in First floor, Cardiff with late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Cardiff",
+    "area": "First floor",
+    "address": "First floor, 76 City Rd, Cardiff CF24 3DD",
+    "postcode": "CF24 3DD",
+    "latitude": 51.487868299999995,
+    "longitude": -3.1669896,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "13:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "13:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "13:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "13:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "13:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "13:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "13:00",
+        "close": "02:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07723 354273",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:30.369Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=2332771075225880737&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "nara-restaurant-and-shisha-lounge-roath",
+    "slug": "nara-restaurant-and-shisha-lounge-roath",
+    "name": "Nara Restaurant and Shisha Lounge",
+    "description": "Nara Restaurant and Shisha Lounge is a spot for shisha in Roath, Cardiff with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Cardiff",
+    "area": "Roath",
+    "address": "222-224 City Rd, Cardiff CF24 3JH",
+    "postcode": "CF24 3JH",
+    "latitude": 51.491805400000004,
+    "longitude": -3.170912,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "https://nararestaurantandshisha.co.uk/",
+    "instagram": null,
+    "phone": "029 2111 3636",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:30.369Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://nararestaurantandshisha.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=6331078486228800443&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "ruwa-lounge-roath",
+    "slug": "ruwa-lounge-roath",
+    "name": "RUWA Lounge",
+    "description": "RUWA Lounge is a spot for shisha in Roath, Cardiff with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Cardiff",
+    "area": "Roath",
+    "address": "34 City Rd, Cardiff CF24 3DL",
+    "postcode": "CF24 3DL",
+    "latitude": 51.4864215,
+    "longitude": -3.1661235999999997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "15:30",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "15:30",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "15:30",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "15:30",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "15:30",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "http://www.kayaloungecardiff.com/",
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:30.369Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.kayaloungecardiff.com/",
+      "otherSource": "https://maps.google.com/?cid=16437654867357061037&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "havana-shisha-lounge-roath",
+    "slug": "havana-shisha-lounge-roath",
+    "name": "Havana Shisha Lounge",
+    "description": "Havana Shisha Lounge is a spot for shisha in Roath, Cardiff with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Cardiff",
+    "area": "Roath",
+    "address": "152-154, City Rd, Cardiff CF24 3DR",
+    "postcode": "CF24 3DR",
+    "latitude": 51.489964199999996,
+    "longitude": -3.1691004,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "https://www.havanashishaloungecardiff.co.uk/",
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:30.369Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.havanashishaloungecardiff.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=13714343430929988107&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "fomo-lounge-roath",
+    "slug": "fomo-lounge-roath",
+    "name": "FOMO Lounge",
+    "description": "FOMO Lounge is a spot for shisha in Roath, Cardiff with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Cardiff",
+    "area": "Roath",
+    "address": "102-106 City Rd, Cardiff CF24 3DQ",
+    "postcode": "CF24 3DQ",
+    "latitude": 51.488951899999996,
+    "longitude": -3.1678389,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "15:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:30",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:30",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:30",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:30",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "15:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "15:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "https://www.fomo-lounge.com/",
+    "instagram": null,
+    "phone": "029 2297 2000",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:30.369Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.fomo-lounge.com/",
+      "otherSource": "https://maps.google.com/?cid=5015490404091024402&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "albasha-shisha-lounge-roath",
+    "slug": "albasha-shisha-lounge-roath",
+    "name": "Albasha Shisha Lounge",
+    "description": "Albasha Shisha Lounge is a spot for shisha in Roath, Cardiff. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Cardiff",
+    "area": "Roath",
+    "address": "222-224 City Rd, Cardiff CF24 3JH",
+    "postcode": "CF24 3JH",
+    "latitude": 51.491814,
+    "longitude": -3.1708808,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "15:00",
+        "close": "13:00"
+      },
+      {
+        "day": "Monday",
+        "open": "15:00",
+        "close": "13:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "15:00",
+        "close": "13:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "15:00",
+        "close": "13:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "15:00",
+        "close": "13:00"
+      },
+      {
+        "day": "Friday",
+        "open": "15:00",
+        "close": "13:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "15:00",
+        "close": "13:00"
+      }
+    ],
+    "website": "http://www.facebook.com/albashacardiff",
+    "instagram": null,
+    "phone": "07846 733494",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:30.369Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.facebook.com/albashacardiff",
+      "otherSource": "https://maps.google.com/?cid=8369739216722235996&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "taha-gold-shisha-roath",
+    "slug": "taha-gold-shisha-roath",
+    "name": "TAHA GOLD SHISHA",
+    "description": "TAHA GOLD SHISHA is a spot for shisha in Roath, Cardiff. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Cardiff",
+    "area": "Roath",
+    "address": "133 City Rd, Cardiff CF24 3BQ",
+    "postcode": "CF24 3BQ",
+    "latitude": 51.489622,
+    "longitude": -3.1690799999999997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "11:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "11:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "11:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:00",
+        "close": "22:00"
+      }
+    ],
+    "website": "https://www.tahagold.co.uk/",
+    "instagram": null,
+    "phone": "07472 383548",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:30.369Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.tahagold.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=6182602723867208988&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "infinity-lounge-roath",
+    "slug": "infinity-lounge-roath",
+    "name": "Infinity Lounge",
+    "description": "Infinity Lounge is a spot for shisha in Roath, Cardiff. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Cardiff",
+    "area": "Roath",
+    "address": "115 City Rd, Cardiff CF24 3BP",
+    "postcode": "CF24 3BP",
+    "latitude": 51.4887867,
+    "longitude": -3.1683858999999996,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [],
+    "website": "http://www.infinityshishalounge.com/",
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:30.369Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.infinityshishalounge.com/",
+      "otherSource": "https://maps.google.com/?cid=14374957405113889712&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "hudo-lounge-pontcanna",
+    "slug": "hudo-lounge-pontcanna",
+    "name": "Hudo Lounge",
+    "description": "Hudo Lounge is a spot for shisha in Pontcanna, Cardiff with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Cardiff",
+    "area": "Pontcanna",
+    "address": "160-162 Cowbridge Rd E, Pontcanna, Cardiff CF11 9ND",
+    "postcode": "CF11 9ND",
+    "latitude": 51.4816096,
+    "longitude": -3.200714,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "09:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "00:00"
+      }
+    ],
+    "website": "http://www.thelounges.co.uk/hudo",
+    "instagram": null,
+    "phone": "029 2130 3977",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:30.370Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.thelounges.co.uk/hudo",
+      "otherSource": "https://maps.google.com/?cid=17767794437611410256&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "shisha-garden-pontcanna",
+    "slug": "shisha-garden-pontcanna",
+    "name": "SHISHA GARDEN",
+    "description": "SHISHA GARDEN is a spot for shisha in Pontcanna, Cardiff with outdoor seating. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Cardiff",
+    "area": "Pontcanna",
+    "address": "144 Cowbridge Rd E, Pontcanna, Cardiff CF11 9ND",
+    "postcode": "CF11 9ND",
+    "latitude": 51.481507799999996,
+    "longitude": -3.2001352,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": true,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "outdoor"
+    ],
+    "images": [],
+    "openingHours": [],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:30.370Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=12091303248773280632&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "lo-lounge-city-centre",
+    "slug": "lo-lounge-city-centre",
+    "name": "Lo Lounge",
+    "description": "Lo Lounge is a spot for shisha in City Centre, Cardiff with drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Cardiff",
+    "area": "City Centre",
+    "address": "Porth Teigr Way, Cardiff CF10 4GA",
+    "postcode": "CF10 4GA",
+    "latitude": 51.4591527,
+    "longitude": -3.1613263999999996,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:30",
+        "close": "21:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://lolounge.co.uk/",
+    "instagram": null,
+    "phone": "029 2009 0060",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:30.370Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://lolounge.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=15216554908339351486&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "seninn-cafe-and-shisha-lounge-pontcanna",
+    "slug": "seninn-cafe-and-shisha-lounge-pontcanna",
+    "name": "Seninn cafe&shisha lounge",
+    "description": "Seninn cafe&shisha lounge is a spot for shisha in Pontcanna, Cardiff with food, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Cardiff",
+    "area": "Pontcanna",
+    "address": "144 Cowbridge Rd E, Pontcanna, Cardiff CF11 9ND",
+    "postcode": "CF11 9ND",
+    "latitude": 51.4815827,
+    "longitude": -3.2001405,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "08:30",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "08:30",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "08:30",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "08:30",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "08:30",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "08:30",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "08:30",
+        "close": "01:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "029 2297 0288",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:30.370Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=8190722866008522351&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "juno-lounge-roath",
+    "slug": "juno-lounge-roath",
+    "name": "Juno Lounge",
+    "description": "Juno Lounge is a spot for shisha in Roath, Cardiff with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Cardiff",
+    "area": "Roath",
+    "address": "14 Wellfield Rd, Cardiff CF24 3PB",
+    "postcode": "CF24 3PB",
+    "latitude": 51.4947638,
+    "longitude": -3.1655200999999997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://thelounges.co.uk/juno/",
+    "instagram": null,
+    "phone": "029 2130 4309",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:30.370Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://thelounges.co.uk/juno/",
+      "otherSource": "https://maps.google.com/?cid=16726977475996665661&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "the-vulcan-lounge-roath",
+    "slug": "the-vulcan-lounge-roath",
+    "name": "The Vulcan Lounge",
+    "description": "The Vulcan Lounge is a spot for shisha in Roath, Cardiff with drinks, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Cardiff",
+    "area": "Roath",
+    "address": "2 Wyeverne Rd, Cardiff CF24 4BH",
+    "postcode": "CF24 4BH",
+    "latitude": 51.489691699999995,
+    "longitude": -3.1745657,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "00:30"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "01:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07398 786323",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:30.370Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=3480869212126810183&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "wow-lounge-cardiff-riverside",
+    "slug": "wow-lounge-cardiff-riverside",
+    "name": "Wow Lounge Cardiff",
+    "description": "Wow Lounge Cardiff is a spot for shisha in Riverside, Cardiff with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Cardiff",
+    "area": "Riverside",
+    "address": "62-64 Lower Cathedral Rd, Cardiff CF11 6LT",
+    "postcode": "CF11 6LT",
+    "latitude": 51.4794725,
+    "longitude": -3.1891352,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "14:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "14:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "14:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "01:00"
+      }
+    ],
+    "website": "https://www.wowloungecardiff.co.uk/",
+    "instagram": null,
+    "phone": "029 2023 5346",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:30.370Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.wowloungecardiff.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=6770668219396077938&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "fino-lounge-whitchurch",
+    "slug": "fino-lounge-whitchurch",
+    "name": "Fino Lounge",
+    "description": "Fino Lounge is a spot for shisha in Whitchurch, Cardiff with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Cardiff",
+    "area": "Whitchurch",
+    "address": "49 Merthyr Rd, Whitchurch, Cardiff CF14 1DB",
+    "postcode": "CF14 1DB",
+    "latitude": 51.5123192,
+    "longitude": -3.2186269,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "08:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "08:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "08:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "08:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "08:30",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "00:00"
+      }
+    ],
+    "website": "https://thelounges.co.uk/fino/",
+    "instagram": null,
+    "phone": "029 2069 2616",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:30.370Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://thelounges.co.uk/fino/",
+      "otherSource": "https://maps.google.com/?cid=4596750487378266595&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  }
+]

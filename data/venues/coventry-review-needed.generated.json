@@ -1,0 +1,1034 @@
+[
+  {
+    "id": "olive-tree-turkish-mediterranean-restaurant-and-bar-cathedral-lanes-shopping-centre",
+    "slug": "olive-tree-turkish-mediterranean-restaurant-and-bar-cathedral-lanes-shopping-centre",
+    "name": "Olive Tree Turkish Mediterranean Restaurant & Bar",
+    "description": "Olive Tree Turkish Mediterranean Restaurant & Bar is a spot for shisha in Cathedral Lanes Shopping Centre, Coventry with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Coventry",
+    "area": "Cathedral Lanes Shopping Centre",
+    "address": "Unit 1, Cathedral Lanes Shopping Centre, Coventry CV1 1LL",
+    "postcode": "CV1 1LL",
+    "latitude": 52.4081732,
+    "longitude": -1.5100394,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "09:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "22:30"
+      }
+    ],
+    "website": "https://olivetreerestaurants.co.uk/",
+    "instagram": null,
+    "phone": "024 7526 8308",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:59.746Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://olivetreerestaurants.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=10442221821813745294&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "aladdin-turkish-restaurant-city-centre",
+    "slug": "aladdin-turkish-restaurant-city-centre",
+    "name": "Aladdin Turkish Restaurant",
+    "description": "Aladdin Turkish Restaurant is a spot for shisha in City Centre, Coventry with food, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Coventry",
+    "area": "City Centre",
+    "address": "Canterbury St, Coventry CV1 5NQ",
+    "postcode": "CV1 5NQ",
+    "latitude": 52.4133767,
+    "longitude": -1.4996089,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "11:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "11:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "11:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:00",
+        "close": "01:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:59.746Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=8368805589573822636&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "strange-restaurant-foleshill",
+    "slug": "strange-restaurant-foleshill",
+    "name": "Strange Restaurant",
+    "description": "Strange Restaurant is a spot for shisha in Foleshill, Coventry with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Coventry",
+    "area": "Foleshill",
+    "address": "361-363 Holbrook Ln, Coventry CV6 4DG",
+    "postcode": "CV6 4DG",
+    "latitude": 52.4455932,
+    "longitude": -1.5098586999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "10:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "10:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "10:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "10:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "10:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "10:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "10:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://www.strangerestaurant.co.uk/",
+    "instagram": null,
+    "phone": "024 7531 0623",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:59.746Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.strangerestaurant.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=13756802455953937926&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "the-lazy-monkey-bar-and-kitchen-city-centre",
+    "slug": "the-lazy-monkey-bar-and-kitchen-city-centre",
+    "name": "The Lazy Monkey Bar & Kitchen",
+    "description": "The Lazy Monkey Bar & Kitchen is a spot for shisha in City Centre, Coventry with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Coventry",
+    "area": "City Centre",
+    "address": "26 Warwick Row, Coventry CV1 1EY",
+    "postcode": "CV1 1EY",
+    "latitude": 52.404333699999995,
+    "longitude": -1.5150853,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "22:00"
+      }
+    ],
+    "website": "https://www.opentable.co.uk/r/the-lazy-monkey-bar-and-kitchen-west-midlands",
+    "instagram": null,
+    "phone": "024 7655 3444",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:59.746Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.opentable.co.uk/r/the-lazy-monkey-bar-and-kitchen-west-midlands",
+      "otherSource": "https://maps.google.com/?cid=7562881893367502550&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "sidewalk-bar-and-kitchen-foleshill",
+    "slug": "sidewalk-bar-and-kitchen-foleshill",
+    "name": "Sidewalk Bar & Kitchen",
+    "description": "Sidewalk Bar & Kitchen is a spot for shisha in Foleshill, Coventry with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Coventry",
+    "area": "Foleshill",
+    "address": "37 Broad St, Coventry CV6 5AX",
+    "postcode": "CV6 5AX",
+    "latitude": 52.427062799999995,
+    "longitude": -1.4993229,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "11:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "11:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:00",
+        "close": "22:00"
+      }
+    ],
+    "website": "https://www.sidewalkbarandkitchen.co.uk/",
+    "instagram": null,
+    "phone": "024 7704 3083",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:59.746Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.sidewalkbarandkitchen.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=102224275391318172&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "aqua-food-and-mood-lebanese-restaurant-city-centre",
+    "slug": "aqua-food-and-mood-lebanese-restaurant-city-centre",
+    "name": "Aqua Food & Mood Lebanese Restaurant",
+    "description": "Aqua Food & Mood Lebanese Restaurant is a spot for shisha in City Centre, Coventry with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Coventry",
+    "area": "City Centre",
+    "address": "14a Butts, Coventry CV1 3GR",
+    "postcode": "CV1 3GR",
+    "latitude": 52.4048118,
+    "longitude": -1.5209555000000001,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "http://www.aqua-food-mood.co.uk/",
+    "instagram": null,
+    "phone": "024 7693 5254",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:59.746Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.aqua-food-mood.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=16582807086835401468&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "the-new-horseshoe-bar-and-grill-foleshill",
+    "slug": "the-new-horseshoe-bar-and-grill-foleshill",
+    "name": "The New Horseshoe Bar & Grill",
+    "description": "The New Horseshoe Bar & Grill is a spot for shisha in Foleshill, Coventry with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Coventry",
+    "area": "Foleshill",
+    "address": "1007 Foleshill Rd, Coventry CV6 5HN",
+    "postcode": "CV6 5HN",
+    "latitude": 52.4389232,
+    "longitude": -1.4924255,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "13:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "13:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "13:00",
+        "close": "22:00"
+      }
+    ],
+    "website": "http://www.newhorseshoe.com/",
+    "instagram": null,
+    "phone": "024 7666 6669",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:59.746Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.newhorseshoe.com/",
+      "otherSource": "https://maps.google.com/?cid=7800405427852161251&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "habibi-restaurant-city-centre",
+    "slug": "habibi-restaurant-city-centre",
+    "name": "Habibi Restaurant",
+    "description": "Habibi Restaurant is a spot for shisha in City Centre, Coventry with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Coventry",
+    "area": "City Centre",
+    "address": "116 Far Gosford St, Coventry CV1 5EA",
+    "postcode": "CV1 5EA",
+    "latitude": 52.4077906,
+    "longitude": -1.4948495,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [],
+    "website": "https://www.qrcarta.com/restaurant/coventry/habibi-restaurant-and-cafe/11394/",
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:59.746Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.qrcarta.com/restaurant/coventry/habibi-restaurant-and-cafe/11394/",
+      "otherSource": "https://maps.google.com/?cid=18425723832833362404&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "millsy-s-cafe-bar-earlsdon",
+    "slug": "millsy-s-cafe-bar-earlsdon",
+    "name": "Millsy's Cafe Bar",
+    "description": "Millsy's Cafe Bar is a spot for shisha in Earlsdon, Coventry with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Coventry",
+    "area": "Earlsdon",
+    "address": "20 Earlsdon St, Earlsdon, Coventry CV5 6EG",
+    "postcode": "CV5 6EG",
+    "latitude": 52.3995207,
+    "longitude": -1.5317551999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "10:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "10:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "10:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "10:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "10:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "10:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "10:00",
+        "close": "00:00"
+      }
+    ],
+    "website": "http://www.millsys.co.uk/",
+    "instagram": null,
+    "phone": "024 7671 3222",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:59.746Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.millsys.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=4763868191977568077&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "estekaan-cafe-city-centre",
+    "slug": "estekaan-cafe-city-centre",
+    "name": "Estekaan Cafe",
+    "description": "Estekaan Cafe is a spot for shisha in City Centre, Coventry with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Coventry",
+    "area": "City Centre",
+    "address": "32-33 Far Gosford St, Coventry CV1 5DW",
+    "postcode": "CV1 5DW",
+    "latitude": 52.407682,
+    "longitude": -1.4969975,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Monday",
+        "open": "10:00",
+        "close": "19:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "10:00",
+        "close": "19:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "10:00",
+        "close": "19:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "10:00",
+        "close": "19:00"
+      },
+      {
+        "day": "Friday",
+        "open": "10:00",
+        "close": "19:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "10:30",
+        "close": "19:00"
+      }
+    ],
+    "website": "https://www.instagram.com/estekaancafe",
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:59.746Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.instagram.com/estekaancafe",
+      "otherSource": "https://maps.google.com/?cid=3448056003848402558&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "nura-restaurant-meriden",
+    "slug": "nura-restaurant-meriden",
+    "name": "NURA Restaurant",
+    "description": "NURA Restaurant is a spot for shisha in Meriden, Coventry with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Coventry",
+    "area": "Meriden",
+    "address": "The Grn, Meriden, Coventry CV7 7LN",
+    "postcode": "CV7 7LN",
+    "latitude": 52.4381244,
+    "longitude": -1.6494062999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "17:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:00",
+        "close": "22:30"
+      }
+    ],
+    "website": "https://nurarestaurant.co.uk/",
+    "instagram": null,
+    "phone": "01676 471227",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:59.746Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://nurarestaurant.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=535262487234083837&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "rupali-restaurant-canley",
+    "slug": "rupali-restaurant-canley",
+    "name": "Rupali Restaurant",
+    "description": "Rupali Restaurant is a spot for shisha in Canley, Coventry with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Coventry",
+    "area": "Canley",
+    "address": "335, 337 Tile Hill Ln, Coventry CV4 9DU",
+    "postcode": "CV4 9DU",
+    "latitude": 52.4037666,
+    "longitude": -1.5631594,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "17:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:00",
+        "close": "22:00"
+      }
+    ],
+    "website": "http://rupalirestaurant.squarespace.com/",
+    "instagram": null,
+    "phone": "024 7642 2500",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:59.746Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://rupalirestaurant.squarespace.com/",
+      "otherSource": "https://maps.google.com/?cid=6147184606176197453&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "station-plaice-fish-bar-canley",
+    "slug": "station-plaice-fish-bar-canley",
+    "name": "Station Plaice Fish Bar",
+    "description": "Station Plaice Fish Bar is a spot for shisha in Canley, Coventry with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Coventry",
+    "area": "Canley",
+    "address": "36 Station Ave, Coventry CV4 9HS",
+    "postcode": "CV4 9HS",
+    "latitude": 52.399279899999996,
+    "longitude": -1.5955358,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "14:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "21:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "14:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "21:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "14:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "21:30"
+      },
+      {
+        "day": "Friday",
+        "open": "10:00",
+        "close": "21:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "21:30"
+      }
+    ],
+    "website": "https://www.stationplaicefishbar.co.uk/?utm_source=GBP.website&utm_medium=GBP&utm_campaign=br16914-website",
+    "instagram": null,
+    "phone": "024 7601 3521",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:59.746Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.stationplaicefishbar.co.uk/?utm_source=GBP.website&utm_medium=GBP&utm_campaign=br16914-website",
+      "otherSource": "https://maps.google.com/?cid=7786161602034848424&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  }
+]

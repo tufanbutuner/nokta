@@ -110,7 +110,7 @@ const MANCHESTER_DISTRICTS: Record<string, string> = {
   M14: "Rusholme", M15: "Hulme", M16: "Whalley Range", M17: "Trafford Park",
   M18: "Gorton", M19: "Levenshulme", M20: "Didsbury", M21: "Chorlton",
   M22: "Wythenshawe", M23: "Baguley", M25: "Prestwich", M30: "Eccles",
-  M32: "Stretford", M33: "Sale", M40: "Miles Platting",
+  M32: "Stretford", M33: "Sale", M35: "Failsworth", M40: "Miles Platting",
 };
 
 /** Leicester districts. LE1 is the centre; LE2 and LE4 hold Highfields and Belgrave. */
@@ -179,6 +179,97 @@ const NOTTINGHAM_DISTRICTS: Record<string, string> = {
   NG17: "Sutton-in-Ashfield",
 };
 
+/** Luton. LU1 and LU4 (Bury Park, Dallow Road) hold most of the shisha trade. */
+const LUTON_DISTRICTS: Record<string, string> = {
+  LU1: "Town Centre", LU2: "Stopsley", LU3: "Bury Park", LU4: "Leagrave",
+  LU5: "Dunstable", LU6: "Dunstable", LU7: "Leighton Buzzard",
+};
+
+/** Slough. SL1 covers the town centre and Chalvey; SL3 is Langley. */
+const SLOUGH_DISTRICTS: Record<string, string> = {
+  SL1: "Town Centre", SL2: "Upton Lea", SL3: "Langley", SL4: "Windsor",
+  SL6: "Maidenhead", SL9: "Gerrards Cross",
+};
+
+/** Reading. RG1 is the centre and Oxford Road corridor. */
+const READING_DISTRICTS: Record<string, string> = {
+  RG1: "Town Centre", RG2: "Whitley", RG4: "Caversham", RG6: "Earley",
+  RG30: "Tilehurst", RG31: "Calcot",
+};
+
+/** Watford. */
+const WATFORD_DISTRICTS: Record<string, string> = {
+  WD17: "Town Centre", WD18: "West Watford", WD19: "Oxhey", WD24: "North Watford",
+  WD25: "Garston", WD23: "Bushey", WD3: "Croxley Green",
+};
+
+/** Coventry. CV1 and CV6 (Foleshill) carry most venues. */
+const COVENTRY_DISTRICTS: Record<string, string> = {
+  CV1: "City Centre", CV2: "Stoke", CV3: "Cheylesmore", CV4: "Canley",
+  CV5: "Earlsdon", CV6: "Foleshill", CV7: "Keresley",
+};
+
+/** Wolverhampton. WV1 and WV6 (Whitmore Reans) are the key districts. */
+const WOLVERHAMPTON_DISTRICTS: Record<string, string> = {
+  WV1: "City Centre", WV2: "Blakenhall", WV3: "Penn Fields", WV4: "Penn",
+  WV6: "Whitmore Reans", WV10: "Bushbury", WV11: "Wednesfield", WV14: "Bilston",
+};
+
+/** Bristol. BS5 (Easton) and BS2 (St Pauls, Stokes Croft) matter most. */
+const BRISTOL_DISTRICTS: Record<string, string> = {
+  BS1: "City Centre", BS2: "St Pauls", BS3: "Bedminster", BS4: "Brislington",
+  BS5: "Easton", BS6: "Redland", BS7: "Horfield", BS8: "Clifton",
+  BS16: "Fishponds",
+};
+
+/** Derby. DE23 covers Normanton and Pear Tree. */
+const DERBY_DISTRICTS: Record<string, string> = {
+  DE1: "City Centre", DE22: "Allestree", DE23: "Normanton", DE24: "Alvaston",
+  DE21: "Chaddesden",
+};
+
+/** Stoke-on-Trent. ST1 is Hanley, the main night-time centre. */
+const STOKE_DISTRICTS: Record<string, string> = {
+  ST1: "Hanley", ST2: "Abbey Hulton", ST3: "Longton", ST4: "Stoke",
+  ST5: "Newcastle-under-Lyme", ST6: "Tunstall", ST7: "Kidsgrove",
+};
+
+/** Newcastle upon Tyne. NE2 (Jesmond) and NE4 (Fenham) are the student and shisha areas. */
+const NEWCASTLE_DISTRICTS: Record<string, string> = {
+  NE1: "City Centre", NE2: "Jesmond", NE3: "Gosforth", NE4: "Fenham",
+  NE6: "Byker", NE7: "High Heaton", NE8: "Gateshead", NE15: "Benwell",
+};
+
+/** Bolton. BL3 (Great Lever, Deane) holds most venues. */
+const BOLTON_DISTRICTS: Record<string, string> = {
+  BL1: "Town Centre", BL2: "Breightmet", BL3: "Great Lever", BL4: "Farnworth",
+  BL5: "Westhoughton", BL6: "Horwich",
+};
+
+/** Blackburn. BB1 and BB2 cover the town and Audley. */
+const BLACKBURN_DISTRICTS: Record<string, string> = {
+  BB1: "Town Centre", BB2: "Witton", BB3: "Darwen", BB4: "Rawtenstall",
+  BB5: "Accrington", BB6: "Great Harwood",
+};
+
+/** Preston. PR1 is the centre; PR2 covers Deepdale and Ashton. */
+const PRESTON_DISTRICTS: Record<string, string> = {
+  PR1: "City Centre", PR2: "Fulwood", PR3: "Longridge", PR4: "Kirkham",
+  PR5: "Bamber Bridge",
+};
+
+/** Oldham. OL8 (Glodwick, Werneth) is the main shisha area. */
+const OLDHAM_DISTRICTS: Record<string, string> = {
+  OL1: "Town Centre", OL2: "Royton", OL4: "Lees", OL8: "Glodwick",
+  OL9: "Chadderton", OL16: "Rochdale",
+};
+
+/** Cardiff. CF24 (Roath, Cathays) and CF11 (Riverside, Grangetown) carry most venues. */
+const CARDIFF_DISTRICTS: Record<string, string> = {
+  CF10: "City Centre", CF11: "Riverside", CF14: "Heath", CF24: "Roath",
+  CF5: "Canton", CF23: "Penylan", CF3: "Rumney",
+};
+
 /** Per-city tables, keyed by the slug used in SUPPORTED_CITIES. */
 const DISTRICTS_BY_CITY: Record<string, Record<string, string>> = {
   london: LONDON_DISTRICTS,
@@ -191,6 +282,21 @@ const DISTRICTS_BY_CITY: Record<string, Record<string, string>> = {
   sheffield: SHEFFIELD_DISTRICTS,
   liverpool: LIVERPOOL_DISTRICTS,
   nottingham: NOTTINGHAM_DISTRICTS,
+  luton: LUTON_DISTRICTS,
+  slough: SLOUGH_DISTRICTS,
+  reading: READING_DISTRICTS,
+  watford: WATFORD_DISTRICTS,
+  coventry: COVENTRY_DISTRICTS,
+  wolverhampton: WOLVERHAMPTON_DISTRICTS,
+  bristol: BRISTOL_DISTRICTS,
+  derby: DERBY_DISTRICTS,
+  "stoke-on-trent": STOKE_DISTRICTS,
+  newcastle: NEWCASTLE_DISTRICTS,
+  bolton: BOLTON_DISTRICTS,
+  blackburn: BLACKBURN_DISTRICTS,
+  preston: PRESTON_DISTRICTS,
+  oldham: OLDHAM_DISTRICTS,
+  cardiff: CARDIFF_DISTRICTS,
 };
 
 /**

@@ -1,0 +1,705 @@
+[
+  {
+    "id": "argento-lounge-animate",
+    "slug": "argento-lounge-animate",
+    "name": "Argento Lounge",
+    "description": "Argento Lounge is a spot for shisha in Animate, Preston with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Preston",
+    "area": "Animate",
+    "address": "Unit 2, Animate, Tenterfield St, Preston PR1 2BL",
+    "postcode": "PR1 2BL",
+    "latitude": 53.7607741,
+    "longitude": -2.7002118999999998,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "09:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://thelounges.co.uk/argento",
+    "instagram": null,
+    "phone": "01772 505202",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:12.620Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://thelounges.co.uk/argento",
+      "otherSource": "https://maps.google.com/?cid=549591082501837400&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "shisha-house-ashton-on-ribble",
+    "slug": "shisha-house-ashton-on-ribble",
+    "name": "Shisha House",
+    "description": "Shisha House is a spot for shisha in Ashton-on-Ribble, Preston with drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Preston",
+    "area": "Ashton-on-Ribble",
+    "address": "280 Fylde Rd, Ashton-on-Ribble, Preston PR2 2NJ",
+    "postcode": "PR2 2NJ",
+    "latitude": 53.76524080000001,
+    "longitude": -2.7192247999999997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:00",
+        "close": "01:00"
+      }
+    ],
+    "website": "https://shishahouses.com/",
+    "instagram": null,
+    "phone": "01772 397058",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:12.621Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://shishahouses.com/",
+      "otherSource": "https://maps.google.com/?cid=16687193255769340824&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "khan-z-lounge-city-centre",
+    "slug": "khan-z-lounge-city-centre",
+    "name": "Khan'z Lounge",
+    "description": "Khan'z Lounge is a spot for shisha in City Centre, Preston with food, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Preston",
+    "area": "City Centre",
+    "address": "The Mill, Aqueduct St, Preston PR1 7JN",
+    "postcode": "PR1 7JN",
+    "latitude": 53.767332599999996,
+    "longitude": -2.7152193000000002,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "02:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "01772 827111",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:12.621Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=14255771568677372179&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "khayal-restaurant-and-lounge-ashton-on-ribble",
+    "slug": "khayal-restaurant-and-lounge-ashton-on-ribble",
+    "name": "Khayal Restaurant & lounge",
+    "description": "Khayal Restaurant & lounge is a spot for shisha in Ashton-on-Ribble, Preston with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Preston",
+    "area": "Ashton-on-Ribble",
+    "address": "300 Fylde Rd, Ashton-on-Ribble, Preston PR2 2NJ",
+    "postcode": "PR2 2NJ",
+    "latitude": 53.765222599999994,
+    "longitude": -2.7204161,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "01:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "01:30"
+      }
+    ],
+    "website": "https://khayalrestaurant.co.uk/",
+    "instagram": null,
+    "phone": "07501 009094",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:12.621Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://khayalrestaurant.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=1834056696237793230&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "amber-lounge-city-centre",
+    "slug": "amber-lounge-city-centre",
+    "name": "Amber Lounge",
+    "description": "Amber Lounge is a spot for shisha in City Centre, Preston with late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Preston",
+    "area": "City Centre",
+    "address": "1 Hill St, Preston PR1 2BB",
+    "postcode": "PR1 2BB",
+    "latitude": 53.760082,
+    "longitude": -2.7045961,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "02:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07402 183469",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:12.621Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=696521393409300605&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "336-lounge-and-restaurant-city-centre",
+    "slug": "336-lounge-and-restaurant-city-centre",
+    "name": "336 Lounge and Restaurant",
+    "description": "336 Lounge and Restaurant is a spot for shisha in City Centre, Preston with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Preston",
+    "area": "City Centre",
+    "address": "1 Hill St, Preston PR1 2BB",
+    "postcode": "PR1 2BB",
+    "latitude": 53.760082,
+    "longitude": -2.7045961,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "01:00"
+      }
+    ],
+    "website": "http://www.336lounge.co.uk/",
+    "instagram": null,
+    "phone": "07304 360773",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:12.621Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.336lounge.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=9224156925544265625&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "hookah-city-centre",
+    "slug": "hookah-city-centre",
+    "name": "Hookah",
+    "description": "Hookah is a spot for shisha in City Centre, Preston. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Preston",
+    "area": "City Centre",
+    "address": "Preston PR1 2ED",
+    "postcode": "PR1 2ED",
+    "latitude": 53.7613427,
+    "longitude": -2.7052258,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:12.621Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=1036455954342218762&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "babylonhookah-and-shisha-city-centre",
+    "slug": "babylonhookah-and-shisha-city-centre",
+    "name": "Babylonhookah and shisha",
+    "description": "Babylonhookah and shisha is a spot for shisha in City Centre, Preston. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Preston",
+    "area": "City Centre",
+    "address": "7 New Hall Ln, Preston PR1 5NU",
+    "postcode": "PR1 5NU",
+    "latitude": 53.7606301,
+    "longitude": -2.6864689,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Monday",
+        "open": "08:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "08:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "08:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "08:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "08:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "08:00",
+        "close": "22:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07577 912852",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:12.621Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=3832116143231795922&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "313-lounge-bar-fulwood",
+    "slug": "313-lounge-bar-fulwood",
+    "name": "313 Lounge Bar",
+    "description": "313 Lounge Bar is a spot for shisha in Fulwood, Preston with drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Preston",
+    "area": "Fulwood",
+    "address": "313 Garstang Rd, Fulwood, Preston PR2 9XJ",
+    "postcode": "PR2 9XJ",
+    "latitude": 53.790846699999996,
+    "longitude": -2.7138342,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Monday",
+        "open": "11:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Friday",
+        "open": "11:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:00",
+        "close": "23:30"
+      }
+    ],
+    "website": "https://313loungebar.co.uk/",
+    "instagram": null,
+    "phone": "01772 973804",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:12.621Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://313loungebar.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=127625718158720569&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  }
+]

@@ -2776,13 +2776,13 @@
     "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
   },
   {
-    "id": "malibu-restaurant-and-lounge-cobham-buisness-centre",
-    "slug": "malibu-restaurant-and-lounge-cobham-buisness-centre",
+    "id": "malibu-restaurant-and-lounge-bordesley-green",
+    "slug": "malibu-restaurant-and-lounge-bordesley-green",
     "name": "Malibu Restaurant & Lounge",
-    "description": "Malibu Restaurant & Lounge is a spot for shisha in cobham buisness centre, Birmingham with food. Check the venue website before travelling or booking.",
+    "description": "Malibu Restaurant & Lounge is a spot for shisha in Bordesley Green, Birmingham with food. Check the venue website before travelling or booking.",
     "country": "United Kingdom",
     "city": "Birmingham",
-    "area": "cobham buisness centre",
+    "area": "Bordesley Green",
     "address": "2, cobham buisness centre, Bordesley Green Rd, Birmingham B9 4UP",
     "postcode": "B9 4UP",
     "latitude": 52.480503399999996,
@@ -3837,6 +3837,88 @@
     "dataSources": {
       "directorySource": "Google Places API Text Search",
       "otherSource": "https://maps.google.com/?cid=11318938200249796537&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "shisha-wala-yardley",
+    "slug": "shisha-wala-yardley",
+    "name": "Shisha Wala",
+    "description": "Shisha Wala is a spot for shisha in Birmingham, Coventry with late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "area": "Yardley",
+    "address": "1066 Coventry Rd, Birmingham B25 8DP",
+    "postcode": "B25 8DP",
+    "latitude": 52.4636107,
+    "longitude": -1.8350392999999998,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:30",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "11:30",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:30",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:30",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:30",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "11:30",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:30",
+        "close": "02:00"
+      }
+    ],
+    "website": "https://shisha-wala.co.uk/",
+    "instagram": null,
+    "phone": "0121 245 2229",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:56:59.746Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://shisha-wala.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=10856320879871521626&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
     },
     "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
   }

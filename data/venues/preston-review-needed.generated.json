@@ -1,0 +1,334 @@
+[
+  {
+    "id": "damascus-restaurant-city-centre",
+    "slug": "damascus-restaurant-city-centre",
+    "name": "Damascus Restaurant",
+    "description": "Damascus Restaurant is a spot for shisha in City Centre, Preston with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Preston",
+    "area": "City Centre",
+    "address": "124 Friargate, Preston PR1 2EE",
+    "postcode": "PR1 2EE",
+    "latitude": 53.761009599999994,
+    "longitude": -2.7043410999999997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "11:00",
+        "close": "21:30"
+      },
+      {
+        "day": "Monday",
+        "open": "11:00",
+        "close": "21:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:00",
+        "close": "21:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:00",
+        "close": "21:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:00",
+        "close": "21:30"
+      },
+      {
+        "day": "Friday",
+        "open": "11:00",
+        "close": "21:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:00",
+        "close": "21:30"
+      }
+    ],
+    "website": "https://www.damascus-preston.co.uk/?utm_source=GBP.website&utm_medium=GBP&utm_campaign=br15841-website",
+    "instagram": null,
+    "phone": "01772 347822",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:12.621Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.damascus-preston.co.uk/?utm_source=GBP.website&utm_medium=GBP&utm_campaign=br15841-website",
+      "otherSource": "https://maps.google.com/?cid=10622898404090858110&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "jaffa-restaurant-city-centre",
+    "slug": "jaffa-restaurant-city-centre",
+    "name": "Jaffa Restaurant",
+    "description": "Jaffa Restaurant is a spot for shisha in City Centre, Preston with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Preston",
+    "area": "City Centre",
+    "address": "58 Friargate, Preston PR1 2AT",
+    "postcode": "PR1 2AT",
+    "latitude": 53.760944699999996,
+    "longitude": -2.7047193999999997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "21:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "21:30"
+      }
+    ],
+    "website": "https://www.facebook.com/jaffagrillrestaurant",
+    "instagram": null,
+    "phone": "01772 889167",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:12.621Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.facebook.com/jaffagrillrestaurant",
+      "otherSource": "https://maps.google.com/?cid=16576962709657460988&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "forum-bar-and-kitchen-city-centre",
+    "slug": "forum-bar-and-kitchen-city-centre",
+    "name": "FORUM BAR & KITCHEN",
+    "description": "FORUM BAR & KITCHEN is a spot for shisha in City Centre, Preston with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Preston",
+    "area": "City Centre",
+    "address": "16-17 Winckley St, Preston PR1 2AA",
+    "postcode": "PR1 2AA",
+    "latitude": 53.757425399999995,
+    "longitude": -2.7023695,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "17:30"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "00:00"
+      }
+    ],
+    "website": "https://forumbar.co.uk/winckleyst/",
+    "instagram": null,
+    "phone": "01772 563789",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:12.621Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://forumbar.co.uk/winckleyst/",
+      "otherSource": "https://maps.google.com/?cid=13795601806995021956&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "the-cafe-bar-city-centre",
+    "slug": "the-cafe-bar-city-centre",
+    "name": "The Cafe Bar",
+    "description": "The Cafe Bar is a spot for shisha in City Centre, Preston with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Preston",
+    "area": "City Centre",
+    "address": "11B Winckley St, Preston PR1 2AA",
+    "postcode": "PR1 2AA",
+    "latitude": 53.757171,
+    "longitude": -2.7020342999999998,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Monday",
+        "open": "11:30",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:30",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:30",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:30",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "11:30",
+        "close": "22:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:30",
+        "close": "22:30"
+      }
+    ],
+    "website": "http://www.thecafebarpreston.co.uk/",
+    "instagram": null,
+    "phone": "01772 558989",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:12.621Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.thecafebarpreston.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=4143189007520160932&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  }
+]

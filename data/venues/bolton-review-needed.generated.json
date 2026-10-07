@@ -1,0 +1,996 @@
+[
+  {
+    "id": "dina-restaurant-town-centre",
+    "slug": "dina-restaurant-town-centre",
+    "name": "Dina Restaurant",
+    "description": "Dina Restaurant is a spot for shisha in Town Centre, Bolton with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bolton",
+    "area": "Town Centre",
+    "address": "51 Newport St, Bolton BL1 1NE",
+    "postcode": "BL1 1NE",
+    "latitude": 53.576823499999996,
+    "longitude": -2.4289853,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "19:00"
+      },
+      {
+        "day": "Monday",
+        "open": "09:00",
+        "close": "20:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "09:00",
+        "close": "20:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "09:00",
+        "close": "20:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "09:00",
+        "close": "20:00"
+      },
+      {
+        "day": "Friday",
+        "open": "09:00",
+        "close": "20:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "20:00"
+      }
+    ],
+    "website": "http://dinarestaurant.co.uk/?utm_source=gmb&utm_medium=referral",
+    "instagram": null,
+    "phone": "07931 199990",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:57.887Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://dinarestaurant.co.uk/?utm_source=gmb&utm_medium=referral",
+      "otherSource": "https://maps.google.com/?cid=13250905295866970790&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "kayf-cafe-great-lever",
+    "slug": "kayf-cafe-great-lever",
+    "name": "Kayf Cafe",
+    "description": "Kayf Cafe is a spot for shisha in Great Lever, Bolton with food, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bolton",
+    "area": "Great Lever",
+    "address": "321 Derby St, Bolton BL3 6LH",
+    "postcode": "BL3 6LH",
+    "latitude": 53.567338299999996,
+    "longitude": -2.4426831,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "01:45"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "01:45"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "01:45"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "01:45"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "03:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07543 391872",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:57.887Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=12403411171761688959&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "shiraz-restaurant-great-lever",
+    "slug": "shiraz-restaurant-great-lever",
+    "name": "Shiraz Restaurant",
+    "description": "Shiraz Restaurant is a spot for shisha in Great Lever, Bolton with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bolton",
+    "area": "Great Lever",
+    "address": "96 Great Moor St, Bolton BL3 6DS",
+    "postcode": "BL3 6DS",
+    "latitude": 53.5753278,
+    "longitude": -2.4319851999999997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "14:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "14:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "14:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "14:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "14:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "22:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "01204 366150",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:57.887Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=7821428459405098820&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "sizzling-palate-restaurant-town-centre",
+    "slug": "sizzling-palate-restaurant-town-centre",
+    "name": "Sizzling Palate Restaurant",
+    "description": "Sizzling Palate Restaurant is a spot for shisha in Town Centre, Bolton with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bolton",
+    "area": "Town Centre",
+    "address": "20-22 Bradshawgate, Bolton BL1 1DG",
+    "postcode": "BL1 1DG",
+    "latitude": 53.5792651,
+    "longitude": -2.4270082,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:30",
+        "close": "15:00"
+      },
+      {
+        "day": "Sunday",
+        "open": "17:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:30",
+        "close": "15:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:30",
+        "close": "15:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:30",
+        "close": "15:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:30",
+        "close": "15:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:00",
+        "close": "23:30"
+      }
+    ],
+    "website": "https://www.sizzlingpalate.com/",
+    "instagram": null,
+    "phone": "01204 525757",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:57.887Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.sizzlingpalate.com/",
+      "otherSource": "https://maps.google.com/?cid=9397114054591175124&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "istanbul-restaurant-bolton-town-centre",
+    "slug": "istanbul-restaurant-bolton-town-centre",
+    "name": "Istanbul Restaurant Bolton",
+    "description": "Istanbul Restaurant Bolton is a spot for shisha in Town Centre, Bolton with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bolton",
+    "area": "Town Centre",
+    "address": "52 Bridge St, Bolton BL1 2EG",
+    "postcode": "BL1 2EG",
+    "latitude": 53.581490699999996,
+    "longitude": -2.4285075,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "15:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "15:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "15:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "15:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "15:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "15:00",
+        "close": "23:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "01204 772812",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:57.887Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=1085634328133742797&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "kani-restaurant-great-lever",
+    "slug": "kani-restaurant-great-lever",
+    "name": "KANI RESTAURANT.",
+    "description": "KANI RESTAURANT. is a spot for shisha in Great Lever, Bolton with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bolton",
+    "area": "Great Lever",
+    "address": "148 Derby St, Bolton BL3 6JR",
+    "postcode": "BL3 6JR",
+    "latitude": 53.5710255,
+    "longitude": -2.4380023,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "11:30",
+        "close": "21:30"
+      },
+      {
+        "day": "Monday",
+        "open": "12:30",
+        "close": "21:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:30",
+        "close": "21:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:30",
+        "close": "21:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:30",
+        "close": "21:30"
+      },
+      {
+        "day": "Friday",
+        "open": "11:30",
+        "close": "21:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:30",
+        "close": "21:30"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07716 131414",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:57.887Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=9554938104863950991&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "pamir-restaurant-bolton-great-lever",
+    "slug": "pamir-restaurant-bolton-great-lever",
+    "name": "Pamir Restaurant Bolton",
+    "description": "Pamir Restaurant Bolton is a spot for shisha in Great Lever, Bolton with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bolton",
+    "area": "Great Lever",
+    "address": "272 Deane Rd, Bolton BL3 5HP",
+    "postcode": "BL3 5HP",
+    "latitude": 53.5725647,
+    "longitude": -2.447049,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "http://pamirbolton.co.uk/",
+    "instagram": null,
+    "phone": "07882 077666",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:57.887Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://pamirbolton.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=10073650915638844320&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "vibez-bar-and-restaurant-breightmet",
+    "slug": "vibez-bar-and-restaurant-breightmet",
+    "name": "VIBEZ BAR & RESTAURANT",
+    "description": "VIBEZ BAR & RESTAURANT is a spot for shisha in Breightmet, Bolton with food and drinks, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bolton",
+    "area": "Breightmet",
+    "address": "116, 118 Bradshawgate, Bolton BL2 1AY",
+    "postcode": "BL2 1AY",
+    "latitude": 53.5765338,
+    "longitude": -2.4257317,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "03:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07942 710475",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:57.887Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=13535140261978426782&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "signature-spice-indo-chinese-restaurant-and-bar-darcy-lever",
+    "slug": "signature-spice-indo-chinese-restaurant-and-bar-darcy-lever",
+    "name": "Signature Spice - Indo-chinese Restaurant and Bar",
+    "description": "Signature Spice - Indo-chinese Restaurant and Bar is a spot for shisha in Darcy Lever, Bolton with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bolton",
+    "area": "Darcy Lever",
+    "address": "357 Radcliffe Rd., Darcy Lever, Bolton BL3 1RU",
+    "postcode": "BL3 1RU",
+    "latitude": 53.569129999999994,
+    "longitude": -2.4005669999999997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "15:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://signaturespice.uk/",
+    "instagram": null,
+    "phone": "01204 953359",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:57.888Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://signaturespice.uk/",
+      "otherSource": "https://maps.google.com/?cid=1236393313364361708&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "gee-s-bar-and-restaurant-great-lever",
+    "slug": "gee-s-bar-and-restaurant-great-lever",
+    "name": "Gee’s Bar and Restaurant",
+    "description": "Gee’s Bar and Restaurant is a spot for shisha in Great Lever, Bolton with drinks. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bolton",
+    "area": "Great Lever",
+    "address": "98 Derby St, Bolton BL3 6HG",
+    "postcode": "BL3 6HG",
+    "latitude": 53.572129399999994,
+    "longitude": -2.4364389,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "23:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "01204 380679",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:57.888Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=162045045502363358&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "afghan-chopan-restaurant-great-lever",
+    "slug": "afghan-chopan-restaurant-great-lever",
+    "name": "Afghan Chopan Restaurant",
+    "description": "Afghan Chopan Restaurant is a spot for shisha in Great Lever, Bolton with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bolton",
+    "area": "Great Lever",
+    "address": "272 Deane Rd, Bolton BL3 5HP",
+    "postcode": "BL3 5HP",
+    "latitude": 53.5725647,
+    "longitude": -2.447049,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "00:00"
+      }
+    ],
+    "website": "https://www.afghanchopan.net/storemenu",
+    "instagram": null,
+    "phone": "01204 522221",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:57.888Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.afghanchopan.net/storemenu",
+      "otherSource": "https://maps.google.com/?cid=4533652271511547955&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "halliwell-cafe-town-centre",
+    "slug": "halliwell-cafe-town-centre",
+    "name": "Halliwell Cafe",
+    "description": "Halliwell Cafe is a spot for shisha in Town Centre, Bolton with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Bolton",
+    "area": "Town Centre",
+    "address": "465 Halliwell Rd, Bolton BL1 8DB",
+    "postcode": "BL1 8DB",
+    "latitude": 53.594764299999994,
+    "longitude": -2.4460052000000005,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "08:30",
+        "close": "15:00"
+      },
+      {
+        "day": "Monday",
+        "open": "08:00",
+        "close": "15:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "08:00",
+        "close": "15:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "08:00",
+        "close": "15:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "08:00",
+        "close": "15:00"
+      },
+      {
+        "day": "Friday",
+        "open": "08:00",
+        "close": "15:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "08:00",
+        "close": "15:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07922 556844",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:57.888Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=1499899285786315067&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  }
+]

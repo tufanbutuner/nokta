@@ -1,0 +1,1397 @@
+[
+  {
+    "id": "360-sky-lounge-city-centre",
+    "slug": "360-sky-lounge-city-centre",
+    "name": "360 Sky Lounge",
+    "description": "360 Sky Lounge is a spot for shisha in City Centre, Newcastle upon Tyne with drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Newcastle upon Tyne",
+    "area": "City Centre",
+    "address": "33 Blandford Square, Newcastle upon Tyne NE1 4HZ",
+    "postcode": "NE1 4HZ",
+    "latitude": 54.969531599999996,
+    "longitude": -1.6236329999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "http://360skyloungenewcastle.co.uk/",
+    "instagram": null,
+    "phone": "0191 691 1615",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:50.369Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://360skyloungenewcastle.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=9847970553317346903&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "downtown-shisha-city-centre",
+    "slug": "downtown-shisha-city-centre",
+    "name": "Downtown Shisha",
+    "description": "Downtown Shisha is a spot for shisha in City Centre, Newcastle upon Tyne with food, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Newcastle upon Tyne",
+    "area": "City Centre",
+    "address": "8 Princess Sq, Newcastle upon Tyne NE1 8ER",
+    "postcode": "NE1 8ER",
+    "latitude": 54.975383199999996,
+    "longitude": -1.6108130999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "11:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "11:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "11:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:00",
+        "close": "00:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07576 057675",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:50.369Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=11874177575850643124&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "the-mirage-shisha-jesmond",
+    "slug": "the-mirage-shisha-jesmond",
+    "name": "The Mirage Shisha",
+    "description": "The Mirage Shisha is a spot for shisha in Jesmond, Newcastle upon Tyne with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Newcastle upon Tyne",
+    "area": "Jesmond",
+    "address": "270 Warwick St, Newcastle upon Tyne NE2 1BB",
+    "postcode": "NE2 1BB",
+    "latitude": 54.979354799999996,
+    "longitude": -1.5959098999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "http://themiragenewcastle.co.uk/",
+    "instagram": null,
+    "phone": "0191 814 4563",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:50.369Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://themiragenewcastle.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=10146095114053183241&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "wafi-lounge-and-restaurant-city-centre",
+    "slug": "wafi-lounge-and-restaurant-city-centre",
+    "name": "Wafi Lounge & Restaurant",
+    "description": "Wafi Lounge & Restaurant is a spot for shisha in City Centre, Newcastle upon Tyne with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Newcastle upon Tyne",
+    "area": "City Centre",
+    "address": "50 Clayton St W, Newcastle upon Tyne NE1 4EX",
+    "postcode": "NE1 4EX",
+    "latitude": 54.9687537,
+    "longitude": -1.6206502999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "11:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "11:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "11:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:00",
+        "close": "03:00"
+      }
+    ],
+    "website": "https://wafi-lounge.com/",
+    "instagram": null,
+    "phone": "0191 222 1202",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:50.369Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://wafi-lounge.com/",
+      "otherSource": "https://maps.google.com/?cid=6328817025518715461&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "ultra-lounge-jesmond",
+    "slug": "ultra-lounge-jesmond",
+    "name": "Ultra lounge",
+    "description": "Ultra lounge is a spot for shisha in Jesmond, Newcastle upon Tyne with drinks, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Newcastle upon Tyne",
+    "area": "Jesmond",
+    "address": "270b Warwick St, Newcastle upon Tyne NE2 1BB",
+    "postcode": "NE2 1BB",
+    "latitude": 54.9792163,
+    "longitude": -1.5960850000000002,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "00:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "0191 676 0116",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:50.369Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=12021858830611353098&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "suda-lounge-fenham",
+    "slug": "suda-lounge-fenham",
+    "name": "Suda Lounge",
+    "description": "Suda Lounge is a spot for shisha in Fenham, Newcastle upon Tyne with food, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Newcastle upon Tyne",
+    "area": "Fenham",
+    "address": "281 Westgate Rd, Newcastle upon Tyne NE4 6AJ",
+    "postcode": "NE4 6AJ",
+    "latitude": 54.9715322,
+    "longitude": -1.6285688,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "10:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "10:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "10:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "10:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "10:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "10:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "10:00",
+        "close": "01:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07455 679067",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:50.370Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=10977350207173979488&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "hawa-lounge-fenham",
+    "slug": "hawa-lounge-fenham",
+    "name": "Hawa Lounge",
+    "description": "Hawa Lounge is a spot for shisha in Fenham, Newcastle upon Tyne with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Newcastle upon Tyne",
+    "area": "Fenham",
+    "address": "35 George St, Newcastle upon Tyne NE4 7JN",
+    "postcode": "NE4 7JN",
+    "latitude": 54.9668521,
+    "longitude": -1.6253323,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "15:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Monday",
+        "open": "15:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "15:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "15:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "15:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Friday",
+        "open": "15:00",
+        "close": "05:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "15:00",
+        "close": "05:00"
+      }
+    ],
+    "website": "https://hawa-lounge.ueniweb.com/",
+    "instagram": null,
+    "phone": "0191 447 1143",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:50.370Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://hawa-lounge.ueniweb.com/",
+      "otherSource": "https://maps.google.com/?cid=4423632805133644453&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "middle-east-shisha-lounge-fenham",
+    "slug": "middle-east-shisha-lounge-fenham",
+    "name": "Middle east Shisha Lounge",
+    "description": "Middle east Shisha Lounge is a spot for shisha in Fenham, Newcastle upon Tyne with food, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Newcastle upon Tyne",
+    "area": "Fenham",
+    "address": "413 Westgate Rd, Newcastle upon Tyne NE4 6PB",
+    "postcode": "NE4 6PB",
+    "latitude": 54.9733709,
+    "longitude": -1.640194,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "01:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:50.370Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=6051310654487131469&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "paradise-a-lounge-fenham",
+    "slug": "paradise-a-lounge-fenham",
+    "name": "Paradise A Lounge",
+    "description": "Paradise A Lounge is a spot for shisha in Fenham, Newcastle upon Tyne. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Newcastle upon Tyne",
+    "area": "Fenham",
+    "address": "231 Elswick Rd, Newcastle upon Tyne NE4 6SR",
+    "postcode": "NE4 6SR",
+    "latitude": 54.9685353,
+    "longitude": -1.644923,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "03:00"
+      }
+    ],
+    "website": "https://www.instagram.com/paradise.a.lounge/",
+    "instagram": null,
+    "phone": "07772 456660",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:50.370Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.instagram.com/paradise.a.lounge/",
+      "otherSource": "https://maps.google.com/?cid=5745410061346946496&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "mist-lounge-newcastle-fenham",
+    "slug": "mist-lounge-newcastle-fenham",
+    "name": "Mist Lounge Newcastle",
+    "description": "Mist Lounge Newcastle is a spot for shisha in Fenham, Newcastle upon Tyne with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Newcastle upon Tyne",
+    "area": "Fenham",
+    "address": "498 Westgate Rd, Newcastle upon Tyne NE4 9HD",
+    "postcode": "NE4 9HD",
+    "latitude": 54.975206,
+    "longitude": -1.64994,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "01:00"
+      }
+    ],
+    "website": "https://mist-lounge.co.uk/",
+    "instagram": null,
+    "phone": "0191 243 3395",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:50.370Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://mist-lounge.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=1735680888859447506&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "vivana-lounge-fenham",
+    "slug": "vivana-lounge-fenham",
+    "name": "VIVANA LOUNGE",
+    "description": "VIVANA LOUNGE is a spot for shisha in Fenham, Newcastle upon Tyne. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Newcastle upon Tyne",
+    "area": "Fenham",
+    "address": "Unit 4, 20 Stanhope St, Newcastle upon Tyne NE4 6BH",
+    "postcode": "NE4 6BH",
+    "latitude": 54.975296199999995,
+    "longitude": -1.6293712,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [],
+    "website": "https://www.vivanalounge.co.uk/",
+    "instagram": null,
+    "phone": "07979 099550",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:50.370Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.vivanalounge.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=10811776628039124324&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "pasha-lounge-fenham",
+    "slug": "pasha-lounge-fenham",
+    "name": "Pasha Lounge",
+    "description": "Pasha Lounge is a spot for shisha in Fenham, Newcastle upon Tyne with food and drinks, late opening. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Newcastle upon Tyne",
+    "area": "Fenham",
+    "address": "13 Barrack Rd, Newcastle upon Tyne NE4 6BA",
+    "postcode": "NE4 6BA",
+    "latitude": 54.9753076,
+    "longitude": -1.6256389000000002,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "14:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "14:00",
+        "close": "02:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07521 612648",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:50.370Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=15398256626376971575&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "the-nile-lounge-city-centre",
+    "slug": "the-nile-lounge-city-centre",
+    "name": "The Nile Lounge",
+    "description": "The Nile Lounge is a spot for shisha in City Centre, Newcastle upon Tyne with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Newcastle upon Tyne",
+    "area": "City Centre",
+    "address": "1st and 2nd floor, 12 Westmorland Rd, Newcastle upon Tyne NE1 4EG",
+    "postcode": "NE1 4EG",
+    "latitude": 54.9686179,
+    "longitude": -1.621094,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "00:00"
+      }
+    ],
+    "website": "https://instagram.com/loungethenile",
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:50.370Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://instagram.com/loungethenile",
+      "otherSource": "https://maps.google.com/?cid=5616277348864005826&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "shisha-house-newcastle-fenham",
+    "slug": "shisha-house-newcastle-fenham",
+    "name": "Shisha House Newcastle",
+    "description": "Shisha House Newcastle is a spot for shisha in Fenham, Newcastle upon Tyne. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Newcastle upon Tyne",
+    "area": "Fenham",
+    "address": "259 Westgate Rd, Newcastle upon Tyne NE4 6AH",
+    "postcode": "NE4 6AH",
+    "latitude": 54.971356799999995,
+    "longitude": -1.6273134,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "20:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "20:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "20:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "20:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "20:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "20:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07757 901312",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:50.370Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=12252170964838445235&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "shisha-corner-fenham",
+    "slug": "shisha-corner-fenham",
+    "name": "Shisha Corner",
+    "description": "Shisha Corner is a spot for shisha in Fenham, Newcastle upon Tyne. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Newcastle upon Tyne",
+    "area": "Fenham",
+    "address": "289 Stanhope St, Newcastle upon Tyne NE4 5JU",
+    "postcode": "NE4 5JU",
+    "latitude": 54.9757136,
+    "longitude": -1.6401679,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "07:00"
+      },
+      {
+        "day": "Monday",
+        "open": "09:00",
+        "close": "07:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "09:00",
+        "close": "07:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "09:00",
+        "close": "07:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "09:00",
+        "close": "07:00"
+      },
+      {
+        "day": "Friday",
+        "open": "09:00",
+        "close": "07:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "07:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": null,
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:50.370Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=7388601009861738790&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "exhale-shisha-fenham",
+    "slug": "exhale-shisha-fenham",
+    "name": "Exhale Shisha",
+    "description": "Exhale Shisha is a spot for shisha in Fenham, Newcastle upon Tyne. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Newcastle upon Tyne",
+    "area": "Fenham",
+    "address": "234C Westgate Rd, Newcastle upon Tyne NE4 6PA",
+    "postcode": "NE4 6PA",
+    "latitude": 54.971461,
+    "longitude": -1.6264227999999998,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Monday",
+        "open": "10:00",
+        "close": "17:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "10:00",
+        "close": "17:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "10:00",
+        "close": "17:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "10:00",
+        "close": "17:00"
+      },
+      {
+        "day": "Friday",
+        "open": "10:00",
+        "close": "17:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "10:00",
+        "close": "15:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07773 333320",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:50.370Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=8956656857362575747&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "rivers-lounge-gateshead",
+    "slug": "rivers-lounge-gateshead",
+    "name": "Rivers Lounge",
+    "description": "Rivers Lounge is a spot for shisha in Gateshead, Newcastle upon Tyne with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Newcastle upon Tyne",
+    "area": "Gateshead",
+    "address": "Green Ln, Baltic Rd, Gateshead NE10 0SB",
+    "postcode": "NE10 0SB",
+    "latitude": 54.9637919,
+    "longitude": -1.5689172999999998,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [],
+    "website": "https://riversloungeonline.co.uk/",
+    "instagram": null,
+    "phone": "0191 429 2550",
+    "businessStatus": "temporarily-closed",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:50.370Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://riversloungeonline.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=8526723618847208190&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "the-lunar-lounge-low-fell",
+    "slug": "the-lunar-lounge-low-fell",
+    "name": "The Lunar Lounge",
+    "description": "The Lunar Lounge is a spot for shisha in Low Fell, Newcastle upon Tyne with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Newcastle upon Tyne",
+    "area": "Low Fell",
+    "address": "119 Southend Rd, Low Fell, Gateshead NE9 6XS",
+    "postcode": "NE9 6XS",
+    "latitude": 54.932453699999996,
+    "longitude": -1.5883876,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "10:30",
+        "close": "14:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "09:00",
+        "close": "15:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "08:30",
+        "close": "16:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "08:30",
+        "close": "16:00"
+      },
+      {
+        "day": "Friday",
+        "open": "08:30",
+        "close": "16:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "15:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07879 660182",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:57:50.370Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=12423368334163420777&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  }
+]

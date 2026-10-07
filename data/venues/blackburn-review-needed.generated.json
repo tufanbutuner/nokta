@@ -1,0 +1,899 @@
+[
+  {
+    "id": "istanbul-restaurant-blackburn-witton",
+    "slug": "istanbul-restaurant-blackburn-witton",
+    "name": "Istanbul Restaurant Blackburn",
+    "description": "Istanbul Restaurant Blackburn is a spot for shisha in Witton, Blackburn with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Blackburn",
+    "area": "Witton",
+    "address": "Unit 1 Nab Ln, Blackburn BB2 1LN",
+    "postcode": "BB2 1LN",
+    "latitude": 53.7485213,
+    "longitude": -2.4879008,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "11:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "11:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:30",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://istanbulrestaurant.uk/",
+    "instagram": null,
+    "phone": "01254 241298",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:05.375Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://istanbulrestaurant.uk/",
+      "otherSource": "https://maps.google.com/?cid=14993213357464864567&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "lahori-tawa-and-grill-restaurant-town-centre",
+    "slug": "lahori-tawa-and-grill-restaurant-town-centre",
+    "name": "Lahori Tawa and Grill restaurant",
+    "description": "Lahori Tawa and Grill restaurant is a spot for shisha in Town Centre, Blackburn with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Blackburn",
+    "area": "Town Centre",
+    "address": "Next to the Post office, 459 Whalley New Rd, Blackburn BB1 9SP",
+    "postcode": "BB1 9SP",
+    "latitude": 53.7680655,
+    "longitude": -2.4766067,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "11:30",
+        "close": "00:00"
+      },
+      {
+        "day": "Monday",
+        "open": "11:30",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:30",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:30",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:30",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "11:30",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:30",
+        "close": "01:00"
+      }
+    ],
+    "website": "http://www.lahoritawaandggrill.co.uk/",
+    "instagram": null,
+    "phone": "01254 490647",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:05.375Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.lahoritawaandggrill.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=567139218460967928&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "thira-restaurant-witton",
+    "slug": "thira-restaurant-witton",
+    "name": "Thira Restaurant",
+    "description": "Thira Restaurant is a spot for shisha in Witton, Blackburn with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Blackburn",
+    "area": "Witton",
+    "address": "32 Darwen St, Blackburn BB2 2BY",
+    "postcode": "BB2 2BY",
+    "latitude": 53.746705999999996,
+    "longitude": -2.4828411,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "13:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "11:30",
+        "close": "14:30"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "11:30",
+        "close": "14:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "11:30",
+        "close": "14:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "11:30",
+        "close": "14:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "11:30",
+        "close": "14:30"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "13:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "http://www.thira-restaurant.co.uk/",
+    "instagram": null,
+    "phone": "01254 485641",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:05.375Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.thira-restaurant.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=2641540681676670479&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "jaans-cafe-town-centre",
+    "slug": "jaans-cafe-town-centre",
+    "name": "Jaans Cafe",
+    "description": "Jaans Cafe is a spot for shisha in Town Centre, Blackburn with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Blackburn",
+    "area": "Town Centre",
+    "address": "262 Audley Range, Blackburn BB1 1TG",
+    "postcode": "BB1 1TG",
+    "latitude": 53.745496599999996,
+    "longitude": -2.4610371,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://jaanscafe.co.uk/order-now",
+    "instagram": null,
+    "phone": "01254 225668",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:05.375Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://jaanscafe.co.uk/order-now",
+      "otherSource": "https://maps.google.com/?cid=4687206939664011743&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "jaan-s-restaurant-blackburn-town-centre",
+    "slug": "jaan-s-restaurant-blackburn-town-centre",
+    "name": "Jaan's Restaurant Blackburn",
+    "description": "Jaan's Restaurant Blackburn is a spot for shisha in Town Centre, Blackburn with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Blackburn",
+    "area": "Town Centre",
+    "address": "1 Charlotte St, Blackburn BB1 7LE",
+    "postcode": "BB1 7LE",
+    "latitude": 53.7521357,
+    "longitude": -2.4826473,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "13:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "13:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "13:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "13:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "13:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "13:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://jaans-bbq.com/",
+    "instagram": null,
+    "phone": "01254 695177",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:05.375Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://jaans-bbq.com/",
+      "otherSource": "https://maps.google.com/?cid=9266218450099201819&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "khyber-cafe-blackburn-town-centre",
+    "slug": "khyber-cafe-blackburn-town-centre",
+    "name": "Khyber Cafe Blackburn",
+    "description": "Khyber Cafe Blackburn is a spot for shisha in Town Centre, Blackburn with food, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Blackburn",
+    "area": "Town Centre",
+    "address": "35 Whalley Range, Blackburn BB1 6DX",
+    "postcode": "BB1 6DX",
+    "latitude": 53.7540537,
+    "longitude": -2.4796891999999997,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:00",
+        "close": "01:00"
+      }
+    ],
+    "website": "https://assqe.top/khyber-cafe-blackburn-fbnyfjg",
+    "instagram": null,
+    "phone": "01254 51732",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:05.375Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://assqe.top/khyber-cafe-blackburn-fbnyfjg",
+      "otherSource": "https://maps.google.com/?cid=4070929402625206024&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "lahore-qila-restaurant-town-centre",
+    "slug": "lahore-qila-restaurant-town-centre",
+    "name": "Lahore Qila Restaurant",
+    "description": "Lahore Qila Restaurant is a spot for shisha in Town Centre, Blackburn with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Blackburn",
+    "area": "Town Centre",
+    "address": "229 Whalley New Rd, Blackburn BB1 9TL",
+    "postcode": "BB1 9TL",
+    "latitude": 53.7617779,
+    "longitude": -2.4722397,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "15:00",
+        "close": "22:45"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "22:45"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "22:45"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "22:45"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "22:45"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "22:45"
+      },
+      {
+        "day": "Saturday",
+        "open": "15:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://www.instagram.com/lahoreqila/",
+    "instagram": null,
+    "phone": "01254 692626",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:05.375Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.instagram.com/lahoreqila/",
+      "otherSource": "https://maps.google.com/?cid=6893836704711058922&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "riverside-bar-and-kitchen-lower-darwen",
+    "slug": "riverside-bar-and-kitchen-lower-darwen",
+    "name": "Riverside Bar & Kitchen",
+    "description": "Riverside Bar & Kitchen is a spot for shisha in Lower Darwen, Blackburn with food, outdoor seating, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Blackburn",
+    "area": "Lower Darwen",
+    "address": "Lower Darwen, Darwen BB3 0PQ",
+    "postcode": "BB3 0PQ",
+    "latitude": 53.7214762,
+    "longitude": -2.4765248,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "09:30",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:30",
+        "close": "00:00"
+      }
+    ],
+    "website": "https://riversidebarkitchen.co.uk/",
+    "instagram": null,
+    "phone": "01254 801691",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:05.375Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://riversidebarkitchen.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=11869094625393630209&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "sholay-indian-restaurant-darwen",
+    "slug": "sholay-indian-restaurant-darwen",
+    "name": "SHOLAY INDIAN RESTAURANT DARWEN",
+    "description": "SHOLAY INDIAN RESTAURANT DARWEN is a spot for shisha in Darwen, Blackburn with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Blackburn",
+    "area": "Darwen",
+    "address": "9 Blackburn Rd, Darwen BB3 1EJ",
+    "postcode": "BB3 1EJ",
+    "latitude": 53.702515899999995,
+    "longitude": -2.4751876999999998,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "15:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Friday",
+        "open": "16:30",
+        "close": "23:15"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:30",
+        "close": "23:15"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "01254 761749",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:05.375Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=18423834685000030944&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "the-bank-bar-and-kitchen-darwen",
+    "slug": "the-bank-bar-and-kitchen-darwen",
+    "name": "The Bank Bar & Kitchen Darwen",
+    "description": "The Bank Bar & Kitchen Darwen is a spot for shisha in Darwen, Blackburn with drinks. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Blackburn",
+    "area": "Darwen",
+    "address": "8 Church St, Darwen BB3 2RE",
+    "postcode": "BB3 2RE",
+    "latitude": 53.6952572,
+    "longitude": -2.4663177,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Thursday",
+        "open": "15:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Friday",
+        "open": "14:00",
+        "close": "03:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "13:00",
+        "close": "03:30"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "01254 447500",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:05.375Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=15769901754082216741&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "flames-steak-house-bar-and-grill-darwen",
+    "slug": "flames-steak-house-bar-and-grill-darwen",
+    "name": "FLAMES STEAK HOUSE BAR AND GRILL",
+    "description": "FLAMES STEAK HOUSE BAR AND GRILL is a spot for shisha in Darwen, Blackburn with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Blackburn",
+    "area": "Darwen",
+    "address": "104-106 Bolton Rd, Darwen BB3 1BZ",
+    "postcode": "BB3 1BZ",
+    "latitude": 53.691572799999996,
+    "longitude": -2.4667148,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "13:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:30",
+        "close": "22:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:30",
+        "close": "22:30"
+      }
+    ],
+    "website": "https://flamessteakhouse.co.uk/",
+    "instagram": null,
+    "phone": "01254 773980",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-07T12:58:05.375Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://flamessteakhouse.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=11723080293366118695&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  }
+]
