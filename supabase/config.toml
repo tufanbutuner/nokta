@@ -11,4 +11,7 @@ verify_jwt = true
 verify_jwt = false
 
 [functions.send-notification-email]
+# Signed-out visitors submit bookings and enquiries, so this cannot require a
+# Supabase JWT. It authenticates its caller with NOTIFICATION_DISPATCH_SECRET
+# instead, and is reachable only through the /api/send-notification-email proxy.
 verify_jwt = false

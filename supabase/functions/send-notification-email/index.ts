@@ -1,10 +1,8 @@
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
-const corsHeaders = {
-  "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
-  "Access-Control-Allow-Methods": "POST, OPTIONS",
-};
+// This function is invoked server-to-server by the /api/send-notification-email
+// proxy, never from a browser, so no cross-origin access is granted.
+const corsHeaders = {};
 
 type NotificationType =
   | "booking_request_submitted"
@@ -43,15 +41,56 @@ function createAdminClient() {
   return createClient(supabaseUrl, serviceRoleKey, { auth: { persistSession: false } });
 }
 
+/**
+ * This function holds the service role key and cannot require a Supabase JWT,
+ * because signed-out visitors submit bookings and enquiries and still need their
+ * confirmation email. It therefore authenticates its caller with a shared secret
+ * that only the server-side proxy knows.
+ */
+function isAuthorisedCaller(request: Request) {
+  const expected = Deno.env.get("NOTIFICATION_DISPATCH_SECRET");
+  if (!expected) return false;
+  const provided = request.headers.get("x-notification-secret");
+  if (!provided) return false;
+  return timingSafeEqual(provided, expected);
+}
+
+// Compare in constant time so a caller cannot recover the secret byte by byte.
+function timingSafeEqual(a: string, b: string) {
+  const encoder = new TextEncoder();
+  const left = encoder.encode(a);
+  const right = encoder.encode(b);
+  if (left.length !== right.length) return false;
+  let mismatch = 0;
+  for (let index = 0; index < left.length; index += 1) mismatch |= left[index] ^ right[index];
+  return mismatch === 0;
+}
+
 Deno.serve(async (request) => {
-  if (request.method === "OPTIONS") return new Response("ok", { headers: corsHeaders });
   if (request.method !== "POST") return jsonResponse({ error: "Method not allowed." }, { status: 405 });
+
+  if (!Deno.env.get("NOTIFICATION_DISPATCH_SECRET")) {
+    console.log("send-notification-email rejected", { reason: "missing_dispatch_secret" });
+    return jsonResponse({ error: "Email delivery is not configured." }, { status: 500 });
+  }
+
+  if (!isAuthorisedCaller(request)) {
+    console.log("send-notification-email rejected", { reason: "unauthorised_caller" });
+    return jsonResponse({ error: "Not authorised." }, { status: 401 });
+  }
 
   const supabase = createAdminClient();
 
   try {
-    const { notificationId, deliveryLogId, bookingRequestId, enquiryId } = await request.json();
+    const payload = await request.json();
+    const notificationId = asUuid(payload?.notificationId);
+    const deliveryLogId = asUuid(payload?.deliveryLogId);
+    const bookingRequestId = asUuid(payload?.bookingRequestId);
+    const enquiryId = asUuid(payload?.enquiryId);
     console.log("send-notification-email request", { notificationId, deliveryLogId, bookingRequestId, enquiryId });
+    if (!notificationId && !deliveryLogId && !bookingRequestId && !enquiryId) {
+      return jsonResponse({ error: "A valid notificationId, deliveryLogId, bookingRequestId or enquiryId is required." }, { status: 400 });
+    }
     const notifications = await getTargetNotifications(supabase, { notificationId, deliveryLogId, bookingRequestId, enquiryId });
     console.log("send-notification-email targets", { count: notifications.length });
     const results = [];
@@ -342,6 +381,11 @@ function absoluteUrl(path: string) {
 function optional(label: string, value: unknown) {
   const next = clean(value);
   return next ? `${label}: ${next}` : "";
+}
+
+function asUuid(value: unknown): string | undefined {
+  if (typeof value !== "string") return undefined;
+  return /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(value) ? value : undefined;
 }
 
 function clean(value: unknown) {

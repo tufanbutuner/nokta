@@ -1,26 +1,54 @@
 import { trackEvent } from "@/lib/analytics";
-import { supabase, supabaseConfigError } from "@/lib/supabase";
 
-function ensureSupabase() {
-  if (!supabase) throw new Error(supabaseConfigError ?? "Supabase is not configured.");
-  return supabase;
+interface SendNotificationEmailInput {
+  notificationId?: string;
+  bookingRequestId?: string;
+  enquiryId?: string;
 }
 
-export async function queueEmailDeliveryForNotification(input: { notificationId?: string; bookingRequestId?: string; enquiryId?: string }): Promise<void> {
+interface SendNotificationEmailResult {
+  processed?: number;
+  error?: string;
+}
+
+/**
+ * The Supabase function that sends these emails runs with the service role key, so
+ * it is not callable from the browser. This posts to the server-side proxy at
+ * /api/send-notification-email, which holds the shared secret and forwards the call.
+ */
+const DISPATCH_ENDPOINT = "/api/send-notification-email";
+
+export async function queueEmailDeliveryForNotification(input: SendNotificationEmailInput): Promise<void> {
   trackEvent("email_notification_queued", { hasActionUrl: true });
   await sendNotificationEmail(input);
 }
 
-export async function sendNotificationEmail(input: { notificationId?: string; bookingRequestId?: string; enquiryId?: string }): Promise<void> {
-  const client = ensureSupabase();
-  const { data, error } = await client.functions.invoke<{ processed?: number; error?: string }>("send-notification-email", { body: input });
-  if (error) throw new Error(`Could not send notification email: ${error.message}`);
-  if (data?.error) throw new Error(`Could not send notification email: ${data.error}`);
-  if ((data?.processed ?? 0) > 0) return;
+export async function sendNotificationEmail(input: SendNotificationEmailInput): Promise<void> {
+  const first = await dispatch(input);
+  if ((first.processed ?? 0) > 0) return;
 
+  // The notification rows are written by database triggers, so a request that
+  // arrives before those land finds nothing pending. One short retry covers it.
   await new Promise((resolve) => window.setTimeout(resolve, 750));
-  const retry = await client.functions.invoke<{ processed?: number; error?: string }>("send-notification-email", { body: input });
-  if (retry.error) throw new Error(`Could not send notification email: ${retry.error.message}`);
-  if (retry.data?.error) throw new Error(`Could not send notification email: ${retry.data.error}`);
-  if ((retry.data?.processed ?? 0) === 0) throw new Error("Could not send notification email: no pending email notification was found.");
+  const retry = await dispatch(input);
+  if ((retry.processed ?? 0) === 0) throw new Error("Could not send notification email: no pending email notification was found.");
+}
+
+async function dispatch(input: SendNotificationEmailInput): Promise<SendNotificationEmailResult> {
+  let response: Response;
+  try {
+    response = await fetch(DISPATCH_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(input),
+    });
+  } catch (caughtError) {
+    const message = caughtError instanceof Error ? caughtError.message : "Network request failed.";
+    throw new Error(`Could not send notification email: ${message}`);
+  }
+
+  const result = (await response.json().catch(() => ({}))) as SendNotificationEmailResult;
+  if (!response.ok) throw new Error(`Could not send notification email: ${result.error ?? response.statusText}`);
+  if (result.error) throw new Error(`Could not send notification email: ${result.error}`);
+  return result;
 }

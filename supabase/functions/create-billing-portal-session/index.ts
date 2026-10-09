@@ -37,16 +37,32 @@ function getStripeSecretKey(mode: StripeMode) {
   return Deno.env.get(mode === "test" ? "STRIPE_TEST_SECRET_KEY" : "STRIPE_LIVE_SECRET_KEY") ?? (mode === "live" ? Deno.env.get("STRIPE_SECRET_KEY") : null);
 }
 
+const DEFAULT_TEST_ORIGINS = ["localhost", "127.0.0.1"];
+
+function getStripeTestOrigins(): string[] {
+  const configured = Deno.env.get("STRIPE_TEST_ORIGINS");
+  if (!configured) return DEFAULT_TEST_ORIGINS;
+  const origins = configured
+    .split(",")
+    .map((value) => value.trim().toLowerCase())
+    .filter(Boolean);
+  return origins.length > 0 ? origins : DEFAULT_TEST_ORIGINS;
+}
+
+function isTestOrigin(source: string): boolean {
+  const haystack = source.toLowerCase();
+  return getStripeTestOrigins().some((needle) => haystack.includes(needle));
+}
+
 function getStripeModeForRequest(request: Request): StripeMode {
   const origin = request.headers.get("origin") ?? "";
   const referer = request.headers.get("referer") ?? "";
-  const source = `${origin} ${referer}`;
-  return source.includes("localhost") || source.includes("127.0.0.1") ? "test" : "live";
+  return isTestOrigin(`${origin} ${referer}`) ? "test" : "live";
 }
 
 function getAppUrlForRequest(request: Request, mode: StripeMode) {
   const origin = request.headers.get("origin");
-  if (mode === "test" && origin && (origin.includes("localhost") || origin.includes("127.0.0.1"))) return origin;
+  if (mode === "test" && origin && isTestOrigin(origin)) return origin;
   return Deno.env.get(mode === "test" ? "TEST_APP_URL" : "LIVE_APP_URL") ?? Deno.env.get("APP_URL") ?? Deno.env.get("VITE_APP_URL");
 }
 
