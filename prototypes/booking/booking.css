@@ -1,0 +1,130 @@
+/* =========================================================================
+   NOKTA — Booking.com-style filtered list  (prototype D · Index)
+   Adds to airbnb.css: a compact centred search, popular categories row,
+   booking-style result cards and a left filter facet rail.
+   ========================================================================= */
+
+/* ---------- compact centred search ---------- */
+.qwrap { position: relative; padding: 30px 0 6px; text-align: center; }
+.qwrap .eyebrow { justify-content: center; }
+.quicksearch { display: flex; align-items: center; gap: 6px; max-width: 640px; margin: 14px auto 0; background: var(--surface); border: 1px solid var(--line-2); border-radius: 999px; padding: 5px 5px 5px 16px; box-shadow: var(--shadow); }
+.quicksearch .qs-ic { width: 18px; height: 18px; color: var(--muted); flex: none; }
+.quicksearch input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; font: inherit; font-size: 15px; padding: 9px 6px; color: var(--ink); }
+.quicksearch input::placeholder { color: var(--faint); }
+.quicksearch .qs-div { width: 1px; height: 24px; background: var(--line); flex: none; }
+.quicksearch .qs-loc { display: inline-flex; align-items: center; gap: 6px; border: 0; background: transparent; color: var(--ink-2); font-weight: 500; font-size: 14px; padding: 8px 12px; border-radius: 999px; white-space: nowrap; }
+.quicksearch .qs-loc:hover { background: var(--surface-2); }
+.quicksearch .qs-loc svg { width: 14px; height: 14px; color: var(--clay); }
+.quicksearch .qs-go { height: 38px; padding: 0 18px; flex: none; border: 0; border-radius: 999px; background: var(--clay); color: #fff; font-weight: 600; font-size: 14.5px; }
+.quicksearch .qs-go:hover { background: var(--clay-hover); }
+
+/* ---------- popular categories beneath ---------- */
+.catwrap { padding: 14px 0 34px; border-bottom: 1px solid var(--line); background: var(--bg); }
+.catrow { display: flex; align-items: center; justify-content: center; gap: 9px; flex-wrap: wrap; }
+.catpill { display: inline-flex; align-items: center; gap: 7px; height: 36px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--line-2); background: var(--surface); color: var(--ink-2); font-size: 13.5px; font-weight: 550; transition: all .15s; }
+.catpill:hover { border-color: var(--clay); color: var(--ink); }
+.catpill.active { background: var(--night); border-color: var(--night); color: #fff; }
+.catpill .d { width: 6px; height: 6px; border-radius: 50%; background: var(--clay); flex: none; }
+
+/* ---------- results shell ---------- */
+.results { display: grid; grid-template-columns: 252px minmax(0, 1fr); gap: 24px; align-items: start; }
+
+/* filter facet rail */
+.facets { position: sticky; top: 84px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 20px 20px 22px; }
+.fhead { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+.fhead h3 { margin: 0; font-size: 17px; letter-spacing: -0.01em; }
+.fhead .clear { border: 0; background: transparent; color: var(--clay); font-size: 13px; font-weight: 650; }
+.fhead .clear:hover { text-decoration: underline; }
+.fgroup { padding: 16px 0; border-top: 1px solid var(--line); }
+.fgroup h4 { margin: 0 0 10px; font-size: 13px; font-weight: 700; letter-spacing: 0.01em; }
+.fopt { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--ink-2); padding: 5px 0; cursor: pointer; }
+.fopt input { width: 17px; height: 17px; accent-color: var(--clay); flex: none; }
+.fopt .cnt { margin-left: auto; color: var(--faint); font-size: 12.5px; }
+.fnote { margin: 8px 0 0; font-size: 12px; color: var(--faint); }
+.fapply { width: 100%; margin-top: 10px; }
+.mobilefilter { display: none; }
+
+/* results header */
+.reshead { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
+.reshead b { font-size: 16px; }
+.reshead .resa { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.mapbtn { display: inline-flex; align-items: center; gap: 7px; height: 40px; padding: 0 15px; border-radius: 999px; border: 1px solid var(--line-2); background: #fff; font-size: 14px; font-weight: 600; }
+.mapbtn:hover { border-color: var(--faint); }
+.mapbtn svg { width: 16px; height: 16px; color: var(--clay); }
+.sortsel { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; color: var(--muted); }
+.sortsel select { font: inherit; font-weight: 600; color: var(--ink); border: 1px solid var(--line-2); border-radius: 999px; padding: 9px 14px; background: #fff; }
+
+/* compact map strip */
+.mapstrip { position: relative; height: 132px; border-radius: var(--r); overflow: hidden; background: #e9ece4; border: 1px solid var(--line-2); margin-bottom: 16px; }
+.mapstrip .glines { position: absolute; inset: 0; background-image: linear-gradient(rgba(90,110,80,.10) 1px, transparent 1px), linear-gradient(90deg, rgba(90,110,80,.10) 1px, transparent 1px); background-size: 46px 46px; }
+.mapstrip .mslabel { position: absolute; left: 14px; bottom: 13px; display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,.96); border-radius: 999px; padding: 8px 14px; font-size: 13px; font-weight: 650; box-shadow: var(--shadow-sm); }
+.mapstrip .mslabel .d { width: 7px; height: 7px; border-radius: 50%; background: var(--clay); }
+.mapstrip .pin { position: absolute; transform: translate(-50%, -50%); background: #fff; border: 1px solid var(--line-2); border-radius: 999px; padding: 3px 8px; font-size: 11.5px; font-weight: 700; box-shadow: var(--shadow-sm); }
+.mapstrip .pin::after { content: ""; position: absolute; left: 50%; bottom: -3px; transform: translateX(-50%); width: 5px; height: 5px; border-radius: 50%; background: var(--clay); }
+
+/* result cards (booking-style) */
+.rlist { display: flex; flex-direction: column; gap: 14px; }
+.rcard { display: grid; grid-template-columns: 184px minmax(0, 1fr) 172px; gap: 16px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 14px; transition: box-shadow .18s, border-color .18s; }
+.rcard:hover { box-shadow: var(--shadow); border-color: var(--line-2); }
+.rframes { position: relative; }
+.rframes img { width: 100%; height: 100%; min-height: 168px; object-fit: cover; border-radius: 14px; }
+.rframes .heart { position: absolute; top: 10px; right: 10px; }
+.rframes .pcount { position: absolute; bottom: 10px; left: 10px; background: rgba(0,0,0,.62); color: #fff; font-size: 11.5px; font-weight: 600; border-radius: 7px; padding: 3px 8px; }
+.rbody { min-width: 0; padding: 5px 0; }
+.rtop { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.rtop h3 { margin: 0; font-size: 18px; letter-spacing: -0.01em; }
+.rtag { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; background: var(--clay-tint); color: var(--clay-dark); border-radius: 6px; padding: 3px 7px; }
+.rsub { margin: 6px 0 0; font-size: 13.5px; color: var(--muted); display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.rsub .sep { width: 3px; height: 3px; background: var(--line-2); border-radius: 50%; flex: none; }
+.rchips { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 12px; }
+.rchips span { font-size: 12px; background: var(--surface-2); border-radius: 999px; padding: 4px 10px; color: var(--ink-2); }
+.ramen { margin: 12px 0 0; font-size: 13px; color: var(--muted); display: flex; align-items: center; gap: 8px; }
+.ramen .sd { width: 6px; height: 6px; border-radius: 50%; background: var(--clay); flex: none; }
+.rating { display: inline-flex; align-items: center; gap: 5px; font-size: 13.5px; font-weight: 650; color: var(--ink); }
+.rating svg { width: 14px; height: 14px; fill: var(--clay); flex: none; }
+.rating .rev { color: var(--faint); font-weight: 400; }
+.rside { display: flex; flex-direction: column; align-items: flex-end; text-align: right; padding: 5px 2px; gap: 8px; }
+.priceband { margin-top: auto; }
+.priceband b { display: block; font-size: 19px; letter-spacing: 0.03em; }
+.priceband span { font-size: 12.5px; color: var(--muted); }
+.rside .btn { width: 100%; }
+
+/* pagination */
+.pager { display: flex; align-items: center; justify-content: center; gap: 7px; margin: 26px 0 4px; }
+.pager button { min-width: 40px; height: 40px; padding: 0 12px; border-radius: 10px; border: 1px solid var(--line-2); background: #fff; font-weight: 600; font-size: 14px; color: var(--ink-2); }
+.pager button.active { background: var(--night); border-color: var(--night); color: #fff; }
+.pager button:hover:not(.active) { border-color: var(--faint); }
+
+@media (max-width: 900px) {
+  .results { grid-template-columns: minmax(0, 1fr); }
+  .facets { position: static; display: none; }
+  .facets.open { display: block; }
+  .mobilefilter { display: inline-flex; }
+}
+@media (max-width: 620px) {
+  .rcard { grid-template-columns: 1fr; }
+  .rframes img { min-height: 200px; }
+  .rside { grid-column: 1 / -1; flex-direction: row; align-items: center; justify-content: space-between; flex-wrap: wrap; text-align: left; border-top: 1px solid var(--line); padding-top: 12px; }
+  .rside .btn { width: auto; }
+  /* keep the search on one compact row: drop the redundant location chip (the nav already shows it) */
+  .quicksearch { padding: 5px 5px 5px 14px; }
+  .quicksearch .qs-div, .quicksearch .qs-loc { display: none; }
+  .quicksearch .qs-go { padding: 0 16px; }
+  /* pagination wraps instead of forcing the page wide */
+  .pager { flex-wrap: wrap; }
+  .pager button { min-width: 36px; height: 36px; padding: 0 10px; }
+  .reshead { gap: 10px; }
+
+  /* categories: one elegant swipeable line instead of stacked rows */
+  .catwrap { padding: 12px 0 18px; }
+  .catrow { flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; margin: 0 -24px; padding: 2px 24px; scroll-snap-type: x proximity; }
+  .catrow::-webkit-scrollbar { display: none; }
+  .catpill { flex: none; scroll-snap-align: start; }
+
+  /* cards: keep it light — amenity row scrolls on one line, drop the extra signature line and the map strip */
+  .rchips { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-top: 10px; }
+  .rchips::-webkit-scrollbar { display: none; }
+  .rchips span { flex: none; }
+  .ramen { display: none; }
+  .mapstrip { display: none; }
+}

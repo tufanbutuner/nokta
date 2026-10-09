@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nokta — The Path</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@700&family=Outfit:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../airbnb/airbnb.css">
+<link rel="stylesheet" href="dot.css">
+<style>
+  .hero { padding: 58px 0 0; text-align: center; }
+  .hero .sub { color: var(--muted); margin: 16px auto 26px; max-width: 430px; font-size: 16px; }
+  .hero .dsearch { margin: 0 auto; }
+  .hero .dchips { justify-content: center; margin-top: 24px; }
+  .spine { width: 0; border-left: 2px dotted var(--line-2); height: 60px; margin: 30px auto 0; }
+
+  .pathhead { text-align: center; margin: 4px 0 2px; }
+  .pathhead .coord { letter-spacing: .16em; }
+
+  .path { position: relative; max-width: 940px; margin: 0 auto; padding: 28px 0 12px; }
+  .path::before { content: ""; position: absolute; left: 50%; top: 0; bottom: 60px; border-left: 2px dotted var(--line-2); transform: translateX(-1px); }
+
+  .stop { display: grid; grid-template-columns: 1fr 64px 1fr; align-items: center; margin: 26px 0; }
+  .nodecol { grid-column: 2; display: flex; flex-direction: column; align-items: center; gap: 7px; z-index: 2; }
+  .node { width: 15px; height: 15px; border-radius: 50%; background: var(--clay); box-shadow: 0 0 0 6px var(--bg), 0 0 0 7px var(--line-2); }
+  .node.ring { background: var(--bg); border: 2px solid var(--clay); }
+  .num { font-family: var(--mono); font-size: 10.5px; letter-spacing: .06em; color: var(--faint); }
+  .stop .card { grid-column: 1; grid-row: 1; }
+  .stop.rev .card { grid-column: 3; grid-row: 1; }
+
+  .vcard { position: relative; display: flex; gap: 14px; align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 12px; box-shadow: var(--shadow-sm); transition: transform .16s ease, box-shadow .16s ease; }
+  .vcard:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+  .stop:not(.rev) .vcard { flex-direction: row-reverse; text-align: right; }
+  .vcard img { width: 96px; height: 96px; border-radius: 12px; object-fit: cover; flex: none; }
+  .vcard .vname { font-size: 17px; font-weight: 650; letter-spacing: -.01em; display: flex; align-items: center; gap: 8px; }
+  .stop:not(.rev) .vcard .vname { justify-content: flex-end; }
+  .vcard .vmeta { color: var(--muted); font-size: 13.5px; margin: 3px 0 0; }
+  .vcard .vrow { display: flex; gap: 10px; align-items: center; color: var(--ink-2); font-size: 13.5px; margin-top: 9px; }
+  .stop:not(.rev) .vrow { justify-content: flex-end; }
+  .vcard .star { display: inline-flex; align-items: center; gap: 4px; font-weight: 600; }
+  .vcard .star svg { width: 13px; height: 13px; color: var(--clay); }
+  .vcard .price { font-weight: 600; }
+  .tagfeat { font-size: 10.5px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--clay-dark); background: var(--clay-tint); border-radius: 999px; padding: 3px 8px; }
+
+  /* connector from the spine to each card */
+  .stop .card::after { content: ""; position: absolute; top: 50%; width: 22px; border-top: 2px dotted var(--line-2); }
+  .stop:not(.rev) .card::after { right: -24px; }
+  .stop.rev .card::after { left: -24px; }
+
+  .endcap { position: relative; z-index: 2; display: flex; justify-content: center; margin-top: 8px; }
+  .endcap a { display: inline-flex; align-items: center; gap: 9px; background: var(--surface); border: 1px solid var(--line-2); border-radius: 999px; padding: 10px 18px; font-weight: 600; font-size: 14px; box-shadow: var(--shadow-sm); }
+  .endcap a:hover { border-color: var(--faint); }
+
+  @media (max-width: 760px) {
+    .path::before { left: 20px; bottom: 70px; }
+    .stop { grid-template-columns: 40px 1fr; gap: 14px; margin: 18px 0; }
+    .nodecol { grid-column: 1; }
+    .stop .card, .stop.rev .card { grid-column: 2; grid-row: 1; }
+    .stop .card::after { display: none; }
+    .stop .vcard, .stop:not(.rev) .vcard { flex-direction: row; text-align: left; }
+    .stop:not(.rev) .vcard .vname, .stop:not(.rev) .vrow { justify-content: flex-start; }
+    .vcard img { width: 78px; height: 78px; }
+    .endcap { justify-content: flex-start; padding-left: 54px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="container wide nav-in">
+    <div style="display:flex;align-items:center;gap:30px">
+      <a class="wordmark" href="index.html">nokta</a>
+      <nav class="nav-links">
+        <a href="#" class="on">Discover</a><a href="#">Collections</a><a href="#">Saved</a><a href="#">For venues</a>
+      </nav>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px">
+      <a class="loc" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>London</a>
+      <button class="btn btn-outline btn-sm">Sign in</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <h1 class="h1">Find your next spot<span class="dot"></span></h1>
+    <p class="sub">Every place is a dot. Follow the path to the ones worth your evening.</p>
+    <form class="dsearch" onsubmit="return false">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg>
+      <input placeholder="Search a place, area or vibe…" aria-label="Search">
+      <button class="go" type="button">Search</button>
+    </form>
+    <div class="dchips">
+      <button class="dchip active"><span class="d"></span>All</button>
+      <button class="dchip"><span class="d"></span>Open now</button>
+      <button class="dchip"><span class="d"></span>Late-night</button>
+      <button class="dchip"><span class="d"></span>Terrace</button>
+      <button class="dchip"><span class="d"></span>Coffee</button>
+      <button class="dchip"><span class="d"></span>Big tables</button>
+      <button class="dchip"><span class="d"></span>Top rated</button>
+    </div>
+  </div>
+  <div class="spine"></div>
+</section>
+
+<!-- THE PATH -->
+<section class="sect tight">
+  <div class="container">
+    <div class="pathhead">
+      <span class="coord">The path · London</span>
+    </div>
+
+    <div class="path">
+
+      <div class="stop" style="margin-top:6px">
+        <div class="nodecol"><span class="node ring"></span><span class="num">START</span></div>
+      </div>
+
+      <article class="stop">
+        <div class="nodecol"><span class="node"></span><span class="num">01</span></div>
+        <div class="card">
+          <div class="vcard">
+            <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=400&q=70" alt="">
+            <div>
+              <div class="vname">Qahwa Social <span class="tagfeat">Featured</span></div>
+              <p class="vmeta">Lounge · Shoreditch</p>
+              <div class="vrow"><span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.8 6.2 19.9l1.1-6.5L2.6 8.8l6.5-.9Z"/></svg>4.8</span><span class="price">££</span><span>Open till 2am</span></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="stop rev">
+        <div class="nodecol"><span class="node"></span><span class="num">02</span></div>
+        <div class="card">
+          <div class="vcard">
+            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=400&q=70" alt="">
+            <div>
+              <div class="vname">Nami Kitchen</div>
+              <p class="vmeta">Restaurant · Soho</p>
+              <div class="vrow"><span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.8 6.2 19.9l1.1-6.5L2.6 8.8l6.5-.9Z"/></svg>4.6</span><span class="price">£££</span><span>Book a table</span></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="stop">
+        <div class="nodecol"><span class="node"></span><span class="num">03</span></div>
+        <div class="card">
+          <div class="vcard">
+            <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=400&q=70" alt="">
+            <div>
+              <div class="vname">Dot Coffee</div>
+              <p class="vmeta">Café · Marylebone</p>
+              <div class="vrow"><span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.8 6.2 19.9l1.1-6.5L2.6 8.8l6.5-.9Z"/></svg>4.7</span><span class="price">£</span><span>Open now</span></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="stop rev">
+        <div class="nodecol"><span class="node"></span><span class="num">04</span></div>
+        <div class="card">
+          <div class="vcard">
+            <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=400&q=70" alt="">
+            <div>
+              <div class="vname">Terrace 19</div>
+              <p class="vmeta">Late-night · Camden</p>
+              <div class="vrow"><span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.8 6.2 19.9l1.1-6.5L2.6 8.8l6.5-.9Z"/></svg>4.5</span><span class="price">££</span><span>Open till 3am</span></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="stop">
+        <div class="nodecol"><span class="node"></span><span class="num">05</span></div>
+        <div class="card">
+          <div class="vcard">
+            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=400&q=70" alt="">
+            <div>
+              <div class="vname">Marta</div>
+              <p class="vmeta">Restaurant · Peckham</p>
+              <div class="vrow"><span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.8 6.2 19.9l1.1-6.5L2.6 8.8l6.5-.9Z"/></svg>4.9</span><span class="price">££</span><span>Reserve</span></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <div class="endcap"><a href="#"><span class="ndot"></span>Continue the path <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div>
+
+    </div>
+  </div>
+</section>
+
+<div class="ribbon">
+  <a class="rl on" href="path.html">The Path</a>
+  <a class="rl" href="pinpoint.html">Pinpoint</a>
+  <a class="rl" href="fullstop.html">Full stop</a>
+  <a class="rl" href="index.html">All</a>
+</div>
+
+</body>
+</html>

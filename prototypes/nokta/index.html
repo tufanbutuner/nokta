@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nokta — dot concepts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@700&family=Outfit:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="nokta.css">
+<style>
+  .hero { padding: 68px 0 30px; }
+  .hero .display { font-size: clamp(38px, 6vw, 78px); }
+  .hero .display .fs { display:inline-block;width:.26em;height:.26em;border-radius:50%;background:var(--clay);margin-left:.05em; }
+  .principle { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 42px; }
+  .principle .p { border-top: 1px solid var(--line); padding-top: 16px; }
+  .principle .p .dot { width: 11px; height: 11px; border-radius: 50%; background: var(--clay); display: inline-block; margin-bottom: 12px; }
+  .principle .p b { display: block; font-size: 15.5px; margin-bottom: 6px; }
+  .principle .p span { color: var(--ink-muted); font-size: 14px; }
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; padding: 20px 0 40px; }
+  .c { display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; background: #fff; box-shadow: var(--shadow); transition: transform .2s, box-shadow .2s; }
+  .c:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+  .c .thumb { aspect-ratio: 16/11; position: relative; overflow: hidden; }
+  .c .thumb img { width: 100%; height: 100%; object-fit: cover; }
+  .c .thumb .k { position: absolute; top: 14px; left: 14px; font-family: var(--mono); font-size: 12px; font-weight: 600; background: rgba(255,255,255,.94); border-radius: 6px; padding: 5px 9px; }
+  .c .body { padding: 22px; display: flex; flex-direction: column; flex: 1; }
+  .c h2 { margin: 0 0 8px; font-size: 22px; letter-spacing: -.01em; }
+  .c .idea { color: var(--clay); font-family: var(--mono); font-size: 11.5px; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 12px; }
+  .c p { margin: 0; color: var(--ink-muted); font-size: 14.5px; }
+  .c .go { margin-top: 20px; }
+  .cmp { width: 100%; border-collapse: collapse; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: #fff; }
+  .cmp th, .cmp td { text-align: left; padding: 15px 18px; border-bottom: 1px solid var(--line); font-size: 14px; vertical-align: top; }
+  .cmp th { font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: .1em; color: var(--ink-muted); background: var(--paper-2); }
+  .cmp td:first-child { font-weight: 600; width: 180px; }
+  .cmp tr:last-child td { border-bottom: 0; }
+  @media (max-width: 980px) { .cards, .principle { grid-template-columns: 1fr; } .principle { grid-template-columns: 1fr 1fr; } }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="wordmark" href="#">nokta</a>
+    <span class="coord">dot / place concepts · v2</span>
+  </div>
+</header>
+
+<div class="container hero">
+  <span class="eyebrow coord">Redesign direction</span>
+  <h1 class="display mt-s">The dot is the brand<span class="fs"></span></h1>
+  <p class="lede mt-m" style="max-width:680px">The earlier drafts could have been any directory site. These are built from the atom Nokta already owns — the dot — and what it means for a product about <em>places</em>. Three concepts, one philosophy.</p>
+
+  <div class="principle">
+    <div class="p"><span class="dot"></span><b>A dot is a place</b><span>Every venue is a point with a coordinate, not a card in a grid.</span></div>
+    <div class="p"><span class="dot"></span><b>A dot is a decision</b><span>Nokta is the full stop — the end of the search, "this is the one".</span></div>
+    <div class="p"><span class="dot"></span><b>Dots connect</b><span>A saved shortlist is a constellation; a plan is the shape you draw together.</span></div>
+    <div class="p"><span class="dot"></span><b>Dots are live</b><span>Pins pulse and dim with real hours — the map is alive, not a directory.</span></div>
+  </div>
+</div>
+
+<div class="container cards">
+  <a class="c" href="coordinate.html">
+    <div class="thumb"><img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=900&q=70" alt=""><span class="k">01</span></div>
+    <div class="body"><span class="idea">the instrument</span><h2>Coordinate</h2><p>Nokta as a precise plotting tool. A dot-field canvas, real coordinates set in mono, and a ledger instead of cards. Places, plotted.</p><span class="go btn btn-ink btn-sm">Open Coordinate</span></div>
+  </a>
+  <a class="c" href="constellation.html">
+    <div class="thumb"><img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=900&q=70" alt=""><span class="k">02</span></div>
+    <div class="body"><span class="idea">dots that connect</span><h2>Constellation</h2><p>Nokta as the plan you build with friends. A night-world canvas where saved places connect into a shareable shape.</p><span class="go btn btn-ink btn-sm">Open Constellation</span></div>
+  </a>
+  <a class="c" href="fullstop.html">
+    <div class="thumb"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=70" alt=""><span class="k">03</span></div>
+    <div class="body"><span class="idea">the dot as punctuation</span><h2>Full Stop</h2><p>Nokta as the end of the search. Bold typography, the dot as the period, and a short opinionated edit. Confident and quiet.</p><span class="go btn btn-ink btn-sm">Open Full Stop</span></div>
+  </a>
+</div>
+
+<div class="container" style="padding-bottom:84px">
+  <table class="cmp">
+    <thead><tr><th></th><th>01 Coordinate</th><th>02 Constellation</th><th>03 Full Stop</th></tr></thead>
+    <tbody>
+      <tr><td>Dot reads as…</td><td>A plotted coordinate</td><td>A connection between places</td><td>A full stop / decision</td></tr>
+      <tr><td>World</td><td>Day · paper &amp; red pen</td><td>Night · after dark</td><td>Day · poster &amp; column</td></tr>
+      <tr><td>Mood</td><td>Precise, instrument-like</td><td>Social, warm, alive</td><td>Editorial, assured</td></tr>
+      <tr><td>Killer move</td><td>Ledger table, not cards</td><td>Shortlist as a constellation</td><td>The dot as the period</td></tr>
+      <tr><td>Build effort</td><td>Medium</td><td>Medium–high</td><td>Low code / high curation</td></tr>
+      <tr><td>Restaurants &amp; cafes later</td><td colspan="3">All three are category-neutral — the mood/collection system carries every venue type.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="ribbon">dot concepts <b>v2</b> · built on the nokta / place philosophy <a href="../homepage/index.html">earlier drafts</a></div>
+</body>
+</html>

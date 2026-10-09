@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nokta — Homepage B · Atlas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@700&family=Outfit:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="airbnb.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="container wide nav-in">
+    <div style="display:flex;align-items:center;gap:30px">
+      <a class="wordmark" href="#">nokta</a>
+      <nav class="nav-links">
+        <a href="#" class="on">Discover</a><a href="#">Collections</a><a href="#">Saved</a><a href="#">For venues</a>
+      </nav>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px">
+      <span class="loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>London</span>
+      <button class="btn btn-outline btn-sm">Sign in</button>
+    </div>
+  </div>
+</header>
+
+<section style="background:var(--surface);border-bottom:1px solid var(--line);padding:26px 0">
+  <div class="container wide" style="display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap">
+    <div>
+      <span class="eyebrow">Discover on the map</span>
+      <h1 class="h1" style="font-size:clamp(28px,3.4vw,42px);margin-top:10px">Find your next spot<span class="dot"></span></h1>
+    </div>
+    <div class="pill mini">
+      <button class="seg"><span class="lab">Where</span></button>
+      <div class="div"></div>
+      <button class="seg"><span class="lab">When</span></button>
+      <div class="div"></div>
+      <button class="seg"><span class="lab">Who</span></button>
+      <button class="gobtn" aria-label="Search" style="width:40px;height:40px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg></button>
+    </div>
+  </div>
+</section>
+
+<section class="sect tight">
+  <div class="container wide">
+    <div class="tabs" style="margin-bottom:18px" data-tabs>
+      <button class="tab active">All</button>
+      <button class="tab">Open now</button>
+      <button class="tab">Late-night</button>
+      <button class="tab">Terrace</button>
+      <button class="tab">Big tables</button>
+      <button class="tab">Coffee</button>
+      <button class="tab">Top rated</button>
+    </div>
+
+    <div class="split">
+      <!-- LIST -->
+      <div class="list">
+        <div class="lhead"><b>148 venues in London</b><span class="coord">sorted by relevance</span></div>
+
+        <article class="hcard" data-id="v1">
+          <div class="frame"><img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=400&q=70" alt=""></div>
+          <div class="body">
+            <h3>Qahwa Social</h3>
+            <p class="meta">Shoreditch <span class="sep"></span> Lounge <span class="sep"></span> <span class="opendot"><span class="d"></span>till 2am</span></p>
+            <div class="tags"><span>Shisha-friendly</span><span>Groups</span><span>Outdoor</span></div>
+          </div>
+          <div class="side"><span class="rate"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.8 6.2 19.9l1.1-6.5L2.6 8.8l6.5-.9Z"/></svg>4.8</span><button class="fav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.6-9.2-9A4.6 4.6 0 0 1 12 6.5 4.6 4.6 0 0 1 21.2 11C19 15.4 12 20 12 20Z"/></svg></button></div>
+        </article>
+
+        <article class="hcard" data-id="v2">
+          <div class="frame"><img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=400&q=70" alt=""></div>
+          <div class="body">
+            <h3>The Lantern Room</h3>
+            <p class="meta">Soho <span class="sep"></span> Bar <span class="sep"></span> <span class="opendot"><span class="d"></span>till 1am</span></p>
+            <div class="tags"><span>Cocktails</span><span>Date night</span></div>
+          </div>
+          <div class="side"><span class="rate"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.8 6.2 19.9l1.1-6.5L2.6 8.8l6.5-.9Z"/></svg>4.7</span><button class="fav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.6-9.2-9A4.6 4.6 0 0 1 12 6.5 4.6 4.6 0 0 1 21.2 11C19 15.4 12 20 12 20Z"/></svg></button></div>
+        </article>
+
+        <article class="hcard" data-id="v3">
+          <div class="frame"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=400&q=70" alt=""></div>
+          <div class="body">
+            <h3>Maison Anwar</h3>
+            <p class="meta">Marylebone <span class="sep"></span> Restaurant <span class="sep"></span> <span class="opendot"><span class="d"></span>Open</span></p>
+            <div class="tags"><span>Big tables</span><span>£25+</span><span>Book a table</span></div>
+          </div>
+          <div class="side"><span class="rate"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.8 6.2 19.9l1.1-6.5L2.6 8.8l6.5-.9Z"/></svg>4.8</span><button class="fav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.6-9.2-9A4.6 4.6 0 0 1 12 6.5 4.6 4.6 0 0 1 21.2 11C19 15.4 12 20 12 20Z"/></svg></button></div>
+        </article>
+
+        <article class="hcard" data-id="v4">
+          <div class="frame"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=400&q=70" alt=""></div>
+          <div class="body">
+            <h3>Courtyard Nine</h3>
+            <p class="meta">Camden <span class="sep"></span> Cafe <span class="sep"></span> <span class="opendot"><span class="d"></span>Open</span></p>
+            <div class="tags"><span>Daytime</span><span>Dog friendly</span><span>£12+</span></div>
+          </div>
+          <div class="side"><span class="rate"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.8 6.2 19.9l1.1-6.5L2.6 8.8l6.5-.9Z"/></svg>4.6</span><button class="fav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.6-9.2-9A4.6 4.6 0 0 1 12 6.5 4.6 4.6 0 0 1 21.2 11C19 15.4 12 20 12 20Z"/></svg></button></div>
+        </article>
+
+        <article class="hcard" data-id="v5">
+          <div class="frame"><img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=400&q=70" alt=""></div>
+          <div class="body">
+            <h3>Fern &amp; Filter</h3>
+            <p class="meta">Borough <span class="sep"></span> Cafe <span class="sep"></span> <span class="opendot"><span class="d"></span>Open</span></p>
+            <div class="tags"><span>Specialty coffee</span><span>Quiet</span></div>
+          </div>
+          <div class="side"><span class="rate"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.8 6.2 19.9l1.1-6.5L2.6 8.8l6.5-.9Z"/></svg>4.9</span><button class="fav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.6-9.2-9A4.6 4.6 0 0 1 12 6.5 4.6 4.6 0 0 1 21.2 11C19 15.4 12 20 12 20Z"/></svg></button></div>
+        </article>
+
+        <article class="hcard" data-id="v6">
+          <div class="frame"><img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=400&q=70" alt=""></div>
+          <div class="body">
+            <h3>Peckham Yard</h3>
+            <p class="meta">Peckham <span class="sep"></span> Bar <span class="sep"></span> <span class="opendot"><span class="d"></span>till 1am</span></p>
+            <div class="tags"><span>Outdoor</span><span>Groups</span></div>
+          </div>
+          <div class="side"><span class="rate"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.8 6.2 19.9l1.1-6.5L2.6 8.8l6.5-.9Z"/></svg>4.4</span><button class="fav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.6-9.2-9A4.6 4.6 0 0 1 12 6.5 4.6 4.6 0 0 1 21.2 11C19 15.4 12 20 12 20Z"/></svg></button></div>
+        </article>
+
+        <button class="btn btn-outline" style="align-self:center;margin-top:6px">Load more venues</button>
+      </div>
+
+      <!-- MAP -->
+      <div>
+        <div class="map">
+          <div class="glines"></div>
+          <svg class="roads" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M-5 62 C 25 55, 45 70, 105 52" fill="none" stroke="#bcd0d8" stroke-width="1.6"/>
+            <path d="M-5 30 C 30 40, 55 22, 105 34" fill="none" stroke="#d8cfc2" stroke-width="0.9"/>
+            <path d="M40 -5 C 42 30, 30 60, 48 105" fill="none" stroke="#d8cfc2" stroke-width="0.9"/>
+            <path d="M70 -5 C 66 30, 74 60, 62 105" fill="none" stroke="#d8cfc2" stroke-width="0.9"/>
+            <path d="M-5 80 C 35 74, 60 88, 105 76" fill="none" stroke="#d8cfc2" stroke-width="0.9"/>
+            <path d="M20 -5 C 24 35, 12 65, 26 105" fill="none" stroke="#d8cfc2" stroke-width="0.9"/>
+          </svg>
+
+          <div class="mapui">
+            <span class="mchip">Map · London</span>
+            <span class="mchip">148 results</span>
+          </div>
+          <div class="mapui" style="top:auto;bottom:16px;justify-content:flex-end">
+            <div class="zoom"><button aria-label="Zoom in">+</button><button aria-label="Zoom out">−</button></div>
+          </div>
+
+          <button class="pin" style="left:30%;top:30%" data-id="v3">£25+</button>
+          <button class="pin" style="left:46%;top:22%" data-id="v4">£12+</button>
+          <button class="pin" style="left:40%;top:44%" data-id="v2">£18+</button>
+          <button class="pin" style="left:72%;top:34%" data-id="v1">£20+</button>
+          <button class="pin" style="left:62%;top:60%" data-id="v5">£10+</button>
+          <button class="pin" style="left:74%;top:76%" data-id="v6">£18+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MORE TO EXPLORE ============ -->
+<section class="sect tight">
+  <div class="container wide">
+    <div class="shead">
+      <div><span class="eyebrow">Collections</span><h2 class="h2" style="margin-top:8px">More to explore</h2></div>
+      <a class="seeall" href="#">All collections <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 6 6 6-6 6"/></svg></a>
+    </div>
+    <div class="carousel" data-carousel>
+      <div class="track">
+        <article class="vcard wide"><div class="frame"><img src="https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?auto=format&fit=crop&w=700&q=70" alt=""><span class="tagchip">12 spots</span></div><div class="body"><div class="top"><h3>Golden hour terraces</h3></div><p class="meta">Slow evening outside</p></div></article>
+        <article class="vcard wide"><div class="frame"><img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=700&q=70" alt=""><span class="tagchip">9 spots</span></div><div class="body"><div class="top"><h3>Quiet coffee</h3></div><p class="meta">Calm daytime corners</p></div></article>
+        <article class="vcard wide"><div class="frame"><img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=700&q=70" alt=""><span class="tagchip">14 spots</span></div><div class="body"><div class="top"><h3>Open after midnight</h3></div><p class="meta">For the later crowd</p></div></article>
+        <article class="vcard wide"><div class="frame"><img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=700&q=70" alt=""><span class="tagchip">10 spots</span></div><div class="body"><div class="top"><h3>Big tables</h3></div><p class="meta">Room for the whole group</p></div></article>
+      </div>
+      <button class="carrow left" disabled aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 6-6 6 6 6"/></svg></button>
+      <button class="carrow right" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 6 6 6-6 6"/></svg></button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OFFERS ============ -->
+<section class="sect tight">
+  <div class="container wide">
+    <div class="band">
+      <div class="dotfield"></div>
+      <div class="in">
+        <div class="shead"><div><span class="eyebrow">Offers</span><h2 class="h2" style="color:#fff;margin-top:8px">Something on the house</h2></div><a class="seeall" href="#">All offers <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 6 6 6-6 6"/></svg></a></div>
+        <div class="offer-grid">
+          <a class="offer" href="#"><span class="pc">2-for-1</span><b>Sharing platters</b><span>Sun–Thu, after 8pm</span><div class="ven"><span class="d"></span>Qahwa Social · Shoreditch</div></a>
+          <a class="offer" href="#"><span class="pc">20%</span><b>Off the bill</b><span>Groups of 6 or more</span><div class="ven"><span class="d"></span>Maison Anwar · Marylebone</div></a>
+          <a class="offer" href="#"><span class="pc">Free</span><b>Dessert with any table</b><span>Weeknights</span><div class="ven"><span class="d"></span>The Lantern Room · Soho</div></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="dotfield" style="opacity:.3"></div>
+  <div class="container in">
+    <a class="wordmark on-dark" href="#">nokta</a>
+    <p style="margin-top:14px">Find your spot. Restaurants, lounges, bars and cafes across the UK — check details directly before you travel or book.</p>
+    <div class="cols">
+      <div><p class="lbl">Pages</p><a href="#">Discover</a><a href="#">Collections</a><a href="#">Suggest a venue</a></div>
+      <div><p class="lbl">For venues</p><a href="#">List your venue</a><a href="#">Offers</a><a href="#">Featured</a></div>
+      <div><p class="lbl">Contact</p><a href="#">hello@nokta.uk</a><a href="#">Instagram</a></div>
+    </div>
+    <p class="coord" style="margin-top:26px;color:rgba(255,255,255,.4)">51.5074 N, 0.1278 W · London</p>
+  </div>
+</footer>
+
+<div class="ribbon">Homepage <b>B · Atlas</b> — sticky map + card list, synced pins <a href="index.html">all ideas</a></div>
+
+<script>
+  // quick filter tabs
+  document.querySelectorAll('[data-tabs] .tab').forEach(function (t) {
+    t.addEventListener('click', function () {
+      t.parentElement.querySelectorAll('.tab').forEach(function (x) { x.classList.remove('active'); });
+      t.classList.add('active');
+    });
+  });
+  // sync cards <-> map pins
+  function activate(id) {
+    document.querySelectorAll('.hcard, .map .pin').forEach(function (el) {
+      el.classList.toggle('active', el.getAttribute('data-id') === id);
+    });
+  }
+  document.querySelectorAll('.hcard').forEach(function (c) {
+    c.addEventListener('mouseenter', function () { activate(c.getAttribute('data-id')); });
+    c.addEventListener('focusin', function () { activate(c.getAttribute('data-id')); });
+  });
+  document.querySelectorAll('.map .pin').forEach(function (p) {
+    p.addEventListener('mouseenter', function () { activate(p.getAttribute('data-id')); });
+    p.addEventListener('click', function () {
+      var id = p.getAttribute('data-id');
+      activate(id);
+      var card = document.querySelector('.hcard[data-id="' + id + '"]');
+      if (card) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  });
+  // carousels
+  document.querySelectorAll('[data-carousel]').forEach(function (c) {
+    var track = c.querySelector('.track');
+    var left = c.querySelector('.carrow.left');
+    var right = c.querySelector('.carrow.right');
+    function step() { return Math.round(track.clientWidth * 0.85); }
+    function update() { left.disabled = track.scrollLeft <= 4; right.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 4; }
+    left.addEventListener('click', function () { track.scrollBy({ left: -step(), behavior: 'smooth' }); });
+    right.addEventListener('click', function () { track.scrollBy({ left: step(), behavior: 'smooth' }); });
+    track.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  });
+</script>
+</body>
+</html>

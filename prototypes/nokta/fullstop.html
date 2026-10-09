@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nokta — 03 Full Stop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@700&family=Outfit:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="nokta.css">
+<style>
+  /* 03 — Full Stop: the dot as punctuation. The end of the search. */
+  .hero { padding: 78px 0 40px; }
+  .hero .display { max-width: 1040px; }
+  .fullstop { display: inline-block; width: .3em; height: .3em; border-radius: 50%; background: var(--clay); margin-left: .04em; transform: translateY(-.04em); }
+  .hero .sub { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: end; margin-top: 40px; }
+  .hero .instrument { max-width: 560px; }
+  .rule { height: 1px; background: var(--line); margin: 40px 0 0; }
+  .editions { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; margin-top: 34px; }
+  .editions .e { display: block; }
+  .editions .e .frame { aspect-ratio: 4/5; border-radius: var(--radius); overflow: hidden; margin-bottom: 12px; }
+  .editions .e .frame img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+  .editions .e:hover .frame img { transform: scale(1.05); }
+  .editions .e b { font-weight: 600; font-size: 15.5px; } .editions .e span { display: block; }
+
+  .full-list { margin-top: 6px; }
+  .fitem { display: grid; grid-template-columns: 72px minmax(0, 1.1fr) 220px minmax(0, 1fr); gap: 26px; align-items: baseline; padding: 28px 4px; border-top: 1px solid var(--line); transition: padding .25s ease, background .25s ease; }
+  .fitem:last-child { border-bottom: 1px solid var(--line); }
+  .fitem:hover { padding-left: 16px; background: var(--paper-2); }
+  .fitem .num { font-family: var(--brand); font-weight: 700; font-size: 26px; color: var(--clay); }
+  .fitem h3 { margin: 0; font-size: clamp(24px, 3vw, 34px); letter-spacing: -.025em; font-weight: 600; }
+  .fitem .where { font-family: var(--mono); font-size: 12px; text-transform: uppercase; letter-spacing: .05em; color: var(--ink-muted); }
+  .fitem p { margin: 0; color: var(--ink-muted); font-size: 15px; }
+
+  .idx { display: grid; grid-template-columns: 1fr 1fr; gap: 0 54px; }
+  .irow { display: flex; align-items: baseline; justify-content: space-between; gap: 18px; padding: 19px 4px; border-top: 1px solid var(--line); }
+  .irow:hover b { color: var(--clay); }
+  .irow b { font-size: 21px; font-weight: 600; letter-spacing: -.01em; transition: color .16s; }
+  .irow .n { font-family: var(--mono); font-size: 13px; color: var(--ink-muted); }
+
+  @media (max-width: 980px) {
+    .hero .sub { grid-template-columns: 1fr; }
+    .editions { grid-template-columns: 1fr 1fr; }
+    .fitem { grid-template-columns: 44px 1fr; gap: 8px 16px; }
+    .fitem .where, .fitem p { grid-column: 2; }
+    .idx { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <div class="row" style="gap:32px">
+      <a class="wordmark" href="#">nokta</a>
+      <nav class="nav-links"><a href="#" class="on">The Edit</a><a href="#">Discover</a><a href="#">Saved</a><a href="#">For venues</a></nav>
+    </div>
+    <div class="row" style="gap:16px"><span class="coord">London · edited weekly</span><button class="btn btn-line btn-sm">Sign in</button></div>
+  </div>
+</header>
+
+<section class="container hero">
+  <span class="eyebrow coord">The dot that ends the search</span>
+  <h1 class="display mt-s">Somewhere worth a full stop<span class="fullstop"></span></h1>
+
+  <div class="sub">
+    <form class="instrument" onsubmit="return false">
+      <span class="crosshair"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="8"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg></span>
+      <label class="seg" style="flex:1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg><input placeholder="Search restaurants, cafes, bars, lounges…" aria-label="Search"></label>
+      <button class="btn btn-ink" type="submit">Search</button>
+    </form>
+    <p class="lede">A short, opinionated list of places across the UK — chosen so you stop scrolling and go. Restaurants, lounges, bars and cafes.</p>
+  </div>
+  <div class="rule"></div>
+
+  <div class="editions">
+    <a class="e" href="#"><span class="frame ph" style="display:block;background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=700&q=70')"></span><b>Dinner out</b><span class="coord">restaurants · 73</span></a>
+    <a class="e" href="#"><span class="frame ph" style="display:block;background-image:url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=700&q=70')"></span><b>Coffee &amp; catch-up</b><span class="coord">cafes · 67</span></a>
+    <a class="e" href="#"><span class="frame ph" style="display:block;background-image:url('https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=700&q=70')"></span><b>Late-night bars</b><span class="coord">bars · 38</span></a>
+    <a class="e" href="#"><span class="frame ph" style="display:block;background-image:url('https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=700&q=70')"></span><b>Lounges</b><span class="coord">lounges · 41</span></a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="head"><div><span class="eyebrow coord">The Edit</span><h2 class="h2 mt-s">Places, in full.</h2></div><span class="coord">vol. 07 · this week</span></div>
+    <div class="full-list">
+      <a class="fitem" href="#"><span class="num">01</span><h3>Maison Anwar</h3><span class="where">Restaurant · Marylebone · 51.5203 N</span><p>A courtyard that feels like Lisbon — best at golden hour, and the rare big-group place that still feels calm.</p></a>
+      <a class="fitem" href="#"><span class="num">02</span><h3>Qahwa Social</h3><span class="where">Lounge · Shoreditch · 51.5245 N</span><p>The room everyone books for eight. Big tables, no rush, a menu that keeps a mixed group happy.</p></a>
+      <a class="fitem" href="#"><span class="num">03</span><h3>The Lantern Room</h3><span class="where">Bar · Soho · 51.5136 N</span><p>Low light, short menu, open past last orders — for the night that isn&rsquo;t over yet.</p></a>
+      <a class="fitem" href="#"><span class="num">04</span><h3>Courtyard Nine</h3><span class="where">Cafe · Camden · 51.5390 N</span><p>All-day, quiet before noon, turns into something else after dark. Best coffee in the postcode.</p></a>
+      <a class="fitem" href="#"><span class="num">05</span><h3>Rivera Terrace</h3><span class="where">Terrace · Canary Wharf · 51.5045 N</span><p>Heaters on, water in view, and the only terrace worth crossing town for on a cold Friday.</p></a>
+    </div>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="container">
+    <div class="head"><div><span class="eyebrow coord">Index</span><h2 class="h2 mt-s">By what you&rsquo;re after</h2></div></div>
+    <div class="idx">
+      <a class="irow" href="#"><b>Late-night plates</b><span class="n">38</span></a>
+      <a class="irow" href="#"><b>Courtyard &amp; terrace</b><span class="n">52</span></a>
+      <a class="irow" href="#"><b>Tables for eight</b><span class="n">41</span></a>
+      <a class="irow" href="#"><b>Coffee &amp; catch-up</b><span class="n">67</span></a>
+      <a class="irow" href="#"><b>Dinner out</b><span class="n">73</span></a>
+      <a class="irow" href="#"><b>Something new</b><span class="n">19</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="container">
+    <div class="head"><div><span class="eyebrow coord">Where we are</span><h2 class="h2 mt-s">London first, more each week</h2></div></div>
+    <div class="idx">
+      <a class="irow" href="#"><b>London</b><span class="n">51.5074 N · 148</span></a>
+      <a class="irow" href="#"><b>Birmingham</b><span class="n">52.4862 N · 24</span></a>
+      <a class="irow" href="#"><b>Manchester</b><span class="n">53.4808 N · 19</span></a>
+      <a class="irow" href="#"><b>Leicester</b><span class="n">52.6369 N · 14</span></a>
+      <a class="irow" href="#"><b>Glasgow</b><span class="n">coming soon</span></a>
+      <a class="irow" href="#"><b>Liverpool</b><span class="n">coming soon</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="container">
+    <div class="band">
+      <div class="head"><div><span class="eyebrow on-night coord">Offers</span><h2 class="h2 mt-s" style="color:#fff">Something on the house</h2></div><a class="btn btn-ghost btn-sm" href="#">All offers</a></div>
+      <div class="offer-row">
+        <a class="offer" href="#"><span class="pc">2-for-1</span><b>Sharing platters</b><span>Sun–Thu, after 8pm</span><div class="ven coord" style="color:rgba(255,255,255,.7)">Qahwa Social · Shoreditch</div></a>
+        <a class="offer" href="#"><span class="pc">20%</span><b>Off the bill</b><span>Groups of 6 or more</span><div class="ven coord" style="color:rgba(255,255,255,.7)">Maison Anwar · Marylebone</div></a>
+        <a class="offer" href="#"><span class="pc">Free</span><b>Dessert with any table</b><span>Weeknights</span><div class="ven coord" style="color:rgba(255,255,255,.7)">The Lantern Room · Soho</div></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container in">
+    <div class="top">
+      <div><a class="wordmark on-night" href="#">nokta</a><p>The dot that ends the search. Restaurants, lounges and cafes across the UK — check details directly before you travel or book.</p></div>
+      <div class="cols"><div><p class="lbl">Pages</p><a href="#">The Edit</a><a href="#">Discover</a><a href="#">Suggest a venue</a><a href="#">For venues</a></div><div><p class="lbl">Contact</p><a href="#">hello@nokta.uk</a><a href="#">Instagram</a></div></div>
+    </div>
+    <p class="base">THE EDIT · VOL. 07 · LONDON</p>
+  </div>
+</footer>
+
+<div class="ribbon">Concept <b>03 — Full Stop</b> · the dot as punctuation <a href="index.html">all concepts</a></div>
+</body>
+</html>

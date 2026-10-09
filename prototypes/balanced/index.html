@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nokta — Homepage (balanced)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@700&family=Outfit:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="balanced.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <div style="display:flex;align-items:center;gap:34px">
+      <a class="wordmark" href="#">nokta</a>
+      <nav class="nav-links">
+        <a href="#" class="on">Discover</a>
+        <a href="#">Collections</a>
+        <a href="#">Saved</a>
+        <a href="#">For venues</a>
+      </nav>
+    </div>
+    <div style="display:flex;align-items:center;gap:14px">
+      <span class="loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>London</span>
+      <button class="btn btn-outline btn-sm">Sign in</button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="dotfield"></div>
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">Discover somewhere worth going</span>
+      <h1 class="display">Find your next spot<span class="dot"></span></h1>
+      <p class="lede">Lounges, restaurants, bars and cafes across the UK. Browse what&rsquo;s nearby, save the ones you like, and book in a tap.</p>
+
+      <form class="search" onsubmit="return false">
+        <label class="field">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg>
+          <input placeholder="Search venues, areas or vibes…" aria-label="Search venues">
+        </label>
+        <div class="city">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          London
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left:auto"><path d="m6 9 6 6 6-6"/></svg>
+        </div>
+        <button class="btn btn-clay" type="submit">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg>
+          Explore
+        </button>
+      </form>
+
+      <div class="chips">
+        <button class="chip active">Open now</button>
+        <button class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 19v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="9.5" cy="7" r="3.5"/><path d="M21 19v-2a4 4 0 0 0-3-3.8"/></svg>Good for groups</button>
+        <button class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s7-5 7-12a7 7 0 1 0-14 0c0 7 7 12 7 12Z"/><path d="M12 10v4M10 12h4"/></svg>Outdoor</button>
+        <button class="chip">£ Budget</button>
+        <button class="chip">Top rated</button>
+      </div>
+
+      <div class="hero-meta">
+        <span class="coord">148 venues</span><span class="coord" style="color:var(--clay)">·</span>
+        <span class="coord">32 open now</span><span class="coord" style="color:var(--clay)">·</span>
+        <span class="coord">4 cities</span>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="shot ph" style="background-image:url('https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1200&q=72')">
+        <span class="pin" style="left:30%;top:34%"></span>
+        <span class="pin p2" style="left:62%;top:52%"></span>
+        <span class="pin p3" style="left:46%;top:74%"></span>
+        <span class="shot-tag"><span class="d"></span>Open now · Shoreditch</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VIBES ================= -->
+<section class="section tight">
+  <div class="container">
+    <div class="head">
+      <div>
+        <span class="eyebrow">Browse by mood</span>
+        <h2 class="h2">Find your vibe</h2>
+        <p class="sub">The same shortcut whether you want a late table, a calm coffee or a room for eight.</p>
+      </div>
+    </div>
+    <div class="vibes">
+      <a class="vibe" href="#"><img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=600&q=70" alt=""><span class="cap"><b>Late-night</b><span>past midnight</span></span></a>
+      <a class="vibe" href="#"><img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=600&q=70" alt=""><span class="cap"><b>Terrace &amp; outdoor</b><span>heaters on</span></span></a>
+      <a class="vibe" href="#"><img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=600&q=70" alt=""><span class="cap"><b>Big tables</b><span>room for 6+</span></span></a>
+      <a class="vibe" href="#"><img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=600&q=70" alt=""><span class="cap"><b>Coffee &amp; catch-up</b><span>quiet daytime</span></span></a>
+      <a class="vibe" href="#"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=600&q=70" alt=""><span class="cap"><b>Dinner out</b><span>book a table</span></span></a>
+      <a class="vibe" href="#"><img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=600&q=70" alt=""><span class="cap"><b>Something new</b><span>opened recently</span></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VENUES ================= -->
+<section class="section tight">
+  <div class="container">
+    <div class="head">
+      <div>
+        <span class="eyebrow">In London</span>
+        <h2 class="h2">Places worth your night</h2>
+        <p class="sub">Browse open venues, save your shortlist and see them all on the map.</p>
+      </div>
+      <a class="btn btn-outline btn-sm" href="#">View all 148</a>
+    </div>
+
+    <div class="grid g4">
+      <article class="vcard">
+        <div class="frame">
+          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=700&q=70" alt="">
+          <span class="badge"><svg viewBox="0 0 24 24" fill="var(--clay)" stroke="none"><path d="M12 3l2.6 5.3 5.9.8-4.3 4.1 1 5.9L12 16.9 6.8 19.1l1-5.9L3.5 9.1l5.9-.8Z"/></svg>4.8</span>
+          <button class="fav" aria-label="Save"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.6-9.2-9A4.6 4.6 0 0 1 12 6.5 4.6 4.6 0 0 1 21.2 11C19 15.4 12 20 12 20Z"/></svg></button>
+        </div>
+        <div class="body">
+          <h3>Maison Anwar</h3>
+          <p class="meta">Marylebone <span class="sep"></span> Restaurant</p>
+          <div class="foot"><span>£25+</span><span class="openpill open"><span class="d"></span>Open</span></div>
+        </div>
+      </article>
+
+      <article class="vcard">
+        <div class="frame">
+          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=700&q=70" alt="">
+          <span class="badge"><svg viewBox="0 0 24 24" fill="var(--clay)" stroke="none"><path d="M12 3l2.6 5.3 5.9.8-4.3 4.1 1 5.9L12 16.9 6.8 19.1l1-5.9L3.5 9.1l5.9-.8Z"/></svg>4.6</span>
+          <button class="fav" aria-label="Save"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.6-9.2-9A4.6 4.6 0 0 1 12 6.5 4.6 4.6 0 0 1 21.2 11C19 15.4 12 20 12 20Z"/></svg></button>
+        </div>
+        <div class="body">
+          <h3>Qahwa Social</h3>
+          <p class="meta">Shoreditch <span class="sep"></span> Lounge</p>
+          <div class="foot"><span>£20+</span><span class="openpill open"><span class="d"></span>Open</span></div>
+        </div>
+      </article>
+
+      <article class="vcard">
+        <div class="frame">
+          <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=700&q=70" alt="">
+          <span class="badge"><svg viewBox="0 0 24 24" fill="var(--clay)" stroke="none"><path d="M12 3l2.6 5.3 5.9.8-4.3 4.1 1 5.9L12 16.9 6.8 19.1l1-5.9L3.5 9.1l5.9-.8Z"/></svg>4.7</span>
+          <button class="fav" aria-label="Save"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.6-9.2-9A4.6 4.6 0 0 1 12 6.5 4.6 4.6 0 0 1 21.2 11C19 15.4 12 20 12 20Z"/></svg></button>
+        </div>
+        <div class="body">
+          <h3>The Lantern Room</h3>
+          <p class="meta">Soho <span class="sep"></span> Bar</p>
+          <div class="foot"><span>£18+</span><span class="openpill open"><span class="d"></span>Open</span></div>
+        </div>
+      </article>
+
+      <article class="vcard">
+        <div class="frame">
+          <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=700&q=70" alt="">
+          <span class="badge"><svg viewBox="0 0 24 24" fill="var(--clay)" stroke="none"><path d="M12 3l2.6 5.3 5.9.8-4.3 4.1 1 5.9L12 16.9 6.8 19.1l1-5.9L3.5 9.1l5.9-.8Z"/></svg>4.5</span>
+          <button class="fav" aria-label="Save"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.6-9.2-9A4.6 4.6 0 0 1 12 6.5 4.6 4.6 0 0 1 21.2 11C19 15.4 12 20 12 20Z"/></svg></button>
+        </div>
+        <div class="body">
+          <h3>Courtyard Nine</h3>
+          <p class="meta">Camden <span class="sep"></span> Cafe</p>
+          <div class="foot"><span>£12+</span><span class="openpill closed">Closed</span></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="mapcta">
+      <a class="btn btn-ink" href="#">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2Z"/><path d="M9 4v14M15 6v14"/></svg>
+        Show all on the map
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FEATURED ================= -->
+<section class="section tight">
+  <div class="container">
+    <div class="head">
+      <div>
+        <span class="eyebrow">Featured</span>
+        <h2 class="h2">Worth a look this week</h2>
+      </div>
+      <a class="btn btn-outline btn-sm" href="#">The full edit</a>
+    </div>
+    <div class="grid g3">
+      <article class="fcard"><div class="frame ph" style="background-image:url('https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=900&q=70')"><span class="tag">Featured</span></div><div class="body"><h3>A courtyard that feels like Lisbon</h3><p>Hidden behind a Marylebone townhouse — best at golden hour.</p></div></article>
+      <article class="fcard"><div class="frame ph" style="background-image:url('https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=900&q=70')"><span class="tag">Featured</span></div><div class="body"><h3>The room everyone books for eight</h3><p>Big tables, no rush, and a menu that keeps everyone happy.</p></div></article>
+      <article class="fcard"><div class="frame ph" style="background-image:url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=900&q=70')"><span class="tag">Featured</span></div><div class="body"><h3>Open till 2, quiet in the morning</h3><p>Camden&rsquo;s newest all-day spot — best coffee before noon.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= OFFERS ================= -->
+<section class="section tight">
+  <div class="container">
+    <div class="band">
+      <div class="dotfield"></div>
+      <div class="in">
+        <div class="head"><div><span class="eyebrow">Offers</span><h2 class="h2" style="color:#fff">Something on the house</h2></div><a class="btn btn-outline btn-sm" style="border-color:rgba(255,255,255,.3);color:#fff" href="#">All offers</a></div>
+        <div class="offer-grid">
+          <a class="offer" href="#"><span class="pc">2-for-1</span><b>Sharing platters</b><span>Sun–Thu, after 8pm</span><div class="ven"><span class="d"></span>Qahwa Social · Shoreditch</div></a>
+          <a class="offer" href="#"><span class="pc">20%</span><b>Off the bill</b><span>Groups of 6 or more</span><div class="ven"><span class="d"></span>Maison Anwar · Marylebone</div></a>
+          <a class="offer" href="#"><span class="pc">Free</span><b>Dessert with any table</b><span>Weeknights</span><div class="ven"><span class="d"></span>The Lantern Room · Soho</div></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BROWSE BY PLACE ================= -->
+<section class="section tight">
+  <div class="container">
+    <div class="head">
+      <div>
+        <span class="eyebrow">Browse by place</span>
+        <h2 class="h2">London first, more each week</h2>
+        <p class="sub">We only list a city once the coverage is real — so what you see is worth the trip.</p>
+      </div>
+    </div>
+    <div class="city-grid">
+      <a class="city-card" href="#"><div class="row"><b>London</b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 6 6 6-6 6"/></svg></div><span class="cnt">148 venues</span><span class="coord">51.5074 N</span></a>
+      <a class="city-card" href="#"><div class="row"><b>Birmingham</b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 6 6 6-6 6"/></svg></div><span class="cnt">24 venues</span><span class="coord">52.4862 N</span></a>
+      <a class="city-card" href="#"><div class="row"><b>Manchester</b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 6 6 6-6 6"/></svg></div><span class="cnt">19 venues</span><span class="coord">53.4808 N</span></a>
+      <a class="city-card" href="#"><div class="row"><b>Leicester</b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 6 6 6-6 6"/></svg></div><span class="cnt">14 venues</span><span class="coord">52.6369 N</span></a>
+      <a class="city-card" href="#"><div class="row"><b>Leeds</b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 6 6 6-6 6"/></svg></div><span class="cnt">11 venues</span><span class="coord">53.8008 N</span></a>
+    </div>
+
+    <div class="head" style="margin-top:34px">
+      <div><span class="eyebrow muted">Popular London areas</span></div>
+      <a class="btn btn-outline btn-sm" href="#">All areas</a>
+    </div>
+    <div class="areas">
+      <a class="area" href="#"><span class="d"></span>Shoreditch <span class="n">12</span></a>
+      <a class="area" href="#"><span class="d"></span>Edgware Road <span class="n">8</span></a>
+      <a class="area" href="#"><span class="d"></span>Soho <span class="n">9</span></a>
+      <a class="area" href="#"><span class="d"></span>Camden <span class="n">7</span></a>
+      <a class="area" href="#"><span class="d"></span>Canary Wharf <span class="n">6</span></a>
+      <a class="area" href="#"><span class="d"></span>Mayfair <span class="n">5</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="section tight">
+  <div class="container">
+    <div class="band cta-band">
+      <div class="dotfield"></div>
+      <div class="in">
+        <div class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s7-5 7-12a7 7 0 1 0-14 0c0 7 7 12 7 12Z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+        <h2>Ready to find your spot?</h2>
+        <p>Explore venues, save your shortlist, and keep your next plan easy to choose.</p>
+        <div class="row">
+          <a class="btn btn-clay" href="#">Explore venues</a>
+          <a class="btn btn-outline" style="border-color:rgba(255,255,255,.3);color:#fff" href="#">Find a recommendation</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="dotfield" style="opacity:.35"></div>
+  <div class="container in">
+    <a class="wordmark on-dark" href="#">nokta</a>
+    <p>Find your spot. Restaurants, lounges, bars and cafes across the UK — check details directly before you travel or book.</p>
+    <div class="cols">
+      <div><p class="lbl">Pages</p><a href="#">Discover</a><a href="#">Collections</a><a href="#">Suggest a venue</a><a href="#">For venues</a></div>
+      <div><p class="lbl">Contact</p><a href="#">hello@nokta.uk</a><a href="#">Instagram</a></div>
+    </div>
+    <p class="base coord" style="color:rgba(255,255,255,.4)">51.5074 N, 0.1278 W · London</p>
+  </div>
+</footer>
+
+<div class="ribbon">Homepage <b>balanced</b> · familiar discovery + a quiet dot signature <a href="../nokta/index.html" style="color:#fff;opacity:.6;padding-left:8px;border-left:1px solid rgba(255,255,255,.2)">dot concepts</a></div>
+
+</body>
+</html>

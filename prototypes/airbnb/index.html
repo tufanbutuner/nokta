@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nokta — Airbnb-inspired directions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@700&family=Outfit:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="airbnb.css">
+<style>
+  .choices { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:8px; }
+  .choice { display:flex; flex-direction:column; background:var(--surface); border:1px solid var(--line); border-radius:var(--r-lg); overflow:hidden; transition:transform .18s, box-shadow .18s; }
+  .choice:hover { transform:translateY(-4px); box-shadow:var(--shadow); }
+  .choice .shot { aspect-ratio:16/10; position:relative; }
+  .choice .shot img { width:100%; height:100%; object-fit:cover; }
+  .choice .shot .no { position:absolute; top:12px; left:12px; background:rgba(255,255,255,.95); border-radius:999px; padding:5px 12px; font-family:var(--mono); font-size:12px; font-weight:600; }
+  .choice .c { padding:20px; display:flex; flex-direction:column; gap:10px; flex:1; }
+  .choice h3 { margin:0; font-size:20px; letter-spacing:-0.01em; }
+  .choice p { margin:0; color:var(--muted); font-size:14.5px; }
+  .choice ul { margin:2px 0 0; padding-left:18px; color:var(--ink-2); font-size:13.5px; }
+  .choice li { margin:3px 0; }
+  .choice .go { margin-top:auto; }
+  .tagrow { display:flex; gap:6px; flex-wrap:wrap; }
+  .tagrow span { font-size:11.5px; background:var(--surface-2); border-radius:999px; padding:4px 10px; color:var(--ink-2); }
+  table.cmp { width:100%; border-collapse:collapse; margin-top:8px; font-size:14px; }
+  table.cmp th, table.cmp td { text-align:left; padding:12px 14px; border-bottom:1px solid var(--line); vertical-align:top; }
+  table.cmp th { font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); font-weight:700; }
+  table.cmp tr:last-child td { border-bottom:0; }
+  @media (max-width:900px){ .choices{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="container wide nav-in">
+    <a class="wordmark" href="../nokta/index.html">nokta</a>
+    <div style="display:flex;align-items:center;gap:12px">
+      <a class="btn btn-outline btn-sm" href="../balanced/index.html">Balanced</a>
+      <a class="btn btn-outline btn-sm" href="../nokta/index.html">Dot concepts</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero-simple">
+  <div class="dotfield"></div>
+  <div class="container" style="position:relative;z-index:2">
+    <span class="eyebrow">Homepage exploration · round 3</span>
+    <h1 class="h1" style="font-size:clamp(30px,4.2vw,52px);max-width:820px;margin:16px auto 0">A layout inspired by Airbnb&rsquo;s rhythm<span class="dot"></span></h1>
+    <p class="lede">Three takes on Airbnb&rsquo;s discovery mechanics — the segmented search pill, the sticky category rail, horizontal carousels, the split map, and the tabbed inspiration grid — but re-skinned for Nokta: warm palette, category-neutral, and the dot kept as a quiet mark.</p>
+  </div>
+</section>
+
+<section class="sect tight">
+  <div class="container wide">
+    <div class="choices">
+      <a class="choice" href="rail.html">
+        <div class="shot"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=70" alt=""><span class="no">A</span></div>
+        <div class="c">
+          <h3>The Rail</h3>
+          <p>Airbnb&rsquo;s home glance: a single big search pill, then a sticky icon category rail, then horizontal carousels of venues.</p>
+          <ul>
+            <li>Segmented <b>Where / When / Who</b> search pill</li>
+            <li>Sticky icon rail, active item underlined</li>
+            <li>&ldquo;Open late&rdquo;, &ldquo;Big tables&rdquo;, &ldquo;New&rdquo; carousels</li>
+            <li>Bento collections + offers</li>
+          </ul>
+          <span class="btn btn-clay btn-sm go">View A · Rail</span>
+        </div>
+      </a>
+
+      <a class="choice" href="atlas.html">
+        <div class="shot"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=70" alt=""><span class="no">B</span></div>
+        <div class="c">
+          <h3>The Atlas</h3>
+          <p>Airbnb&rsquo;s search view as the homepage: a scrollable list of venues beside a sticky map, with prices in the pins.</p>
+          <ul>
+            <li>Split list + sticky map</li>
+            <li>Price-pill pins (the dot as the pin tip)</li>
+            <li>Hover a card → its pin lights up (and vice-versa)</li>
+            <li>Quick filter chips up top</li>
+          </ul>
+          <span class="btn btn-clay btn-sm go">View B · Atlas</span>
+        </div>
+      </a>
+
+      <a class="choice" href="mosaic.html">
+        <div class="shot"><img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=800&q=70" alt=""><span class="no">C</span></div>
+        <div class="c">
+          <h3>The Mosaic</h3>
+          <p>Airbnb&rsquo;s editorial side: a full-bleed hero with the search overlapping, a bento of collections, and a tabbed inspiration grid.</p>
+          <ul>
+            <li>Full-bleed hero + search pill</li>
+            <li>Bento &ldquo;start with a mood&rdquo; grid</li>
+            <li>Tabbed inspiration (Late-night / Terrace / Groups / Coffee)</li>
+            <li>Destination grid, Airbnb-footer style</li>
+          </ul>
+          <span class="btn btn-clay btn-sm go">View C · Mosaic</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="sect tight">
+  <div class="container wide">
+    <div class="band">
+      <div class="dotfield"></div>
+      <div class="in" style="display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+        <div>
+          <span class="eyebrow">Round 4 · new</span>
+          <h2 class="h2" style="color:#fff;margin-top:8px">D · The Index <span style="font-size:14px;font-weight:500;color:rgba(255,255,255,.6)">— Booking.com-style list</span></h2>
+          <p style="color:rgba(255,255,255,.72);margin:10px 0 0;max-width:660px">A compact, centred search bar (not a segmented widget) with popular categories right beneath it, then a Booking.com-style results layout: left filter rail, sort and map strip, and result rows with star ratings, amenity details and price bands — written for lounges, restaurants and cafes, not hotels.</p>
+        </div>
+        <a class="btn btn-clay" href="../booking/list.html">View D · The Index</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sect tight">
+  <div class="container wide">
+    <div class="shead"><div><span class="eyebrow">How they compare</span><h2 class="h2" style="margin-top:8px">Which mechanic fits discovery best?</h2></div></div>
+    <div style="background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden">
+      <table class="cmp">
+        <thead><tr><th>Borrowed from Airbnb</th><th>A · Rail</th><th>B · Atlas</th><th>C · Mosaic</th></tr></thead>
+        <tbody>
+          <tr><td>Segmented search pill</td><td>Hero, full size</td><td>Compact, in the header</td><td>Hero, overlapping image</td></tr>
+          <tr><td>Sticky category rail</td><td>Yes — icon rail</td><td>Chip filters</td><td>Tabbed inspiration</td></tr>
+          <tr><td>Horizontal carousels</td><td>Three, primary</td><td>One, secondary</td><td>One, secondary</td></tr>
+          <tr><td>Split map + pins</td><td>—</td><td>Yes — the core</td><td>—</td></tr>
+          <tr><td>Bento / editorial mosaic</td><td>Bento collections</td><td>—</td><td>Bento + hero</td></tr>
+          <tr><td>Best when the user…</td><td>wants to browse moods fast</td><td>wants to see what&rsquo;s nearby</td><td>wants inspiration, not a task</td></tr>
+          <tr><td>Nokta dot shows up as…</td><td>rail underline dot, pin dots</td><td>pin tips + map markers</td><td>wordmark + tab accents</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="coord" style="margin-top:14px">All three are category-neutral — restaurants, bars and cafes slot in as the data grows. Featured placements keep the &ldquo;Featured&rdquo; label.</p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="dotfield" style="opacity:.3"></div>
+  <div class="container in">
+    <a class="wordmark on-dark" href="#">nokta</a>
+    <p style="margin-top:14px">Three Airbnb-inspired homepage directions. Earlier work:<br><a href="../balanced/index.html" style="display:inline;text-decoration:underline">Balanced prototype</a> · <a href="../nokta/index.html" style="display:inline;text-decoration:underline">Dot concepts</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

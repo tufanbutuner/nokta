@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nokta — Homepage concepts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="proto.css">
+<style>
+  .cover-head { padding: 64px 0 26px; }
+  .cover-head h1 { font-size: clamp(34px,5vw,56px); margin: 16px 0 14px; }
+  .cards { display:grid; grid-template-columns: repeat(3,1fr); gap: 24px; padding-bottom: 40px; }
+  .concept { display:flex; flex-direction:column; background: var(--surface); border:1px solid var(--border); border-radius: var(--radius-lg); overflow:hidden; box-shadow: var(--shadow); transition: transform .2s ease, box-shadow .2s ease; }
+  .concept:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+  .concept .thumb { aspect-ratio: 16/11; position:relative; overflow:hidden; }
+  .concept .thumb img { width:100%; height:100%; object-fit:cover; }
+  .concept .thumb .tag { position:absolute; top:14px; left:14px; background: rgba(255,255,255,.94); border-radius:999px; padding:6px 13px; font-size:12px; font-weight:700; letter-spacing:.04em; }
+  .concept .body { padding: 22px 22px 24px; display:flex; flex-direction:column; flex:1; }
+  .concept h2 { margin:0 0 8px; font-size:22px; letter-spacing:-.01em; }
+  .concept p { margin:0; color: var(--ink-muted); font-size:14.5px; }
+  .concept .best { margin-top:16px; font-size:13px; }
+  .concept .best b { color: var(--clay); }
+  .concept .go { margin-top:20px; }
+  .concept .tones { margin-top:16px; display:flex; gap:6px; flex-wrap:wrap; }
+  .concept .tones span { font-size:11.5px; border:1px solid var(--border); border-radius:999px; padding:3px 10px; color: var(--ink-subtle); }
+  .cmp { width:100%; border-collapse:collapse; background: var(--surface); border:1px solid var(--border); border-radius: var(--radius); overflow:hidden; }
+  .cmp th, .cmp td { text-align:left; padding: 15px 18px; border-bottom:1px solid var(--border); font-size:14px; vertical-align:top; }
+  .cmp th { font-size:12px; text-transform:uppercase; letter-spacing:.12em; color: var(--ink-muted); background: var(--cream-2); }
+  .cmp td:first-child { font-weight:600; color: var(--ink); width: 190px; }
+  .cmp tr:last-child td { border-bottom:0; }
+  @media (max-width: 980px) { .cards { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="#">nokta</a>
+    <span class="dateline" style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-muted);font-weight:600">Homepage concepts</span>
+  </div>
+</header>
+
+<div class="container cover-head">
+  <span class="kicker"><span class="dot"></span> Redesign prototypes · category-neutral</span>
+  <h1 class="display sm">Three ways the homepage could go.</h1>
+  <p class="lede" style="max-width:640px">Each one is a different bet on how people decide where to go. All three are built to carry restaurants and cafes later — none lean on shisha as the identity. Click a card to open the full page.</p>
+</div>
+
+<div class="container cards">
+  <a class="concept" href="prototype-a.html">
+    <div class="thumb"><img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=900&q=70" alt=""><span class="tag">A</span></div>
+    <div class="body">
+      <h2>Tonight</h2>
+      <p>Intent-first. Leads with the decision — open now, groups, outdoors, late — instead of a catalog. A cinematic hero and a live "open right now" rail.</p>
+      <div class="tones"><span>Cinematic</span><span>Occasion-led</span><span>High conversion</span></div>
+      <p class="best"><b>Best for</b> first-time visitors and the "where tonight?" moment.</p>
+      <span class="go btn btn-clay btn-sm">Open Prototype A</span>
+    </div>
+  </a>
+
+  <a class="concept" href="prototype-b.html">
+    <div class="thumb"><img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=900&q=70" alt=""><span class="tag">B</span></div>
+    <div class="body">
+      <h2>The Dot</h2>
+      <p>Brand-led. The name literally means "dot", so the dot becomes the hero: a live map, pulsing pins, and a three-tap path from mood to plan.</p>
+      <div class="tones"><span>Distinctive</span><span>Map-forward</span><span>Memorable</span></div>
+      <p class="best"><b>Best for</b> standing apart from generic directory sites.</p>
+      <span class="go btn btn-dark btn-sm">Open Prototype B</span>
+    </div>
+  </a>
+
+  <a class="concept" href="prototype-c.html">
+    <div class="thumb"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=70" alt=""><span class="tag">C</span></div>
+    <div class="body">
+      <h2>The Edit</h2>
+      <p>Editorial. Reads like a city guide: a cover story, a numbered list of hand-picked spots, and a type-forward index. Hides a thin catalog beautifully.</p>
+      <div class="tones"><span>Premium</span><span>Curated</span><span>Type-forward</span></div>
+      <p class="best"><b>Best for</b> trust and word-of-mouth — but needs weekly curation.</p>
+      <span class="go btn btn-outline btn-sm">Open Prototype C</span>
+    </div>
+  </a>
+</div>
+
+<div class="container" style="padding-bottom:80px">
+  <table class="cmp">
+    <thead><tr><th></th><th>A — Tonight</th><th>B — The Dot</th><th>C — The Edit</th></tr></thead>
+    <tbody>
+      <tr><td>Organising idea</td><td>Occasion &amp; open-now</td><td>Brand dot &amp; map</td><td>Editorial curation</td></tr>
+      <tr><td>Time to build</td><td>Medium</td><td>Medium–high</td><td>Low (code) / high (ops)</td></tr>
+      <tr><td>Hides thin coverage</td><td>Yes — aggregates by mood</td><td>Partly</td><td>Yes — best of all</td></tr>
+      <tr><td>Keeps monetisation</td><td>Featured + offers band</td><td>Featured + offers band</td><td>Quiet offers strip</td></tr>
+      <tr><td>Reusability for restaurants/cafes</td><td>Strong</td><td>Strong</td><td>Strong</td></tr>
+      <tr><td>Main risk</td><td>Needs strong hero photos</td><td>Map work is heavier</td><td>On-going curation effort</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>

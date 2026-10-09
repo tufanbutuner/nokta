@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nokta — Homepage D · Index (Booking-style list)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@700&family=Outfit:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../airbnb/airbnb.css">
+<link rel="stylesheet" href="booking.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="container wide nav-in">
+    <div style="display:flex;align-items:center;gap:30px">
+      <a class="wordmark" href="#">nokta</a>
+      <nav class="nav-links">
+        <a href="#" class="on">Discover</a><a href="#">Collections</a><a href="#">Saved</a><a href="#">For venues</a>
+      </nav>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px">
+      <a class="loc" href="../airbnb/index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>London</a>
+      <button class="btn btn-outline btn-sm">Sign in</button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ COMPACT CENTRED SEARCH ============ -->
+<section class="qwrap">
+  <div class="dotfield"></div>
+  <div class="container" style="position:relative;z-index:2">
+    <h1 class="h2" style="font-size:clamp(24px,3vw,34px);margin-top:6px">Find your next spot<span class="dot" style="display:inline-block;width:.14em;height:.14em;border-radius:50%;background:var(--clay);margin-left:.05em"></span></h1>
+
+    <form class="quicksearch" onsubmit="return false">
+      <svg class="qs-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg>
+      <input placeholder="Search venues, areas or vibes…" aria-label="Search">
+      <div class="qs-div"></div>
+      <button type="button" class="qs-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>London<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--muted)"><path d="m6 9 6 6 6-6"/></svg></button>
+      <button type="button" class="qs-go">Search</button>
+    </form>
+  </div>
+</section>
+
+<!-- ============ POPULAR CATEGORIES BENEATH ============ -->
+<section class="catwrap">
+  <div class="container">
+    <div class="catrow" id="cats">
+      <button class="catpill active"><span class="d"></span>All</button>
+      <button class="catpill"><span class="d"></span>Open now</button>
+      <button class="catpill"><span class="d"></span>Late-night</button>
+      <button class="catpill"><span class="d"></span>Terrace</button>
+      <button class="catpill"><span class="d"></span>Big tables</button>
+      <button class="catpill"><span class="d"></span>Coffee</button>
+      <button class="catpill"><span class="d"></span>Dinner</button>
+      <button class="catpill"><span class="d"></span>Live music</button>
+      <button class="catpill"><span class="d"></span>Rooftops</button>
+      <button class="catpill"><span class="d"></span>Top rated</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FILTERS + LIST ============ -->
+<section class="sect">
+  <div class="container wide">
+    <div class="results">
+
+      <!-- FILTERS -->
+      <aside class="facets" id="facets">
+        <div class="fhead">
+          <h3>Filters</h3>
+          <button class="clear" data-clear>Clear all</button>
+        </div>
+
+        <div class="fgroup">
+          <h4>Popular filters</h4>
+          <label class="fopt"><input type="checkbox" checked> Open now <span class="cnt">32</span></label>
+          <label class="fopt"><input type="checkbox"> Outdoor seating <span class="cnt">41</span></label>
+          <label class="fopt"><input type="checkbox"> Good for groups <span class="cnt">58</span></label>
+          <label class="fopt"><input type="checkbox"> Late-night <span class="cnt">36</span></label>
+          <label class="fopt"><input type="checkbox"> Reservation recommended <span class="cnt">77</span></label>
+        </div>
+
+        <div class="fgroup">
+          <h4>Price per person</h4>
+          <label class="fopt"><input type="checkbox"> Under £15</label>
+          <label class="fopt"><input type="checkbox" checked> £15 – £30</label>
+          <label class="fopt"><input type="checkbox"> £30+</label>
+          <p class="fnote">Average spend per person, as listed by the venue.</p>
+        </div>
+
+        <div class="fgroup">
+          <h4>Venue type</h4>
+          <label class="fopt"><input type="checkbox"> Restaurant <span class="cnt">54</span></label>
+          <label class="fopt"><input type="checkbox"> Bar <span class="cnt">33</span></label>
+          <label class="fopt"><input type="checkbox"> Lounge <span class="cnt">21</span></label>
+          <label class="fopt"><input type="checkbox"> Cafe <span class="cnt">28</span></label>
+          <label class="fopt"><input type="checkbox"> Dessert <span class="cnt">12</span></label>
+        </div>
+
+        <div class="fgroup">
+          <h4>Occasion</h4>
+          <label class="fopt"><input type="checkbox"> Date night</label>
+          <label class="fopt"><input type="checkbox"> Big tables</label>
+          <label class="fopt"><input type="checkbox"> Quiet</label>
+          <label class="fopt"><input type="checkbox"> Live music</label>
+          <label class="fopt"><input type="checkbox"> Lively</label>
+        </div>
+
+        <div class="fgroup">
+          <h4>Neighbourhood</h4>
+          <label class="fopt"><input type="checkbox"> Shoreditch <span class="cnt">12</span></label>
+          <label class="fopt"><input type="checkbox"> Soho <span class="cnt">9</span></label>
+          <label class="fopt"><input type="checkbox"> Edgware Road <span class="cnt">8</span></label>
+          <label class="fopt"><input type="checkbox"> Camden <span class="cnt">7</span></label>
+          <label class="fopt"><input type="checkbox"> Marylebone <span class="cnt">5</span></label>
+          <label class="fopt"><input type="checkbox"> Peckham <span class="cnt">4</span></label>
+        </div>
+
+        <div class="fgroup">
+          <h4>Guest rating</h4>
+          <label class="fopt"><input type="radio" name="rating"> Any</label>
+          <label class="fopt"><input type="radio" name="rating" checked> 4.5+ &nbsp;Excellent</label>
+          <label class="fopt"><input type="radio" name="rating"> 4.0+ &nbsp;Very good</label>
+        </div>
+
+        <button class="btn btn-clay fapply">Apply filters</button>
+      </aside>
+
+      <!-- RESULTS -->
+      <div>
+        <div class="reshead">
+          <b>148 venues in London</b>
+          <div class="resa">
+            <button class="mapbtn mobilefilter" id="mfilter">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 5h18M6 12h12M10 19h4"/></svg>Filters
+            </button>
+            <button class="mapbtn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2Z"/><path d="M9 4v14M15 6v14"/></svg>Show on map
+            </button>
+            <label class="sortsel">Sort by
+              <select>
+                <option>Recommended</option>
+                <option>Price: low to high</option>
+                <option>Price: high to low</option>
+                <option>Highest rated</option>
+                <option>Open now</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <!-- compact map strip -->
+        <div class="mapstrip">
+          <div class="glines"></div>
+          <svg style="position:absolute;inset:0" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M-5 60 C 30 54, 50 70, 105 50" fill="none" stroke="#bcd0d8" stroke-width="1.4"/>
+            <path d="M30 -5 C 34 35, 22 65, 36 105" fill="none" stroke="#d8cfc2" stroke-width="0.8"/>
+            <path d="M68 -5 C 64 35, 72 65, 60 105" fill="none" stroke="#d8cfc2" stroke-width="0.8"/>
+          </svg>
+          <span class="pin" style="left:26%;top:38%">£25+</span>
+          <span class="pin" style="left:44%;top:60%">£18+</span>
+          <span class="pin" style="left:64%;top:34%">£20+</span>
+          <span class="pin" style="left:78%;top:64%">£10+</span>
+          <span class="mslabel"><span class="d"></span>148 venues across London</span>
+        </div>
+
+        <div class="rlist">
+          <article class="rcard">
+            <div class="rframes">
+              <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=600&q=70" alt="">
+              <button class="heart on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.6-9.2-9A4.6 4.6 0 0 1 12 6.5 4.6 4.6 0 0 1 21.2 11C19 15.4 12 20 12 20Z"/></svg></button>
+              <span class="pcount">18 photos</span>
+            </div>
+            <div class="rbody">
+              <div class="rtop"><h3>Qahwa Social</h3><span class="rtag">Local favourite</span></div>
+              <p class="rsub"><span class="rating"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.8 6.2 19.9l1.1-6.5L2.6 8.8l6.5-.9Z"/></svg>4.8 <span class="rev">312 reviews</span></span><span class="sep"></span>Lounge <span class="sep"></span>Shoreditch <span class="sep"></span><span class="opendot"><span class="d"></span>Open now · till 2am</span></p>
+              <div class="rchips"><span>Shisha-friendly</span><span>Outdoor seating</span><span>Good for groups</span><span>Late-night</span></div>
+              <p class="ramen"><span class="sd"></span>Reservation recommended · heated terrace</p>
+            </div>
+            <div class="rside">
+              <div class="priceband"><b>££</b><span>Usually £15–30</span></div>
+              <button class="btn btn-ink btn-sm">Reserve</button>
+            </div>
+          </article>
+
+          <article class="rcard">
+            <div class="rframes">
+              <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=600&q=70" alt="">
+              <button class="heart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.6-9.2-9A4.6 4.6 0 0 1 12 6.5 4.6 4.6 0 0 1 21.2 11C19 15.4 12 20 12 20Z"/></svg></button>
+              <span class="pcount">24 photos</span>
+            </div>
+            <div class="rbody">
+              <div class="rtop"><h3>Maison Anwar</h3><span class="rtag">Local favourite</span></div>
+              <p class="rsub"><span class="rating"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.8 6.2 19.9l1.1-6.5L2.6 8.8l6.5-.9Z"/></svg>4.7 <span class="rev">486 reviews</span></span><span class="sep"></span>Restaurant <span class="sep"></span>Marylebone <span class="sep"></span><span class="opendot"><span class="d"></span>Open now · till 11pm</span></p>
+              <div class="rchips"><span>Big tables</span><span>Private room</span><span>Date night</span><span>Modern Middle Eastern</span></div>
+              <p class="ramen"><span class="sd"></span>Free dessert offer · private room available</p>
+            </div>
+            <div class="rside">
+              <div class="priceband"><b>££</b><span>Usually £20–35</span></div>
+              <button class="btn btn-ink btn-sm">Book a table</button>
+            </div>
+          </article>
+
+          <article class="rcard">
+            <div class="rframes">
+              <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=600&q=70" alt="">
+              <button class="heart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.6-9.2-9A4.6 4.6 0 0 1 12 6.5 4.6 4.6 0 0 1 21.2 11C19 15.4 12 20 12 20Z"/></svg></button>
+              <span class="pcount">11 photos</span>
+            </div>
+            <div class="rbody">
+              <div class="rtop"><h3>The Lantern Room</h3></div>
+              <p class="rsub"><span class="rating"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.8 6.2 19.9l1.1-6.5L2.6 8.8l6.5-.9Z"/></svg>4.6 <span class="rev">254 reviews</span></span><span class="sep"></span>Bar <span class="sep"></span>Soho <span class="sep"></span><span class="opendot"><span class="d"></span>Open now · till 1am</span></p>
+              <div class="rchips"><span>Cocktails</span><span>Date night</span><span>Late-night</span></div>
+              <p class="ramen"><span class="sd"></span>Walk-ins welcome before 8pm · booking at weekends</p>
+            </div>
+            <div class="rside">
+              <div class="priceband"><b>££</b><span>Usually £15–25</span></div>
+              <button class="btn btn-ink btn-sm">Reserve</button>
+            </div>
+          </article>
+
+          <article class="rcard">
+            <div class="rframes">
+              <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=600&q=70" alt="">
+              <button class="heart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.6-9.2-9A4.6 4.6 0 0 1 12 6.5 4.6 4.6 0 0 1 21.2 11C19 15.4 12 20 12 20Z"/></svg></button>
+              <span class="pcount">9 photos</span>
+            </div>
+            <div class="rbody">
+              <div class="rtop"><h3>Fern &amp; Filter</h3><span class="rtag">New</span></div>
+              <p class="rsub"><span class="rating"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.8 6.2 19.9l1.1-6.5L2.6 8.8l6.5-.9Z"/></svg>4.9 <span class="rev">198 reviews</span></span><span class="sep"></span>Cafe <span class="sep"></span>Borough <span class="sep"></span><span class="opendot"><span class="d"></span>Open now</span></p>
+              <div class="rchips"><span>Specialty coffee</span><span>Quiet</span><span>Dog friendly</span></div>
+              <p class="ramen"><span class="sd"></span>No booking needed · laptop friendly</p>
+            </div>
+            <div class="rside">
+              <div class="priceband"><b>£</b><span>Usually £8–14</span></div>
+              <button class="btn btn-outline btn-sm">See details</button>
+            </div>
+          </article>
+
+          <article class="rcard">
+            <div class="rframes">
+              <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=70" alt="">
+              <button class="heart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.6-9.2-9A4.6 4.6 0 0 1 12 6.5 4.6 4.6 0 0 1 21.2 11C19 15.4 12 20 12 20Z"/></svg></button>
+              <span class="pcount">14 photos</span>
+            </div>
+            <div class="rbody">
+              <div class="rtop"><h3>Peckham Yard</h3></div>
+              <p class="rsub"><span class="rating"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.8 6.2 19.9l1.1-6.5L2.6 8.8l6.5-.9Z"/></svg>4.4 <span class="rev">142 reviews</span></span><span class="sep"></span>Bar <span class="sep"></span>Peckham <span class="sep"></span><span class="opendot"><span class="d"></span>Open now · till 1am</span></p>
+              <div class="rchips"><span>Outdoor</span><span>Good for groups</span><span>Lively</span></div>
+              <p class="ramen"><span class="sd"></span>Group bookings · heated terrace</p>
+            </div>
+            <div class="rside">
+              <div class="priceband"><b>£</b><span>Usually £12–22</span></div>
+              <button class="btn btn-ink btn-sm">Reserve</button>
+            </div>
+          </article>
+
+          <article class="rcard">
+            <div class="rframes">
+              <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=600&q=70" alt="">
+              <button class="heart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.6-9.2-9A4.6 4.6 0 0 1 12 6.5 4.6 4.6 0 0 1 21.2 11C19 15.4 12 20 12 20Z"/></svg></button>
+              <span class="pcount">16 photos</span>
+            </div>
+            <div class="rbody">
+              <div class="rtop"><h3>Courtyard Nine</h3></div>
+              <p class="rsub"><span class="rating"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.8 6.2 19.9l1.1-6.5L2.6 8.8l6.5-.9Z"/></svg>4.5 <span class="rev">221 reviews</span></span><span class="sep"></span>Cafe <span class="sep"></span>Camden <span class="sep"></span><span class="opendot closed"><span class="d"></span>Closed · opens 8am</span></p>
+              <div class="rchips"><span>Daytime</span><span>Dog friendly</span><span>Big tables</span></div>
+              <p class="ramen"><span class="sd"></span>Breakfast served · groups welcome</p>
+            </div>
+            <div class="rside">
+              <div class="priceband"><b>£</b><span>Usually £8–15</span></div>
+              <button class="btn btn-outline btn-sm">See details</button>
+            </div>
+          </article>
+        </div>
+
+        <nav class="pager">
+          <button>Prev</button>
+          <button class="active">1</button>
+          <button>2</button>
+          <button>3</button>
+          <button>4</button>
+          <button>…</button>
+          <button>15</button>
+          <button>Next</button>
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="dotfield" style="opacity:.3"></div>
+  <div class="container in">
+    <a class="wordmark on-dark" href="#">nokta</a>
+    <p style="margin-top:14px">Find your spot. Restaurants, lounges, bars and cafes across the UK — check details directly before you travel or book.</p>
+    <div class="cols">
+      <div><p class="lbl">Pages</p><a href="#">Discover</a><a href="#">Collections</a><a href="#">Suggest a venue</a></div>
+      <div><p class="lbl">For venues</p><a href="#">List your venue</a><a href="#">Offers</a><a href="#">Featured</a></div>
+      <div><p class="lbl">Contact</p><a href="#">hello@nokta.uk</a><a href="#">Instagram</a></div>
+    </div>
+    <p class="coord" style="margin-top:26px;color:rgba(255,255,255,.4)">51.5074 N, 0.1278 W · London</p>
+  </div>
+</footer>
+
+<div class="ribbon">Homepage <b>D · Index</b> — compact centred search + booking-style filters <a href="../airbnb/index.html">all ideas</a></div>
+
+<script>
+  // category pills
+  document.querySelectorAll('#cats .catpill').forEach(function (p) {
+    p.addEventListener('click', function () {
+      document.querySelectorAll('#cats .catpill').forEach(function (x) { x.classList.remove('active'); });
+      p.classList.add('active');
+    });
+  });
+  // mobile filter toggle
+  var mf = document.getElementById('mfilter');
+  if (mf) mf.addEventListener('click', function () { document.getElementById('facets').classList.toggle('open'); });
+  // clear all
+  var clear = document.querySelector('[data-clear]');
+  if (clear) clear.addEventListener('click', function () {
+    document.querySelectorAll('#facets input').forEach(function (i) { i.checked = false; });
+  });
+  // save hearts
+  document.querySelectorAll('.heart').forEach(function (h) {
+    h.addEventListener('click', function () { h.classList.toggle('on'); });
+  });
+</script>
+</body>
+</html>

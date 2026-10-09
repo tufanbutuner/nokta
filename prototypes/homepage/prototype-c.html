@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nokta — Prototype C · The Edit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="proto.css">
+<style>
+  /* Prototype C — editorial publication */
+  .mast { border-bottom: 1px solid var(--border); background: var(--cream-2); }
+  .mast-inner { display:flex; align-items:center; justify-content:space-between; gap:20px; height:74px; }
+  .mast .brand { font-size: 27px; }
+  .mast .links { display:flex; gap:24px; font-size:14.5px; color: var(--ink-muted); }
+  .mast .links a:hover { color: var(--ink); }
+  .dateline { font-size:12px; letter-spacing:.16em; text-transform:uppercase; color: var(--ink-muted); font-weight:600; }
+
+  .cover { position:relative; border-radius: var(--radius-lg); overflow:hidden; min-height: 560px; display:flex; align-items:flex-end; box-shadow: var(--shadow-lg); margin-top: 34px; }
+  .cover img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+  .cover::after { content:""; position:absolute; inset:0; background: linear-gradient(180deg, rgba(20,13,8,.15) 20%, rgba(20,13,8,.86)); }
+  .cover .cap { position:relative; z-index:2; color:#fff; padding: 52px; max-width: 780px; }
+  .cover .cap .kicker { color:#f4b79f; } .cover .cap .kicker .dot { background:#f4b79f; }
+  .cover .cap h1 { margin: 16px 0 12px; font-size: clamp(36px,5vw,64px); }
+  .cover .cap p { margin:0; color: rgba(255,255,255,.82); font-size: 17px; max-width: 560px; }
+  .cover .cap .row { margin-top: 26px; }
+
+  .edit-item { display:grid; grid-template-columns: 64px 260px 1fr; gap: 28px; align-items:center; padding: 26px 0; border-top: 1px solid var(--border); transition: background .2s; }
+  .edit-item:last-child { border-bottom: 1px solid var(--border); }
+  .edit-item:hover { background: var(--cream-2); }
+  .edit-item .num { font-family: var(--font-brand); font-weight:700; font-size: 34px; color: var(--clay); }
+  .edit-item .pic { aspect-ratio: 16/10; border-radius: 16px; overflow:hidden; }
+  .edit-item .pic img { width:100%; height:100%; object-fit:cover; transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+  .edit-item:hover .pic img { transform: scale(1.05); }
+  .edit-item .txt h3 { margin:0 0 6px; font-size: 23px; letter-spacing:-.02em; }
+  .edit-item .txt .where { font-size:13.5px; color: var(--clay); font-weight:600; letter-spacing:.02em; }
+  .edit-item .txt p { margin: 10px 0 0; color: var(--ink-muted); font-size: 15px; max-width: 520px; }
+  .edit-item .txt .meta { margin-top: 12px; display:flex; gap:8px; }
+  .meta span { font-size:12px; background: var(--surface); border:1px solid var(--border); border-radius:999px; padding:4px 11px; color: var(--ink-subtle); }
+
+  .col-index { display:grid; grid-template-columns: 1fr 1fr; gap: 0 48px; }
+  .col-row { display:flex; align-items:baseline; justify-content:space-between; gap:18px; padding: 20px 4px; border-top:1px solid var(--border); transition: padding .2s; }
+  .col-row:hover { padding-left: 12px; }
+  .col-row b { font-size: 21px; font-weight:600; letter-spacing:-.01em; }
+  .col-row .cnt { font-size: 13px; color: var(--ink-muted); font-variant-numeric: tabular-nums; }
+  .col-row .desc { display:block; font-size:14px; color: var(--ink-muted); font-weight:400; margin-top:3px; }
+
+  .city-text { display:grid; grid-template-columns: repeat(3,1fr); gap: 0 40px; }
+  .city-text a { display:flex; justify-content:space-between; padding: 15px 0; border-top:1px solid var(--border); font-size:17px; }
+  .city-text a:hover { color: var(--clay); }
+  .city-text a span { color: var(--ink-muted); font-size:14px; }
+
+  @media (max-width: 980px) {
+    .mast .links { display:none; }
+    .edit-item { grid-template-columns: 44px 1fr; }
+    .edit-item .pic { grid-column: 2; aspect-ratio: 16/9; }
+    .edit-item .txt { grid-column: 2; }
+    .col-index { grid-template-columns: 1fr; }
+    .city-text { grid-template-columns: 1fr 1fr; }
+    .cover .cap { padding: 30px; }
+  }
+  @media (max-width: 620px) { .city-text { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<header class="mast">
+  <div class="container mast-inner">
+    <nav class="links"><a href="#">Discover</a><a href="#">Restaurants</a><a href="#">Coffee</a></nav>
+    <a class="brand" href="#">nokta</a>
+    <nav class="links" style="justify-content:flex-end"><a href="#">Saved</a><a href="#">For venues</a><a href="#">Sign in</a></nav>
+  </div>
+  <div class="container" style="padding-bottom:14px;text-align:center">
+    <span class="dateline">The Nokta Edit · London · This week</span>
+  </div>
+</header>
+
+<div class="container">
+  <section class="cover">
+    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1800&q=72" alt="">
+    <div class="cap">
+      <span class="kicker"><span class="dot"></span> The week&rsquo;s best tables</span>
+      <h1>Five rooms worth crossing the city for.</h1>
+      <p>Hand-picked from the places people are actually booking — a courtyard, a big-table room, and a bar that stays open past last orders.</p>
+      <div class="row"><button class="btn btn-clay">Read the edit</button><button class="btn btn-ghost-light">Explore all venues</button></div>
+    </div>
+  </section>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><div class="text"><span class="kicker"><span class="dot"></span> The Nokta Edit</span><h2 class="h2 mt-s">Five spots, chosen for tonight</h2><p class="sub">Each one checked for details, hours and what it&rsquo;s actually like.</p></div></div>
+
+    <article class="edit-item">
+      <span class="num">01</span>
+      <div class="pic media"><img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=800&q=70" alt=""></div>
+      <div class="txt"><span class="where">Marylebone · Restaurant</span><h3>A courtyard that feels like Lisbon</h3><p>Hidden behind a townhouse, best at golden hour — the kind of place you send people to.</p><div class="meta"><span>Outdoor</span><span>Good for dates</span><span>★ 4.8</span></div></div>
+    </article>
+    <article class="edit-item">
+      <span class="num">02</span>
+      <div class="pic media"><img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=800&q=70" alt=""></div>
+      <div class="txt"><span class="where">Shoreditch · Lounge</span><h3>The room everyone books for eight</h3><p>Big tables, no rush, and a menu that keeps a mixed group happy. Ask for the back room.</p><div class="meta"><span>Groups 6+</span><span>Late</span><span>★ 4.6</span></div></div>
+    </article>
+    <article class="edit-item">
+      <span class="num">03</span>
+      <div class="pic media"><img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=800&q=70" alt=""></div>
+      <div class="txt"><span class="where">Camden · Cafe</span><h3>Open till 2, quiet in the morning</h3><p>All-day spot that turns into something else after dark. Best coffee before noon.</p><div class="meta"><span>Daytime</span><span>Wifi</span><span>★ 4.5</span></div></div>
+    </article>
+    <article class="edit-item">
+      <span class="num">04</span>
+      <div class="pic media"><img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=800&q=70" alt=""></div>
+      <div class="txt"><span class="where">Soho · Bar</span><h3>The bar that stays past last orders</h3><p>Low light, short menu, excellent for a night that isn&rsquo;t over yet.</p><div class="meta"><span>Open late</span><span>Walk-in</span><span>★ 4.7</span></div></div>
+    </article>
+    <article class="edit-item">
+      <span class="num">05</span>
+      <div class="pic media"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=70" alt=""></div>
+      <div class="txt"><span class="where">Camden · Restaurant</span><h3>The new opening to get to first</h3><p>Three weeks old and already hard to book on a Friday. Weeknights are wide open.</p><div class="meta"><span>New</span><span>Book ahead</span><span>★ 4.9</span></div></div>
+    </article>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="container">
+    <div class="section-head"><div class="text"><span class="kicker"><span class="dot"></span> Collections</span><h2 class="h2 mt-s">Browse by what you&rsquo;re after</h2></div></div>
+    <div class="col-index">
+      <a class="col-row" href="#"><span><b>Late-night plates</b><span class="desc">Serving after 10pm</span></span><span class="cnt">38</span></a>
+      <a class="col-row" href="#"><span><b>Courtyard &amp; terrace</b><span class="desc">Outdoor, heaters on</span></span><span class="cnt">52</span></a>
+      <a class="col-row" href="#"><span><b>Tables for eight</b><span class="desc">Groups without the fuss</span></span><span class="cnt">41</span></a>
+      <a class="col-row" href="#"><span><b>Coffee &amp; catch-up</b><span class="desc">Quiet daytime spots</span></span><span class="cnt">67</span></a>
+      <a class="col-row" href="#"><span><b>Dinner out</b><span class="desc">Book a proper table</span></span><span class="cnt">73</span></a>
+      <a class="col-row" href="#"><span><b>Something new</b><span class="desc">Opened in the last month</span></span><span class="cnt">19</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="container">
+    <div class="section-head"><div class="text"><span class="kicker"><span class="dot"></span> Where we are</span><h2 class="h2 mt-s">London first, more cities each week</h2><p class="sub">We only list a city once the coverage is real.</p></div></div>
+    <div class="city-text">
+      <a href="#">London <span>148</span></a>
+      <a href="#">Birmingham <span>24</span></a>
+      <a href="#">Manchester <span>19</span></a>
+      <a href="#">Leicester <span>14</span></a>
+      <a href="#">Leeds <span>11</span></a>
+      <a href="#">Glasgow <span>Soon</span></a>
+      <a href="#">Liverpool <span>Soon</span></a>
+      <a href="#">Nottingham <span>Soon</span></a>
+      <a href="#">Bristol <span>Soon</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="container">
+    <div class="band">
+      <div class="head"><div><span class="kicker"><span class="dot"></span> Offers</span><h2 class="h2 mt-s" style="color:#fff">Something on the house</h2><p class="sub" style="margin:10px 0 0">Promoted offers from venues on nokta.</p></div><a class="btn btn-ghost-light btn-sm" href="#">All offers</a></div>
+      <div class="offer-grid">
+        <a class="offer" href="#"><span class="pc">2-for-1</span><b>Sharing platters</b><span>Sun–Thu, after 8pm</span><div class="ven">Qahwa Social · Shoreditch</div></a>
+        <a class="offer" href="#"><span class="pc">20%</span><b>Off the bill</b><span>Groups of 6 or more</span><div class="ven">Maison Anwar · Marylebone</div></a>
+        <a class="offer" href="#"><span class="pc">Free</span><b>Dessert with any table</b><span>Weeknights</span><div class="ven">The Lantern Room · Soho</div></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="top"><a class="brand" href="#">nokta</a><p>Find your spot. Restaurants, lounges and cafes across the UK — check details directly before you travel or book.</p></div>
+    <div class="cols"><div><p class="lbl">Pages</p><a href="#">Discover</a><a href="#">Collections</a><a href="#">Suggest a venue</a><a href="#">For venues</a></div><div><p class="lbl">Contact</p><a href="#">hello@nokta.uk</a><a href="#">Instagram</a></div></div>
+  </div>
+</footer>
+
+<div class="proto-ribbon">Prototype <b>C — The Edit</b> · editorial publication <a href="index.html">all concepts</a></div>
+
+</body>
+</html>

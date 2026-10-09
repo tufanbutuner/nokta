@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nokta — 02 Constellation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@700&family=Outfit:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="nokta.css">
+<style>
+  /* 02 — Constellation: dots connect. A plan is a shape you draw together. */
+  body { background: var(--night); }
+  .hero { display: grid; grid-template-columns: 1fr 1.02fr; gap: 50px; align-items: center; padding: 70px 0 84px; }
+  .hero .display { color: #fff; margin: 20px 0 0; }
+  .hero .enddot { display:inline-block; width:.15em;height:.15em;border-radius:50%;background:var(--clay);margin-left:.1em; }
+  .instrument.night { background: rgba(33,30,26,.92); border-color: var(--night-line); box-shadow: var(--shadow-lg); }
+  .instrument.night .seg + .seg { border-color: var(--night-line); }
+  .instrument.night input { color: #fff; } .instrument.night input::placeholder { color: rgba(255,255,255,.4); }
+  .instrument.night .seg svg { color: rgba(255,255,255,.55); }
+  .instrument.night .crosshair { background: rgba(255,255,255,.06); border-color: var(--night-line); }
+  .constel { position: relative; aspect-ratio: 1 / 1.05; }
+  .constel svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .constel .cl { stroke: rgba(216,120,90,.5); stroke-width: 1.3; fill: none; stroke-dasharray: 4 7; }
+  .constel .cl.anim { stroke-dasharray: 520; stroke-dashoffset: 520; animation: draw 4s ease forwards; }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  .nd { transform-box: fill-box; transform-origin: center; }
+  .nd.core { fill: var(--clay); } .nd.ring { fill: none; stroke: rgba(216,120,90,.4); }
+  .nd.pulse { fill: var(--clay); animation: ndp 3.2s ease-out infinite; }
+  .nd.pulse.d1 { animation-delay: .8s; } .nd.pulse.d2 { animation-delay: 1.6s; } .nd.pulse.d3 { animation-delay: 2.4s; }
+  .nd.white { fill: #fff; }
+  @keyframes ndp { 0% { opacity: .5; transform: scale(1); } 70%,100% { opacity: 0; transform: scale(3.4); } }
+  .scard { position: absolute; left: 22px; right: 22px; bottom: 22px; background: rgba(33,30,26,.92); border: 1px solid var(--night-line); border-radius: 16px; padding: 15px 17px; display: flex; align-items: center; gap: 15px; backdrop-filter: blur(10px); z-index: 3; }
+  .scard h4 { margin: 0; color: #fff; font-size: 16px; }
+  .scard p { margin: 3px 0 0; font-size: 12.5px; color: rgba(255,255,255,.55); }
+  .avatars { display: flex; margin-left: auto; }
+  .avatars span { width: 30px; height: 30px; border-radius: 50%; border: 2px solid var(--night-2); margin-left: -9px; display: grid; place-items: center; font-size: 11px; font-weight: 600; color: #fff; }
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; position: relative; margin-top: 30px; }
+  .steps::before { content: ""; position: absolute; top: 27px; left: 12%; right: 12%; height: 1px; background: repeating-linear-gradient(90deg, var(--clay) 0 5px, transparent 5px 12px); }
+  .step { text-align: center; padding: 0 20px; position: relative; }
+  .step .n { width: 54px; height: 54px; border-radius: 50%; background: var(--night-2); border: 1px solid var(--night-line); color: #fff; display: grid; place-items: center; margin: 0 auto 18px; font-family: var(--brand); font-weight: 700; position: relative; z-index: 2; }
+  .step .n::after { content: ""; position: absolute; inset: -6px; border-radius: 50%; border: 1px solid rgba(216,120,90,.35); }
+  .step h3 { color: #fff; margin: 0 0 8px; font-size: 19px; }
+  .step p { margin: 0; color: rgba(255,255,255,.55); font-size: 14.5px; }
+  .ncard { position: relative; background: var(--night-2); border: 1px solid var(--night-line); border-radius: var(--radius-lg); overflow: hidden; transition: transform .2s; }
+  .ncard:hover { transform: translateY(-3px); }
+  .ncard .frame { aspect-ratio: 16/11; } .ncard .frame img { width: 100%; height: 100%; object-fit: cover; }
+  .ncard .frame .badge { position: absolute; top: 13px; left: 13px; background: rgba(23,21,19,.85); border: 1px solid var(--night-line); border-radius: 8px; padding: 5px 10px; backdrop-filter: blur(6px); }
+  .ncard .body { padding: 17px 19px 20px; border-top: 1px solid var(--night-line); }
+  .ncard .body h3 { color: #fff; margin: 0 0 6px; font-size: 18px; }
+  .ncard .body .meta { display: flex; gap: 8px; align-items: center; }
+  .citydots { display: flex; flex-wrap: wrap; gap: 10px; }
+  .citydot { display: inline-flex; align-items: center; gap: 10px; border: 1px solid var(--night-line); border-radius: 999px; padding: 10px 16px; color: rgba(255,255,255,.75); font-size: 14.5px; transition: all .16s; }
+  .citydot:hover { border-color: var(--clay); color: #fff; }
+  .citydot .d { width: 9px; height: 9px; border-radius: 50%; background: var(--clay); } .citydot.soon .d { background: #4a443c; }
+  @media (max-width: 980px) { .hero { grid-template-columns: 1fr; } .steps { grid-template-columns: 1fr; gap: 26px; } .steps::before { display: none; } }
+</style>
+</head>
+<body>
+
+<header class="nav night">
+  <div class="container nav-inner">
+    <div class="row" style="gap:32px">
+      <a class="wordmark on-night" href="#">nokta</a>
+      <nav class="nav-links"><a href="#" class="on">Discover</a><a href="#">Map</a><a href="#">Shortlists</a><a href="#">For venues</a></nav>
+    </div>
+    <div class="row" style="gap:16px">
+      <span class="coord on-night">32 open tonight</span>
+      <button class="btn btn-ghost btn-sm">Sign in</button>
+    </div>
+  </div>
+</header>
+
+<section class="container hero">
+  <div>
+    <span class="eyebrow on-night coord">Saved / Shared / Connected</span>
+    <h1 class="display">Every plan<br>starts with a dot<span class="enddot"></span></h1>
+    <p class="lede on-night mt-m" style="max-width:460px">Drop a place you like. Connect it to the ones beside it. Share the shape with whoever you&rsquo;re meeting — that&rsquo;s the night, sorted.</p>
+
+    <form class="instrument night mt-l" onsubmit="return false">
+      <span class="crosshair"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="8"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg></span>
+      <label class="seg" style="flex:1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg><input placeholder="Venue, area or vibe…" aria-label="Search"></label>
+      <div class="seg coord on-night">LONDON</div>
+      <button class="btn btn-clay" type="submit">Find dots</button>
+    </form>
+    <div class="readout"><span class="coord on-night">1,204 dots saved this week</span><span class="coord" style="color:var(--clay)">·</span><span class="coord on-night">312 shortlists shared</span></div>
+  </div>
+
+  <div class="plot night constel field night drift">
+    <svg viewBox="0 0 500 525" preserveAspectRatio="none">
+      <path class="cl anim" d="M120 400 L210 300 L330 340 L420 220"/>
+      <path class="cl" d="M210 300 L250 170 L420 220" opacity=".7"/>
+      <path class="cl" d="M120 400 L330 340" opacity=".5"/>
+      <circle class="nd ring" cx="120" cy="400" r="11"/><circle class="nd core" cx="120" cy="400" r="5"/>
+      <circle class="nd ring" cx="210" cy="300" r="11"/><circle class="nd core" cx="210" cy="300" r="5"/>
+      <circle class="nd ring" cx="330" cy="340" r="11"/><circle class="nd core" cx="330" cy="340" r="5"/>
+      <circle class="nd ring" cx="420" cy="220" r="11"/><circle class="nd core" cx="420" cy="220" r="5"/>
+      <circle class="nd ring" cx="250" cy="170" r="11"/><circle class="nd white" cx="250" cy="170" r="5"/>
+      <circle class="nd pulse" cx="120" cy="400" r="5"/><circle class="nd pulse d1" cx="210" cy="300" r="5"/>
+      <circle class="nd pulse d2" cx="330" cy="340" r="5"/><circle class="nd pulse d3" cx="420" cy="220" r="5"/>
+    </svg>
+    <div class="scard">
+      <div><h4>Friday · 8pm</h4><p>4 dots · Marylebone → Soho</p></div>
+      <div class="avatars">
+        <span style="background:#c4553a">A</span><span style="background:#7c4a3a">M</span><span style="background:#4a5a4a">S</span><span style="background:#3a3f52">+3</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="container">
+    <div class="head"><div><span class="eyebrow on-night coord">How it works</span><h2 class="h2 mt-s" style="color:#fff">Connect the dots in three moves</h2></div></div>
+    <div class="steps">
+      <div class="step"><span class="n">01</span><h3>Drop dots</h3><p>Save any place worth a look as you browse — no account needed to start.</p></div>
+      <div class="step"><span class="n">02</span><h3>Connect them</h3><p>Group your dots into a shortlist for a night, an area or a group.</p></div>
+      <div class="step"><span class="n">03</span><h3>Share the shape</h3><p>Send the shortlist to friends. They vote, you decide, everyone turns up.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="container">
+    <div class="head"><div><span class="eyebrow on-night coord">Lighting up tonight</span><h2 class="h2 mt-s" style="color:#fff">Dots worth dropping</h2></div><a class="btn btn-ghost btn-sm" href="#">See all</a></div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px" class="gcards">
+      <article class="ncard"><div class="frame ph" style="background-image:url('https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=900&q=70')"><span class="badge coord" style="color:rgba(255,255,255,.7)">51.5136 N · Open</span></div><div class="body"><h3>The Lantern Room</h3><div class="meta"><span class="coord on-night">Bar · Soho</span><span class="tag">Date spot</span></div></div></article>
+      <article class="ncard"><div class="frame ph" style="background-image:url('https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=900&q=70')"><span class="badge coord" style="color:rgba(255,255,255,.7)">51.5245 N · Open</span></div><div class="body"><h3>Qahwa Social</h3><div class="meta"><span class="coord on-night">Lounge · Shoreditch</span><span class="tag">Groups</span></div></div></article>
+      <article class="ncard"><div class="frame ph" style="background-image:url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=900&q=70')"><span class="badge coord" style="color:rgba(255,255,255,.7)">51.5390 N · Open</span></div><div class="body"><h3>Courtyard Nine</h3><div class="meta"><span class="coord on-night">Cafe · Camden</span><span class="tag">Outdoor</span></div></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="container">
+    <div class="head"><div><span class="eyebrow on-night coord">Where the dots are</span><h2 class="h2 mt-s" style="color:#fff">London first, more each week</h2></div></div>
+    <div class="citydots">
+      <a class="citydot" href="#"><span class="d"></span>London <span class="coord on-night">148</span></a>
+      <a class="citydot" href="#"><span class="d"></span>Birmingham <span class="coord on-night">24</span></a>
+      <a class="citydot" href="#"><span class="d"></span>Manchester <span class="coord on-night">19</span></a>
+      <a class="citydot" href="#"><span class="d"></span>Leicester <span class="coord on-night">14</span></a>
+      <a class="citydot soon" href="#"><span class="d"></span>Glasgow <span class="coord on-night">soon</span></a>
+      <a class="citydot soon" href="#"><span class="d"></span>Liverpool <span class="coord on-night">soon</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="container">
+    <div class="band">
+      <div class="head"><div><span class="eyebrow on-night coord">Offers</span><h2 class="h2 mt-s" style="color:#fff">Something on the house</h2></div><a class="btn btn-ghost btn-sm" href="#">All offers</a></div>
+      <div class="offer-row">
+        <a class="offer" href="#"><span class="pc">2-for-1</span><b>Sharing platters</b><span>Sun–Thu, after 8pm</span><div class="ven coord" style="color:rgba(255,255,255,.7)">Qahwa Social · Shoreditch</div></a>
+        <a class="offer" href="#"><span class="pc">20%</span><b>Off the bill</b><span>Groups of 6 or more</span><div class="ven coord" style="color:rgba(255,255,255,.7)">Maison Anwar · Marylebone</div></a>
+        <a class="offer" href="#"><span class="pc">Free</span><b>Dessert with any table</b><span>Weeknights</span><div class="ven coord" style="color:rgba(255,255,255,.7)">The Lantern Room · Soho</div></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container in">
+    <div class="top">
+      <div><a class="wordmark on-night" href="#">nokta</a><p>Drop the dots, connect the plan. Restaurants, lounges and cafes across the UK — check details directly before you travel or book.</p></div>
+      <div class="cols"><div><p class="lbl">Pages</p><a href="#">Discover</a><a href="#">Shortlists</a><a href="#">Suggest a venue</a><a href="#">For venues</a></div><div><p class="lbl">Contact</p><a href="#">hello@nokta.uk</a><a href="#">Instagram</a></div></div>
+    </div>
+    <p class="base">1,204 DOTS SAVED THIS WEEK · 312 SHORTLISTS SHARED</p>
+  </div>
+</footer>
+
+<div class="ribbon">Concept <b>02 — Constellation</b> · dots that connect <a href="index.html">all concepts</a></div>
+<style>@media(max-width:980px){.gcards{grid-template-columns:1fr!important}}</style>
+</body>
+</html>

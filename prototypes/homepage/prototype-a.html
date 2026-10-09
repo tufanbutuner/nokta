@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nokta — Prototype A · Tonight</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="proto.css">
+<style>
+  /* Prototype A — intent-first */
+  .hero { border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <div class="row" style="gap:34px">
+      <a class="brand" href="#">nokta</a>
+      <nav class="nav-links">
+        <a href="#" class="active">Discover</a>
+        <a href="#">Collections</a>
+        <a href="#">Saved</a>
+        <a href="#">For venues</a>
+      </nav>
+    </div>
+    <div class="nav-actions">
+      <span class="loc-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        London
+      </span>
+      <button class="btn btn-outline btn-sm">Sign in</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-media">
+    <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1800&q=72" alt="Warmly lit restaurant interior at night">
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="container hero-inner">
+    <span class="kicker"><span class="dot"></span> London · 148 venues open right now</span>
+    <h1 class="display">Somewhere worth<br>going tonight.</h1>
+    <p class="lede mt-m">Lounges, restaurants and cafes — tell us the mood and we&rsquo;ll point you to the right spot.</p>
+
+    <form class="searchbar" onsubmit="return false">
+      <label class="field">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg>
+        <input placeholder="Search venues, areas or vibes…" aria-label="Search venues">
+      </label>
+      <div class="city">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        London
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left:auto"><path d="m6 9 6 6 6-6"/></svg>
+      </div>
+      <button class="btn btn-clay" type="submit">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg>
+        Explore
+      </button>
+    </form>
+
+    <div class="chips">
+      <button class="chip solid active">Out tonight</button>
+      <button class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 19v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="9.5" cy="7" r="3.5"/><path d="M21 19v-2a4 4 0 0 0-3-3.8"/></svg>Good for groups</button>
+      <button class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s7-5 7-12a7 7 0 1 0-14 0c0 7 7 12 7 12Z"/><path d="M12 10v4M10 12h4"/></svg>Outdoor seating</button>
+      <button class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>Late</button>
+      <button class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4Z"/><path d="M6 2v3M10 2v3M14 2v3"/></svg>Coffee &amp; catch-up</button>
+      <button class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18"/><path d="m7 14 4-4 3 3 5-6"/></svg>Something new</button>
+    </div>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="container">
+    <div class="section-head">
+      <div class="text">
+        <span class="kicker"><span class="dot"></span> Live</span>
+        <h2 class="h2 mt-s">Open right now</h2>
+        <p class="sub">Real opening hours — no guessing whether a place is still serving.</p>
+      </div>
+      <a class="btn btn-outline btn-sm" href="#">See all open <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <div class="rail">
+      <article class="vcard">
+        <div class="frame"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=70" alt="">
+          <div class="top"><span class="badge open"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="5"/></svg>Open</span><button class="fav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.6-9.2-9A4.6 4.6 0 0 1 12 6.5 4.6 4.6 0 0 1 21.2 11C19 15.4 12 20 12 20Z"/></svg></button></div>
+          <div class="bottom"><h3>Maison Anwar</h3><p>Marylebone <span class="sep"></span> Dinner <span class="sep"></span> ★ 4.8</p></div>
+        </div>
+      </article>
+      <article class="vcard">
+        <div class="frame"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=70" alt="">
+          <div class="top"><span class="badge open"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="5"/></svg>Open</span><button class="fav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.6-9.2-9A4.6 4.6 0 0 1 12 6.5 4.6 4.6 0 0 1 21.2 11C19 15.4 12 20 12 20Z"/></svg></button></div>
+          <div class="bottom"><h3>Qahwa Social</h3><p>Shoreditch <span class="sep"></span> Lounge <span class="sep"></span> ★ 4.6</p></div>
+        </div>
+      </article>
+      <article class="vcard">
+        <div class="frame"><img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=900&q=70" alt="">
+          <div class="top"><span class="badge open"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="5"/></svg>Open</span><button class="fav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.6-9.2-9A4.6 4.6 0 0 1 12 6.5 4.6 4.6 0 0 1 21.2 11C19 15.4 12 20 12 20Z"/></svg></button></div>
+          <div class="bottom"><h3>The Lantern Room</h3><p>Soho <span class="sep"></span> Bar <span class="sep"></span> ★ 4.7</p></div>
+        </div>
+      </article>
+      <article class="vcard">
+        <div class="frame"><img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=900&q=70" alt="">
+          <div class="top"><span class="badge open"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="5"/></svg>Open</span><button class="fav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.6-9.2-9A4.6 4.6 0 0 1 12 6.5 4.6 4.6 0 0 1 21.2 11C19 15.4 12 20 12 20Z"/></svg></button></div>
+          <div class="bottom"><h3>Courtyard Nine</h3><p>Camden <span class="sep"></span> Cafe <span class="sep"></span> ★ 4.5</p></div>
+        </div>
+      </article>
+      <article class="vcard">
+        <div class="frame"><img src="https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=900&q=70" alt="">
+          <div class="top"><span class="badge open"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="5"/></svg>Open</span><button class="fav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.6-9.2-9A4.6 4.6 0 0 1 12 6.5 4.6 4.6 0 0 1 21.2 11C19 15.4 12 20 12 20Z"/></svg></button></div>
+          <div class="bottom"><h3>Rivera Terrace</h3><p>Canary Wharf <span class="sep"></span> Lounge <span class="sep"></span> ★ 4.9</p></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div class="text">
+        <span class="kicker"><span class="dot"></span> By mood</span>
+        <h2 class="h2 mt-s">Find your vibe</h2>
+        <p class="sub">The same shortcut whether you want a late table, a quiet coffee or a room for eight.</p>
+      </div>
+    </div>
+    <div class="grid g3">
+      <a class="tile big" href="#"><img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=1100&q=70" alt=""><span class="cap"><b>Late-night tables</b><span>Serving past midnight</span></span></a>
+      <a class="tile" href="#"><img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=800&q=70" alt=""><span class="cap"><b>Courtyard &amp; terrace</b><span>Outdoor, heaters on</span></span></a>
+      <a class="tile" href="#"><img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=800&q=70" alt=""><span class="cap"><b>Big tables</b><span>Roomy for 6+</span></span></a>
+      <a class="tile" href="#"><img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=70" alt=""><span class="cap"><b>Coffee &amp; catch-up</b><span>Daytime, low key</span></span></a>
+      <a class="tile" href="#"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=70" alt=""><span class="cap"><b>Dinner out</b><span>Book a table</span></span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="container">
+    <div class="section-head">
+      <div class="text">
+        <span class="kicker"><span class="dot"></span> This week</span>
+        <h2 class="h2 mt-s">Worth a look</h2>
+      </div>
+      <a class="btn btn-outline btn-sm" href="#">The full edit</a>
+    </div>
+    <div class="grid g3">
+      <article class="fcard"><div class="frame media"><img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=900&q=70" alt=""></div><div class="body"><span class="tag">Featured</span><h3>A courtyard that feels like Lisbon</h3><p>Hidden behind a Marylebone townhouse — best at golden hour.</p></div></article>
+      <article class="fcard"><div class="frame media"><img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=900&q=70" alt=""></div><div class="body"><span class="tag">Featured</span><h3>The room everyone&rsquo;s booking for eight</h3><p>Big tables, no rush, and a menu that keeps everyone happy.</p></div></article>
+      <article class="fcard"><div class="frame media"><img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=900&q=70" alt=""></div><div class="body"><span class="tag">Featured</span><h3>Open till 2, coffee till close</h3><p>Camden&rsquo;s newest all-day spot, quiet in the morning.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div class="text">
+        <span class="kicker"><span class="dot"></span> Coverage</span>
+        <h2 class="h2 mt-s">London first, more cities each week</h2>
+        <p class="sub">We only list a city once we&rsquo;ve checked it properly — so what you see is real.</p>
+      </div>
+    </div>
+    <div class="ladder">
+      <a class="city-hero" href="#"><img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=70" alt=""><span class="cap"><b>London</b><span>148 venues · restaurants, lounges, bars &amp; cafes</span></span></a>
+      <div>
+        <div class="city-list">
+          <a class="city-row" href="#"><span><b>Birmingham</b><br><span>24 venues</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 6 6 6-6 6"/></svg></a>
+          <a class="city-row" href="#"><span><b>Manchester</b><br><span>19 venues</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 6 6 6-6 6"/></svg></a>
+          <a class="city-row" href="#"><span><b>Leicester</b><br><span>14 venues</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 6 6 6-6 6"/></svg></a>
+          <a class="city-row" href="#"><span><b>Leeds</b><br><span>11 venues</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 6 6 6-6 6"/></svg></a>
+        </div>
+        <p class="muted mt-s" style="font-size:13px;margin-bottom:8px">Coming soon</p>
+        <div class="soon"><span>Glasgow</span><span>Liverpool</span><span>Nottingham</span><span>Bristol</span><span>+ more</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="container">
+    <div class="band">
+      <div class="head">
+        <div><span class="kicker"><span class="dot"></span> Offers</span><h2 class="h2 mt-s" style="color:#fff">Something on the house</h2><p class="sub" style="margin:10px 0 0">Promoted offers from venues on nokta.</p></div>
+        <a class="btn btn-ghost-light btn-sm" href="#">All offers</a>
+      </div>
+      <div class="offer-grid">
+        <a class="offer" href="#"><span class="pc">2-for-1</span><b>Sharing platters</b><span>Sun–Thu, after 8pm</span><div class="ven"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:15px;height:15px"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>Qahwa Social · Shoreditch</div></a>
+        <a class="offer" href="#"><span class="pc">20%</span><b>Off the bill</b><span>Groups of 6 or more</span><div class="ven"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:15px;height:15px"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>Maison Anwar · Marylebone</div></a>
+        <a class="offer" href="#"><span class="pc">Free</span><b>Dessert with any table</b><span>Weeknights</span><div class="ven"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:15px;height:15px"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>The Lantern Room · Soho</div></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="top">
+      <a class="brand" href="#">nokta</a>
+      <p>Find your spot. Restaurants, lounges and cafes across the UK — check details directly before you travel or book.</p>
+    </div>
+    <div class="cols">
+      <div><p class="lbl">Pages</p><a href="#">Discover</a><a href="#">Collections</a><a href="#">Suggest a venue</a><a href="#">For venues</a></div>
+      <div><p class="lbl">Contact</p><a href="#">hello@nokta.uk</a><a href="#">Instagram</a></div>
+    </div>
+  </div>
+</footer>
+
+<div class="proto-ribbon">Prototype <b>A — Tonight</b> · intent-first <a href="index.html">all concepts</a></div>
+
+</body>
+</html>

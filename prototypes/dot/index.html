@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nokta — Dot paths</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@700&family=Outfit:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../airbnb/airbnb.css">
+<link rel="stylesheet" href="dot.css">
+<style>
+  .intro { padding: 64px 0 0; max-width: 640px; }
+  .intro .sub { color: var(--muted); font-size: 17px; margin-top: 18px; }
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 40px 0 80px; }
+  .pcard { display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--shadow-sm); transition: transform .18s ease, box-shadow .18s ease; }
+  .pcard:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+  .pcard .thumb { height: 190px; position: relative; overflow: hidden; border-bottom: 1px solid var(--line); background: #fbf7f1; }
+  .pcard .body { padding: 20px 20px 22px; display: flex; flex-direction: column; flex: 1; }
+  .pcard h3 { font-size: 21px; margin: 0; letter-spacing: -.02em; display: flex; align-items: center; gap: 9px; }
+  .pcard h3 .d { width: 9px; height: 9px; border-radius: 50%; background: var(--clay); }
+  .pcard p { color: var(--muted); font-size: 14.5px; margin: 10px 0 0; flex: 1; }
+  .pcard .best { font-family: var(--mono); font-size: 11px; letter-spacing: .05em; text-transform: uppercase; color: var(--faint); margin-top: 16px; }
+  .pcard .go { margin-top: 16px; display: inline-flex; align-items: center; gap: 8px; font-weight: 650; }
+  .pcard .go svg { width: 16px; height: 16px; transition: transform .15s; }
+  .pcard:hover .go svg { transform: translateX(3px); }
+
+  /* tiny inline illustrations */
+  .il-path { position: absolute; left: 50%; top: 0; bottom: 0; border-left: 2px dotted var(--line-2); }
+  .il-path i { position: absolute; left: 50%; transform: translateX(-50%); width: 13px; height: 13px; border-radius: 50%; background: var(--clay); box-shadow: 0 0 0 5px #fbf7f1, 0 0 0 6px var(--line-2); }
+  .il-map { position: absolute; inset: 0; background: radial-gradient(circle, rgba(150, 110, 74, .18) 1.3px, transparent 1.4px) 0 0 / 20px 20px; }
+  .il-map i { position: absolute; width: 10px; height: 10px; border-radius: 50%; border: 2px solid #fff; background: var(--night); box-shadow: 0 1px 3px rgba(0,0,0,.2); }
+  .il-full { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; padding: 0 30px; gap: 14px; }
+  .il-full span { height: 10px; border-radius: 6px; background: var(--surface-2); display: block; }
+  .il-full .p { width: 14px; height: 14px; border-radius: 50%; background: var(--clay); }
+
+  @media (max-width: 860px) { .cards { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="container wide nav-in">
+    <div style="display:flex;align-items:center;gap:30px">
+      <a class="wordmark" href="index.html">nokta</a>
+      <nav class="nav-links">
+        <a href="#" class="on">Discover</a><a href="#">Collections</a><a href="#">Saved</a><a href="#">For venues</a>
+      </nav>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px">
+      <a class="loc" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>London</a>
+      <button class="btn btn-outline btn-sm">Sign in</button>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="intro">
+    <h1 class="h1">Three dot paths<span class="dot"></span></h1>
+    <p class="sub">Same brand, same dot — three genuinely different ways to hold a homepage. All simple, none of them shisha-shaped.</p>
+  </div>
+
+  <div class="cards">
+    <a class="pcard" href="path.html">
+      <div class="thumb">
+        <span class="il-path">
+          <i style="top:18%"></i><i style="top:42%"></i><i style="top:66%"></i><i style="top:88%"></i>
+        </span>
+      </div>
+      <div class="body">
+        <h3><span class="d"></span>The Path</h3>
+        <p>The dot as a route. Search and categories at the top, then venues threaded along a dotted path — each a stop, in order.</p>
+        <div class="best">Best for · a guided, browsable feel</div>
+        <span class="go">View <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+      </div>
+    </a>
+
+    <a class="pcard" href="pinpoint.html">
+      <div class="thumb">
+        <span class="il-map"></span>
+        <span style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:16px;height:16px;border-radius:50%;background:var(--clay);box-shadow:0 0 0 6px rgba(196,93,62,.16)"></span>
+        <span class="il-map" style="background:none"><i style="left:26%;top:30%"></i><i style="left:74%;top:64%"></i><i style="left:64%;top:26%"></i></span>
+      </div>
+      <div class="body">
+        <h3><span class="d"></span>Pinpoint</h3>
+        <p>The dot as a place on a map. One living pinpoint at the centre, a compact search resting on the map, venues as dots around you.</p>
+        <div class="best">Best for · "near me", spatial discovery</div>
+        <span class="go">View <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+      </div>
+    </a>
+
+    <a class="pcard" href="fullstop.html">
+      <div class="thumb">
+        <span class="il-full">
+          <span style="width:70%;height:22px;border-radius:8px;background:var(--ink)"></span>
+          <span style="width:46%"></span>
+          <span style="width:60%"></span>
+          <span class="p"></span>
+        </span>
+      </div>
+      <div class="body">
+        <h3><span class="d"></span>Full stop</h3>
+        <p>The dot as punctuation. An editorial page where every statement ends in clay — search, categories and an index of places read like sentences.</p>
+        <div class="best">Best for · brand voice, calm reading</div>
+        <span class="go">View <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+      </div>
+    </a>
+  </div>
+</div>
+
+<div class="ribbon">
+  <a class="rl" href="path.html">The Path</a>
+  <a class="rl" href="pinpoint.html">Pinpoint</a>
+  <a class="rl" href="fullstop.html">Full stop</a>
+  <a class="rl on" href="index.html">All</a>
+</div>
+
+</body>
+</html>

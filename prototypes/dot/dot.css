@@ -1,0 +1,44 @@
+/* =========================================================================
+   NOKTA — "dot path" explorations (shared pieces)
+   Tokens + base + nav + buttons + wordmark come from ../airbnb/airbnb.css.
+   Here: the shared compact search, category chips, dot markers, ribbon.
+   ========================================================================= */
+
+/* ---------- compact, centred search — deliberately NOT a segmented pill ---------- */
+.dsearch { display: flex; align-items: center; gap: 6px; background: var(--surface); border: 1px solid var(--line-2); border-radius: 999px; padding: 6px 6px 6px 16px; box-shadow: var(--shadow); max-width: 520px; width: 100%; }
+.dsearch .ic { width: 18px; height: 18px; color: var(--muted); flex: none; }
+.dsearch input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; font-family: var(--font); font-size: 15.5px; color: var(--ink); padding: 10px 0; }
+.dsearch input::placeholder { color: var(--faint); }
+.dsearch .go { flex: none; height: 42px; padding: 0 20px; border: 0; border-radius: 999px; background: var(--clay); color: #fff; font-weight: 600; font-size: 14.5px; box-shadow: 0 10px 22px -12px var(--clay); transition: background .15s ease; }
+.dsearch .go:hover { background: var(--clay-hover); }
+
+/* ---------- category chips, each led by a tiny dot ---------- */
+.dchips { display: flex; gap: 9px; flex-wrap: wrap; }
+.dchip { display: inline-flex; align-items: center; gap: 8px; height: 38px; padding: 0 16px; border: 1px solid var(--line-2); border-radius: 999px; background: var(--surface); color: var(--ink-2); font-size: 13.5px; font-weight: 550; white-space: nowrap; transition: all .15s ease; }
+.dchip .d { width: 6px; height: 6px; border-radius: 50%; background: var(--faint); flex: none; transition: all .15s ease; }
+.dchip:hover { border-color: var(--faint); color: var(--ink); }
+.dchip.active { background: var(--night); border-color: var(--night); color: #fff; }
+.dchip.active .d { background: var(--clay); }
+
+/* ---------- dot markers ---------- */
+.ndot { width: 12px; height: 12px; border-radius: 50%; border: 2px solid var(--clay); flex: none; }
+.ndot.fill { background: var(--clay); }
+.ndot.ink { border-color: var(--night); background: var(--night); }
+
+/* ---------- small floating switcher (prototype only) ---------- */
+.ribbon { position: fixed; left: 50%; bottom: 16px; transform: translateX(-50%); z-index: 200; display: flex; gap: 4px; align-items: center; background: rgba(31, 29, 26, 0.94); backdrop-filter: blur(10px); color: #fff; border-radius: 999px; padding: 6px; font-size: 13px; font-weight: 500; box-shadow: var(--shadow-lg); }
+.ribbon .rl { opacity: 0.65; padding: 7px 13px; border-radius: 999px; white-space: nowrap; }
+.ribbon .rl:hover { opacity: 1; background: rgba(255, 255, 255, 0.1); }
+.ribbon .rl.on { opacity: 1; background: var(--clay); }
+
+/* ---------- tiny helpers ---------- */
+.dotline { border: 0; border-top: 2px dotted var(--line-2); }
+.center { text-align: center; }
+.stack { display: flex; flex-direction: column; }
+
+@media (max-width: 620px) {
+  .dchips { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin: 0 -24px; padding: 2px 24px; }
+  .dchips::-webkit-scrollbar { display: none; }
+  .dchip { flex: none; }
+  .dsearch { padding-left: 14px; }
+}

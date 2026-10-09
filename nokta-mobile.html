@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nokta — mobile preview</title>
+<style>
+  :root { --ink:#2b2521; --muted:#736758; --clay:#c45d3e; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #ece4d9; font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; color: var(--ink); padding: 34px 24px 70px; }
+  .head { max-width: 1240px; margin: 0 auto 26px; text-align: center; }
+  .head h1 { margin: 0; font-size: 20px; letter-spacing: -.01em; }
+  .head p { margin: 7px 0 0; color: var(--muted); font-size: 13.5px; }
+  .stage { display: flex; justify-content: center; align-items: flex-start; }
+  .phone { width: 410px; flex: none; padding: 11px; border-radius: 46px; background: #1f1d1a; box-shadow: 0 40px 80px -34px rgba(50,30,15,.55); }
+  .screen { display: block; width: 388px; height: 720px; border: 0; border-radius: 36px; background: #fff; }
+  .cap { text-align: center; font-size: 12px; color: var(--muted); margin-top: 14px; }
+</style>
+</head>
+<body>
+  <div class="head">
+    <h1>Nokta — Discover · mobile</h1>
+    <p>Rendered in a 388&nbsp;px viewport (iPhone-class width). This preview is a phone-sized frame around the real page.</p>
+  </div>
+  <div class="stage">
+    <div class="phone">
+      <iframe id="screen" class="screen" src="nokta-search.html" title="Nokta mobile"></iframe>
+    </div>
+  </div>
+  <p class="cap">Scroll the artwork below to see the full page.</p>
+  <script>
+    var f = document.getElementById('screen');
+    function fit() {
+      try {
+        var d = f.contentDocument;
+        // hide the frame's own scrollbar (its gutter would show a rail on the phone screen)
+        var s = d.getElementById('__noscroll');
+        if (!s) { s = d.createElement('style'); s.id = '__noscroll'; d.head.appendChild(s); }
+        s.textContent = 'html{scrollbar-width:none}:root::-webkit-scrollbar{display:none}';
+        f.style.height = '720px'; // shrink first so scrollHeight reflects the real content
+        var h = Math.max(d.documentElement.scrollHeight, d.body ? d.body.scrollHeight : 0);
+        if (h) f.style.height = (h + 4) + 'px'; // +4 avoids a hairline scrollbar inside the frame
+      } catch (e) {}
+    }
+    f.addEventListener('load', function () { fit(); });
+  </script>
+</body>
+</html>

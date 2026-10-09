@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nokta — 01 Coordinate</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@700&family=Outfit:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="nokta.css">
+<style>
+  /* 01 — Coordinate: the instrument. The page is a plotting field. */
+  .hero { display: grid; grid-template-columns: 1.02fr 1fr; gap: 48px; align-items: center; padding: 60px 0 78px; }
+  .hero .display { margin: 20px 0 0; }
+  .hero .enddot { display: inline-block; width: .16em; height: .16em; border-radius: 50%; background: var(--clay); margin-left: .1em; vertical-align: baseline; }
+  .hero .instrument { margin-top: 34px; max-width: 540px; }
+  .plot-hero { aspect-ratio: 1 / 1.02; }
+  .legend { position: absolute; top: 18px; left: 18px; z-index: 4; background: rgba(255,255,255,.9); border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; backdrop-filter: blur(6px); }
+  .legend .it { display: flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 10.5px; text-transform: uppercase; letter-spacing: .05em; color: var(--ink-soft); }
+  .legend .it + .it { margin-top: 7px; }
+  .legend .sw { width: 9px; height: 9px; border-radius: 50%; background: var(--clay); } .legend .sw.ink { background: var(--ink); }
+  .stat-strip { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: #fff; }
+  .stat-strip .s { padding: 20px 22px; border-right: 1px solid var(--line); }
+  .stat-strip .s:last-child { border-right: 0; }
+  .stat-strip .s b { display: block; font-family: var(--brand); font-size: 30px; letter-spacing: -.02em; }
+  .constel-teaser { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; background: var(--paper-2); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 44px; }
+  .constel-teaser .mini { height: 240px; }
+  .city-ledger .lrow { grid-template-columns: 42px minmax(0,1.6fr) minmax(0,1fr) auto; }
+  @media (max-width: 980px) { .hero { grid-template-columns: 1fr; } .constel-teaser { grid-template-columns: 1fr; padding: 28px; } .stat-strip { grid-template-columns: 1fr; } .stat-strip .s { border-right: 0; border-bottom: 1px solid var(--line); } }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <div class="row" style="gap:32px">
+      <a class="wordmark" href="#">nokta</a>
+      <nav class="nav-links">
+        <a href="#" class="on">Discover</a>
+        <a href="#">Map</a>
+        <a href="#">Saved</a>
+        <a href="#">For venues</a>
+      </nav>
+    </div>
+    <div class="row" style="gap:16px">
+      <span class="coord">51.5074° N&nbsp;·&nbsp;0.1278° W</span>
+      <button class="btn btn-line btn-sm">Sign in</button>
+    </div>
+  </div>
+</header>
+
+<section class="container hero">
+  <div>
+    <span class="eyebrow coord">Plotting / London</span>
+    <h1 class="display">Drop a dot.<br>Find your spot<span class="enddot"></span></h1>
+    <p class="lede mt-m" style="max-width:480px">Every place is a point on the map. Nokta plots the ones worth your night — restaurants, lounges, bars and cafes, pinned to where they actually are.</p>
+
+    <form class="instrument" onsubmit="return false">
+      <span class="crosshair"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="8"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg></span>
+      <label class="seg" style="flex:1">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg>
+        <input placeholder="Venue, area or vibe…" aria-label="Search">
+      </label>
+      <div class="seg coord" style="gap:8px">LONDON
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px"><path d="m6 9 6 6 6-6"/></svg>
+      </div>
+      <button class="btn btn-clay" type="submit">Plot</button>
+    </form>
+
+    <div class="readout">
+      <span class="coord">148 pins</span><span class="coord dot-mark">·</span><span class="coord">32 open now</span><span class="coord dot-mark">·</span><span class="coord">4.2 km radius</span>
+    </div>
+  </div>
+
+  <div class="plot plot-hero field dense">
+    <div class="ticks">
+      <span class="tk top" style="left:24%">0.16° W</span><span class="tk top" style="left:62%">0.10° W</span>
+      <span class="tk bottom" style="left:34%">51.51° N</span><span class="tk right" style="top:30%">N</span>
+    </div>
+    <span class="pin" style="left:34%; top:30%"><i></i></span>
+    <span class="pin ink" style="left:63%; top:24%"><i></i></span>
+    <span class="pin" style="left:52%; top:52%"><i></i></span>
+    <span class="pin ink" style="left:24%; top:60%"><i></i></span>
+    <span class="pin" style="left:74%; top:46%"><i></i></span>
+    <span class="pin" style="left:44%; top:74%"><i></i></span>
+    <span class="pin ink" style="left:82%; top:70%"><i></i></span>
+    <div class="readout-card">
+      <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=300&q=70" alt="">
+      <div>
+        <h4>Maison Anwar</h4>
+        <p>Restaurant · Marylebone · <span style="color:#2f6b4f">open</span></p>
+        <div class="tags"><span class="tag">51.5203 N</span><span class="tag">Groups</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="container">
+    <div class="stat-strip">
+      <div class="s"><b>148</b><span class="coord">pins in London</span></div>
+      <div class="s"><b>04</b><span class="coord">cities plotted</span></div>
+      <div class="s"><b>31,240</b><span class="coord">dots dropped</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="head">
+      <div><span class="eyebrow coord">The field</span><h2 class="h2 mt-s">Plotted, not listed</h2><p class="lede mt-s" style="max-width:520px">No cards, no noise — a straight ledger of places with their real coordinates, hours and character.</p></div>
+    </div>
+
+    <div class="plot field" style="height:320px; margin-bottom:44px">
+      <div class="legend">
+        <div class="it"><span class="sw"></span> Open now</div>
+        <div class="it"><span class="sw ink"></span> Featured</div>
+      </div>
+      <div class="ticks"><span class="tk top" style="left:14%">Marylebone</span><span class="tk top" style="left:44%">Soho</span><span class="tk top" style="left:72%">Shoreditch</span></div>
+      <span class="pin" style="left:14%; top:38%"><i></i></span>
+      <span class="pin ink" style="left:30%; top:64%"><i></i></span>
+      <span class="pin" style="left:47%; top:44%"><i></i></span>
+      <span class="pin" style="left:63%; top:70%"><i></i></span>
+      <span class="pin ink" style="left:76%; top:40%"><i></i></span>
+      <span class="pin" style="left:88%; top:62%"><i></i></span>
+    </div>
+
+    <div class="ledger">
+      <div class="lrow lhead"><span>#</span><span>Place</span><span>Coordinates</span><span>Type</span><span>Status</span><span></span></div>
+      <a class="lrow" href="#"><span class="idx">01</span><span class="nm">Maison Anwar <span class="tag">Featured</span></span><span class="coord">51.5203° N</span><span class="cat">Restaurant</span><span class="statedot open">Open</span><span class="arrow">→</span></a>
+      <a class="lrow" href="#"><span class="idx">02</span><span class="nm">Qahwa Social</span><span class="coord">51.5245° N</span><span class="cat">Lounge</span><span class="statedot open">Open</span><span class="arrow">→</span></a>
+      <a class="lrow" href="#"><span class="idx">03</span><span class="nm">The Lantern Room</span><span class="coord">51.5136° N</span><span class="cat">Bar</span><span class="statedot open">Open</span><span class="arrow">→</span></a>
+      <a class="lrow" href="#"><span class="idx">04</span><span class="nm">Courtyard Nine</span><span class="coord">51.5390° N</span><span class="cat">Cafe</span><span class="statedot closed">Closed</span><span class="arrow">→</span></a>
+      <a class="lrow" href="#"><span class="idx">05</span><span class="nm">Rivera Terrace</span><span class="coord">51.5045° N</span><span class="cat">Terrace</span><span class="statedot open">Open</span><span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="container">
+    <div class="constel-teaser">
+      <div>
+        <span class="eyebrow coord">Saved</span>
+        <h2 class="h2 mt-s">Your dots, connected</h2>
+        <p class="lede mt-m">Save places as you plot them and they trace a shape — a shortlist you can share with whoever you&rsquo;re going with.</p>
+        <button class="btn btn-ink mt-m">Start a shortlist</button>
+      </div>
+      <div class="plot mini field" style="position:relative">
+        <svg viewBox="0 0 400 240" style="position:absolute;inset:0;width:100%;height:100%">
+          <path d="M70 170 L150 90 L250 120 L330 60" fill="none" style="stroke:#c4553a" stroke-width="1.5" stroke-dasharray="5 6" opacity=".8"/>
+        </svg>
+        <span class="pin" style="left:17.5%; top:71%"></span>
+        <span class="pin" style="left:37.5%; top:37.5%"></span>
+        <span class="pin" style="left:62.5%; top:50%"></span>
+        <span class="pin" style="left:82.5%; top:25%"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="container">
+    <div class="head"><div><span class="eyebrow coord">Where we plot</span><h2 class="h2 mt-s">London first, more each week</h2></div></div>
+    <div class="ledger city-ledger">
+      <a class="lrow" href="#"><span class="idx">LON</span><span class="nm">London</span><span class="coord">51.5074° N</span><span class="statedot open">148 pins</span></a>
+      <a class="lrow" href="#"><span class="idx">BHX</span><span class="nm">Birmingham</span><span class="coord">52.4862° N</span><span class="statedot open">24 pins</span></a>
+      <a class="lrow" href="#"><span class="idx">MAN</span><span class="nm">Manchester</span><span class="coord">53.4808° N</span><span class="statedot open">19 pins</span></a>
+      <a class="lrow" href="#"><span class="idx">LBA</span><span class="nm">Leicester</span><span class="coord">52.6369° N</span><span class="statedot open">14 pins</span></a>
+      <a class="lrow" href="#"><span class="idx">GLA</span><span class="nm">Glasgow</span><span class="coord">55.8642° N</span><span class="statedot">Coming soon</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="container">
+    <div class="band">
+      <div class="head"><div><span class="eyebrow on-night coord">Offers</span><h2 class="h2 mt-s" style="color:#fff">Marked on the map</h2></div><a class="btn btn-ghost btn-sm" href="#">All offers</a></div>
+      <div class="offer-row">
+        <a class="offer" href="#"><span class="pc">2-for-1</span><b>Sharing platters</b><span>Sun–Thu, after 8pm</span><div class="ven coord" style="color:rgba(255,255,255,.7)">Qahwa Social · Shoreditch</div></a>
+        <a class="offer" href="#"><span class="pc">20%</span><b>Off the bill</b><span>Groups of 6 or more</span><div class="ven coord" style="color:rgba(255,255,255,.7)">Maison Anwar · Marylebone</div></a>
+        <a class="offer" href="#"><span class="pc">Free</span><b>Dessert with any table</b><span>Weeknights</span><div class="ven coord" style="color:rgba(255,255,255,.7)">The Lantern Room · Soho</div></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container in">
+    <div class="top">
+      <div><a class="wordmark on-night" href="#">nokta</a><p>Every place is a dot. Nokta plots the ones worth your night — check details directly before you travel or book.</p></div>
+      <div class="cols">
+        <div><p class="lbl">Pages</p><a href="#">Discover</a><a href="#">Map</a><a href="#">Suggest a venue</a><a href="#">For venues</a></div>
+        <div><p class="lbl">Contact</p><a href="#">hello@nokta.uk</a><a href="#">Instagram</a></div>
+      </div>
+    </div>
+    <p class="base">51.5074° N, 0.1278° W · LONDON</p>
+  </div>
+</footer>
+
+<div class="ribbon">Concept <b>01 — Coordinate</b> · the instrument <a href="index.html">all concepts</a></div>
+</body>
+</html>

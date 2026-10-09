@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nokta — Prototype B · The Dot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="proto.css">
+<style>
+  /* Prototype B — brand-led, map-forward */
+  .b-hero { display: grid; grid-template-columns: 1.05fr 1fr; gap: 40px; align-items: center; padding: 64px 0 76px; }
+  .b-hero h1 { margin: 18px 0 0; }
+  .b-hero .lede { max-width: 460px; margin-top: 20px; }
+  .b-mark { font-family: var(--font-brand); font-weight: 700; color: var(--clay); }
+  .b-mark .o { display:inline-block; width: .62em; height:.62em; border-radius:50%; background: var(--clay); vertical-align: -2px; margin: 0 .02em; position: relative; top: -.02em; }
+  .b-search { display: grid; grid-template-columns: 1fr auto; gap: 10px; margin-top: 30px; max-width: 480px; }
+  .b-search .box { display:flex; align-items:center; gap:10px; background:#fff; border:1px solid var(--border); border-radius: 999px; padding: 0 18px; box-shadow: var(--shadow); }
+  .b-search .box svg { width:18px;height:18px;color:var(--ink-muted); }
+  .b-search input { border:0;outline:0;background:transparent;font:inherit;font-size:16px;padding:15px 0;width:100%; }
+  .b-stats { display:flex; gap:30px; margin-top:34px; }
+  .b-stat b { display:block; font-size:26px; letter-spacing:-.02em; font-family: var(--font-brand); }
+  .b-stat span { font-size:13px; color: var(--ink-muted); }
+
+  /* the map */
+  .map-panel {
+    position: relative; border-radius: 30px; overflow: hidden; min-height: 560px;
+    border: 1px solid var(--border);
+    background:
+      linear-gradient(180deg, #efe3d2, #e7d7c2),
+      #e7d7c2;
+    box-shadow: var(--shadow-lg);
+  }
+  .map-panel .grid-lines {
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(rgba(120,90,60,.10) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(120,90,60,.10) 1px, transparent 1px);
+    background-size: 46px 46px, 46px 46px;
+  }
+  .map-panel .water { position:absolute; left:-6%; bottom:-8%; width:60%; height:52%; background: linear-gradient(160deg,#c9d6d8,#b7c8cc); border-radius: 46% 54% 0 0 / 60% 40% 0 0; opacity:.7; }
+  .map-panel .park { position:absolute; right:8%; top:16%; width:34%; height:30%; background: linear-gradient(160deg,#cdd8bd,#bccaa8); border-radius: 46% 54% 52% 48%; opacity:.75; }
+  .road { position:absolute; inset:0; }
+  .pin { position:absolute; transform: translate(-50%,-50%); }
+  .pin .core { position:relative; width:15px; height:15px; border-radius:50%; background: var(--clay); border:3px solid #fff; box-shadow: 0 6px 16px -6px rgba(80,40,20,.7); }
+  .pin .pulse { position:absolute; left:50%; top:50%; width:15px; height:15px; border-radius:50%; background: var(--clay); transform: translate(-50%,-50%); animation: bp 2.8s ease-out infinite; }
+  .pin.ink .core { background: var(--ink-bg); }
+  .pin.ink .pulse { background: var(--ink-bg); }
+  @keyframes bp { 0% { opacity:.55; transform: translate(-50%,-50%) scale(1);} 70%{opacity:0;} 100%{opacity:0; transform: translate(-50%,-50%) scale(4.2);} }
+  .pin-label { position:absolute; transform: translate(-50%,-140%); background:#fff; border:1px solid var(--border); border-radius: 999px; padding: 5px 11px 5px 6px; display:flex; align-items:center; gap:8px; box-shadow: var(--shadow); font-size:12.5px; font-weight:600; white-space:nowrap; }
+  .pin-label img { width:22px;height:22px;border-radius:50%;object-fit:cover; }
+  .map-card { position:absolute; left:22px; right:22px; bottom:22px; background:#fff; border-radius:20px; padding:14px; display:flex; gap:14px; align-items:center; box-shadow: var(--shadow-lg); }
+  .map-card img { width:96px; height:80px; border-radius:14px; object-fit:cover; }
+  .map-card .mbody { min-width:0; }
+  .map-card h4 { margin:0; font-size:16.5px; letter-spacing:-.01em; }
+  .map-card p { margin:3px 0 8px; font-size:13px; color:var(--ink-muted); }
+  .map-card .mmeta { display:flex; gap:7px; }
+  .tagchip { font-size:11.5px; font-weight:600; background: var(--clay-tint); color: var(--clay-dark); border-radius:999px; padding:4px 10px; }
+  .map-top { position:absolute; top:20px; left:20px; right:20px; display:flex; justify-content:space-between; }
+  .map-pill { background: rgba(255,255,255,.94); border:1px solid var(--border); border-radius:999px; padding:8px 14px; font-size:13px; font-weight:600; display:inline-flex; gap:8px; align-items:center; box-shadow: var(--shadow-sm); }
+  .map-pill .d { width:8px;height:8px;border-radius:50%;background:#2f6b4f; }
+
+  /* dot chips */
+  .dot-row { display:flex; gap:14px; flex-wrap:wrap; }
+  .dotchip { display:flex; flex-direction:column; align-items:center; gap:11px; width:112px; }
+  .dotchip .ring { width:74px;height:74px;border-radius:50%; display:grid;place-items:center; background:#fff; border:1px solid var(--border); box-shadow: var(--shadow); transition: all .18s ease; }
+  .dotchip:hover .ring { transform: translateY(-3px); border-color: var(--clay); }
+  .dotchip .ring svg { width:26px;height:26px;color: var(--clay); }
+  .dotchip b { font-size:13.5px; font-weight:600; text-align:center; line-height:1.25; }
+
+  .steps { display:grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+  .step { position:relative; padding: 28px 26px; background: var(--surface); border:1px solid var(--border); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); }
+  .step .n { font-family: var(--font-brand); font-weight:700; font-size:15px; width:34px;height:34px;border-radius:50%; display:grid;place-items:center; background: var(--clay); color:#fff; margin-bottom:16px; }
+  .step h3 { margin:0 0 8px; font-size:19px; letter-spacing:-.01em; }
+  .step p { margin:0; color: var(--ink-muted); font-size:14.5px; }
+
+  @media (max-width: 980px) {
+    .b-hero { grid-template-columns: 1fr; padding: 44px 0 56px; }
+    .map-panel { min-height: 420px; }
+    .steps { grid-template-columns: 1fr; }
+    .dotchip { width: 88px; } .dotchip .ring { width:62px;height:62px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <div class="row" style="gap:34px">
+      <a class="brand" href="#">nokta</a>
+      <nav class="nav-links">
+        <a href="#" class="active">Discover</a>
+        <a href="#">Map</a>
+        <a href="#">Saved</a>
+        <a href="#">For venues</a>
+      </nav>
+    </div>
+    <div class="nav-actions">
+      <span class="loc-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>London</span>
+      <button class="btn btn-outline btn-sm">Sign in</button>
+    </div>
+  </div>
+</header>
+
+<section class="container b-hero">
+  <div>
+    <span class="kicker"><span class="dot"></span> A dot on the map of good spots</span>
+    <h1 class="display sm">Every spot worth your night, on one map.</h1>
+    <p class="lede">Restaurants, lounges, bars and cafes across the UK. Save the ones you like and we&rsquo;ll keep the plan on track.</p>
+    <form class="b-search" onsubmit="return false">
+      <label class="box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg>
+        <input placeholder="Search venues, areas or vibes…" aria-label="Search venues">
+      </label>
+      <button class="btn btn-clay" type="submit">Find spots</button>
+    </form>
+    <div class="b-stats">
+      <div class="b-stat"><b>148</b><span>venues in London</span></div>
+      <div class="b-stat"><b>4</b><span>cities live</span></div>
+      <div class="b-stat"><b>9pm</b><span>average plan time</span></div>
+    </div>
+  </div>
+
+  <div class="map-panel">
+    <div class="grid-lines"></div>
+    <div class="water"></div>
+    <div class="park"></div>
+    <div class="map-top">
+      <span class="map-pill"><span class="d"></span> 32 open near you</span>
+      <span class="map-pill">Tonight</span>
+    </div>
+    <div class="pin" style="left:34%;top:38%"><span class="pulse"></span><span class="core"></span></div>
+    <div class="pin ink" style="left:62%;top:30%"><span class="pulse" style="animation-delay:.6s"></span><span class="core"></span></div>
+    <div class="pin" style="left:52%;top:58%"><span class="pulse" style="animation-delay:1.2s"></span><span class="core"></span></div>
+    <div class="pin ink" style="left:24%;top:66%"><span class="pulse" style="animation-delay:1.8s"></span><span class="core"></span></div>
+    <div class="pin" style="left:75%;top:52%"><span class="pulse" style="animation-delay:2.4s"></span><span class="core"></span></div>
+    <div class="pin-label" style="left:34%;top:38%"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=100&q=60" alt="">Maison Anwar</div>
+    <div class="map-card">
+      <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=400&q=70" alt="">
+      <div class="mbody">
+        <h4>Maison Anwar</h4>
+        <p>Marylebone · Dinner · ★ 4.8 · Open now</p>
+        <div class="mmeta"><span class="tagchip">Good for groups</span><span class="tagchip">Outdoor</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="container">
+    <div class="section-head"><div class="text"><span class="kicker"><span class="dot"></span> Start with a mood</span><h2 class="h2 mt-s">Pick a dot, we&rsquo;ll do the rest</h2></div></div>
+    <div class="dot-row">
+      <a class="dotchip" href="#"><span class="ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg></span><b>Out late</b></a>
+      <a class="dotchip" href="#"><span class="ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M16 19v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="9.5" cy="7" r="3.5"/><path d="M21 19v-2a4 4 0 0 0-3-3.8"/></svg></span><b>Groups</b></a>
+      <a class="dotchip" href="#"><span class="ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4Z"/><path d="M6 2v3M10 2v3M14 2v3"/></svg></span><b>Coffee</b></a>
+      <a class="dotchip" href="#"><span class="ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 3v18h18"/><path d="m7 14 4-4 3 3 5-6"/></svg></span><b>Something new</b></a>
+      <a class="dotchip" href="#"><span class="ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 20s-7-4.6-9.2-9A4.6 4.6 0 0 1 12 6.5 4.6 4.6 0 0 1 21.2 11C19 15.4 12 20 12 20Z"/></svg></span><b>Date spot</b></a>
+      <a class="dotchip" href="#"><span class="ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 22s7-5 7-12a7 7 0 1 0-14 0c0 7 7 12 7 12Z"/><path d="M12 10v4M10 12h4"/></svg></span><b>Terrace</b></a>
+    </div>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="container">
+    <div class="section-head"><div class="text"><span class="kicker"><span class="dot"></span> How it works</span><h2 class="h2 mt-s">Three taps to a plan</h2></div></div>
+    <div class="steps">
+      <div class="step"><span class="n">1</span><h3>Drop a dot</h3><p>Search or tap the map. Filter by what matters tonight — open, outdoors, group size.</p></div>
+      <div class="step"><span class="n">2</span><h3>Save the ones you like</h3><p>Build a shortlist as you browse, then share the link with whoever you&rsquo;re meeting.</p></div>
+      <div class="step"><span class="n">3</span><h3>Go</h3><p>Book a table or message the venue, then keep the plan in one place.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="container">
+    <div class="section-head">
+      <div class="text"><span class="kicker"><span class="dot"></span> Featured</span><h2 class="h2 mt-s">On the map tonight</h2></div>
+      <a class="btn btn-outline btn-sm" href="#">See all</a>
+    </div>
+    <div class="grid g3">
+      <article class="fcard"><div class="frame media"><img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=900&q=70" alt=""></div><div class="body"><span class="tag">Featured</span><h3>The Lantern Room</h3><p>Soho · Bar · Open now · ★ 4.7</p></div></article>
+      <article class="fcard"><div class="frame media"><img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=900&q=70" alt=""></div><div class="body"><span class="tag">Featured</span><h3>Qahwa Social</h3><p>Shoreditch · Lounge · Open now · ★ 4.6</p></div></article>
+      <article class="fcard"><div class="frame media"><img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=900&q=70" alt=""></div><div class="body"><span class="tag">Featured</span><h3>Courtyard Nine</h3><p>Camden · Cafe · Open now · ★ 4.5</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="container">
+    <div class="band">
+      <div class="head"><div><span class="kicker"><span class="dot"></span> Offers</span><h2 class="h2 mt-s" style="color:#fff">Something on the house</h2></div><a class="btn btn-ghost-light btn-sm" href="#">All offers</a></div>
+      <div class="offer-grid">
+        <a class="offer" href="#"><span class="pc">2-for-1</span><b>Sharing platters</b><span>Sun–Thu, after 8pm</span><div class="ven"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:15px;height:15px"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>Qahwa Social · Shoreditch</div></a>
+        <a class="offer" href="#"><span class="pc">20%</span><b>Off the bill</b><span>Groups of 6 or more</span><div class="ven"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:15px;height:15px"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>Maison Anwar · Marylebone</div></a>
+        <a class="offer" href="#"><span class="pc">Free</span><b>Dessert with any table</b><span>Weeknights</span><div class="ven"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:15px;height:15px"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>The Lantern Room · Soho</div></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="top"><a class="brand" href="#">nokta</a><p>Find your spot. Restaurants, lounges and cafes across the UK — check details directly before you travel or book.</p></div>
+    <div class="cols"><div><p class="lbl">Pages</p><a href="#">Discover</a><a href="#">Map</a><a href="#">Suggest a venue</a><a href="#">For venues</a></div><div><p class="lbl">Contact</p><a href="#">hello@nokta.uk</a><a href="#">Instagram</a></div></div>
+  </div>
+</footer>
+
+<div class="proto-ribbon">Prototype <b>B — The Dot</b> · brand-led, map-forward <a href="index.html">all concepts</a></div>
+
+</body>
+</html>
