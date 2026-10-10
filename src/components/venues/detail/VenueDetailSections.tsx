@@ -32,7 +32,7 @@ export function OverviewTab({ venue, similarVenues, onOpenMenu }: { venue: Venue
         {amenities.map((amenity) => {
           const Icon = amenity.icon ? AMENITY_ICONS[amenity.icon] : null;
           return (
-            <span key={amenity.label} className={cn("inline-flex min-h-8 items-center gap-[7px] rounded-lg px-3 py-[5px] text-[13px] font-medium", amenity.isUnknown ? "text-nokta-ink-muted" : "border border-nokta-border bg-white text-nokta-ink")}>
+            <span key={amenity.label} className={cn("inline-flex min-h-8 items-center gap-[7px] rounded-lg px-3 py-[5px] text-[13px] font-medium", amenity.isUnknown ? "text-nokta-ink-muted" : "border border-nokta-border bg-nokta-surface text-nokta-ink")}>
               {Icon ? <Icon className="h-3.5 w-3.5 text-clay-accent" strokeWidth={2} /> : null}
               {amenity.label}
             </span>
@@ -62,7 +62,7 @@ function MenuPreviewCard({ venue, onOpenMenu }: { venue: Venue; onOpenMenu: () =
   }
 
   return (
-    <section className="mt-[22px] overflow-hidden rounded-[14px] border border-nokta-border bg-white">
+    <section className="mt-[22px] overflow-hidden rounded-[14px] border border-nokta-border bg-nokta-surface">
       <div className="flex items-baseline justify-between gap-3 px-4 pb-3 pt-3.5">
         <h2 className="text-[15px] font-semibold text-nokta-ink">Menu</h2>
         <button type="button" className="text-[12.5px] font-medium text-clay-accent hover:text-clay-accent-hover hover:underline" onClick={onOpenMenu}>
@@ -92,7 +92,7 @@ export function MenuTab({ venue }: { venue: Venue }) {
           return (
             <div key={section.id}>
               <h3 className="text-[13px] font-semibold uppercase tracking-[0.5px] text-nokta-ink">{section.name}</h3>
-              <div className="mt-3 overflow-hidden rounded-[14px] border border-nokta-border bg-white">
+              <div className="mt-3 overflow-hidden rounded-[14px] border border-nokta-border bg-nokta-surface">
                 {sectionItems.map((item, index) => (
                   <div key={item.id} className={cn("flex items-baseline justify-between gap-4 px-4 py-[11px] text-[13.5px]", index > 0 && "border-t border-nokta-row-border")}>
                     <div className="min-w-0">
@@ -135,7 +135,7 @@ export function VenueHoursLocationCard({ venue, className }: { venue: Venue; cla
   const groupedHours = getGroupedOpeningHours(venue.openingHours);
 
   return (
-    <section className={cn("rounded-2xl border border-nokta-border bg-white p-[17px]", className)}>
+    <section className={cn("rounded-2xl border border-nokta-border bg-nokta-surface p-[17px]", className)}>
       {groupedHours.length ? (
         <>
           <div className="flex items-center justify-between gap-3">
@@ -197,7 +197,7 @@ function SimilarVenueCarousel({ venues }: { venues: Venue[] }) {
   return (
     <div className="-mx-4 mt-3 flex max-w-[calc(100%+2rem)] gap-3 overflow-x-auto px-4 pb-1 sm:mx-0 sm:max-w-full sm:px-0">
       {venues.map((venue) => (
-        <Link key={venue.id} to={`/venues/${venue.slug}`} className="w-[186px] shrink-0 rounded-[14px] border border-nokta-border bg-white p-2 transition-colors hover:border-[oklch(0.8_0.03_50)]">
+        <Link key={venue.id} to={`/venues/${venue.slug}`} className="w-[186px] shrink-0 rounded-[14px] border border-nokta-border bg-nokta-surface p-2 transition-colors hover:border-[oklch(0.8_0.03_50)]">
           <VenueImage venue={venue} alt={`${venue.name} interior`} className="h-[94px] w-full rounded-[10px] object-cover" />
           <span className="mt-[9px] block truncate px-0.5 text-[13.5px] font-semibold text-nokta-ink">{venue.name}</span>
           <span className="mb-1 mt-0.5 block truncate px-0.5 text-[12px] text-nokta-ink-muted">{[venue.area, venue.isClaimed ? "takes bookings" : null].filter(Boolean).join(" · ")}</span>

@@ -46,7 +46,7 @@ export function NotificationBell({ align = "right", className }: { align?: "left
         }}
       >
         <Bell className="h-4 w-4" />
-        {unreadCount ? <span className="absolute right-[9px] top-[9px] h-2 w-2 rounded-full border border-card bg-nokta-accent shadow-sm" aria-label={`${Math.min(unreadCount, 99)} unread notifications`} /> : null}
+        {unreadCount ? <span className="absolute right-[9px] top-[9px] h-2 w-2 rounded-full border border-card bg-nokta-accent-solid shadow-sm" aria-label={`${Math.min(unreadCount, 99)} unread notifications`} /> : null}
       </Button>
       {isOpen ? <NotificationsDropdown align={align} onUnreadCountChange={setUnreadCount} /> : null}
     </div>

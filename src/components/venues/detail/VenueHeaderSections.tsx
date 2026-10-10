@@ -22,7 +22,7 @@ export function VenueTitleRow({ venue }: { venue: Venue }) {
   return (
     <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
       <h1 className="min-w-0 text-[28px] font-semibold leading-[1.05] tracking-[-0.6px] text-nokta-ink sm:text-[34px]">{venue.name}</h1>
-      <span className="inline-flex h-6 shrink-0 items-center rounded-md border border-nokta-border bg-white px-2.5 text-[12.5px] font-semibold text-nokta-ink-subtle">{formatVenuePrimaryCategory(venue.primaryCategory)}</span>
+      <span className="inline-flex h-6 shrink-0 items-center rounded-md border border-nokta-border bg-nokta-surface px-2.5 text-[12.5px] font-semibold text-nokta-ink-subtle">{formatVenuePrimaryCategory(venue.primaryCategory)}</span>
     </div>
   );
 }
@@ -71,11 +71,11 @@ export function VenueHeaderMeta({ venue, distanceLabel }: { venue: Venue; distan
 export function ActionBar({ venue, shareLabel, onShare, onToggleSave, isSaved }: { venue: Venue; shareLabel: string; onShare: () => void; onToggleSave?: () => void; isSaved?: boolean }) {
   const [isMoreOpen, setIsMoreOpen] = useState(false);
   const analyticsProperties = getVenueAnalyticsProperties(venue);
-  const iconButtonClass = "inline-flex h-11 w-11 items-center justify-center rounded-lg border border-nokta-border bg-white text-nokta-ink-subtle transition-colors hover:bg-nokta-hover";
+  const iconButtonClass = "inline-flex h-11 w-11 items-center justify-center rounded-lg border border-nokta-border bg-nokta-surface text-nokta-ink-subtle transition-colors hover:bg-nokta-hover";
 
   return (
     <div className="relative mt-[18px] flex flex-wrap items-center gap-2">
-      <Button asChild className="h-11 rounded-lg bg-nokta-ink px-[15px] text-sm font-medium text-white hover:bg-nokta-ink/90">
+      <Button asChild className="h-11 rounded-lg bg-nokta-solid-ink px-[15px] text-sm font-medium text-white hover:bg-nokta-solid-ink/90">
         <a href={getGoogleMapsDirectionsUrl(venue)} target="_blank" rel="noreferrer noopener" onClick={() => trackVenueAction(venue, "directions_clicked", "venue_directions_clicked", analyticsProperties)}>
           <Navigation className="mr-2 h-[15px] w-[15px]" />
           Directions
@@ -83,7 +83,7 @@ export function ActionBar({ venue, shareLabel, onShare, onToggleSave, isSaved }:
       </Button>
 
       {venue.website ? (
-        <Button asChild variant="outline" className="h-11 rounded-lg border-nokta-border bg-white px-[15px] text-sm font-medium text-nokta-ink hover:bg-nokta-hover">
+        <Button asChild variant="outline" className="h-11 rounded-lg border-nokta-border bg-nokta-surface px-[15px] text-sm font-medium text-nokta-ink hover:bg-nokta-hover">
           <a href={venue.website} target="_blank" rel="noreferrer noopener" onClick={() => trackVenueAction(venue, "website_clicked", "venue_website_clicked", analyticsProperties)}>
             <ExternalLink className="mr-2 h-[15px] w-[15px]" />
             {formatWebsiteDomain(venue.website)}
@@ -116,7 +116,7 @@ export function ActionBar({ venue, shareLabel, onShare, onToggleSave, isSaved }:
              * gutters; from sm up the row no longer wraps and it anchors to the
              * button as before.
              */}
-            <div className="absolute inset-x-0 top-full z-20 mt-2 max-w-[320px] overflow-hidden rounded-lg border border-nokta-border bg-white py-1 shadow-[0_8px_24px_rgba(28,25,23,0.12)] sm:inset-x-auto sm:right-0 sm:top-auto sm:min-w-[200px] sm:max-w-none">
+            <div className="absolute inset-x-0 top-full z-20 mt-2 max-w-[320px] overflow-hidden rounded-lg border border-nokta-border bg-nokta-surface py-1 shadow-[0_8px_24px_rgba(28,25,23,0.12)] sm:inset-x-auto sm:right-0 sm:top-auto sm:min-w-[200px] sm:max-w-none">
               {venue.phone ? (
                 <a href={`tel:${venue.phone}`} className="flex items-center gap-2.5 px-3.5 py-2.5 text-[13px] font-medium text-nokta-ink hover:bg-nokta-hover" onClick={() => setIsMoreOpen(false)}>
                   <Phone className="h-4 w-4 text-nokta-ink-muted" />

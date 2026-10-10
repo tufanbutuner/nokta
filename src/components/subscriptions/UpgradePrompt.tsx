@@ -21,7 +21,7 @@ export function UpgradePrompt({ feature, requiredPlan, currentPlan, venueId }: {
   const targetConfig = PLAN_CONFIG[targetPlan];
 
   return (
-    <Alert className="border-clay-400/20 bg-clay-50 text-nokta-ink">
+    <Alert className="border-clay-400/20 bg-nokta-surface-alt text-nokta-ink">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <strong>Unlock this feature with {targetConfig.name}.</strong>

@@ -109,7 +109,7 @@ export function OwnerVenueUpdateRequestPage() {
       {isLoading ? <LoadingState message="Loading update request..." /> : error ? <ErrorState message={error} /> : (
           <div className="flex flex-wrap items-start gap-x-7 gap-y-5 pb-[170px]">
             <main ref={formRef} className="flex min-w-0 flex-[1_1_420px] flex-col gap-4">
-              <div className="rounded-[10px] border border-nokta-border border-l-[3px] border-l-clay-300 bg-white px-[15px] py-[13px] text-[13px] leading-[1.55] text-nokta-ink-subtle">
+              <div className="rounded-[10px] border border-nokta-border border-l-[3px] border-l-clay-300 bg-nokta-surface px-[15px] py-[13px] text-[13px] leading-[1.55] text-nokta-ink-subtle">
                 <strong className="font-semibold text-nokta-ink">Changes here are reviewed by nokta before they go live.</strong>{" "}
                 Menu, prices and photos publish instantly from their own tabs. Venue name, address and location need verification — <a href={`mailto:${brandConfig.supportEmail}`} className="font-medium text-clay-accent hover:underline">contact us</a> to change them.
               </div>

@@ -8,8 +8,8 @@ import type { Venue } from "@/types/venue";
 
 const DESCRIPTION_LIMIT = 600;
 
-const INPUT_CLASS = "h-11 w-full rounded-[9px] border border-nokta-border-input bg-white px-3 text-[13.5px] text-nokta-ink outline-none placeholder:text-nokta-ink-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-clay-accent";
-const TEXTAREA_CLASS = "w-full resize-y rounded-[9px] border border-nokta-border-input bg-white px-3 py-[10px] text-[13.5px] leading-[1.55] text-nokta-ink outline-none placeholder:text-nokta-ink-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-clay-accent";
+const INPUT_CLASS = "h-11 w-full rounded-[9px] border border-nokta-border-input bg-nokta-surface px-3 text-[13.5px] text-nokta-ink outline-none placeholder:text-nokta-ink-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-clay-accent";
+const TEXTAREA_CLASS = "w-full resize-y rounded-[9px] border border-nokta-border-input bg-nokta-surface px-3 py-[10px] text-[13.5px] leading-[1.55] text-nokta-ink outline-none placeholder:text-nokta-ink-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-clay-accent";
 
 export function toProfileChanges(venue: Venue): VenueProfileUpdateChanges {
   return {
@@ -127,7 +127,7 @@ export function OwnerVenueProfileForm({
     <>
       <div className="flex flex-col gap-4">
         {pendingRequest && pendingDiff.length ? (
-          <div className="rounded-[10px] border border-nokta-border border-l-[3px] border-l-clay-300 bg-white px-[15px] py-[13px]">
+          <div className="rounded-[10px] border border-nokta-border border-l-[3px] border-l-clay-300 bg-nokta-surface px-[15px] py-[13px]">
             <p className="text-[13px] leading-[1.55] text-nokta-ink-subtle">
               <strong className="font-semibold text-nokta-ink">These edits are with nokta for review.</strong>{" "}
               The fields below show what you submitted on {new Date(pendingRequest.createdAt).toLocaleDateString("en-GB", { day: "numeric", month: "long" })}, not what is live on your public page yet.
@@ -166,7 +166,7 @@ export function OwnerVenueProfileForm({
           </div>
         </SectionCard>
 
-        <section className="rounded-[14px] border border-nokta-border bg-white">
+        <section className="rounded-[14px] border border-nokta-border bg-nokta-surface">
           <div className="px-5 pt-4">
             <h2 className="text-[15px] font-semibold text-nokta-ink">Features</h2>
             <p className="mt-[3px] text-[12.5px] text-nokta-ink-muted">Used by search filters. Only tick what you offer every day.</p>
@@ -201,7 +201,7 @@ export function OwnerVenueProfileForm({
       </div>
 
       {isDirty ? (
-        <div className="fixed inset-x-0 bottom-0 z-20 border-t border-nokta-border bg-white shadow-[0_-6px_24px_rgba(26,21,16,.07)]">
+        <div className="fixed inset-x-0 bottom-0 z-20 border-t border-nokta-border bg-nokta-surface shadow-[0_-6px_24px_rgba(26,21,16,.07)]">
           {reviewOpen ? (
             <div className="mx-auto max-h-[38vh] max-w-[1180px] overflow-y-auto px-[clamp(14px,4vw,26px)] pt-3.5">
               <ProfileDiffTable rows={diff} />
@@ -214,7 +214,7 @@ export function OwnerVenueProfileForm({
             </p>
             <div className="flex flex-[1_1_300px] flex-wrap justify-end gap-2">
               <button type="button" onClick={discard} className="order-2 min-h-11 flex-[0_1_auto] rounded-[9px] border border-transparent px-3.5 text-[13.5px] font-medium text-nokta-ink-muted transition-colors hover:text-nokta-ink">Discard</button>
-              <button type="button" onClick={() => setReviewOpen((open) => !open)} className="order-1 min-h-11 flex-[1_1_130px] rounded-[9px] border border-nokta-border-input bg-white px-[15px] text-[13.5px] font-medium text-nokta-ink transition-colors hover:bg-nokta-hover">{reviewOpen ? "Hide changes" : "Review changes"}</button>
+              <button type="button" onClick={() => setReviewOpen((open) => !open)} className="order-1 min-h-11 flex-[1_1_130px] rounded-[9px] border border-nokta-border-input bg-nokta-surface px-[15px] text-[13.5px] font-medium text-nokta-ink transition-colors hover:bg-nokta-hover">{reviewOpen ? "Hide changes" : "Review changes"}</button>
               <button type="button" onClick={handleSubmit} disabled={isSubmitting} className="order-3 min-h-11 flex-[1_1_150px] rounded-[9px] bg-clay-accent px-[18px] text-[13.5px] font-semibold text-white transition-colors hover:bg-clay-accent-hover disabled:opacity-60">{isSubmitting ? "Submitting..." : "Submit for review"}</button>
             </div>
           </div>
@@ -226,7 +226,7 @@ export function OwnerVenueProfileForm({
 
 function SectionCard({ title, subtitle, children }: { title: ReactNode; subtitle: string; children: ReactNode }) {
   return (
-    <section className="rounded-[14px] border border-nokta-border bg-white">
+    <section className="rounded-[14px] border border-nokta-border bg-nokta-surface">
       <div className="px-5 pt-4">
         <h2 className="text-[15px] font-semibold text-nokta-ink">{title}</h2>
         <p className="mt-[3px] text-[12.5px] text-nokta-ink-muted">{subtitle}</p>
@@ -260,11 +260,11 @@ function Chip({ label, checked, onClick, showBox }: { label: string; checked: bo
       className={cn(
         "inline-flex cursor-pointer items-center gap-[7px] whitespace-nowrap rounded-full border text-[13px] font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-clay-accent",
         showBox ? "min-h-10 py-2 pl-[11px] pr-3.5 text-[13.5px]" : "min-h-[38px] px-3.5 py-2",
-        checked ? "border-clay-accent bg-nokta-chip-tint text-nokta-accent-dark" : "border-nokta-border bg-white text-nokta-ink-subtle hover:bg-nokta-hover",
+        checked ? "border-clay-accent bg-nokta-chip-tint text-nokta-accent-dark" : "border-nokta-border bg-nokta-surface text-nokta-ink-subtle hover:bg-nokta-hover",
       )}
     >
       {showBox ? (
-        <span aria-hidden="true" className={cn("inline-flex size-[15px] items-center justify-center rounded border text-[10px] leading-none text-white", checked ? "border-clay-accent bg-clay-accent" : "border-nokta-border-input bg-white")}>
+        <span aria-hidden="true" className={cn("inline-flex size-[15px] items-center justify-center rounded border text-[10px] leading-none text-white", checked ? "border-clay-accent bg-clay-accent" : "border-nokta-border-input bg-nokta-surface")}>
           {checked ? "✓" : ""}
         </span>
       ) : null}

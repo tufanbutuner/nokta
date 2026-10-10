@@ -35,7 +35,7 @@ export function OwnerRecentRequestsCard({
   const visible = requests.slice(0, 3);
 
   return (
-    <section className="rounded-[14px] border border-nokta-border bg-white p-[18px]">
+    <section className="rounded-[14px] border border-nokta-border bg-nokta-surface p-[18px]">
       <h2 className="mb-3 text-sm font-semibold text-nokta-ink">Recent requests</h2>
       {visible.length ? (
         <div className="flex flex-col gap-3">

@@ -89,7 +89,7 @@ export function BookingSidebarCard({ venue, className, compact = false }: { venu
   }
 
   return (
-    <form className={cn("rounded-2xl border border-nokta-border bg-white p-[17px] shadow-[0_1px_3px_rgba(28,25,23,0.05)]", compact && "border-0 p-0 shadow-none", className)} onSubmit={handleSubmit}>
+    <form className={cn("rounded-2xl border border-nokta-border bg-nokta-surface p-[17px] shadow-[0_1px_3px_rgba(28,25,23,0.05)]", compact && "border-0 p-0 shadow-none", className)} onSubmit={handleSubmit}>
       {!compact ? <h2 className="text-[15px] font-semibold text-nokta-ink">Request a booking</h2> : null}
       <p className={cn("text-[13px] leading-[1.55] text-nokta-ink-muted", compact ? "mt-0" : "mt-2")}>{getBookingNote(venue, requestsDisabled)}</p>
 
@@ -101,22 +101,22 @@ export function BookingSidebarCard({ venue, className, compact = false }: { venu
                 type="date"
                 value={date}
                 aria-label="Booking date"
-                className="h-11 rounded-lg border-nokta-border-input bg-white px-[11px] text-base text-nokta-ink sm:text-sm"
+                className="h-11 rounded-lg border-nokta-border-input bg-nokta-surface px-[11px] text-base text-nokta-ink sm:text-sm"
                 onChange={(event) => {
                   setDate(event.target.value);
                   setTime("");
                 }}
               />
-              <Select value={time} aria-label="Booking time" className="h-11 rounded-lg border-nokta-border-input bg-white px-[11px] text-base text-nokta-ink sm:text-sm" placeholder={timeOptions.length ? "Time" : "No times"} options={timeOptions.map((option) => ({ label: option, value: option }))} disabled={!date || !timeOptions.length} onValueChange={setTime} />
+              <Select value={time} aria-label="Booking time" className="h-11 rounded-lg border-nokta-border-input bg-nokta-surface px-[11px] text-base text-nokta-ink sm:text-sm" placeholder={timeOptions.length ? "Time" : "No times"} options={timeOptions.map((option) => ({ label: option, value: option }))} disabled={!date || !timeOptions.length} onValueChange={setTime} />
             </div>
             {emptyTimeReason ? <p className="text-[12.5px] leading-[1.5] text-nokta-ink-muted">{emptyTimeReason}</p> : null}
-            <Select value={String(partySize)} aria-label="Party size" className="h-11 rounded-lg border-nokta-border-input bg-white px-[11px] text-base text-nokta-ink sm:text-sm" options={partySizeOptions.map((size) => ({ label: `${size} ${size === 1 ? "person" : "people"}`, value: String(size) }))} onValueChange={(value) => setPartySize(Number(value))} />
+            <Select value={String(partySize)} aria-label="Party size" className="h-11 rounded-lg border-nokta-border-input bg-nokta-surface px-[11px] text-base text-nokta-ink sm:text-sm" options={partySizeOptions.map((size) => ({ label: `${size} ${size === 1 ? "person" : "people"}`, value: String(size) }))} onValueChange={(value) => setPartySize(Number(value))} />
             <Button type="submit" className="h-[46px] rounded-lg bg-clay-accent text-[14.5px] font-semibold text-white hover:bg-clay-accent-hover" disabled={!date || !time}>
               Request booking
             </Button>
           </>
         )}
-        <Button asChild variant="outline" className="h-11 rounded-lg border-nokta-border bg-white text-sm font-medium text-nokta-ink hover:bg-nokta-hover" onClick={() => trackEnquiryCta(venue)}>
+        <Button asChild variant="outline" className="h-11 rounded-lg border-nokta-border bg-nokta-surface text-sm font-medium text-nokta-ink hover:bg-nokta-hover" onClick={() => trackEnquiryCta(venue)}>
           <Link to={`/venues/${venue.slug}/enquire`}>Send enquiry</Link>
         </Button>
       </div>
@@ -141,7 +141,7 @@ export function BookingSidebarCard({ venue, className, compact = false }: { venu
       {!venue.isClaimed ? (
         <div className="mt-3.5 flex items-center justify-between gap-3 border-t border-nokta-row-border pt-[13px]">
           <p className="max-w-[172px] text-[12.5px] leading-[1.45] text-nokta-ink-subtle">Work here? Take bookings through nokta.</p>
-          <Button asChild className="h-9 shrink-0 rounded-lg bg-nokta-ink px-[13px] text-[12.5px] font-medium text-white hover:bg-nokta-ink/90">
+          <Button asChild className="h-9 shrink-0 rounded-lg bg-nokta-solid-ink px-[13px] text-[12.5px] font-medium text-white hover:bg-nokta-solid-ink/90">
             <Link to={`/venues/${venue.slug}/claim`}>Claim venue</Link>
           </Button>
         </div>
@@ -154,7 +154,7 @@ export function MobileBookingCta({ venue }: { venue: Venue }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-[1200] border-t border-nokta-border bg-white px-4 py-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] shadow-[0_-12px_28px_rgba(28,25,23,0.08)] lg:hidden">
+    <div className="fixed inset-x-0 bottom-0 z-[1200] border-t border-nokta-border bg-nokta-surface px-4 py-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] shadow-[0_-12px_28px_rgba(28,25,23,0.08)] lg:hidden">
       <div className="mx-auto flex max-w-[1180px] items-center justify-between gap-3">
         <div className="min-w-0">
           <p className="text-sm font-semibold text-nokta-ink">{venue.name}</p>
@@ -187,14 +187,14 @@ export function BookingUnavailableCard({ venue, state, className, compact = fals
     ? { title: "Books directly, not through nokta", body: `${venue.name} hasn't joined nokta yet, so we can't take a booking for them. Contact them and they'll answer straight away.` }
     : { title: "Takes enquiries, not booking requests", body: `${venue.name} hasn't switched on date-and-time booking. Send an enquiry or contact them directly.` };
   return (
-    <aside className={cn("rounded-2xl border border-nokta-border bg-white p-5 shadow-sm shadow-stone-950/5", compact && "border-0 p-0 shadow-none", className)}>
+    <aside className={cn("rounded-2xl border border-nokta-border bg-nokta-surface p-5 shadow-sm shadow-stone-950/5", compact && "border-0 p-0 shadow-none", className)}>
       <div className="flex items-start gap-3"><span className="inline-flex h-8 w-8 flex-none items-center justify-center rounded-full bg-nokta-page-bg"><AlertCircle className="h-4 w-4 text-nokta-accent" /></span><div><h2 className="text-[15px] font-semibold text-nokta-ink">{content.title}</h2><p className="mt-2 text-sm leading-6 text-nokta-ink-muted">{content.body}</p></div></div>
       <div className="mt-4 grid gap-2">
-        {venue.website ? <Button asChild className="h-11 rounded-lg bg-nokta-accent text-white hover:bg-nokta-accent-dark"><a href={venue.website} target="_blank" rel="noreferrer">Book on their website <ExternalLink className="ml-2 h-4 w-4" /></a></Button> : null}
-        {venue.phone ? <Button asChild variant="outline" className="h-11 rounded-lg border-nokta-border bg-white text-nokta-ink"><a href={`tel:${venue.phone}`}><Phone className="mr-2 h-4 w-4" />{venue.phone}</a></Button> : null}
-        {state === "disabled" ? <Button asChild variant="outline" className="h-11 rounded-lg border-nokta-border bg-white text-nokta-ink" onClick={() => trackEnquiryCta(venue)}><Link to={`/venues/${venue.slug}/enquire`}>Send enquiry</Link></Button> : null}
+        {venue.website ? <Button asChild className="h-11 rounded-lg bg-nokta-accent-solid text-white hover:bg-clay-accent-hover"><a href={venue.website} target="_blank" rel="noreferrer">Book on their website <ExternalLink className="ml-2 h-4 w-4" /></a></Button> : null}
+        {venue.phone ? <Button asChild variant="outline" className="h-11 rounded-lg border-nokta-border bg-nokta-surface text-nokta-ink"><a href={`tel:${venue.phone}`}><Phone className="mr-2 h-4 w-4" />{venue.phone}</a></Button> : null}
+        {state === "disabled" ? <Button asChild variant="outline" className="h-11 rounded-lg border-nokta-border bg-nokta-surface text-nokta-ink" onClick={() => trackEnquiryCta(venue)}><Link to={`/venues/${venue.slug}/enquire`}>Send enquiry</Link></Button> : null}
       </div>
-      {state === "unclaimed" ? <div className="mt-4 flex items-center justify-between gap-3 border-t border-nokta-border pt-4"><p className="text-[13px] text-nokta-ink-muted">Work here? Take bookings through nokta.</p><Button asChild size="sm" className="shrink-0 bg-nokta-ink text-white hover:bg-nokta-ink/90"><Link to={`/venues/${venue.slug}/claim`}>Claim venue</Link></Button></div> : null}
+      {state === "unclaimed" ? <div className="mt-4 flex items-center justify-between gap-3 border-t border-nokta-border pt-4"><p className="text-[13px] text-nokta-ink-muted">Work here? Take bookings through nokta.</p><Button asChild size="sm" className="shrink-0 bg-nokta-solid-ink text-white hover:bg-nokta-solid-ink/90"><Link to={`/venues/${venue.slug}/claim`}>Claim venue</Link></Button></div> : null}
     </aside>
   );
 }

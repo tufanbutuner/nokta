@@ -1,4 +1,5 @@
 import { NavLocationControl } from "@/components/location/NavLocationControl";
+import { ThemeToggle } from "@/components/layout/ThemeToggle";
 import { NotificationBell } from "@/components/notifications/NotificationBell";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetClose, SheetHeader, SheetTitle } from "@/components/ui/sheet";
@@ -100,6 +101,7 @@ export function Header() {
             </div>
           </div>
           <nav className="hidden items-center gap-3 text-sm text-muted-foreground md:flex">
+            <ThemeToggle />
             <NavLocationControl />
             <NotificationBell />
             {user ? (
@@ -166,6 +168,7 @@ export function Header() {
             )}
           </nav>
           <div className="flex items-center gap-2 md:hidden">
+            <ThemeToggle />
             <NavLocationControl compact />
             <Button
               type="button"

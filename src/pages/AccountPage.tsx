@@ -140,7 +140,7 @@ export function AccountPage() {
                 <p className="mt-2 text-sm text-muted-foreground">Manage saved venues, enquiries, owner tools and admin access from one place.</p>
               </div>
               <div className="flex items-center gap-3 rounded-xl border bg-background/70 p-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-nokta-ink text-sm font-semibold text-clay-50">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-nokta-solid-ink text-sm font-semibold text-clay-50">
                   {getInitials(user?.email)}
                 </div>
                 <div className="min-w-0">
@@ -208,7 +208,7 @@ export function AccountPage() {
               </section>
 
               {isAdmin ? (
-                <section className="rounded-xl border bg-nokta-ink p-5 text-clay-50 shadow-sm">
+                <section className="rounded-xl border bg-nokta-solid-ink p-5 text-clay-50 shadow-sm">
                   <div className="flex items-center gap-2">
                     <ShieldCheck className="h-4 w-4 text-clay-400" />
                     <p className="text-xs font-semibold uppercase tracking-[0.14em] text-clay-400">Admin</p>

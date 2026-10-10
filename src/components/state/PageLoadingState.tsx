@@ -50,19 +50,19 @@ function DarkCanvasLoadingState({ message }: { message: string }) {
  */
 function HomePageLoadingState() {
   return (
-    <main data-full-viewport className="relative h-[calc(100dvh-65px)] overflow-hidden bg-[#f7f1e8] lg:grid lg:grid-cols-[440px_1fr]" role="status" aria-label="Loading places">
+    <main data-full-viewport className="relative h-[calc(100dvh-65px)] overflow-hidden bg-nokta-map-bg lg:grid lg:grid-cols-[440px_1fr]" role="status" aria-label="Loading places">
       <div className="absolute inset-0 lg:relative lg:col-start-2 lg:row-start-1">
         <div className="absolute inset-x-0 top-0 p-3.5 sm:p-5">
-          <div className="flex h-[50px] items-center gap-2.5 rounded-[14px] border border-nokta-border bg-white/95 pl-3.5 pr-1.5 lg:max-w-[460px]">
+          <div className="flex h-[50px] items-center gap-2.5 rounded-[14px] border border-nokta-border bg-nokta-surface/95 pl-3.5 pr-1.5 lg:max-w-[460px]">
             <Skeleton className="h-[18px] w-[18px] rounded-full" />
             <Skeleton className="h-4 flex-1 max-w-[180px]" />
             <Skeleton className="ml-auto h-[38px] w-[88px] rounded-full" />
           </div>
         </div>
-        <span aria-hidden="true" className="absolute bottom-[310px] right-3.5 h-11 w-11 rounded-full border border-nokta-border bg-white sm:right-5 lg:bottom-8" />
+        <span aria-hidden="true" className="absolute bottom-[310px] right-3.5 h-11 w-11 rounded-full border border-nokta-border bg-nokta-surface sm:right-5 lg:bottom-8" />
       </div>
 
-      <section className="absolute inset-x-0 bottom-0 flex h-[296px] flex-col rounded-t-[20px] bg-white shadow-[0_-10px_30px_-14px_rgba(42,33,27,0.35)] lg:relative lg:col-start-1 lg:row-start-1 lg:h-full lg:rounded-none lg:border-r lg:border-nokta-border lg:shadow-none">
+      <section className="absolute inset-x-0 bottom-0 flex h-[296px] flex-col rounded-t-[20px] bg-nokta-surface shadow-[0_-10px_30px_-14px_rgba(42,33,27,0.35)] lg:relative lg:col-start-1 lg:row-start-1 lg:h-full lg:rounded-none lg:border-r lg:border-nokta-border lg:shadow-none">
         <div className="grid place-items-center pb-1 pt-2.5 lg:hidden">
           <span className="h-1 w-[38px] rounded-full bg-nokta-border" />
         </div>
@@ -100,7 +100,7 @@ function HomePageLoadingState() {
 
 function HomeVenueCardSkeleton() {
   return (
-    <div className="grid w-[78%] max-w-[330px] shrink-0 grid-cols-[84px_1fr] gap-[11px] rounded-[14px] border border-nokta-border bg-white p-2.5">
+    <div className="grid w-[78%] max-w-[330px] shrink-0 grid-cols-[84px_1fr] gap-[11px] rounded-[14px] border border-nokta-border bg-nokta-surface p-2.5">
       <Skeleton className="h-[84px] w-[84px] rounded-[10px]" />
       <div className="space-y-2 pt-1">
         <Skeleton className="h-4 w-4/5" />

@@ -41,7 +41,7 @@ export function OwnerVenueTabShell({
 }) {
   return (
     <div>
-      <header className="border-b bg-white">
+      <header className="border-b bg-nokta-surface">
         <div className={cn(CONTENT_WIDTH, "pt-4")}>
           <p className="text-[12.5px] text-muted-foreground">
             <Link to="/owner/venues" className="font-medium text-clay-accent hover:underline">My venues</Link>

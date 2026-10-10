@@ -7,7 +7,7 @@ import { NotificationStatusDot } from "./NotificationStatusDot";
 export function NotificationItem({ notification, onRead, onDismiss }: { notification: Notification; onRead: (notification: Notification) => void; onDismiss?: (notification: Notification) => void }) {
   const isUnread = !notification.readAt;
   const content = (
-    <div className={cn("flex gap-3 rounded-xl border p-3 text-left transition-colors", isUnread ? "bg-clay-50" : "bg-card")}>
+    <div className={cn("flex gap-3 rounded-xl border p-3 text-left transition-colors", isUnread ? "bg-nokta-surface-alt" : "bg-card")}>
       <NotificationStatusDot isUnread={isUnread} />
       <div className="min-w-0 flex-1">
         <div className="flex items-start justify-between gap-3">

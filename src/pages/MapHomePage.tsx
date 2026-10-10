@@ -259,7 +259,7 @@ export function MapHomePage() {
     : { top: 130, bottom: isExpanded ? 80 : PEEK_HEIGHT, left: 30, right: 30 };
 
   return (
-    <main data-full-viewport className="relative h-[calc(100dvh-65px)] overflow-hidden bg-[#f7f1e8] lg:grid lg:grid-cols-[440px_1fr] lg:grid-rows-[minmax(0,1fr)]">
+    <main data-full-viewport className="relative h-[calc(100dvh-65px)] overflow-hidden bg-nokta-map-bg lg:grid lg:grid-cols-[440px_1fr] lg:grid-rows-[minmax(0,1fr)]">
       <PageMeta
         title={`${brandConfig.appName} - Discover Social Venues Across the UK`}
         description="See what's open near you on one map: shisha lounges and social venues with real prices, opening hours and photos. Request bookings direct."
@@ -281,7 +281,7 @@ export function MapHomePage() {
         </Suspense>
 
         <div className="pointer-events-none absolute inset-x-0 top-0 grid gap-2.5 p-3.5 sm:p-5">
-          <form onSubmit={handleSearch} className="pointer-events-auto flex h-[50px] items-center gap-2.5 rounded-[14px] border border-nokta-border bg-white/95 pl-3.5 pr-1.5 shadow-[0_6px_18px_-10px_rgba(42,33,27,0.35)] backdrop-blur lg:max-w-[460px]">
+          <form onSubmit={handleSearch} className="pointer-events-auto flex h-[50px] items-center gap-2.5 rounded-[14px] border border-nokta-border bg-nokta-surface/95 pl-3.5 pr-1.5 shadow-[0_6px_18px_-10px_rgba(42,33,27,0.35)] backdrop-blur lg:max-w-[460px]">
             <Search className="h-[18px] w-[18px] shrink-0 text-nokta-ink-muted" aria-hidden="true" />
             <input
               type="search"
@@ -303,7 +303,7 @@ export function MapHomePage() {
                 id="map-home-city"
                 value={city}
                 onChange={(event) => changeCity(event.target.value)}
-                className="h-[38px] max-w-[150px] cursor-pointer appearance-none rounded-full border border-nokta-border bg-white pl-3 pr-8 text-[13.5px] font-medium text-nokta-ink outline-none [field-sizing:content] focus-visible:ring-2 focus-visible:ring-clay-accent"
+                className="h-[38px] max-w-[150px] cursor-pointer appearance-none rounded-full border border-nokta-border bg-nokta-surface pl-3 pr-8 text-[13.5px] font-medium text-nokta-ink outline-none [field-sizing:content] focus-visible:ring-2 focus-visible:ring-clay-accent"
               >
                 {(cities.length ? cities : [cityConfig]).map((option) => <option key={option.slug} value={option.name}>{option.name}</option>)}
               </select>
@@ -317,14 +317,14 @@ export function MapHomePage() {
           onClick={locate}
           aria-label="Show venues near me"
           className={cn(
-            "absolute right-3.5 z-10 grid h-11 w-11 place-items-center rounded-full border border-nokta-border bg-white text-nokta-ink shadow-[0_6px_14px_-8px_rgba(42,33,27,0.45)] transition-[bottom] duration-300 ease-out sm:right-5",
+            "absolute right-3.5 z-10 grid h-11 w-11 place-items-center rounded-full border border-nokta-border bg-nokta-surface text-nokta-ink shadow-[0_6px_14px_-8px_rgba(42,33,27,0.45)] transition-[bottom] duration-300 ease-out sm:right-5",
             isDesktop ? "bottom-8" : isExpanded ? "hidden" : "bottom-[310px]",
           )}
         >
           <LocateFixed className={cn("h-[18px] w-[18px]", locationStatus === "loading" && "animate-pulse text-clay-accent")} />
         </button>
         {locationStatus === "denied" ? (
-          <p role="status" className="absolute inset-x-3.5 top-[76px] rounded-xl bg-nokta-ink px-3.5 py-2.5 text-[13px] text-white sm:inset-x-5 lg:max-w-[460px]">
+          <p role="status" className="absolute inset-x-3.5 top-[76px] rounded-xl bg-nokta-solid-ink px-3.5 py-2.5 text-[13px] text-white sm:inset-x-5 lg:max-w-[460px]">
             Location is blocked in your browser settings. Pick a city instead.
           </p>
         ) : null}
@@ -333,7 +333,7 @@ export function MapHomePage() {
       <section
         aria-label="Venues"
         className={cn(
-          "absolute inset-x-0 bottom-0 z-20 flex flex-col rounded-t-[20px] bg-white shadow-[0_-10px_30px_-14px_rgba(42,33,27,0.35)] transition-[height] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]",
+          "absolute inset-x-0 bottom-0 z-20 flex flex-col rounded-t-[20px] bg-nokta-surface shadow-[0_-10px_30px_-14px_rgba(42,33,27,0.35)] transition-[height] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]",
           "lg:relative lg:col-start-1 lg:row-start-1 lg:h-full lg:rounded-none lg:border-r lg:border-nokta-border lg:shadow-none",
           isExpanded ? "h-[88%]" : "h-[296px]",
         )}
@@ -366,7 +366,7 @@ export function MapHomePage() {
               onClick={() => toggleFilter(filter.key)}
               className={cn(
                 "shrink-0 snap-start whitespace-nowrap rounded-full border px-[13px] py-2 text-[13.5px] font-medium transition-colors lg:px-3 lg:text-[13px]",
-                active.has(filter.key) ? "border-nokta-ink bg-nokta-ink text-white" : "border-nokta-border bg-white text-nokta-ink hover:border-nokta-ink/40",
+                active.has(filter.key) ? "border-nokta-ink bg-nokta-solid-ink text-white" : "border-nokta-border bg-nokta-surface text-nokta-ink hover:border-nokta-ink/40",
               )}
             >
               {filter.label}
@@ -457,7 +457,7 @@ function VenueCard({ item, isSelected, showCity }: { item: MapVenue; isSelected:
       to={`/venues/${item.venue.slug}`}
       data-venue={item.venue.id}
       className={cn(
-        "grid w-[78%] max-w-[330px] shrink-0 snap-center grid-cols-[84px_1fr] gap-[11px] rounded-[14px] border bg-white p-2.5 transition-colors",
+        "grid w-[78%] max-w-[330px] shrink-0 snap-center grid-cols-[84px_1fr] gap-[11px] rounded-[14px] border bg-nokta-surface p-2.5 transition-colors",
         isSelected ? "border-nokta-ink" : "border-nokta-border",
       )}
     >

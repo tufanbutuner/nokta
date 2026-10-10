@@ -158,7 +158,7 @@ function FilterPill({ label, count, isActive, onClick }: { label: string; count?
       onClick={onClick}
       className={cn(
         "flex h-[31px] items-center gap-1.5 rounded-full px-3 text-[12.5px] transition-colors",
-        isActive ? "bg-nokta-ink font-medium text-white" : "border bg-card text-muted-foreground hover:text-nokta-ink",
+        isActive ? "bg-nokta-solid-ink font-medium text-white" : "border bg-card text-muted-foreground hover:text-nokta-ink",
       )}
     >
       {label}

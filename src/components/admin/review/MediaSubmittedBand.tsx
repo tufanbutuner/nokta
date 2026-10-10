@@ -35,7 +35,7 @@ export function MediaSubmittedBand({
                 <span
                   className={cn(
                     "absolute left-1.5 top-1.5 flex h-5 w-5 items-center justify-center rounded-full border-2",
-                    decision === "approve" ? "border-clay-accent bg-clay-accent text-white" : "border-[oklch(0.62_0.14_25)] bg-white text-[oklch(0.42_0.09_25)]",
+                    decision === "approve" ? "border-clay-accent bg-clay-accent text-white" : "border-[oklch(0.62_0.14_25)] bg-nokta-surface text-[oklch(0.42_0.09_25)]",
                   )}
                 >
                   {decision === "approve" ? <Check className="h-3 w-3" /> : <X className="h-3 w-3" />}

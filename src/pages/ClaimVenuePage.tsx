@@ -143,7 +143,7 @@ export function ClaimVenuePage() {
           Back to {venue.name}
         </Link>
 
-        <Card className="mx-auto max-w-4xl rounded-2xl border-nokta-border bg-white shadow-sm shadow-stone-950/5">
+        <Card className="mx-auto max-w-4xl rounded-2xl border-nokta-border bg-nokta-surface shadow-sm shadow-stone-950/5">
           <CardContent className="grid gap-8 p-5 sm:p-7 lg:grid-cols-[minmax(0,1fr)_280px]">
             <div>
             <div className="mb-6">
@@ -162,10 +162,10 @@ export function ClaimVenuePage() {
             ) : !user ? (
               <ClaimState title="Sign in to claim this venue." description="Venue claims are reviewed before owner access is granted. This protects venue profiles and keeps customer-facing details trustworthy.">
                 <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                  <Button asChild className="rounded-xl bg-nokta-ink text-white hover:bg-nokta-ink/90">
+                  <Button asChild className="rounded-xl bg-nokta-solid-ink text-white hover:bg-nokta-solid-ink/90">
                     <Link to="/sign-in">Sign in</Link>
                   </Button>
-                  <Button asChild variant="outline" className="rounded-xl border-nokta-border bg-white">
+                  <Button asChild variant="outline" className="rounded-xl border-nokta-border bg-nokta-surface">
                     <Link to="/sign-up">Create account</Link>
                   </Button>
                 </div>
@@ -200,7 +200,7 @@ export function ClaimVenuePage() {
                 <li>Configure availability and receive booking requests.</li>
                 <li>Track enquiries, bookings and promotion opportunities.</li>
               </ul>
-              <Button asChild variant="outline" className="mt-5 w-full rounded-xl border-nokta-border bg-white">
+              <Button asChild variant="outline" className="mt-5 w-full rounded-xl border-nokta-border bg-nokta-surface">
                 <Link to="/for-venues">Learn about owner tools</Link>
               </Button>
             </aside>

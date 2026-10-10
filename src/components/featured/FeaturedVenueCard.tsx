@@ -49,7 +49,7 @@ export function FeaturedVenueCard({
       <div className="relative h-40 overflow-hidden rounded-xl bg-muted">
         <VenueImage venue={venue} alt={`${venue.name} interior`} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
         {venue.rating ? (
-          <span className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-nokta-ink shadow-sm">
+          <span className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full bg-nokta-surface px-2.5 py-1 text-xs font-semibold text-nokta-ink shadow-sm">
             <Star className="h-3.5 w-3.5 fill-clay-accent text-clay-accent" />
             {venue.rating}
           </span>

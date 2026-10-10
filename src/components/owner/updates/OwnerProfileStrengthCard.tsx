@@ -18,7 +18,7 @@ export function OwnerProfileStrengthCard({
   const gaps = getProfileGaps(venue, subscription);
 
   return (
-    <section className="rounded-[14px] border border-nokta-border bg-white p-[18px]">
+    <section className="rounded-[14px] border border-nokta-border bg-nokta-surface p-[18px]">
       <div className="flex items-baseline justify-between">
         <h2 className="text-sm font-semibold text-nokta-ink">Profile strength</h2>
         <span className="text-[22px] font-semibold tracking-[-0.5px] text-nokta-ink">{score}%</span>

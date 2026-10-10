@@ -1,4 +1,5 @@
 import { AuthProvider } from "@/context/AuthContext";
+import { ThemeProvider } from "@/context/ThemeContext";
 import { AppLocationProvider } from "@/context/AppLocationContext";
 import { VenuePreferencesProvider } from "@/context/VenuePreferencesContext";
 import { router } from "@/router/router";
@@ -18,20 +19,22 @@ initPostHog();
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <HelmetProvider>
-      <AppErrorBoundary>
-        <QueryClientProvider client={queryClient}>
-          <AuthProvider>
-            <AppLocationProvider>
-              <VenuePreferencesProvider>
-                <RouterProvider router={router} />
-                <VercelAnalytics />
-                <VercelSpeedInsights />
-              </VenuePreferencesProvider>
-            </AppLocationProvider>
-          </AuthProvider>
-        </QueryClientProvider>
-      </AppErrorBoundary>
-    </HelmetProvider>
+    <ThemeProvider>
+      <HelmetProvider>
+        <AppErrorBoundary>
+          <QueryClientProvider client={queryClient}>
+            <AuthProvider>
+              <AppLocationProvider>
+                <VenuePreferencesProvider>
+                  <RouterProvider router={router} />
+                  <VercelAnalytics />
+                  <VercelSpeedInsights />
+                </VenuePreferencesProvider>
+              </AppLocationProvider>
+            </AuthProvider>
+          </QueryClientProvider>
+        </AppErrorBoundary>
+      </HelmetProvider>
+    </ThemeProvider>
   </React.StrictMode>,
 );

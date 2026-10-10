@@ -36,7 +36,7 @@ export function PhotoGallery({ venue, images, onOpenImage }: { venue: Venue; ima
 
   const stripImages = images.slice(0, 4);
   const allPhotosButton = (
-    <button type="button" aria-label={`View all ${images.length} photos`} className="absolute bottom-2.5 right-2.5 inline-flex min-h-[34px] max-w-[calc(100%-1.25rem)] items-center gap-[7px] whitespace-nowrap rounded-lg bg-white px-3 text-[12.5px] font-semibold text-nokta-ink shadow-sm transition-colors hover:bg-nokta-hover" onClick={() => onOpenImage(0)}>
+    <button type="button" aria-label={`View all ${images.length} photos`} className="absolute bottom-2.5 right-2.5 inline-flex min-h-[34px] max-w-[calc(100%-1.25rem)] items-center gap-[7px] whitespace-nowrap rounded-lg bg-nokta-surface px-3 text-[12.5px] font-semibold text-nokta-ink shadow-sm transition-colors hover:bg-nokta-hover" onClick={() => onOpenImage(0)}>
       <Camera className="h-3.5 w-3.5 shrink-0" />
       {/* Phones share the corner with the position dots, so show the bare count there. */}
       <span className="hidden sm:inline">All {images.length} photos</span>

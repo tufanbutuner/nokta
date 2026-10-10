@@ -234,7 +234,7 @@ export function OwnerEnquiriesPage() {
 }
 
 function FilterPill({ active, onClick, children }: { active: boolean; onClick: () => void; children: React.ReactNode }) {
-  return <button type="button" onClick={onClick} className={cn("flex h-[31px] items-center gap-1.5 rounded-full border bg-card px-3 text-[12.5px]", active && "border-nokta-ink bg-nokta-ink font-medium text-white")}>{children}</button>;
+  return <button type="button" onClick={onClick} className={cn("flex h-[31px] items-center gap-1.5 rounded-full border bg-card px-3 text-[12.5px]", active && "border-nokta-ink bg-nokta-solid-ink font-medium text-white")}>{children}</button>;
 }
 
 function Count({ value, active }: { value: number; active: boolean }) {

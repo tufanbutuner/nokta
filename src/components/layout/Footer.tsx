@@ -5,10 +5,10 @@ import { brandConfig } from "@/config/brand";
 
 export function Footer() {
   return (
-    <footer className="relative mt-20 overflow-hidden bg-nokta-ink py-12 text-sm text-white/72 sm:py-14">
+    <footer className="relative mt-20 overflow-hidden bg-nokta-solid-ink py-12 text-sm text-white/72 sm:py-14">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute bottom-0 left-1/2 z-0 h-60 w-60 translate-y-[68%] -translate-x-1/2 rounded-full bg-nokta-accent sm:h-80 sm:w-80 lg:h-96 lg:w-96"
+        className="pointer-events-none absolute bottom-0 left-1/2 z-0 h-60 w-60 translate-y-[68%] -translate-x-1/2 rounded-full bg-nokta-accent-solid sm:h-80 sm:w-80 lg:h-96 lg:w-96"
       />
       <PageContainer className="relative z-10">
         <div className="mx-auto max-w-2xl text-center">

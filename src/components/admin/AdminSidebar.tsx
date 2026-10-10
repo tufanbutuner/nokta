@@ -17,7 +17,7 @@ export function AdminSidebar({ activePath = "/admin/monetisation" }: { activePat
   const initials = getInitials(user?.email);
 
   return (
-    <aside className="hidden w-[220px] shrink-0 flex-col bg-nokta-ink px-4 py-5 text-clay-50 lg:flex">
+    <aside className="hidden w-[220px] shrink-0 flex-col bg-nokta-solid-ink px-4 py-5 text-clay-50 lg:flex">
       <NavLink to="/" className="flex items-center gap-2 font-wordmark text-xl font-bold tracking-[0.02em] text-clay-400">
         <span className="h-3.5 w-3.5 rounded-full bg-white" aria-hidden="true" />
         <span>nokta</span>

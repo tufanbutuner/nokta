@@ -1,4 +1,4 @@
-import type { StyleSpecification } from "maplibre-gl";
+import type { Map as MapLibreMap, StyleSpecification } from "maplibre-gl";
 
 /**
  * The nokta map: a quiet street sketch on cream so venue dots carry the page.
@@ -135,3 +135,29 @@ export const noktaMapStyle: StyleSpecification = {
     },
   ],
 };
+
+const darkMapColors: Record<string, string> = {
+  "#f7f1e8": "#171513",
+  "#ebe8d4": "#293129",
+  "#dde4e2": "#23343b",
+  "#efe6d9": "#28231f",
+  "#e8ddce": "#3b322b",
+  "#dfd0bc": "#514336",
+  "#d8c6af": "#65513e",
+  "#a3937f": "#a89987",
+  "#8a7a6a": "#b9a995",
+  "#6f6152": "#cdbca7",
+};
+
+export function applyMapTheme(map: MapLibreMap, dark: boolean) {
+  for (const layer of noktaMapStyle.layers) {
+    if (!("paint" in layer) || !layer.paint) continue;
+    for (const [property, value] of Object.entries(layer.paint)) {
+      if (typeof value === "string" && value in darkMapColors) {
+        map.setPaintProperty(layer.id, property, dark ? darkMapColors[value] : value);
+      }
+    }
+  }
+  map.setPaintProperty("venue-dots", "circle-color", ["case", ["get", "isOpen"], dark ? "#f1e8de" : "#2a211b", dark ? "#8a7a6a" : "#b3a596"]);
+  map.setPaintProperty("venue-dots", "circle-stroke-color", dark ? "#171513" : "#f7f1e8");
+}

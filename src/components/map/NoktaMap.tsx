@@ -1,7 +1,8 @@
 import maplibregl, { type GeoJSONSource, type Map as MapLibreMap } from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { useEffect, useRef } from "react";
-import { noktaMapStyle } from "@/lib/noktaMapStyle";
+import { applyMapTheme, noktaMapStyle } from "@/lib/noktaMapStyle";
+import { useTheme } from "@/context/ThemeContext";
 import type { UserLocation } from "@/types/location";
 
 export interface NoktaMapPoint {
@@ -45,6 +46,7 @@ export function NoktaMap({
   /** Space the map should keep clear for overlaid UI when centring. */
   padding: { top: number; bottom: number; left: number; right: number };
 }) {
+  const { theme } = useTheme();
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<MapLibreMap | null>(null);
   const loadedRef = useRef(false);
@@ -60,6 +62,12 @@ export function NoktaMap({
     if (loadedRef.current) fn();
     else readyQueueRef.current.push(fn);
   };
+
+  useEffect(() => {
+    whenReady(() => {
+      if (mapRef.current) applyMapTheme(mapRef.current, theme === "dark");
+    });
+  }, [theme]);
 
   useEffect(() => {
     if (!containerRef.current) return;

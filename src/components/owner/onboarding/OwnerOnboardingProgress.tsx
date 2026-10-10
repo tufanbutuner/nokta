@@ -12,7 +12,7 @@ export function OwnerOnboardingProgress({ tasks }: { tasks: OwnerOnboardingTask[
         <span className="text-nokta-ink-muted">{completed} of {total} complete</span>
       </div>
       <div className="mt-3 h-2 overflow-hidden rounded-full bg-nokta-page-bg">
-        <div className="h-full rounded-full bg-nokta-accent transition-[width]" style={{ width: `${percent}%` }} />
+        <div className="h-full rounded-full bg-nokta-accent-solid transition-[width]" style={{ width: `${percent}%` }} />
       </div>
     </div>
   );

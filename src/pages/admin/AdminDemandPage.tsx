@@ -188,7 +188,7 @@ export function AdminDemandPage() {
           </section>
 
           <aside className="flex flex-col gap-3">
-            <section className="rounded-xl bg-nokta-ink px-[15px] py-[14px] text-clay-50">
+            <section className="rounded-xl bg-nokta-solid-ink px-[15px] py-[14px] text-clay-50">
               <p className="text-[10px] font-semibold uppercase tracking-[1.6px] text-clay-200/75">Outreach list</p>
               <h2 className="mt-2 text-[15px] font-semibold">{outreach.length} unclaimed venues have demand</h2>
               <p className="mt-1.5 text-[11.5px] leading-[1.55] text-clay-50/65">{outreach.reduce((total, row) => total + row.count, 0)} requests nobody can answer until those venues are claimed.</p>
@@ -226,7 +226,7 @@ function DemandTable({ items, venuesById, onOpen }: { items: DemandItem[]; venue
 }
 
 function Metric({ label, value, sub, alert }: { label: string; value: string; sub: string; alert?: boolean }) { return <div className={cn("rounded-xl border bg-card px-4 py-[14px]", alert && "border-[oklch(0.87_0.08_75)] bg-[oklch(0.96_0.045_75)]")}><p className="text-[11.5px] text-muted-foreground">{label}</p><p className="mt-1 text-[22px] font-semibold">{value}</p><p className="mt-0.5 text-[11px] text-muted-foreground">{sub}</p></div>; }
-function FilterPill({ active, onClick, children }: { active: boolean; onClick: () => void; children: React.ReactNode }) { return <button type="button" onClick={onClick} className={cn("h-[31px] rounded-full border px-3 text-[12.5px]", active ? "border-nokta-ink bg-nokta-ink text-white" : "bg-card text-muted-foreground")}>{children}</button>; }
+function FilterPill({ active, onClick, children }: { active: boolean; onClick: () => void; children: React.ReactNode }) { return <button type="button" onClick={onClick} className={cn("h-[31px] rounded-full border px-3 text-[12.5px]", active ? "border-nokta-ink bg-nokta-solid-ink text-white" : "bg-card text-muted-foreground")}>{children}</button>; }
 function TypeChip({ kind }: { kind: DemandKind }) { return <span className={cn("inline-flex w-fit rounded-[5px] px-[7px] py-[3px] text-[10.5px] font-semibold uppercase", kind === "booking" ? "bg-clay-accent/12 text-[#a44a30]" : "bg-[oklch(0.93_0.03_250)] text-[oklch(0.36_0.08_250)]")}>{kind}</span>; }
 function StatusChip({ item }: { item: DemandItem }) { return <span className={cn("w-fit rounded-full px-2 py-[3px] text-[11px] font-semibold", isUnanswered(item) ? "bg-[oklch(0.96_0.045_75)] text-[oklch(0.36_0.08_75)]" : item.status === "spam" ? "bg-muted text-muted-foreground" : "bg-[oklch(0.94_0.02_150)] text-[oklch(0.36_0.06_150)]")}>{formatStatus(item)}</span>; }
 function InfoCard({ title, children }: { title: string; children: React.ReactNode }) { return <section className="rounded-xl border bg-card px-[15px] py-[14px]"><h2 className="text-[13px] font-semibold">{title}</h2><div className="mt-1.5 text-[11.5px] leading-[1.55] text-muted-foreground">{children}</div></section>; }

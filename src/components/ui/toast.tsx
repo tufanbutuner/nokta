@@ -24,7 +24,7 @@ export function Toast({ type, title, message, onClose, offsetBottom }: ToastStat
   const isSuccess = type === "success";
 
   return (
-    <div role="status" aria-live="polite" className={cn("fixed right-5 z-[80] w-[calc(100vw-2.5rem)] max-w-sm rounded-2xl border border-nokta-border bg-white p-4 shadow-2xl shadow-stone-950/15", offsetBottom ? "bottom-[calc(96px+env(safe-area-inset-bottom))]" : "bottom-5")}>
+    <div role="status" aria-live="polite" className={cn("fixed right-5 z-[80] w-[calc(100vw-2.5rem)] max-w-sm rounded-2xl border border-nokta-border bg-nokta-surface p-4 shadow-2xl shadow-stone-950/15", offsetBottom ? "bottom-[calc(96px+env(safe-area-inset-bottom))]" : "bottom-5")}>
       <div className="flex items-start gap-3">
         {isSuccess ? (
           <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-700" />

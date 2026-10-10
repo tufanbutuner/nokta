@@ -37,6 +37,9 @@
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
   --color-nokta-page-bg: oklch(0.95 0.045 55);
+  --color-nokta-map-bg: #f7f1e8;
+  --color-nokta-solid-ink: oklch(0.2 0.02 40);
+  --color-nokta-accent-solid: oklch(0.56 0.13 35);
   --color-nokta-surface: #ffffff;
   --color-nokta-surface-alt: oklch(0.995 0.001 60);
   --color-nokta-ink: oklch(0.2 0.02 40);
@@ -118,6 +121,7 @@
   }
 
   :root {
+    color-scheme: light;
     --background: 34 64% 91%;
     --foreground: 30 24% 14%;
     --card: 0 0% 100%;
@@ -134,6 +138,52 @@
     --input: 30 25% 74%;
     --ring: 14 53% 45%;
     --radius: 0.5rem;
+  }
+
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --background: 30 10% 8%;
+    --foreground: 34 30% 92%;
+    --card: 30 9% 12%;
+    --card-foreground: 34 30% 92%;
+    --primary: 14 53% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 30 10% 18%;
+    --secondary-foreground: 34 30% 92%;
+    --muted: 30 9% 20%;
+    --muted-foreground: 34 14% 70%;
+    --accent: 14 53% 45%;
+    --accent-foreground: 0 0% 100%;
+    --border: 30 10% 28%;
+    --input: 30 10% 35%;
+    --ring: 14 65% 66%;
+    --color-nokta-page-bg: #171513;
+    --color-nokta-map-bg: #171513;
+    --color-nokta-surface: #211e1b;
+    --color-nokta-surface-alt: #1b1917;
+    --color-nokta-ink: #f1e8de;
+    --color-nokta-ink-muted: #bcb0a4;
+    --color-nokta-ink-subtle: #d0c3b6;
+    --color-nokta-border: #494039;
+    --color-nokta-border-input: #68594c;
+    --color-nokta-divider: #38312c;
+    --color-nokta-divider-row: #332d28;
+    --color-nokta-row-border: #40372f;
+    --color-nokta-track: #38312c;
+    --color-nokta-hover: #302923;
+    --color-nokta-hover-row: #302923;
+    --color-nokta-chip-tint: #382822;
+    --color-nokta-accent: #e0805f;
+    --color-nokta-accent-dark: #efac91;
+    --color-nokta-accent-tint: #422c23;
+    --color-sheesh-ink: #f1e8de;
+    --color-clay-100: #38312c;
+    --color-clay-200: #6b4936;
+    --color-clay-300: #d4956e;
+    --color-clay-600: #f1e8de;
+    --color-forest-50: #7ec48818;
+    --color-forest-400: #7ec488;
+    --color-steel-400: #85b9dc;
   }
 
   * {
@@ -232,7 +282,7 @@
   font-family: var(--font-primary);
   font-size: 12.5px;
   font-weight: 600;
-  color: #fff;
+  color: var(--color-nokta-surface);
   box-shadow: 0 6px 14px -6px rgb(42 33 27 / 0.5);
 }
 
@@ -276,6 +326,15 @@
 .nokta-map .maplibregl-ctrl-attrib-button {
   background-repeat: no-repeat;
   background-position: center;
+}
+
+:root[data-theme="dark"] .nokta-map .maplibregl-ctrl-attrib {
+  background: rgb(33 30 27 / 0.9);
+  color: var(--color-nokta-ink-muted);
+}
+
+:root[data-theme="dark"] .leaflet-tile-pane {
+  filter: invert(1) hue-rotate(180deg) brightness(0.8) saturate(0.6);
 }
 
 /*

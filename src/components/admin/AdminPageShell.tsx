@@ -19,7 +19,7 @@ export function AdminPageShell({
   return (
     <main className="fixed inset-0 overflow-hidden bg-nokta-page-bg font-primary text-nokta-ink">
       <div className="flex h-full min-h-0 flex-col lg:flex-row">
-        <div className="shrink-0 border-b bg-nokta-ink text-clay-50 lg:hidden">
+        <div className="shrink-0 border-b bg-nokta-solid-ink text-clay-50 lg:hidden">
           <div className="flex h-14 items-center justify-between gap-3 px-4">
             <NavLink to="/" className="flex items-center gap-2 font-wordmark text-xl font-bold tracking-[0.02em] text-clay-400">
               <span className="h-3.5 w-3.5 rounded-full bg-white" aria-hidden="true" />

@@ -25,7 +25,7 @@ export function ClaimedVenueBadge({ size = "sm", className }: ClaimedVenueBadgeP
       <TooltipTrigger asChild>
         <span
           className={cn(
-            "inline-flex shrink-0 items-center justify-center rounded-full bg-nokta-ink text-white",
+            "inline-flex shrink-0 items-center justify-center rounded-full bg-nokta-solid-ink text-white",
             sizeClasses.root,
             className,
           )}

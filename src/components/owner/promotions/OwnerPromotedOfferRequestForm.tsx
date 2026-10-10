@@ -47,7 +47,7 @@ export function OwnerPromotedOfferRequestForm({ venue, onSubmit, isSubmitting }:
   return (
     <form onSubmit={handleSubmit} className="rounded-xl border bg-card p-5 shadow-sm">
       <p className="text-sm text-muted-foreground">Promoted offers are reviewed by nokta before they go live.</p>
-      <Alert className="mt-4 border-clay-400/20 bg-clay-50 text-sm text-nokta-ink">Please avoid directly promoting tobacco products, flavours, or smoking discounts.</Alert>
+      <Alert className="mt-4 border-clay-400/20 bg-nokta-surface-alt text-sm text-nokta-ink">Please avoid directly promoting tobacco products, flavours, or smoking discounts.</Alert>
       <div className="mt-5 grid gap-4 sm:grid-cols-2">
         <Field label="Venue"><Input value={venue.name} disabled /></Field>
         <Field label="Offer type" error={showErrors ? validation.errors.offerType : undefined}><Select value={values.offerType} onValueChange={(value) => setValues({ ...values, offerType: value as OwnerPromotionOfferType })} options={OFFER_TYPES} /></Field>

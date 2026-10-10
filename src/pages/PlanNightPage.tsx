@@ -231,7 +231,7 @@ export function PlanNightPage() {
       </section>
 
       {isRelaxed ? (
-        <p className="mt-6 rounded-xl border border-nokta-border bg-white px-4 py-3 text-[13.5px] text-nokta-ink-subtle">
+        <p className="mt-6 rounded-xl border border-nokta-border bg-nokta-surface px-4 py-3 text-[13.5px] text-nokta-ink-subtle">
           Nothing tagged {vibeConfig.phrase.replace(/^(somewhere|a spot|anywhere) /, "")} {areaText} yet, so here's everything open {dayText}.
         </p>
       ) : null}
@@ -268,7 +268,7 @@ export function PlanNightPage() {
       </div>
 
       <div className="fixed inset-x-0 bottom-3.5 z-30 mx-auto w-full max-w-[520px] px-3.5" aria-live="polite">
-        <div className="rounded-[18px] bg-nokta-ink px-4 py-3 text-white shadow-[0_14px_30px_-14px_rgba(42,33,27,0.6)]">
+        <div className="rounded-[18px] bg-nokta-solid-ink px-4 py-3 text-white shadow-[0_14px_30px_-14px_rgba(42,33,27,0.6)]">
           {shareUrl ? (
             <div className="flex flex-wrap items-center justify-between gap-3">
               <p className="text-[14px] font-semibold">Link ready. Send it to the group.</p>
@@ -276,7 +276,7 @@ export function PlanNightPage() {
                 {"share" in navigator ? (
                   <TrayButton onClick={nativeShare} label="Share"><Share2 className="h-4 w-4" /></TrayButton>
                 ) : null}
-                <a href={`https://wa.me/?text=${encodeURIComponent(shareText)}`} target="_blank" rel="noreferrer" className="inline-flex h-10 items-center gap-2 rounded-xl bg-white px-3.5 text-[14px] font-semibold text-nokta-ink">
+                <a href={`https://wa.me/?text=${encodeURIComponent(shareText)}`} target="_blank" rel="noreferrer" className="inline-flex h-10 items-center gap-2 rounded-xl bg-nokta-surface px-3.5 text-[14px] font-semibold text-nokta-ink">
                   <MessageCircle className="h-4 w-4" /> WhatsApp
                 </a>
                 <TrayButton onClick={copy} label={copied ? "Copied" : "Copy link"}>{copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}</TrayButton>
@@ -298,7 +298,7 @@ export function PlanNightPage() {
                 type="button"
                 onClick={send}
                 disabled={!pickedVenues.length || isSending}
-                className="inline-flex h-10 items-center gap-2 rounded-xl bg-white px-4 text-[14px] font-semibold text-nokta-ink transition-opacity disabled:cursor-not-allowed disabled:opacity-40"
+                className="inline-flex h-10 items-center gap-2 rounded-xl bg-nokta-surface px-4 text-[14px] font-semibold text-nokta-ink transition-opacity disabled:cursor-not-allowed disabled:opacity-40"
               >
                 <Share2 className="h-4 w-4" />
                 {isSending ? "Making link…" : user ? "Send to group" : "Sign in to send"}
@@ -341,7 +341,7 @@ function OptionChip({ isActive, onClick, children }: { isActive: boolean; onClic
       type="button"
       aria-pressed={isActive}
       onClick={onClick}
-      className={cn("rounded-full border px-[13px] py-2 text-[13.5px] font-medium transition-colors", isActive ? "border-nokta-ink bg-nokta-ink text-white" : "border-nokta-border bg-white text-nokta-ink hover:border-nokta-ink/40")}
+      className={cn("rounded-full border px-[13px] py-2 text-[13.5px] font-medium transition-colors", isActive ? "border-nokta-ink bg-nokta-solid-ink text-white" : "border-nokta-border bg-nokta-surface text-nokta-ink hover:border-nokta-ink/40")}
     >
       {children}
     </button>
@@ -350,7 +350,7 @@ function OptionChip({ isActive, onClick, children }: { isActive: boolean; onClic
 
 function TrayButton({ onClick, label, children }: { onClick: () => void; label: string; children: React.ReactNode }) {
   return (
-    <button type="button" onClick={onClick} className="inline-flex h-10 items-center gap-2 rounded-xl bg-white px-3.5 text-[14px] font-semibold text-nokta-ink">
+    <button type="button" onClick={onClick} className="inline-flex h-10 items-center gap-2 rounded-xl bg-nokta-surface px-3.5 text-[14px] font-semibold text-nokta-ink">
       {children} {label}
     </button>
   );

@@ -16,7 +16,7 @@ export function VenueMapPopup({ venue }: { venue: Venue }) {
           <VenueImage venue={venue} alt={`${venue.name} interior`} className="h-full w-full object-cover" />
         </Link>
         {venue.rating ? (
-          <span className="absolute left-2 top-2 inline-flex items-center gap-1 rounded-full bg-white px-2 py-0.5 text-[11px] font-semibold text-nokta-ink shadow-sm">
+          <span className="absolute left-2 top-2 inline-flex items-center gap-1 rounded-full bg-nokta-surface px-2 py-0.5 text-[11px] font-semibold text-nokta-ink shadow-sm">
             <Star className="h-3 w-3 fill-clay-accent text-clay-accent" />
             {venue.rating}
           </span>
