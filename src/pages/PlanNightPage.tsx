@@ -235,7 +235,7 @@ export function PlanNightPage() {
         </p>
       ) : null}
 
-      <section aria-label="Places" className="mt-6 grid gap-x-6 sm:grid-cols-2">
+      <section aria-label="Places" className="mt-6 grid grid-cols-[minmax(0,1fr)] gap-x-6 sm:grid-cols-2">
         {isLoading ? (
           [0, 1].map((key) => <Skeleton key={key} className="mb-6 h-[280px] rounded-xl" />)
         ) : !matches.length ? (
@@ -357,12 +357,12 @@ function TrayButton({ onClick, label, children }: { onClick: () => void; label: 
 
 function PlanVenue({ venue, hours, dayName, isPicked, isFull, onToggle }: { venue: Venue; hours: string | null; dayName: string; isPicked: boolean; isFull: boolean; onToggle: () => void }) {
   return (
-    <article className="border-t border-nokta-divider py-4 first:border-t-0 sm:[&:nth-child(2)]:border-t-0">
+    <article className="min-w-0 border-t border-nokta-divider py-4 first:border-t-0 sm:[&:nth-child(2)]:border-t-0">
       <Link to={`/venues/${venue.slug}`} className="block overflow-hidden rounded-xl">
         <VenueImage venue={venue} alt={`${venue.name}`} className="h-[180px] w-full object-cover" monogramClassName="h-[180px]" />
       </Link>
       <div className="mt-3 flex items-start justify-between gap-3">
-        <Link to={`/venues/${venue.slug}`} className="min-w-0">
+        <Link to={`/venues/${venue.slug}`} className="block min-w-0 flex-1" title={venue.name}>
           <h2 className="truncate text-[17px] font-semibold tracking-[-0.01em] text-nokta-ink">{venue.name}</h2>
           <p className="truncate text-[13px] text-nokta-ink-muted">{venue.area}</p>
         </Link>
