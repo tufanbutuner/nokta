@@ -17,7 +17,12 @@ const OWNER_NAV_ITEMS = [
   { label: "Account", to: "/account", icon: UserCircle },
 ] as const;
 
-export function OwnerLayout({ children }: { children: React.ReactNode }) {
+/**
+ * `fullWidth` drops the content padding and max-width so a child can paint
+ * edge-to-edge (e.g. the venue header band); the child then owns its own
+ * centring.
+ */
+export function OwnerLayout({ children, fullWidth = false }: { children: React.ReactNode; fullWidth?: boolean }) {
   const { user } = useAuth();
   const [isCollapsed, setIsCollapsed] = useState(() => localStorage.getItem("sheesh-owner-sidebar-collapsed") === "true");
   const [isMobileOpen, setIsMobileOpen] = useState(false);
@@ -138,9 +143,13 @@ export function OwnerLayout({ children }: { children: React.ReactNode }) {
             </div>
           </div>
         </aside>
-        <section className="min-h-0 min-w-0 flex-1 overflow-y-auto px-4 py-5 sm:px-6 lg:px-8">
-          <div className="mx-auto w-full max-w-[1440px]">{children}</div>
-        </section>
+        {fullWidth ? (
+          <section className="min-h-0 min-w-0 flex-1 overflow-y-auto">{children}</section>
+        ) : (
+          <section className="min-h-0 min-w-0 flex-1 overflow-y-auto px-4 py-5 sm:px-6 lg:px-8">
+            <div className="mx-auto w-full max-w-[1440px]">{children}</div>
+          </section>
+        )}
       </div>
     </main>
   );

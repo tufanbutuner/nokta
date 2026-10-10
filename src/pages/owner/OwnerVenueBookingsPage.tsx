@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { Link, useParams, useSearchParams } from "react-router-dom";
-import { OwnerLayout } from "@/components/owner/OwnerLayout";
-import { OwnerVenueTabShell } from "@/components/owner/OwnerVenueTabShell";
+import { Link, useSearchParams } from "react-router-dom";
+import { OwnerVenueTabHeader, useOwnerVenue } from "@/components/owner/OwnerVenueRouteLayout";
 import { VenueBookingListView, type VenueBookingListFilter } from "@/components/owner/venueBookings/VenueBookingListView";
 import { VenueBookingDetailSheet, type SuggestedAlternative } from "@/components/owner/venueBookings/VenueBookingDetailSheet";
 import { VenueBookingMonthGrid } from "@/components/owner/venueBookings/VenueBookingMonthGrid";
@@ -21,11 +20,9 @@ import { getWaitingDays, isEventAwaitingReply } from "@/lib/bookingCalendarGeome
 import { getEffectiveBookingSlot, OCCUPYING_BOOKING_STATUSES } from "@/lib/bookingSlot";
 import { createOwnerVenueBookingBlackoutDate, getOwnerVenueBookingAvailability } from "@/services/ownerBookingAvailabilityService";
 import { acceptBookingRequest, declineBookingRequest, getOwnerBookingRequest, getOwnerBookingRequests, proposeBookingAlternative } from "@/services/ownerBookingRequestService";
-import { getMyClaimedVenue } from "@/services/ownerVenueService";
 import type { VenueBookingAvailability } from "@/types/bookingAvailability";
 import type { BookingRequest } from "@/types/bookingRequests";
 import type { BookingCalendarEvent, BookingCalendarView } from "@/types/bookingCalendar";
-import type { Venue } from "@/types/venue";
 
 const VIEWS: BookingCalendarView[] = ["today", "week", "month", "list"];
 
@@ -34,9 +31,8 @@ const QUEUE_DAYS = 30;
 
 export function OwnerVenueBookingsPage() {
   const { user } = useAuth();
-  const { venueId = "" } = useParams();
+  const { venue } = useOwnerVenue();
   const [searchParams, setSearchParams] = useSearchParams();
-  const [venue, setVenue] = useState<Venue | null>(null);
   const [availability, setAvailability] = useState<VenueBookingAvailability | null>(null);
   const [requests, setRequests] = useState<BookingRequest[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -72,21 +68,18 @@ export function OwnerVenueBookingsPage() {
   }, [user]);
 
   useEffect(() => {
-    if (!user || !venueId) return;
+    if (!user) return;
     let cancelled = false;
     setIsLoading(true);
     setError(null);
-    getMyClaimedVenue({ userId: user.id, venueId })
-      .then(async (nextVenue) => {
-        if (!nextVenue) throw new Error("We could not find that venue.");
-        const [nextAvailability] = await Promise.all([
-          getOwnerVenueBookingAvailability({ ownerUserId: user.id, venueId: nextVenue.id }),
-          refreshRequests(nextVenue.id),
-        ]);
+    Promise.all([
+      getOwnerVenueBookingAvailability({ ownerUserId: user.id, venueId: venue.id }),
+      refreshRequests(venue.id),
+    ])
+      .then(([nextAvailability]) => {
         if (cancelled) return;
-        setVenue(nextVenue);
         setAvailability(nextAvailability);
-        trackEvent("owner_venue_bookings_viewed", { venueId: nextVenue.id, view });
+        trackEvent("owner_venue_bookings_viewed", { venueId: venue.id, view });
       })
       .catch((caughtError) => {
         if (!cancelled) setError(caughtError instanceof Error ? caughtError.message : "Could not load bookings.");
@@ -99,7 +92,7 @@ export function OwnerVenueBookingsPage() {
     };
     // `view` is intentionally excluded: it only shapes which slice of `requests` renders.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [user, venueId, refreshRequests]);
+  }, [user, venue.id, refreshRequests]);
 
   function updateParams(next: Record<string, string | null>) {
     const params = new URLSearchParams(searchParams);
@@ -117,9 +110,9 @@ export function OwnerVenueBookingsPage() {
   const events = useMemo(() => requests
     .map((request) => ({ request, slot: getEffectiveBookingSlot(request) }))
     .filter(({ slot }) => slot.date >= range.dateFrom && slot.date <= range.dateTo)
-    .map(({ request }) => mapBookingRequestToCalendarEvent({ bookingRequest: request, venueName: venue?.name ?? request.venueId }))
+    .map(({ request }) => mapBookingRequestToCalendarEvent({ bookingRequest: request, venueName: venue.name }))
     .sort((a, b) => `${a.date}T${a.time}`.localeCompare(`${b.date}T${b.time}`)),
-  [requests, range.dateFrom, range.dateTo, venue?.name]);
+  [requests, range.dateFrom, range.dateTo, venue.name]);
 
   /** The reply queue, independent of which period is on screen. */
   const waitingQueue = useMemo(() => {
@@ -139,7 +132,7 @@ export function OwnerVenueBookingsPage() {
   const durationMinutes = availability?.settings.defaultBookingDurationMinutes ?? 120;
 
   async function handleConfirm(event: BookingCalendarEvent) {
-    if (!user || !venue) return;
+    if (!user) return;
     const previousRequests = requests;
     try {
       setConfirmingId(event.id);
@@ -160,14 +153,14 @@ export function OwnerVenueBookingsPage() {
   function handleEventClick(event: BookingCalendarEvent) {
     setSelectedEvent(event);
     setSelectedRequest(null);
-    if (!user || !venue) return;
+    if (!user) return;
     getOwnerBookingRequest({ ownerUserId: user.id, venueId: venue.id, bookingRequestId: event.bookingRequestId })
       .then((request) => setSelectedRequest(request))
       .catch((caughtError) => setError(caughtError instanceof Error ? caughtError.message : "Could not load that booking."));
   }
 
   async function handleDeclineSelected() {
-    if (!user || !venue || !selectedEvent) return;
+    if (!user || !selectedEvent) return;
     const previousRequests = requests;
     try {
       setConfirmingId(selectedEvent.id);
@@ -184,7 +177,7 @@ export function OwnerVenueBookingsPage() {
   }
 
   async function handleSuggestSelected(alternative: SuggestedAlternative) {
-    if (!user || !venue || !selectedEvent) return;
+    if (!user || !selectedEvent) return;
     try {
       setConfirmingId(selectedEvent.id);
       await proposeBookingAlternative({
@@ -204,7 +197,7 @@ export function OwnerVenueBookingsPage() {
   }
 
   async function handleAddClosure(closure: ClosureInput) {
-    if (!user || !venue) return;
+    if (!user) return;
     try {
       setClosureError(null);
       setIsSavingClosure(true);
@@ -226,21 +219,21 @@ export function OwnerVenueBookingsPage() {
   const firstWaiting = waitingQueue[0];
 
   return (
-    <OwnerLayout>
-      <PageMeta title="Bookings | nokta" description="See requested bookings and set when you take them." canonicalPath={`/owner/venues/${venueId}/bookings`} />
-      {isLoading ? <LoadingState message="Loading bookings..." /> : !venue || !availability ? <ErrorState message={error ?? "Could not load bookings."} /> : (
-        <OwnerVenueTabShell
-          venue={venue}
-          title="Bookings"
-          actions={
-            <>
-              <Button asChild variant="outline" className="h-[34px] text-[13px]">
-                <Link to={`/owner/venues/${venue.slug}/bookings/rules`}>Booking rules</Link>
-              </Button>
-              <Button type="button" onClick={() => setIsClosureOpen(true)} className="h-[34px] text-[13px]">Add a closure</Button>
-            </>
-          }
-        >
+    <>
+      <PageMeta title="Bookings | nokta" description="See requested bookings and set when you take them." canonicalPath={`/owner/venues/${venue.slug}/bookings`} />
+      <OwnerVenueTabHeader
+        title="Bookings"
+        actions={
+          <>
+            <Button asChild variant="outline" className="h-[34px] text-[13px]">
+              <Link to={`/owner/venues/${venue.slug}/bookings/rules`}>Booking rules</Link>
+            </Button>
+            <Button type="button" onClick={() => setIsClosureOpen(true)} className="h-[34px] text-[13px]">Add a closure</Button>
+          </>
+        }
+      />
+      {isLoading ? <LoadingState message="Loading bookings..." /> : !availability ? <ErrorState message={error ?? "Could not load bookings."} /> : (
+        <>
           <div className="grid gap-[18px] lg:grid-cols-[1fr_274px] lg:items-start">
             <div className="flex min-w-0 flex-col gap-[13px]">
               {error ? <ErrorState message={error} /> : null}
@@ -357,9 +350,9 @@ export function OwnerVenueBookingsPage() {
             onOpenChange={setIsClosureOpen}
             onSubmit={handleAddClosure}
           />
-        </OwnerVenueTabShell>
+        </>
       )}
-    </OwnerLayout>
+    </>
   );
 }
 
