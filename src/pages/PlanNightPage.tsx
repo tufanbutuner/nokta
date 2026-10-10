@@ -143,7 +143,8 @@ export function PlanNightPage() {
         shortlist: {
           name,
           city,
-          answers: { occasion: people >= 8 ? "big-group" : "small-group", vibes: vibeConfig.vibes, budget: null, distance: null },
+          // The shortlist table allows at most three vibe tags.
+          answers: { occasion: people >= 8 ? "big-group" : "small-group", vibes: vibeConfig.vibes.slice(0, 3), budget: null, distance: null },
           picks: pickedVenues.map((venue) => ({
             venueId: venue.id,
             role: "chosen",
