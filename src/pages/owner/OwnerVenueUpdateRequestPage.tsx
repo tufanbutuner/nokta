@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import { OwnerLayout } from "@/components/owner/OwnerLayout";
-import { OwnerVenueTabShell } from "@/components/owner/OwnerVenueTabShell";
+import { Link } from "react-router-dom";
+import { OwnerVenueTabHeader, useOwnerVenue } from "@/components/owner/OwnerVenueRouteLayout";
 import { OwnerProfileStrengthCard } from "@/components/owner/updates/OwnerProfileStrengthCard";
 import { OwnerRecentRequestsCard } from "@/components/owner/updates/OwnerRecentRequestsCard";
 import { OwnerVenueProfileForm } from "@/components/owner/updates/OwnerVenueProfileForm";
@@ -15,18 +14,12 @@ import { brandConfig } from "@/config/brand";
 import { useAuth } from "@/context/AuthContext";
 import { trackEvent } from "@/lib/analytics";
 import { subscriptionHasPlanAccess } from "@/lib/planFeatureAccess";
-import { getOwnerVenueSubscription } from "@/services/ownerSubscriptionService";
-import { getMyClaimedVenue } from "@/services/ownerVenueService";
 import { createOwnerVenueUpdateRequest, getMyVenueUpdateRequestsForVenue, cancelOwnerVenueUpdateRequest } from "@/services/ownerVenueUpdateRequestService";
-import type { VenueSubscription } from "@/types/subscriptions";
-import type { Venue } from "@/types/venue";
 import type { VenueUpdateRequest, VenueUpdateRequestInput } from "@/types/venueUpdateRequests";
 
 export function OwnerVenueUpdateRequestPage() {
-  const { venueId = "" } = useParams();
   const { user } = useAuth();
-  const [venue, setVenue] = useState<Venue | null>(null);
-  const [subscription, setSubscription] = useState<VenueSubscription | null>(null);
+  const { venue, subscription } = useOwnerVenue();
   const [requests, setRequests] = useState<VenueUpdateRequest[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -37,23 +30,13 @@ export function OwnerVenueUpdateRequestPage() {
   const formRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!user || !venueId) return;
+    if (!user) return;
     let cancelled = false;
-    getMyClaimedVenue({ userId: user.id, venueId })
-      .then(async (nextVenue) => {
-        if (!nextVenue) throw new Error("Venue dashboard not found.");
-        const [nextRequests, nextSubscription] = await Promise.all([
-          getMyVenueUpdateRequestsForVenue({ userId: user.id, venueId: nextVenue.id }),
-          getOwnerVenueSubscription({ userId: user.id, venueId: nextVenue.id }),
-        ]);
-        return { nextVenue, nextRequests, nextSubscription };
-      })
-      .then(({ nextVenue, nextRequests, nextSubscription }) => {
+    getMyVenueUpdateRequestsForVenue({ userId: user.id, venueId: venue.id })
+      .then((nextRequests) => {
         if (cancelled) return;
-        setVenue(nextVenue);
         setRequests(nextRequests);
-        setSubscription(nextSubscription);
-        trackEvent("owner_profile_update_started", { venueId: nextVenue.id, city: nextVenue.city, area: nextVenue.area, partnerTier: nextVenue.partnerTier });
+        trackEvent("owner_profile_update_started", { venueId: venue.id, city: venue.city, area: venue.area, partnerTier: venue.partnerTier });
       })
       .catch((caughtError) => {
         if (!cancelled) setError(caughtError instanceof Error ? caughtError.message : "Could not load update request page.");
@@ -64,7 +47,9 @@ export function OwnerVenueUpdateRequestPage() {
     return () => {
       cancelled = true;
     };
-  }, [user, venueId]);
+    // Track and load once per venue, not on every venue object refresh.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user, venue.id]);
 
   /**
    * Returns whether the request was created, so the form only clears its
@@ -114,15 +99,14 @@ export function OwnerVenueUpdateRequestPage() {
   const pendingRequest = requests.find((request) => request.status === "pending") ?? null;
 
   return (
-    <OwnerLayout>
-      <PageMeta title={venue ? `${venue.name} profile | nokta` : "Venue profile | nokta"} description="Review venue profile details and submit approved-field changes." canonicalPath={venue ? `/owner/venues/${venue.slug}/profile` : undefined} />
-      {isLoading ? <LoadingState message="Loading update request..." /> : error && !venue ? <ErrorState message={error} /> : venue ? (
-        <OwnerVenueTabShell
-          venue={venue}
-          title={venue.name}
-          canNavigate={() => !isDirty || window.confirm("You have unsaved changes. Leave without submitting?")}
-          actions={<Button asChild variant="outline" className="h-[34px] rounded-lg border-nokta-border-input text-[13px] font-medium"><Link to={`/venues/${venue.slug}`}>Preview public page</Link></Button>}
-        >
+    <>
+      <PageMeta title={`${venue.name} profile | nokta`} description="Review venue profile details and submit approved-field changes." canonicalPath={`/owner/venues/${venue.slug}/profile`} />
+      <OwnerVenueTabHeader
+        title={venue.name}
+        canNavigate={() => !isDirty || window.confirm("You have unsaved changes. Leave without submitting?")}
+        actions={<Button asChild variant="outline" className="h-[34px] rounded-lg border-nokta-border-input text-[13px] font-medium"><Link to={`/venues/${venue.slug}`}>Preview public page</Link></Button>}
+      />
+      {isLoading ? <LoadingState message="Loading update request..." /> : error ? <ErrorState message={error} /> : (
           <div className="flex flex-wrap items-start gap-x-7 gap-y-5 pb-[170px]">
             <main ref={formRef} className="flex min-w-0 flex-[1_1_420px] flex-col gap-4">
               <div className="rounded-[10px] border border-nokta-border border-l-[3px] border-l-clay-300 bg-white px-[15px] py-[13px] text-[13px] leading-[1.55] text-nokta-ink-subtle">
@@ -142,9 +126,8 @@ export function OwnerVenueUpdateRequestPage() {
               <OwnerRecentRequestsCard requests={requests} onCancel={handleCancel} cancellingId={cancellingId} />
             </aside>
           </div>
-        </OwnerVenueTabShell>
-      ) : null}
+      )}
       {toast ? <Toast {...toast} onClose={dismissToast} offsetBottom={isDirty} /> : null}
-    </OwnerLayout>
+    </>
   );
 }

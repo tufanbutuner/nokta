@@ -31,6 +31,7 @@ const OwnerBillingSuccessPage = lazyPage(() => import("@/pages/owner/OwnerBillin
 const OwnerBookingsPage = lazyPage(() => import("@/pages/owner/OwnerBookingsPage"), "OwnerBookingsPage");
 
 const OwnerEnquiriesPage = lazyPage(() => import("@/pages/owner/OwnerEnquiriesPage"), "OwnerEnquiriesPage");
+const OwnerVenueRouteLayout = lazyPage(() => import("@/components/owner/OwnerVenueRouteLayout"), "OwnerVenueRouteLayout");
 const OwnerVenueBookingsPage = lazyPage(() => import("@/pages/owner/OwnerVenueBookingsPage"), "OwnerVenueBookingsPage");
 const OwnerVenueBookingRulesPage = lazyPage(() => import("@/pages/owner/OwnerVenueBookingRulesPage"), "OwnerVenueBookingRulesPage");
 const OwnerVenueAnalyticsPage = lazyPage(() => import("@/pages/owner/OwnerVenueAnalyticsPage"), "OwnerVenueAnalyticsPage");
@@ -117,22 +118,6 @@ export const routes: RouteObject[] = [
         ),
       },
       {
-        path: "/owner/venues/:venueId/bookings",
-        element: routeElement(
-          <RequireAuth>
-            <OwnerVenueBookingsPage />
-          </RequireAuth>,
-        ),
-      },
-      {
-        path: "/owner/venues/:venueId/bookings/rules",
-        element: routeElement(
-          <RequireAuth>
-            <OwnerVenueBookingRulesPage />
-          </RequireAuth>,
-        ),
-      },
-      {
         path: "/owner",
         element: routeElement(
           <RequireAuth>
@@ -166,43 +151,26 @@ export const routes: RouteObject[] = [
       },
       {
         path: "/owner/venues/:venueId",
-        element: routeElement(
-          <RequireAuth>
-            <VenueRouteRedirect destination="profile" />
-          </RequireAuth>,
-        ),
-      },
-      {
-        path: "/owner/venues/:venueId/profile",
-        element: routeElement(
-          <RequireAuth>
-            <OwnerVenueUpdateRequestPage />
-          </RequireAuth>,
-        ),
-      },
-      {
-        path: "/owner/venues/:venueId/performance",
-        element: routeElement(
-          <RequireAuth>
-            <OwnerVenueAnalyticsPage />
-          </RequireAuth>,
-        ),
-      },
-      {
-        path: "/owner/venues/:venueId/menu",
-        element: routeElement(
-          <RequireAuth>
-            <OwnerVenueMenuPage />
-          </RequireAuth>,
-        ),
-      },
-      {
-        path: "/owner/venues/:venueId/photos",
-        element: routeElement(
-          <RequireAuth>
-            <OwnerVenueMediaPage />
-          </RequireAuth>,
-        ),
+        children: [
+          { index: true, element: <RequireAuth><VenueRouteRedirect destination="profile" /></RequireAuth> },
+          {
+            // Pathless layout: the sidebar, venue header and tab bar stay mounted
+            // across tabs, and lazy tab chunks suspend inside the content area.
+            element: routeElement(
+              <RequireAuth>
+                <OwnerVenueRouteLayout />
+              </RequireAuth>,
+            ),
+            children: [
+              { path: "profile", element: <OwnerVenueUpdateRequestPage /> },
+              { path: "bookings", element: <OwnerVenueBookingsPage /> },
+              { path: "bookings/rules", element: <OwnerVenueBookingRulesPage /> },
+              { path: "menu", element: <OwnerVenueMenuPage /> },
+              { path: "photos", element: <OwnerVenueMediaPage /> },
+              { path: "performance", element: <OwnerVenueAnalyticsPage /> },
+            ],
+          },
+        ],
       },
       {
         path: "/owner/venues/:venueId/analytics",

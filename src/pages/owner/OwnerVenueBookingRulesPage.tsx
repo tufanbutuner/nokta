@@ -1,8 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { X } from "lucide-react";
-import { OwnerLayout } from "@/components/owner/OwnerLayout";
-import { OwnerVenueTabShell } from "@/components/owner/OwnerVenueTabShell";
+import { OwnerVenueTabHeader, useOwnerVenue } from "@/components/owner/OwnerVenueRouteLayout";
 import { PageMeta } from "@/components/seo/PageMeta";
 import { ErrorState } from "@/components/state/ErrorState";
 import { LoadingState } from "@/components/state/LoadingState";
@@ -22,9 +21,7 @@ import {
   replaceOwnerVenueBookingWindows,
   updateOwnerVenueBookingSettings,
 } from "@/services/ownerBookingAvailabilityService";
-import { getMyClaimedVenue } from "@/services/ownerVenueService";
 import type { VenueBookingAvailability, VenueBookingSettings } from "@/types/bookingAvailability";
-import type { Venue } from "@/types/venue";
 
 const NOTICE_OPTIONS = [
   { label: "No notice", value: "0" },
@@ -56,9 +53,8 @@ interface GroupWindow {
 
 export function OwnerVenueBookingRulesPage() {
   const { user } = useAuth();
-  const { venueId = "" } = useParams();
+  const { venue } = useOwnerVenue();
   const navigate = useNavigate();
-  const [venue, setVenue] = useState<Venue | null>(null);
   const [availability, setAvailability] = useState<VenueBookingAvailability | null>(null);
   const [settings, setSettings] = useState<Partial<VenueBookingSettings>>({});
   const [groups, setGroups] = useState<Record<string, GroupWindow>>({});
@@ -71,18 +67,16 @@ export function OwnerVenueBookingRulesPage() {
   const [notice, setNotice] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!user || !venueId) return;
+    if (!user) return;
     let cancelled = false;
     setIsLoading(true);
-    Promise.all([getMyClaimedVenue({ userId: user.id, venueId }), getOwnerVenueBookingAvailability({ ownerUserId: user.id, venueId })])
-      .then(([nextVenue, nextAvailability]) => {
-        if (!nextVenue) throw new Error("We could not find that venue.");
+    getOwnerVenueBookingAvailability({ ownerUserId: user.id, venueId: venue.id })
+      .then((nextAvailability) => {
         if (cancelled) return;
-        setVenue(nextVenue);
         setAvailability(nextAvailability);
         setSettings(nextAvailability.settings);
         setGroups(toGroupWindows(nextAvailability));
-        trackEvent("owner_booking_rules_viewed", { venueId: nextVenue.id });
+        trackEvent("owner_booking_rules_viewed", { venueId: venue.id });
       })
       .catch((caughtError) => {
         if (!cancelled) setError(caughtError instanceof Error ? caughtError.message : "Could not load booking rules.");
@@ -93,7 +87,7 @@ export function OwnerVenueBookingRulesPage() {
     return () => {
       cancelled = true;
     };
-  }, [user, venueId]);
+  }, [user, venue.id]);
 
   const validation = useMemo(() => validateVenueBookingSettings(settings), [settings]);
   const windowErrors = useMemo(() => {
@@ -111,7 +105,7 @@ export function OwnerVenueBookingRulesPage() {
   const canSave = validation.isValid && !Object.keys(windowErrors).length;
 
   async function handleSave() {
-    if (!user || !venue || !canSave) return;
+    if (!user || !canSave) return;
     try {
       setIsSaving(true);
       setError(null);
@@ -137,7 +131,7 @@ export function OwnerVenueBookingRulesPage() {
   }
 
   async function handleAddClosure() {
-    if (!user || !venue) return;
+    if (!user) return;
     const dateError = validateVenueBookingClosureDate(closureDate);
     if (dateError) {
       setClosureError(dateError);
@@ -160,7 +154,7 @@ export function OwnerVenueBookingRulesPage() {
   }
 
   async function handleRemoveClosure(blackoutDateId: string) {
-    if (!user || !venue) return;
+    if (!user) return;
     try {
       await deleteOwnerVenueBookingBlackoutDate({ ownerUserId: user.id, venueId: venue.id, blackoutDateId });
       const nextAvailability = await getOwnerVenueBookingAvailability({ ownerUserId: user.id, venueId: venue.id });
@@ -171,10 +165,10 @@ export function OwnerVenueBookingRulesPage() {
   }
 
   return (
-    <OwnerLayout>
-      <PageMeta title="Booking rules | nokta" description="Set when and how you take booking requests." canonicalPath={`/owner/venues/${venueId}/bookings/rules`} />
-      {isLoading ? <LoadingState message="Loading booking rules..." /> : !venue || !availability ? <ErrorState message={error ?? "Could not load booking rules."} /> : (
-        <OwnerVenueTabShell venue={venue} title="Booking rules">
+    <>
+      <PageMeta title="Booking rules | nokta" description="Set when and how you take booking requests." canonicalPath={`/owner/venues/${venue.slug}/bookings/rules`} />
+      <OwnerVenueTabHeader title="Booking rules" />
+      {isLoading ? <LoadingState message="Loading booking rules..." /> : !availability ? <ErrorState message={error ?? "Could not load booking rules."} /> : (
           <div className="flex max-w-[560px] flex-col gap-3">
             {error ? <ErrorState message={error} /> : null}
             {notice ? <p className="rounded-lg border border-[oklch(0.86_0.06_150)] bg-[oklch(0.96_0.03_150)] px-3 py-2 text-[13px] text-[oklch(0.32_0.06_150)]">{notice}</p> : null}
@@ -333,9 +327,8 @@ export function OwnerVenueBookingRulesPage() {
             </div>
             <p className="text-[11.5px] text-muted-foreground">No admin review — these are operational, not public copy.</p>
           </div>
-        </OwnerVenueTabShell>
       )}
-    </OwnerLayout>
+    </>
   );
 }
 

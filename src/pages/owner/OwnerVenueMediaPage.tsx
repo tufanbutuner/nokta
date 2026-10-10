@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import { OwnerLayout } from "@/components/owner/OwnerLayout";
-import { OwnerVenueTabShell } from "@/components/owner/OwnerVenueTabShell";
+import { Link } from "react-router-dom";
+import { OwnerVenueTabHeader, useOwnerVenue } from "@/components/owner/OwnerVenueRouteLayout";
 import { OwnerMediaGrid } from "@/components/owner/media/OwnerMediaGrid";
 import { OwnerMediaGuidelines } from "@/components/owner/media/OwnerMediaGuidelines";
 import { OwnerMediaMetadataDialog } from "@/components/owner/media/OwnerMediaMetadataDialog";
@@ -13,31 +12,26 @@ import { Button } from "@/components/ui/button";
 import { useAuth } from "@/context/AuthContext";
 import { trackEvent } from "@/lib/analytics";
 import { deleteOwnerPendingMedia, getOwnerVenueMedia, updateOwnerVenueMediaMetadata } from "@/services/ownerVenueMediaService";
-import { getMyClaimedVenue } from "@/services/ownerVenueService";
 import type { VenueMedia } from "@/types/venueMedia";
-import type { Venue } from "@/types/venue";
 
 export function OwnerVenueMediaPage() {
   const { user } = useAuth();
-  const { venueId = "" } = useParams();
-  const [venue, setVenue] = useState<Venue | null>(null);
+  const { venue } = useOwnerVenue();
   const [media, setMedia] = useState<VenueMedia[]>([]);
   const [editing, setEditing] = useState<VenueMedia | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!user || !venueId) return;
+    if (!user) return;
     let cancelled = false;
     setIsLoading(true);
     setError(null);
-    Promise.all([getMyClaimedVenue({ userId: user.id, venueId }), getOwnerVenueMedia({ userId: user.id, venueId })])
-      .then(([nextVenue, nextMedia]) => {
-        if (!nextVenue) throw new Error("Venue media page not found.");
+    getOwnerVenueMedia({ userId: user.id, venueId: venue.id })
+      .then((nextMedia) => {
         if (cancelled) return;
-        setVenue(nextVenue);
         setMedia(nextMedia);
-        trackEvent("owner_media_page_viewed", { venueId: nextVenue.id, city: nextVenue.city, area: nextVenue.area });
+        trackEvent("owner_media_page_viewed", { venueId: venue.id, city: venue.city, area: venue.area });
       })
       .catch((caughtError) => {
         if (!cancelled) setError(caughtError instanceof Error ? caughtError.message : "Could not load venue media.");
@@ -48,7 +42,9 @@ export function OwnerVenueMediaPage() {
     return () => {
       cancelled = true;
     };
-  }, [user, venueId]);
+    // Track and load once per venue, not on every venue object refresh.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user, venue.id]);
 
   async function handleSaveMetadata(input: { altText: string; caption: string }) {
     if (!user || !editing) return;
@@ -65,14 +61,13 @@ export function OwnerVenueMediaPage() {
   }
 
   return (
-    <OwnerLayout>
-      <PageMeta title={venue ? `${venue.name} photos | nokta` : "Venue photos | nokta"} description="Upload and manage venue photos for review." canonicalPath={venue ? `/owner/venues/${venue.slug}/photos` : undefined} />
-      {isLoading ? <LoadingState message="Loading venue photos..." /> : error || !venue || !user ? <ErrorState title="Venue media not found" message={error ?? "You do not have access to this venue media page."} /> : (
-        <OwnerVenueTabShell
-          venue={venue}
-          title="Photos"
-          actions={<Button asChild variant="outline" className="h-[34px] text-[13px]"><Link to={`/venues/${venue.slug}`}>Preview public page</Link></Button>}
-        >
+    <>
+      <PageMeta title={`${venue.name} photos | nokta`} description="Upload and manage venue photos for review." canonicalPath={`/owner/venues/${venue.slug}/photos`} />
+      <OwnerVenueTabHeader
+        title="Photos"
+        actions={<Button asChild variant="outline" className="h-[34px] text-[13px]"><Link to={`/venues/${venue.slug}`}>Preview public page</Link></Button>}
+      />
+      {isLoading ? <LoadingState message="Loading venue photos..." /> : error || !user ? <ErrorState title="Venue media not found" message={error ?? "You do not have access to this venue media page."} /> : (
         <div className="space-y-5">
           <p className="text-[13px] text-muted-foreground">Upload original venue photos for admin review. Approved photos appear on the public venue page.</p>
           <div className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_340px]">
@@ -84,8 +79,7 @@ export function OwnerVenueMediaPage() {
           </div>
           {editing ? <OwnerMediaMetadataDialog media={editing} onClose={() => setEditing(null)} onSave={handleSaveMetadata} /> : null}
         </div>
-        </OwnerVenueTabShell>
       )}
-    </OwnerLayout>
+    </>
   );
 }
