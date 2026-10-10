@@ -141,7 +141,9 @@ if (extractSlugBody(readFileSync("src/lib/cities.ts", "utf8"), "export function 
  */
 const CANONICAL_HOST = "https://www.nokta.uk";
 const hostSources: [string, string, string][] = [
-  ["middleware.ts SITE_URL", edgeMeta, 'const SITE_URL = "([^"]+)"'],
+  // SITE_URL resolves from APP_URL / VERCEL_URL so QA previews get their own host;
+  // the literal fallback is the production canonical.
+  ["middleware.ts SITE_URL fallback", edgeMeta, 'if \\(!configured\\) return "([^"]+)"'],
   ["PageMeta.tsx FALLBACK_SITE_URL", readFileSync("src/components/seo/PageMeta.tsx", "utf8"), 'const FALLBACK_SITE_URL = "([^"]+)"'],
   ["generate-sitemap.ts default", readFileSync("scripts/generate-sitemap.ts", "utf8"), '\\|\\| "(https://[^"]+)"'],
   ["robots.txt Sitemap", readFileSync("public/robots.txt", "utf8"), "Sitemap: (https?://[^/\\s]+)"],

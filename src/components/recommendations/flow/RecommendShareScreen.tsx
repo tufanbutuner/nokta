@@ -33,7 +33,7 @@ export function RecommendShareScreen({
         <RecommendEyebrow>Share</RecommendEyebrow>
         <h1 className="text-[clamp(24px,4.6cqi,38px)] font-semibold leading-[1.08] tracking-[-1.1px]">Send the three, not the search.</h1>
         <p className="max-w-[560px] text-[clamp(13px,1.5cqi,15.5px)] leading-[1.5] text-white/[.58]">
-          Anyone opening the link sees the same three picks and can vote on one. Your location is never included.
+          Anyone opening the link sees the same three picks. Your location is never included.
         </p>
       </div>
 
