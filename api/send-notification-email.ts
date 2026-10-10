@@ -19,23 +19,53 @@ function isUuid(value: unknown): value is string {
   return typeof value === "string" && /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(value);
 }
 
-export default async function handler(request: Request): Promise<Response> {
+/**
+ * Vercel invokes `api/` functions with the classic (request, response) pair and
+ * waits for `response` to be answered. Returning a web `Response` instead leaves
+ * the request hanging forever, so this handler speaks the Node signature.
+ */
+type HandlerRequest = {
+  method?: string;
+  body?: unknown;
+  json?: () => Promise<unknown>;
+};
+
+type HandlerResponse = {
+  status: (code: number) => HandlerResponse;
+  json: (body: unknown) => void;
+};
+
+async function readBody(request: HandlerRequest): Promise<unknown> {
+  // The Node runtime parses JSON bodies itself, so `body` is usually already there.
+  if (request.body !== undefined && request.body !== null) return request.body;
+  if (typeof request.json === "function") return request.json();
+  throw new Error("Request body is unavailable.");
+}
+
+export default async function handler(request: HandlerRequest, response: HandlerResponse): Promise<void> {
+  const fail = (status: number, error: string) => {
+    response.status(status).json({ error });
+  };
+
   if (request.method !== "POST") {
-    return Response.json({ error: "Method not allowed." }, { status: 405 });
+    fail(405, "Method not allowed.");
+    return;
   }
 
   const functionUrl = process.env.SUPABASE_URL;
   const secret = process.env.NOTIFICATION_DISPATCH_SECRET;
   if (!functionUrl || !secret) {
     console.error("send-notification-email proxy is not configured.");
-    return Response.json({ error: "Email delivery is not configured." }, { status: 500 });
+    fail(500, "Email delivery is not configured.");
+    return;
   }
 
   let body: RequestBody;
   try {
-    body = (await request.json()) as RequestBody;
+    body = (await readBody(request)) as RequestBody;
   } catch {
-    return Response.json({ error: "Invalid request body." }, { status: 400 });
+    fail(400, "Invalid request body.");
+    return;
   }
 
   // Forward only known identifiers, and only when they are well formed. The edge
@@ -45,20 +75,24 @@ export default async function handler(request: Request): Promise<Response> {
   for (const key of ALLOWED_KEYS) {
     const value = body[key];
     if (value === undefined || value === null) continue;
-    if (!isUuid(value)) return Response.json({ error: `${key} must be a UUID.` }, { status: 400 });
+    if (!isUuid(value)) {
+      fail(400, `${key} must be a UUID.`);
+      return;
+    }
     forwarded[key] = value;
   }
 
   if (Object.keys(forwarded).length === 0) {
-    return Response.json({ error: "notificationId, bookingRequestId or enquiryId is required." }, { status: 400 });
+    fail(400, "notificationId, bookingRequestId or enquiryId is required.");
+    return;
   }
 
-  const response = await fetch(`${functionUrl.replace(/\/$/, "")}/functions/v1/send-notification-email`, {
+  const upstream = await fetch(`${functionUrl.replace(/\/$/, "")}/functions/v1/send-notification-email`, {
     method: "POST",
     headers: { "Content-Type": "application/json", "x-notification-secret": secret },
     body: JSON.stringify(forwarded),
   });
 
-  const result = await response.json().catch(() => ({}));
-  return Response.json(result, { status: response.status });
+  const result = await upstream.json().catch(() => ({}));
+  response.status(upstream.status).json(result);
 }
