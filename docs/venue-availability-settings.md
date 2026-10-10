@@ -21,9 +21,13 @@ The public booking request form validates against these settings before submit, 
 ## Slot capacity (sprint 51)
 
 - Each venue has `slot_capacity`: how many accepted bookings may hold the same
-  date+time slot (default 1). The picker drops a time only once accepted
+  date+time slot (default 4 since sprint 52; venues pick their own from Booking
+  rules). The picker drops a time only once accepted
   bookings for it reach the capacity, and `checkBookingAvailability` rejects
   submits past it.
+- Venues with no `venue_booking_settings` row still get the default: the
+  trigger's `coalesce(max(slot_capacity), 4)` covers them, so raising the
+  default reaches every venue, not just configured ones.
 - Only `accepted` and `customer_accepted_alternative` occupy a slot; pending
   requests never hold capacity.
 - An agreed alternative occupies its **proposed** date/time, not the originally

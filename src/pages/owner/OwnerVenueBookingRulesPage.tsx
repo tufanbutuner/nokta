@@ -221,7 +221,7 @@ export function OwnerVenueBookingRulesPage() {
               <h2 className="text-[14.5px] font-semibold text-nokta-ink">Bookings per time slot</h2>
               <div className="mt-3 flex flex-wrap items-end gap-4">
                 <Field label="Parties per time" error={validation.errors.slotCapacity}>
-                  <Input type="number" min={1} max={50} value={settings.slotCapacity ?? 1} onChange={(event) => setSettings({ ...settings, slotCapacity: Number(event.target.value) })} className="h-9 w-[110px]" />
+                  <Input type="number" min={1} max={50} value={settings.slotCapacity ?? 4} onChange={(event) => setSettings({ ...settings, slotCapacity: Number(event.target.value) })} className="h-9 w-[110px]" />
                 </Field>
                 <p className="max-w-[330px] flex-1 text-[11.5px] leading-[1.5] text-muted-foreground">
                   How many separate parties can hold the same time — 6pm, 6:30pm and so on. You still approve every request; the cap only stops a slot being confirmed past what your room can take.
