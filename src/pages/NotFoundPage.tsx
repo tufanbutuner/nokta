@@ -14,8 +14,8 @@ export function NotFoundPage() {
           <p className="mx-auto mt-3 max-w-md text-muted-foreground">This page does not exist or may have moved.</p>
           <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
             <Button asChild>
-              <Link to="/discover">
-                Explore Discover
+              <Link to="/">
+                Explore the map
               </Link>
             </Button>
             <Button asChild variant="outline">

@@ -13,6 +13,9 @@ export interface NoktaMapPoint {
   label: string;
 }
 
+/** Fly to a point, or frame a set of venues ([[west, south], [east, north]]). */
+export type NoktaMapFocus = { longitude: number; latitude: number; zoom?: number } | { bounds: [[number, number], [number, number]] };
+
 const INK = "#2a211b";
 const MUTED = "#b3a596";
 const CLAY = "#c45d3e";
@@ -37,7 +40,7 @@ export function NoktaMap({
   center: [number, number];
   zoom: number;
   /** Changing this object flies the camera to it. */
-  focus: { longitude: number; latitude: number; zoom?: number } | null;
+  focus: NoktaMapFocus | null;
   userLocation: UserLocation | null;
   /** Space the map should keep clear for overlaid UI when centring. */
   padding: { top: number; bottom: number; left: number; right: number };
@@ -176,8 +179,10 @@ export function NoktaMap({
   }, [selectedId, points]);
 
   useEffect(() => {
-    if (!focus || !mapRef.current) return;
-    mapRef.current.flyTo({ center: [focus.longitude, focus.latitude], zoom: focus.zoom ?? mapRef.current.getZoom(), padding, duration: 900, essential: true });
+    const map = mapRef.current;
+    if (!focus || !map) return;
+    if ("bounds" in focus) map.fitBounds(focus.bounds, { padding, maxZoom: 14, duration: 900, essential: true });
+    else map.flyTo({ center: [focus.longitude, focus.latitude], zoom: focus.zoom ?? map.getZoom(), padding, duration: 900, essential: true });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [focus]);
 

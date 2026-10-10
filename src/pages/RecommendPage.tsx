@@ -386,7 +386,7 @@ export function RecommendPage() {
           matchCount={matches.length}
           isSaved={isFavourite}
           isSaving={isSaving}
-          allMatchesHref={`/discover?${answersToSearchParams(answers).toString()}`}
+          allMatchesHref="/"
           onEdit={() => setFlow({ screen: "q", step: 0 })}
           onSaveAll={() => void saveShortlist()}
           onShare={() => void openShare()}

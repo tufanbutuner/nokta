@@ -6,7 +6,7 @@ export function SavedEmptyState({ showSignInCta = false }: { showSignInCta?: boo
       title="No saved venues yet"
       description={`Tap the heart on any venue to save it here.${showSignInCta ? " Sign in to sync your saved venues across devices." : ""}`}
       actionLabel="Discover venues"
-      actionHref="/discover"
+      actionHref="/"
       secondaryActionLabel={showSignInCta ? "Sign in" : undefined}
       secondaryActionHref={showSignInCta ? "/sign-in" : undefined}
     />

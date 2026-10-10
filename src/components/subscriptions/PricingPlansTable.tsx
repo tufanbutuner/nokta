@@ -109,7 +109,7 @@ export function PricingPlansTable({
 function PlanAction({ plan, marketing, isCurrentPlan, disabled, isChoosingPlan, onChoosePlan, highlighted }: { plan: DisplayPlan; marketing: boolean; isCurrentPlan: boolean; disabled?: boolean; isChoosingPlan?: PaidVenuePlan | null; onChoosePlan?: (plan: PaidVenuePlan) => void; highlighted: boolean }) {
   const label = isCurrentPlan ? "Current plan" : plan.plan === "free" ? "Claim your venue" : isChoosingPlan === plan.plan ? "Opening checkout..." : `Start ${plan.name}`;
   const className = cn("mt-auto h-[42px] w-full rounded-[10px]", highlighted ? "bg-clay-accent text-white hover:bg-clay-accent-hover" : "border-nokta-border bg-white text-nokta-ink hover:bg-nokta-page-bg");
-  if (marketing) return <Button asChild variant={highlighted ? "default" : "outline"} className={cn("mt-6", className)}><Link to={plan.plan === "free" ? "/discover" : `/owner/billing?plan=${plan.plan}`}>{label}</Link></Button>;
+  if (marketing) return <Button asChild variant={highlighted ? "default" : "outline"} className={cn("mt-6", className)}><Link to={plan.plan === "free" ? "/" : `/owner/billing?plan=${plan.plan}`}>{label}</Link></Button>;
   return <Button variant={highlighted ? "default" : "outline"} className={cn("mt-6", className)} disabled={!isPaidPlan(plan.plan) || disabled || isChoosingPlan === plan.plan || isCurrentPlan} onClick={() => { if (isPaidPlan(plan.plan)) onChoosePlan?.(plan.plan); }}>{label}</Button>;
 }
 

@@ -33,10 +33,6 @@ export const SITE_FALLBACK_METADATA: PageMetadata = {
  */
 export const STATIC_PAGE_METADATA: Record<string, PageMetadata> = {
   "/": SITE_FALLBACK_METADATA,
-  "/discover": {
-    title: `Discover Venues Near You | ${brandConfig.appName}`,
-    description: "Explore social venues by city, area and vibe. View photos, venue details, opening info and request bookings.",
-  },
   "/for-venues": {
     title: `For Venues | ${brandConfig.appName}`,
     description: "Claim your Nokta profile, receive booking requests and manage customer demand from one simple dashboard.",

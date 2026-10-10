@@ -1,7 +1,7 @@
-import { ChevronDown, LocateFixed, Search } from "lucide-react";
+import { ChevronDown, LocateFixed, Search, X } from "lucide-react";
 import { Suspense, lazy, useEffect, useMemo, useRef, useState, type FormEvent } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import type { NoktaMapPoint } from "@/components/map/NoktaMap";
+import { Link, useSearchParams } from "react-router-dom";
+import type { NoktaMapFocus, NoktaMapPoint } from "@/components/map/NoktaMap";
 import { PageMeta } from "@/components/seo/PageMeta";
 import { Skeleton } from "@/components/ui/skeleton";
 import { VenueImage } from "@/components/venues/VenueImage";
@@ -31,7 +31,7 @@ const FILTERS: { key: FilterKey; label: string; test: (venue: Venue, isOpen: boo
 
 /** Cards in the swipe row; the expanded list shows the rest. */
 const PEEK_CARD_LIMIT = 24;
-const LIST_LIMIT = 80;
+const LIST_PAGE = 60;
 /** Collapsed sheet sized to its content (handle, heading, chips, card row, Discover link). */
 const PEEK_HEIGHT = 296;
 
@@ -48,31 +48,27 @@ interface MapVenue {
  * desktop) carries the honest detail: price, closing time, distance.
  */
 export function MapHomePage() {
-  const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
   const { venues, isLoading } = useVenues();
   const { userLocation, locationStatus, useCurrentLocation } = useAppLocation();
   const isDesktop = useMediaQuery("(min-width: 1024px)");
-  const [city, setCity] = useState(DEFAULT_CITY);
-  const [query, setQuery] = useState("");
-  const [active, setActive] = useState<Set<FilterKey>>(() => new Set(["openNow"]));
+  // City and search live in the URL so a link (or an old /discover link) lands on the same view.
+  const requestedCity = searchParams.get("city");
+  const city = requestedCity && getCityByName(requestedCity) ? getCityByName(requestedCity)!.name : DEFAULT_CITY;
+  const query = (searchParams.get("q") ?? "").trim();
+  const [draft, setDraft] = useState(query);
+  const [listLimit, setListLimit] = useState(LIST_PAGE);
+  // A searched-for venue is usually wanted whether or not it is open right now.
+  const [active, setActive] = useState<Set<FilterKey>>(() => new Set(query ? [] : ["openNow"]));
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [isExpanded, setIsExpanded] = useState(false);
-  const [focus, setFocus] = useState<{ latitude: number; longitude: number; zoom?: number } | null>(null);
+  const [focus, setFocus] = useState<NoktaMapFocus | null>(null);
   const [wantsLocation, setWantsLocation] = useState(false);
   const cardsRef = useRef<HTMLDivElement>(null);
   const scrollingFromMapRef = useRef(false);
 
   useEffect(() => {
     trackEvent("map_home_viewed");
-    // The page never scrolls; the site-wide reserved scrollbar gutter would leave a dead strip beside the map.
-    const { style } = document.documentElement;
-    const previous = { overflowY: style.overflowY, scrollbarGutter: style.scrollbarGutter };
-    style.overflowY = "hidden";
-    style.scrollbarGutter = "auto";
-    return () => {
-      style.overflowY = previous.overflowY;
-      style.scrollbarGutter = previous.scrollbarGutter;
-    };
   }, []);
 
   const cities = useMemo(() => {
@@ -82,10 +78,14 @@ export function MapHomePage() {
   }, [venues]);
   const cityConfig = getCityByName(city) ?? getActiveCities()[0];
 
+  // A search spans every city (an owner looking for their venue, a name someone was
+  // sent); otherwise the map shows the chosen city.
   const cityVenues: MapVenue[] = useMemo(() => {
     const now = new Date();
+    const terms = normalise(query).split(/\s+/).filter(Boolean);
     return venues
-      .filter((venue) => venue.city === city && Number.isFinite(venue.latitude) && Number.isFinite(venue.longitude))
+      .filter((venue) => Number.isFinite(venue.latitude) && Number.isFinite(venue.longitude))
+      .filter((venue) => (terms.length ? matchesSearch(venue, terms) : venue.city === city))
       .map((venue) => {
         const boundary = getVenueOpeningBoundary(venue, now);
         return {
@@ -95,7 +95,7 @@ export function MapHomePage() {
           miles: userLocation ? getVenueDistanceMiles(venue, userLocation) : null,
         };
       });
-  }, [venues, city, userLocation]);
+  }, [venues, city, query, userLocation]);
 
   // Every filter except "Open now" shapes the map, so closed venues stay as muted dots;
   // "Open now" narrows only the list and the count.
@@ -132,10 +132,26 @@ export function MapHomePage() {
 
   // A new city or filter set starts the card row from its first card. Keyed on the
   // choices, not the results array, so a re-render never yanks the row back.
-  const filterKey = `${city}|${[...active].sort().join(",")}`;
+  const filterKey = `${city}|${query}|${[...active].sort().join(",")}`;
   useEffect(() => {
     cardsRef.current?.scrollTo({ left: 0 });
+    setListLimit(LIST_PAGE);
   }, [filterKey]);
+
+  // A new search frames its matches.
+  useEffect(() => {
+    if (!query || !mapVenues.length) return;
+    if (mapVenues.length === 1) {
+      const [{ venue }] = mapVenues;
+      setFocus({ latitude: venue.latitude, longitude: venue.longitude, zoom: 15 });
+      return;
+    }
+    const lngs = mapVenues.map((item) => item.venue.longitude);
+    const lats = mapVenues.map((item) => item.venue.latitude);
+    setFocus({ bounds: [[Math.min(...lngs), Math.min(...lats)], [Math.max(...lngs), Math.max(...lats)]] });
+    // Re-frame per search, not on every filter toggle.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [query, mapVenues.length > 0]);
 
   // Once the browser hands over a position, fly there.
   useEffect(() => {
@@ -144,8 +160,18 @@ export function MapHomePage() {
     setFocus({ latitude: userLocation.latitude, longitude: userLocation.longitude, zoom: 14 });
   }, [wantsLocation, userLocation]);
 
+  function updateParams(next: Record<string, string | null>) {
+    const params = new URLSearchParams(searchParams);
+    for (const [key, value] of Object.entries(next)) {
+      if (value) params.set(key, value);
+      else params.delete(key);
+    }
+    setSearchParams(params, { replace: true });
+  }
+
   function changeCity(next: string) {
-    setCity(next);
+    updateParams({ city: next === DEFAULT_CITY ? null : next, q: null });
+    setDraft("");
     setSelectedId(null);
     const config = getCityByName(next);
     if (config) setFocus({ latitude: config.latitude, longitude: config.longitude, zoom: config.defaultZoom + 1 });
@@ -201,26 +227,39 @@ export function MapHomePage() {
 
   function handleSearch(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const params = new URLSearchParams();
-    if (query.trim()) params.set("q", query.trim());
-    if (city !== DEFAULT_CITY) params.set("city", city);
-    navigate(`/discover${params.size ? `?${params}` : ""}`);
+    const next = draft.trim();
+    updateParams({ q: next || null });
+    // A searched-for venue is usually wanted whether or not it is open right now.
+    if (next) setActive((current) => {
+      const without = new Set(current);
+      without.delete("openNow");
+      return without;
+    });
+    setSelectedId(null);
+    trackEvent("map_home_searched", { hasQuery: Boolean(next) });
+  }
+
+  function clearSearch() {
+    setDraft("");
+    updateParams({ q: null });
+    setSelectedId(null);
+    const config = getCityByName(city);
+    if (config) setFocus({ latitude: config.latitude, longitude: config.longitude, zoom: config.defaultZoom + 1 });
   }
 
   const openCount = cityVenues.filter((item) => item.isOpen).length;
-  const discoverParams = new URLSearchParams();
-  if (city !== DEFAULT_CITY) discoverParams.set("city", city);
-  if (active.has("openNow")) discoverParams.set("status", "open");
-  const discoverPath = `/discover${discoverParams.size ? `?${discoverParams}` : ""}`;
-  const heading = active.has("openNow")
-    ? `${results.length} open ${userLocation ? "near you" : `in ${city}`}`
-    : `${results.length} ${results.length === 1 ? "place" : "places"} ${userLocation ? "near you" : `in ${city}`}`;
+  const where = userLocation ? "near you" : `in ${city}`;
+  const heading = query
+    ? `${results.length} ${results.length === 1 ? "match" : "matches"} for “${query}”`
+    : active.has("openNow")
+      ? `${results.length} open ${where}`
+      : `${results.length} ${results.length === 1 ? "place" : "places"} ${where}`;
   const sheetPadding = isDesktop
     ? { top: 96, bottom: 40, left: 40, right: 40 }
     : { top: 130, bottom: isExpanded ? 80 : PEEK_HEIGHT, left: 30, right: 30 };
 
   return (
-    <main className="relative h-[calc(100dvh-65px)] overflow-hidden bg-[#f7f1e8] lg:grid lg:grid-cols-[440px_1fr] lg:grid-rows-[minmax(0,1fr)]">
+    <main data-full-viewport className="relative h-[calc(100dvh-65px)] overflow-hidden bg-[#f7f1e8] lg:grid lg:grid-cols-[440px_1fr] lg:grid-rows-[minmax(0,1fr)]">
       <PageMeta
         title={`${brandConfig.appName} - Discover Social Venues Across the UK`}
         description="See what's open near you on one map: shisha lounges and social venues with real prices, opening hours and photos. Request bookings direct."
@@ -245,12 +284,19 @@ export function MapHomePage() {
           <form onSubmit={handleSearch} className="pointer-events-auto flex h-[50px] items-center gap-2.5 rounded-[14px] border border-nokta-border bg-white/95 pl-3.5 pr-1.5 shadow-[0_6px_18px_-10px_rgba(42,33,27,0.35)] backdrop-blur lg:max-w-[460px]">
             <Search className="h-[18px] w-[18px] shrink-0 text-nokta-ink-muted" aria-hidden="true" />
             <input
-              value={query}
-              onChange={(event) => setQuery(event.target.value)}
-              placeholder="Search places or areas"
-              aria-label="Search places or areas"
+              type="search"
+              enterKeyHint="search"
+              value={draft}
+              onChange={(event) => setDraft(event.target.value)}
+              placeholder="Search a venue, area or postcode"
+              aria-label="Search a venue, area or postcode"
               className="h-full min-w-0 flex-1 bg-transparent text-[15px] text-nokta-ink outline-none placeholder:text-nokta-ink-muted"
             />
+            {draft || query ? (
+              <button type="button" onClick={clearSearch} aria-label="Clear search" className="grid h-8 w-8 shrink-0 place-items-center rounded-full text-nokta-ink-muted hover:text-nokta-ink">
+                <X className="h-4 w-4" />
+              </button>
+            ) : null}
             <label className="sr-only" htmlFor="map-home-city">City</label>
             <span className="relative shrink-0">
               <select
@@ -329,30 +375,30 @@ export function MapHomePage() {
         </div>
 
         {isLoading ? (
-          <div className="flex gap-3 overflow-hidden px-[18px] py-3">
-            {[0, 1].map((key) => <Skeleton key={key} className="h-[108px] w-[74%] shrink-0 rounded-[14px]" />)}
+          <div className="flex gap-3 overflow-hidden px-[18px] pb-2 pt-3 lg:flex-col lg:gap-0 lg:pt-2">
+            {[0, 1, 2].map((key) => <Skeleton key={key} className="h-[106px] w-[78%] max-w-[330px] shrink-0 rounded-[14px] lg:mb-3 lg:h-[92px] lg:w-full lg:max-w-none lg:rounded-[10px]" />)}
           </div>
         ) : !results.length ? (
           <div className="px-[18px] py-4">
             <p className="text-[14px] text-nokta-ink">
-              {active.has("openNow") && openCount === 0 ? `Nothing in ${city} is open right now.` : "Nothing matches those filters."}
+              {query ? `No places match “${query}”.` : active.has("openNow") && openCount === 0 ? `Nothing in ${city} is open right now.` : "Nothing matches those filters."}
             </p>
-            <button type="button" onClick={() => setActive(new Set())} className="mt-2 text-[13.5px] font-semibold text-clay-accent hover:underline">
-              Show every place
+            <button type="button" onClick={query ? clearSearch : () => setActive(new Set())} className="mt-2 text-[13.5px] font-semibold text-clay-accent hover:underline">
+              {query ? "Clear the search" : "Show every place"}
             </button>
           </div>
         ) : isExpanded || isDesktop ? (
           <ul className="min-h-0 flex-1 overflow-y-auto px-[18px] pb-8 pt-2">
-            {results.slice(0, LIST_LIMIT).map((item) => (
+            {results.slice(0, listLimit).map((item) => (
               <li key={item.venue.id}>
-                <VenueRow item={item} isSelected={item.venue.id === selectedId} onHover={() => isDesktop && setSelectedId(item.venue.id)} />
+                <VenueRow item={item} showCity={Boolean(query)} isSelected={item.venue.id === selectedId} onHover={() => isDesktop && setSelectedId(item.venue.id)} />
               </li>
             ))}
-            {results.length > LIST_LIMIT ? (
+            {results.length > listLimit ? (
               <li className="pt-4">
-                <Link to={discoverPath} className="text-[14px] font-semibold text-nokta-ink underline underline-offset-4">
-                  See all {results.length} on Discover
-                </Link>
+                <button type="button" onClick={() => setListLimit((count) => count + LIST_PAGE)} className="h-10 rounded-xl border border-nokta-border px-4 text-[14px] font-semibold text-nokta-ink hover:border-nokta-ink/40">
+                  Show more ({results.length - listLimit} left)
+                </button>
               </li>
             ) : null}
           </ul>
@@ -360,13 +406,15 @@ export function MapHomePage() {
           <>
             <div ref={cardsRef} onScroll={handleCardScroll} className="flex snap-x snap-mandatory gap-3 overflow-x-auto px-[18px] pb-2 pt-3 [scrollbar-width:none]">
               {results.slice(0, PEEK_CARD_LIMIT).map((item) => (
-                <VenueCard key={item.venue.id} item={item} isSelected={item.venue.id === selectedId} />
+                <VenueCard key={item.venue.id} item={item} showCity={Boolean(query)} isSelected={item.venue.id === selectedId} />
               ))}
             </div>
-            <Link to={discoverPath} className="mx-[18px] flex h-11 items-center justify-between border-t border-nokta-divider text-[14px] font-semibold text-nokta-ink">
-              See all {results.length} on Discover
+{results.length > 1 ? (
+            <button type="button" onClick={() => setIsExpanded(true)} className="mx-[18px] flex h-11 items-center justify-between border-t border-nokta-divider text-left text-[14px] font-semibold text-nokta-ink">
+              See all {results.length} as a list
               <ChevronDown className="h-4 w-4 -rotate-90" aria-hidden="true" />
-            </Link>
+            </button>
+            ) : null}
           </>
         )}
       </section>
@@ -378,8 +426,19 @@ function facts(venue: Venue) {
   return [venue.priceFrom ? `From £${venue.priceFrom}` : "£".repeat(venue.priceLevel), venue.food ? "Food" : null, venue.halal ? "Halal" : null].filter(Boolean).join(" · ");
 }
 
-function where(item: MapVenue) {
-  return [item.venue.area, item.miles !== null ? formatDistanceMiles(item.miles) : null].filter(Boolean).join(" · ");
+function where(item: MapVenue, showCity: boolean) {
+  const place = showCity && item.venue.city !== item.venue.area ? `${item.venue.area}, ${item.venue.city}` : item.venue.area;
+  return [place, item.miles !== null ? formatDistanceMiles(item.miles) : null].filter(Boolean).join(" · ");
+}
+
+function normalise(value: string) {
+  return value.normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
+}
+
+/** Every search word must appear in the venue's name, place, postcode or vibes. */
+function matchesSearch(venue: Venue, terms: string[]) {
+  const haystack = normalise([venue.name, venue.area, venue.city, venue.address, venue.postcode, venue.postcode?.replace(/\s+/g, ""), venue.vibes.join(" ")].filter(Boolean).join(" "));
+  return terms.every((term) => haystack.includes(term));
 }
 
 function StatusLine({ item }: { item: MapVenue }) {
@@ -392,7 +451,7 @@ function StatusLine({ item }: { item: MapVenue }) {
   );
 }
 
-function VenueCard({ item, isSelected }: { item: MapVenue; isSelected: boolean }) {
+function VenueCard({ item, isSelected, showCity }: { item: MapVenue; isSelected: boolean; showCity: boolean }) {
   return (
     <Link
       to={`/venues/${item.venue.slug}`}
@@ -405,7 +464,7 @@ function VenueCard({ item, isSelected }: { item: MapVenue; isSelected: boolean }
       <VenueImage venue={item.venue} alt="" className="h-[84px] w-[84px] rounded-[10px] object-cover" monogramClassName="rounded-[10px]" />
       <div className="min-w-0">
         <h3 className="truncate text-[15px] font-semibold text-nokta-ink">{item.venue.name}</h3>
-        <p className="truncate text-[12.5px] text-nokta-ink-muted">{where(item)}</p>
+        <p className="truncate text-[12.5px] text-nokta-ink-muted">{where(item, showCity)}</p>
         <p className="mt-1 truncate text-[12.5px] text-nokta-ink-subtle">{facts(item.venue)}</p>
         <StatusLine item={item} />
       </div>
@@ -413,7 +472,7 @@ function VenueCard({ item, isSelected }: { item: MapVenue; isSelected: boolean }
   );
 }
 
-function VenueRow({ item, isSelected, onHover }: { item: MapVenue; isSelected: boolean; onHover: () => void }) {
+function VenueRow({ item, isSelected, onHover, showCity }: { item: MapVenue; isSelected: boolean; onHover: () => void; showCity: boolean }) {
   return (
     <Link
       to={`/venues/${item.venue.slug}`}
@@ -424,7 +483,7 @@ function VenueRow({ item, isSelected, onHover }: { item: MapVenue; isSelected: b
       <VenueImage venue={item.venue} alt="" className="h-[92px] w-[92px] rounded-[10px] object-cover" monogramClassName="rounded-[10px]" />
       <div className="min-w-0">
         <h3 className="truncate text-[15.5px] font-semibold text-nokta-ink">{item.venue.name}</h3>
-        <p className="truncate text-[12.5px] text-nokta-ink-muted">{where(item)}</p>
+        <p className="truncate text-[12.5px] text-nokta-ink-muted">{where(item, showCity)}</p>
         <p className="mt-1.5 text-[12.5px] text-nokta-ink-subtle">{facts(item.venue)}</p>
         <StatusLine item={item} />
       </div>

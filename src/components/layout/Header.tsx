@@ -85,9 +85,6 @@ export function Header() {
               nokta
             </Link>
             <div className="hidden items-center gap-6 text-sm text-muted-foreground md:flex">
-              <NavLink to="/discover" className={navLinkClass}>
-                Discover
-              </NavLink>
               <NavLink to={planLink.to} className={navLinkClass}>
                 {planLink.label}
               </NavLink>
@@ -196,9 +193,6 @@ export function Header() {
             }
           }}
         >
-          <NavLink to="/discover" className={mobileNavLinkClass}>
-            Discover
-          </NavLink>
           <NavLink to={planLink.to} className={mobileNavLinkClass}>
             {planLink.label}
           </NavLink>

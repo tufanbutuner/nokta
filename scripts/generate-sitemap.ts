@@ -14,7 +14,7 @@ config();
  * redirect for every page, which wastes crawl budget and contradicts those tags.
  */
 const SITE_URL = (process.env.VITE_PUBLIC_SITE_URL || process.env.VITE_APP_URL || "https://www.nokta.uk").replace(/\/$/, "");
-const STATIC_ROUTES = ["/", "/discover", "/for-venues", "/plan", "/recommend", "/suggest", "/privacy", "/terms"];
+const STATIC_ROUTES = ["/", "/for-venues", "/plan", "/recommend", "/suggest", "/privacy", "/terms"];
 
 async function main() {
   const venueSlugs = await getVenueSlugs();

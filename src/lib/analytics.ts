@@ -28,6 +28,7 @@ export type AnalyticsEvent =
   | "map_home_venue_selected"
   | "map_home_filter_toggled"
   | "map_home_locate_clicked"
+  | "map_home_searched"
   | "plan_viewed"
   | "plan_slot_changed"
   | "plan_venue_shortlisted"

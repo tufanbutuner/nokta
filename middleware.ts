@@ -75,10 +75,6 @@ const SITE_FALLBACK: PageMetadata = {
  */
 const STATIC_PAGES: Record<string, PageMetadata> = {
   "/": SITE_FALLBACK,
-  "/discover": {
-    title: `Discover Venues Near You | ${BRAND}`,
-    description: "Explore social venues by city, area and vibe. View photos, venue details, opening info and request bookings.",
-  },
   "/for-venues": {
     title: `For Venues | ${BRAND}`,
     description: "Claim your Nokta profile, receive booking requests and manage customer demand from one simple dashboard.",
@@ -429,8 +425,7 @@ function buildCityJsonLd(metadata: PageMetadata, cityName: string, url: string, 
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: BRAND, item: SITE_URL },
-        { "@type": "ListItem", position: 2, name: "Discover", item: `${SITE_URL}/discover` },
-        { "@type": "ListItem", position: 3, name: cityName, item: url },
+        { "@type": "ListItem", position: 2, name: cityName, item: url },
       ],
     },
   });
@@ -511,7 +506,7 @@ async function getMetadata(pathname: string, url: string): Promise<ResolvedPage>
 function buildVenueBody(venue: VenueRow): string {
   const parts: string[] = [];
 
-  parts.push(`<nav aria-label="Breadcrumb"><a href="/discover">Discover</a> / <a href="/cities/${escapeHtml(createCitySlug(venue.city))}">${escapeHtml(venue.city)}</a> / <span>${escapeHtml(venue.name)}</span></nav>`);
+  parts.push(`<nav aria-label="Breadcrumb"><a href="/">Map</a> / <a href="/cities/${escapeHtml(createCitySlug(venue.city))}">${escapeHtml(venue.city)}</a> / <span>${escapeHtml(venue.name)}</span></nav>`);
   parts.push(`<h1>${escapeHtml(venue.name)}</h1>`);
   parts.push(`<p>${escapeHtml([venue.area, venue.city].filter(Boolean).join(", "))}</p>`);
 
@@ -567,7 +562,7 @@ function buildVenueBody(venue: VenueRow): string {
 function buildCityBody(cityName: string, metadata: PageMetadata, venues: CityVenueRow[] | null): string {
   const parts: string[] = [];
 
-  parts.push(`<nav aria-label="Breadcrumb"><a href="/discover">Discover</a> / <span>${escapeHtml(cityName)}</span></nav>`);
+  parts.push(`<nav aria-label="Breadcrumb"><a href="/">Map</a> / <span>${escapeHtml(cityName)}</span></nav>`);
   parts.push(`<h1>Venues in ${escapeHtml(cityName)}</h1>`);
   parts.push(`<p>${escapeHtml(metadata.description)}</p>`);
 
@@ -584,7 +579,7 @@ function buildCityBody(cityName: string, metadata: PageMetadata, venues: CityVen
     parts.push(`<h2>${venues.length === 1 ? "1 venue" : `${venues.length} venues`} in ${escapeHtml(cityName)}</h2>\n      <ul>\n        ${items}\n      </ul>`);
   }
 
-  parts.push(`<p><a href="/discover?city=${encodeURIComponent(cityName)}">Open Discover</a></p>`);
+  parts.push(`<p><a href="/?city=${encodeURIComponent(cityName)}">See them on the map</a></p>`);
 
   return parts.join("\n      ");
 }

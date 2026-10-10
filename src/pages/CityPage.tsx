@@ -62,8 +62,8 @@ export function CityPage() {
             </p>
           </div>
           <Button asChild>
-            <Link to={`/discover?city=${encodeURIComponent(city.name)}`}>
-              Open Discover
+            <Link to={`/?city=${encodeURIComponent(city.name)}`}>
+              See them on the map
             </Link>
           </Button>
         </div>

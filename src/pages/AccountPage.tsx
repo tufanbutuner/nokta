@@ -202,7 +202,7 @@ export function AccountPage() {
                       <ShortcutLink to="/owner/billing" icon={CreditCard} label="Billing" />
                     </>
                   ) : (
-                    <Button asChild><Link to="/discover">Find your venue</Link></Button>
+                    <Button asChild><Link to="/">Find your venue</Link></Button>
                   )}
                 </div>
               </section>

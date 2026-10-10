@@ -22,7 +22,7 @@ export function Footer() {
           <nav className="space-y-3" aria-label="Footer pages">
             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-white/45">Pages</p>
             <div className="grid gap-2">
-              <Link to="/discover" className="hover:text-white">Discover</Link>
+              <Link to="/" className="hover:text-white">Map</Link>
               <Link to="/plan" className="hover:text-white">Plan a night</Link>
               <Link to="/suggest" className="hover:text-white">Suggest</Link>
               <Link to="/for-venues" className="hover:text-white">For venues</Link>

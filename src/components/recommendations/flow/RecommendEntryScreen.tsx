@@ -17,7 +17,7 @@ export function RecommendEntryScreen({ lastAnswerChips, onStart, onRepeat }: { l
         <button type="button" className={cn(PRIMARY_BUTTON, "h-[52px] px-7 text-[15.5px]")} onClick={onStart}>
           Start — takes 20 seconds
         </button>
-        <Link to="/discover" className={cn(OUTLINE_BUTTON, "h-[52px] px-[22px] text-[14.5px]")}>
+        <Link to="/" className={cn(OUTLINE_BUTTON, "h-[52px] px-[22px] text-[14.5px]")}>
           Browse all venues instead
         </Link>
       </div>

@@ -15,7 +15,7 @@ interface PromotedOfferCardProps {
 }
 
 export function PromotedOfferCard({ offer, venue, variant = "homepage", onClick }: PromotedOfferCardProps) {
-  const href = offer.ctaUrl ?? (venue ? `/venues/${venue.slug}` : "/discover");
+  const href = offer.ctaUrl ?? (venue ? `/venues/${venue.slug}` : "/");
   const isExternal = Boolean(offer.ctaUrl);
   const location = [offer.area ?? venue?.area, offer.city ?? venue?.city].filter(Boolean).join(", ");
   const expiry = new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "short" }).format(new Date(offer.endsAt));

@@ -20,7 +20,6 @@ const AppErrorPreviewPage = lazyPage(() => import("@/pages/AppErrorPreviewPage")
 const ClaimVenuePage = lazyPage(() => import("@/pages/ClaimVenuePage"), "ClaimVenuePage");
 const CityPage = lazyPage(() => import("@/pages/CityPage"), "CityPage");
 const CustomerBookingStatusPage = lazyPage(() => import("@/pages/CustomerBookingStatusPage"), "CustomerBookingStatusPage");
-const DiscoverPage = lazyPage(() => import("@/pages/DiscoverPage"), "DiscoverPage");
 const ForVenuesPage = lazyPage(() => import("@/pages/ForVenuesPage"), "ForVenuesPage");
 const MapHomePage = lazyPage(() => import("@/pages/MapHomePage"), "MapHomePage");
 const PlanNightPage = lazyPage(() => import("@/pages/PlanNightPage"), "PlanNightPage");
@@ -73,7 +72,8 @@ export const routes: RouteObject[] = [
     errorElement: <AppErrorPage />,
     children: [
       { path: "/", element: routeElement(<MapHomePage />) },
-      { path: "/discover", element: routeElement(<DiscoverPage />) },
+      // The map homepage replaced Discover; keep old links (and their ?city / ?q) working.
+      { path: "/discover", element: <DiscoverRedirect /> },
       { path: "/for-venues", element: routeElement(<ForVenuesPage />) },
       { path: "/cities/:citySlug", element: routeElement(<CityPage />) },
       { path: "/recommend", element: routeElement(<RecommendPage />) },
@@ -379,6 +379,11 @@ function AccountRoute() {
       <AccountPage />
     </RequireAuth>
   );
+}
+
+function DiscoverRedirect() {
+  const { search } = useLocation();
+  return <Navigate replace to={`/${search}`} />;
 }
 
 function VenueRouteRedirect({ destination }: { destination: "profile" | "photos" | "bookings" | "performance" }) {

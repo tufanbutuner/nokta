@@ -109,7 +109,7 @@ export function RecommendResultsScreen({
           Start again
         </button>
         <Link to={allMatchesHref} className="ml-auto text-[13px] text-white/50 transition-colors hover:text-white">
-          {matchCount === 1 ? "Only one venue clears all four" : `Or see all ${matchCount} matches`}
+          {matchCount === 1 ? "Only one venue clears all four. Browse the map" : "Or browse every place on the map"}
         </Link>
       </div>
     </section>

@@ -154,7 +154,7 @@ export function OwnerBillingPage() {
               <div className="rounded-xl border bg-card p-6">
                 <h3 className="font-brand text-xl font-bold tracking-[-0.5px]">Claim a venue before choosing a plan</h3>
                 <p className="mt-2 text-sm text-muted-foreground">Paid owner tools attach to a claimed venue profile.</p>
-                <Button asChild className="mt-4"><Link to="/discover">Find your venue</Link></Button>
+                <Button asChild className="mt-4"><Link to="/">Find your venue</Link></Button>
               </div>
             ) : (
               <div className="rounded-xl border bg-card p-5">

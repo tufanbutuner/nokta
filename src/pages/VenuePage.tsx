@@ -117,8 +117,8 @@ export function VenuePage() {
         <PageMeta title="Venue not found | nokta" description="This nokta venue could not be found." />
         <h1 className="text-3xl font-semibold">Venue not found</h1>
         <Button asChild className="mt-6">
-          <Link to="/discover">
-            Back to discover
+          <Link to="/">
+            Back to the map
           </Link>
         </Button>
       </PageContainer>
@@ -179,8 +179,8 @@ export function VenuePage() {
           <BreadcrumbList>
             <BreadcrumbItem>
               <BreadcrumbLink asChild className="font-normal text-clay-accent hover:text-clay-accent-hover">
-                <Link to="/discover">
-                  Discover
+                <Link to="/">
+                  Map
                 </Link>
               </BreadcrumbLink>
             </BreadcrumbItem>

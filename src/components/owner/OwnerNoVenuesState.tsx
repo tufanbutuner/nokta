@@ -9,7 +9,7 @@ export function OwnerNoVenuesState() {
         Claim an existing venue profile or list your venue to start managing bookings, enquiries and profile details on Nokta.
       </p>
       <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
-        <Button asChild><Link to="/discover">Find your venue</Link></Button>
+        <Button asChild><Link to="/">Find your venue</Link></Button>
         <Button asChild variant="outline"><Link to="/suggest">Suggest a venue</Link></Button>
         <Button asChild variant="outline"><Link to="/for-venues">For venues</Link></Button>
       </div>

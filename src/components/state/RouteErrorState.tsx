@@ -38,13 +38,8 @@ export function RouteErrorState({
                 Try again
               </Button>
               <Button asChild variant="outline">
-                <Link to="/discover">
-                  Back to Discover
-                </Link>
-              </Button>
-              <Button asChild variant="ghost">
                 <Link to="/">
-                  Back home
+                  Back to the map
                 </Link>
               </Button>
             </div>

@@ -277,3 +277,12 @@
   background-repeat: no-repeat;
   background-position: center;
 }
+
+/*
+ * Full-viewport pages (the map homepage and its skeleton) never scroll; the
+ * site-wide reserved scrollbar gutter would leave a dead strip beside the map.
+ */
+html:has(main[data-full-viewport]) {
+  overflow-y: hidden;
+  scrollbar-gutter: auto;
+}

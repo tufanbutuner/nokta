@@ -5,7 +5,7 @@ import { routes } from "@/router/router";
 
 /**
  * The raw path carries query strings and resolved params, so `/venues/abc` and
- * `/discover?q=shisha` are each their own value. Useful for reading a single
+ * `/?q=shisha` are each their own value. Useful for reading a single
  * session, useless as a breakdown: a funnel keyed on it never groups.
  *
  * So we send the route pattern alongside it. `/venues/:slug` is one value across
