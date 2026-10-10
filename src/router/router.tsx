@@ -28,6 +28,8 @@ const OwnerDashboardPage = lazyPage(() => import("@/pages/owner/OwnerDashboardPa
 const OwnerAnalyticsPage = lazyPage(() => import("@/pages/owner/OwnerAnalyticsPage"), "OwnerAnalyticsPage");
 const OwnerBillingPage = lazyPage(() => import("@/pages/owner/OwnerBillingPage"), "OwnerBillingPage");
 const OwnerBillingSuccessPage = lazyPage(() => import("@/pages/owner/OwnerBillingSuccessPage"), "OwnerBillingSuccessPage");
+const OwnerBookingsPage = lazyPage(() => import("@/pages/owner/OwnerBookingsPage"), "OwnerBookingsPage");
+
 const OwnerEnquiriesPage = lazyPage(() => import("@/pages/owner/OwnerEnquiriesPage"), "OwnerEnquiriesPage");
 const OwnerVenueBookingsPage = lazyPage(() => import("@/pages/owner/OwnerVenueBookingsPage"), "OwnerVenueBookingsPage");
 const OwnerVenueBookingRulesPage = lazyPage(() => import("@/pages/owner/OwnerVenueBookingRulesPage"), "OwnerVenueBookingRulesPage");
@@ -80,7 +82,11 @@ export const routes: RouteObject[] = [
       { path: "/terms", element: routeElement(<TermsPage />) },
       {
         path: "/owner/bookings",
-        element: routeElement(<OwnerInboxRedirect bookingOnly />),
+        element: routeElement(
+          <RequireAuth>
+            <OwnerBookingsRoute />
+          </RequireAuth>,
+        ),
       },
       {
         path: "/account",
@@ -419,7 +425,7 @@ function VenueInboxRedirect() {
   return <Navigate replace to={`/owner/inbox?${nextSearch.toString()}`} />;
 }
 
-function OwnerInboxRedirect({ bookingOnly = false }: { bookingOnly?: boolean }) {
+function OwnerInboxRedirect() {
   const { search } = useLocation();
   const nextSearch = new URLSearchParams(search);
   const legacyBookingId = nextSearch.get("booking");
@@ -427,7 +433,23 @@ function OwnerInboxRedirect({ bookingOnly = false }: { bookingOnly?: boolean }) 
     nextSearch.set("item", legacyBookingId);
     nextSearch.delete("booking");
   }
-  if (bookingOnly) nextSearch.set("type", "booking");
   const query = nextSearch.toString();
   return <Navigate replace to={`/owner/inbox${query ? `?${query}` : ""}`} />;
+}
+
+/**
+ * Booking emails deep-link to /owner/bookings?booking=<id>. Those still land on
+ * the inbox detail for that request; everything else gets the bookings home.
+ */
+function OwnerBookingsRoute() {
+  const { search } = useLocation();
+  const nextSearch = new URLSearchParams(search);
+  const legacyBookingId = nextSearch.get("booking");
+  if (legacyBookingId) {
+    nextSearch.set("item", legacyBookingId);
+    nextSearch.delete("booking");
+    nextSearch.set("type", "booking");
+    return <Navigate replace to={`/owner/inbox?${nextSearch.toString()}`} />;
+  }
+  return <OwnerBookingsPage />;
 }

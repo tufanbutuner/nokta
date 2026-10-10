@@ -218,6 +218,18 @@ export function OwnerVenueBookingRulesPage() {
             </RuleCard>
 
             <RuleCard>
+              <h2 className="text-[14.5px] font-semibold text-nokta-ink">Bookings per time slot</h2>
+              <div className="mt-3 flex flex-wrap items-end gap-4">
+                <Field label="Parties per time" error={validation.errors.slotCapacity}>
+                  <Input type="number" min={1} max={50} value={settings.slotCapacity ?? 1} onChange={(event) => setSettings({ ...settings, slotCapacity: Number(event.target.value) })} className="h-9 w-[110px]" />
+                </Field>
+                <p className="max-w-[330px] flex-1 text-[11.5px] leading-[1.5] text-muted-foreground">
+                  How many separate parties can hold the same time — 6pm, 6:30pm and so on. You still approve every request; the cap only stops a slot being confirmed past what your room can take.
+                </p>
+              </div>
+            </RuleCard>
+
+            <RuleCard>
               <div className="flex items-center justify-between gap-3">
                 <h2 className="text-[14.5px] font-semibold text-nokta-ink">When requests are allowed</h2>
                 <button
@@ -257,6 +269,7 @@ export function OwnerVenueBookingRulesPage() {
                         </button>
                       </div>
                       {windowErrors[group.key] ? <p className="mt-1 text-xs text-destructive">{windowErrors[group.key]}</p> : null}
+                      {describeGroupMismatch(availability, group) ? <p className="mt-1 text-[11.5px] text-muted-foreground">{describeGroupMismatch(availability, group)}</p> : null}
                     </div>
                   );
                 })}
@@ -348,4 +361,18 @@ function toGroupWindows(availability: VenueBookingAvailability): Record<string, 
       return [group.key, match ? { startTime: match.startTime.slice(0, 5), endTime: match.endTime.slice(0, 5), isEnabled: true } : { startTime: "17:00", endTime: "23:00", isEnabled: false }];
     }),
   );
+}
+
+/**
+ * The design edits three day groups, but the table is per-day. When a group's
+ * days already differ (imported or hand-edited hours), saving would flatten them
+ * to the time shown — say so rather than silently dropping hours.
+ */
+function describeGroupMismatch(availability: VenueBookingAvailability, group: (typeof DAY_GROUPS)[number]): string | null {
+  const groupDays = group.days as readonly number[];
+  const enabled = availability.windows.filter((window) => groupDays.includes(window.dayOfWeek) && window.isEnabled);
+  if (enabled.length < 2) return null;
+  const first = enabled[0];
+  const differs = enabled.some((window) => window.startTime !== first.startTime || window.endTime !== first.endTime);
+  return differs ? "Days in this group currently differ — saving applies the time shown to every day here." : null;
 }

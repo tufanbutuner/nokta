@@ -13,6 +13,8 @@ export interface BookingCalendarEvent {
   time: string;
   startsAt: string;
   endsAt: string | null;
+  /** When the customer sent the request — what "waiting Xd" is measured from. */
+  createdAt: string;
   status: BookingRequestStatus;
   occasion: string | null;
   sourceSurface: string | null;

@@ -283,6 +283,7 @@ export interface VenueBookingSettingsRow {
   min_notice_minutes: number;
   max_advance_days: number;
   default_booking_duration_minutes: number;
+  slot_capacity: number;
   booking_instructions: string | null;
   internal_notes: string | null;
   created_at: string;

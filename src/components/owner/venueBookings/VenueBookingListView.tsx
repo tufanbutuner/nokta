@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { getClosureForDate, getWaitingDays, isEventAwaitingReply } from "@/lib/bookingCalendarGeometry";
+import { formatDurationMinutes, getClosureForDate, getWaitingDays, isEventAwaitingReply } from "@/lib/bookingCalendarGeometry";
 import type { VenueBookingBlackoutDate } from "@/types/bookingAvailability";
 import type { BookingCalendarEvent } from "@/types/bookingCalendar";
 
@@ -12,6 +12,7 @@ export function VenueBookingListView({
   counts,
   isPast,
   confirmingId,
+  durationMinutes = 120,
   onChangeFilter,
   onTogglePast,
   onConfirm,
@@ -23,6 +24,7 @@ export function VenueBookingListView({
   counts: Record<VenueBookingListFilter, number>;
   isPast: boolean;
   confirmingId: string | null;
+  durationMinutes?: number;
   onChangeFilter: (filter: VenueBookingListFilter) => void;
   onTogglePast: () => void;
   onConfirm: (event: BookingCalendarEvent) => void;
@@ -49,7 +51,7 @@ export function VenueBookingListView({
               <div className="flex items-center justify-between gap-3 border-y bg-[oklch(0.975_0.012_60)] px-4 py-2">
                 <span className="text-[11px] font-semibold uppercase tracking-[0.5px] text-nokta-ink">{formatGroupHeading(date)}</span>
                 <span className="text-[11px] text-muted-foreground">
-                  {waiting ? `${waiting} waiting · ` : ""}{dayEvents.length - waiting} confirmed
+                  {waiting ? `${waiting} waiting · ` : ""}{dayEvents.length - waiting} answered
                 </span>
               </div>
 
@@ -72,7 +74,7 @@ export function VenueBookingListView({
                   >
                     <div>
                       <div className="text-sm font-semibold text-nokta-ink">{event.time.slice(0, 5)}</div>
-                      <div className="text-[11px] text-muted-foreground">2h default</div>
+                      <div className="text-[11px] text-muted-foreground">{formatDurationMinutes(durationMinutes)} slot</div>
                     </div>
 
                     <div className="min-w-0">
@@ -113,7 +115,16 @@ export function VenueBookingListView({
       ) : (
         <div className="p-6 text-center">
           <p className="text-[13px] text-muted-foreground">
-            {filter === "waiting" ? "Nothing waiting in the next 30 days." : "No requests in this range."}
+            {filter === "waiting"
+              ? isPast
+                ? "No requests were waiting in those 30 days."
+                : "Nothing waiting in the next 30 days."
+              : filter === "confirmed"
+                ? "No confirmed bookings in this range."
+                : "No requests in this range."}
+          </p>
+          <p className="mt-1 text-[12px] text-muted-foreground/80">
+            {filter === "waiting" ? "New requests land here the moment a customer sends one." : "Try another filter or step to a different period."}
           </p>
           {filter === "waiting" ? (
             <button type="button" onClick={() => onChangeFilter("all")} className="mt-2 text-[12.5px] font-medium text-clay-accent hover:underline">See all requests</button>
@@ -127,7 +138,7 @@ export function VenueBookingListView({
 function StatusPill({ event }: { event: BookingCalendarEvent }) {
   const pending = isEventAwaitingReply(event);
   if (pending) {
-    const days = getWaitingDays(event.startsAt);
+    const days = getWaitingDays(event.createdAt);
     return (
       <span className="rounded-full bg-[oklch(0.96_0.045_75)] px-2 py-[2px] text-[11px] font-semibold text-[oklch(0.36_0.08_75)]">
         {days >= 1 ? `Waiting ${days}d` : "Waiting"}

@@ -7,6 +7,8 @@ export interface VenueBookingSettings {
   minNoticeMinutes: number;
   maxAdvanceDays: number;
   defaultBookingDurationMinutes: number;
+  /** How many separate parties may hold the same date+time slot. */
+  slotCapacity: number;
   bookingInstructions: string | null;
   internalNotes: string | null;
   createdAt: string;
@@ -44,9 +46,13 @@ export interface VenueBookingAvailability {
   bookedSlots: VenueBookingBookedSlot[];
 }
 
+/**
+ * An occupied slot: the date+time of an accepted booking (its effective slot —
+ * an agreed alternative counts at the proposed time, see getEffectiveBookingSlot).
+ */
 export interface VenueBookingBookedSlot {
-  requestedDate: string;
-  requestedTime: string;
+  date: string;
+  time: string;
 }
 
 export interface BookingAvailabilityCheckInput {

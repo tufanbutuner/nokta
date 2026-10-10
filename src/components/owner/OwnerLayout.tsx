@@ -1,15 +1,16 @@
-import { ArrowLeft, Building2, CreditCard, Home, Inbox, LayoutDashboard, Megaphone, Menu, PanelLeftClose, PanelLeftOpen, UserCircle, X } from "lucide-react";
+import { ArrowLeft, Building2, CalendarDays, CreditCard, Home, Inbox, LayoutDashboard, Megaphone, Menu, PanelLeftClose, PanelLeftOpen, UserCircle, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { NotificationBell } from "@/components/notifications/NotificationBell";
 import { useAuth } from "@/context/AuthContext";
 import { cn } from "@/lib/utils";
-import { getOwnerNeedsReplyCount } from "@/services/ownerHomeSummaryService";
+import { getOwnerNeedsReplyCount, getOwnerPendingBookingCount } from "@/services/ownerHomeSummaryService";
 
 const OWNER_NAV_ITEMS = [
   { label: "Home", to: "/owner", icon: LayoutDashboard },
   { label: "My venues", to: "/owner/venues", icon: Building2 },
+  { label: "Bookings", to: "/owner/bookings", icon: CalendarDays, badge: "bookings" },
   { label: "Inbox", to: "/owner/inbox", icon: Inbox, badge: "inbox" },
   { label: "Marketing", to: "/owner/promotions", icon: Megaphone },
   { label: "Plan & billing", to: "/owner/billing", icon: CreditCard },
@@ -21,6 +22,7 @@ export function OwnerLayout({ children }: { children: React.ReactNode }) {
   const [isCollapsed, setIsCollapsed] = useState(() => localStorage.getItem("sheesh-owner-sidebar-collapsed") === "true");
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [needsReplyCount, setNeedsReplyCount] = useState(0);
+  const [pendingBookingCount, setPendingBookingCount] = useState(0);
   const initials = getInitials(user?.email);
 
   useEffect(() => {
@@ -31,12 +33,18 @@ export function OwnerLayout({ children }: { children: React.ReactNode }) {
     if (!user) return;
     let cancelled = false;
     const load = () => {
-      getOwnerNeedsReplyCount({ userId: user.id })
-        .then((count) => {
-          if (!cancelled) setNeedsReplyCount(count);
+      Promise.all([getOwnerNeedsReplyCount({ userId: user.id }), getOwnerPendingBookingCount({ userId: user.id })])
+        .then(([replyCount, bookingCount]) => {
+          if (!cancelled) {
+            setNeedsReplyCount(replyCount);
+            setPendingBookingCount(bookingCount);
+          }
         })
         .catch(() => {
-          if (!cancelled) setNeedsReplyCount(0);
+          if (!cancelled) {
+            setNeedsReplyCount(0);
+            setPendingBookingCount(0);
+          }
         });
     };
     load();
@@ -71,7 +79,7 @@ export function OwnerLayout({ children }: { children: React.ReactNode }) {
                 <div className="px-2 pb-2 text-[10px] font-semibold uppercase tracking-[2px] text-clay-50/40">Owner</div>
                 <nav className="grid gap-1">
                   {OWNER_NAV_ITEMS.map((item) => (
-                    <OwnerNavLink key={item.to} to={item.to} label={item.label} icon={item.icon} badgeCount={"badge" in item ? needsReplyCount : 0} compact onClick={() => setIsMobileOpen(false)} />
+                    <OwnerNavLink key={item.to} to={item.to} label={item.label} icon={item.icon} badgeCount={"badge" in item ? (item.badge === "bookings" ? pendingBookingCount : needsReplyCount) : 0} compact onClick={() => setIsMobileOpen(false)} />
                   ))}
                 </nav>
                 <NavLink to="/" onClick={() => setIsMobileOpen(false)} className="mt-4 flex items-center gap-3 rounded-lg bg-clay-400/10 px-3 py-3 text-sm font-medium text-clay-200">
@@ -106,7 +114,7 @@ export function OwnerLayout({ children }: { children: React.ReactNode }) {
           <div className={cn("mt-8 text-[10px] font-semibold uppercase tracking-[2px] text-[#8a7e7266]", isCollapsed ? "sr-only" : "")}>Owner</div>
           <nav className="mt-6 grid gap-1">
             {OWNER_NAV_ITEMS.map((item) => (
-              <OwnerNavLink key={item.to} to={item.to} label={item.label} icon={item.icon} badgeCount={"badge" in item ? needsReplyCount : 0} collapsed={isCollapsed} />
+              <OwnerNavLink key={item.to} to={item.to} label={item.label} icon={item.icon} badgeCount={"badge" in item ? (item.badge === "bookings" ? pendingBookingCount : needsReplyCount) : 0} collapsed={isCollapsed} />
             ))}
           </nav>
           <div className="mt-auto border-t border-white/10 pt-4">

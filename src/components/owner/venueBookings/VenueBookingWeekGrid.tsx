@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import {
   CALENDAR_BODY_HEIGHT_PX,
   CALENDAR_HOURS,
+  formatDurationMinutes,
   getClosedBandGeometry,
   getClosureForDate,
   getEventGeometry,
@@ -20,6 +21,7 @@ export function VenueBookingWeekGrid({
   events,
   openingHours,
   closures,
+  durationMinutes = 120,
   onEventClick,
 }: {
   dateFrom: string;
@@ -27,6 +29,7 @@ export function VenueBookingWeekGrid({
   events: BookingCalendarEvent[];
   openingHours: OpeningHours[];
   closures: VenueBookingBlackoutDate[];
+  durationMinutes?: number;
   onEventClick: (event: BookingCalendarEvent) => void;
 }) {
   const dates = getDatesBetween(dateFrom, dateTo);
@@ -68,6 +71,7 @@ export function VenueBookingWeekGrid({
                 events={events.filter((event) => event.date === date)}
                 openingHours={openingHours}
                 closure={getClosureForDate({ closures, date })}
+                durationHours={durationMinutes / 60}
                 onEventClick={onEventClick}
               />
             ))}
@@ -75,7 +79,7 @@ export function VenueBookingWeekGrid({
         </div>
       </div>
 
-      <VenueBookingLegend note="Blocks show a 2h default duration" />
+      <VenueBookingLegend note={`Blocks show your ${formatDurationMinutes(durationMinutes)} default`} />
     </div>
   );
 }
@@ -85,12 +89,14 @@ function DayColumn({
   events,
   openingHours,
   closure,
+  durationHours,
   onEventClick,
 }: {
   date: string;
   events: BookingCalendarEvent[];
   openingHours: OpeningHours[];
   closure: VenueBookingBlackoutDate | null;
+  durationHours: number;
   onEventClick: (event: BookingCalendarEvent) => void;
 }) {
   const closedBand = getClosedBandGeometry({ openingHours, date });
@@ -113,7 +119,7 @@ function DayColumn({
         <>
           {closedBand ? <div aria-hidden="true" className="absolute inset-x-0 bg-[oklch(0.96_0.012_55)]" style={{ top: closedBand.top, height: closedBand.height }} /> : null}
           {events.map((event) => {
-            const geometry = getEventGeometry({ time: event.time });
+            const geometry = getEventGeometry({ time: event.time, durationHours });
             if (!geometry) return null;
             const pending = isEventAwaitingReply(event);
             return (

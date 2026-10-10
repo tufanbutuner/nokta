@@ -1,3 +1,4 @@
+import { getEffectiveBookingSlot } from "@/lib/bookingSlot";
 import { mapBookingRequestToCalendarEvent } from "@/lib/bookingCalendarMappers";
 import { getOwnerBookingRequests } from "@/services/ownerBookingRequestService";
 import { getMyClaimedVenues } from "@/services/ownerVenueService";
@@ -14,7 +15,10 @@ export async function getOwnerBookingCalendarEvents(input: { ownerUserId: string
   const venuesById = Object.fromEntries(venues.map((venue) => [venue.id, venue]));
 
   return requests
-    .filter((request) => request.requestedDate >= input.filters.dateFrom && request.requestedDate <= input.filters.dateTo)
+    .filter((request) => {
+      const slot = getEffectiveBookingSlot(request);
+      return slot.date >= input.filters.dateFrom && slot.date <= input.filters.dateTo;
+    })
     .filter((request) => !input.filters.statuses.length || input.filters.statuses.includes(request.status))
     .map((bookingRequest) => mapBookingRequestToCalendarEvent({ bookingRequest, venueName: venuesById[bookingRequest.venueId]?.name ?? bookingRequest.venueId }))
     .sort((a, b) => `${a.date}T${a.time}`.localeCompare(`${b.date}T${b.time}`));

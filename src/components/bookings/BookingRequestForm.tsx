@@ -5,7 +5,7 @@ import { Select } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { validateCreateBookingRequestInput } from "@/lib/bookingRequestValidation";
 import { checkBookingAvailability } from "@/lib/bookingAvailabilityValidation";
-import { FALLBACK_TIME_OPTIONS, getBookingTimeOptions } from "@/lib/bookingTimeOptions";
+import { explainEmptyTimeOptions, FALLBACK_TIME_OPTIONS, getBookingTimeOptions } from "@/lib/bookingTimeOptions";
 import type { VenueBookingAvailability } from "@/types/bookingAvailability";
 import type { CreateBookingRequestInput } from "@/types/bookingRequests";
 
@@ -44,12 +44,21 @@ export function BookingRequestForm({
   /**
    * Match the sidebar card: always a list of times to choose from. Falling back
    * to a bare clock input before availability loads made the same booking look
-   * like two different forms depending on where it was started.
+   * like two different forms depending on where it was started. Once a venue's
+   * hours are known, a full or closed date shows no times — with the reason —
+   * instead of a generic list that would only fail on submit.
    */
+  const hasPublishedHours = availability ? availability.windows.some((window) => window.isEnabled) : false;
   const timeOptions = useMemo(() => {
-    const available = availability && values.requestedDate ? getBookingTimeOptions({ availability, selectedDate: values.requestedDate }) : [];
-    return available.length ? available : FALLBACK_TIME_OPTIONS;
-  }, [availability, values.requestedDate]);
+    const available = availability && values.requestedDate ? getBookingTimeOptions({ availability, selectedDate: values.requestedDate }) : null;
+    if (available?.length) return available;
+    if (!availability || !hasPublishedHours || !values.requestedDate) return FALLBACK_TIME_OPTIONS;
+    return [];
+  }, [availability, hasPublishedHours, values.requestedDate]);
+  const emptyTimeReason = useMemo(
+    () => (availability && values.requestedDate && hasPublishedHours && !timeOptions.length ? explainEmptyTimeOptions({ availability, selectedDate: values.requestedDate }) : null),
+    [availability, hasPublishedHours, timeOptions, values.requestedDate],
+  );
   const disabled = availability?.settings.bookingRequestsEnabled === false;
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -88,12 +97,13 @@ export function BookingRequestForm({
           <Input className="text-base sm:text-sm" type="date" value={values.requestedDate} onChange={(event) => update("requestedDate", event.target.value)} />
         </Field>
         <Field label="Time" error={showErrors ? validation.errors.requestedTime : undefined}>
-          <Select className="text-base sm:text-sm" value={values.requestedTime} placeholder="Choose a time" onValueChange={(time) => update("requestedTime", time)} options={timeOptions.map((time) => ({ label: time, value: time }))} disabled={!values.requestedDate} />
+          <Select className="text-base sm:text-sm" value={values.requestedTime} placeholder={timeOptions.length ? "Choose a time" : "No times available"} onValueChange={(time) => update("requestedTime", time)} options={timeOptions.map((time) => ({ label: time, value: time }))} disabled={!values.requestedDate || !timeOptions.length} />
         </Field>
         <Field label="Occasion" error={showErrors ? validation.errors.occasion : undefined}>
           <Select value={values.occasion ?? "General"} onValueChange={(occasion) => update("occasion", occasion)} options={OCCASION_OPTIONS.map((occasion) => ({ label: occasion, value: occasion }))} />
         </Field>
       </div>
+      {emptyTimeReason ? <div className="rounded-xl border border-muted bg-muted/40 px-4 py-3 text-sm text-muted-foreground">{emptyTimeReason}</div> : null}
       <Field label="Message" error={showErrors ? validation.errors.message : undefined}>
         <Textarea value={values.message ?? ""} onChange={(event) => update("message", event.target.value)} placeholder="Anything the venue should know?" />
       </Field>
