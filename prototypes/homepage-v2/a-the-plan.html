@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>nokta — A · What's the plan?</title>
+<link rel="stylesheet" href="lofi.css" />
+<style>
+  .hero { padding: 10px 18px 0; }
+  .plans { display: flex; gap: 22px; padding: 18px 18px 0; overflow-x: auto; scrollbar-width: none; border-bottom: 1px solid var(--line-soft); }
+  .plans::-webkit-scrollbar { display: none; }
+  .plan { position: relative; padding: 0 0 12px; font-size: 15.5px; font-weight: 500; color: var(--ink-3); white-space: nowrap; }
+  .plan[aria-selected="true"] { color: var(--ink); font-weight: 600; }
+  /* the one dot: it marks the plan you picked */
+  .plan[aria-selected="true"]::after { content: ""; position: absolute; left: 50%; bottom: -4px; width: 7px; height: 7px; margin-left: -3.5px; border-radius: 50%; background: var(--dot); }
+  .context { padding: 14px 18px 4px; display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 58px; }
+  .stepper { display: inline-flex; align-items: center; border: 1px solid var(--line); border-radius: 999px; }
+  .stepper button { width: 34px; height: 34px; font-size: 18px; }
+  .stepper output { min-width: 74px; text-align: center; font-weight: 600; font-size: 14px; }
+  .list { padding: 0 18px; }
+  .more { display: flex; justify-content: space-between; align-items: center; margin: 4px 18px 0; padding: 14px 0; border-top: 1px solid var(--line-soft); font-weight: 600; font-size: 14.5px; }
+  .section { padding: 26px 0 0; }
+  .section .h2 { padding: 0 18px 10px; }
+  .hood { flex: none; width: 152px; scroll-snap-align: start; }
+  .hood .ph { height: 96px; }
+  .hood b { display: block; margin-top: 7px; font-size: 14px; font-weight: 600; }
+  .hood small { color: var(--ink-2); font-size: 12.5px; }
+  .dock { position: sticky; bottom: 0; padding: 10px 18px 16px; background: linear-gradient(to top, var(--paper) 70%, transparent); }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<main class="screen">
+  <header class="bar">
+    <span class="mark">nokta<i></i></span>
+    <button class="city">London <svg class="icon" viewBox="0 0 24 24" style="width:14px;height:14px"><path d="m6 9 6 6 6-6"/></svg></button>
+  </header>
+
+  <section class="hero">
+    <h1 class="h1">What's the plan?</h1>
+  </section>
+
+  <nav class="plans" role="tablist" aria-label="Plan">
+    <button class="plan" role="tab" aria-selected="true" data-plan="tonight">Tonight</button>
+    <button class="plan" role="tab" aria-selected="false" data-plan="weekend">This weekend</button>
+    <button class="plan" role="tab" aria-selected="false" data-plan="birthday">Birthday</button>
+    <button class="plan" role="tab" aria-selected="false" data-plan="group">Big group</button>
+  </nav>
+
+  <!-- each plan reshapes the context line and the picks -->
+  <div class="context" data-for="tonight">
+    <span class="small tnum">Open now near <b style="color:var(--ink)">Edgware Road</b> · 21:40</span>
+    <button class="chip"><svg class="icon" viewBox="0 0 24 24" style="width:14px;height:14px;vertical-align:-2px"><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/><circle cx="12" cy="12" r="5"/></svg> Near me</button>
+  </div>
+  <div class="context" data-for="weekend" hidden>
+    <span class="small">Fri – Sun · tables still free</span>
+    <button class="chip">Fri</button>
+  </div>
+  <div class="context" data-for="birthday" hidden>
+    <span class="small">Private areas, set menus, cake allowed</span>
+    <span class="stepper"><button aria-label="Fewer">−</button><output class="tnum">8 people</output><button aria-label="More">+</button></span>
+  </div>
+  <div class="context" data-for="group" hidden>
+    <span class="small">12+ people · private hire &amp; min spend shown upfront</span>
+  </div>
+
+  <div class="list" id="list"></div>
+  <a class="more" href="#">See all 46 in London <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+
+  <section class="section">
+    <h2 class="h2">By neighbourhood</h2>
+    <div class="chips" style="gap:12px">
+      <a class="hood" href="#"><div class="ph"><span>street photo</span></div><b>Edgware Road</b><small>14 lounges · late</small></a>
+      <a class="hood" href="#"><div class="ph"><span>street photo</span></div><b>Green Lanes</b><small>9 lounges · big groups</small></a>
+      <a class="hood" href="#"><div class="ph"><span>street photo</span></div><b>Whitechapel</b><small>7 lounges · dessert too</small></a>
+      <a class="hood" href="#"><div class="ph"><span>street photo</span></div><b>Ealing</b><small>5 lounges · garden seating</small></a>
+    </div>
+  </section>
+
+  <p class="note"><b>A · What's the plan?</b> The homepage asks one question, the occasion, and reshapes itself: Tonight shows what's open nearby and closing times; Birthday shows private areas and set menus with a party size; Big group shows private hire and minimum spend upfront. The one clay dot marks the plan you picked. Sample venues.</p>
+
+  <div class="dock">
+    <div class="search"><svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg> Search a place, area or vibe</div>
+  </div>
+</main>
+
+<script>
+  const picks = {
+    tonight: [
+      ["Layali Lounge", "Edgware Road · 4 min walk", "Shisha from <b>£22</b>", "Open till 02:00", ""],
+      ["Bayt Terrace", "Marble Arch · 9 min walk", "Shisha from <b>£28</b> · heated terrace", "Open till 01:00", ""],
+      ["Cafe Saray", "Paddington · 12 min", "Shisha from <b>£18</b>", "Closes in 40 min", "closing"],
+    ],
+    weekend: [
+      ["Noor House", "Green Lanes", "Shisha from <b>£20</b> · DJ Sat", "Tables Fri & Sat", ""],
+      ["Layali Lounge", "Edgware Road", "Shisha from <b>£22</b>", "Tables Sat", ""],
+      ["Kahve 1453", "Whitechapel", "Shisha from <b>£19</b> · desserts", "Tables Fri – Sun", ""],
+    ],
+    birthday: [
+      ["Bayt Terrace", "Marble Arch", "Private booth · <b>up to 10</b> · set menu £35pp", "Takes requests", ""],
+      ["Noor House", "Green Lanes", "Upstairs room · <b>up to 20</b> · cake OK", "Takes requests", ""],
+      ["Velvet Majlis", "Ealing", "Garden corner · <b>up to 12</b>", "Takes requests", ""],
+    ],
+    group: [
+      ["Noor House", "Green Lanes", "Private hire · <b>up to 60</b> · min spend £600", "Enquire", ""],
+      ["Velvet Majlis", "Ealing", "Garden hire · <b>up to 40</b> · min spend £450", "Enquire", ""],
+      ["Bayt Terrace", "Marble Arch", "Terrace hire · <b>up to 30</b>", "Enquire", ""],
+    ],
+  };
+  const list = document.getElementById("list");
+  function render(plan) {
+    list.innerHTML = picks[plan].map(([name, where, facts, status, tone]) => `
+      <a class="row" href="#">
+        <div class="ph"><span>photo</span></div>
+        <div>
+          <h3>${name}</h3>
+          <p class="where">${where}</p>
+          <p class="facts">${facts}</p>
+          <p class="status ${tone}" style="margin-top:6px">${status}</p>
+        </div>
+      </a>`).join("");
+    document.querySelectorAll(".context").forEach((el) => (el.hidden = el.dataset.for !== plan));
+  }
+  document.querySelectorAll(".plan").forEach((tab) =>
+    tab.addEventListener("click", () => {
+      document.querySelectorAll(".plan").forEach((t) => t.setAttribute("aria-selected", String(t === tab)));
+      render(tab.dataset.plan);
+    }),
+  );
+  render("tonight");
+</script>
+</body>
+</html>

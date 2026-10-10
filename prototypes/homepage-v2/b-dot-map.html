@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>nokta — B · The dot map</title>
+<link rel="stylesheet" href="lofi.css" />
+<style>
+  body { overflow: hidden; }
+  .screen { height: 100dvh; overflow: hidden; }
+  .map { position: absolute; inset: 0; background: oklch(0.975 0.012 60); }
+  .map svg { width: 100%; height: 100%; display: block; }
+  .street { stroke: var(--line); stroke-width: 1.2; fill: none; }
+  .street.main { stroke: oklch(0.83 0.025 55); stroke-width: 3; }
+  .river { fill: none; stroke: oklch(0.9 0.025 230); stroke-width: 22; stroke-linecap: round; }
+  .hood-label { font: 600 10.5px Outfit, sans-serif; letter-spacing: 0.08em; fill: var(--ink-3); text-transform: uppercase; }
+  .v { fill: var(--ink); cursor: pointer; }
+  .v.open { fill: var(--ink); }
+  .v.shut { fill: var(--ink-3); }
+  .v.sel { fill: var(--dot); }
+  .ring { fill: none; stroke: var(--dot); stroke-width: 1.5; opacity: 0.35; }
+  .top { position: absolute; left: 0; right: 0; top: 0; padding: 12px 14px; display: grid; gap: 10px; }
+  .top .search { justify-content: space-between; }
+  .top .search > span { display: flex; align-items: center; gap: 10px; }
+  .pin { position: absolute; transform: translate(-50%, calc(-100% - 12px)); background: var(--ink); color: var(--paper); font-size: 12.5px; font-weight: 600; padding: 6px 10px; border-radius: 999px; white-space: nowrap; box-shadow: 0 6px 14px -6px oklch(0.2 0.02 40 / 0.5); }
+  .locate { position: absolute; right: 14px; width: 44px; height: 44px; border-radius: 50%; background: var(--paper); border: 1px solid var(--line); display: grid; place-items: center; box-shadow: 0 6px 14px -8px oklch(0.2 0.02 40 / 0.4); }
+  .sheet { position: absolute; left: 0; right: 0; bottom: 0; background: var(--paper); border-radius: 20px 20px 0 0; box-shadow: 0 -10px 30px -14px oklch(0.2 0.02 40 / 0.35); height: 41%; display: flex; flex-direction: column; }
+  .sheet.full { height: 88%; }
+  .grab { width: 100%; padding: 10px 0 4px; display: grid; place-items: center; }
+  .grab i { width: 38px; height: 4px; border-radius: 4px; background: var(--line); }
+  .sheet-head { padding: 4px 18px 10px; display: flex; justify-content: space-between; align-items: baseline; }
+  .cards { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 12px 18px 18px; scrollbar-width: none; }
+  .cards::-webkit-scrollbar { display: none; }
+  .card { flex: none; width: 74%; scroll-snap-align: center; display: grid; grid-template-columns: 84px 1fr; gap: 11px; padding: 10px; border: 1px solid var(--line); border-radius: 14px; }
+  .card.on { border-color: var(--ink); }
+  .card .ph { height: 84px; }
+  .card h3 { font-size: 15px; font-weight: 600; }
+  .listview { display: none; overflow-y: auto; padding: 0 18px 30px; }
+  .sheet.full .cards { display: none; }
+  .sheet.full .listview { display: block; }
+</style>
+</head>
+<body>
+<main class="screen">
+  <div class="map" aria-label="Map of lounges near you">
+    <svg viewBox="0 0 390 844" preserveAspectRatio="xMidYMid slice">
+      <path class="river" d="M-20 520 C 80 470, 150 560, 240 520 S 360 470, 420 500" />
+      <path class="street main" d="M40 0 L 210 844" /> <!-- Edgware Rd -->
+      <path class="street main" d="M0 300 L 390 260" />
+      <path class="street" d="M0 140 L 390 190" /><path class="street" d="M0 420 L 390 380" />
+      <path class="street" d="M120 0 L 330 844" /><path class="street" d="M290 0 L 250 844" />
+      <path class="street" d="M0 220 L 160 330" /><path class="street" d="M200 120 L 390 330" />
+      <text class="hood-label" x="22" y="118">Maida Vale</text>
+      <text class="hood-label" x="150" y="236">Edgware Rd</text>
+      <text class="hood-label" x="250" y="360">Marble Arch</text>
+      <text class="hood-label" x="30" y="370">Paddington</text>
+      <circle class="ring" cx="168" cy="282" r="18" />
+      <g id="dots">
+        <circle class="v sel" cx="168" cy="282" r="7" data-i="0" />
+        <circle class="v open" cx="236" cy="330" r="5.5" data-i="1" />
+        <circle class="v open" cx="88" cy="352" r="5.5" data-i="2" />
+        <circle class="v open" cx="140" cy="196" r="5.5" data-i="3" />
+        <circle class="v shut" cx="300" cy="230" r="4.5" />
+        <circle class="v open" cx="196" cy="246" r="5.5" data-i="4" />
+        <circle class="v shut" cx="60" cy="250" r="4.5" />
+        <circle class="v shut" cx="330" cy="400" r="4.5" />
+      </g>
+    </svg>
+  </div>
+  <div class="pin" id="pin"></div>
+
+  <div class="top">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <span class="mark" style="background:var(--paper);padding:2px 10px;border-radius:999px">nokta<i></i></span>
+      <button class="city" style="background:var(--paper)">London</button>
+    </div>
+    <div class="search"><span><svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg> Where tonight?</span>
+      <svg class="icon" viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg></div>
+  </div>
+
+  <button class="locate" style="bottom:calc(41% + 14px)" aria-label="Near me"><svg class="icon" viewBox="0 0 24 24"><path d="m3 11 18-8-8 18-2-8z"/></svg></button>
+
+  <section class="sheet ease" id="sheet">
+    <button class="grab" id="grab" aria-label="Expand list"><i></i></button>
+    <div class="sheet-head">
+      <h2 class="h2">8 open near Edgware Rd</h2>
+      <button class="small" id="toggle" style="font-weight:600;color:var(--ink)">List</button>
+    </div>
+    <div class="chips">
+      <button class="chip" aria-pressed="true">Open now</button>
+      <button class="chip" aria-pressed="false">Under £25</button>
+      <button class="chip" aria-pressed="false">Big groups</button>
+      <button class="chip" aria-pressed="false">Outdoor</button>
+      <button class="chip" aria-pressed="false">Dessert too</button>
+    </div>
+    <div class="cards" id="cards"></div>
+    <div class="listview" id="listview"></div>
+  </section>
+</main>
+<script>
+  const venues = [
+    ["Layali Lounge", "Edgware Rd · 4 min", "Shisha <b>£22</b> · mains £12–18", "Open till 02:00"],
+    ["Bayt Terrace", "Marble Arch · 9 min", "Shisha <b>£28</b> · heated terrace", "Open till 01:00"],
+    ["Cafe Saray", "Paddington · 12 min", "Shisha <b>£18</b>", "Open till 23:00"],
+    ["Zaytoon", "Maida Vale · 10 min", "Shisha <b>£24</b> · garden", "Open till 00:30"],
+    ["Habibi Nights", "Edgware Rd · 6 min", "Shisha <b>£25</b> · live football", "Open till 03:00"],
+  ];
+  const card = ([n, w, f, s], i) => `<a class="card${i === 0 ? " on" : ""}" href="#" data-i="${i}"><div class="ph"><span>photo</span></div><div><h3>${n}</h3><p class="small">${w}</p><p class="facts" style="margin-top:5px">${f}</p><p class="status" style="margin-top:5px">${s}</p></div></a>`;
+  const row = ([n, w, f, s]) => `<a class="row" href="#"><div class="ph"><span>photo</span></div><div><h3>${n}</h3><p class="where">${w}</p><p class="facts">${f}</p><p class="status" style="margin-top:6px">${s}</p></div></a>`;
+  document.getElementById("cards").innerHTML = venues.map(card).join("");
+  document.getElementById("listview").innerHTML = venues.map(row).join("") + `<p class="note"><b>B · The dot map.</b> Venues are literally dots: the place is the brand. No map tiles, just a quiet street sketch with neighbourhood names, so it reads as local knowledge rather than Google Maps. Grey dots are closed now. Tap a dot to see price and closing time; the sheet holds honest detail. Sample venues.</p>`;
+  const sheet = document.getElementById("sheet");
+  const flip = () => { sheet.classList.toggle("full"); document.getElementById("toggle").textContent = sheet.classList.contains("full") ? "Map" : "List"; };
+  document.getElementById("grab").onclick = flip;
+  document.getElementById("toggle").onclick = flip;
+  const pin = document.getElementById("pin");
+  document.querySelectorAll(".v[data-i]").forEach((dot) => dot.addEventListener("click", () => {
+    document.querySelectorAll(".v[data-i]").forEach((d) => { d.classList.remove("sel"); d.setAttribute("r", "5.5"); });
+    dot.classList.add("sel"); dot.setAttribute("r", "7");
+    const ring = document.querySelector(".ring"); ring.setAttribute("cx", dot.getAttribute("cx")); ring.setAttribute("cy", dot.getAttribute("cy"));
+    const box = dot.getBoundingClientRect(), frame = document.querySelector(".screen").getBoundingClientRect();
+    pin.style.left = box.left - frame.left + box.width / 2 + "px"; pin.style.top = box.top - frame.top + "px";
+    const v = venues[dot.dataset.i]; pin.textContent = `${v[0].split(" ")[0]} · ${v[2].match(/£\d+/)[0]} · till ${v[3].slice(-5)}`;
+    document.querySelectorAll(".card").forEach((c) => c.classList.toggle("on", c.dataset.i === dot.dataset.i));
+    document.querySelector(`.card[data-i="${dot.dataset.i}"]`).scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+  }));
+  const place = () => document.querySelector('.v[data-i="0"]').dispatchEvent(new Event("click"));
+  place(); addEventListener("resize", place);
+  document.querySelectorAll(".chip").forEach((c) => c.addEventListener("click", () => c.setAttribute("aria-pressed", String(c.getAttribute("aria-pressed") !== "true"))));
+</script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>nokta — C · Pick three for the group</title>
+<link rel="stylesheet" href="lofi.css" />
+<style>
+  .hero { padding: 8px 18px 6px; }
+  /* the brief, written as a sentence you edit by tapping the underlined bits */
+  .sentence { margin-top: 12px; font-size: 22px; line-height: 1.5; font-weight: 500; letter-spacing: -0.01em; color: var(--ink-2); text-wrap: pretty; }
+  .slot { color: var(--ink); font-weight: 600; border-bottom: 2px solid var(--ink); padding: 0 1px; }
+  .feed { padding: 6px 18px 140px; }
+  .pick { padding: 16px 0; border-top: 1px solid var(--line-soft); }
+  .pick:first-child { border-top: 0; }
+  .pick .ph { height: 168px; }
+  .pick-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-top: 11px; }
+  .pick h3 { font-size: 17px; font-weight: 600; letter-spacing: -0.01em; }
+  .fit { margin-top: 8px; font-size: 13px; color: var(--ink-2); }
+  .fit b { color: var(--ink); font-weight: 600; }
+  .add { flex: none; display: inline-flex; align-items: center; gap: 7px; height: 36px; padding: 0 12px; border: 1px solid var(--line); border-radius: 999px; font-size: 13.5px; font-weight: 600; }
+  .add .d { width: 10px; height: 10px; border-radius: 50%; border: 1.5px solid var(--ink-3); }
+  .add[aria-pressed="true"] { border-color: var(--dot); color: var(--dot); }
+  .add[aria-pressed="true"] .d { background: var(--dot); border-color: var(--dot); }
+  /* the tray: three empty dots fill as you pick */
+  .tray { position: fixed; left: 50%; transform: translateX(-50%); bottom: 14px; width: min(430px, 100%) ; padding: 0 14px; }
+  .tray-in { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 12px 12px 16px; border-radius: 18px; background: var(--ink); color: var(--paper); box-shadow: 0 14px 30px -14px oklch(0.2 0.02 40 / 0.6); }
+  .slots { display: flex; gap: 7px; }
+  .slots i { width: 12px; height: 12px; border-radius: 50%; border: 1.5px solid oklch(0.7 0.02 50); }
+  .slots i.on { background: var(--dot); border-color: var(--dot); }
+  .tray .btn { height: 40px; font-size: 14px; background: var(--paper); color: var(--ink); }
+  .alt { display: flex; justify-content: space-between; align-items: center; margin-top: 8px; padding: 16px; border: 1px dashed var(--line); border-radius: 14px; }
+</style>
+</head>
+<body>
+<main class="screen">
+  <header class="bar">
+    <span class="mark">nokta<i></i></span>
+    <button class="icon-btn" aria-label="Search"><svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+  </header>
+
+  <section class="hero">
+    <h1 class="h1">Sort the group chat.</h1>
+    <p class="sentence">
+      <button class="slot">6 of us</button>, <button class="slot">Friday</button> night, around <button class="slot">Green Lanes</button>, and we want <button class="slot">somewhere lively</button>.
+    </p>
+    <p class="small" style="margin-top:10px">Pick up to three. We'll make one link the group can vote on.</p>
+  </section>
+
+  <div class="feed" id="feed"></div>
+
+  <div class="tray" aria-live="polite">
+    <div class="tray-in">
+      <div>
+        <div class="slots" id="slots"><i></i><i></i><i></i></div>
+        <div class="small" id="count" style="color:oklch(0.82 0.02 55);margin-top:5px">Pick your first spot</div>
+      </div>
+      <button class="btn" id="send" disabled>
+        <svg class="icon" viewBox="0 0 24 24"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7M16 6l-4-4-4 4M12 2v13"/></svg>
+        Send to group
+      </button>
+    </div>
+  </div>
+</main>
+<script>
+  const venues = [
+    ["Noor House", "Green Lanes · 2 min from the station", "Shisha from <b>£20</b> · DJ from 10pm", "Fits <b>6</b> on Friday · open till 02:00"],
+    ["Kahve 1453", "Green Lanes", "Shisha from <b>£19</b> · Turkish desserts", "Fits <b>6</b> · quieter, booths"],
+    ["Mangal Social", "Harringay", "Shisha from <b>£23</b> · grill menu", "Fits <b>8</b> · open till 01:00"],
+    ["Bosphorus Rooms", "Wood Green · 8 min", "Shisha from <b>£21</b> · big screens", "Fits <b>10</b> · lively Fridays"],
+  ];
+  document.getElementById("feed").innerHTML = venues.map(([n, w, f, fit], i) => `
+    <article class="pick">
+      <div class="ph"><span>photo · real venue shots</span></div>
+      <div class="pick-head">
+        <div><h3>${n}</h3><p class="small">${w}</p></div>
+        <button class="add" aria-pressed="false" data-i="${i}"><span class="d"></span><span>Shortlist</span></button>
+      </div>
+      <p class="facts" style="margin-top:8px">${f}</p>
+      <p class="fit">${fit}</p>
+    </article>`).join("") + `
+    <div class="alt"><div><b style="font-weight:600">Can't decide?</b><p class="small">Answer four questions, we'll pick three.</p></div><a class="btn ghost" href="#" style="height:38px">Pick for us</a></div>
+    <p class="note"><b>C · Sort the group chat.</b> Built around the real job: one person choosing for friends. The brief is a sentence you edit, so it sounds like a friend, not a booking form. Shortlisting fills three dots in the tray; Send makes a shared shortlist link (the /s/ page already exists). "Pick for us" goes to /recommend. Sample venues.</p>`;
+  const picked = new Set();
+  const slots = [...document.querySelectorAll("#slots i")];
+  document.querySelectorAll(".add").forEach((b) => b.addEventListener("click", () => {
+    const i = b.dataset.i;
+    if (picked.has(i)) picked.delete(i); else if (picked.size < 3) picked.add(i); else return;
+    b.setAttribute("aria-pressed", String(picked.has(i)));
+    b.lastElementChild.textContent = picked.has(i) ? "Shortlisted" : "Shortlist";
+    slots.forEach((s, n) => s.classList.toggle("on", n < picked.size));
+    document.getElementById("count").textContent = picked.size ? `${picked.size} of 3 picked` : "Pick your first spot";
+    document.getElementById("send").disabled = picked.size === 0;
+  }));
+</script>
+</body>
+</html>

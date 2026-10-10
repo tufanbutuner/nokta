@@ -22,7 +22,8 @@ const CityPage = lazyPage(() => import("@/pages/CityPage"), "CityPage");
 const CustomerBookingStatusPage = lazyPage(() => import("@/pages/CustomerBookingStatusPage"), "CustomerBookingStatusPage");
 const DiscoverPage = lazyPage(() => import("@/pages/DiscoverPage"), "DiscoverPage");
 const ForVenuesPage = lazyPage(() => import("@/pages/ForVenuesPage"), "ForVenuesPage");
-const HomePage = lazyPage(() => import("@/pages/HomePage"), "HomePage");
+const MapHomePage = lazyPage(() => import("@/pages/MapHomePage"), "MapHomePage");
+const PlanNightPage = lazyPage(() => import("@/pages/PlanNightPage"), "PlanNightPage");
 const NotFoundPage = lazyPage(() => import("@/pages/NotFoundPage"), "NotFoundPage");
 const OwnerDashboardPage = lazyPage(() => import("@/pages/owner/OwnerDashboardPage"), "OwnerDashboardPage");
 const OwnerAnalyticsPage = lazyPage(() => import("@/pages/owner/OwnerAnalyticsPage"), "OwnerAnalyticsPage");
@@ -71,11 +72,12 @@ export const routes: RouteObject[] = [
     element: routeElement(<AppLayout />),
     errorElement: <AppErrorPage />,
     children: [
-      { path: "/", element: routeElement(<HomePage />) },
+      { path: "/", element: routeElement(<MapHomePage />) },
       { path: "/discover", element: routeElement(<DiscoverPage />) },
       { path: "/for-venues", element: routeElement(<ForVenuesPage />) },
       { path: "/cities/:citySlug", element: routeElement(<CityPage />) },
       { path: "/recommend", element: routeElement(<RecommendPage />) },
+      { path: "/plan", element: routeElement(<PlanNightPage />) },
       { path: "/s/:code", element: routeElement(<SharedShortlistPage />) },
       { path: "/saved", element: routeElement(<SavedPage />) },
       { path: "/suggest", element: routeElement(<SuggestVenuePage />) },
