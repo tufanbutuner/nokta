@@ -10,6 +10,9 @@ import { BarChart3, Bell, BookOpenCheck, Building2, CalendarDays, ChevronDown, C
 import { useEffect, useRef, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 
+// "Plan a night" replaces Recommend; the recommend flow lives inside it as "Pick for us".
+const planLink = { to: "/plan", label: "Plan a night" };
+
 const OWNER_MENU_ITEMS = [
   { label: "Home", to: "/owner", icon: LayoutDashboard, end: true },
   { label: "My venues", to: "/owner/venues", icon: Building2 },
@@ -85,8 +88,8 @@ export function Header() {
               <NavLink to="/discover" className={navLinkClass}>
                 Discover
               </NavLink>
-              <NavLink to="/recommend" className={navLinkClass}>
-                Recommend
+              <NavLink to={planLink.to} className={navLinkClass}>
+                {planLink.label}
               </NavLink>
               <NavLink to="/saved" className={navLinkClass}>
                 {savedLabel}
@@ -196,8 +199,8 @@ export function Header() {
           <NavLink to="/discover" className={mobileNavLinkClass}>
             Discover
           </NavLink>
-          <NavLink to="/recommend" className={mobileNavLinkClass}>
-            Recommend
+          <NavLink to={planLink.to} className={mobileNavLinkClass}>
+            {planLink.label}
           </NavLink>
           <NavLink to="/saved" className={mobileNavLinkClass}>
             {savedLabel}

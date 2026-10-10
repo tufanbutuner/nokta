@@ -4,7 +4,8 @@ import type { RecommendationOccasion } from "@/types/recommendations";
 export type RecommendFlowScreen = "entry" | "q" | "results" | "nomatch" | "saved" | "share";
 export type RecommendBudget = PriceLevel | "any";
 export type RecommendDistance = "walk" | "short" | "any";
-export type RecommendPickRole = "safe" | "wildcard" | "closest";
+/** `chosen` marks a pick the person shortlisted by hand on /plan rather than one the quiz scored. */
+export type RecommendPickRole = "safe" | "wildcard" | "closest" | "chosen";
 
 /** The four answers, plus the wildcard cycle index. Everything else is derived. */
 export interface RecommendAnswers {

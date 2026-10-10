@@ -206,6 +206,19 @@ export function getTodayOpeningLabel(venue: Venue, now = new Date()): string | n
   return formatDayHours(getRowsForDay(venue.openingHours, londonNow.dayIndex));
 }
 
+/**
+ * One weekday's hours (0 = Sunday) as "18:00 – 02:00", "Closed", or null when
+ * the venue has no hours for that day.
+ */
+export function getDayOpeningLabel(venue: Venue, dayIndex: number): string | null {
+  return formatDayHours(getRowsForDay(venue.openingHours, dayIndex));
+}
+
+/** Today's weekday in London (0 = Sunday), so day pickers agree with opening hours. */
+export function getLondonDayIndex(now = new Date()): number {
+  return getLondonTimeParts(now)?.dayIndex ?? now.getDay();
+}
+
 /** The week with consecutive identical days collapsed into ranges ("Mon – Wed"). */
 export function getGroupedOpeningHours(openingHours: OpeningHours[]): GroupedOpeningRow[] {
   if (!openingHours.length) {

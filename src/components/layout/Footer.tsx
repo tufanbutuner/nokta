@@ -23,7 +23,7 @@ export function Footer() {
             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-white/45">Pages</p>
             <div className="grid gap-2">
               <Link to="/discover" className="hover:text-white">Discover</Link>
-              <Link to="/recommend" className="hover:text-white">Recommend</Link>
+              <Link to="/plan" className="hover:text-white">Plan a night</Link>
               <Link to="/suggest" className="hover:text-white">Suggest</Link>
               <Link to="/for-venues" className="hover:text-white">For venues</Link>
               <Link to="/privacy" className="hover:text-white">Privacy</Link>

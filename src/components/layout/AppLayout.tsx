@@ -10,6 +10,8 @@ export function AppLayout() {
   // the whole viewport with their own dark chrome. Both would fight the site header.
   const hideSiteChrome = pathname.startsWith("/admin") || pathname.startsWith("/owner") || pathname === "/recommend" || pathname.startsWith("/s/");
   const isDarkCanvas = pathname === "/recommend" || pathname.startsWith("/s/");
+  // The map homepage fills the viewport under the header; a footer would sit below the fold.
+  const hideFooter = hideSiteChrome || pathname === "/";
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0 });
@@ -32,7 +34,7 @@ export function AppLayout() {
       <RouteAnalytics />
       {hideSiteChrome ? null : <Header />}
       <Outlet />
-      {hideSiteChrome ? null : <Footer />}
+      {hideFooter ? null : <Footer />}
     </>
   );
 }

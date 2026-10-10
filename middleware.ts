@@ -87,6 +87,10 @@ const STATIC_PAGES: Record<string, PageMetadata> = {
     title: "Find your spot in four questions | nokta",
     description: "Answer four questions and get three named picks — the safe bet, the wildcard and the closest.",
   },
+  "/plan": {
+    title: "Plan a night | nokta",
+    description: "Planning for a group? Pick up to three places and send one link to the group chat.",
+  },
   "/suggest": {
     title: "Suggest a nokta Venue | nokta",
     description: "Know a shisha spot we are missing? Suggest it for review.",

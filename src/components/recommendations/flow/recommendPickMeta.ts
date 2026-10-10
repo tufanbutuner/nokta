@@ -5,6 +5,7 @@ const ROLE_LABELS: Record<RecommendPickRole, string> = {
   safe: "The safe bet",
   wildcard: "The wildcard",
   closest: "The closest",
+  chosen: "On the shortlist",
 };
 
 /**
@@ -20,6 +21,7 @@ export const ROLE_COLORS: Record<RecommendPickRole, string> = {
   safe: "#7ec488",
   wildcard: "#e0b05f",
   closest: "#7fa8d6",
+  chosen: "#e8a48c",
 };
 
 /** "Knightsbridge · £35+ pp · 4.6 ★ · 3.1 mi" — each part dropped when unknown. */
