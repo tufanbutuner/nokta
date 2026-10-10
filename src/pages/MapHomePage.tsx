@@ -130,10 +130,12 @@ export function MapHomePage() {
     setSelectedId(!isDesktop && results.length ? results[0].venue.id : null);
   }, [results, mapVenues, selectedId, isDesktop]);
 
-  // A new result set starts the card row from its first card.
+  // A new city or filter set starts the card row from its first card. Keyed on the
+  // choices, not the results array, so a re-render never yanks the row back.
+  const filterKey = `${city}|${[...active].sort().join(",")}`;
   useEffect(() => {
     cardsRef.current?.scrollTo({ left: 0 });
-  }, [results]);
+  }, [filterKey]);
 
   // Once the browser hands over a position, fly there.
   useEffect(() => {
