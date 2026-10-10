@@ -16,11 +16,15 @@ The calendar is not a live availability engine.
 
 It does not:
 
-- prevent double-booking
 - expose customer instant booking
-- manage slots or capacity
 - sync to external calendars
 - take deposits or booking payments
+
+Capacity itself is enforced one layer down: `venue_booking_settings.slot_capacity`
+caps accepted bookings per date+time slot, checked both in the app
+(`checkBookingAvailability`) and at write time by the
+`enforce_booking_slot_capacity` trigger (sprint 51). Pending requests show on
+the calendar but never hold a slot.
 
 ## Privacy
 

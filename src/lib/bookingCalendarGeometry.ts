@@ -79,6 +79,13 @@ export function getWaitingDays(createdAt: string): number {
   return Math.max(0, Math.floor((Date.now() - new Date(createdAt).getTime()) / (24 * 60 * 60 * 1000)));
 }
 
+/** "2h", "90 min" — for booking-duration labels on blocks and rows. */
+export function formatDurationMinutes(minutes: number): string {
+  if (minutes % 60 === 0 && minutes >= 60) return `${minutes / 60}h`;
+  if (minutes >= 60) return `${Math.floor(minutes / 60)}h ${minutes % 60}m`;
+  return `${minutes} min`;
+}
+
 export function formatRelativeAge(createdAt: string): string {
   const hours = (Date.now() - new Date(createdAt).getTime()) / (60 * 60 * 1000);
   if (hours < 1) return "just now";

@@ -109,6 +109,7 @@ function mapSettingsPatch(settings: Partial<VenueBookingSettings>) {
     min_notice_minutes: settings.minNoticeMinutes,
     max_advance_days: settings.maxAdvanceDays,
     default_booking_duration_minutes: settings.defaultBookingDurationMinutes,
+    slot_capacity: settings.slotCapacity,
     booking_instructions: nullableText(settings.bookingInstructions),
     internal_notes: nullableText(settings.internalNotes),
   };

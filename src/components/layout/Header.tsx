@@ -6,13 +6,14 @@ import { useAuth } from "@/context/AuthContext";
 import { useVenuePreferences } from "@/context/VenuePreferencesContext";
 import { useIsAdmin } from "@/hooks/useIsAdmin";
 import { cn } from "@/lib/utils";
-import { BarChart3, Bell, BookOpenCheck, Building2, ChevronDown, ClipboardPenLine, CreditCard, Inbox, LayoutDashboard, MapPin, Megaphone, Menu, MessageSquare, ShieldCheck, UserCircle } from "lucide-react";
+import { BarChart3, Bell, BookOpenCheck, Building2, CalendarDays, ChevronDown, ClipboardPenLine, CreditCard, Inbox, LayoutDashboard, MapPin, Megaphone, Menu, MessageSquare, ShieldCheck, UserCircle } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 
 const OWNER_MENU_ITEMS = [
   { label: "Home", to: "/owner", icon: LayoutDashboard, end: true },
   { label: "My venues", to: "/owner/venues", icon: Building2 },
+  { label: "Bookings", to: "/owner/bookings", icon: CalendarDays },
   { label: "Inbox", to: "/owner/inbox", icon: Inbox },
   { label: "Marketing", to: "/owner/promotions", icon: Megaphone },
   { label: "Plan & billing", to: "/owner/billing", icon: CreditCard },

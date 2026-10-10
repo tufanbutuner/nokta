@@ -8,9 +8,9 @@ import type { Venue } from "@/types/venue";
 
 const VENUE_TABS = [
   { label: "Profile", path: "profile" },
+  { label: "Bookings", path: "bookings" },
   { label: "Menu & pricing", path: "menu" },
   { label: "Photos", path: "photos" },
-  { label: "Hours & bookings", path: "bookings" },
   { label: "Performance", path: "performance" },
 ] as const;
 

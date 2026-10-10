@@ -2,7 +2,7 @@ import type { VenueBookingBlackoutDate, VenueBookingSettings, VenueBookingWindow
 import type { VenueBookingBlackoutDateRow, VenueBookingSettingsRow, VenueBookingWindowRow } from "@/types/database";
 
 export function mapVenueBookingSettingsRow(row: VenueBookingSettingsRow): VenueBookingSettings {
-  return { id: row.id, venueId: row.venue_id, bookingRequestsEnabled: row.booking_requests_enabled, minPartySize: row.min_party_size, maxPartySize: row.max_party_size, minNoticeMinutes: row.min_notice_minutes, maxAdvanceDays: row.max_advance_days, defaultBookingDurationMinutes: row.default_booking_duration_minutes, bookingInstructions: row.booking_instructions, internalNotes: row.internal_notes, createdAt: row.created_at, updatedAt: row.updated_at };
+  return { id: row.id, venueId: row.venue_id, bookingRequestsEnabled: row.booking_requests_enabled, minPartySize: row.min_party_size, maxPartySize: row.max_party_size, minNoticeMinutes: row.min_notice_minutes, maxAdvanceDays: row.max_advance_days, defaultBookingDurationMinutes: row.default_booking_duration_minutes, slotCapacity: row.slot_capacity ?? 1, bookingInstructions: row.booking_instructions, internalNotes: row.internal_notes, createdAt: row.created_at, updatedAt: row.updated_at };
 }
 
 export function mapVenueBookingWindowRow(row: VenueBookingWindowRow): VenueBookingWindow {

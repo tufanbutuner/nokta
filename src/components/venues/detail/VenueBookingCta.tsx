@@ -4,17 +4,15 @@ import { Input } from "@/components/ui/input";
 import { Select } from "@/components/ui/select";
 import { Sheet, SheetClose, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { useVenueBookingGate } from "@/hooks/useVenueBookingGate";
-import { FALLBACK_TIME_OPTIONS, getBookingTimeOptions } from "@/lib/bookingTimeOptions";
+import { explainEmptyTimeOptions, FALLBACK_TIME_OPTIONS, getBookingTimeOptions } from "@/lib/bookingTimeOptions";
 import { trackEvent, trackVenueAnalyticsEvent } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 import { getVenueBookingAvailability } from "@/services/bookingAvailabilityService";
 import type { VenueBookingAvailability } from "@/types/bookingAvailability";
 import type { Venue } from "@/types/venue";
-import { useEffect, useState, type FormEvent } from "react";
+import { useEffect, useMemo, useState, type FormEvent } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { getVenueAnalyticsProperties } from "./venueDetailAnalytics";
-
-const PARTY_SIZE_OPTIONS = Array.from({ length: 20 }, (_, index) => index + 1);
 
 /**
  * Every venue takes booking requests, claimed or not. `isClaimed` changes only the
@@ -28,8 +26,23 @@ export function BookingSidebarCard({ venue, className, compact = false }: { venu
   const [partySize, setPartySize] = useState(2);
   const [availability, setAvailability] = useState<VenueBookingAvailability | null>(null);
   const { gate } = useVenueBookingGate(venue);
-  const availableTimeOptions = availability && date ? getBookingTimeOptions({ availability, selectedDate: date }) : [];
-  const timeOptions = availableTimeOptions.length ? availableTimeOptions : FALLBACK_TIME_OPTIONS;
+  const hasPublishedHours = availability ? availability.windows.some((window) => window.isEnabled) : false;
+  const availableTimeOptions = useMemo(() => (availability && date ? getBookingTimeOptions({ availability, selectedDate: date }) : []), [availability, date]);
+  /**
+   * The generic evening list only covers a venue that has published nothing —
+   * no settings row, hours never set — or the moment before it loads. A venue
+   * with hours never lies: a full or closed date shows no times and says why.
+   */
+  const usingFallback = !availability || !hasPublishedHours;
+  const timeOptions = availableTimeOptions.length ? availableTimeOptions : usingFallback ? FALLBACK_TIME_OPTIONS : [];
+  const emptyTimeReason = useMemo(
+    () => (availability && date && hasPublishedHours && !availableTimeOptions.length ? explainEmptyTimeOptions({ availability, selectedDate: date }) : null),
+    [availability, date, hasPublishedHours, availableTimeOptions],
+  );
+  const partySizeOptions = useMemo(
+    () => buildPartySizeOptions(availability?.settings.minPartySize ?? 1, availability?.settings.maxPartySize ?? 20),
+    [availability?.settings.minPartySize, availability?.settings.maxPartySize],
+  );
   // Only an explicit opt-out removes the date/time/party fields; unclaimed venues keep them.
   const requestsDisabled = gate?.isClaimed === true && gate.bookingRequestsEnabled === false;
   const hasDirectContact = Boolean(venue.phone || venue.website);
@@ -48,6 +61,20 @@ export function BookingSidebarCard({ venue, className, compact = false }: { venu
       cancelled = true;
     };
   }, [venue.id]);
+
+  // Keep the party inside the venue's own bounds once they are known.
+  useEffect(() => {
+    if (!availability) return;
+    const min = availability.settings.minPartySize;
+    const max = Math.max(Math.min(availability.settings.maxPartySize, 100), min);
+    setPartySize((current) => Math.min(Math.max(current, min), max));
+  }, [availability?.settings.minPartySize, availability?.settings.maxPartySize]);
+
+  // A time picked from the loading fallback may not exist in the venue's real
+  // hours — drop it rather than carrying it to the form for a submit-time error.
+  useEffect(() => {
+    if (!usingFallback && time && availableTimeOptions.length && !availableTimeOptions.includes(time)) setTime("");
+  }, [usingFallback, time, availableTimeOptions]);
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -80,9 +107,10 @@ export function BookingSidebarCard({ venue, className, compact = false }: { venu
                   setTime("");
                 }}
               />
-              <Select value={time} aria-label="Booking time" className="h-11 rounded-lg border-nokta-border-input bg-white px-[11px] text-base text-nokta-ink sm:text-sm" placeholder="Time" options={timeOptions.map((option) => ({ label: option, value: option }))} disabled={!date} onValueChange={setTime} />
+              <Select value={time} aria-label="Booking time" className="h-11 rounded-lg border-nokta-border-input bg-white px-[11px] text-base text-nokta-ink sm:text-sm" placeholder={timeOptions.length ? "Time" : "No times"} options={timeOptions.map((option) => ({ label: option, value: option }))} disabled={!date || !timeOptions.length} onValueChange={setTime} />
             </div>
-            <Select value={String(partySize)} aria-label="Party size" className="h-11 rounded-lg border-nokta-border-input bg-white px-[11px] text-base text-nokta-ink sm:text-sm" options={PARTY_SIZE_OPTIONS.map((size) => ({ label: `${size} ${size === 1 ? "person" : "people"}`, value: String(size) }))} onValueChange={(value) => setPartySize(Number(value))} />
+            {emptyTimeReason ? <p className="text-[12.5px] leading-[1.5] text-nokta-ink-muted">{emptyTimeReason}</p> : null}
+            <Select value={String(partySize)} aria-label="Party size" className="h-11 rounded-lg border-nokta-border-input bg-white px-[11px] text-base text-nokta-ink sm:text-sm" options={partySizeOptions.map((size) => ({ label: `${size} ${size === 1 ? "person" : "people"}`, value: String(size) }))} onValueChange={(value) => setPartySize(Number(value))} />
             <Button type="submit" className="h-[46px] rounded-lg bg-clay-accent text-[14.5px] font-semibold text-white hover:bg-clay-accent-hover" disabled={!date || !time}>
               Request booking
             </Button>
@@ -202,4 +230,11 @@ function trackBookingCta(venue: Venue) {
 function getTodayDateValue() {
   const today = new Date();
   return `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, "0")}-${String(today.getDate()).padStart(2, "0")}`;
+}
+
+/** Party sizes offered in the sidebar: the venue's own bounds, capped at 20. */
+function buildPartySizeOptions(min: number, max: number) {
+  const lower = Math.max(1, min);
+  const upper = Math.max(Math.min(Math.max(max, lower), 20), lower);
+  return Array.from({ length: upper - lower + 1 }, (_, index) => lower + index);
 }

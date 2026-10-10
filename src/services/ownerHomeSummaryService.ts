@@ -154,6 +154,13 @@ export async function getOwnerNeedsReplyCount(input: { userId: string }): Promis
   return bookings.length + enquiries;
 }
 
+/** Badge count for the top-level Bookings nav item: requests still owing a reply. */
+export async function getOwnerPendingBookingCount(input: { userId: string }): Promise<number> {
+  const venues = await getMyClaimedVenues(input.userId);
+  if (!venues.length) return 0;
+  return getPendingBookingRequests(venues.map((venue) => venue.id)).then((bookings) => bookings.length);
+}
+
 function emptySummary(): OwnerHomeSummary {
   return {
     venues: [],

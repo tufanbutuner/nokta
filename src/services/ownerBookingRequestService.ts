@@ -97,7 +97,14 @@ async function updateOwnerBookingRequest(
     .eq("id", bookingRequestId)
     .select("*")
     .single();
-  if (error) throw new Error(`Could not update booking request: ${error.message}`);
+  if (error) {
+    // The sprint-51 trigger rejects confirms past the venue's per-slot capacity —
+    // usually because a second request was confirmed for the same time first.
+    if (error.message.includes("SLOT_CAPACITY_REACHED")) {
+      throw new Error("That time is now full — another request was confirmed for it first. Suggest a different time instead.");
+    }
+    throw new Error(`Could not update booking request: ${error.message}`);
+  }
   const request = mapBookingRequestRowToBookingRequest(data as BookingRequestRow);
   if (eventName) {
     trackEvent(eventName, { venueId: request.venueId, status: request.status, partySizeBucket: getPartySizeBucket(request.partySize), requestedDateBucket: getRequestedDateBucket(request.requestedDate) });
