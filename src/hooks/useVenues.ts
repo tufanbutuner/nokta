@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
+import { useMemo } from "react";
 import { useAuth } from "@/context/AuthContext";
 import { useIsAdmin } from "@/hooks/useIsAdmin";
 import { getVenues } from "@/services/venueService";
@@ -19,9 +20,12 @@ export function useVenues(): UseVenuesResult {
     enabled: !isLoadingAuth,
   });
 
-  const venues = canSeeHiddenVenues
-    ? query.data ?? []
-    : (query.data ?? []).filter((venue) => !venue.isTest && venue.businessStatus !== "permanently-closed");
+  // Memoised so consumers get a stable array between renders; a fresh one each render
+  // re-runs every effect and memo that depends on it.
+  const venues = useMemo(
+    () => (canSeeHiddenVenues ? query.data ?? [] : (query.data ?? []).filter((venue) => !venue.isTest && venue.businessStatus !== "permanently-closed")),
+    [query.data, canSeeHiddenVenues],
+  );
   const error = query.error instanceof Error ? query.error.message : query.error ? "Could not load venues." : null;
 
   return { venues, isLoading: isLoadingAuth || isLoadingAdmin || query.isPending, error };
