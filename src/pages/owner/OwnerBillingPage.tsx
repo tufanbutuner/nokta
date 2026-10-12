@@ -30,6 +30,7 @@ export function OwnerBillingPage() {
   const [selectedVenueId, setSelectedVenueId] = useState(searchParams.get("venue") ?? "");
   const [choosingPlan, setChoosingPlan] = useState<PaidVenuePlan | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [actionError, setActionError] = useState<string | null>(null);
   const isPortalReturn = searchParams.get("portal_return") === "1";
 
   const loadBilling = useCallback(async (input: { showLoading?: boolean; refreshStripe?: boolean } = {}) => {
@@ -75,12 +76,13 @@ export function OwnerBillingPage() {
 
   async function handleManageBilling(venueId: string) {
     try {
+      setActionError(null);
       setActionVenueId(venueId);
       const { url } = await createOwnerBillingPortalSession({ venueId });
       trackEvent("owner_billing_portal_opened", { venueId });
       window.location.href = url;
     } catch (caughtError) {
-      setError(caughtError instanceof Error ? caughtError.message : "Could not open billing portal.");
+      setActionError(caughtError instanceof Error ? caughtError.message : "Could not open billing portal.");
       setActionVenueId(null);
     }
   }
@@ -89,14 +91,14 @@ export function OwnerBillingPage() {
     if (!selectedVenueId) return;
 
     try {
-      setError(null);
+      setActionError(null);
       setChoosingPlan(plan);
       trackEvent("owner_checkout_started", { venueId: selectedVenueId, plan });
       const { url } = await createOwnerCheckoutSession({ venueId: selectedVenueId, plan });
       trackEvent("owner_checkout_redirected", { venueId: selectedVenueId, plan });
       window.location.href = url;
     } catch (caughtError) {
-      setError(caughtError instanceof Error ? caughtError.message : "Could not start checkout.");
+      setActionError(caughtError instanceof Error ? caughtError.message : "Could not start checkout.");
       setChoosingPlan(null);
     }
   }
@@ -108,13 +110,9 @@ export function OwnerBillingPage() {
         <div className="space-y-6">
           <WorkspacePageHeader
             title="Plan & billing"
-            description={
-              <>
-                Stripe is the payment source of truth. Plan access unlocks after Stripe confirms the subscription.
-                {isPortalReturn ? <span className="mt-2 block">Just returned from Stripe. We are refreshing your billing status while Stripe confirms the latest change.</span> : null}
-              </>
-            }
+            description={isPortalReturn ? "Checking your latest billing changes. Your plan will update once payment is confirmed." : "Review your venue plans and manage your subscription."}
           />
+          {actionError ? <p role="alert" className="rounded-xl border border-nokta-bad-line bg-nokta-bad-tint px-4 py-3 text-sm text-nokta-bad-ink">{actionError}</p> : null}
           <div className="grid gap-3">
             {venues.map((venue) => {
               const subscription = subscriptions[venue.id];
@@ -127,13 +125,13 @@ export function OwnerBillingPage() {
                       <h2 className="font-brand text-xl font-bold tracking-[-0.01em]">{venue.name}</h2>
                       <div className="mt-2 flex flex-wrap items-center gap-2">
                         <PlanBadge plan={subscription?.plan ?? "free"} status={subscription?.status ?? "inactive"} />
-                        <span className="text-sm capitalize text-nokta-ink-muted">{isStripeSubscription ? "Stripe billing" : "Managed manually by nokta"}</span>
+                        <span className="text-sm text-nokta-ink-muted">{isStripeSubscription ? "Billed through Stripe" : "Managed by nokta"}</span>
                       </div>
                       <p className="mt-2 text-sm text-nokta-ink-muted">
                         {formatBillingPeriod(subscription)}
                       </p>
                       {isStripeSubscription && !subscription.billingCustomerId ? (
-                        <p className="mt-2 text-xs text-nokta-ink-muted">Stripe is still syncing this subscription. Billing management will appear after the webhook stores the customer ID.</p>
+                        <p className="mt-2 text-xs text-nokta-ink-muted">Billing management will appear when your subscription finishes syncing.</p>
                       ) : null}
                     </div>
                     <div className="flex flex-wrap gap-2">
@@ -153,7 +151,7 @@ export function OwnerBillingPage() {
           <section id="owner-plans" className="space-y-4 scroll-mt-6">
             <div>
               <h2 className="font-brand text-xl font-bold tracking-[-0.01em]">Compare plans</h2>
-              <p className="mt-1 max-w-2xl text-sm text-nokta-ink-muted">Choose a venue, start Stripe Checkout, and your plan unlocks automatically after Stripe confirms payment.</p>
+              <p className="mt-1 max-w-2xl text-sm text-nokta-ink-muted">Choose a venue to see its current plan and compare what each plan includes.</p>
             </div>
             {!venues.length ? (
               <div className="rounded-2xl border bg-nokta-surface p-6 border-nokta-border">
@@ -163,10 +161,10 @@ export function OwnerBillingPage() {
               </div>
             ) : (
               <div className="rounded-2xl border bg-nokta-surface p-5 border-nokta-border">
-                <label htmlFor="owner-plan-venue" className="text-sm font-medium">Upgrade venue</label>
+                <label htmlFor="owner-plan-venue" className="text-sm font-medium">Venue</label>
                 <div className="mt-2 grid gap-3 lg:grid-cols-[minmax(280px,420px)_1fr] lg:items-center">
                   <Select id="owner-plan-venue" value={selectedVenueId} onValueChange={setSelectedVenueId} options={venueOptions} />
-                  <p className="text-sm text-nokta-ink-muted">Current plan: {PLAN_CONFIG[selectedSubscription?.plan ?? "free"].name}{selectedSubscription?.billingProvider === "stripe" ? " • Stripe billing" : ""}</p>
+                  <p className="text-sm text-nokta-ink-muted">Current plan: <span className="font-semibold text-nokta-ink">{PLAN_CONFIG[selectedSubscription?.plan ?? "free"].name}</span></p>
                 </div>
               </div>
             )}

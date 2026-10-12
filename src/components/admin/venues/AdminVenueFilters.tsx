@@ -27,7 +27,7 @@ export function AdminVenueFilters({
   onQualityLevelChange: (level: AdminVenueQualityFilter) => void;
 }) {
   return (
-    <div className="grid gap-3 lg:grid-cols-[1fr_200px_220px_180px]">
+    <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-[minmax(240px,1fr)_180px_200px_160px]">
       <Input
         value={query}
         onChange={(event) => onQueryChange(event.target.value)}

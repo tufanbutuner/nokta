@@ -7,7 +7,7 @@ const PLAN_CLASSES: Record<VenuePlan, string> = {
   free: "border-border bg-nokta-track text-nokta-ink-muted",
   starter: "border-nokta-warn-line bg-nokta-warn-tint text-nokta-warn-ink",
   growth: "border-nokta-info-line bg-nokta-info-tint text-nokta-info-ink",
-  pro: "border-nokta-ink bg-nokta-ink text-nokta-surface",
+  pro: "border-nokta-accent bg-nokta-accent-tint text-nokta-accent-dark",
 };
 
 export function PlanBadge({ plan, status = "active", compact = false }: { plan: VenuePlan; status?: VenueSubscriptionStatus; compact?: boolean }) {

@@ -36,12 +36,12 @@ const DISPLAY_PLANS: DisplayPlan[] = [
     bandNote: "Two or three on a busy weekend night. One of them covers the plan.",
     positioning: "Handle demand without living in your inbox",
     features: [
-      { text: "Requests forwarded to WhatsApp, plus saved replies", comingSoon: true },
-      { text: "Automatic booking reminders, fewer no-shows", comingSoon: true },
-      { text: "Up to 5 team logins with their own notifications", comingSoon: true },
-      { text: "Full history, demand insights and a monthly report" },
-      { text: "Your own QR booking page for tables and flyers", comingSoon: true },
-      { text: "Same-day profile changes, no review queue wait" },
+      { text: "WhatsApp forwarding and saved replies", comingSoon: true },
+      { text: "Booking reminders to reduce no-shows", comingSoon: true },
+      { text: "5 team logins with notifications", comingSoon: true },
+      { text: "Full history, demand insights and monthly report" },
+      { text: "QR booking page for tables and flyers", comingSoon: true },
+      { text: "Same-day profile changes without the review queue" },
     ],
   },
   {
@@ -78,22 +78,24 @@ export function PricingPlansTable({
 
   return (
     <section id={marketing ? "plans" : undefined}>
-      <div className="mb-5 grid gap-3 lg:grid-cols-[1fr_420px] lg:items-end">
-        <div><p className="text-sm font-semibold text-nokta-accent-dark">Plans</p><h2 className="mt-2 text-[30px] font-semibold leading-[1.2] tracking-[-0.7px]">Everything you need to get booked is free</h2></div>
-        <p className="text-sm leading-[1.6] text-nokta-ink-muted">Every plan takes unlimited requests and enquiries. Nokta is a lighter alternative for venues that do not need a full enterprise reservation system.</p>
-      </div>
-      <div className="grid items-stretch gap-3.5 lg:grid-cols-[1.12fr_1fr_1fr]">
+      {marketing ? (
+        <div className="mb-5 grid gap-3 lg:grid-cols-[1fr_420px] lg:items-end">
+          <div><p className="text-sm font-semibold text-nokta-accent-dark">Plans</p><h2 className="mt-2 text-[30px] font-semibold leading-[1.2] tracking-[-0.7px]">Everything you need to get booked is free</h2></div>
+          <p className="text-sm leading-[1.6] text-nokta-ink-muted">Every plan takes unlimited requests and enquiries. Nokta is a lighter alternative for venues that do not need a full enterprise reservation system.</p>
+        </div>
+      ) : null}
+      <div className="grid items-stretch gap-3.5 md:grid-cols-2 xl:grid-cols-[1.12fr_1fr_1fr]">
         {DISPLAY_PLANS.map((plan) => {
           const isCurrentPlan = plan.plan === currentPlan && (plan.plan === "free" || hasCurrentAccess);
           const highlighted = plan.plan === "growth";
           return (
-            <article key={plan.plan} className={cn("flex rounded-3xl border border-nokta-border bg-nokta-surface p-[22px]", highlighted && "border-2 border-nokta-accent p-[21px] shadow-[0_12px_30px_rgba(196,93,62,.13)]")}>
+            <article key={plan.plan} className={cn("flex min-w-0 rounded-2xl border border-nokta-border bg-nokta-surface p-5", highlighted && "border-nokta-accent bg-nokta-surface shadow-[0_8px_24px_rgba(196,93,62,.10)]")}>
               <div className="flex w-full flex-col">
                 <div className="flex items-center justify-between gap-3"><h3 className="text-xl font-semibold">{plan.name}</h3>{plan.pill ? <span className={cn("rounded-full px-2.5 py-1 text-xs font-semibold", plan.plan === "free" ? "bg-nokta-ok-tint text-nokta-ok-ink" : "bg-nokta-accent-tint text-nokta-accent-dark")}>{plan.pill}</span> : null}</div>
-                <div className="mt-4 flex items-end gap-0.5"><span className="text-[32px] font-semibold leading-none">£{plan.price}</span>{plan.price ? <span className="pb-0.5 text-sm text-nokta-ink-muted">/mo</span> : null}</div>
+                <div className="mt-4 flex items-end gap-0.5"><span className="text-[32px] font-semibold leading-none tabular-nums">£{plan.price}</span>{plan.price ? <span className="pb-0.5 text-sm text-nokta-ink-muted">/mo</span> : null}</div>
                 <div className={cn("mt-4 rounded-xl border border-nokta-border bg-nokta-hover px-[13px] py-3", highlighted && "border-nokta-accent-tint bg-nokta-chip-tint text-nokta-accent-dark")}><p className="text-sm font-semibold">{plan.band}</p><p className="mt-1 text-[13px] leading-[1.5]">{plan.bandNote}</p></div>
                 <p className="mt-4 text-sm font-semibold text-nokta-accent-dark">{plan.positioning}</p>
-                <ul className="mt-4 grid gap-2 text-sm leading-[1.45]">{plan.features.map((feature) => <li key={feature.text} className="flex items-start gap-2"><Check className="mt-0.5 h-3.5 w-3.5 flex-none text-nokta-accent-dark" strokeWidth={2.6} /><span>{feature.text}{feature.comingSoon ? <span className="ml-1.5 whitespace-nowrap rounded bg-nokta-page-bg px-1.5 py-0.5 text-xs font-semibold text-nokta-ink-muted">Coming soon</span> : null}</span></li>)}</ul>
+                <ul className="mb-6 mt-4 grid gap-2 text-sm leading-[1.45]">{plan.features.map((feature) => <li key={feature.text} className="flex items-start gap-2"><Check className="mt-0.5 h-3.5 w-3.5 flex-none text-nokta-accent-dark" strokeWidth={2.6} /><span>{feature.text}{feature.comingSoon ? <span className="ml-1.5 whitespace-nowrap rounded bg-nokta-page-bg px-1.5 py-0.5 text-xs font-semibold text-nokta-ink-muted">Coming soon</span> : null}</span></li>)}</ul>
                 <PlanAction plan={plan} marketing={marketing} isCurrentPlan={isCurrentPlan} disabled={disabled} isChoosingPlan={isChoosingPlan} onChoosePlan={onChoosePlan} highlighted={highlighted} />
               </div>
             </article>
@@ -108,9 +110,9 @@ export function PricingPlansTable({
 
 function PlanAction({ plan, marketing, isCurrentPlan, disabled, isChoosingPlan, onChoosePlan, highlighted }: { plan: DisplayPlan; marketing: boolean; isCurrentPlan: boolean; disabled?: boolean; isChoosingPlan?: PaidVenuePlan | null; onChoosePlan?: (plan: PaidVenuePlan) => void; highlighted: boolean }) {
   const label = isCurrentPlan ? "Current plan" : plan.plan === "free" ? "Claim your venue" : isChoosingPlan === plan.plan ? "Opening checkout..." : `Start ${plan.name}`;
-  const className = cn("mt-auto h-[42px] w-full rounded-xl", highlighted ? "bg-nokta-accent-solid text-white hover:bg-nokta-accent-solid/90" : "border-nokta-border bg-nokta-surface text-nokta-ink hover:bg-nokta-page-bg");
-  if (marketing) return <Button asChild variant={highlighted ? "default" : "outline"} className={cn("mt-6", className)}><Link to={plan.plan === "free" ? "/" : `/owner/billing?plan=${plan.plan}`}>{label}</Link></Button>;
-  return <Button variant={highlighted ? "default" : "outline"} className={cn("mt-6", className)} disabled={!isPaidPlan(plan.plan) || disabled || isChoosingPlan === plan.plan || isCurrentPlan} onClick={() => { if (isPaidPlan(plan.plan)) onChoosePlan?.(plan.plan); }}>{label}</Button>;
+  const className = cn("mt-auto h-[42px] w-full rounded-xl", highlighted ? "bg-nokta-accent-solid text-white hover:bg-nokta-accent-solid/90" : "border-nokta-border bg-nokta-surface text-nokta-ink hover:bg-nokta-hover");
+  if (marketing) return <Button asChild variant={highlighted ? "default" : "outline"} className={className}><Link to={plan.plan === "free" ? "/" : `/owner/billing?plan=${plan.plan}`}>{label}</Link></Button>;
+  return <Button variant={highlighted ? "default" : "outline"} className={className} disabled={!isPaidPlan(plan.plan) || disabled || isChoosingPlan === plan.plan || isCurrentPlan} onClick={() => { if (isPaidPlan(plan.plan)) onChoosePlan?.(plan.plan); }}>{label}</Button>;
 }
 
 function PlanExtras() {

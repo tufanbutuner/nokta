@@ -16,6 +16,7 @@ import { Select } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { generateVenueSlug } from "@/lib/venueFormMappers";
 import { validateVenueForm } from "@/lib/venueFormValidation";
+import { cn } from "@/lib/utils";
 import type { MonetisationStatus, PartnerTier } from "@/types/monetisation";
 import type { BusinessStatus, PriceLevel, VerificationStatus } from "@/types/venue";
 import type { VenueFormValues } from "@/types/venueForm";
@@ -53,16 +54,16 @@ export function VenueForm({
   initialValues,
   mode,
   isSaving,
-  saveMessage,
   saveError,
+  onDirtyChange,
   onSubmit,
   onInvalidSubmit,
 }: {
   initialValues: VenueFormValues;
   mode: "new" | "edit";
   isSaving: boolean;
-  saveMessage: string | null;
   saveError: string | null;
+  onDirtyChange: (isDirty: boolean) => void;
   onSubmit: (values: VenueFormValues) => Promise<void>;
   onInvalidSubmit?: (errors: Record<string, string>) => void;
 }) {
@@ -70,6 +71,11 @@ export function VenueForm({
   const [slugWasEdited, setSlugWasEdited] = useState(mode === "edit");
   const [submitted, setSubmitted] = useState(false);
   const validation = useMemo(() => validateVenueForm(values), [values]);
+  const hasChanges = useMemo(() => JSON.stringify(values) !== JSON.stringify(initialValues), [values, initialValues]);
+
+  useEffect(() => {
+    onDirtyChange(hasChanges);
+  }, [hasChanges, onDirtyChange]);
 
   useEffect(() => {
     setValues(initialValues);
@@ -102,6 +108,7 @@ export function VenueForm({
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (isSaving) return;
     setSubmitted(true);
 
     if (!validation.isValid) {
@@ -119,11 +126,11 @@ export function VenueForm({
   const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${values.address} ${values.postcode}`.trim())}`;
 
   return (
-    <form className="grid gap-6" onSubmit={handleSubmit}>
-      {saveMessage ? <Alert className="border-nokta-ok-line bg-nokta-ok-tint text-nokta-ok-ink">{saveMessage}</Alert> : null}
-      {saveError ? <Alert className="border-nokta-bad-line bg-nokta-bad-tint text-nokta-bad-ink">{saveError}</Alert> : null}
+    <form className="grid gap-5" onSubmit={handleSubmit}>
+      {saveError ? <Alert role="alert" className="border-nokta-bad-line bg-nokta-bad-tint text-nokta-bad-ink">{saveError}</Alert> : null}
       <VenueFormWarnings warnings={validation.warnings} />
 
+      <fieldset disabled={isSaving} className="contents">
       <VenueFormSection title="Basic details">
         <div className="grid gap-4 md:grid-cols-2">
           <Field label="Name" error={showErrors ? validation.errors.name : undefined}>
@@ -357,14 +364,21 @@ export function VenueForm({
           />
         </Field>
       </VenueFormSection>
+      </fieldset>
 
-      <div className="sticky bottom-0 flex flex-col gap-3 border-t bg-nokta-surface-alt/95 py-4 backdrop-blur sm:flex-row sm:justify-between border-nokta-border">
-        <Button asChild type="button" variant="outline">
-          <Link to="/admin/venues">Back to venues</Link>
-        </Button>
-        <Button type="submit" disabled={isSaving}>
-          {isSaving ? "Saving..." : "Save venue"}
-        </Button>
+      <div className="sticky bottom-0 z-20 -mx-4 flex flex-col gap-3 border-t border-nokta-border bg-nokta-surface px-4 py-3 sm:-mx-6 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:-mx-8 lg:px-8">
+        <p aria-live="polite" className="flex items-center gap-2 text-sm font-medium text-nokta-ink-muted">
+          <span aria-hidden="true" className={cn("size-2 shrink-0 rounded-full", saveError ? "bg-nokta-bad-solid" : hasChanges ? "bg-nokta-warn-solid" : mode === "edit" ? "bg-nokta-ok-solid" : "bg-nokta-ink-muted")} />
+          {saveError ? "Save failed" : isSaving ? "Saving changes" : mode === "edit" ? hasChanges ? "Unsaved changes" : "All changes saved" : "Ready to create"}
+        </p>
+        <div className="flex gap-2">
+          <Button asChild type="button" variant="outline" className="flex-1 rounded-full border-nokta-border bg-nokta-surface text-nokta-ink hover:bg-nokta-hover sm:flex-none">
+            <Link to="/admin/venues">Back to venues</Link>
+          </Button>
+          <Button type="submit" disabled={isSaving} className="flex-1 rounded-full bg-nokta-ink px-5 text-nokta-surface hover:bg-nokta-ink/90 sm:flex-none">
+            {isSaving ? "Saving..." : mode === "edit" ? "Save changes" : "Create venue"}
+          </Button>
+        </div>
       </div>
     </form>
   );

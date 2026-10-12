@@ -1,7 +1,8 @@
-import { useEffect, useMemo, useState } from "react";
-import { Link, useNavigate, useParams, useSearchParams } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
+import { Link, useBlocker, useNavigate, useParams, useSearchParams } from "react-router-dom";
+import { ExternalLink } from "lucide-react";
 import { AdminPageShell } from "@/components/admin/AdminPageShell";
-import { WorkspacePageHeader } from "@/components/workspace/WorkspacePageHeader";
+import { WorkspacePageHeader, workspaceSecondaryActionClass } from "@/components/workspace/WorkspacePageHeader";
 import { VenueForm } from "@/components/admin/venues/VenueForm";
 import { ErrorState } from "@/components/state/ErrorState";
 import { LoadingState } from "@/components/state/LoadingState";
@@ -26,11 +27,28 @@ export function VenueFormPage({ mode }: { mode: "new" | "edit" }) {
   const [isLoading, setIsLoading] = useState(mode === "edit" || Boolean(suggestionId));
   const [loadError, setLoadError] = useState<string | null>(null);
   const [isSaving, setIsSaving] = useState(false);
-  const [saveMessage, setSaveMessage] = useState<string | null>(null);
   const [saveError, setSaveError] = useState<string | null>(null);
+  const [isDirty, setIsDirty] = useState(false);
+  const allowNavigation = useRef(false);
   const [toast, setToast] = useState<{ type: "success" | "error"; message: string } | null>(null);
-  const title = useMemo(() => (mode === "new" ? "New venue" : "Edit venue"), [mode]);
   const focusTarget = searchParams.get("focus");
+  const blocker = useBlocker(({ currentLocation, nextLocation }) => isDirty && !allowNavigation.current && currentLocation.pathname !== nextLocation.pathname);
+
+  useEffect(() => {
+    if (blocker.state !== "blocked") return;
+    if (window.confirm("You have unsaved venue changes. Leave this page?")) blocker.proceed();
+    else blocker.reset();
+  }, [blocker]);
+
+  useEffect(() => {
+    if (!isDirty) return;
+    const handleBeforeUnload = (event: BeforeUnloadEvent) => {
+      event.preventDefault();
+      event.returnValue = "";
+    };
+    window.addEventListener("beforeunload", handleBeforeUnload);
+    return () => window.removeEventListener("beforeunload", handleBeforeUnload);
+  }, [isDirty]);
 
   useEffect(() => {
     let cancelled = false;
@@ -147,13 +165,13 @@ export function VenueFormPage({ mode }: { mode: "new" | "edit" }) {
 
   async function handleSubmit(values: VenueFormValues) {
     setIsSaving(true);
-    setSaveMessage(null);
     setSaveError(null);
 
     try {
       if (mode === "new") {
         const createdVenue = await createVenue(values);
         setToast({ type: "success", message: "Venue created." });
+        allowNavigation.current = true;
         navigate(`/admin/venues/${createdVenue.id}/edit`, { replace: true });
         return;
       }
@@ -164,7 +182,6 @@ export function VenueFormPage({ mode }: { mode: "new" | "edit" }) {
 
       const updatedVenue = await updateVenue(id, values);
       setInitialValues(mapVenueToFormValues(updatedVenue));
-      setSaveMessage("Venue saved.");
       setToast({ type: "success", message: "Venue saved." });
     } catch (caughtError) {
       const message = caughtError instanceof Error ? caughtError.message : "Could not save venue.";
@@ -199,16 +216,16 @@ export function VenueFormPage({ mode }: { mode: "new" | "edit" }) {
   }
 
   return (
-    <AdminPageShell activePath="/admin/venues">
-      <div>
+    <AdminPageShell activePath="/admin/venues" fullWidth>
+      <div className="mx-auto w-full max-w-[1120px] space-y-6 px-4 pt-6 sm:px-6 sm:pt-8 lg:px-8 lg:pt-10">
         <WorkspacePageHeader
-          className="mb-8"
           back={{ to: "/admin/venues", label: "Venues" }}
-          title={title}
-          description="Maintain venue details, source provenance, verification status and data quality inputs."
+          title={mode === "edit" ? initialValues.name : "New venue"}
+          description={mode === "edit" ? "Edit venue details, opening hours and verification." : "Add the details and sources needed to publish a venue."}
+          actions={mode === "edit" ? <Link className={workspaceSecondaryActionClass} to={`/venues/${initialValues.slug}`}>View public page <ExternalLink aria-hidden="true" className="size-4" /></Link> : undefined}
         />
         {sourceSuggestion ? (
-          <Alert className="mb-6 border-nokta-ok-line bg-nokta-ok-tint text-nokta-ok-ink">
+          <Alert className="border-nokta-ok-line bg-nokta-ok-tint text-nokta-ok-ink">
             Prefilled from suggestion: {sourceSuggestion.venueName}. Review the details, add coordinates and any missing verification before saving.
           </Alert>
         ) : null}
@@ -217,12 +234,12 @@ export function VenueFormPage({ mode }: { mode: "new" | "edit" }) {
           initialValues={initialValues}
           mode={mode}
           isSaving={isSaving}
-          saveMessage={saveMessage}
           saveError={saveError}
+          onDirtyChange={setIsDirty}
           onSubmit={handleSubmit}
           onInvalidSubmit={(errors) => setToast({ type: "error", message: `Please fix ${formatValidationFields(errors)} before saving.` })}
         />
-        {toast ? <Toast type={toast.type} title={toast.type === "success" ? "Saved" : "Save failed"} message={toast.message} onClose={() => setToast(null)} /> : null}
+        {toast ? <Toast type={toast.type} title={toast.type === "success" ? "Saved" : "Save failed"} message={toast.message} offsetBottom onClose={() => setToast(null)} /> : null}
       </div>
     </AdminPageShell>
   );

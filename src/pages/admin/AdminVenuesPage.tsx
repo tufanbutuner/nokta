@@ -8,7 +8,6 @@ import type { AdminVenueQualityFilter, AdminVenueVerificationFilter } from "@/co
 import { ErrorState } from "@/components/state/ErrorState";
 import { EmptyState } from "@/components/state/EmptyState";
 import { LoadingState } from "@/components/state/LoadingState";
-import { Card, CardContent } from "@/components/ui/card";
 import { useVenues } from "@/hooks/useVenues";
 import { DEFAULT_CITY } from "@/lib/cities";
 import { getVenueQuality } from "@/lib/venueQuality";
@@ -56,38 +55,34 @@ export function AdminVenuesPage() {
 
   return (
     <AdminPageShell activePath="/admin/venues">
-      <div>
+      <div className="space-y-6">
         <WorkspacePageHeader
-          className="mb-8"
           title="Venues"
           description="Create venues, edit catalogue details and maintain verification data."
           actions={<Link to="/admin/venues/new" className={workspacePrimaryActionClass}>New venue</Link>}
         />
 
-        <Card className="mb-5">
-          <CardContent>
-            <AdminVenueFilters
-              query={query}
-              city={city}
-              verificationStatus={verificationStatus}
-              qualityLevel={qualityLevel}
-              onQueryChange={setQuery}
-              onCityChange={setCity}
-              onVerificationStatusChange={setVerificationStatus}
-              onQualityLevelChange={setQualityLevel}
-            />
-          </CardContent>
-        </Card>
+        <section aria-label="Filter venues" className="rounded-xl border border-nokta-border bg-nokta-surface p-4">
+          <AdminVenueFilters
+            query={query}
+            city={city}
+            verificationStatus={verificationStatus}
+            qualityLevel={qualityLevel}
+            onQueryChange={setQuery}
+            onCityChange={setCity}
+            onVerificationStatusChange={setVerificationStatus}
+            onQualityLevelChange={setQualityLevel}
+          />
+        </section>
 
-        <div className="mb-4 text-sm text-nokta-ink-muted">
-          Showing {filteredVenues.length} of {venues.length} venues
+        <div className="space-y-3">
+          <p className="text-sm text-nokta-ink-muted">Showing {filteredVenues.length} of {venues.length} venues</p>
+          {filteredVenues.length ? (
+            <AdminVenueTable venues={filteredVenues} />
+          ) : (
+            <EmptyState title="No venues match these filters" description="Adjust the search or filters to continue managing venues." />
+          )}
         </div>
-
-        {filteredVenues.length ? (
-          <AdminVenueTable venues={filteredVenues} />
-        ) : (
-          <EmptyState title="No venues match these filters" description="Adjust the search or filters to continue managing venues." />
-        )}
       </div>
     </AdminPageShell>
   );
