@@ -7,6 +7,8 @@ const devPort = Number(process.env.PORT ?? 5173);
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   build: {
+    // The map library stays in its lazy route chunk; warn if it grows past 1.1 MB.
+    chunkSizeWarningLimit: 1100,
     rollupOptions: {
       output: {
         // Match on the package directory, not a bare substring of the whole path:

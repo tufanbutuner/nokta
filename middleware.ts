@@ -18,6 +18,7 @@ import { next } from "@vercel/edge";
  */
 
 export const config = {
+  runtime: "nodejs",
   // Skip assets outright: matching them would burn invocations on every file.
   // Skip /api too: those are server routes, not pages a crawler should ever see.
   matcher: ["/((?!api/|assets/|_next/|favicon|.*\\.(?:png|jpg|jpeg|gif|svg|ico|webp|css|js|woff2?|xml|txt|json)$).*)"],
@@ -69,7 +70,7 @@ const SITE_FALLBACK: PageMetadata = {
 };
 
 /**
- * Mirrors STATIC_PAGE_METADATA in src/lib/pageMetadata.ts. The edge runtime cannot
+ * Mirrors STATIC_PAGE_METADATA in src/lib/pageMetadata.ts. Middleware cannot
  * resolve the app's "@/" alias, so the table is restated here.
  * `npm run check:metadata` compares the two and fails if they drift.
  */
@@ -104,7 +105,7 @@ const STATIC_PAGES: Record<string, PageMetadata> = {
 /**
  * Mirrors SUPPORTED_CITIES in src/data/supportedCities.ts, reduced to the fields
  * the crawler response needs. Restated here for the same reason as the metadata
- * table: the edge runtime cannot resolve the app's "@/" alias.
+ * table: middleware cannot resolve the app's "@/" alias.
  * `npm run check:metadata` compares the two and fails if they drift.
  */
 const CITIES: { name: string; slug: string; isActive: boolean }[] = [
