@@ -59,7 +59,9 @@ export function validateMenuSectionName(name: string, existingSections: VenueMen
   const trimmed = name.trim();
   if (!trimmed) return "Add a section name.";
   if (trimmed.length > MAX_MENU_SECTION_NAME_LENGTH) return `Section name must be under ${MAX_MENU_SECTION_NAME_LENGTH} characters.`;
-  const clash = existingSections.some((section) => section.id !== sectionId && section.name.trim().toLowerCase() === trimmed.toLowerCase());
+  const slug = toSectionSlug(trimmed);
+  if (!slug) return "Use at least one letter or number in the section name.";
+  const clash = existingSections.some((section) => section.id !== sectionId && toSectionSlug(section.name) === slug);
   if (clash) return "You already have a section with that name.";
   return null;
 }
@@ -74,7 +76,7 @@ export function toSectionSlug(name: string): string {
     .slice(0, 60);
 }
 
-export function validateVenueMenuDraft(input: { draft: VenueMenuDraft; items: VenueMenuItem[] }): VenueMenuValidationResult {
+export function validateVenueMenuDraft(input: { draft: VenueMenuDraft; items: VenueMenuItem[]; sections: VenueMenuSection[] }): VenueMenuValidationResult {
   const errors: Record<string, string> = {};
 
   for (const [itemId, change] of Object.entries(input.draft.updated)) {
@@ -100,15 +102,33 @@ export function validateVenueMenuDraft(input: { draft: VenueMenuDraft; items: Ve
     if (nameError) errors[`${created.tempId}.name`] = nameError;
     const noteError = validateMenuItemNote(created.note);
     if (noteError) errors[`${created.tempId}.note`] = noteError;
-    const priceError = validateMenuItemPricePence(created.pricePence);
+    const priceError = created.pricePence === null ? "Add a price." : validateMenuItemPricePence(created.pricePence);
     if (priceError) errors[`${created.tempId}.price`] = priceError;
+  }
+
+  // Section names are checked against the draft's own view, so renaming two
+  // sections into each other's names is caught before it reaches the database.
+  const draftSections = applyVenueMenuSectionsDraft({ sections: input.sections, draft: input.draft });
+  for (const section of draftSections) {
+    const touched = section.id in input.draft.sections.updated || input.draft.sections.created.some((created) => created.tempId === section.id);
+    if (!touched) continue;
+    const nameError = validateMenuSectionName(section.name, draftSections, section.id);
+    if (nameError) errors[`${section.id}.section`] = nameError;
   }
 
   return { errors, isValid: Object.keys(errors).length === 0 };
 }
 
 export function countVenueMenuDraftChanges(draft: VenueMenuDraft): number {
-  return Object.keys(draft.updated).length + draft.created.length + draft.deletedIds.length;
+  const sections = draft.sections;
+  return (
+    Object.keys(draft.updated).length +
+    draft.created.length +
+    draft.deletedIds.length +
+    Object.keys(sections.updated).length +
+    sections.created.length +
+    sections.deletedIds.length
+  );
 }
 
 export function isVenueMenuDraftEmpty(draft: VenueMenuDraft): boolean {
@@ -116,25 +136,51 @@ export function isVenueMenuDraftEmpty(draft: VenueMenuDraft): boolean {
 }
 
 export function createEmptyVenueMenuDraft(): VenueMenuDraft {
-  return { updated: {}, created: [], deletedIds: [] };
+  return { updated: {}, created: [], deletedIds: [], sections: { updated: {}, created: [], deletedIds: [] } };
 }
 
 /**
  * Applies the draft over the server state to produce what the public page
  * would show. The editor's summary card and preview both read this, so a
- * price edit updates every surface at once.
+ * price edit updates every surface at once. Items in a deleted section go
+ * with it, as they will on publish.
  */
 export function applyVenueMenuDraft(input: { items: VenueMenuItem[]; draft: VenueMenuDraft }): VenueMenuItem[] {
   const deleted = new Set(input.draft.deletedIds);
+  const deletedSections = new Set(input.draft.sections.deletedIds);
   const updatedItems = input.items
-    .filter((item) => !deleted.has(item.id))
+    .filter((item) => !deleted.has(item.id) && !deletedSections.has(item.sectionId))
     .map((item) => {
       const change = input.draft.updated[item.id];
-      return change ? { ...item, ...change } : item;
+      return change ? { ...item, ...change, pricePence: change.pricePence ?? item.pricePence } : item;
     });
 
   const createdItems = input.draft.created.map((created) => draftCreateToItem(created, input.items[0]?.venueId ?? ""));
   return [...updatedItems, ...createdItems].sort((a, b) => a.sortOrder - b.sortOrder);
+}
+
+/** The draft's sections, in display order: renamed, reordered, added and removed. */
+export function applyVenueMenuSectionsDraft(input: { sections: VenueMenuSection[]; draft: VenueMenuDraft }): VenueMenuSection[] {
+  const { sections: sectionsDraft } = input.draft;
+  const deleted = new Set(sectionsDraft.deletedIds);
+  const now = new Date().toISOString();
+  const existing = input.sections
+    .filter((section) => !deleted.has(section.id))
+    .map((section) => {
+      const change = sectionsDraft.updated[section.id];
+      return change ? { ...section, ...change } : section;
+    });
+  const created = sectionsDraft.created.map((section) => ({
+    id: section.tempId,
+    venueId: input.sections[0]?.venueId ?? "",
+    name: section.name,
+    slug: toSectionSlug(section.name),
+    isShisha: section.isShisha,
+    sortOrder: section.sortOrder,
+    createdAt: now,
+    updatedAt: now,
+  }));
+  return [...existing, ...created].sort((a, b) => a.sortOrder - b.sortOrder);
 }
 
 export function draftCreateToItem(created: VenueMenuItemDraftCreate, venueId: string): VenueMenuItem {
@@ -145,7 +191,7 @@ export function draftCreateToItem(created: VenueMenuItemDraftCreate, venueId: st
     sectionId: created.sectionId,
     name: created.name,
     note: created.note,
-    pricePence: created.pricePence,
+    pricePence: created.pricePence ?? 0,
     isLive: created.isLive,
     sortOrder: created.sortOrder,
     createdAt: now,
@@ -168,7 +214,7 @@ export function deriveShishaPriceFromPence(input: { items: VenueMenuItem[]; sect
 }
 
 /** One line per pending change, for the unpublished-changes tray. */
-export function summariseVenueMenuDraft(input: { draft: VenueMenuDraft; items: VenueMenuItem[] }): VenueMenuChangeSummary[] {
+export function summariseVenueMenuDraft(input: { draft: VenueMenuDraft; items: VenueMenuItem[]; sections: VenueMenuSection[] }): VenueMenuChangeSummary[] {
   const summaries: VenueMenuChangeSummary[] = [];
 
   for (const [itemId, change] of Object.entries(input.draft.updated)) {
@@ -176,7 +222,7 @@ export function summariseVenueMenuDraft(input: { draft: VenueMenuDraft; items: V
     if (!item) continue;
 
     if (change.pricePence !== undefined && change.pricePence !== item.pricePence) {
-      summaries.push({ id: itemId, kind: "price", label: `${item.name} · ${formatPenceAsPrice(item.pricePence)} → ${formatPenceAsPrice(change.pricePence)}` });
+      summaries.push({ id: itemId, kind: "price", label: `${item.name} · ${formatPenceAsPrice(item.pricePence)} → ${change.pricePence === null ? "Add price" : formatPenceAsPrice(change.pricePence)}` });
     }
     if (change.isLive !== undefined && change.isLive !== item.isLive) {
       summaries.push({ id: `${itemId}-live`, kind: "visibility", label: `${item.name} · ${change.isLive ? "shown" : "hidden"}` });
@@ -187,10 +233,29 @@ export function summariseVenueMenuDraft(input: { draft: VenueMenuDraft; items: V
     if (change.note !== undefined && change.note !== item.note) {
       summaries.push({ id: `${itemId}-note`, kind: "note", label: `${item.name} · note updated` });
     }
+    if (change.sortOrder !== undefined && change.sortOrder !== item.sortOrder) {
+      summaries.push({ id: `${itemId}-order`, kind: "order", label: `${item.name} · moved` });
+    }
   }
 
   for (const created of input.draft.created) {
     summaries.push({ id: created.tempId, kind: "new", label: `${created.name || "Untitled item"} · new item` });
+  }
+
+  const sectionsDraft = input.draft.sections;
+  for (const created of sectionsDraft.created) {
+    summaries.push({ id: created.tempId, kind: "section", label: `${created.name || "Untitled section"} · new section` });
+  }
+  for (const [sectionId, change] of Object.entries(sectionsDraft.updated)) {
+    const section = input.sections.find((candidate) => candidate.id === sectionId);
+    if (!section) continue;
+    if (change.name !== undefined && change.name !== section.name) summaries.push({ id: `${sectionId}-name`, kind: "section", label: `${section.name} → ${change.name}` });
+    if (change.isShisha !== undefined && change.isShisha !== section.isShisha) summaries.push({ id: `${sectionId}-shisha`, kind: "section", label: `${section.name} · ${change.isShisha ? "counts" : "no longer counts"} towards your price` });
+    if (change.sortOrder !== undefined && change.sortOrder !== section.sortOrder) summaries.push({ id: `${sectionId}-order`, kind: "order", label: `${section.name} · moved` });
+  }
+  for (const sectionId of sectionsDraft.deletedIds) {
+    const section = input.sections.find((candidate) => candidate.id === sectionId);
+    summaries.push({ id: `${sectionId}-removed`, kind: "removed", label: `${section?.name ?? "Section"} · section removed` });
   }
 
   for (const deletedId of input.draft.deletedIds) {

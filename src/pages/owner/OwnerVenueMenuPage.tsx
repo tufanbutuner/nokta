@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, type FormEvent } from "react";
 import { Link } from "react-router-dom";
 import { ExternalMenuLinksCard, MenuPriceSummary } from "@/components/owner/menu/MenuPriceSummary";
 import { MenuSectionCard } from "@/components/owner/menu/MenuSectionCard";
@@ -13,7 +13,7 @@ import { useAuth } from "@/context/AuthContext";
 import { trackEvent } from "@/lib/analytics";
 import { summariseVenueMenuDraft } from "@/lib/venueMenuValidation";
 import { getMyClaimedVenue } from "@/services/ownerVenueService";
-import { createVenueMenuSection, getOwnerVenueMenu, publishVenueMenu, updateVenueMenuLinks, type VenueMenuLinkField } from "@/services/venueMenuService";
+import { getOwnerVenueMenu, publishVenueMenu, updateVenueMenuLinks, type VenueMenuLinkField } from "@/services/venueMenuService";
 import type { VenueMenu } from "@/types/venueMenu";
 
 export function OwnerVenueMenuPage() {
@@ -25,8 +25,12 @@ export function OwnerVenueMenuPage() {
   const [isSavingLinks, setIsSavingLinks] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [notice, setNotice] = useState<string | null>(null);
+  const [sectionName, setSectionName] = useState("");
+  const [addingSection, setAddingSection] = useState(false);
+  const [focusId, setFocusId] = useState<string | null>(null);
+  const [showErrors, setShowErrors] = useState(false);
 
-  const { draft, draftItems, changeCount, validation, derivedPricePence, updateItem, addItem, removeItem, raiseSectionPrices, discard } = useVenueMenuDraft({ venueId: venue.id, menu });
+  const { draft, draftItems, draftSections, changeCount, validation, derivedPricePence, updateItem, addItem, removeItem, moveItem, raiseSectionPrices, addSection, updateSection, moveSection, removeSection, discard } = useVenueMenuDraft({ venueId: venue.id, menu });
 
   useEffect(() => {
     if (!user) return;
@@ -59,7 +63,7 @@ export function OwnerVenueMenuPage() {
   }, [changeCount]);
 
   const changeSummaries = useMemo(
-    () => (menu ? summariseVenueMenuDraft({ draft, items: menu.items }) : []),
+    () => (menu ? summariseVenueMenuDraft({ draft, items: menu.items, sections: menu.sections }) : []),
     [draft, menu],
   );
 
@@ -73,13 +77,15 @@ export function OwnerVenueMenuPage() {
   );
 
   async function handlePublish() {
-    if (!user || !validation.isValid) return;
+    if (!user) return;
+    if (!validation.isValid) { setShowErrors(true); return; }
     try {
       setIsPublishing(true);
       setError(null);
       const nextMenu = await publishVenueMenu({ userId: user.id, venueId: venue.id, draft });
       setMenu(nextMenu);
       discard();
+      setShowErrors(false);
       setNotice("Menu updated — live now.");
       const refreshed = await getMyClaimedVenue({ userId: user.id, venueId: venue.id });
       if (refreshed) setVenue(refreshed);
@@ -112,26 +118,16 @@ export function OwnerVenueMenuPage() {
     }
   }
 
-  async function handleAddSection() {
-    if (!user) return;
-    const name = window.prompt("Name your new menu section");
-    if (!name?.trim()) return;
-    try {
-      setError(null);
-      await createVenueMenuSection({ userId: user.id, venueId: venue.id, name });
-      const nextMenu = await getOwnerVenueMenu({ userId: user.id, venueId: venue.id });
-      setMenu(nextMenu);
-    } catch (caughtError) {
-      setError(caughtError instanceof Error ? caughtError.message : "Could not add that section.");
-    }
+  function handleAddSection(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const id = addSection({ name: sectionName.trim(), isShisha: false });
+    setSectionName("");
+    setAddingSection(false);
+    setFocusId(id);
   }
 
-  function handleRaisePrices(sectionId: string) {
-    if (!menu) return;
-    const answer = window.prompt("Raise every live price in this section by what percent?", "5");
-    const percent = Number(answer);
-    if (!answer || !Number.isFinite(percent) || percent === 0) return;
-    raiseSectionPrices({ sectionId, percent, items: draftItems });
+  function handleAddItem(sectionId: string) {
+    setFocusId(addItem(sectionId));
   }
 
   function confirmTabChange() {
@@ -152,7 +148,7 @@ export function OwnerVenueMenuPage() {
             <Button asChild variant="outline" className="h-9 text-sm">
               <Link to={`/venues/${venue.slug}`}>Preview public page</Link>
             </Button>
-            <Button type="button" onClick={handlePublish} disabled={!changeCount || isPublishing || !validation.isValid} className="h-9 text-sm">
+            <Button type="button" onClick={handlePublish} disabled={!changeCount || isPublishing} className="h-9 text-sm">
               {isPublishing ? "Publishing..." : changeCount ? `Publish ${changeCount} change${changeCount === 1 ? "" : "s"}` : "Publish"}
             </Button>
           </>
@@ -168,20 +164,37 @@ export function OwnerVenueMenuPage() {
             <div className="flex flex-col gap-[14px]">
               <MenuPriceSummary derivedPricePence={derivedPricePence} priceLevel={venue.priceLevel} />
 
-              {menu.sections.map((section) => (
+              {draftSections.map((section, index) => (
                 <MenuSectionCard
                   key={section.id}
                   section={section}
                   items={draftItems.filter((item) => item.sectionId === section.id)}
+                  isFirst={index === 0}
+                  isLast={index === draftSections.length - 1}
+                  isNew={section.id.startsWith("new-")}
+                  changedItemIds={new Set([...Object.keys(draft.updated), ...draft.created.map((item) => item.tempId)])}
                   errors={validation.errors}
+                  showErrors={showErrors}
+                  focusId={focusId}
+                  onFocused={() => setFocusId(null)}
+                  onUpdateSection={(change) => updateSection(section.id, change)}
+                  onMoveSection={(direction) => moveSection(section.id, direction)}
+                  onRemoveSection={() => removeSection(section.id)}
+                  onRaisePrices={(percent) => raiseSectionPrices({ sectionId: section.id, percent })}
                   onUpdateItem={updateItem}
+                  onMoveItem={moveItem}
                   onRemoveItem={removeItem}
-                  onAddItem={(sectionId) => addItem(sectionId, draftItems.filter((item) => item.sectionId === sectionId).length)}
-                  onRaisePrices={handleRaisePrices}
+                  onAddItem={() => handleAddItem(section.id)}
                 />
               ))}
 
-              <button type="button" onClick={handleAddSection} className="self-start text-[13px] font-medium text-nokta-accent-dark hover:underline">+ Add a section</button>
+              {addingSection ? (
+                <form onSubmit={handleAddSection} className="flex flex-wrap items-center gap-2 rounded-2xl border border-nokta-border bg-nokta-surface p-3">
+                  <input autoFocus value={sectionName} maxLength={60} onChange={(event) => setSectionName(event.target.value)} placeholder="New section name" aria-label="New section name" className="h-10 min-w-48 flex-1 rounded-xl border border-nokta-border-input bg-nokta-surface px-3 text-sm outline-none focus:border-nokta-accent" />
+                  <Button type="submit" disabled={!sectionName.trim()}>Add section</Button>
+                  <Button type="button" variant="outline" onClick={() => { setAddingSection(false); setSectionName(""); }}>Cancel</Button>
+                </form>
+              ) : <button type="button" onClick={() => setAddingSection(true)} className="self-start rounded-xl border border-dashed border-nokta-border px-4 py-2.5 text-sm font-semibold text-nokta-accent-dark hover:bg-nokta-hover">+ Add a section</button>}
 
               <ExternalMenuLinksCard links={links} isSaving={isSavingLinks} onSave={handleSaveLinks} />
             </div>
@@ -190,13 +203,16 @@ export function OwnerVenueMenuPage() {
               <UnpublishedChangesTray
                 changes={changeSummaries}
                 isPublishing={isPublishing}
-                canPublish={validation.isValid}
+                canPublish
                 onPublish={handlePublish}
                 onDiscard={() => {
                   if (window.confirm(`Discard ${changeCount} unpublished change${changeCount === 1 ? "" : "s"}?`)) discard();
                 }}
               />
-              <PublicPagePreview sections={menu.sections} items={draftItems} />
+              <PublicPagePreview sections={draftSections} items={draftItems} unpricedItemIds={new Set([
+                ...draft.created.filter((item) => item.pricePence === null).map((item) => item.tempId),
+                ...Object.entries(draft.updated).filter(([, change]) => change.pricePence === null).map(([id]) => id),
+              ])} />
               <NoReviewNotice />
             </div>
           </div>

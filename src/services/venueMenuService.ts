@@ -1,7 +1,7 @@
 import { trackEvent } from "@/lib/analytics";
 import { supabase, supabaseConfigError } from "@/lib/supabase";
 import { mapVenueMenuItemRowToItem, mapVenueMenuSectionRowToSection } from "@/lib/venueMenuMappers";
-import { applyVenueMenuDraft, deriveShishaPriceFromPence, pencePriceToPoundsFloor, toSectionSlug } from "@/lib/venueMenuValidation";
+import { applyVenueMenuDraft, applyVenueMenuSectionsDraft, deriveShishaPriceFromPence, pencePriceToPoundsFloor, toSectionSlug, validateVenueMenuDraft } from "@/lib/venueMenuValidation";
 import { getMyClaimedVenue } from "@/services/ownerVenueService";
 import type { VenueMenuItemRow, VenueMenuSectionRow } from "@/types/database";
 import type { VenueMenu, VenueMenuDraft, VenueMenuSection } from "@/types/venueMenu";
@@ -107,25 +107,76 @@ export async function deleteVenueMenuSection(input: { userId: string; venueId: s
  * Writes the whole draft, then recomputes venues.price_from from the result.
  *
  * Supabase's REST client has no multi-statement transaction, so this applies
- * deletes, updates and inserts in sequence and surfaces the first failure. A
- * partial apply is possible; the caller refetches on error so the editor shows
- * true server state rather than a stale draft.
+ * deletes, section changes, item updates and inserts in sequence and surfaces
+ * the first failure. A partial apply is possible; the caller refetches on error
+ * so the editor shows true server state rather than a stale draft.
  */
 export async function publishVenueMenu(input: { userId: string; venueId: string; draft: VenueMenuDraft }): Promise<VenueMenu> {
   const venue = await ensureOwnedVenue(input);
   const client = ensureSupabase();
   const { draft } = input;
+  const currentMenu = await getOwnerVenueMenu({ userId: input.userId, venueId: venue.id });
+  if (!validateVenueMenuDraft({ draft, items: currentMenu.items, sections: currentMenu.sections }).isValid) {
+    throw new Error("Fix the highlighted menu fields before publishing.");
+  }
+  const sectionsDraft = draft.sections;
+  const deletedSectionIds = new Set(sectionsDraft.deletedIds);
 
   if (draft.deletedIds.length) {
     const { error } = await client.from("venue_menu_items").delete().eq("venue_id", venue.id).in("id", draft.deletedIds);
     if (error) throw new Error(`Could not remove items: ${error.message}`);
   }
 
+  // Items in a removed section cascade with it.
+  if (sectionsDraft.deletedIds.length) {
+    const { error } = await client.from("venue_menu_sections").delete().eq("venue_id", venue.id).in("id", sectionsDraft.deletedIds);
+    if (error) throw new Error(`Could not remove sections: ${error.message}`);
+  }
+
+  // Free old slugs before applying renamed and newly created sections. This
+  // also lets two sections exchange names in one publish.
+  for (const [sectionId, change] of Object.entries(sectionsDraft.updated)) {
+    if (deletedSectionIds.has(sectionId) || change.name === undefined) continue;
+    const original = currentMenu.sections.find((section) => section.id === sectionId);
+    if (!original || toSectionSlug(original.name) === toSectionSlug(change.name)) continue;
+    const { error } = await client.from("venue_menu_sections")
+      .update({ slug: `menu_tmp_${crypto.randomUUID().replace(/-/g, "")}` })
+      .eq("id", sectionId).eq("venue_id", venue.id);
+    if (error) throw new Error(`Could not prepare section rename: ${error.message}`);
+  }
+
+  // New sections first, so new items can point at their real ids.
+  const sectionIdByTempId = new Map<string, string>();
+  for (const created of sectionsDraft.created) {
+    const { data, error } = await client
+      .from("venue_menu_sections")
+      .insert({ venue_id: venue.id, name: created.name.trim(), slug: toSectionSlug(created.name), is_shisha: created.isShisha, sort_order: created.sortOrder })
+      .select("id")
+      .single();
+    if (error) throw new Error(`Could not add the ${created.name.trim()} section: ${error.message}`);
+    sectionIdByTempId.set(created.tempId, (data as { id: string }).id);
+  }
+
+  for (const [sectionId, change] of Object.entries(sectionsDraft.updated)) {
+    if (deletedSectionIds.has(sectionId)) continue;
+    const patch: Partial<VenueMenuSectionRow> = {};
+    if (change.name !== undefined) {
+      patch.name = change.name.trim();
+      patch.slug = toSectionSlug(change.name);
+    }
+    if (change.isShisha !== undefined) patch.is_shisha = change.isShisha;
+    if (change.sortOrder !== undefined) patch.sort_order = change.sortOrder;
+    if (!Object.keys(patch).length) continue;
+
+    const { error } = await client.from("venue_menu_sections").update(patch).eq("id", sectionId).eq("venue_id", venue.id);
+    if (error) throw new Error(`Could not update sections: ${error.message}`);
+  }
+
   for (const [itemId, change] of Object.entries(draft.updated)) {
     const patch: Partial<VenueMenuItemRow> = {};
     if (change.name !== undefined) patch.name = change.name.trim();
     if (change.note !== undefined) patch.note = change.note?.trim() || null;
-    if (change.pricePence !== undefined) patch.price_pence = change.pricePence;
+    if (change.pricePence !== undefined && change.pricePence !== null) patch.price_pence = change.pricePence;
     if (change.isLive !== undefined) patch.is_live = change.isLive;
     if (change.sortOrder !== undefined) patch.sort_order = change.sortOrder;
     if (!Object.keys(patch).length) continue;
@@ -134,14 +185,15 @@ export async function publishVenueMenu(input: { userId: string; venueId: string;
     if (error) throw new Error(`Could not update items: ${error.message}`);
   }
 
-  if (draft.created.length) {
+  const itemsToCreate = draft.created.filter((created) => !deletedSectionIds.has(created.sectionId));
+  if (itemsToCreate.length) {
     const { error } = await client.from("venue_menu_items").insert(
-      draft.created.map((created) => ({
+      itemsToCreate.map((created) => ({
         venue_id: venue.id,
-        section_id: created.sectionId,
+        section_id: sectionIdByTempId.get(created.sectionId) ?? created.sectionId,
         name: created.name.trim(),
         note: created.note?.trim() || null,
-        price_pence: created.pricePence,
+        price_pence: created.pricePence ?? 0,
         is_live: created.isLive,
         sort_order: created.sortOrder,
       })),
@@ -157,6 +209,9 @@ export async function publishVenueMenu(input: { userId: string; venueId: string;
     updated: Object.keys(draft.updated).length,
     created: draft.created.length,
     deleted: draft.deletedIds.length,
+    sectionsCreated: sectionsDraft.created.length,
+    sectionsUpdated: Object.keys(sectionsDraft.updated).length,
+    sectionsDeleted: sectionsDraft.deletedIds.length,
   });
 
   return menu;
@@ -215,5 +270,5 @@ export async function updateVenueMenuLinks(input: { userId: string; venueId: str
 
 /** The draft's view of what the public page would show, without a refetch. */
 export function getDraftVenueMenu(input: { menu: VenueMenu; draft: VenueMenuDraft }): VenueMenu {
-  return { sections: input.menu.sections, items: applyVenueMenuDraft({ items: input.menu.items, draft: input.draft }) };
+  return { sections: applyVenueMenuSectionsDraft({ sections: input.menu.sections, draft: input.draft }), items: applyVenueMenuDraft({ items: input.menu.items, draft: input.draft }) };
 }

@@ -31,28 +31,53 @@ export interface VenueMenu {
 export interface VenueMenuItemDraftChange {
   name?: string;
   note?: string | null;
-  pricePence?: number;
+  pricePence?: number | null;
   isLive?: boolean;
   sortOrder?: number;
 }
 
+/** An edit from the editor. A null price only applies to unsaved items, where it means "not typed yet". */
+export type VenueMenuItemEdit = VenueMenuItemDraftChange;
+
 export interface VenueMenuItemDraftCreate {
   tempId: string;
+  /** A real section id, or the tempId of a section created in the same draft. */
   sectionId: string;
   name: string;
   note: string | null;
-  pricePence: number;
+  /** Null until the owner types a price, so a new item never reads as free. */
+  pricePence: number | null;
   isLive: boolean;
   sortOrder: number;
+}
+
+export interface VenueMenuSectionDraftChange {
+  name?: string;
+  isShisha?: boolean;
+  sortOrder?: number;
+}
+
+export interface VenueMenuSectionDraftCreate {
+  tempId: string;
+  name: string;
+  isShisha: boolean;
+  sortOrder: number;
+}
+
+export interface VenueMenuSectionsDraft {
+  updated: Record<string, VenueMenuSectionDraftChange>;
+  created: VenueMenuSectionDraftCreate[];
+  deletedIds: string[];
 }
 
 export interface VenueMenuDraft {
   updated: Record<string, VenueMenuItemDraftChange>;
   created: VenueMenuItemDraftCreate[];
   deletedIds: string[];
+  sections: VenueMenuSectionsDraft;
 }
 
-export type VenueMenuChangeKind = "price" | "name" | "note" | "visibility" | "order" | "new" | "removed";
+export type VenueMenuChangeKind = "price" | "name" | "note" | "visibility" | "order" | "new" | "removed" | "section";
 
 export interface VenueMenuChangeSummary {
   id: string;

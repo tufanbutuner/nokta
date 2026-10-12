@@ -36,7 +36,7 @@ export function UnpublishedChangesTray({
   );
 }
 
-export function PublicPagePreview({ sections, items }: { sections: VenueMenuSection[]; items: VenueMenuItem[] }) {
+export function PublicPagePreview({ sections, items, unpricedItemIds }: { sections: VenueMenuSection[]; items: VenueMenuItem[]; unpricedItemIds: Set<string> }) {
   const liveItems = items.filter((item) => item.isLive);
 
   return (
@@ -54,7 +54,7 @@ export function PublicPagePreview({ sections, items }: { sections: VenueMenuSect
                   {sectionItems.map((item) => (
                     <li key={item.id} className="flex items-baseline justify-between gap-3 text-[13px]">
                       <span className="truncate text-nokta-ink">{item.name || "Untitled item"}</span>
-                      <span className="flex-none font-medium text-nokta-ink">{formatPenceAsPrice(item.pricePence)}</span>
+                      <span className="flex-none font-medium text-nokta-ink">{unpricedItemIds.has(item.id) ? "Add price" : formatPenceAsPrice(item.pricePence)}</span>
                     </li>
                   ))}
                 </ul>
