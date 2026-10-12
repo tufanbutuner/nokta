@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { AccountPageHeader } from "@/components/account/AccountPageHeader";
 import { NotificationItem } from "@/components/notifications/NotificationItem";
 import { NotificationsEmptyState } from "@/components/notifications/NotificationsEmptyState";
 import { PageContainer } from "@/components/layout/PageContainer";
@@ -7,12 +7,17 @@ import { PageMeta } from "@/components/seo/PageMeta";
 import { ErrorState } from "@/components/state/ErrorState";
 import { LoadingState } from "@/components/state/LoadingState";
 import { Button } from "@/components/ui/button";
-import { Select } from "@/components/ui/select";
+import { cn } from "@/lib/utils";
 import { useAuth } from "@/context/AuthContext";
 import { dismissNotification, getMyNotifications, markAllNotificationsRead, markNotificationRead } from "@/services/notificationService";
 import type { Notification } from "@/types/notifications";
 
 type NotificationFilter = "all" | "unread";
+
+const NOTIFICATION_FILTERS: { label: string; value: NotificationFilter }[] = [
+  { label: "All", value: "all" },
+  { label: "Unread", value: "unread" },
+];
 
 export function NotificationsPage() {
   const { user } = useAuth();
@@ -40,6 +45,7 @@ export function NotificationsPage() {
     };
   }, [user]);
 
+  const unreadCount = notifications.filter((notification) => !notification.readAt).length;
   const visibleNotifications = filter === "unread" ? notifications.filter((notification) => !notification.readAt) : notifications;
 
   async function handleRead(notification: Notification) {
@@ -65,20 +71,29 @@ export function NotificationsPage() {
       <PageMeta title="Notifications | nokta" description="View your nokta notifications." canonicalPath="/account/notifications" />
       <PageContainer className="py-8 sm:py-12">
         <div className="mx-auto max-w-4xl space-y-6">
-          <div className="flex flex-col gap-4 rounded-xl border bg-card p-5 shadow-sm sm:p-6 md:flex-row md:items-end md:justify-between">
-            <div>
-              <p className="text-sm text-clay-accent">Account</p>
-              <h1 className="mt-2 font-brand text-4xl font-bold tracking-[-0.5px]">Notifications</h1>
-              <p className="mt-2 text-sm text-muted-foreground">Booking, enquiry and owner updates in one place.</p>
-            </div>
-            <Button asChild variant="outline">
-              <Link to="/account">Account</Link>
-            </Button>
-          </div>
+          <AccountPageHeader title="Notifications" description="Booking, enquiry and owner updates in one place." />
 
-          <div className="flex flex-col gap-3 rounded-xl border bg-card p-4 shadow-sm sm:flex-row sm:items-center sm:justify-between">
-            <Select value={filter} onValueChange={(next) => setFilter(next as NotificationFilter)} options={[{ label: "All notifications", value: "all" }, { label: "Unread", value: "unread" }]} />
-            <Button type="button" variant="outline" onClick={handleMarkAllRead}>Mark all read</Button>
+          <div className="flex items-center justify-between gap-3">
+            <div role="group" aria-label="Show" className="inline-flex rounded-full bg-nokta-track p-1">
+              {NOTIFICATION_FILTERS.map((option) => (
+                <button
+                  key={option.value}
+                  type="button"
+                  aria-pressed={filter === option.value}
+                  onClick={() => setFilter(option.value)}
+                  className={cn(
+                    "h-9 rounded-full px-4 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+                    filter === option.value ? "bg-nokta-surface text-nokta-ink shadow-sm" : "text-nokta-ink-muted hover:text-nokta-ink",
+                  )}
+                >
+                  {option.label}
+                  {option.value === "unread" && unreadCount ? <span className="ml-1.5 tabular-nums text-nokta-accent-dark">{unreadCount}</span> : null}
+                </button>
+              ))}
+            </div>
+            <Button type="button" variant="ghost" className="rounded-full" onClick={handleMarkAllRead} disabled={!unreadCount}>
+              Mark all read
+            </Button>
           </div>
 
           {isLoading ? <LoadingState message="Loading notifications..." /> : null}

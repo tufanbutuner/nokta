@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { Link } from "react-router-dom";
+import { AccountPageHeader } from "@/components/account/AccountPageHeader";
 import { MyBookingsEmptyState } from "@/components/account/bookings/MyBookingsEmptyState";
 import { MyBookingsFilters, type MyBookingsFilterValue } from "@/components/account/bookings/MyBookingsFilters";
 import { MyBookingsList } from "@/components/account/bookings/MyBookingsList";
@@ -7,7 +7,6 @@ import { PageContainer } from "@/components/layout/PageContainer";
 import { PageMeta } from "@/components/seo/PageMeta";
 import { ErrorState } from "@/components/state/ErrorState";
 import { LoadingState } from "@/components/state/LoadingState";
-import { Button } from "@/components/ui/button";
 import { useAuth } from "@/context/AuthContext";
 import { useVenues } from "@/hooks/useVenues";
 import { trackEvent } from "@/lib/analytics";
@@ -60,17 +59,8 @@ export function MyBookingsPage() {
     <main>
       <PageMeta title="My bookings | nokta" description="Track your booking requests and confirmed bookings." canonicalPath="/account/bookings" />
       <PageContainer className="py-8 sm:py-12">
-        <div className="mx-auto max-w-5xl space-y-6">
-          <div className="flex flex-col gap-4 rounded-xl border bg-card p-5 shadow-sm sm:p-6 md:flex-row md:items-end md:justify-between">
-            <div>
-              <p className="text-sm text-clay-accent">Account</p>
-              <h1 className="mt-2 font-brand text-4xl font-bold tracking-[-0.5px]">My bookings</h1>
-              <p className="mt-2 text-sm text-muted-foreground">Track your booking requests and confirmed bookings.</p>
-            </div>
-            <Button asChild variant="outline">
-              <Link to="/account">Account</Link>
-            </Button>
-          </div>
+        <div className="mx-auto max-w-5xl space-y-8">
+          <AccountPageHeader title="Bookings" description="Requests you've sent, and how each venue replied." />
 
           {isLoading ? <LoadingState message="Loading your bookings..." /> : null}
           {error ? <ErrorState title="Could not load bookings" message={error} /> : null}

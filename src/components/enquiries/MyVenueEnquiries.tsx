@@ -8,23 +8,25 @@ export function MyVenueEnquiries({ enquiries, venuesById }: { enquiries: VenueEn
   if (!enquiries.length) return <p className="text-sm text-muted-foreground">No enquiries sent yet.</p>;
 
   return (
-    <div className="space-y-3">
+    <ul className="divide-y divide-nokta-divider">
       {enquiries.slice(0, 5).map((enquiry) => {
         const venue = venuesById[enquiry.venueId];
         return (
-          <div key={enquiry.id} className="rounded-lg border bg-background/60 p-4">
-            <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
-              <div>
-                <Link to={venue ? `/venues/${venue.slug}` : "#"} className="font-medium hover:text-clay-accent">{venue?.name ?? enquiry.venueId}</Link>
-                <p className="mt-1 text-sm text-muted-foreground">{formatVenueEnquiryType(enquiry.enquiryType)}</p>
-                <p className="mt-1 text-sm text-muted-foreground">{formatPartyDate(enquiry)}</p>
-              </div>
-              <Badge variant="outline">{formatVenueEnquiryStatus(enquiry.status)}</Badge>
+          <li key={enquiry.id} className="flex items-start justify-between gap-4 py-4 first:pt-0 last:pb-0">
+            <div className="min-w-0">
+              {venue ? (
+                <Link to={`/venues/${venue.slug}`} className="font-semibold text-nokta-ink underline-offset-4 hover:underline">{venue.name}</Link>
+              ) : (
+                <p className="font-semibold text-nokta-ink">Venue no longer listed</p>
+              )}
+              <p className="mt-1 text-sm text-nokta-ink-muted">{formatVenueEnquiryType(enquiry.enquiryType)}</p>
+              <p className="mt-0.5 text-sm text-nokta-ink-muted">{formatPartyDate(enquiry)}</p>
             </div>
-          </div>
+            <Badge variant="outline" className="shrink-0">{formatVenueEnquiryStatus(enquiry.status)}</Badge>
+          </li>
         );
       })}
-    </div>
+    </ul>
   );
 }
 

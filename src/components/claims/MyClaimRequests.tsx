@@ -16,26 +16,30 @@ export function MyClaimRequests({ claims, venuesById }: { claims: VenueClaimRequ
   }
 
   return (
-    <div className="space-y-3">
+    <ul className="divide-y divide-nokta-divider">
       {claims.map((claim) => {
         const venue = venuesById[claim.venueId];
 
         return (
-          <div key={claim.id} className="rounded-lg border bg-background/60 p-4">
-            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-              <div>
-                <Link to={venue ? `/venues/${venue.slug}` : "#"} className="font-medium hover:text-clay-accent">
-                  {venue?.name ?? claim.venueId}
+          <li key={claim.id} className="flex items-start justify-between gap-4 py-4 first:pt-0 last:pb-0">
+            <div className="min-w-0">
+              {venue ? (
+                <Link to={`/venues/${venue.slug}`} className="font-semibold text-nokta-ink underline-offset-4 hover:underline">
+                  {venue.name}
                 </Link>
-                <p className="mt-1 text-sm text-muted-foreground">Submitted {formatDate(claim.createdAt)}</p>
-                {claim.reviewedAt ? <p className="mt-1 text-sm text-muted-foreground">Reviewed {formatDate(claim.reviewedAt)}</p> : null}
-              </div>
-              <Badge variant="outline">{STATUS_LABELS[claim.status]}</Badge>
+              ) : (
+                <p className="font-semibold text-nokta-ink">Venue no longer listed</p>
+              )}
+              <p className="mt-1 text-sm text-nokta-ink-muted">
+                Submitted {formatDate(claim.createdAt)}
+                {claim.reviewedAt ? ` · Reviewed ${formatDate(claim.reviewedAt)}` : ""}
+              </p>
             </div>
-          </div>
+            <Badge variant="outline" className="shrink-0">{STATUS_LABELS[claim.status]}</Badge>
+          </li>
         );
       })}
-    </div>
+    </ul>
   );
 }
 
