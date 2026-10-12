@@ -11,7 +11,7 @@ import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { useVenues } from "@/hooks/useVenues";
 import { trackEvent } from "@/lib/analytics";
 import { DEFAULT_CITY, getActiveCities, getCityByName } from "@/lib/cities";
-import { calculateDistanceMiles, formatDistanceMiles, getVenueDistanceMiles } from "@/lib/location";
+import { calculateDistanceMiles, formatDistanceMiles, getNearestVenueCity, getVenueDistanceMiles } from "@/lib/location";
 import { getVenueOpeningBoundary } from "@/lib/openingHours";
 import { cn } from "@/lib/utils";
 import type { Venue } from "@/types/venue";
@@ -53,8 +53,11 @@ export function MapHomePage() {
   const { userLocation, locationStatus, useCurrentLocation } = useAppLocation();
   const isDesktop = useMediaQuery("(min-width: 1024px)");
   // City and search live in the URL so a link (or an old /discover link) lands on the same view.
+  // Without one, a visitor we can place sees the city nearest them; London is only the fallback.
+  const nearestCity = useMemo(() => getNearestVenueCity(venues, userLocation), [venues, userLocation]);
+  const homeCity = nearestCity && getCityByName(nearestCity) ? getCityByName(nearestCity)!.name : DEFAULT_CITY;
   const requestedCity = searchParams.get("city");
-  const city = requestedCity && getCityByName(requestedCity) ? getCityByName(requestedCity)!.name : DEFAULT_CITY;
+  const city = requestedCity && getCityByName(requestedCity) ? getCityByName(requestedCity)!.name : homeCity;
   const query = (searchParams.get("q") ?? "").trim();
   const [draft, setDraft] = useState(query);
   const [listLimit, setListLimit] = useState(LIST_PAGE);
@@ -157,7 +160,10 @@ export function MapHomePage() {
   useEffect(() => {
     if (!wantsLocation || !userLocation) return;
     setWantsLocation(false);
+    // Drop any picked city so the list follows the visitor to their nearest one.
+    if (searchParams.has("city")) updateParams({ city: null });
     setFocus({ latitude: userLocation.latitude, longitude: userLocation.longitude, zoom: 14 });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [wantsLocation, userLocation]);
 
   function updateParams(next: Record<string, string | null>) {
@@ -170,7 +176,7 @@ export function MapHomePage() {
   }
 
   function changeCity(next: string) {
-    updateParams({ city: next === DEFAULT_CITY ? null : next, q: null });
+    updateParams({ city: next === homeCity ? null : next, q: null });
     setDraft("");
     setSelectedId(null);
     const config = getCityByName(next);
@@ -190,6 +196,7 @@ export function MapHomePage() {
   function locate() {
     trackEvent("map_home_locate_clicked");
     if (userLocation) {
+      if (searchParams.has("city")) updateParams({ city: null });
       setFocus({ latitude: userLocation.latitude, longitude: userLocation.longitude, zoom: 14 });
       return;
     }

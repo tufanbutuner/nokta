@@ -40,3 +40,22 @@ export function formatDistanceMiles(distance: number): string {
 
   return `${Math.round(distance)} mi away`;
 }
+
+/**
+ * The city of the venue closest to the visitor, so someone in Mansfield lands on
+ * Nottingham rather than the London default. Null when there is nothing to measure.
+ */
+export function getNearestVenueCity(venues: Venue[], userLocation: UserLocation | null): string | null {
+  if (!userLocation) {
+    return null;
+  }
+
+  let nearest: { city: string; miles: number } | null = null;
+  for (const venue of venues) {
+    if (!venue.city || !Number.isFinite(venue.latitude) || !Number.isFinite(venue.longitude)) continue;
+    const miles = getVenueDistanceMiles(venue, userLocation);
+    if (!nearest || miles < nearest.miles) nearest = { city: venue.city, miles };
+  }
+
+  return nearest?.city ?? null;
+}

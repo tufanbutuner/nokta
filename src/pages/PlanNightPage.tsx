@@ -4,10 +4,12 @@ import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { PageMeta } from "@/components/seo/PageMeta";
 import { Skeleton } from "@/components/ui/skeleton";
 import { VenueImage } from "@/components/venues/VenueImage";
+import { useAppLocation } from "@/context/AppLocationContext";
 import { useAuth } from "@/context/AuthContext";
 import { useVenues } from "@/hooks/useVenues";
 import { trackEvent } from "@/lib/analytics";
 import { DEFAULT_CITY, getActiveCities } from "@/lib/cities";
+import { getNearestVenueCity } from "@/lib/location";
 import { getDayOpeningLabel, getLondonDayIndex } from "@/lib/openingHours";
 import { cn } from "@/lib/utils";
 import { createRecommendShareCode, saveRecommendShortlist } from "@/services/recommendShortlistService";
@@ -44,6 +46,7 @@ export function PlanNightPage() {
   const navigate = useNavigate();
   const { user } = useAuth();
   const { venues, isLoading } = useVenues();
+  const { userLocation } = useAppLocation();
   const [searchParams, setSearchParams] = useSearchParams();
   const [openSlot, setOpenSlot] = useState<Slot | null>(null);
   const [visible, setVisible] = useState(PAGE_SIZE);
@@ -55,7 +58,9 @@ export function PlanNightPage() {
   const todayIndex = getLondonDayIndex();
   const people = Number(searchParams.get("n")) || 6;
   const dayOffset = Math.min(6, Math.max(0, Number(searchParams.get("day")) || 0));
-  const city = searchParams.get("city") || DEFAULT_CITY;
+  // A visitor we can place starts in the city nearest them; London is only the fallback.
+  const homeCity = useMemo(() => getNearestVenueCity(venues, userLocation) ?? DEFAULT_CITY, [venues, userLocation]);
+  const city = searchParams.get("city") || homeCity;
   const area = searchParams.get("area") || "any";
   const vibe = (searchParams.get("vibe") as VibeKey | null) ?? "lively";
   const vibeConfig = VIBES[vibe] ?? VIBES.lively;
@@ -212,7 +217,7 @@ export function PlanNightPage() {
                   <label className="inline-flex items-center gap-2 rounded-full border border-dashed border-nokta-border px-3 py-1.5 text-[13.5px] text-nokta-ink-muted">
                     Another city
                     <span className="relative">
-                      <select value={city} onChange={(event) => choose("area", { city: event.target.value === DEFAULT_CITY ? null : event.target.value, area: null, picks: null })} className="cursor-pointer appearance-none bg-transparent pr-5 font-medium text-nokta-ink outline-none">
+                      <select value={city} onChange={(event) => choose("area", { city: event.target.value === homeCity ? null : event.target.value, area: null, picks: null })} className="cursor-pointer appearance-none bg-transparent pr-5 font-medium text-nokta-ink outline-none">
                         {cities.map((option) => <option key={option.slug} value={option.name}>{option.name}</option>)}
                       </select>
                       <ChevronDown className="pointer-events-none absolute right-0 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-nokta-ink-muted" aria-hidden="true" />
