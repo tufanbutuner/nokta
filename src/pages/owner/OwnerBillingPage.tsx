@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ErrorState } from "@/components/state/ErrorState";
 import { LoadingState } from "@/components/state/LoadingState";
 import { OwnerLayout } from "@/components/owner/OwnerLayout";
+import { OwnerPageHeader } from "@/components/owner/OwnerPageHeader";
 import { PlanBadge } from "@/components/subscriptions/PlanBadge";
 import { PricingPlansTable } from "@/components/subscriptions/PricingPlansTable";
 import { PageMeta } from "@/components/seo/PageMeta";
@@ -105,11 +106,15 @@ export function OwnerBillingPage() {
       <PageMeta title="Plan & billing | nokta" description="Compare nokta venue plans and manage billing." canonicalPath="/owner/billing" />
       {isLoading ? <LoadingState message="Loading billing..." /> : error ? <ErrorState message={error} /> : (
         <div className="space-y-6">
-          <div>
-            <h1 className="font-brand text-[23px] font-bold tracking-[-0.4px] text-nokta-ink">Plan &amp; billing</h1>
-            <p className="mt-1 max-w-2xl text-[13px] text-muted-foreground">Stripe is the payment source of truth. Plan access unlocks after Stripe confirms the subscription.</p>
-            {isPortalReturn ? <p className="mt-2 text-sm text-muted-foreground">Just returned from Stripe. We are refreshing your billing status while Stripe confirms the latest change.</p> : null}
-          </div>
+          <OwnerPageHeader
+            title="Plan & billing"
+            description={
+              <>
+                Stripe is the payment source of truth. Plan access unlocks after Stripe confirms the subscription.
+                {isPortalReturn ? <span className="mt-2 block">Just returned from Stripe. We are refreshing your billing status while Stripe confirms the latest change.</span> : null}
+              </>
+            }
+          />
           <div className="grid gap-3">
             {venues.map((venue) => {
               const subscription = subscriptions[venue.id];
