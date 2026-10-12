@@ -29,9 +29,9 @@ const SITE_URL = resolveSiteUrl();
 
 function resolveSiteUrl(): string {
   const configured =
-    process.env.APP_URL ||
+    process.env.VITE_PUBLIC_SITE_URL ||
     process.env.VITE_APP_URL ||
-    process.env.VERCEL_URL;
+    process.env.APP_URL;
   if (!configured) return "https://www.nokta.uk";
   const withProtocol = configured.startsWith("http")
     ? configured

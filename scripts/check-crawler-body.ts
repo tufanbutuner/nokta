@@ -19,7 +19,7 @@ const TMP = "middleware.__check__.ts";
 function loadMiddleware() {
   const source = readFileSync("middleware.ts", "utf8")
     .replace(/import \{ next \}[^\n]*\n/, "const next = () => new Response(null, { status: 299 });\n")
-    .concat("\nexport { buildVenueBody, buildCityBody, escapeHtml };\n");
+    .concat("\nexport { buildVenueBody, buildCityBody, escapeHtml, resolveSiteUrl };\n");
   writeFileSync(TMP, source);
   return import(`./${TMP}`.replace("./", "../"));
 }
@@ -66,7 +66,31 @@ const baseVenue = {
 };
 
 async function main() {
-  const { buildVenueBody, buildCityBody } = await loadMiddleware();
+  const { buildVenueBody, buildCityBody, resolveSiteUrl } = await loadMiddleware();
+
+  const siteUrlKeys = ["VITE_PUBLIC_SITE_URL", "VITE_APP_URL", "APP_URL", "VERCEL_URL"] as const;
+  const originalSiteUrls = Object.fromEntries(siteUrlKeys.map((key) => [key, process.env[key]]));
+  const siteUrlCases: { label: string; env: Record<string, string>; expected: string }[] = [
+    { label: "default canonical host", env: {}, expected: "https://www.nokta.uk" },
+    { label: "deployment URL is not canonical", env: { VERCEL_URL: "nokta-preview.vercel.app" }, expected: "https://www.nokta.uk" },
+    { label: "public site URL takes precedence", env: { VITE_PUBLIC_SITE_URL: "https://www.nokta.uk/", VITE_APP_URL: "https://app.example.com", APP_URL: "https://server.example.com", VERCEL_URL: "nokta-preview.vercel.app" }, expected: "https://www.nokta.uk" },
+    { label: "app URL matches client canonical", env: { VITE_APP_URL: "https://app.example.com/", APP_URL: "https://server.example.com" }, expected: "https://app.example.com" },
+    { label: "server URL remains supported", env: { APP_URL: "www.nokta.uk///" }, expected: "https://www.nokta.uk" },
+  ];
+  try {
+    for (const { label, env, expected } of siteUrlCases) {
+      for (const key of siteUrlKeys) delete process.env[key];
+      Object.assign(process.env, env);
+      const actual = resolveSiteUrl();
+      check(label, actual === expected, `expected ${expected}, received ${actual}`);
+    }
+  } finally {
+    for (const key of siteUrlKeys) {
+      const original = originalSiteUrls[key];
+      if (original === undefined) delete process.env[key];
+      else process.env[key] = original;
+    }
+  }
 
   // A fully populated venue: every block should be present and balanced.
   const full = buildVenueBody(baseVenue);
@@ -127,12 +151,12 @@ async function main() {
   check("single venue city", singular.includes("<h2>1 venue in London</h2>"), "did not use the singular form");
 
   if (problems.length) {
-    console.error("Crawler body rendering has problems:\n");
+    console.error("Crawler rendering has problems:\n");
     for (const problem of problems) console.error(`  - ${problem}`);
     process.exit(1);
   }
 
-  console.log("Crawler body OK — venue and city bodies render valid, escaped markup.");
+  console.log("Crawler rendering OK — canonical hosts resolve correctly and venue and city bodies render valid, escaped markup.");
 }
 
 main()
