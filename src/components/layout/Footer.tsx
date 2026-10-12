@@ -1,58 +1,118 @@
-import { Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 import { PageContainer } from "@/components/layout/PageContainer";
+import { Wordmark } from "@/components/layout/Wordmark";
 import { brandConfig } from "@/config/brand";
+import { getActiveCities } from "@/lib/cities";
+
+// London leads; the rest follow in the order they launched.
+const FOOTER_CITY_COUNT = 6;
+
+const EXPLORE_LINKS = [
+  { to: "/", label: "Map" },
+  { to: "/plan", label: "Plan a night" },
+  { to: "/saved", label: "Saved" },
+  { to: "/suggest", label: "Suggest a venue" },
+];
+
+const VENUE_LINKS = [
+  { to: "/for-venues", label: "List your venue" },
+  { to: "/owner", label: "Owner dashboard" },
+];
+
+const linkClass =
+  "inline-flex min-h-9 items-center text-white/70 transition-colors hover:text-white focus-visible:text-white focus-visible:outline-none focus-visible:underline focus-visible:underline-offset-4 sm:min-h-8";
+
+function FooterColumn({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <div>
+      <h2 className="text-sm font-semibold text-white">{title}</h2>
+      <ul className="mt-3 grid gap-0.5">{children}</ul>
+    </div>
+  );
+}
+
+function InstagramIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
+      <rect x="3" y="3" width="18" height="18" rx="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" />
+    </svg>
+  );
+}
 
 export function Footer() {
+  const cities = getActiveCities().slice(0, FOOTER_CITY_COUNT);
+  const year = new Date().getFullYear();
+
   return (
-    <footer className="relative mt-20 overflow-hidden bg-nokta-solid-ink py-12 text-sm text-white/72 sm:py-14">
+    <footer className="relative mt-20 overflow-hidden border-t border-white/5 bg-nokta-footer text-sm text-white/70">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute bottom-0 left-1/2 z-0 h-60 w-60 translate-y-[68%] -translate-x-1/2 rounded-full bg-nokta-accent-solid sm:h-80 sm:w-80 lg:h-96 lg:w-96"
+        className="pointer-events-none absolute -bottom-28 -right-20 size-56 rounded-full bg-nokta-accent-solid sm:-bottom-36 sm:size-72"
       />
-      <PageContainer className="relative z-10">
-        <div className="mx-auto max-w-2xl text-center">
-          <p className="font-wordmark text-xl font-bold tracking-[-0.5px] text-white">{brandConfig.logoText}</p>
-          <p className="mt-2 font-medium text-white">Find your spot.</p>
-          <p className="mt-3 leading-6">
-            {brandConfig.longDescription} Venue details can change, so always check directly before travelling or booking.
-          </p>
-        </div>
-        <div className="mx-auto mt-10 grid max-w-3xl gap-8 border-t border-white/10 pt-8 text-center sm:grid-cols-2 sm:text-left">
-          <nav className="space-y-3" aria-label="Footer pages">
-            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-white/45">Pages</p>
-            <div className="grid gap-2">
-              <Link to="/" className="hover:text-white">Map</Link>
-              <Link to="/plan" className="hover:text-white">Plan a night</Link>
-              <Link to="/suggest" className="hover:text-white">Suggest</Link>
-              <Link to="/for-venues" className="hover:text-white">For venues</Link>
-              <Link to="/privacy" className="hover:text-white">Privacy</Link>
-              <Link to="/terms" className="hover:text-white">Terms</Link>
+      <PageContainer className="relative pb-8 pt-12 sm:pt-16">
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,2fr)] lg:gap-16">
+          <div className="max-w-sm">
+            <Link to="/" className="inline-flex text-white" aria-label="nokta home">
+              <Wordmark className="text-2xl" />
+            </Link>
+            <p className="mt-4 text-base font-medium text-white">Find your spot.</p>
+            <p className="mt-2 leading-6">{brandConfig.longDescription}</p>
+            <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2">
+              <a href={`mailto:${brandConfig.supportEmail}`} className={linkClass}>
+                {brandConfig.supportEmail}
+              </a>
+              <a href={brandConfig.instagramUrl} target="_blank" rel="noreferrer" className={`${linkClass} gap-2`}>
+                <InstagramIcon className="size-4" />
+                Instagram
+              </a>
             </div>
+          </div>
+
+          <nav aria-label="Footer" className="grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-3">
+            <FooterColumn title="Explore">
+              {EXPLORE_LINKS.map((link) => (
+                <li key={link.to}>
+                  <Link to={link.to} className={linkClass}>
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </FooterColumn>
+            <FooterColumn title="Cities">
+              {cities.map((city) => (
+                <li key={city.slug}>
+                  <Link to={`/cities/${city.slug}`} className={linkClass}>
+                    {city.name}
+                  </Link>
+                </li>
+              ))}
+            </FooterColumn>
+            <FooterColumn title="For venues">
+              {VENUE_LINKS.map((link) => (
+                <li key={link.to}>
+                  <Link to={link.to} className={linkClass}>
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </FooterColumn>
           </nav>
-          <div className="space-y-3 sm:text-right">
-            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-white/45">Contact</p>
-            <a href={`mailto:${brandConfig.supportEmail}`} className="block font-medium text-white hover:text-white/80">
-              {brandConfig.supportEmail}
-            </a>
-            <div className="flex justify-center gap-3 sm:justify-end">
-              <a
-                href={`mailto:${brandConfig.supportEmail}`}
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white/75 transition hover:bg-white/10 hover:text-white"
-                aria-label={`Email ${brandConfig.supportEmail}`}
-              >
-                <Mail className="h-4 w-4" />
-              </a>
-              <a
-                href={brandConfig.instagramUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white/75 transition hover:bg-white/10 hover:text-white"
-                aria-label="Nokta on Instagram"
-              >
-                <span className="text-xs font-bold tracking-[0.08em]">IG</span>
-              </a>
-            </div>
+        </div>
+
+        <div className="mt-12 flex flex-col gap-x-8 gap-y-3 border-t border-white/10 pr-36 pt-6 text-xs text-white/55 sm:flex-row sm:flex-wrap sm:items-center sm:pr-56">
+          <p className="max-w-md leading-5">
+            Venue details can change. Check with the venue before you travel or book.
+          </p>
+          <div className="flex items-center gap-5">
+            <span>© {year} {brandConfig.appName}</span>
+            <Link to="/privacy" className="transition-colors hover:text-white">
+              Privacy
+            </Link>
+            <Link to="/terms" className="transition-colors hover:text-white">
+              Terms
+            </Link>
           </div>
         </div>
       </PageContainer>

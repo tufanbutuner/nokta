@@ -39,6 +39,7 @@
   --color-nokta-page-bg: oklch(0.95 0.045 55);
   --color-nokta-map-bg: #f7f1e8;
   --color-nokta-solid-ink: oklch(0.2 0.02 40);
+  --color-nokta-footer: oklch(0.2 0.02 40);
   --color-nokta-accent-solid: oklch(0.56 0.13 35);
   --color-nokta-surface: #ffffff;
   --color-nokta-surface-alt: oklch(0.995 0.001 60);
@@ -161,6 +162,7 @@
     --color-nokta-map-bg: #171513;
     --color-nokta-surface: #211e1b;
     --color-nokta-surface-alt: #1b1917;
+    --color-nokta-footer: #0f0e0d;
     --color-nokta-ink: #f1e8de;
     --color-nokta-ink-muted: #bcb0a4;
     --color-nokta-ink-subtle: #d0c3b6;
