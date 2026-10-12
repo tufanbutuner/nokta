@@ -16,10 +16,10 @@ export function VenueBookingSideRail({
 
   return (
     <div className="flex flex-col gap-3">
-      <section className="rounded-xl border bg-card px-[14px] py-[13px]">
+      <section className="rounded-xl border bg-nokta-surface px-[14px] py-[13px] border-nokta-border">
         <div className="flex items-baseline justify-between gap-2">
-          <h2 className="text-[13px] font-semibold text-nokta-ink">Booking rules</h2>
-          <Link to={`/owner/venues/${venueSlug}/bookings/rules`} className="text-[12.5px] font-medium text-clay-accent hover:underline">Edit</Link>
+          <h2 className="text-sm font-semibold text-nokta-ink">Booking rules</h2>
+          <Link to={`/owner/venues/${venueSlug}/bookings/rules`} className="text-[13px] font-medium text-nokta-accent-dark hover:underline">Edit</Link>
         </div>
         <div className="mt-2 flex flex-col gap-1">
           <OpeningRow label="Requests" value={settings.bookingRequestsEnabled ? "On" : "Off"} isPositive={settings.bookingRequestsEnabled} />
@@ -32,24 +32,24 @@ export function VenueBookingSideRail({
         </div>
       </section>
 
-      <section className="rounded-xl border bg-card px-[14px] py-[13px]">
+      <section className="rounded-xl border bg-nokta-surface px-[14px] py-[13px] border-nokta-border">
         <div className="flex items-baseline justify-between gap-2">
-          <h2 className="text-[13px] font-semibold text-nokta-ink">Opening hours</h2>
-          <Link to={`/owner/venues/${venueSlug}/profile`} className="text-[12.5px] font-medium text-clay-accent hover:underline">Edit</Link>
+          <h2 className="text-sm font-semibold text-nokta-ink">Opening hours</h2>
+          <Link to={`/owner/venues/${venueSlug}/profile`} className="text-[13px] font-medium text-nokta-accent-dark hover:underline">Edit</Link>
         </div>
         <div className="mt-2 flex flex-col gap-1">
           {openingHours.length ? (
             openingHours.slice(0, 7).map((entry) => <OpeningRow key={entry.day} label={entry.day} value={`${entry.open}–${entry.close}`} />)
           ) : (
-            <p className="text-[11.5px] text-muted-foreground">No opening hours set.</p>
+            <p className="text-xs text-nokta-ink-muted">No opening hours set.</p>
           )}
         </div>
-        <p className="mt-2 text-[11px] leading-[1.5] text-muted-foreground">Changes here go to nokta for approval — hours show on your public page.</p>
+        <p className="mt-2 text-xs leading-[1.5] text-nokta-ink-muted">Changes here go to nokta for approval — hours show on your public page.</p>
       </section>
 
-      <section className="rounded-xl border bg-[oklch(0.97_0.015_60)] px-[14px] py-[13px]">
-        <h2 className="text-[13px] font-semibold text-nokta-ink">How bookings work</h2>
-        <p className="mt-1 text-[11.5px] leading-[1.5] text-muted-foreground">
+      <section className="rounded-2xl border border-nokta-border bg-nokta-hover px-4 py-4">
+        <h2 className="text-sm font-semibold text-nokta-ink">How bookings work</h2>
+        <p className="mt-1 text-xs leading-[1.5] text-nokta-ink-muted">
           Customers request a time; you confirm it. Each slot — 6pm, say — holds {settings.slotCapacity === 1 ? "one party" : `up to ${settings.slotCapacity} parties`}: once
           {settings.slotCapacity === 1 ? " it is confirmed, the time" : " that many are confirmed, the time"} leaves your public page and further confirms are blocked.
           Requests still waiting on you don’t hold a slot, so two customers can ask for 6pm and you choose.
@@ -61,9 +61,9 @@ export function VenueBookingSideRail({
 
 function OpeningRow({ label, value, isPositive }: { label: string; value: string; isPositive?: boolean }) {
   return (
-    <div className="flex justify-between gap-3 text-[11.5px]">
-      <span className="capitalize text-muted-foreground">{label}</span>
-      <span className={isPositive ? "font-semibold text-[oklch(0.36_0.06_150)]" : "font-medium text-nokta-ink"}>{value}</span>
+    <div className="flex justify-between gap-3 text-xs">
+      <span className="capitalize text-nokta-ink-muted">{label}</span>
+      <span className={isPositive ? "font-semibold text-nokta-ok-ink" : "font-medium text-nokta-ink"}>{value}</span>
     </div>
   );
 }

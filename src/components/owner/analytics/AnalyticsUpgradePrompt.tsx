@@ -3,9 +3,9 @@ import { Button } from "@/components/ui/button";
 
 export function AnalyticsUpgradePrompt({ title, description }: { title: string; description: string }) {
   return (
-    <section className="rounded-xl border bg-card p-5">
+    <section className="rounded-2xl border bg-nokta-surface p-5 border-nokta-border">
       <h2 className="font-semibold">{title}</h2>
-      <p className="mt-2 text-sm leading-6 text-muted-foreground">{description}</p>
+      <p className="mt-2 text-sm leading-6 text-nokta-ink-muted">{description}</p>
       <Button asChild className="mt-5" variant="outline">
         <Link to="/owner/billing#owner-plans">View plans</Link>
       </Button>

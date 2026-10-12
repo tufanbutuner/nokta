@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { NavLink } from "react-router-dom";
-import { OwnerBackLink } from "@/components/owner/OwnerPageHeader";
+import { WorkspaceBackLink } from "@/components/workspace/WorkspacePageHeader";
 import { cn } from "@/lib/utils";
 import type { VenuePlan } from "@/types/subscriptions";
 import type { Venue } from "@/types/venue";
@@ -44,7 +44,7 @@ export function OwnerVenueTabShell({
     <div>
       <header className="border-b border-nokta-border bg-nokta-surface">
         <div className={cn(CONTENT_WIDTH, "pt-6 sm:pt-8")}>
-          <OwnerBackLink to="/owner/venues" label="My venues" />
+          <WorkspaceBackLink to="/owner/venues" label="My venues" />
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div className="min-w-0">
               <h1 ref={titleSlotRef} className="min-h-[1lh] text-balance font-brand text-[1.75rem] font-bold leading-[1.1] tracking-[-0.02em] text-nokta-ink sm:text-[2.125rem]" />
@@ -54,7 +54,7 @@ export function OwnerVenueTabShell({
                 <span>{venue.area}, {venue.city}</span>
                 <span aria-hidden="true" className="opacity-45">·</span>
                 <span className="inline-flex items-center gap-1.5">
-                  <span aria-hidden="true" className={cn("size-1.5 rounded-full", venue.isClaimed ? "bg-forest-400" : "bg-clay-300")} />
+                  <span aria-hidden="true" className={cn("size-1.5 rounded-full", venue.isClaimed ? "bg-nokta-ok-solid" : "bg-nokta-warn-solid")} />
                   {venue.isClaimed ? "Claim confirmed" : "Claim pending"}
                 </span>
                 <span className="rounded-full bg-nokta-chip-tint px-2 py-0.5 text-xs font-semibold capitalize text-nokta-accent-dark">{plan} plan</span>

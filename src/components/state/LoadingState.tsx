@@ -2,7 +2,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 export function LoadingState({ message = "Loading venues..." }: { message?: string }) {
   return (
-    <div className="rounded-lg border border-nokta-border bg-nokta-surface p-5 shadow-sm shadow-stone-950/5" role="status" aria-label={message}>
+    <div className="rounded-2xl border border-nokta-border bg-nokta-surface p-5" role="status" aria-label={message}>
       <div className="space-y-4">
         <div className="flex items-center gap-3">
           <Skeleton className="h-11 w-11 shrink-0 rounded-xl" />

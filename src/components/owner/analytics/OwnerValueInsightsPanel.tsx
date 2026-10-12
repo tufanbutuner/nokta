@@ -4,12 +4,12 @@ export function OwnerValueInsightsPanel({ summary }: { summary: OwnerVenueAnalyt
   const insights = getInsights(summary);
 
   return (
-    <section className="rounded-xl border bg-card p-5">
+    <section className="rounded-2xl border bg-nokta-surface p-5 border-nokta-border">
       <h2 className="font-semibold">Value insights</h2>
-      <p className="mt-1 text-sm text-muted-foreground">Simple signals from customer activity on Nokta.</p>
+      <p className="mt-1 text-sm text-nokta-ink-muted">Simple signals from customer activity on Nokta.</p>
       <div className="mt-5 grid gap-3">
         {insights.map((insight) => (
-          <div key={insight} className="rounded-lg border bg-background/60 p-3 text-sm leading-6">
+          <div key={insight} className="rounded-lg border bg-nokta-surface-alt/60 p-3 text-sm leading-6 border-nokta-border">
             {insight}
           </div>
         ))}

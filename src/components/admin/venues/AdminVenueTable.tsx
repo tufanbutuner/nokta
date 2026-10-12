@@ -20,7 +20,7 @@ export function AdminVenueTable({ venues }: { venues: Venue[] }) {
       <CardContent className="p-0">
         <div className="overflow-x-auto">
           <table className="w-full min-w-[1080px] border-collapse text-sm">
-            <thead className="bg-muted/60 text-left text-xs uppercase text-muted-foreground">
+            <thead className="bg-nokta-track/60 text-left text-xs uppercase text-nokta-ink-muted">
               <tr>
                 <th className="px-4 py-3 font-medium">Venue</th>
                 <th className="px-4 py-3 font-medium">City</th>
@@ -39,14 +39,14 @@ export function AdminVenueTable({ venues }: { venues: Venue[] }) {
                 const quality = getVenueQuality(venue);
 
                 return (
-                  <tr key={venue.id} className="border-t align-top">
+                  <tr key={venue.id} className="border-t align-top border-nokta-border">
                     <td className="px-4 py-4">
                       <div className="font-medium">{venue.name}</div>
-                      <div className="mt-1 text-xs text-muted-foreground">{venue.id}</div>
+                      <div className="mt-1 text-xs text-nokta-ink-muted">{venue.id}</div>
                     </td>
-                    <td className="px-4 py-4 text-muted-foreground">{venue.city}</td>
-                    <td className="px-4 py-4 text-muted-foreground">{venue.area}</td>
-                    <td className="px-4 py-4 text-muted-foreground">{venue.postcode}</td>
+                    <td className="px-4 py-4 text-nokta-ink-muted">{venue.city}</td>
+                    <td className="px-4 py-4 text-nokta-ink-muted">{venue.area}</td>
+                    <td className="px-4 py-4 text-nokta-ink-muted">{venue.postcode}</td>
                     <td className="px-4 py-4">
                       <VenueVerificationBadge status={venue.verificationStatus} />
                     </td>
@@ -61,7 +61,7 @@ export function AdminVenueTable({ venues }: { venues: Venue[] }) {
                     </td>
                     <td className="px-4 py-4">
                       <div className="font-semibold">{quality.score}</div>
-                      <div className="text-xs text-muted-foreground">{QUALITY_LABELS[quality.level]}</div>
+                      <div className="text-xs text-nokta-ink-muted">{QUALITY_LABELS[quality.level]}</div>
                     </td>
                     <td className="px-4 py-4">
                       <div className="flex flex-wrap gap-3">
@@ -69,7 +69,7 @@ export function AdminVenueTable({ venues }: { venues: Venue[] }) {
                           <Pencil className="h-3.5 w-3.5" />
                           Edit
                         </Link>
-                        <Link className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground hover:underline" to={`/venues/${venue.slug}`}>
+                        <Link className="inline-flex items-center gap-1 text-nokta-ink-muted hover:text-nokta-ink hover:underline" to={`/venues/${venue.slug}`}>
                           <ExternalLink className="h-3.5 w-3.5" />
                           Public
                         </Link>

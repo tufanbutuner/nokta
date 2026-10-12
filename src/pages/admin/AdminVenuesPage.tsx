@@ -1,13 +1,13 @@
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { AdminPageShell } from "@/components/admin/AdminPageShell";
+import { WorkspacePageHeader, workspacePrimaryActionClass } from "@/components/workspace/WorkspacePageHeader";
 import { AdminVenueFilters } from "@/components/admin/venues/AdminVenueFilters";
 import { AdminVenueTable } from "@/components/admin/venues/AdminVenueTable";
 import type { AdminVenueQualityFilter, AdminVenueVerificationFilter } from "@/components/admin/venues/AdminVenueFilters";
 import { ErrorState } from "@/components/state/ErrorState";
 import { EmptyState } from "@/components/state/EmptyState";
 import { LoadingState } from "@/components/state/LoadingState";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useVenues } from "@/hooks/useVenues";
 import { DEFAULT_CITY } from "@/lib/cities";
@@ -56,19 +56,13 @@ export function AdminVenuesPage() {
 
   return (
     <AdminPageShell activePath="/admin/venues">
-      <div className="py-5">
-        <div className="mb-8 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-          <div>
-            <p className="text-sm font-medium text-muted-foreground">Internal</p>
-            <h1 className="mt-2 text-4xl font-semibold">Manage venues</h1>
-            <p className="mt-3 max-w-2xl text-muted-foreground">Create venues, edit catalogue details and maintain verification data.</p>
-          </div>
-          <div className="flex flex-col gap-2 sm:flex-row">
-            <Button asChild>
-              <Link to="/admin/venues/new">New venue</Link>
-            </Button>
-          </div>
-        </div>
+      <div>
+        <WorkspacePageHeader
+          className="mb-8"
+          title="Venues"
+          description="Create venues, edit catalogue details and maintain verification data."
+          actions={<Link to="/admin/venues/new" className={workspacePrimaryActionClass}>New venue</Link>}
+        />
 
         <Card className="mb-5">
           <CardContent>
@@ -85,7 +79,7 @@ export function AdminVenuesPage() {
           </CardContent>
         </Card>
 
-        <div className="mb-4 text-sm text-muted-foreground">
+        <div className="mb-4 text-sm text-nokta-ink-muted">
           Showing {filteredVenues.length} of {venues.length} venues
         </div>
 

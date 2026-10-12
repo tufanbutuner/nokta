@@ -49,15 +49,15 @@ export function OwnerMediaUploader({ venue, userId, onUploaded }: { venue: Venue
   }
 
   return (
-    <section className="rounded-xl border bg-card p-5 shadow-sm">
+    <section className="rounded-2xl border bg-nokta-surface p-5 border-nokta-border">
       <h2 className="text-xl font-semibold">Upload photos</h2>
-      <p className="mt-1 text-sm text-muted-foreground">Photos are reviewed by nokta before appearing publicly.</p>
+      <p className="mt-1 text-sm text-nokta-ink-muted">Photos are reviewed by nokta before appearing publicly.</p>
       <div className="mt-5"><OwnerMediaDropzone onFiles={handleFiles} /></div>
       <div className="mt-4 grid gap-4 sm:grid-cols-2">
         <label><span className="text-sm font-medium">Alt text</span><Input className="mt-2" value={altText} maxLength={140} onChange={(event) => setAltText(event.target.value)} placeholder={`${venue.name} interior`} /></label>
         <label><span className="text-sm font-medium">Caption</span><Textarea className="mt-2 min-h-10" value={caption} maxLength={240} onChange={(event) => setCaption(event.target.value)} placeholder="Optional short caption" /></label>
       </div>
-      {files.length ? <p className="mt-4 text-sm text-muted-foreground">{files.length} file{files.length === 1 ? "" : "s"} ready to upload.</p> : null}
+      {files.length ? <p className="mt-4 text-sm text-nokta-ink-muted">{files.length} file{files.length === 1 ? "" : "s"} ready to upload.</p> : null}
       {message ? <Alert className="mt-4">{message}</Alert> : null}
       <Button type="button" className="mt-5" disabled={!files.length || isUploading} onClick={handleUpload}>{isUploading ? "Uploading..." : "Upload for review"}</Button>
     </section>

@@ -149,10 +149,10 @@ export function OwnerVenueMenuPage() {
         canNavigate={confirmTabChange}
         actions={
           <>
-            <Button asChild variant="outline" className="h-[34px] text-[13px]">
+            <Button asChild variant="outline" className="h-9 text-sm">
               <Link to={`/venues/${venue.slug}`}>Preview public page</Link>
             </Button>
-            <Button type="button" onClick={handlePublish} disabled={!changeCount || isPublishing || !validation.isValid} className="h-[34px] text-[13px]">
+            <Button type="button" onClick={handlePublish} disabled={!changeCount || isPublishing || !validation.isValid} className="h-9 text-sm">
               {isPublishing ? "Publishing..." : changeCount ? `Publish ${changeCount} change${changeCount === 1 ? "" : "s"}` : "Publish"}
             </Button>
           </>
@@ -162,7 +162,7 @@ export function OwnerVenueMenuPage() {
         <div className="flex flex-col gap-4">
 
           {error ? <ErrorState message={error} /> : null}
-          {notice ? <p className="rounded-lg border border-[oklch(0.86_0.06_150)] bg-[oklch(0.96_0.03_150)] px-3 py-2 text-[13px] text-[oklch(0.32_0.06_150)]">{notice}</p> : null}
+          {notice ? <p className="rounded-lg border border-nokta-ok-line bg-nokta-ok-tint px-3 py-2 text-sm text-nokta-ok-ink">{notice}</p> : null}
 
           <div className="grid gap-5 lg:grid-cols-[1fr_300px] lg:items-start">
             <div className="flex flex-col gap-[14px]">
@@ -181,7 +181,7 @@ export function OwnerVenueMenuPage() {
                 />
               ))}
 
-              <button type="button" onClick={handleAddSection} className="self-start text-[12.5px] font-medium text-clay-accent hover:underline">+ Add a section</button>
+              <button type="button" onClick={handleAddSection} className="self-start text-[13px] font-medium text-nokta-accent-dark hover:underline">+ Add a section</button>
 
               <ExternalMenuLinksCard links={links} isSaving={isSavingLinks} onSave={handleSaveLinks} />
             </div>

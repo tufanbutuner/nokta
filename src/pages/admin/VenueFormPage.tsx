@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link, useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { AdminPageShell } from "@/components/admin/AdminPageShell";
+import { WorkspacePageHeader } from "@/components/workspace/WorkspacePageHeader";
 import { VenueForm } from "@/components/admin/venues/VenueForm";
 import { ErrorState } from "@/components/state/ErrorState";
 import { LoadingState } from "@/components/state/LoadingState";
@@ -199,16 +200,15 @@ export function VenueFormPage({ mode }: { mode: "new" | "edit" }) {
 
   return (
     <AdminPageShell activePath="/admin/venues">
-      <div className="py-5">
-        <div className="mb-8">
-          <p className="text-sm font-medium text-muted-foreground">Internal</p>
-          <h1 className="mt-2 text-4xl font-semibold">{title}</h1>
-          <p className="mt-3 max-w-2xl text-muted-foreground">
-            Maintain venue details, source provenance, verification status and data quality inputs.
-          </p>
-        </div>
+      <div>
+        <WorkspacePageHeader
+          className="mb-8"
+          back={{ to: "/admin/venues", label: "Venues" }}
+          title={title}
+          description="Maintain venue details, source provenance, verification status and data quality inputs."
+        />
         {sourceSuggestion ? (
-          <Alert className="mb-6 border-emerald-200 bg-emerald-50 text-emerald-900">
+          <Alert className="mb-6 border-nokta-ok-line bg-nokta-ok-tint text-nokta-ok-ink">
             Prefilled from suggestion: {sourceSuggestion.venueName}. Review the details, add coordinates and any missing verification before saving.
           </Alert>
         ) : null}

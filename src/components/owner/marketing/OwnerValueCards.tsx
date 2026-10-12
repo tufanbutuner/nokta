@@ -27,7 +27,7 @@ export function OwnerValueCards() {
   return (
     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
       {ownerValues.map(({ title, description, Icon }) => (
-        <article key={title} className="relative isolate overflow-hidden rounded-2xl border border-nokta-border bg-nokta-surface p-5 shadow-sm shadow-stone-950/5">
+        <article key={title} className="relative isolate overflow-hidden rounded-2xl border border-nokta-border bg-nokta-surface p-5 ">
           <img
             src="/nokta-dot.svg"
             alt=""

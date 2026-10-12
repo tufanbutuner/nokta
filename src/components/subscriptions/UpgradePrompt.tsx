@@ -21,12 +21,12 @@ export function UpgradePrompt({ feature, requiredPlan, currentPlan, venueId }: {
   const targetConfig = PLAN_CONFIG[targetPlan];
 
   return (
-    <Alert className="border-clay-400/20 bg-nokta-surface-alt text-nokta-ink">
+    <Alert className="border-nokta-accent/20 bg-nokta-surface-alt text-nokta-ink">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <strong>Unlock this feature with {targetConfig.name}.</strong>
-          <span className="mt-1 block text-muted-foreground">{FEATURE_COPY[feature] ?? targetConfig.description}</span>
-          <span className="mt-1 block text-xs text-muted-foreground">Current plan: {PLAN_CONFIG[currentPlan].name}</span>
+          <span className="mt-1 block text-nokta-ink-muted">{FEATURE_COPY[feature] ?? targetConfig.description}</span>
+          <span className="mt-1 block text-xs text-nokta-ink-muted">Current plan: {PLAN_CONFIG[currentPlan].name}</span>
         </div>
         <Button
           asChild

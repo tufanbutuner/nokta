@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { AdminPageShell } from "@/components/admin/AdminPageShell";
+import { WorkspacePageHeader, workspaceSecondaryActionClass } from "@/components/workspace/WorkspacePageHeader";
 import { CitySelector } from "@/components/search/CitySelector";
 import { PageMeta } from "@/components/seo/PageMeta";
 import { ErrorState } from "@/components/state/ErrorState";
@@ -149,18 +150,16 @@ export function AdminDemandPage() {
   return (
     <AdminPageShell activePath="/admin/demand">
       <PageMeta title="Demand | nokta admin" description="Track whether venues are answering customer demand." canonicalPath="/admin/demand" />
-      <div className="space-y-[14px] py-1">
-        <header className="flex flex-wrap items-start justify-between gap-3">
-          <div>
-            <h1 className="font-brand text-[25px] font-bold tracking-[-0.4px] text-nokta-ink">Demand</h1>
-            <p className="mt-1 text-[12.5px] text-muted-foreground">Is customer demand being answered, and where isn’t it?</p>
-          </div>
-          <div className="flex flex-wrap items-center gap-2">
+      <div className="space-y-6">
+        <WorkspacePageHeader
+          title="Demand"
+          description="Is customer demand being answered, and where isn’t it?"
+          actions={<>
             <div className="w-[150px]"><CitySelector value={city} onChange={(value) => updateParams({ city: value, item: null })} /></div>
-            <Select value={String(rangeDays)} onValueChange={(value) => updateParams({ range: value, item: null })} options={RANGE_OPTIONS} className="h-[34px] w-[140px]" />
-            <Button variant="outline" className="h-[34px] text-[13px]" onClick={() => exportDemandCsv(baseItems, venuesById)}>Export CSV</Button>
-          </div>
-        </header>
+            <Select value={String(rangeDays)} onValueChange={(value) => updateParams({ range: value, item: null })} options={RANGE_OPTIONS} className="h-10 w-[140px]" />
+            <button type="button" className={workspaceSecondaryActionClass} onClick={() => exportDemandCsv(baseItems, venuesById)}>Export CSV</button>
+          </>}
+        />
 
         <section className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
           <Metric label="Sent to venues" value={String(baseItems.length)} sub={`${metrics.bookingCount} bookings · ${metrics.enquiryCount} enquiries`} />
@@ -180,7 +179,7 @@ export function AdminDemandPage() {
               ))}
               <span className="mx-1 h-5 w-px bg-border" />
               {(["booking", "enquiry"] as DemandKind[]).map((value) => <FilterPill key={value} active={kind === value} onClick={() => updateParams({ kind: kind === value ? null : value, item: null })}>{value === "booking" ? "Bookings" : "Enquiries"}</FilterPill>)}
-              <Input value={search} onChange={(event) => updateParams({ q: event.target.value || null, item: null })} placeholder="Search venue, customer or reference" className="h-[34px] min-w-[220px] flex-1 text-[12.5px]" />
+              <Input value={search} onChange={(event) => updateParams({ q: event.target.value || null, item: null })} placeholder="Search venue, customer or reference" className="h-9 min-w-[220px] flex-1 text-[13px]" />
             </div>
 
             {error || venuesError ? <ErrorState message={error ?? venuesError ?? "Could not load demand."} /> : null}
@@ -188,15 +187,14 @@ export function AdminDemandPage() {
           </section>
 
           <aside className="flex flex-col gap-3">
-            <section className="rounded-xl bg-nokta-solid-ink px-[15px] py-[14px] text-clay-50">
-              <p className="text-[10px] font-semibold uppercase tracking-[1.6px] text-clay-200/75">Outreach list</p>
-              <h2 className="mt-2 text-[15px] font-semibold">{outreach.length} unclaimed venues have demand</h2>
-              <p className="mt-1.5 text-[11.5px] leading-[1.55] text-clay-50/65">{outreach.reduce((total, row) => total + row.count, 0)} requests nobody can answer until those venues are claimed.</p>
-              <Button className="mt-3 h-[32px] text-[12px]" disabled={!outreach.length} onClick={() => exportOutreachCsv(outreach)}>Export leads</Button>
+            <section className="rounded-2xl bg-nokta-ink p-5 text-nokta-surface">
+              <h2 className="font-brand text-lg font-bold leading-snug">{outreach.length} unclaimed venues have demand</h2>
+              <p className="mt-1.5 text-sm leading-relaxed text-nokta-surface/70">{outreach.reduce((total, row) => total + row.count, 0)} requests nobody can answer until those venues are claimed.</p>
+              <Button className="mt-3 h-8 text-[13px]" disabled={!outreach.length} onClick={() => exportOutreachCsv(outreach)}>Export leads</Button>
             </section>
             <InfoCard title="Slowest to reply">
-              {slowest.length ? slowest.map((row) => <div key={row.venueId} className="flex justify-between gap-3 py-1"><span className="truncate">{row.name}</span><strong className={cn("flex-none font-semibold", row.averageMs > 24 * 60 * 60 * 1000 && "text-[oklch(0.48_0.11_75)]")}>{formatDuration(row.averageMs)}</strong></div>) : <p>No owner replies in this range.</p>}
-              <p className="mt-2 border-t pt-2">Claimed venues only. Use this beside their plan in Commercial.</p>
+              {slowest.length ? slowest.map((row) => <div key={row.venueId} className="flex justify-between gap-3 py-1"><span className="truncate">{row.name}</span><strong className={cn("flex-none font-semibold", row.averageMs > 24 * 60 * 60 * 1000 && "text-nokta-warn-ink")}>{formatDuration(row.averageMs)}</strong></div>) : <p>No owner replies in this range.</p>}
+              <p className="mt-2 border-t pt-2 border-nokta-border">Claimed venues only. Use this beside their plan in Commercial.</p>
             </InfoCard>
             <InfoCard title="You can’t reply from here">
               <p>Admin can add internal notes or mark spam. Customer replies stay with the venue, and customer PII is never sent to analytics.</p>
@@ -206,12 +204,12 @@ export function AdminDemandPage() {
       </div>
 
       {selected ? (
-        <div className="fixed inset-0 z-[1600] grid place-items-center bg-stone-950/40 p-4" role="dialog" aria-modal="true">
-          <div className="max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-xl border bg-card p-5 shadow-xl">
-            <div className="flex items-start justify-between gap-4"><div><TypeChip kind={selected.kind} /><h2 className="mt-2 font-brand text-xl font-bold">{selected.customerName}</h2><p className="mt-1 text-[12.5px] text-muted-foreground">{venuesById[selected.venueId]?.name ?? selected.venueId} · {formatStatus(selected)}</p></div><Button variant="ghost" onClick={() => updateParams({ item: null })}>Close</Button></div>
-            <dl className="mt-4 grid gap-3 rounded-xl border p-4 text-[13px] sm:grid-cols-2"><Detail label="Email" value={selected.customerEmail} /><Detail label="Phone" value={selected.customerPhone} /><Detail label="Request" value={selected.customerDetail} /><Detail label="Reference" value={selected.reference} /></dl>
-            {selected.message ? <div className="mt-3 rounded-xl border p-4"><p className="text-[10.5px] font-semibold uppercase tracking-[1px] text-muted-foreground">Customer message</p><p className="mt-2 whitespace-pre-wrap text-[13px] leading-[1.6]">{selected.message}</p></div> : null}
-            <label className="mt-3 block"><span className="text-[13px] font-semibold">Internal admin note</span><Textarea value={adminNotes} onChange={(event) => setAdminNotes(event.target.value)} className="mt-2 min-h-20" /></label>
+        <div className="fixed inset-0 z-[1600] grid place-items-center bg-nokta-ink/40 p-4" role="dialog" aria-modal="true">
+          <div className="max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-2xl border bg-nokta-surface p-5 shadow-xl border-nokta-border">
+            <div className="flex items-start justify-between gap-4"><div><TypeChip kind={selected.kind} /><h2 className="mt-2 font-brand text-xl font-bold">{selected.customerName}</h2><p className="mt-1 text-[13px] text-nokta-ink-muted">{venuesById[selected.venueId]?.name ?? selected.venueId} · {formatStatus(selected)}</p></div><Button variant="ghost" onClick={() => updateParams({ item: null })}>Close</Button></div>
+            <dl className="mt-4 grid gap-3 rounded-xl border p-4 text-sm sm:grid-cols-2 border-nokta-border"><Detail label="Email" value={selected.customerEmail} /><Detail label="Phone" value={selected.customerPhone} /><Detail label="Request" value={selected.customerDetail} /><Detail label="Reference" value={selected.reference} /></dl>
+            {selected.message ? <div className="mt-3 rounded-xl border p-4 border-nokta-border"><p className="text-[11px] font-semibold uppercase tracking-[1px] text-nokta-ink-muted">Customer message</p><p className="mt-2 whitespace-pre-wrap text-sm leading-[1.6]">{selected.message}</p></div> : null}
+            <label className="mt-3 block"><span className="text-sm font-semibold">Internal admin note</span><Textarea value={adminNotes} onChange={(event) => setAdminNotes(event.target.value)} className="mt-2 min-h-20" /></label>
             <div className="mt-4 flex justify-end gap-2"><Button variant="outline" disabled={isSaving || selected.status === "spam"} onClick={() => saveNotes(true)}>Mark spam</Button><Button disabled={isSaving} onClick={() => saveNotes(false)}>{isSaving ? "Saving…" : "Save note"}</Button></div>
           </div>
         </div>
@@ -221,16 +219,16 @@ export function AdminDemandPage() {
 }
 
 function DemandTable({ items, venuesById, onOpen }: { items: DemandItem[]; venuesById: Record<string, Venue>; onOpen: (item: DemandItem) => void }) {
-  if (!items.length) return <div className="rounded-xl border bg-card p-8 text-center text-[13px] text-muted-foreground">No demand matches these filters.</div>;
-  return <div className="overflow-hidden rounded-xl border bg-card"><div className="hidden grid-cols-[1.5fr_92px_1fr_96px_104px_62px] gap-3 border-b bg-[oklch(0.97_0.012_60)] px-4 py-[9px] text-[10.5px] font-semibold uppercase tracking-[0.5px] text-muted-foreground lg:grid"><span>Venue</span><span>Type</span><span>Customer</span><span>Sent</span><span>Status</span><span /></div>{items.map((item) => { const venue = venuesById[item.venueId]; const overdue = isUnanswered(item) && ageMs(item) > 48 * 60 * 60 * 1000; return <button key={`${item.kind}-${item.id}`} type="button" onClick={() => onOpen(item)} className={cn("grid w-full gap-2 border-b border-l-[3px] border-l-transparent px-4 py-3 text-left last:border-b-0 lg:grid-cols-[1.5fr_92px_1fr_96px_104px_62px] lg:items-center lg:gap-3", overdue && "border-l-[oklch(0.68_0.12_75)] bg-[oklch(0.99_0.015_75)]", item.status === "spam" && "opacity-[0.62]")}><div><div className="truncate text-[13px] font-medium">{venue?.name ?? item.venueId}</div><div className={cn("mt-0.5 text-[11px] text-muted-foreground", venue && !venue.isClaimed && "font-medium text-[oklch(0.42_0.09_25)]")}>{venue && !venue.isClaimed ? "Unclaimed · nobody can reply" : venue ? `${venue.area} · ${formatPartnerTier(venue.partnerTier)}` : "Venue unavailable"}</div></div><TypeChip kind={item.kind} /><div className="min-w-0"><div className="truncate text-[12.5px] font-medium">{item.customerName}</div><div className="truncate text-[11px] text-muted-foreground">{item.customerDetail}</div></div><span className="text-[11.5px] text-muted-foreground">{formatAge(item.createdAt)}</span><StatusChip item={item} /><span className="text-[12.5px] font-medium text-clay-accent">Open</span></button>; })}</div>;
+  if (!items.length) return <div className="rounded-2xl border bg-nokta-surface p-8 text-center text-sm text-nokta-ink-muted border-nokta-border">No demand matches these filters.</div>;
+  return <div className="overflow-hidden rounded-xl border bg-nokta-surface border-nokta-border"><div className="hidden grid-cols-[1.5fr_92px_1fr_96px_104px_62px] gap-3 border-b bg-nokta-hover px-4 py-[9px] text-[11px] font-semibold uppercase tracking-[0.04em] text-nokta-ink-muted lg:grid border-nokta-border"><span>Venue</span><span>Type</span><span>Customer</span><span>Sent</span><span>Status</span><span /></div>{items.map((item) => { const venue = venuesById[item.venueId]; const overdue = isUnanswered(item) && ageMs(item) > 48 * 60 * 60 * 1000; return <button key={`${item.kind}-${item.id}`} type="button" onClick={() => onOpen(item)} className={cn("grid w-full gap-2 border-b border-nokta-divider-row px-4 py-3 text-left transition-colors hover:bg-nokta-hover-row last:border-b-0 lg:grid-cols-[1.5fr_92px_1fr_96px_104px_62px] lg:items-center lg:gap-3", overdue && "bg-nokta-warn-tint hover:bg-nokta-warn-tint", item.status === "spam" && "opacity-[0.62]")}><div><div className="truncate text-sm font-medium">{venue?.name ?? item.venueId}</div><div className={cn("mt-0.5 text-xs text-nokta-ink-muted", venue && !venue.isClaimed && "font-medium text-nokta-bad-ink")}>{venue && !venue.isClaimed ? "Unclaimed · nobody can reply" : venue ? `${venue.area} · ${formatPartnerTier(venue.partnerTier)}` : "Venue unavailable"}</div></div><TypeChip kind={item.kind} /><div className="min-w-0"><div className="truncate text-[13px] font-medium">{item.customerName}</div><div className="truncate text-xs text-nokta-ink-muted">{item.customerDetail}</div></div><span className="text-xs text-nokta-ink-muted">{formatAge(item.createdAt)}</span><StatusChip item={item} /><span className="text-[13px] font-medium text-nokta-accent-dark">Open</span></button>; })}</div>;
 }
 
-function Metric({ label, value, sub, alert }: { label: string; value: string; sub: string; alert?: boolean }) { return <div className={cn("rounded-xl border bg-card px-4 py-[14px]", alert && "border-[oklch(0.87_0.08_75)] bg-[oklch(0.96_0.045_75)]")}><p className="text-[11.5px] text-muted-foreground">{label}</p><p className="mt-1 text-[22px] font-semibold">{value}</p><p className="mt-0.5 text-[11px] text-muted-foreground">{sub}</p></div>; }
-function FilterPill({ active, onClick, children }: { active: boolean; onClick: () => void; children: React.ReactNode }) { return <button type="button" onClick={onClick} className={cn("h-[31px] rounded-full border px-3 text-[12.5px]", active ? "border-nokta-ink bg-nokta-solid-ink text-white" : "bg-card text-muted-foreground")}>{children}</button>; }
-function TypeChip({ kind }: { kind: DemandKind }) { return <span className={cn("inline-flex w-fit rounded-[5px] px-[7px] py-[3px] text-[10.5px] font-semibold uppercase", kind === "booking" ? "bg-clay-accent/12 text-[#a44a30]" : "bg-[oklch(0.93_0.03_250)] text-[oklch(0.36_0.08_250)]")}>{kind}</span>; }
-function StatusChip({ item }: { item: DemandItem }) { return <span className={cn("w-fit rounded-full px-2 py-[3px] text-[11px] font-semibold", isUnanswered(item) ? "bg-[oklch(0.96_0.045_75)] text-[oklch(0.36_0.08_75)]" : item.status === "spam" ? "bg-muted text-muted-foreground" : "bg-[oklch(0.94_0.02_150)] text-[oklch(0.36_0.06_150)]")}>{formatStatus(item)}</span>; }
-function InfoCard({ title, children }: { title: string; children: React.ReactNode }) { return <section className="rounded-xl border bg-card px-[15px] py-[14px]"><h2 className="text-[13px] font-semibold">{title}</h2><div className="mt-1.5 text-[11.5px] leading-[1.55] text-muted-foreground">{children}</div></section>; }
-function Detail({ label, value }: { label: string; value: string | null }) { return <div><dt className="text-[11px] text-muted-foreground">{label}</dt><dd className="mt-0.5 break-words font-medium">{value || "Not provided"}</dd></div>; }
+function Metric({ label, value, sub, alert }: { label: string; value: string; sub: string; alert?: boolean }) { return <div className={cn("rounded-2xl border bg-nokta-surface px-4 py-[14px] border-nokta-border", alert && "border-nokta-warn-line bg-nokta-warn-tint")}><p className="text-xs text-nokta-ink-muted">{label}</p><p className="mt-1 text-[22px] font-semibold">{value}</p><p className="mt-0.5 text-xs text-nokta-ink-muted">{sub}</p></div>; }
+function FilterPill({ active, onClick, children }: { active: boolean; onClick: () => void; children: React.ReactNode }) { return <button type="button" onClick={onClick} className={cn("h-8 rounded-full border px-3 text-[13px] border-nokta-border", active ? "border-nokta-ink bg-nokta-ink text-nokta-surface" : "bg-nokta-surface text-nokta-ink-muted")}>{children}</button>; }
+function TypeChip({ kind }: { kind: DemandKind }) { return <span className={cn("inline-flex w-fit rounded-lg px-[7px] py-[3px] text-[11px] font-semibold uppercase", kind === "booking" ? "bg-nokta-accent-solid/12 text-nokta-accent-dark" : "bg-nokta-info-tint text-nokta-info-ink")}>{kind}</span>; }
+function StatusChip({ item }: { item: DemandItem }) { return <span className={cn("w-fit rounded-full px-2 py-[3px] text-xs font-semibold", isUnanswered(item) ? "bg-nokta-warn-tint text-nokta-warn-ink" : item.status === "spam" ? "bg-nokta-track text-nokta-ink-muted" : "bg-nokta-ok-tint text-nokta-ok-ink")}>{formatStatus(item)}</span>; }
+function InfoCard({ title, children }: { title: string; children: React.ReactNode }) { return <section className="rounded-2xl border bg-nokta-surface px-[15px] py-[14px] border-nokta-border"><h2 className="text-sm font-semibold">{title}</h2><div className="mt-1.5 text-xs leading-[1.55] text-nokta-ink-muted">{children}</div></section>; }
+function Detail({ label, value }: { label: string; value: string | null }) { return <div><dt className="text-xs text-nokta-ink-muted">{label}</dt><dd className="mt-0.5 break-words font-medium">{value || "Not provided"}</dd></div>; }
 
 function mapBooking(item: BookingRequest): DemandItem { return { id: item.id, kind: "booking", venueId: item.venueId, customerName: item.customerName, customerEmail: item.customerEmail, customerPhone: item.customerPhone, customerDetail: `${item.partySize} people · ${item.requestedDate} ${item.requestedTime}`, message: item.message, reference: item.confirmationReference, status: item.status, createdAt: item.createdAt, ownerUpdatedAt: item.ownerLastUpdatedAt, adminNotes: item.adminNotes, raw: item }; }
 function mapEnquiry(item: VenueEnquiry): DemandItem { return { id: item.id, kind: "enquiry", venueId: item.venueId, customerName: item.customerName, customerEmail: item.customerEmail, customerPhone: item.customerPhone, customerDetail: [formatVenueEnquiryType(item.enquiryType), item.partySize ? `${item.partySize} people` : null].filter(Boolean).join(" · "), message: item.message, reference: null, status: item.status, createdAt: item.createdAt, ownerUpdatedAt: item.ownerLastUpdatedAt, adminNotes: item.adminNotes, raw: item }; }

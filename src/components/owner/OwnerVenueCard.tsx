@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
-import { ownerPrimaryActionClass, ownerSecondaryActionClass } from "@/components/owner/OwnerPageHeader";
+import { workspacePrimaryActionClass, workspaceSecondaryActionClass } from "@/components/workspace/WorkspacePageHeader";
 import { ClaimedVenueBadge } from "@/components/venues/ClaimedVenueBadge";
 import { PlanBadge } from "@/components/subscriptions/PlanBadge";
 import { subscriptionHasPlanAccess } from "@/lib/planFeatureAccess";
@@ -37,11 +37,11 @@ export function OwnerVenueCard({ venue, analytics, enquiries, commercial, subscr
           </div>
         </div>
         <div className="flex flex-wrap gap-2">
-          <Link to={`/owner/venues/${venue.slug}/profile`} className={ownerPrimaryActionClass}>
+          <Link to={`/owner/venues/${venue.slug}/profile`} className={workspacePrimaryActionClass}>
             Manage venue
             <ArrowRight aria-hidden="true" className="size-4" />
           </Link>
-          <Link to={`/venues/${venue.slug}`} className={ownerSecondaryActionClass}>
+          <Link to={`/venues/${venue.slug}`} className={workspaceSecondaryActionClass}>
             Public page
             <ArrowUpRight aria-hidden="true" className="size-4" />
           </Link>

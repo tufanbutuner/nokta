@@ -120,8 +120,8 @@ export function VenueForm({
 
   return (
     <form className="grid gap-6" onSubmit={handleSubmit}>
-      {saveMessage ? <Alert className="border-emerald-200 bg-emerald-50 text-emerald-900">{saveMessage}</Alert> : null}
-      {saveError ? <Alert className="border-red-200 bg-red-50 text-red-900">{saveError}</Alert> : null}
+      {saveMessage ? <Alert className="border-nokta-ok-line bg-nokta-ok-tint text-nokta-ok-ink">{saveMessage}</Alert> : null}
+      {saveError ? <Alert className="border-nokta-bad-line bg-nokta-bad-tint text-nokta-bad-ink">{saveError}</Alert> : null}
       <VenueFormWarnings warnings={validation.warnings} />
 
       <VenueFormSection title="Basic details">
@@ -220,7 +220,7 @@ export function VenueForm({
       <VenueFormSection title="Features">
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
           {FEATURE_FIELDS.map(([key, label]) => (
-            <label key={key} className="flex items-center gap-2 rounded-md border bg-background px-3 py-2 text-sm font-medium">
+            <label key={key} className="flex items-center gap-2 rounded-md border bg-nokta-surface-alt px-3 py-2 text-sm font-medium border-nokta-border">
               <Checkbox checked={Boolean(values[key])} onChange={(event) => update(key, event.target.checked)} />
               {label}
             </label>
@@ -300,11 +300,11 @@ export function VenueForm({
 
       <VenueFormSection title="Commercial">
         <div className="grid gap-4 md:grid-cols-2">
-          <label className="flex items-center gap-2 rounded-md border bg-background px-3 py-2 text-sm font-medium">
+          <label className="flex items-center gap-2 rounded-md border bg-nokta-surface-alt px-3 py-2 text-sm font-medium border-nokta-border">
             <Checkbox checked={values.isClaimed} onChange={(event) => updateClaimedStatus(event.target.checked)} />
             Claimed profile
           </label>
-          <label className="flex items-center gap-2 rounded-md border bg-background px-3 py-2 text-sm font-medium">
+          <label className="flex items-center gap-2 rounded-md border bg-nokta-surface-alt px-3 py-2 text-sm font-medium border-nokta-border">
             <Checkbox checked={values.featuredEligible} onChange={(event) => update("featuredEligible", event.target.checked)} />
             Featured eligible
           </label>
@@ -358,7 +358,7 @@ export function VenueForm({
         </Field>
       </VenueFormSection>
 
-      <div className="sticky bottom-0 flex flex-col gap-3 border-t bg-background/95 py-4 backdrop-blur sm:flex-row sm:justify-between">
+      <div className="sticky bottom-0 flex flex-col gap-3 border-t bg-nokta-surface-alt/95 py-4 backdrop-blur sm:flex-row sm:justify-between border-nokta-border">
         <Button asChild type="button" variant="outline">
           <Link to="/admin/venues">Back to venues</Link>
         </Button>
@@ -375,7 +375,7 @@ function Field({ label, error, children }: { label: string; error?: string; chil
     <label className="grid gap-2 text-sm font-medium" data-field-error={error ? "true" : undefined}>
       {label}
       {children}
-      {error ? <span className="text-xs text-red-700">{error}</span> : null}
+      {error ? <span className="text-xs text-nokta-bad-ink">{error}</span> : null}
     </label>
   );
 }

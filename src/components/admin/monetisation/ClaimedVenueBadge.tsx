@@ -5,7 +5,7 @@ export function ClaimedVenueBadge({ claimed, variant = "badge" }: { claimed: boo
   if (variant === "dot") {
     return (
       <span
-        className={cn("block h-[7px] w-[7px] rounded-full", claimed ? "bg-forest-400" : "bg-clay-300")}
+        className={cn("block h-[7px] w-[7px] rounded-full", claimed ? "bg-nokta-ok-solid" : "bg-nokta-warn-solid")}
         aria-label={claimed ? "Claimed" : "Unclaimed"}
       />
     );
@@ -14,7 +14,7 @@ export function ClaimedVenueBadge({ claimed, variant = "badge" }: { claimed: boo
   return (
     <Badge
       variant="outline"
-      className={cn("w-fit rounded px-2 py-0.5 text-[10px] font-semibold", claimed ? "border-forest-400/20 bg-forest-50 text-forest-400" : "border-clay-100 bg-clay-100 text-[#8a7e72]")}
+      className={cn("w-fit rounded px-2 py-0.5 text-[11px] font-semibold", claimed ? "border-nokta-ok-line/20 bg-nokta-ok-tint text-nokta-ok-ink" : "border-nokta-border bg-nokta-track text-nokta-ink-muted")}
     >
       {claimed ? "Claimed" : "Unclaimed"}
     </Badge>

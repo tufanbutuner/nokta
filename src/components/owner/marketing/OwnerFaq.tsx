@@ -7,5 +7,5 @@ const faqs = [
 ] as const;
 
 export function OwnerFaq() {
-  return <div className="divide-y divide-nokta-border overflow-hidden rounded-2xl border border-nokta-border bg-nokta-surface">{faqs.map(([question, answer]) => <details key={question} className="group px-5 py-4"><summary className="cursor-pointer list-none text-[14.5px] font-semibold text-nokta-ink">{question}</summary><p className="mt-2 text-[13.5px] leading-[1.65] text-nokta-ink-muted">{answer}</p></details>)}</div>;
+  return <div className="divide-y divide-nokta-border overflow-hidden rounded-2xl border border-nokta-border bg-nokta-surface">{faqs.map(([question, answer]) => <details key={question} className="group px-5 py-4"><summary className="cursor-pointer list-none text-[15px] font-semibold text-nokta-ink">{question}</summary><p className="mt-2 text-sm leading-[1.65] text-nokta-ink-muted">{answer}</p></details>)}</div>;
 }

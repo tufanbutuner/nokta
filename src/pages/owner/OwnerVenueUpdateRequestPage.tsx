@@ -104,14 +104,14 @@ export function OwnerVenueUpdateRequestPage() {
       <OwnerVenueTabHeader
         title={venue.name}
         canNavigate={() => !isDirty || window.confirm("You have unsaved changes. Leave without submitting?")}
-        actions={<Button asChild variant="outline" className="h-[34px] rounded-lg border-nokta-border-input text-[13px] font-medium"><Link to={`/venues/${venue.slug}`}>Preview public page</Link></Button>}
+        actions={<Button asChild variant="outline" className="h-9 rounded-lg border-nokta-border-input text-sm font-medium"><Link to={`/venues/${venue.slug}`}>Preview public page</Link></Button>}
       />
       {isLoading ? <LoadingState message="Loading update request..." /> : error ? <ErrorState message={error} /> : (
           <div className="flex flex-wrap items-start gap-x-7 gap-y-5 pb-[170px]">
             <main ref={formRef} className="flex min-w-0 flex-[1_1_420px] flex-col gap-4">
-              <div className="rounded-[10px] border border-nokta-border border-l-[3px] border-l-clay-300 bg-nokta-surface px-[15px] py-[13px] text-[13px] leading-[1.55] text-nokta-ink-subtle">
+              <div className="rounded-2xl bg-nokta-hover px-5 py-4 text-sm leading-relaxed text-nokta-ink-subtle">
                 <strong className="font-semibold text-nokta-ink">Changes here are reviewed by nokta before they go live.</strong>{" "}
-                Menu, prices and photos publish instantly from their own tabs. Venue name, address and location need verification — <a href={`mailto:${brandConfig.supportEmail}`} className="font-medium text-clay-accent hover:underline">contact us</a> to change them.
+                Menu, prices and photos publish instantly from their own tabs. Venue name, address and location need verification — <a href={`mailto:${brandConfig.supportEmail}`} className="font-medium text-nokta-accent-dark hover:underline">contact us</a> to change them.
               </div>
 
               {canEdit ? (

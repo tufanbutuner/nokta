@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ErrorState } from "@/components/state/ErrorState";
 import { LoadingState } from "@/components/state/LoadingState";
 import { OwnerLayout } from "@/components/owner/OwnerLayout";
-import { OwnerPageHeader } from "@/components/owner/OwnerPageHeader";
+import { WorkspacePageHeader } from "@/components/workspace/WorkspacePageHeader";
 import { PlanBadge } from "@/components/subscriptions/PlanBadge";
 import { PricingPlansTable } from "@/components/subscriptions/PricingPlansTable";
 import { PageMeta } from "@/components/seo/PageMeta";
@@ -106,7 +106,7 @@ export function OwnerBillingPage() {
       <PageMeta title="Plan & billing | nokta" description="Compare nokta venue plans and manage billing." canonicalPath="/owner/billing" />
       {isLoading ? <LoadingState message="Loading billing..." /> : error ? <ErrorState message={error} /> : (
         <div className="space-y-6">
-          <OwnerPageHeader
+          <WorkspacePageHeader
             title="Plan & billing"
             description={
               <>
@@ -121,19 +121,19 @@ export function OwnerBillingPage() {
               const isStripeSubscription = subscription?.billingProvider === "stripe";
               const canManageBilling = isStripeSubscription && Boolean(subscription.billingCustomerId);
               return (
-                <article key={venue.id} className="rounded-xl border bg-card p-5">
+                <article key={venue.id} className="rounded-2xl border bg-nokta-surface p-5 border-nokta-border">
                   <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
                     <div>
-                      <h2 className="font-brand text-xl font-bold tracking-[-0.5px]">{venue.name}</h2>
+                      <h2 className="font-brand text-xl font-bold tracking-[-0.01em]">{venue.name}</h2>
                       <div className="mt-2 flex flex-wrap items-center gap-2">
                         <PlanBadge plan={subscription?.plan ?? "free"} status={subscription?.status ?? "inactive"} />
-                        <span className="text-sm capitalize text-muted-foreground">{isStripeSubscription ? "Stripe billing" : "Managed manually by nokta"}</span>
+                        <span className="text-sm capitalize text-nokta-ink-muted">{isStripeSubscription ? "Stripe billing" : "Managed manually by nokta"}</span>
                       </div>
-                      <p className="mt-2 text-sm text-muted-foreground">
+                      <p className="mt-2 text-sm text-nokta-ink-muted">
                         {formatBillingPeriod(subscription)}
                       </p>
                       {isStripeSubscription && !subscription.billingCustomerId ? (
-                        <p className="mt-2 text-xs text-muted-foreground">Stripe is still syncing this subscription. Billing management will appear after the webhook stores the customer ID.</p>
+                        <p className="mt-2 text-xs text-nokta-ink-muted">Stripe is still syncing this subscription. Billing management will appear after the webhook stores the customer ID.</p>
                       ) : null}
                     </div>
                     <div className="flex flex-wrap gap-2">
@@ -152,21 +152,21 @@ export function OwnerBillingPage() {
 
           <section id="owner-plans" className="space-y-4 scroll-mt-6">
             <div>
-              <h2 className="font-brand text-xl font-bold tracking-[-0.5px]">Compare plans</h2>
-              <p className="mt-1 max-w-2xl text-[13px] text-muted-foreground">Choose a venue, start Stripe Checkout, and your plan unlocks automatically after Stripe confirms payment.</p>
+              <h2 className="font-brand text-xl font-bold tracking-[-0.01em]">Compare plans</h2>
+              <p className="mt-1 max-w-2xl text-sm text-nokta-ink-muted">Choose a venue, start Stripe Checkout, and your plan unlocks automatically after Stripe confirms payment.</p>
             </div>
             {!venues.length ? (
-              <div className="rounded-xl border bg-card p-6">
-                <h3 className="font-brand text-xl font-bold tracking-[-0.5px]">Claim a venue before choosing a plan</h3>
-                <p className="mt-2 text-sm text-muted-foreground">Paid owner tools attach to a claimed venue profile.</p>
+              <div className="rounded-2xl border bg-nokta-surface p-6 border-nokta-border">
+                <h3 className="font-brand text-xl font-bold tracking-[-0.01em]">Claim a venue before choosing a plan</h3>
+                <p className="mt-2 text-sm text-nokta-ink-muted">Paid owner tools attach to a claimed venue profile.</p>
                 <Button asChild className="mt-4"><Link to="/">Find your venue</Link></Button>
               </div>
             ) : (
-              <div className="rounded-xl border bg-card p-5">
+              <div className="rounded-2xl border bg-nokta-surface p-5 border-nokta-border">
                 <label htmlFor="owner-plan-venue" className="text-sm font-medium">Upgrade venue</label>
                 <div className="mt-2 grid gap-3 lg:grid-cols-[minmax(280px,420px)_1fr] lg:items-center">
                   <Select id="owner-plan-venue" value={selectedVenueId} onValueChange={setSelectedVenueId} options={venueOptions} />
-                  <p className="text-sm text-muted-foreground">Current plan: {PLAN_CONFIG[selectedSubscription?.plan ?? "free"].name}{selectedSubscription?.billingProvider === "stripe" ? " • Stripe billing" : ""}</p>
+                  <p className="text-sm text-nokta-ink-muted">Current plan: {PLAN_CONFIG[selectedSubscription?.plan ?? "free"].name}{selectedSubscription?.billingProvider === "stripe" ? " • Stripe billing" : ""}</p>
                 </div>
               </div>
             )}

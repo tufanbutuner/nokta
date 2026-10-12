@@ -3,9 +3,9 @@ import { cn } from "@/lib/utils";
 import type { VenueQualityIssue } from "@/lib/venueQuality";
 
 const SEVERITY_CLASSES: Record<VenueQualityIssue["severity"], string> = {
-  low: "border-stone-200 bg-stone-50 text-stone-600",
-  medium: "border-amber-200 bg-amber-50 text-amber-800",
-  high: "border-red-200 bg-red-50 text-red-800",
+  low: "border-nokta-divider bg-nokta-surface-alt text-nokta-ink-muted",
+  medium: "border-nokta-warn-line bg-nokta-warn-tint text-nokta-warn-ink",
+  high: "border-nokta-bad-line bg-nokta-bad-tint text-nokta-bad-ink",
 };
 
 export function DataQualityIssueBadge({ issue }: { issue: VenueQualityIssue }) {

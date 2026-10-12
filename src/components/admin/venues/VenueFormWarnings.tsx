@@ -6,7 +6,7 @@ export function VenueFormWarnings({ warnings }: { warnings: string[] }) {
   }
 
   return (
-    <Alert className="border-amber-200 bg-amber-50 text-amber-900">
+    <Alert className="border-nokta-warn-line bg-nokta-warn-tint text-nokta-warn-ink">
       <h2 className="font-semibold">Data quality warnings</h2>
       <ul className="mt-2 list-disc space-y-1 pl-5">
         {warnings.map((warning) => (

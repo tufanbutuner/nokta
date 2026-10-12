@@ -20,9 +20,9 @@ export function OwnerMediaMetadataDialog({ media, onClose, onSave }: { media: Ve
   }
 
   return (
-    <div className="fixed inset-0 z-[1500] bg-stone-950/60 p-4" role="dialog" aria-modal="true">
+    <div className="fixed inset-0 z-[1500] bg-nokta-ink/60 p-4" role="dialog" aria-modal="true">
       <button type="button" className="absolute inset-0 cursor-default" onClick={onClose} aria-label="Close" />
-      <div className="relative mx-auto mt-12 max-w-lg rounded-xl border bg-card p-5 shadow-xl">
+      <div className="relative mx-auto mt-12 max-w-lg rounded-2xl border bg-nokta-surface p-5 shadow-xl border-nokta-border">
         <h2 className="text-xl font-semibold">Edit photo details</h2>
         <img src={media.url} alt={media.altText ?? "Venue upload"} className="mt-4 aspect-[16/9] w-full rounded-lg object-cover" />
         <label className="mt-4 block"><span className="text-sm font-medium">Alt text</span><Input className="mt-2" value={altText} maxLength={140} onChange={(event) => setAltText(event.target.value)} /></label>

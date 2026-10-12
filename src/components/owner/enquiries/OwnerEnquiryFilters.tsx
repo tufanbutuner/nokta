@@ -17,7 +17,7 @@ const TYPES: (VenueEnquiryType | "all")[] = ["all", "general", "birthday", "grou
 
 export function OwnerEnquiryFilters({ venues, value, onChange, lockVenue = false }: { venues: Venue[]; value: OwnerEnquiryFilterState; onChange: (value: OwnerEnquiryFilterState) => void; lockVenue?: boolean }) {
   return (
-    <section className="rounded-xl border bg-card p-4">
+    <section className="rounded-2xl border bg-nokta-surface p-4 border-nokta-border">
       <div className="grid gap-3 lg:grid-cols-4">
         <Select disabled={lockVenue} value={value.venueId} onValueChange={(venueId) => onChange({ ...value, venueId })} options={[{ label: "All venues", value: "all" }, ...venues.map((venue) => ({ label: venue.name, value: venue.id }))]} />
         <Select value={value.status} onValueChange={(status) => onChange({ ...value, status: status as OwnerEnquiryFilterState["status"] })} options={STATUSES.map((status) => ({ label: status === "all" ? "All statuses" : formatAdminVenueEnquiryStatus(status), value: status }))} />

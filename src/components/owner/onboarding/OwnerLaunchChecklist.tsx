@@ -18,11 +18,11 @@ const taskContent: Record<OwnerOnboardingTaskKey, { title: string; description: 
 
 export function OwnerLaunchChecklist({ venue, tasks, onComplete }: { venue: Venue; tasks: OwnerOnboardingTask[]; onComplete: (taskKey: OwnerOnboardingTaskKey) => void }) {
   return (
-    <section className="rounded-xl border bg-card p-5">
+    <section className="rounded-2xl border bg-nokta-surface p-5 border-nokta-border">
       <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
         <div>
           <h2 className="text-xl font-semibold">Owner setup checklist</h2>
-          <p className="mt-1 text-sm text-muted-foreground">Complete these steps when you are ready. They do not block access to your dashboard.</p>
+          <p className="mt-1 text-sm text-nokta-ink-muted">Complete these steps when you are ready. They do not block access to your dashboard.</p>
         </div>
         <div className="min-w-[220px]">
           <OwnerOnboardingProgress tasks={tasks} />
@@ -34,12 +34,12 @@ export function OwnerLaunchChecklist({ venue, tasks, onComplete }: { venue: Venu
           const complete = task.status === "completed";
 
           return (
-            <article key={task.taskKey} className="flex flex-col gap-4 rounded-xl border bg-background/60 p-4 sm:flex-row sm:items-center sm:justify-between">
+            <article key={task.taskKey} className="flex flex-col gap-4 rounded-2xl border bg-nokta-surface-alt/60 p-4 sm:flex-row sm:items-center sm:justify-between border-nokta-border">
               <div className="flex gap-3">
-                {complete ? <CheckCircle2 className="mt-0.5 h-5 w-5 text-nokta-accent" /> : <Circle className="mt-0.5 h-5 w-5 text-muted-foreground" />}
+                {complete ? <CheckCircle2 className="mt-0.5 h-5 w-5 text-nokta-accent" /> : <Circle className="mt-0.5 h-5 w-5 text-nokta-ink-muted" />}
                 <div>
                   <h3 className="font-semibold">{content.title}</h3>
-                  <p className="mt-1 text-sm leading-6 text-muted-foreground">{content.description}</p>
+                  <p className="mt-1 text-sm leading-6 text-nokta-ink-muted">{content.description}</p>
                 </div>
               </div>
               <div className="flex shrink-0 gap-2">

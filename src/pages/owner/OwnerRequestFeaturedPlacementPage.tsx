@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { OwnerLayout } from "@/components/owner/OwnerLayout";
-import { OwnerPageHeader } from "@/components/owner/OwnerPageHeader";
+import { WorkspacePageHeader } from "@/components/workspace/WorkspacePageHeader";
 import { OwnerFeaturedPlacementRequestForm } from "@/components/owner/promotions/OwnerFeaturedPlacementRequestForm";
 import { OwnerPromotionUpgradeCard } from "@/components/owner/promotions/OwnerPromotionUpgradeCard";
 import { PageMeta } from "@/components/seo/PageMeta";
@@ -71,11 +71,11 @@ export function OwnerRequestFeaturedPlacementPage() {
       <PageMeta title="Request featured placement | nokta" description="Request a featured placement for your venue." />
       {isLoading ? <LoadingState message="Loading request form..." /> : error && !venue ? <ErrorState message={error} /> : venue ? (
         <div className="max-w-3xl space-y-6">
-          <OwnerPageHeader back={{ to: "/owner/promotions", label: "Marketing" }} title="Request featured placement" description={venue.name} />
+          <WorkspacePageHeader back={{ to: "/owner/promotions", label: "Marketing" }} title="Request featured placement" description={venue.name} />
           {success ? (
-            <div className="rounded-xl border bg-card p-6 shadow-sm">
+            <div className="rounded-2xl border bg-nokta-surface p-6 border-nokta-border">
               <h2 className="text-xl font-semibold">Request submitted</h2>
-              <p className="mt-2 text-sm text-muted-foreground">nokta will review it before it goes live.</p>
+              <p className="mt-2 text-sm text-nokta-ink-muted">nokta will review it before it goes live.</p>
               <Button asChild className="mt-5"><Link to="/owner/promotions">Back to promotions</Link></Button>
             </div>
           ) : canRequestFeaturedPlacement(subscription) ? (

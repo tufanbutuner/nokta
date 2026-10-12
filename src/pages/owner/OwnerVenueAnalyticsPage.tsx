@@ -62,7 +62,7 @@ export function OwnerVenueAnalyticsPage() {
       <OwnerVenueTabHeader title="Performance" actions={<OwnerAnalyticsDateRangeFilter value={dateRange} onChange={setDateRange} />} />
       {isLoading ? <LoadingState message="Loading venue analytics..." /> : error || !summary ? <ErrorState title="Could not load analytics" message={error ?? "You do not have access to this venue analytics page."} /> : (
         <div className="space-y-5">
-          <p className="max-w-2xl text-[13px] leading-6 text-muted-foreground">See how Nokta is helping your venue get discovered, trusted and booked.</p>
+          <p className="max-w-2xl text-sm leading-6 text-nokta-ink-muted">See how Nokta is helping your venue get discovered, trusted and booked.</p>
 
           <OwnerAnalyticsSummaryCards summary={summary} />
           {!hasActivity ? <OwnerAnalyticsEmptyState venue={venue} /> : null}

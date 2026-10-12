@@ -12,24 +12,24 @@ export function PromoSubmittedBand({ request }: { request: OwnerPromotionRequest
   ];
 
   return (
-    <section className="overflow-hidden rounded-xl border bg-card">
-      <header className="border-b bg-[oklch(0.97_0.012_60)] px-4 py-3">
-        <div className="text-[10.5px] font-semibold uppercase tracking-[0.5px] text-muted-foreground">Promotion copy</div>
+    <section className="overflow-hidden rounded-xl border bg-nokta-surface border-nokta-border">
+      <header className="border-b bg-nokta-hover px-4 py-3 border-nokta-border">
+        <div className="text-[11px] font-semibold uppercase tracking-[0.04em] text-nokta-ink-muted">Promotion copy</div>
         <h3 className="mt-1 text-[15px] font-semibold text-nokta-ink">{request.title}</h3>
-        <p className="mt-1 whitespace-pre-wrap text-[13px] leading-[1.55] text-muted-foreground">{request.description || "No description provided."}</p>
+        <p className="mt-1 whitespace-pre-wrap text-sm leading-[1.55] text-nokta-ink-muted">{request.description || "No description provided."}</p>
       </header>
       <dl className="grid sm:grid-cols-2">
         {rows.map(([label, value], index) => (
           <div key={label} className={`px-4 py-3 ${index < rows.length - 2 ? "border-b" : ""} ${index % 2 === 0 ? "sm:border-r" : ""}`}>
-            <dt className="text-[10.5px] font-semibold uppercase tracking-[0.5px] text-muted-foreground">{label}</dt>
-            <dd className="mt-1 break-words text-[13px] font-medium text-nokta-ink">{value || <span className="font-normal italic text-muted-foreground">Not provided</span>}</dd>
+            <dt className="text-[11px] font-semibold uppercase tracking-[0.04em] text-nokta-ink-muted">{label}</dt>
+            <dd className="mt-1 break-words text-sm font-medium text-nokta-ink">{value || <span className="font-normal italic text-nokta-ink-muted">Not provided</span>}</dd>
           </div>
         ))}
       </dl>
-      <div className="border-t px-4 py-3">
-        <div className="text-[10.5px] font-semibold uppercase tracking-[0.5px] text-muted-foreground">Call to action</div>
-        <p className="mt-1 text-[13px] font-medium text-nokta-ink">{request.ctaLabel || "Not provided"}</p>
-        {request.ctaUrl ? <a href={request.ctaUrl} target="_blank" rel="noreferrer" className="mt-1 inline-flex items-center gap-1 break-all text-[12.5px] text-clay-accent hover:underline">{request.ctaUrl} <ExternalLink className="h-3.5 w-3.5 flex-none" /></a> : null}
+      <div className="border-t px-4 py-3 border-nokta-border">
+        <div className="text-[11px] font-semibold uppercase tracking-[0.04em] text-nokta-ink-muted">Call to action</div>
+        <p className="mt-1 text-sm font-medium text-nokta-ink">{request.ctaLabel || "Not provided"}</p>
+        {request.ctaUrl ? <a href={request.ctaUrl} target="_blank" rel="noreferrer" className="mt-1 inline-flex items-center gap-1 break-all text-[13px] text-nokta-accent-dark hover:underline">{request.ctaUrl} <ExternalLink className="h-3.5 w-3.5 flex-none" /></a> : null}
       </div>
     </section>
   );

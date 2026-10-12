@@ -225,10 +225,10 @@ export function OwnerVenueBookingsPage() {
         title="Bookings"
         actions={
           <>
-            <Button asChild variant="outline" className="h-[34px] text-[13px]">
+            <Button asChild variant="outline" className="h-9 text-sm">
               <Link to={`/owner/venues/${venue.slug}/bookings/rules`}>Booking rules</Link>
             </Button>
-            <Button type="button" onClick={() => setIsClosureOpen(true)} className="h-[34px] text-[13px]">Add a closure</Button>
+            <Button type="button" onClick={() => setIsClosureOpen(true)} className="h-9 text-sm">Add a closure</Button>
           </>
         }
       />
@@ -239,12 +239,12 @@ export function OwnerVenueBookingsPage() {
               {error ? <ErrorState message={error} /> : null}
 
               {waitingQueue.length && firstWaiting ? (
-                <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-[oklch(0.87_0.08_75)] bg-[oklch(0.96_0.045_75)] px-4 py-[13px]">
+                <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-nokta-warn-line bg-nokta-warn-tint px-4 py-[13px]">
                   <div className="min-w-0">
-                    <p className="text-[13.5px] font-semibold text-nokta-ink">
+                    <p className="text-sm font-semibold text-nokta-ink">
                       {waitingQueue.length} request{waitingQueue.length === 1 ? "" : "s"} waiting for a reply
                     </p>
-                    <p className="mt-0.5 text-[12px] leading-[1.5] text-muted-foreground">
+                    <p className="mt-0.5 text-[13px] leading-[1.5] text-nokta-ink-muted">
                       {oldestWaitingDays && oldestWaitingDays >= 1 ? `Oldest sent ${oldestWaitingDays} day${oldestWaitingDays === 1 ? "" : "s"} ago. ` : ""}
                       Next up: {firstWaiting.slot.date} at {firstWaiting.slot.time}. Customers see “awaiting the venue” until you answer.
                     </p>
@@ -253,11 +253,11 @@ export function OwnerVenueBookingsPage() {
                     <button
                       type="button"
                       onClick={() => updateParams({ view: "list", filter: "waiting", date: null, past: null })}
-                      className="flex h-8 items-center rounded-lg bg-clay-accent px-3 text-[12.5px] font-medium text-white transition-colors hover:bg-clay-accent/90"
+                      className="flex h-8 items-center rounded-lg bg-nokta-accent-solid px-3 text-[13px] font-medium text-white transition-colors hover:bg-nokta-accent-solid/90"
                     >
                       Review waiting
                     </button>
-                    <Link to="/owner/inbox?status=needs-reply&type=booking" className="flex h-8 items-center rounded-lg border bg-card px-3 text-[12.5px] font-medium text-nokta-ink transition-colors hover:bg-muted">
+                    <Link to="/owner/inbox?status=needs-reply&type=booking" className="flex h-8 items-center rounded-lg border bg-nokta-surface px-3 text-[13px] font-medium text-nokta-ink transition-colors hover:bg-nokta-hover border-nokta-border">
                       Open in Inbox
                     </Link>
                   </div>
@@ -312,11 +312,11 @@ export function OwnerVenueBookingsPage() {
                     onEventClick={handleEventClick}
                   />
                   {!events.length ? (
-                    <div className="rounded-xl border bg-card px-4 py-5 text-center">
-                      <p className="text-[13px] text-muted-foreground">No requests {view === "today" ? "today" : "this week"}.</p>
-                      <p className="mt-1 text-[12px] text-muted-foreground/80">
+                    <div className="rounded-2xl border bg-nokta-surface px-4 py-5 text-center border-nokta-border">
+                      <p className="text-sm text-nokta-ink-muted">No requests {view === "today" ? "today" : "this week"}.</p>
+                      <p className="mt-1 text-[13px] text-nokta-ink-muted/80">
                         Requests appear here the moment customers send them —{" "}
-                        <button type="button" className="font-medium text-clay-accent hover:underline" onClick={() => updateParams({ view: "list", filter: "all" })}>
+                        <button type="button" className="font-medium text-nokta-accent-dark hover:underline" onClick={() => updateParams({ view: "list", filter: "all" })}>
                           see the next 30 days
                         </button>
                         .

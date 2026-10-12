@@ -4,10 +4,10 @@ import { cn } from "@/lib/utils";
 import type { VenuePlan, VenueSubscriptionStatus } from "@/types/subscriptions";
 
 const PLAN_CLASSES: Record<VenuePlan, string> = {
-  free: "border-border bg-muted text-muted-foreground",
-  starter: "border-amber-200 bg-amber-50 text-amber-900",
-  growth: "border-violet-200 bg-violet-50 text-violet-900",
-  pro: "border-nokta-ink bg-nokta-solid-ink text-clay-50",
+  free: "border-border bg-nokta-track text-nokta-ink-muted",
+  starter: "border-nokta-warn-line bg-nokta-warn-tint text-nokta-warn-ink",
+  growth: "border-nokta-info-line bg-nokta-info-tint text-nokta-info-ink",
+  pro: "border-nokta-ink bg-nokta-ink text-nokta-surface",
 };
 
 export function PlanBadge({ plan, status = "active", compact = false }: { plan: VenuePlan; status?: VenueSubscriptionStatus; compact?: boolean }) {
@@ -15,7 +15,7 @@ export function PlanBadge({ plan, status = "active", compact = false }: { plan: 
   const label = status === "active" || (plan === "free" && status === "inactive") ? planLabel : `${planLabel} ${status.replace("_", " ")}`;
 
   return (
-    <Badge variant="outline" className={cn("capitalize", PLAN_CLASSES[plan], compact ? "px-2 py-0 text-[11px]" : "")}>
+    <Badge variant="outline" className={cn("capitalize", PLAN_CLASSES[plan], compact ? "px-2 py-0 text-xs" : "")}>
       {label}
     </Badge>
   );

@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { OwnerLayout } from "@/components/owner/OwnerLayout";
-import { OwnerPageHeader } from "@/components/owner/OwnerPageHeader";
+import { WorkspacePageHeader } from "@/components/workspace/WorkspacePageHeader";
 import { OwnerNoVenuesState } from "@/components/owner/OwnerNoVenuesState";
 import { OwnerActivePromotionsList } from "@/components/owner/promotions/OwnerActivePromotionsList";
 import { OwnerPromotionRequestsList } from "@/components/owner/promotions/OwnerPromotionRequestsList";
@@ -73,11 +73,11 @@ export function OwnerPromotionsPage() {
     <OwnerLayout>
       <PageMeta title="Promotions | nokta" description="Request promoted offers and featured placements for your venue." canonicalPath="/owner/promotions" />
       <div className="space-y-6">
-        <OwnerPageHeader title="Marketing" description="Request promoted offers and featured placements. nokta reviews every request before it goes live." />
+        <WorkspacePageHeader title="Marketing" description="Request promoted offers and featured placements. nokta reviews every request before it goes live." />
         {isLoading ? <LoadingState message="Loading promotions..." /> : error ? <ErrorState message={error} /> : !venues.length ? <OwnerNoVenuesState /> : (
           <>
             <OwnerPromotionSummaryCards activeOffers={activeOffers} activeFeatured={activeFeatured} requests={requests} />
-            <section className="rounded-xl border bg-card p-5 shadow-sm">
+            <section className="rounded-2xl border bg-nokta-surface p-5 border-nokta-border">
               <h2 className="text-xl font-semibold">Request a campaign</h2>
               <div className="mt-4 grid gap-4 lg:grid-cols-2">
                 {venues.map((venue) => {
@@ -85,11 +85,11 @@ export function OwnerPromotionsPage() {
                   const canOffer = canRequestPromotedOffer(subscription);
                   const canFeatured = canRequestFeaturedPlacement(subscription);
                   return (
-                    <div key={venue.id} className="rounded-xl border bg-background/60 p-4">
+                    <div key={venue.id} className="rounded-2xl border bg-nokta-surface-alt/60 p-4 border-nokta-border">
                       <div className="flex flex-wrap items-center justify-between gap-3">
                         <div>
                           <h3 className="font-medium">{venue.name}</h3>
-                          <p className="mt-1 text-sm text-muted-foreground">{venue.city} · {venue.area}</p>
+                          <p className="mt-1 text-sm text-nokta-ink-muted">{venue.city} · {venue.area}</p>
                         </div>
                         <PlanBadge plan={subscription?.plan ?? "free"} status={subscription?.status ?? "inactive"} />
                       </div>

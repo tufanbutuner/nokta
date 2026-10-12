@@ -6,11 +6,11 @@ import type { Venue } from "@/types/venue";
 
 export function OwnerPromotionRequestsList({ requests, venuesById, onCancel }: { requests: OwnerPromotionRequest[]; venuesById: Map<string, Venue>; onCancel?: (request: OwnerPromotionRequest) => void }) {
   if (!requests.length) {
-    return <div className="rounded-xl border bg-card p-8 text-sm text-muted-foreground">No promotion requests yet.</div>;
+    return <div className="rounded-2xl border bg-nokta-surface p-8 text-sm text-nokta-ink-muted border-nokta-border">No promotion requests yet.</div>;
   }
 
   return (
-    <div className="overflow-hidden rounded-xl border bg-card shadow-sm">
+    <div className="overflow-hidden rounded-xl border bg-nokta-surface border-nokta-border">
       <div className="divide-y">
         {requests.map((request) => {
           const venue = venuesById.get(request.venueId);
@@ -22,10 +22,10 @@ export function OwnerPromotionRequestsList({ requests, venuesById, onCancel }: {
                   <OwnerPromotionRequestStatusBadge status={request.status} />
                 </div>
                 <h3 className="mt-2 font-medium">{request.title}</h3>
-                <p className="mt-1 text-sm text-muted-foreground">{venue?.name ?? request.venueId}</p>
-                {request.adminNotes && request.status === "rejected" ? <p className="mt-2 text-sm text-red-700">Admin notes: {request.adminNotes}</p> : null}
+                <p className="mt-1 text-sm text-nokta-ink-muted">{venue?.name ?? request.venueId}</p>
+                {request.adminNotes && request.status === "rejected" ? <p className="mt-2 text-sm text-nokta-bad-ink">Admin notes: {request.adminNotes}</p> : null}
               </div>
-              <div className="text-sm text-muted-foreground">
+              <div className="text-sm text-nokta-ink-muted">
                 <p>{formatDate(request.requestedStartsAt)} to {formatDate(request.requestedEndsAt)}</p>
                 <p className="mt-1">Submitted {formatDate(request.createdAt)}</p>
               </div>

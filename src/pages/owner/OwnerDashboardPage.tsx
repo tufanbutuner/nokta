@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, CalendarDays, ChevronRight, CircleCheck, ImagePlus, Inbox, ReceiptText } from "lucide-react";
 import { OwnerLayout } from "@/components/owner/OwnerLayout";
 import { OwnerNoVenuesState } from "@/components/owner/OwnerNoVenuesState";
-import { OwnerPageHeader, ownerPrimaryActionClass, ownerSecondaryActionClass } from "@/components/owner/OwnerPageHeader";
+import { WorkspacePageHeader, workspacePrimaryActionClass, workspaceSecondaryActionClass } from "@/components/workspace/WorkspacePageHeader";
 import { PageMeta } from "@/components/seo/PageMeta";
 import { ErrorState } from "@/components/state/ErrorState";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -53,7 +53,7 @@ export function OwnerDashboardPage() {
       <div className="mx-auto max-w-6xl">
         {isLoading ? <DashboardSkeleton /> : error ? <ErrorState title="Couldn't load your dashboard" message={error} /> : !summary?.venues.length ? <OwnerNoVenuesState /> : (
           <>
-            <OwnerPageHeader
+            <WorkspacePageHeader
               title={getOwnerHomeGreeting({ hour: new Date().getHours(), venues: summary.venues, accountName: null })}
               description={getOwnerHomeSubline(actions.length)}
             />
@@ -68,8 +68,8 @@ export function OwnerDashboardPage() {
                       ))}
                     </ul>
                   ) : (
-                    <p role="status" className="flex items-start gap-3 rounded-2xl bg-forest-50 px-5 py-4 text-[15px] text-nokta-ink">
-                      <CircleCheck aria-hidden="true" className="mt-0.5 size-[18px] shrink-0 text-forest-400" />
+                    <p role="status" className="flex items-start gap-3 rounded-2xl bg-nokta-ok-tint px-5 py-4 text-[15px] text-nokta-ink">
+                      <CircleCheck aria-hidden="true" className="mt-0.5 size-[18px] shrink-0 text-nokta-ok-ink" />
                       All caught up. New booking requests and enquiries will show up here first.
                     </p>
                   )}
@@ -162,7 +162,7 @@ function OwnerHomeActionRow({ action, isPrimary }: { action: OwnerHomeAction; is
           <p className="mt-0.5 text-sm leading-relaxed text-nokta-ink-muted">{action.description}</p>
         </div>
       </div>
-      <Link to={action.to} className={cn(isPrimary ? ownerPrimaryActionClass : ownerSecondaryActionClass, "ml-14 self-start sm:ml-0 sm:self-center")}>
+      <Link to={action.to} className={cn(isPrimary ? workspacePrimaryActionClass : workspaceSecondaryActionClass, "ml-14 self-start sm:ml-0 sm:self-center")}>
         {action.actionLabel}
       </Link>
     </li>
@@ -198,8 +198,8 @@ function OwnerBookingBandCard({ usage, venueName }: { usage: BookingBandUsage; v
             {numberWord(overBy)} more than your plan includes, and every one of them went through. Nothing to pay — your band is a fair-use line, not a meter. If this is your normal month, let us know and we will sort the right plan out with you.
           </p>
           <div className="mt-5 flex flex-wrap gap-2">
-            <a href="mailto:hello@nokta.uk?subject=Booking%20band" className={ownerPrimaryActionClass}>Talk to us about it</a>
-            <Link to="/owner/billing" className={ownerSecondaryActionClass}>See what Pro adds</Link>
+            <a href="mailto:hello@nokta.uk?subject=Booking%20band" className={workspacePrimaryActionClass}>Talk to us about it</a>
+            <Link to="/owner/billing" className={workspaceSecondaryActionClass}>See what Pro adds</Link>
           </div>
         </>
       ) : (
@@ -238,8 +238,8 @@ function OwnerHomeVenueRow({ venue }: { venue: OwnerHomeVenue }) {
             <span aria-hidden="true" className="opacity-45">·</span>
             <span>{PLAN_CONFIG[venue.plan].name}</span>
           </span>
-          <span className={cn("mt-1.5 inline-flex items-center gap-1.5 text-[13px] font-medium", isComplete ? "text-nokta-ink-muted" : "text-nokta-accent-dark")}>
-            <span aria-hidden="true" className={cn("size-1.5 rounded-full", isComplete ? "bg-forest-400" : "bg-nokta-accent-solid")} />
+          <span className={cn("mt-1.5 inline-flex items-center gap-1.5 text-sm font-medium", isComplete ? "text-nokta-ink-muted" : "text-nokta-accent-dark")}>
+            <span aria-hidden="true" className={cn("size-1.5 rounded-full", isComplete ? "bg-nokta-ok-solid" : "bg-nokta-accent-solid")} />
             {isComplete ? "Menu and prices live" : "No menu or prices yet"}
           </span>
         </span>

@@ -16,23 +16,23 @@ interface MenuSectionCardProps {
 
 export function MenuSectionCard({ section, items, errors, onUpdateItem, onRemoveItem, onAddItem, onRaisePrices }: MenuSectionCardProps) {
   return (
-    <section className="overflow-hidden rounded-xl border bg-card">
-      <div className="flex items-center justify-between gap-3 border-b px-[17px] py-[13px]">
+    <section className="overflow-hidden rounded-xl border bg-nokta-surface border-nokta-border">
+      <div className="flex items-center justify-between gap-3 border-b px-[17px] py-[13px] border-nokta-border">
         <div className="flex items-baseline gap-2">
-          <h2 className="text-[14.5px] font-semibold text-nokta-ink">{section.name}</h2>
-          <span className="text-xs text-muted-foreground">{items.length} item{items.length === 1 ? "" : "s"}</span>
+          <h2 className="text-[15px] font-semibold text-nokta-ink">{section.name}</h2>
+          <span className="text-xs text-nokta-ink-muted">{items.length} item{items.length === 1 ? "" : "s"}</span>
         </div>
         <div className="flex items-center gap-3">
           {items.length ? (
-            <button type="button" onClick={() => onRaisePrices(section.id)} className="text-[12.5px] font-medium text-clay-accent hover:underline">Raise all by %</button>
+            <button type="button" onClick={() => onRaisePrices(section.id)} className="text-[13px] font-medium text-nokta-accent-dark hover:underline">Raise all by %</button>
           ) : null}
-          <button type="button" onClick={() => onAddItem(section.id)} className="text-[12.5px] font-medium text-clay-accent hover:underline">+ Add item</button>
+          <button type="button" onClick={() => onAddItem(section.id)} className="text-[13px] font-medium text-nokta-accent-dark hover:underline">+ Add item</button>
         </div>
       </div>
 
       {items.length ? (
         <>
-          <div className="hidden grid-cols-[22px_1.4fr_1fr_92px_74px_30px] gap-[10px] border-b bg-[oklch(0.97_0.012_60)] px-[17px] py-2 text-[10.5px] font-semibold uppercase tracking-[0.5px] text-muted-foreground lg:grid">
+          <div className="hidden grid-cols-[22px_1.4fr_1fr_92px_74px_30px] gap-[10px] border-b bg-nokta-hover px-[17px] py-2 text-[11px] font-semibold uppercase tracking-[0.04em] text-nokta-ink-muted lg:grid border-nokta-border">
             <span />
             <span>Item</span>
             <span>Note</span>
@@ -54,12 +54,12 @@ export function MenuSectionCard({ section, items, errors, onUpdateItem, onRemove
         </>
       ) : (
         <div className="px-[17px] py-[15px]">
-          <div className="rounded-[10px] border border-dashed p-[13px] text-center">
-            <p className="text-[13px] text-muted-foreground">No items in {section.name} yet. Add a few, or link your existing menu.</p>
+          <div className="rounded-xl border border-dashed p-[13px] text-center">
+            <p className="text-sm text-nokta-ink-muted">No items in {section.name} yet. Add a few, or link your existing menu.</p>
             <button
               type="button"
               onClick={() => onAddItem(section.id)}
-              className="mt-3 inline-flex h-[31px] items-center rounded-lg bg-clay-accent px-3 text-[12.5px] font-medium text-white transition-colors hover:bg-clay-accent/90"
+              className="mt-3 inline-flex h-8 items-center rounded-lg bg-nokta-accent-solid px-3 text-[13px] font-medium text-white transition-colors hover:bg-nokta-accent-solid/90"
             >
               Add item
             </button>
@@ -92,12 +92,12 @@ function MenuItemRow({
     <div
       className={cn(
         "grid grid-cols-[22px_1fr_auto] items-center gap-[10px] px-[17px] py-[11px] lg:grid-cols-[22px_1.4fr_1fr_92px_74px_30px]",
-        isLast ? "" : "border-b",
-        editingField ? "bg-[oklch(0.985_0.02_75)]" : "",
-        hasError ? "bg-destructive/5" : "",
+        isLast ? "" : "border-b border-nokta-border",
+        editingField ? "bg-nokta-warn-tint" : "",
+        hasError ? "bg-nokta-bad-tint" : "",
       )}
     >
-      <GripVertical className="h-4 w-4 cursor-grab text-[oklch(0.72_0.02_42)]" aria-hidden="true" />
+      <GripVertical className="h-4 w-4 cursor-grab text-nokta-ink-muted" aria-hidden="true" />
 
       <div className="min-w-0">
         <InlineText
@@ -110,9 +110,9 @@ function MenuItemRow({
             setEditingField(null);
           }}
           onCancel={() => setEditingField(null)}
-          className={cn("text-[13.5px] font-medium", item.isLive ? "text-nokta-ink" : "text-[oklch(0.55_0.02_42)]")}
+          className={cn("text-sm font-medium", item.isLive ? "text-nokta-ink" : "text-nokta-ink-muted")}
         />
-        {nameError ? <p className="mt-1 text-xs text-destructive">{nameError}</p> : null}
+        {nameError ? <p className="mt-1 text-xs text-nokta-bad-ink">{nameError}</p> : null}
         <div className="mt-1 lg:hidden">
           <InlineText
             value={item.note ?? ""}
@@ -124,7 +124,7 @@ function MenuItemRow({
               setEditingField(null);
             }}
             onCancel={() => setEditingField(null)}
-            className="text-[12.5px] text-muted-foreground"
+            className="text-[13px] text-nokta-ink-muted"
           />
         </div>
       </div>
@@ -140,7 +140,7 @@ function MenuItemRow({
             setEditingField(null);
           }}
           onCancel={() => setEditingField(null)}
-          className={cn("text-[12.5px]", item.isLive ? "text-muted-foreground" : "text-[oklch(0.62_0.02_42)]")}
+          className={cn("text-[13px]", item.isLive ? "text-nokta-ink-muted" : "text-nokta-ink-muted")}
         />
       </div>
 
@@ -184,7 +184,7 @@ function MenuItemRow({
         <RemoveButton name={item.name} onRemove={onRemove} />
       </div>
 
-      {priceError ? <p className="col-span-full text-xs text-destructive lg:col-start-4 lg:col-end-7 lg:text-right">{priceError}</p> : null}
+      {priceError ? <p className="col-span-full text-xs text-nokta-bad-ink lg:col-start-4 lg:col-end-7 lg:text-right">{priceError}</p> : null}
     </div>
   );
 }
@@ -216,7 +216,7 @@ function InlineText({
           setPending(value);
           onEdit();
         }}
-        className={cn("block w-full truncate rounded px-1 py-0.5 text-left hover:bg-black/[0.03]", value ? className : "text-[oklch(0.62_0.02_42)]", className)}
+        className={cn("block w-full truncate rounded px-1 py-0.5 text-left hover:bg-black/[0.03]", value ? className : "text-nokta-ink-muted", className)}
       >
         {value || placeholder}
       </button>
@@ -233,7 +233,7 @@ function InlineText({
         if (event.key === "Enter") onCommit(pending);
         if (event.key === "Escape") onCancel();
       }}
-      className="h-[30px] w-full rounded-[7px] border border-clay-accent bg-background px-[9px] text-[13.5px]"
+      className="h-8 w-full rounded-lg border border-nokta-accent bg-nokta-surface-alt px-[9px] text-sm"
       aria-label={placeholder}
     />
   );
@@ -282,9 +282,9 @@ function InlinePrice({
           onEdit();
         }}
         className={cn(
-          "rounded px-1 py-0.5 text-right text-[13.5px] font-semibold hover:bg-black/[0.03]",
-          isLive ? "text-nokta-ink" : "text-[oklch(0.55_0.02_42)]",
-          hasError ? "text-destructive" : "",
+          "rounded px-1 py-0.5 text-right text-sm font-semibold hover:bg-black/[0.03]",
+          isLive ? "text-nokta-ink" : "text-nokta-ink-muted",
+          hasError ? "text-nokta-bad-ink" : "",
         )}
       >
         {formatPenceAsPrice(pricePence)}
@@ -311,13 +311,13 @@ function InlinePrice({
           }
         }}
         className={cn(
-          "h-[30px] w-[92px] rounded-[7px] border bg-background px-[9px] text-right text-[13.5px] font-semibold",
-          parseError ? "border-destructive" : "border-clay-accent",
+          "h-8 w-[92px] rounded-lg border bg-nokta-surface-alt px-[9px] text-right text-sm font-semibold border-nokta-border",
+          parseError ? "border-nokta-bad-line" : "border-nokta-accent",
         )}
         aria-label="Price"
         aria-invalid={Boolean(parseError)}
       />
-      {parseError ? <span className="text-xs text-destructive">{parseError}</span> : null}
+      {parseError ? <span className="text-xs text-nokta-bad-ink">{parseError}</span> : null}
     </div>
   );
 }
@@ -334,7 +334,7 @@ function LiveToggle({ isLive, name, onChange }: { isLive: boolean; name: string;
         "flex h-11 w-11 items-center justify-center lg:h-[18px] lg:w-8 lg:justify-start",
       )}
     >
-      <span className={cn("flex h-[18px] w-8 items-center rounded-full p-[2px] transition-colors", isLive ? "bg-clay-accent" : "bg-[oklch(0.86_0.015_55)]")}>
+      <span className={cn("flex h-[18px] w-8 items-center rounded-full p-[2px] transition-colors", isLive ? "bg-nokta-accent-solid" : "bg-nokta-border")}>
         <span className={cn("h-[14px] w-[14px] rounded-full bg-white transition-transform", isLive ? "translate-x-[14px]" : "translate-x-0")} />
       </span>
     </button>
@@ -347,7 +347,7 @@ function RemoveButton({ name, onRemove }: { name: string; onRemove: () => void }
       type="button"
       onClick={onRemove}
       aria-label={`Remove ${name || "item"}`}
-      className="flex h-11 w-11 items-center justify-center text-muted-foreground transition-colors hover:text-destructive lg:h-[30px] lg:w-[30px]"
+      className="flex h-11 w-11 items-center justify-center text-nokta-ink-muted transition-colors hover:text-nokta-bad-ink lg:h-8 lg:w-[30px]"
     >
       <X className="h-4 w-4" />
     </button>

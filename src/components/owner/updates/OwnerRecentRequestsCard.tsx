@@ -6,10 +6,10 @@ import { getProfileDiff } from "@/lib/venueProfileDiff";
 import type { VenueUpdateRequest, VenueUpdateRequestStatus } from "@/types/venueUpdateRequests";
 
 const STATUS_DOT: Record<VenueUpdateRequestStatus, string> = {
-  pending: "bg-clay-300",
-  approved: "bg-forest-400",
-  applied: "bg-forest-400",
-  rejected: "bg-clay-accent",
+  pending: "bg-nokta-warn-solid",
+  approved: "bg-nokta-ok-solid",
+  applied: "bg-nokta-ok-solid",
+  rejected: "bg-nokta-accent-solid",
   cancelled: "bg-nokta-ink-muted",
 };
 
@@ -35,7 +35,7 @@ export function OwnerRecentRequestsCard({
   const visible = requests.slice(0, 3);
 
   return (
-    <section className="rounded-[14px] border border-nokta-border bg-nokta-surface p-[18px]">
+    <section className="rounded-2xl border border-nokta-border bg-nokta-surface p-[18px]">
       <h2 className="mb-3 text-sm font-semibold text-nokta-ink">Recent requests</h2>
       {visible.length ? (
         <div className="flex flex-col gap-3">
@@ -47,7 +47,7 @@ export function OwnerRecentRequestsCard({
               <div key={request.id} className="flex gap-2.5">
                 <span aria-hidden="true" className={cn("mt-[5px] size-[7px] shrink-0 rounded-full", STATUS_DOT[request.status])} />
                 <div className="min-w-0 flex-1">
-                  <p className="text-[13px] font-medium text-nokta-ink">
+                  <p className="text-sm font-medium text-nokta-ink">
                     {STATUS_LABEL[request.status]}
                     {diff.length ? ` · ${diff.map((row) => row.label).join(", ")}` : ""}
                   </p>
@@ -60,7 +60,7 @@ export function OwnerRecentRequestsCard({
                         <button
                           type="button"
                           aria-expanded={isOpen}
-                          className="cursor-pointer font-medium text-clay-accent hover:underline"
+                          className="cursor-pointer font-medium text-nokta-accent-dark hover:underline"
                           onClick={() => setOpenId(isOpen ? null : request.id)}
                         >
                           {isOpen ? "Hide" : "View"}
@@ -71,7 +71,7 @@ export function OwnerRecentRequestsCard({
                     {request.status === "pending" && onCancel ? (
                       <>
                         {" · "}
-                        <button type="button" className="cursor-pointer font-medium text-clay-accent hover:underline disabled:opacity-60" disabled={cancellingId === request.id} onClick={() => onCancel(request)}>
+                        <button type="button" className="cursor-pointer font-medium text-nokta-accent-dark hover:underline disabled:opacity-60" disabled={cancellingId === request.id} onClick={() => onCancel(request)}>
                           {cancellingId === request.id ? "Cancelling..." : "Cancel"}
                         </button>
                       </>
@@ -95,7 +95,7 @@ export function OwnerRecentRequestsCard({
           })}
         </div>
       ) : (
-        <p className="text-[13px] text-nokta-ink-muted">No profile update requests yet.</p>
+        <p className="text-sm text-nokta-ink-muted">No profile update requests yet.</p>
       )}
     </section>
   );

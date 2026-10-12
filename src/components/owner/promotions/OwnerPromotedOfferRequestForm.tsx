@@ -45,9 +45,9 @@ export function OwnerPromotedOfferRequestForm({ venue, onSubmit, isSubmitting }:
   }
 
   return (
-    <form onSubmit={handleSubmit} className="rounded-xl border bg-card p-5 shadow-sm">
-      <p className="text-sm text-muted-foreground">Promoted offers are reviewed by nokta before they go live.</p>
-      <Alert className="mt-4 border-clay-400/20 bg-nokta-surface-alt text-sm text-nokta-ink">Please avoid directly promoting tobacco products, flavours, or smoking discounts.</Alert>
+    <form onSubmit={handleSubmit} className="rounded-2xl border bg-nokta-surface p-5 border-nokta-border">
+      <p className="text-sm text-nokta-ink-muted">Promoted offers are reviewed by nokta before they go live.</p>
+      <Alert className="mt-4 border-nokta-accent/20 bg-nokta-surface-alt text-sm text-nokta-ink">Please avoid directly promoting tobacco products, flavours, or smoking discounts.</Alert>
       <div className="mt-5 grid gap-4 sm:grid-cols-2">
         <Field label="Venue"><Input value={venue.name} disabled /></Field>
         <Field label="Offer type" error={showErrors ? validation.errors.offerType : undefined}><Select value={values.offerType} onValueChange={(value) => setValues({ ...values, offerType: value as OwnerPromotionOfferType })} options={OFFER_TYPES} /></Field>
@@ -60,14 +60,14 @@ export function OwnerPromotedOfferRequestForm({ venue, onSubmit, isSubmitting }:
       <Field label="Description" error={showErrors ? validation.errors.description : undefined} className="mt-4"><Textarea value={values.description} onChange={(event) => setValues({ ...values, description: event.target.value })} /></Field>
       <Field label="Terms" error={showErrors ? validation.errors.terms : undefined} className="mt-4"><Textarea value={values.terms} onChange={(event) => setValues({ ...values, terms: event.target.value })} /></Field>
       <Field label="Owner notes" error={showErrors ? validation.errors.ownerNotes : undefined} className="mt-4"><Textarea value={values.ownerNotes} onChange={(event) => setValues({ ...values, ownerNotes: event.target.value })} /></Field>
-      {validation.warnings.length ? <p className="mt-4 text-sm text-muted-foreground">{validation.warnings[0]}</p> : null}
+      {validation.warnings.length ? <p className="mt-4 text-sm text-nokta-ink-muted">{validation.warnings[0]}</p> : null}
       <Button type="submit" className="mt-5" disabled={isSubmitting}>{isSubmitting ? "Submitting..." : "Submit request"}</Button>
     </form>
   );
 }
 
 function Field({ label, error, className, children }: { label: string; error?: string; className?: string; children: React.ReactNode }) {
-  return <label className={className}><span className="text-sm font-medium">{label}</span><span className="mt-2 block">{children}</span>{error ? <span className="mt-1 block text-sm text-destructive">{error}</span> : null}</label>;
+  return <label className={className}><span className="text-sm font-medium">{label}</span><span className="mt-2 block">{children}</span>{error ? <span className="mt-1 block text-sm text-nokta-bad-ink">{error}</span> : null}</label>;
 }
 
 function getInitialDates() {

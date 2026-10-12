@@ -65,11 +65,11 @@ export function OwnerVenueMediaPage() {
       <PageMeta title={`${venue.name} photos | nokta`} description="Upload and manage venue photos for review." canonicalPath={`/owner/venues/${venue.slug}/photos`} />
       <OwnerVenueTabHeader
         title="Photos"
-        actions={<Button asChild variant="outline" className="h-[34px] text-[13px]"><Link to={`/venues/${venue.slug}`}>Preview public page</Link></Button>}
+        actions={<Button asChild variant="outline" className="h-9 text-sm"><Link to={`/venues/${venue.slug}`}>Preview public page</Link></Button>}
       />
       {isLoading ? <LoadingState message="Loading venue photos..." /> : error || !user ? <ErrorState title="Venue media not found" message={error ?? "You do not have access to this venue media page."} /> : (
         <div className="space-y-5">
-          <p className="text-[13px] text-muted-foreground">Upload original venue photos for admin review. Approved photos appear on the public venue page.</p>
+          <p className="text-sm text-nokta-ink-muted">Upload original venue photos for admin review. Approved photos appear on the public venue page.</p>
           <div className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_340px]">
             <div className="space-y-6">
               <OwnerMediaUploader venue={venue} userId={user.id} onUploaded={(item) => setMedia((current) => [item, ...current])} />

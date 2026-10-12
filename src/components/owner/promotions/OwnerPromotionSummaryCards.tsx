@@ -17,5 +17,5 @@ export function OwnerPromotionSummaryCards({ activeOffers, activeFeatured, reque
 }
 
 function Metric({ label, value }: { label: string; value: number }) {
-  return <div className="rounded-xl border bg-card p-4 shadow-sm"><p className="text-sm text-muted-foreground">{label}</p><p className="mt-2 text-3xl font-semibold">{value}</p></div>;
+  return <div className="rounded-2xl border bg-nokta-surface p-4 border-nokta-border"><p className="text-sm text-nokta-ink-muted">{label}</p><p className="mt-2 text-3xl font-semibold">{value}</p></div>;
 }

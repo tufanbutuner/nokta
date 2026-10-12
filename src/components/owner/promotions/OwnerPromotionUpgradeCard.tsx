@@ -4,7 +4,7 @@ import type { VenuePlanFeature } from "@/lib/planFeatureAccess";
 
 export function OwnerPromotionUpgradeCard({ feature, currentPlan, venueId }: { feature: VenuePlanFeature; currentPlan: VenuePlan; venueId?: string }) {
   return (
-    <div className="rounded-xl border bg-card p-5 shadow-sm">
+    <div className="rounded-2xl border bg-nokta-surface p-5 border-nokta-border">
       <UpgradePrompt feature={feature} currentPlan={currentPlan} venueId={venueId} />
     </div>
   );
