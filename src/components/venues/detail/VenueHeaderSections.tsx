@@ -38,7 +38,7 @@ export function VenueHeaderMeta({ venue, distanceLabel }: { venue: Venue; distan
   const displayRating = summary.averageRating ?? venue.rating ?? null;
   const boundary = getVenueOpeningBoundary(venue);
   const areaLabel = [venue.area, distanceLabel].filter(Boolean).join(", ");
-  const descriptorLabel = [formatVenuePrimaryCategory(venue.primaryCategory), ...venue.vibes.slice(0, 2).map((vibe) => VIBE_LABELS.get(vibe) ?? vibe)].join(" · ");
+  const descriptorLabel = venue.vibes.slice(0, 2).map((vibe) => VIBE_LABELS.get(vibe) ?? vibe).join(" · ");
   const segments = [areaLabel, descriptorLabel].filter(Boolean);
 
   return (

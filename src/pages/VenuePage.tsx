@@ -22,7 +22,7 @@ import { getVenuePageMetadata } from "@/lib/pageMetadata";
 import { cn } from "@/lib/utils";
 import { getVenueImages } from "@/lib/venueImages";
 import { getApprovedVenueMedia } from "@/services/ownerVenueMediaService";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type KeyboardEvent } from "react";
 import { Link, useParams, useSearchParams } from "react-router-dom";
 
 type VenueDetailTab = "overview" | "menu" | "reviews";
@@ -173,9 +173,7 @@ export function VenuePage() {
       <PageMeta {...getVenuePageMetadata(venue)} canonicalPath={`/venues/${venue.slug}`} imageUrl={galleryImages[0]} />
 
       <PageContainer className="pb-28 pt-3 lg:pb-16">
-        <PhotoGallery venue={venue} images={galleryImages} onOpenImage={setActiveImageIndex} />
-
-        <Breadcrumb className="mb-3.5 mt-4 text-[12.5px] text-nokta-ink-muted">
+        <Breadcrumb className="mb-4 text-[12.5px] text-nokta-ink-muted">
           <BreadcrumbList>
             <BreadcrumbItem>
               <BreadcrumbLink asChild className="font-normal text-clay-accent hover:text-clay-accent-hover">
@@ -203,34 +201,44 @@ export function VenuePage() {
           </BreadcrumbList>
         </Breadcrumb>
 
-        {/* One wrapping row: the rail sits alongside the whole main column, tabs included. */}
-        <div className="flex flex-wrap items-start gap-x-[34px] gap-y-6">
-          <div className="min-w-0 flex-[1_1_460px]">
+        <PhotoGallery venue={venue} images={galleryImages} onOpenImage={setActiveImageIndex} />
+
+        <div className="mt-6 grid items-start gap-x-8 gap-y-6 lg:grid-cols-[minmax(0,1fr)_340px]">
+          <div className="min-w-0">
             <VenueTitleRow venue={venue} />
             <VenueHeaderMeta venue={venue} distanceLabel={distanceLabel} />
             <p className="mt-4 max-w-[580px] text-[15.5px] leading-[1.72] text-nokta-ink-subtle">{venue.description}</p>
             <ActionBar venue={venue} shareLabel={shareLabel} onShare={shareVenue} isSaved={isFavourite(venue.id)} onToggleSave={() => void toggleFavourite(venue.id)} />
 
             <VenueOffersSection venue={venue} />
+          </div>
 
-            <div className="mt-7 flex gap-[22px] overflow-x-auto overflow-y-hidden scrollbar-none border-b border-nokta-border pb-[11px]">
+          <aside className="grid w-full gap-3 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1">
+            <BookingSidebarCard venue={venue} className="hidden lg:block" />
+            <VenueHoursLocationCard venue={venue} />
+          </aside>
+
+          <div className="min-w-0 lg:col-start-1 lg:row-start-2">
+            <div role="tablist" aria-label="Venue details" className="flex gap-[22px] overflow-x-auto overflow-y-hidden scrollbar-none border-b border-nokta-border pb-[11px]">
               {VENUE_TABS.map((tab) => (
-                <TabButton key={tab.value} label={tab.label} count={tab.value === "reviews" ? <ReviewCount venueId={venue.id} /> : null} isActive={activeTab === tab.value} onClick={() => selectTab(tab.value)} />
+                <TabButton key={tab.value} value={tab.value} label={tab.label} count={tab.value === "reviews" ? <ReviewCount venueId={venue.id} /> : null} isActive={activeTab === tab.value} onClick={() => selectTab(tab.value)} onKeyDown={(event) => {
+                  const index = VENUE_TABS.findIndex((item) => item.value === tab.value);
+                  const nextIndex = event.key === "ArrowRight" ? (index + 1) % VENUE_TABS.length : event.key === "ArrowLeft" ? (index - 1 + VENUE_TABS.length) % VENUE_TABS.length : event.key === "Home" ? 0 : event.key === "End" ? VENUE_TABS.length - 1 : null;
+                  if (nextIndex === null) return;
+                  event.preventDefault();
+                  const nextTab = VENUE_TABS[nextIndex].value;
+                  selectTab(nextTab);
+                  document.getElementById(`venue-tab-${nextTab}`)?.focus();
+                }} />
               ))}
             </div>
 
-            <div className="mt-[18px]">
+            <div id="venue-tab-panel" role="tabpanel" aria-labelledby={`venue-tab-${activeTab}`} className="mt-[18px]">
               {activeTab === "overview" ? <OverviewTab venue={venue} similarVenues={similarVenues} onOpenMenu={() => selectTab("menu")} /> : null}
               {activeTab === "menu" ? <MenuTab venue={venue} /> : null}
               {activeTab === "reviews" ? <ReviewsTab venue={venue} /> : null}
             </div>
           </div>
-
-          <aside className="grid w-full flex-[1_1_320px] gap-3 lg:sticky lg:top-4">
-            {/* Below lg the sticky bottom bar carries the CTA, so the rail card would duplicate it. */}
-            <BookingSidebarCard venue={venue} className="hidden lg:block" />
-            <VenueHoursLocationCard venue={venue} />
-          </aside>
         </div>
       </PageContainer>
 
@@ -241,9 +249,9 @@ export function VenuePage() {
   );
 }
 
-function TabButton({ label, count, isActive, onClick }: { label: string; count: React.ReactNode; isActive: boolean; onClick: () => void }) {
+function TabButton({ value, label, count, isActive, onClick, onKeyDown }: { value: VenueDetailTab; label: string; count: React.ReactNode; isActive: boolean; onClick: () => void; onKeyDown: (event: KeyboardEvent<HTMLButtonElement>) => void }) {
   return (
-    <button type="button" className={cn("-mb-[12px] shrink-0 border-b-2 pb-[11px] text-sm font-semibold transition-colors", isActive ? "border-nokta-ink text-nokta-ink" : "border-transparent text-nokta-ink-muted hover:text-nokta-ink")} onClick={onClick}>
+    <button type="button" id={`venue-tab-${value}`} role="tab" aria-controls="venue-tab-panel" aria-selected={isActive} tabIndex={isActive ? 0 : -1} className={cn("-mb-[12px] shrink-0 border-b-2 pb-[11px] text-sm font-semibold transition-colors", isActive ? "border-nokta-ink text-nokta-ink" : "border-transparent text-nokta-ink-muted hover:text-nokta-ink")} onClick={onClick} onKeyDown={onKeyDown}>
       {label}
       {count}
     </button>
