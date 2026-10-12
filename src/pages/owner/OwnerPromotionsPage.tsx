@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { OwnerLayout } from "@/components/owner/OwnerLayout";
+import { OwnerPageHeader } from "@/components/owner/OwnerPageHeader";
 import { OwnerNoVenuesState } from "@/components/owner/OwnerNoVenuesState";
 import { OwnerActivePromotionsList } from "@/components/owner/promotions/OwnerActivePromotionsList";
 import { OwnerPromotionRequestsList } from "@/components/owner/promotions/OwnerPromotionRequestsList";
@@ -72,13 +73,7 @@ export function OwnerPromotionsPage() {
     <OwnerLayout>
       <PageMeta title="Promotions | nokta" description="Request promoted offers and featured placements for your venue." canonicalPath="/owner/promotions" />
       <div className="space-y-6">
-        <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-          <div>
-            <p className="text-sm text-clay-accent">Owner dashboard</p>
-            <h1 className="mt-1 font-brand text-4xl font-bold tracking-[-0.5px]">Promotions</h1>
-            <p className="mt-2 text-sm text-muted-foreground">Request promoted offers and featured placements. Admin approval is required before anything goes live.</p>
-          </div>
-        </div>
+        <OwnerPageHeader title="Marketing" description="Request promoted offers and featured placements. nokta reviews every request before it goes live." />
         {isLoading ? <LoadingState message="Loading promotions..." /> : error ? <ErrorState message={error} /> : !venues.length ? <OwnerNoVenuesState /> : (
           <>
             <OwnerPromotionSummaryCards activeOffers={activeOffers} activeFeatured={activeFeatured} requests={requests} />

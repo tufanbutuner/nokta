@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { OwnerLayout } from "@/components/owner/OwnerLayout";
+import { OwnerPageHeader, ownerSecondaryActionClass } from "@/components/owner/OwnerPageHeader";
 import { VenueBookingListView, type VenueBookingListFilter } from "@/components/owner/venueBookings/VenueBookingListView";
 import { PageMeta } from "@/components/seo/PageMeta";
 import { ErrorState } from "@/components/state/ErrorState";
@@ -139,26 +140,18 @@ export function OwnerBookingsPage() {
       {isLoading ? (
         <LoadingState message="Loading bookings..." />
       ) : (
-        <div className="flex flex-col gap-[18px]">
-          <div className="flex flex-wrap items-end justify-between gap-3">
-            <div>
-              <h1 className="font-brand text-[25px] font-bold tracking-[-0.4px] text-nokta-ink">Bookings</h1>
-              <p className="mt-1 text-[13px] text-nokta-ink-muted">
-                {venues.length ? `Requests across ${venues.length} venue${venues.length === 1 ? "" : "s"} — confirm, decline, or open a venue's calendar.` : "No claimed venues yet."}
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-2">
+        <div className="flex flex-col gap-6">
+          <OwnerPageHeader
+            title="Bookings"
+            description={venues.length ? `Requests across ${venues.length} venue${venues.length === 1 ? "" : "s"} — confirm, decline, or open a venue's calendar.` : "No claimed venues yet."}
+            actions={<>
               {venues.length === 1 ? (
-                <Button asChild variant="outline" className="h-[34px] text-[13px]">
-                  <Link to={`/owner/venues/${venues[0].slug}/bookings`}>Calendar &amp; hours</Link>
-                </Button>
+                <Link to={`/owner/venues/${venues[0].slug}/bookings`} className={ownerSecondaryActionClass}>Calendar &amp; hours</Link>
               ) : (
-                <Button asChild variant="outline" className="h-[34px] text-[13px]">
-                  <Link to="/owner/venues">Manage venues</Link>
-                </Button>
+                <Link to="/owner/venues" className={ownerSecondaryActionClass}>Manage venues</Link>
               )}
-            </div>
-          </div>
+            </>}
+          />
 
           {error ? <ErrorState message={error} /> : null}
 

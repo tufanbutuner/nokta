@@ -4,10 +4,10 @@ import { useSearchParams } from "react-router-dom";
 import { OwnerInboxDetail } from "@/components/owner/inbox/OwnerInboxDetail";
 import { OwnerInboxList } from "@/components/owner/inbox/OwnerInboxList";
 import { OwnerLayout } from "@/components/owner/OwnerLayout";
+import { ownerSecondaryActionClass } from "@/components/owner/OwnerPageHeader";
 import { PageMeta } from "@/components/seo/PageMeta";
 import { ErrorState } from "@/components/state/ErrorState";
 import { LoadingState } from "@/components/state/LoadingState";
-import { Button } from "@/components/ui/button";
 import { useAuth } from "@/context/AuthContext";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { filterOwnerInboxItems, getOwnerInboxName, getOwnerInboxPreview, getOwnerInboxStatus } from "@/lib/ownerInbox";
@@ -190,17 +190,17 @@ export function OwnerEnquiriesPage() {
   return (
     <OwnerLayout>
       <PageMeta title="Inbox | nokta" description="Manage booking requests and enquiries for your venues." canonicalPath="/owner/inbox" />
-      <div className="-mx-4 -my-5 sm:-mx-6 lg:-mx-8">
-        <header className="border-b bg-background px-4 pb-[14px] pt-4 sm:px-6 lg:px-[26px]">
+      <div className="-mx-4 -my-6 sm:-mx-6 sm:-my-8 lg:-mx-8 lg:-my-10">
+        <header className="border-b border-nokta-border bg-nokta-surface px-4 pb-4 pt-6 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-start justify-between gap-3">
-            <div><h1 className="font-brand text-[25px] font-bold">Inbox</h1><p className="mt-1 text-[12.5px] text-muted-foreground">Booking requests and enquiries, {venues.length === 1 ? venues[0]?.name : "all venues"}</p></div>
-            <Button variant="outline" className="h-[34px] px-[13px] text-[13px]" onClick={exportCsv}><Download className="mr-2 h-4 w-4" />Export CSV</Button>
+            <div><h1 className="font-brand text-[1.75rem] font-bold leading-[1.1] tracking-[-0.02em] text-nokta-ink sm:text-[2.125rem]">Inbox</h1><p className="mt-2 text-[15px] text-nokta-ink-muted">Booking requests and enquiries, {venues.length === 1 ? venues[0]?.name : "all venues"}</p></div>
+            <button type="button" className={ownerSecondaryActionClass} onClick={exportCsv}><Download aria-hidden="true" className="size-4" />Export CSV</button>
           </div>
-          <div className="mt-[14px] flex flex-wrap items-center gap-[7px]">
+          <div className="mt-5 flex flex-wrap items-center gap-2">
             <FilterPill active={status === "needs-reply"} onClick={() => chooseFilter("needs-reply")}>Needs reply <Count value={counts.needsReply} active={status === "needs-reply"} /></FilterPill>
             <FilterPill active={status === "open"} onClick={() => chooseFilter("open")}>All open <Count value={counts.open} active={status === "open"} /></FilterPill>
             <FilterPill active={status === "closed"} onClick={() => chooseFilter("closed")}>Closed <Count value={counts.closed} active={status === "closed"} /></FilterPill>
-            <span className="mx-1 h-5 w-px bg-border" />
+            <span aria-hidden="true" className="mx-1 h-5 w-px bg-nokta-border" />
             <FilterPill active={type === "booking"} onClick={() => updateQuery({ type: type === "booking" ? null : "booking", item: null })}>Bookings</FilterPill>
             <FilterPill active={type === "enquiry"} onClick={() => updateQuery({ type: type === "enquiry" ? null : "enquiry", item: null })}>Enquiries</FilterPill>
             {venues.length > 1 ? <select aria-label="Filter by venue" value={selectedVenueId} onChange={(event) => updateQuery({ venue: event.target.value === "all" ? null : venuesById[event.target.value]?.slug ?? event.target.value, item: null })} className="h-[31px] rounded-full border bg-card px-3 text-[12.5px]"><option value="all">All venues</option>{venues.map((venue) => <option key={venue.id} value={venue.id}>{venue.name}</option>)}</select> : null}
@@ -234,11 +234,11 @@ export function OwnerEnquiriesPage() {
 }
 
 function FilterPill({ active, onClick, children }: { active: boolean; onClick: () => void; children: React.ReactNode }) {
-  return <button type="button" onClick={onClick} className={cn("flex h-[31px] items-center gap-1.5 rounded-full border bg-card px-3 text-[12.5px]", active && "border-nokta-ink bg-nokta-solid-ink font-medium text-white")}>{children}</button>;
+  return <button type="button" aria-pressed={active} onClick={onClick} className={cn("flex h-9 items-center gap-1.5 rounded-full border border-nokta-border bg-nokta-surface px-3.5 text-sm font-medium text-nokta-ink-muted transition-colors hover:bg-nokta-hover hover:text-nokta-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring", active && "border-nokta-ink bg-nokta-ink text-nokta-surface hover:bg-nokta-ink hover:text-nokta-surface")}>{children}</button>;
 }
 
 function Count({ value, active }: { value: number; active: boolean }) {
-  return <span className={cn("rounded-full bg-black/5 px-1.5 text-[10.5px]", active && "bg-white/20")}>{value}</span>;
+  return <span className={cn("rounded-full bg-nokta-track px-1.5 text-xs font-semibold tabular-nums text-nokta-ink", active && "bg-nokta-surface/20 text-nokta-surface")}>{value}</span>;
 }
 
 function parseStatus(value: string | null): OwnerInboxFilter {

@@ -72,7 +72,7 @@ export function OwnerVenueRouteLayout() {
   return (
     <OwnerLayout fullWidth>
       {isLoading || error || !venue ? (
-        <div className="mx-auto w-full max-w-[1504px] px-4 py-5 sm:px-6 lg:px-8">
+        <div className="mx-auto w-full max-w-[1504px] px-4 py-6 sm:px-6 sm:py-8 lg:px-8 lg:py-10">
           {isLoading ? <LoadingState message="Loading venue..." /> : <ErrorState message={error ?? "Could not load that venue."} />}
         </div>
       ) : (

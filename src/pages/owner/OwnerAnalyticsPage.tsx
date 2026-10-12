@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { BarChart3, ArrowRight } from "lucide-react";
 import { OwnerLayout } from "@/components/owner/OwnerLayout";
+import { OwnerPageHeader } from "@/components/owner/OwnerPageHeader";
 import { OwnerNoVenuesState } from "@/components/owner/OwnerNoVenuesState";
 import { OwnerAnalyticsDateRangeFilter } from "@/components/owner/analytics/OwnerAnalyticsDateRangeFilter";
 import { PageMeta } from "@/components/seo/PageMeta";
@@ -72,16 +73,11 @@ export function OwnerAnalyticsPage() {
     <OwnerLayout>
       <PageMeta title="Owner analytics | nokta" description="Compare profile visibility, customer actions and booking demand across your claimed venues." canonicalPath="/owner/analytics" />
       <div className="space-y-6">
-        <header className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-          <div>
-            <p className="text-sm text-clay-accent">Owner analytics</p>
-            <h1 className="mt-1 font-brand text-4xl font-bold tracking-[-0.5px]">Analytics overview</h1>
-            <p className="mt-2 max-w-2xl text-sm leading-6 text-muted-foreground">
-              See how Nokta is creating visibility, customer actions and booking demand across your venues.
-            </p>
-          </div>
-          <OwnerAnalyticsDateRangeFilter value={dateRange} onChange={setDateRange} />
-        </header>
+        <OwnerPageHeader
+          title="Performance"
+          description="How nokta is creating visibility, customer actions and booking demand across your venues."
+          actions={<OwnerAnalyticsDateRangeFilter value={dateRange} onChange={setDateRange} />}
+        />
 
         {isLoading ? <LoadingState message="Loading owner analytics..." /> : error ? <ErrorState message={error} /> : !venues.length ? <OwnerNoVenuesState /> : (
           <>

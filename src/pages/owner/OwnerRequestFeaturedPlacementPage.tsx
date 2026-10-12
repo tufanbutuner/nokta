@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { OwnerLayout } from "@/components/owner/OwnerLayout";
+import { OwnerPageHeader } from "@/components/owner/OwnerPageHeader";
 import { OwnerFeaturedPlacementRequestForm } from "@/components/owner/promotions/OwnerFeaturedPlacementRequestForm";
 import { OwnerPromotionUpgradeCard } from "@/components/owner/promotions/OwnerPromotionUpgradeCard";
 import { PageMeta } from "@/components/seo/PageMeta";
@@ -70,11 +71,7 @@ export function OwnerRequestFeaturedPlacementPage() {
       <PageMeta title="Request featured placement | nokta" description="Request a featured placement for your venue." />
       {isLoading ? <LoadingState message="Loading request form..." /> : error && !venue ? <ErrorState message={error} /> : venue ? (
         <div className="max-w-3xl space-y-6">
-          <div>
-            <p className="text-sm text-clay-accent">Promotions</p>
-            <h1 className="mt-1 font-brand text-4xl font-bold tracking-[-0.5px]">Request featured placement</h1>
-            <p className="mt-2 text-sm text-muted-foreground">{venue.name}</p>
-          </div>
+          <OwnerPageHeader back={{ to: "/owner/promotions", label: "Marketing" }} title="Request featured placement" description={venue.name} />
           {success ? (
             <div className="rounded-xl border bg-card p-6 shadow-sm">
               <h2 className="text-xl font-semibold">Request submitted</h2>

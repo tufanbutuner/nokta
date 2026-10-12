@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { OwnerBackLink } from "@/components/owner/OwnerPageHeader";
 import { cn } from "@/lib/utils";
 import type { VenuePlan } from "@/types/subscriptions";
 import type { Venue } from "@/types/venue";
@@ -16,7 +17,7 @@ const VENUE_TABS = [
  * Matches the default OwnerLayout content box (1440px + its lg:px-8 gutters)
  * so venue pages line up with the rest of the owner area.
  */
-const CONTENT_WIDTH = "mx-auto w-full max-w-[1504px] px-4 sm:px-6 lg:px-[26px]";
+const CONTENT_WIDTH = "mx-auto w-full max-w-[1504px] px-4 sm:px-6 lg:px-8";
 
 /**
  * Venue header + tab bar. The white band spans the full page width; its
@@ -41,30 +42,27 @@ export function OwnerVenueTabShell({
 }) {
   return (
     <div>
-      <header className="border-b bg-nokta-surface">
-        <div className={cn(CONTENT_WIDTH, "pt-4")}>
-          <p className="text-[12.5px] text-muted-foreground">
-            <Link to="/owner/venues" className="font-medium text-clay-accent hover:underline">My venues</Link>
-            <span aria-hidden="true"> / </span>
-            {venue.name}
-          </p>
-          <div className="mt-1 flex flex-wrap items-start justify-between gap-3">
-            <div>
-              <h1 ref={titleSlotRef} className="min-h-[1lh] font-brand text-[25px] font-bold tracking-[-0.4px] text-nokta-ink" />
-              <div className="mt-[5px] flex flex-wrap items-center gap-x-2 gap-y-1 text-[12.5px] text-nokta-ink-muted">
+      <header className="border-b border-nokta-border bg-nokta-surface">
+        <div className={cn(CONTENT_WIDTH, "pt-6 sm:pt-8")}>
+          <OwnerBackLink to="/owner/venues" label="My venues" />
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <div className="min-w-0">
+              <h1 ref={titleSlotRef} className="min-h-[1lh] text-balance font-brand text-[1.75rem] font-bold leading-[1.1] tracking-[-0.02em] text-nokta-ink sm:text-[2.125rem]" />
+              <div className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-nokta-ink-muted">
+                <span>{venue.name}</span>
+                <span aria-hidden="true" className="opacity-45">·</span>
                 <span>{venue.area}, {venue.city}</span>
                 <span aria-hidden="true" className="opacity-45">·</span>
-                <span className="inline-flex items-center gap-[5px]">
+                <span className="inline-flex items-center gap-1.5">
                   <span aria-hidden="true" className={cn("size-1.5 rounded-full", venue.isClaimed ? "bg-forest-400" : "bg-clay-300")} />
                   {venue.isClaimed ? "Claim confirmed" : "Claim pending"}
                 </span>
-                <span aria-hidden="true" className="opacity-45">·</span>
-                <span className="rounded-full bg-nokta-accent-tint px-[7px] py-px text-[11.5px] font-semibold uppercase tracking-[0.02em] text-nokta-accent-dark">{plan} plan</span>
+                <span className="rounded-full bg-nokta-chip-tint px-2 py-0.5 text-xs font-semibold capitalize text-nokta-accent-dark">{plan} plan</span>
               </div>
             </div>
             <div ref={actionsSlotRef} className="flex flex-wrap gap-2 empty:hidden" />
           </div>
-          <nav aria-label={`${venue.name} management`} className="mt-4 flex gap-[22px] overflow-x-auto overflow-y-hidden scrollbar-none text-[13.5px]">
+          <nav aria-label={`${venue.name} management`} className="-mx-1 mt-6 flex gap-1 overflow-x-auto overflow-y-hidden scrollbar-none">
             {VENUE_TABS.map((tab) => (
               <NavLink
                 key={tab.path}
@@ -73,8 +71,9 @@ export function OwnerVenueTabShell({
                   if (!canNavigate()) event.preventDefault();
                 }}
                 className={({ isActive }) => cn(
-                  "shrink-0 border-b-2 border-transparent pb-[10px] text-muted-foreground transition-colors hover:text-nokta-ink",
-                  isActive && "border-clay-accent font-semibold text-nokta-ink",
+                  "relative shrink-0 rounded-t-md px-3 pb-3 pt-1 text-[15px] font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring",
+                  "after:absolute after:inset-x-3 after:bottom-0 after:h-0.5 after:rounded-full after:bg-nokta-accent after:transition-opacity",
+                  isActive ? "font-semibold text-nokta-ink after:opacity-100" : "text-nokta-ink-muted after:opacity-0 hover:text-nokta-ink",
                 )}
               >
                 {tab.label}
@@ -83,7 +82,7 @@ export function OwnerVenueTabShell({
           </nav>
         </div>
       </header>
-      <div className={cn(CONTENT_WIDTH, "py-5")}>{children}</div>
+      <div className={cn(CONTENT_WIDTH, "py-6 sm:py-8")}>{children}</div>
     </div>
   );
 }
