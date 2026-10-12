@@ -16,7 +16,7 @@ export function OwnerHowItWorks() {
             aria-hidden="true"
             className="pointer-events-none absolute -bottom-10 -right-9 -z-10 h-32 w-32 opacity-[0.07]"
           />
-          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-nokta-solid-ink text-sm font-semibold text-white">
+          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-nokta-ink text-sm font-semibold text-nokta-surface">
             {index + 1}
           </span>
           <h3 className="mt-5 font-semibold text-nokta-ink">{title}</h3>

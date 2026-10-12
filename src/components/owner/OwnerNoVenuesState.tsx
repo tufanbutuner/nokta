@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import { ownerPrimaryActionClass, ownerSecondaryActionClass } from "@/components/owner/OwnerPageHeader";
+import { workspacePrimaryActionClass, workspaceSecondaryActionClass } from "@/components/workspace/WorkspacePageHeader";
 
 export function OwnerNoVenuesState() {
   return (
@@ -13,8 +13,8 @@ export function OwnerNoVenuesState() {
         Claim an existing venue profile or list your venue to start managing bookings, enquiries and profile details on nokta.
       </p>
       <div className="mt-8 flex flex-wrap items-center gap-2">
-        <Link to="/" className={ownerPrimaryActionClass}>Find your venue</Link>
-        <Link to="/suggest" className={ownerSecondaryActionClass}>Suggest a venue</Link>
+        <Link to="/" className={workspacePrimaryActionClass}>Find your venue</Link>
+        <Link to="/suggest" className={workspaceSecondaryActionClass}>Suggest a venue</Link>
         <Link
           to="/for-venues"
           className="ml-2 inline-flex items-center gap-1 rounded-sm text-sm font-semibold text-nokta-ink underline decoration-nokta-accent/50 decoration-2 underline-offset-4 hover:decoration-nokta-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"

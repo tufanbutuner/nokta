@@ -33,7 +33,7 @@ export function DataSourcesEditor({
           <label key={key} className="grid gap-2 text-sm font-medium" data-field-error={error ? "true" : undefined}>
             {label}
             <Input value={value[key] ?? ""} onChange={(event) => onChange({ ...value, [key]: event.target.value })} placeholder="https://" />
-            {error ? <span className="text-xs text-red-700">{error}</span> : null}
+            {error ? <span className="text-xs text-nokta-bad-ink">{error}</span> : null}
         </label>
         );
       })}

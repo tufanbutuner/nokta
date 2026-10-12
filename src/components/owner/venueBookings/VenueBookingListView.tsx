@@ -33,7 +33,7 @@ export function VenueBookingListView({
   const grouped = groupByDate(events);
 
   return (
-    <div className="overflow-hidden rounded-xl border bg-card">
+    <div className="overflow-hidden rounded-xl border bg-nokta-surface border-nokta-border">
       <div className="flex flex-wrap items-center gap-[7px] p-[14px]">
         <FilterPill label="Waiting" count={counts.waiting} isActive={filter === "waiting"} onClick={() => onChangeFilter("waiting")} />
         <FilterPill label="Confirmed" count={counts.confirmed} isActive={filter === "confirmed"} onClick={() => onChangeFilter("confirmed")} />
@@ -48,17 +48,17 @@ export function VenueBookingListView({
           const waiting = dayEvents.filter(isEventAwaitingReply).length;
           return (
             <div key={date}>
-              <div className="flex items-center justify-between gap-3 border-y bg-[oklch(0.975_0.012_60)] px-4 py-2">
-                <span className="text-[11px] font-semibold uppercase tracking-[0.5px] text-nokta-ink">{formatGroupHeading(date)}</span>
-                <span className="text-[11px] text-muted-foreground">
+              <div className="flex items-center justify-between gap-3 border-y bg-nokta-hover px-4 py-2 border-nokta-border">
+                <span className="text-xs font-semibold uppercase tracking-[0.04em] text-nokta-ink">{formatGroupHeading(date)}</span>
+                <span className="text-xs text-nokta-ink-muted">
                   {waiting ? `${waiting} waiting · ` : ""}{dayEvents.length - waiting} answered
                 </span>
               </div>
 
               {closure ? (
-                <div className="flex flex-wrap items-center justify-between gap-2 bg-[repeating-linear-gradient(45deg,oklch(0.94_0.012_55)_0_6px,oklch(0.965_0.008_55)_6px_12px)] px-4 py-[10px]">
-                  <span className="text-[12.5px] font-semibold text-nokta-ink">Closed · {closure.reason ?? "all day"}</span>
-                  <span className="text-[11.5px] text-muted-foreground">Requests off · no form on your page</span>
+                <div className="flex flex-wrap items-center justify-between gap-2 bg-[repeating-linear-gradient(45deg,var(--color-nokta-track)_0_6px,var(--color-nokta-hover)_6px_12px)] px-4 py-[10px]">
+                  <span className="text-[13px] font-semibold text-nokta-ink">Closed · {closure.reason ?? "all day"}</span>
+                  <span className="text-xs text-nokta-ink-muted">Requests off · no form on your page</span>
                 </div>
               ) : null}
 
@@ -68,21 +68,21 @@ export function VenueBookingListView({
                   <div
                     key={event.id}
                     className={cn(
-                      "grid grid-cols-[66px_1fr] items-center gap-[14px] border-b px-4 py-[13px] sm:grid-cols-[66px_1fr_auto]",
-                      pending && "border-l-[3px] border-l-[oklch(0.68_0.12_75)] bg-[oklch(0.99_0.015_75)]",
+                      "grid grid-cols-[66px_1fr] items-center gap-[14px] border-b px-4 py-[13px] sm:grid-cols-[66px_1fr_auto] border-nokta-border",
+                      pending && "bg-nokta-warn-tint",
                     )}
                   >
                     <div>
                       <div className="text-sm font-semibold text-nokta-ink">{event.time.slice(0, 5)}</div>
-                      <div className="text-[11px] text-muted-foreground">{formatDurationMinutes(durationMinutes)} slot</div>
+                      <div className="text-xs text-nokta-ink-muted">{formatDurationMinutes(durationMinutes)} slot</div>
                     </div>
 
                     <div className="min-w-0">
                       <div className="flex flex-wrap items-center gap-2">
-                        <span className="text-[13.5px] font-semibold text-nokta-ink">{event.customerName} · {event.partySize} people</span>
+                        <span className="text-sm font-semibold text-nokta-ink">{event.customerName} · {event.partySize} people</span>
                         <StatusPill event={event} />
                       </div>
-                      {event.occasion ? <p className="mt-0.5 truncate text-[12.5px] text-muted-foreground">{event.occasion}</p> : null}
+                      {event.occasion ? <p className="mt-0.5 truncate text-[13px] text-nokta-ink-muted">{event.occasion}</p> : null}
                     </div>
 
                     <div className="col-span-full flex gap-2 sm:col-span-1">
@@ -92,16 +92,16 @@ export function VenueBookingListView({
                             type="button"
                             onClick={() => onConfirm(event)}
                             disabled={confirmingId === event.id}
-                            className="h-[30px] rounded-lg bg-clay-accent px-3 text-[12.5px] font-medium text-white transition-colors hover:bg-clay-accent/90 disabled:opacity-60"
+                            className="h-8 rounded-lg bg-nokta-accent-solid px-3 text-[13px] font-medium text-white transition-colors hover:bg-nokta-accent-solid/90 disabled:opacity-60"
                           >
                             {confirmingId === event.id ? "Confirming..." : "Confirm"}
                           </button>
-                          <button type="button" onClick={() => onOpen(event)} className="flex h-[30px] items-center rounded-lg border bg-card px-3 text-[12.5px] font-medium text-nokta-ink transition-colors hover:bg-muted">
+                          <button type="button" onClick={() => onOpen(event)} className="flex h-8 items-center rounded-lg border bg-nokta-surface px-3 text-[13px] font-medium text-nokta-ink transition-colors hover:bg-nokta-hover border-nokta-border">
                             Reply
                           </button>
                         </>
                       ) : (
-                        <button type="button" onClick={() => onOpen(event)} className="flex h-[30px] items-center rounded-lg border bg-card px-3 text-[12.5px] font-medium text-nokta-ink transition-colors hover:bg-muted">
+                        <button type="button" onClick={() => onOpen(event)} className="flex h-8 items-center rounded-lg border bg-nokta-surface px-3 text-[13px] font-medium text-nokta-ink transition-colors hover:bg-nokta-hover border-nokta-border">
                           Open
                         </button>
                       )}
@@ -114,7 +114,7 @@ export function VenueBookingListView({
         })
       ) : (
         <div className="p-6 text-center">
-          <p className="text-[13px] text-muted-foreground">
+          <p className="text-sm text-nokta-ink-muted">
             {filter === "waiting"
               ? isPast
                 ? "No requests were waiting in those 30 days."
@@ -123,11 +123,11 @@ export function VenueBookingListView({
                 ? "No confirmed bookings in this range."
                 : "No requests in this range."}
           </p>
-          <p className="mt-1 text-[12px] text-muted-foreground/80">
+          <p className="mt-1 text-[13px] text-nokta-ink-muted/80">
             {filter === "waiting" ? "New requests land here the moment a customer sends one." : "Try another filter or step to a different period."}
           </p>
           {filter === "waiting" ? (
-            <button type="button" onClick={() => onChangeFilter("all")} className="mt-2 text-[12.5px] font-medium text-clay-accent hover:underline">See all requests</button>
+            <button type="button" onClick={() => onChangeFilter("all")} className="mt-2 text-[13px] font-medium text-nokta-accent-dark hover:underline">See all requests</button>
           ) : null}
         </div>
       )}
@@ -140,15 +140,15 @@ function StatusPill({ event }: { event: BookingCalendarEvent }) {
   if (pending) {
     const days = getWaitingDays(event.createdAt);
     return (
-      <span className="rounded-full bg-[oklch(0.96_0.045_75)] px-2 py-[2px] text-[11px] font-semibold text-[oklch(0.36_0.08_75)]">
+      <span className="rounded-full bg-nokta-warn-tint px-2 py-[2px] text-xs font-semibold text-nokta-warn-ink">
         {days >= 1 ? `Waiting ${days}d` : "Waiting"}
       </span>
     );
   }
   if (event.status === "accepted") {
-    return <span className="rounded-full bg-[oklch(0.94_0.02_150)] px-2 py-[2px] text-[11px] font-semibold text-[oklch(0.36_0.06_150)]">Confirmed</span>;
+    return <span className="rounded-full bg-nokta-ok-tint px-2 py-[2px] text-xs font-semibold text-nokta-ok-ink">Confirmed</span>;
   }
-  return <span className="rounded-full bg-muted px-2 py-[2px] text-[11px] font-semibold capitalize text-muted-foreground">{event.status.replace(/_/g, " ")}</span>;
+  return <span className="rounded-full bg-nokta-track px-2 py-[2px] text-xs font-semibold capitalize text-nokta-ink-muted">{event.status.replace(/_/g, " ")}</span>;
 }
 
 function FilterPill({ label, count, isActive, onClick }: { label: string; count?: number; isActive: boolean; onClick: () => void }) {
@@ -157,13 +157,13 @@ function FilterPill({ label, count, isActive, onClick }: { label: string; count?
       type="button"
       onClick={onClick}
       className={cn(
-        "flex h-[31px] items-center gap-1.5 rounded-full px-3 text-[12.5px] transition-colors",
-        isActive ? "bg-nokta-solid-ink font-medium text-white" : "border bg-card text-muted-foreground hover:text-nokta-ink",
+        "flex h-8 items-center gap-1.5 rounded-full px-3 text-[13px] transition-colors",
+        isActive ? "bg-nokta-ink font-medium text-nokta-surface" : "border bg-nokta-surface text-nokta-ink-muted hover:text-nokta-ink border-nokta-border",
       )}
     >
       {label}
       {typeof count === "number" ? (
-        <span className={cn("rounded-full px-1.5 text-[11px]", isActive ? "bg-white/20" : "bg-muted")}>{count}</span>
+        <span className={cn("rounded-full px-1.5 text-xs", isActive ? "bg-white/20" : "bg-nokta-track")}>{count}</span>
       ) : null}
     </button>
   );

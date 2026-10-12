@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { BarChart3, ArrowRight } from "lucide-react";
 import { OwnerLayout } from "@/components/owner/OwnerLayout";
-import { OwnerPageHeader } from "@/components/owner/OwnerPageHeader";
+import { WorkspacePageHeader } from "@/components/workspace/WorkspacePageHeader";
 import { OwnerNoVenuesState } from "@/components/owner/OwnerNoVenuesState";
 import { OwnerAnalyticsDateRangeFilter } from "@/components/owner/analytics/OwnerAnalyticsDateRangeFilter";
 import { PageMeta } from "@/components/seo/PageMeta";
@@ -73,7 +73,7 @@ export function OwnerAnalyticsPage() {
     <OwnerLayout>
       <PageMeta title="Owner analytics | nokta" description="Compare profile visibility, customer actions and booking demand across your claimed venues." canonicalPath="/owner/analytics" />
       <div className="space-y-6">
-        <OwnerPageHeader
+        <WorkspacePageHeader
           title="Performance"
           description="How nokta is creating visibility, customer actions and booking demand across your venues."
           actions={<OwnerAnalyticsDateRangeFilter value={dateRange} onChange={setDateRange} />}
@@ -102,15 +102,15 @@ export function OwnerAnalyticsPage() {
 
 function VenueAnalyticsOverviewCard({ venue, summary }: { venue: Venue; summary?: OwnerVenueAnalyticsSummary }) {
   return (
-    <article className="rounded-xl border bg-card p-5 shadow-sm">
+    <article className="rounded-2xl border bg-nokta-surface p-5 border-nokta-border">
       <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
         <div className="flex items-start gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-clay-accent/10 text-clay-accent">
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-nokta-accent-solid/10 text-nokta-accent-dark">
             <BarChart3 className="h-5 w-5" />
           </div>
           <div>
             <h2 className="text-lg font-semibold">{venue.name}</h2>
-            <p className="mt-1 text-sm text-muted-foreground">{venue.city} • {venue.area}</p>
+            <p className="mt-1 text-sm text-nokta-ink-muted">{venue.city} • {venue.area}</p>
           </div>
         </div>
         <Button asChild>
@@ -131,9 +131,9 @@ function VenueAnalyticsOverviewCard({ venue, summary }: { venue: Venue; summary?
 }
 
 function Metric({ label, value }: { label: string; value: number }) {
-  return <div className="rounded-xl border bg-card p-4"><p className="text-sm text-muted-foreground">{label}</p><p className="mt-2 text-3xl font-semibold">{value}</p></div>;
+  return <div className="rounded-2xl border bg-nokta-surface p-4 border-nokta-border"><p className="text-sm text-nokta-ink-muted">{label}</p><p className="mt-2 text-3xl font-semibold">{value}</p></div>;
 }
 
 function MiniMetric({ label, value }: { label: string; value: number }) {
-  return <div className="rounded-lg border bg-background/60 p-3"><p className="text-xs text-muted-foreground">{label}</p><p className="mt-1 text-2xl font-semibold">{value}</p></div>;
+  return <div className="rounded-lg border bg-nokta-surface-alt/60 p-3 border-nokta-border"><p className="text-xs text-nokta-ink-muted">{label}</p><p className="mt-1 text-2xl font-semibold">{value}</p></div>;
 }

@@ -9,12 +9,12 @@ export function OwnerActivePromotionsList({ venues, commercialByVenueId }: { ven
       {venues.map((venue) => {
         const commercial = commercialByVenueId[venue.id];
         return (
-          <div key={venue.id} className="flex flex-col gap-3 rounded-xl border bg-card p-4 shadow-sm sm:flex-row sm:items-center sm:justify-between">
+          <div key={venue.id} className="flex flex-col gap-3 rounded-2xl border bg-nokta-surface p-4 sm:flex-row sm:items-center sm:justify-between border-nokta-border">
             <div>
               <h3 className="font-medium">{venue.name}</h3>
-              <p className="mt-1 text-sm text-muted-foreground">{venue.city} · {venue.area}</p>
+              <p className="mt-1 text-sm text-nokta-ink-muted">{venue.city} · {venue.area}</p>
             </div>
-            <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
+            <div className="flex flex-wrap items-center gap-3 text-sm text-nokta-ink-muted">
               <span>{commercial?.activePromotedOffers ?? 0} active offers</span>
               <span>{commercial?.activeFeaturedPlacements ?? 0} featured placements</span>
               <Button asChild size="sm" variant="outline"><Link to={`/owner/venues/${venue.slug}/profile`}>Open venue</Link></Button>

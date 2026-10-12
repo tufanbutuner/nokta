@@ -4,14 +4,14 @@ export function OwnerAnalyticsTrendChart({ daily }: { daily: OwnerVenueAnalytics
   if (!daily.length) return null;
 
   return (
-    <section className="overflow-hidden rounded-xl border bg-card">
-      <div className="border-b p-5">
+    <section className="overflow-hidden rounded-xl border bg-nokta-surface border-nokta-border">
+      <div className="border-b p-5 border-nokta-border">
         <h2 className="font-semibold">Daily trend</h2>
-        <p className="mt-1 text-sm text-muted-foreground">Profile views, booking requests, enquiries and customer actions by day.</p>
+        <p className="mt-1 text-sm text-nokta-ink-muted">Profile views, booking requests, enquiries and customer actions by day.</p>
       </div>
       <div className="overflow-x-auto">
         <table className="w-full min-w-[680px] text-sm">
-          <thead className="bg-muted/50 text-left text-xs uppercase text-muted-foreground">
+          <thead className="bg-nokta-track/50 text-left text-xs uppercase text-nokta-ink-muted">
             <tr>
               <th className="px-5 py-3">Date</th>
               <th className="px-5 py-3">Profile views</th>

@@ -49,20 +49,20 @@ export function VenueClosureSheet({ open, isSaving, error, onOpenChange, onSubmi
         <SheetTitle>Add a closure</SheetTitle>
         <SheetClose onClick={() => onOpenChange(false)} />
       </SheetHeader>
-      <p className="text-[13px] leading-[1.55] text-muted-foreground">
+      <p className="text-sm leading-[1.55] text-nokta-ink-muted">
         A closed date takes the request form off your public page for that day. Bookings already accepted stay on your calendar.
       </p>
       <div className="mt-4 grid gap-3">
         <label className="block">
-          <span className="text-[11.5px] text-muted-foreground">Date</span>
+          <span className="text-xs text-nokta-ink-muted">Date</span>
           <Input type="date" className="mt-1" value={date} min={toDateInputValue(new Date())} onChange={(event) => setDate(event.target.value)} />
         </label>
         <label className="block">
-          <span className="text-[11.5px] text-muted-foreground">Reason (shown on your calendar)</span>
+          <span className="text-xs text-nokta-ink-muted">Reason (shown on your calendar)</span>
           <Input className="mt-1" value={reason} placeholder="private hire" onChange={(event) => setReason(event.target.value)} />
         </label>
       </div>
-      {localError ?? error ? <p className="mt-3 text-xs text-destructive">{localError ?? error}</p> : null}
+      {localError ?? error ? <p className="mt-3 text-xs text-nokta-bad-ink">{localError ?? error}</p> : null}
       <div className="mt-4 grid gap-2 sm:grid-cols-2">
         <Button type="button" disabled={isSaving || !date} onClick={() => void handleSubmit()}>
           {isSaving ? "Adding..." : "Close this date"}

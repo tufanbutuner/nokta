@@ -38,12 +38,12 @@ export function OwnerEnquiryActions({ enquiry, onStatus, onNotes, compact = fals
         </Button>
         {isMenuOpen && menuPosition
           ? createPortal(
-          <div className="fixed z-50 w-44 rounded-xl border bg-card p-1 text-left shadow-lg" style={{ top: menuPosition.top, left: menuPosition.left }}>
+          <div className="fixed z-50 w-44 rounded-xl border bg-nokta-surface p-1 text-left shadow-lg border-nokta-border" style={{ top: menuPosition.top, left: menuPosition.left }}>
             {actions.map((action) => (
               <button
                 key={action.label}
                 type="button"
-                className="flex w-full cursor-pointer rounded-lg px-3 py-2 text-sm text-foreground hover:bg-secondary"
+                className="flex w-full cursor-pointer rounded-lg px-3 py-2 text-sm text-nokta-ink hover:bg-secondary"
                 onClick={() => {
                   setIsMenuOpen(false);
                   action.onClick();

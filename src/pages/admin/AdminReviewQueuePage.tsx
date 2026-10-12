@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { AdminPageShell } from "@/components/admin/AdminPageShell";
+import { workspaceTitleClass } from "@/components/workspace/WorkspacePageHeader";
 import { AdminNoteCard, DetailSideRail, InfoCard, OwnerNoteCard, ReviewQueueActionBar } from "@/components/admin/review/ReviewQueueActions";
 import { ClaimSubmittedBand } from "@/components/admin/review/ClaimSubmittedBand";
 import { MediaSubmittedBand } from "@/components/admin/review/MediaSubmittedBand";
@@ -342,14 +343,14 @@ export function AdminReviewQueuePage() {
   const oldestPending = visibleItems.length ? visibleItems.reduce((oldest, item) => (item.createdAt < oldest ? item.createdAt : oldest), visibleItems[0].createdAt) : null;
 
   return (
-    <AdminPageShell activePath="/admin/review">
+    <AdminPageShell activePath="/admin/review" fullWidth>
       <PageMeta title="Review queue | nokta admin" description="Everything owners submitted that needs a decision." canonicalPath="/admin/review" />
       <div className="flex h-full min-h-0 flex-col">
-        <header className="shrink-0 border-b bg-background px-[26px] pb-[14px] pt-[18px]">
+        <header className="shrink-0 border-b border-nokta-border bg-nokta-surface px-4 pb-4 pt-6 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-start justify-between gap-3">
             <div>
-              <h1 className="font-brand text-[25px] font-bold tracking-[-0.4px] text-nokta-ink">Review queue</h1>
-              <p className="mt-1 text-[12.5px] text-muted-foreground">
+              <h1 className={workspaceTitleClass}>Review queue</h1>
+              <p className="mt-2 text-[15px] text-nokta-ink-muted">
                 {pendingTotal} waiting{oldestPending ? ` · oldest ${formatReviewQueueAgeLong(oldestPending)}` : ""} · everything owners submitted that needs a decision
               </p>
             </div>
@@ -358,10 +359,10 @@ export function AdminReviewQueuePage() {
                 value={search}
                 onChange={(event) => updateParams({ q: event.target.value || null })}
                 placeholder="Search venue or owner"
-                className="h-[34px] w-[220px] text-[13px]"
+                className="h-9 w-[220px] text-sm"
                 aria-label="Search venue or owner"
               />
-              <Select value={sort} onValueChange={(value) => updateParams({ sort: value })} options={SORT_OPTIONS} className="h-[34px] w-[150px]" />
+              <Select value={sort} onValueChange={(value) => updateParams({ sort: value })} options={SORT_OPTIONS} className="h-9 w-[150px]" />
             </div>
           </div>
 
@@ -378,13 +379,13 @@ export function AdminReviewQueuePage() {
                   title={isImplemented ? undefined : `${formatReviewQueueType(type)} still has its own page`}
                   onClick={() => updateParams({ type, item: null, decided: null })}
                   className={cn(
-                    "flex h-[31px] items-center gap-1.5 rounded-full border px-3 text-[12.5px] transition-colors",
-                    isActive ? "border-clay-accent/30 bg-clay-accent/12 font-semibold text-[#a44a30]" : "border-transparent bg-black/5 text-nokta-ink",
+                    "flex h-8 items-center gap-1.5 rounded-full border px-3 text-[13px] transition-colors border-nokta-border",
+                    isActive ? "border-nokta-accent/30 bg-nokta-accent-solid/12 font-semibold text-nokta-accent-dark" : "border-transparent bg-black/5 text-nokta-ink",
                     !isImplemented && "cursor-not-allowed opacity-45",
                   )}
                 >
                   {formatReviewQueueType(type)}
-                  <span className={cn("rounded-full px-1.5 text-[11px]", isActive ? "bg-clay-accent/15" : "bg-black/5")}>{count}</span>
+                  <span className={cn("rounded-full px-1.5 text-xs", isActive ? "bg-nokta-accent-solid/15" : "bg-black/5")}>{count}</span>
                 </button>
               );
             })}
@@ -393,8 +394,8 @@ export function AdminReviewQueuePage() {
               type="button"
               onClick={() => updateParams({ decided: showDecided ? null : "1", item: null })}
               className={cn(
-                "flex h-[31px] items-center rounded-full border px-3 text-[12.5px] transition-colors",
-                showDecided ? "border-clay-accent bg-clay-accent/12 font-semibold text-[#a44a30]" : "bg-card text-muted-foreground hover:text-nokta-ink",
+                "flex h-8 items-center rounded-full border px-3 text-[13px] transition-colors border-nokta-border",
+                showDecided ? "border-nokta-accent bg-nokta-accent-solid/12 font-semibold text-nokta-accent-dark" : "bg-nokta-surface text-nokta-ink-muted hover:text-nokta-ink",
               )}
             >
               Decided
@@ -406,14 +407,14 @@ export function AdminReviewQueuePage() {
           <LoadingState message="Loading the review queue..." />
         ) : (
           <div className="grid min-h-0 flex-1 lg:grid-cols-[400px_1fr]">
-            <div className="min-h-0 overflow-y-auto border-r bg-[oklch(0.975_0.008_60)]">
+            <div className="min-h-0 overflow-y-auto border-r border-nokta-border bg-nokta-surface-alt">
               <ReviewQueueList items={visibleItems} selectedId={selected?.id ?? null} activeType={activeType} onSelect={(item) => updateParams({ item: item.id })} />
             </div>
 
             <div className="min-h-0 overflow-y-auto">
               {error ? <div className="p-6"><ErrorState message={error} /></div> : null}
               {!selected ? (
-                <div className="p-6 text-[13px] text-muted-foreground">Select an item to review it.</div>
+                <div className="p-6 text-sm text-nokta-ink-muted">Select an item to review it.</div>
               ) : (
                 <div className="flex flex-col gap-[14px] px-6 pb-6 pt-5">
                   <div>
@@ -421,8 +422,8 @@ export function AdminReviewQueuePage() {
                       <TypeChip type={selected.type} />
                       <StatusPill item={selected} showAge={formatReviewQueueAgeLong(selected.createdAt)} />
                     </div>
-                    <h2 className="mt-2 font-brand text-[21px] font-bold tracking-[-0.3px] text-nokta-ink">{selected.venueName}</h2>
-                    <p className="mt-1 text-[13px] text-muted-foreground">
+                    <h2 className="mt-2 font-brand text-[21px] font-bold tracking-[-0.01em] text-nokta-ink">{selected.venueName}</h2>
+                    <p className="mt-1 text-sm text-nokta-ink-muted">
                       {[
                         selected.venueId && venues[selected.venueId] ? [venues[selected.venueId].area, venues[selected.venueId].city].filter(Boolean).join(", ") : null,
                         selected.venueId && venues[selected.venueId]?.isClaimed ? "claimed" : null,
@@ -461,7 +462,7 @@ export function AdminReviewQueuePage() {
                           <button
                             type="button"
                             onClick={() => setPhotoDecisions(Object.fromEntries(selectedMedia.map((item) => [item.id, "approve" as PhotoDecision])))}
-                            className="self-start text-[12.5px] font-medium text-clay-accent hover:underline"
+                            className="self-start text-[13px] font-medium text-nokta-accent-dark hover:underline"
                           >
                             Select all
                           </button>

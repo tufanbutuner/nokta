@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { OwnerLayout } from "@/components/owner/OwnerLayout";
-import { OwnerPageHeader } from "@/components/owner/OwnerPageHeader";
+import { WorkspacePageHeader } from "@/components/workspace/WorkspacePageHeader";
 import { OwnerNoVenuesState } from "@/components/owner/OwnerNoVenuesState";
 import { OwnerVenueCard } from "@/components/owner/OwnerVenueCard";
 import { PageMeta } from "@/components/seo/PageMeta";
@@ -67,7 +67,7 @@ export function OwnerVenuesPage() {
     <OwnerLayout>
       <PageMeta title="My venues | nokta" description="Manage the venues you have claimed on nokta." canonicalPath="/owner/venues" />
       <div className="mx-auto flex max-w-6xl flex-col gap-8">
-        <OwnerPageHeader title="My venues" description="Every venue you have claimed, with its plan and the last 30 days of activity." />
+        <WorkspacePageHeader title="My venues" description="Every venue you have claimed, with its plan and the last 30 days of activity." />
         {isLoading ? <LoadingState message="Loading your venues..." /> : error ? <ErrorState message={error} /> : !venues.length ? <OwnerNoVenuesState /> : (
           <div className="grid gap-5">
             {venues.map((venue) => <OwnerVenueCard key={venue.id} venue={venue} analytics={analytics[venue.id]} enquiries={enquiries[venue.id]} commercial={commercial[venue.id]} subscription={subscriptions[venue.id]} />)}

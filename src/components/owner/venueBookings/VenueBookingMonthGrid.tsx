@@ -29,10 +29,10 @@ export function VenueBookingMonthGrid({
   const month = anchorDate.getMonth();
 
   return (
-    <div className="overflow-hidden rounded-xl border bg-card">
-      <div className="grid grid-cols-7 border-b bg-[oklch(0.975_0.012_60)]">
+    <div className="overflow-hidden rounded-xl border bg-nokta-surface border-nokta-border">
+      <div className="grid grid-cols-7 border-b bg-nokta-hover border-nokta-border">
         {DAY_NAMES.map((day) => (
-          <span key={day} className="py-2 text-center text-[10.5px] font-semibold uppercase tracking-[0.5px] text-muted-foreground">{day}</span>
+          <span key={day} className="py-2 text-center text-[10.5px] font-semibold uppercase tracking-[0.5px] text-nokta-ink-muted">{day}</span>
         ))}
       </div>
 
@@ -50,25 +50,25 @@ export function VenueBookingMonthGrid({
             <div
               key={date}
               className={cn(
-                "min-h-24 border-b border-r border-[oklch(0.94_0.015_55)] px-[7px] pb-2 pt-[6px]",
-                isOutsideMonth && "bg-[oklch(0.975_0.01_60)]",
-                isToday && "bg-background shadow-[inset_0_2px_0_#c45d3e]",
-                closure && "bg-[repeating-linear-gradient(45deg,oklch(0.94_0.012_55)_0_6px,oklch(0.965_0.008_55)_6px_12px)]",
+                "min-h-24 border-b border-r border-nokta-divider px-[7px] pb-2 pt-[6px]",
+                isOutsideMonth && "bg-nokta-hover",
+                isToday && "bg-nokta-surface-alt shadow-[inset_0_2px_0_var(--color-nokta-accent)]",
+                closure && "bg-[repeating-linear-gradient(45deg,var(--color-nokta-track)_0_6px,var(--color-nokta-hover)_6px_12px)]",
               )}
             >
               {isToday ? (
                 <div className="flex items-center gap-1.5">
-                  <span className="flex h-[18px] min-w-[18px] items-center justify-center rounded-full bg-clay-accent px-1 text-[11px] font-semibold text-white">{cellDate.getDate()}</span>
-                  <span className="text-[10.5px] font-semibold uppercase tracking-[0.4px] text-[#a44a30]">Today</span>
+                  <span className="flex h-[18px] min-w-[18px] items-center justify-center rounded-full bg-nokta-accent-solid px-1 text-[11px] font-semibold text-white">{cellDate.getDate()}</span>
+                  <span className="text-[10.5px] font-semibold uppercase tracking-[0.4px] text-nokta-accent-dark">Today</span>
                 </div>
               ) : (
-                <div className={cn("text-[11.5px] font-semibold text-nokta-ink", isOutsideMonth && "font-normal text-[oklch(0.66_0.02_42)]", closure && "text-muted-foreground")}>
+                <div className={cn("text-[11.5px] font-semibold text-nokta-ink", isOutsideMonth && "font-normal text-nokta-ink-muted", closure && "text-nokta-ink-muted")}>
                   {cellDate.getDate()}
                 </div>
               )}
 
               {closure ? (
-                <p className="mt-1 text-[10.5px] font-semibold leading-tight text-muted-foreground">Closed<br />{closure.reason ?? "all day"}</p>
+                <p className="mt-1 text-[10.5px] font-semibold leading-tight text-nokta-ink-muted">Closed<br />{closure.reason ?? "all day"}</p>
               ) : (
                 <div className="mt-[5px] flex flex-col gap-[3px]">
                   {visible.map((event) => {
@@ -79,8 +79,8 @@ export function VenueBookingMonthGrid({
                         type="button"
                         onClick={() => onEventClick(event)}
                         className={cn(
-                          "flex items-center gap-[5px] overflow-hidden rounded-[5px] border-l-2 px-[5px] py-[3px] text-left text-[11px]",
-                          pending ? "border-l-[oklch(0.68_0.12_75)] bg-[oklch(0.97_0.04_75)] text-[oklch(0.34_0.08_75)]" : "border-l-[oklch(0.6_0.09_150)] bg-[oklch(0.96_0.02_150)] text-[oklch(0.3_0.06_150)]",
+                          "flex items-center gap-[5px] overflow-hidden rounded-lg border-l-2 px-[5px] py-[3px] text-left text-[11px]",
+                          pending ? "border-l-nokta-warn-line bg-nokta-warn-tint text-nokta-warn-ink" : "border-l-nokta-ok-line bg-nokta-ok-tint text-nokta-ok-ink",
                         )}
                       >
                         <b className="font-semibold">{event.time.slice(0, 5)}</b>
@@ -89,7 +89,7 @@ export function VenueBookingMonthGrid({
                     );
                   })}
                   {overflow > 0 ? (
-                    <button type="button" onClick={() => onOpenDayInWeek(date)} className="text-left text-[10.5px] font-medium text-clay-accent hover:underline">
+                    <button type="button" onClick={() => onOpenDayInWeek(date)} className="text-left text-[10.5px] font-medium text-nokta-accent-dark hover:underline">
                       +{overflow} more
                     </button>
                   ) : null}

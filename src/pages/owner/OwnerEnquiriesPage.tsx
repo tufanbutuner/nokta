@@ -4,7 +4,7 @@ import { useSearchParams } from "react-router-dom";
 import { OwnerInboxDetail } from "@/components/owner/inbox/OwnerInboxDetail";
 import { OwnerInboxList } from "@/components/owner/inbox/OwnerInboxList";
 import { OwnerLayout } from "@/components/owner/OwnerLayout";
-import { ownerSecondaryActionClass } from "@/components/owner/OwnerPageHeader";
+import { workspaceSecondaryActionClass } from "@/components/workspace/WorkspacePageHeader";
 import { PageMeta } from "@/components/seo/PageMeta";
 import { ErrorState } from "@/components/state/ErrorState";
 import { LoadingState } from "@/components/state/LoadingState";
@@ -194,7 +194,7 @@ export function OwnerEnquiriesPage() {
         <header className="border-b border-nokta-border bg-nokta-surface px-4 pb-4 pt-6 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-start justify-between gap-3">
             <div><h1 className="font-brand text-[1.75rem] font-bold leading-[1.1] tracking-[-0.02em] text-nokta-ink sm:text-[2.125rem]">Inbox</h1><p className="mt-2 text-[15px] text-nokta-ink-muted">Booking requests and enquiries, {venues.length === 1 ? venues[0]?.name : "all venues"}</p></div>
-            <button type="button" className={ownerSecondaryActionClass} onClick={exportCsv}><Download aria-hidden="true" className="size-4" />Export CSV</button>
+            <button type="button" className={workspaceSecondaryActionClass} onClick={exportCsv}><Download aria-hidden="true" className="size-4" />Export CSV</button>
           </div>
           <div className="mt-5 flex flex-wrap items-center gap-2">
             <FilterPill active={status === "needs-reply"} onClick={() => chooseFilter("needs-reply")}>Needs reply <Count value={counts.needsReply} active={status === "needs-reply"} /></FilterPill>
@@ -203,16 +203,16 @@ export function OwnerEnquiriesPage() {
             <span aria-hidden="true" className="mx-1 h-5 w-px bg-nokta-border" />
             <FilterPill active={type === "booking"} onClick={() => updateQuery({ type: type === "booking" ? null : "booking", item: null })}>Bookings</FilterPill>
             <FilterPill active={type === "enquiry"} onClick={() => updateQuery({ type: type === "enquiry" ? null : "enquiry", item: null })}>Enquiries</FilterPill>
-            {venues.length > 1 ? <select aria-label="Filter by venue" value={selectedVenueId} onChange={(event) => updateQuery({ venue: event.target.value === "all" ? null : venuesById[event.target.value]?.slug ?? event.target.value, item: null })} className="h-[31px] rounded-full border bg-card px-3 text-[12.5px]"><option value="all">All venues</option>{venues.map((venue) => <option key={venue.id} value={venue.id}>{venue.name}</option>)}</select> : null}
+            {venues.length > 1 ? <select aria-label="Filter by venue" value={selectedVenueId} onChange={(event) => updateQuery({ venue: event.target.value === "all" ? null : venuesById[event.target.value]?.slug ?? event.target.value, item: null })} className="h-8 rounded-full border bg-nokta-surface px-3 text-[13px] border-nokta-border"><option value="all">All venues</option>{venues.map((venue) => <option key={venue.id} value={venue.id}>{venue.name}</option>)}</select> : null}
           </div>
         </header>
 
         {error ? <div className="p-4"><ErrorState message={error} /></div> : null}
-        <div className="grid min-h-[calc(100vh-190px)] lg:grid-cols-[400px_1fr]">
-          <aside className={cn("overflow-y-auto border-r bg-[oklch(0.975_0.008_60)]", selected && "hidden lg:block")}>
-            {isLoading ? <div className="p-4"><LoadingState message="Loading inbox…" /></div> : <OwnerInboxList items={filtered} selectedId={selected?.id ?? null} venuesById={venuesById} onSelect={(item) => updateQuery({ item: item.id })} emptyState={status === "needs-reply" ? <span>Nothing needs a reply. <button type="button" className="font-medium text-clay-accent hover:underline" onClick={() => chooseFilter("open")}>View all open</button></span> : undefined} />}
+        <div className="grid min-h-[calc(100dvh-165px)] lg:grid-cols-[400px_1fr]">
+          <aside className={cn("overflow-y-auto border-r border-nokta-border bg-nokta-surface-alt", selected && "hidden lg:block")}>
+            {isLoading ? <div className="p-4"><LoadingState message="Loading inbox…" /></div> : <OwnerInboxList items={filtered} selectedId={selected?.id ?? null} venuesById={venuesById} onSelect={(item) => updateQuery({ item: item.id })} emptyState={status === "needs-reply" ? <span>Nothing needs a reply. <button type="button" className="font-medium text-nokta-accent-dark hover:underline" onClick={() => chooseFilter("open")}>View all open</button></span> : undefined} />}
           </aside>
-          <main className={cn("min-w-0 bg-nokta-page-bg", !selected && "hidden lg:block")}>
+          <main className={cn("min-w-0 bg-background", !selected && "hidden lg:block")}>
             {selected ? (
               <OwnerInboxDetail
                 item={selected}
@@ -225,7 +225,7 @@ export function OwnerEnquiriesPage() {
                 onEnquiryStatus={(nextStatus) => handleEnquiryStatus(selected, nextStatus)}
                 onSendReply={(message) => selected.type === "booking" ? handleBookingReply(selected, message) : handleEnquiryStatus(selected, "responded", message)}
               />
-            ) : <div className="flex min-h-[360px] items-center justify-center p-8 text-[13px] text-muted-foreground">Select a request to see its details.</div>}
+            ) : <div className="flex min-h-[360px] items-center justify-center p-8 text-sm text-nokta-ink-muted">Select a request to see its details.</div>}
           </main>
         </div>
       </div>

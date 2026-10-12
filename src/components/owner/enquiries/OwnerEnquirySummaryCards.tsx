@@ -12,5 +12,5 @@ export function OwnerEnquirySummaryCards({ enquiries }: { enquiries: VenueEnquir
 }
 
 function Metric({ label, value }: { label: string; value: number }) {
-  return <div className="rounded-xl border bg-card p-4"><p className="text-sm capitalize text-muted-foreground">{label}</p><p className="mt-2 text-2xl font-semibold">{value}</p></div>;
+  return <div className="rounded-2xl border bg-nokta-surface p-4 border-nokta-border"><p className="text-sm capitalize text-nokta-ink-muted">{label}</p><p className="mt-2 text-2xl font-semibold">{value}</p></div>;
 }

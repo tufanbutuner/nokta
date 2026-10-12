@@ -24,9 +24,9 @@ export function EmptyState({
   children,
 }: EmptyStateProps) {
   return (
-    <div className={cn("rounded-lg border bg-card p-10 text-center", className)}>
-      <h2 className="text-2xl font-semibold">{title}</h2>
-      {description ? <p className="mx-auto mt-3 max-w-md text-muted-foreground">{description}</p> : null}
+    <div className={cn("rounded-2xl border border-nokta-border bg-nokta-surface px-6 py-10 text-center", className)}>
+      <h2 className="font-brand text-2xl font-bold tracking-[-0.01em] text-nokta-ink">{title}</h2>
+      {description ? <p className="mx-auto mt-3 max-w-md text-nokta-ink-muted">{description}</p> : null}
       {children}
       {actionLabel && actionHref ? (
         <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">

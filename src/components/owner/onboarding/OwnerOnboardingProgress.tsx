@@ -11,7 +11,7 @@ export function OwnerOnboardingProgress({ tasks }: { tasks: OwnerOnboardingTask[
         <span className="font-semibold text-nokta-ink">Profile setup</span>
         <span className="text-nokta-ink-muted">{completed} of {total} complete</span>
       </div>
-      <div className="mt-3 h-2 overflow-hidden rounded-full bg-nokta-page-bg">
+      <div className="mt-3 h-2 overflow-hidden rounded-full bg-background">
         <div className="h-full rounded-full bg-nokta-accent-solid transition-[width]" style={{ width: `${percent}%` }} />
       </div>
     </div>

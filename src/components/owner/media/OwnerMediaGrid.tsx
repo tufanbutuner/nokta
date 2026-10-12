@@ -15,17 +15,17 @@ export function OwnerMediaGrid({ media, legacyImages = [], onEdit, onDelete }: {
         {legacyImages.length ? (
           <div className="mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
             {legacyImages.map((image, index) => (
-              <article key={`${image}-${index}`} className="overflow-hidden rounded-xl border bg-card shadow-sm">
+              <article key={`${image}-${index}`} className="overflow-hidden rounded-xl border bg-nokta-surface border-nokta-border">
                 <img src={image} alt={`Existing venue photo ${index + 1}`} className="aspect-[4/3] w-full object-cover" />
                 <div className="p-4">
                   <p className="text-sm font-medium">Live on public profile</p>
-                  <p className="mt-1 text-xs text-muted-foreground">Legacy venue image</p>
+                  <p className="mt-1 text-xs text-nokta-ink-muted">Legacy venue image</p>
                 </div>
               </article>
             ))}
           </div>
         ) : (
-          <div className="mt-4 rounded-xl border bg-card p-6 text-sm text-muted-foreground">No existing public photos.</div>
+          <div className="mt-4 rounded-2xl border bg-nokta-surface p-6 text-sm text-nokta-ink-muted border-nokta-border">No existing public photos.</div>
         )}
       </section>
       {groups.map((group) => (
@@ -36,7 +36,7 @@ export function OwnerMediaGrid({ media, legacyImages = [], onEdit, onDelete }: {
               {group.items.map((item) => <OwnerMediaCard key={item.id} media={item} onEdit={onEdit} onDelete={onDelete} />)}
             </div>
           ) : (
-            <div className="mt-4 rounded-xl border bg-card p-6 text-sm text-muted-foreground">No {group.title.toLowerCase()} photos.</div>
+            <div className="mt-4 rounded-2xl border bg-nokta-surface p-6 text-sm text-nokta-ink-muted border-nokta-border">No {group.title.toLowerCase()} photos.</div>
           )}
         </section>
       ))}

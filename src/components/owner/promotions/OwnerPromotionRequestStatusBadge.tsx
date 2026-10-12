@@ -4,11 +4,11 @@ import { cn } from "@/lib/utils";
 import type { OwnerPromotionRequestStatus } from "@/types/ownerPromotionRequests";
 
 const STATUS_CLASS: Record<OwnerPromotionRequestStatus, string> = {
-  pending: "border-amber-200 bg-amber-50 text-amber-900",
-  approved: "border-blue-200 bg-blue-50 text-blue-900",
-  rejected: "border-red-200 bg-red-50 text-red-900",
-  cancelled: "border-border bg-muted text-muted-foreground",
-  converted: "border-emerald-200 bg-emerald-50 text-emerald-900",
+  pending: "border-nokta-warn-line bg-nokta-warn-tint text-nokta-warn-ink",
+  approved: "border-nokta-info-line bg-nokta-info-tint text-nokta-info-ink",
+  rejected: "border-nokta-bad-line bg-nokta-bad-tint text-nokta-bad-ink",
+  cancelled: "border-border bg-nokta-track text-nokta-ink-muted",
+  converted: "border-nokta-ok-line bg-nokta-ok-tint text-nokta-ok-ink",
 };
 
 export function OwnerPromotionRequestStatusBadge({ status }: { status: OwnerPromotionRequestStatus }) {

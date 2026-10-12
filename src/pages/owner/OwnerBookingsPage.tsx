@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { OwnerLayout } from "@/components/owner/OwnerLayout";
-import { OwnerPageHeader, ownerSecondaryActionClass } from "@/components/owner/OwnerPageHeader";
+import { WorkspacePageHeader, workspaceSecondaryActionClass } from "@/components/workspace/WorkspacePageHeader";
 import { VenueBookingListView, type VenueBookingListFilter } from "@/components/owner/venueBookings/VenueBookingListView";
 import { PageMeta } from "@/components/seo/PageMeta";
 import { ErrorState } from "@/components/state/ErrorState";
@@ -141,14 +141,14 @@ export function OwnerBookingsPage() {
         <LoadingState message="Loading bookings..." />
       ) : (
         <div className="flex flex-col gap-6">
-          <OwnerPageHeader
+          <WorkspacePageHeader
             title="Bookings"
             description={venues.length ? `Requests across ${venues.length} venue${venues.length === 1 ? "" : "s"} — confirm, decline, or open a venue's calendar.` : "No claimed venues yet."}
             actions={<>
               {venues.length === 1 ? (
-                <Link to={`/owner/venues/${venues[0].slug}/bookings`} className={ownerSecondaryActionClass}>Calendar &amp; hours</Link>
+                <Link to={`/owner/venues/${venues[0].slug}/bookings`} className={workspaceSecondaryActionClass}>Calendar &amp; hours</Link>
               ) : (
-                <Link to="/owner/venues" className={ownerSecondaryActionClass}>Manage venues</Link>
+                <Link to="/owner/venues" className={workspaceSecondaryActionClass}>Manage venues</Link>
               )}
             </>}
           />
@@ -156,21 +156,21 @@ export function OwnerBookingsPage() {
           {error ? <ErrorState message={error} /> : null}
 
           {!venues.length ? (
-            <div className="rounded-xl border bg-card px-5 py-8 text-center">
-              <p className="text-[13.5px] text-muted-foreground">Claim a venue to start taking booking requests.</p>
-              <Button asChild className="mt-3 h-[34px] text-[13px]">
+            <div className="rounded-2xl border bg-nokta-surface px-5 py-8 text-center border-nokta-border">
+              <p className="text-sm text-nokta-ink-muted">Claim a venue to start taking booking requests.</p>
+              <Button asChild className="mt-3 h-9 text-sm">
                 <Link to="/owner/venues">Go to My venues</Link>
               </Button>
             </div>
           ) : (
             <>
               {waitingQueue.length ? (
-                <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-[oklch(0.87_0.08_75)] bg-[oklch(0.96_0.045_75)] px-[16px] py-[13px]">
+                <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-nokta-warn-line bg-nokta-warn-tint px-[16px] py-[13px]">
                   <div className="min-w-0">
-                    <p className="text-[13.5px] font-semibold text-nokta-ink">
+                    <p className="text-sm font-semibold text-nokta-ink">
                       {waitingQueue.length} request{waitingQueue.length === 1 ? "" : "s"} waiting for a reply
                     </p>
-                    <p className="mt-0.5 text-[12px] text-muted-foreground">
+                    <p className="mt-0.5 text-[13px] text-nokta-ink-muted">
                       {(() => {
                         const oldest = waitingQueue[0];
                         const days = oldest ? getWaitingDays(oldest.request.createdAt) : 0;
@@ -179,12 +179,12 @@ export function OwnerBookingsPage() {
                       })()}
                     </p>
                   </div>
-                  <Button type="button" className="h-[32px] shrink-0 text-[12.5px]" onClick={() => { setIsPast(false); setFilter("waiting"); }}>
+                  <Button type="button" className="h-8 shrink-0 text-[13px]" onClick={() => { setIsPast(false); setFilter("waiting"); }}>
                     Review them
                   </Button>
                 </div>
               ) : (
-                <p className="text-[13px] text-muted-foreground">
+                <p className="text-sm text-nokta-ink-muted">
                   Nothing waiting. {confirmedAhead} booking{confirmedAhead === 1 ? "" : "s"} confirmed for the next {CONFIRMED_WINDOW_DAYS} days.
                 </p>
               )}

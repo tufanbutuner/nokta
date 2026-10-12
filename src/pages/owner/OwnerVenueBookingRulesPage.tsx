@@ -171,13 +171,13 @@ export function OwnerVenueBookingRulesPage() {
       {isLoading ? <LoadingState message="Loading booking rules..." /> : !availability ? <ErrorState message={error ?? "Could not load booking rules."} /> : (
           <div className="flex max-w-[560px] flex-col gap-3">
             {error ? <ErrorState message={error} /> : null}
-            {notice ? <p className="rounded-lg border border-[oklch(0.86_0.06_150)] bg-[oklch(0.96_0.03_150)] px-3 py-2 text-[13px] text-[oklch(0.32_0.06_150)]">{notice}</p> : null}
+            {notice ? <p className="rounded-lg border border-nokta-ok-line bg-nokta-ok-tint px-3 py-2 text-sm text-nokta-ok-ink">{notice}</p> : null}
 
             <RuleCard>
               <div className="flex items-center justify-between gap-4">
                 <div>
-                  <h2 className="text-[14.5px] font-semibold text-nokta-ink">Accept booking requests</h2>
-                  <p className="mt-0.5 text-[12.5px] text-muted-foreground">Off hides the button on your public page.</p>
+                  <h2 className="text-[15px] font-semibold text-nokta-ink">Accept booking requests</h2>
+                  <p className="mt-0.5 text-[13px] text-nokta-ink-muted">Off hides the button on your public page.</p>
                 </div>
                 <button
                   type="button"
@@ -185,7 +185,7 @@ export function OwnerVenueBookingRulesPage() {
                   aria-checked={settings.bookingRequestsEnabled ?? false}
                   aria-label="Accept booking requests"
                   onClick={() => setSettings({ ...settings, bookingRequestsEnabled: !settings.bookingRequestsEnabled })}
-                  className={cn("flex h-[23px] w-10 flex-none items-center rounded-full p-[2px] transition-colors", settings.bookingRequestsEnabled ? "bg-clay-accent" : "bg-[oklch(0.86_0.015_55)]")}
+                  className={cn("flex h-[23px] w-10 flex-none items-center rounded-full p-[2px] transition-colors", settings.bookingRequestsEnabled ? "bg-nokta-accent-solid" : "bg-nokta-border")}
                 >
                   <span className={cn("h-[19px] w-[19px] rounded-full bg-white transition-transform", settings.bookingRequestsEnabled ? "translate-x-[17px]" : "translate-x-0")} />
                 </button>
@@ -193,7 +193,7 @@ export function OwnerVenueBookingRulesPage() {
             </RuleCard>
 
             <RuleCard>
-              <h2 className="text-[14.5px] font-semibold text-nokta-ink">Who can request</h2>
+              <h2 className="text-[15px] font-semibold text-nokta-ink">Who can request</h2>
               <div className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2">
                 <Field label="Smallest party" error={validation.errors.minPartySize}>
                   <Input type="number" min={1} value={settings.minPartySize ?? ""} onChange={(event) => setSettings({ ...settings, minPartySize: Number(event.target.value) })} className="h-9" />
@@ -208,16 +208,16 @@ export function OwnerVenueBookingRulesPage() {
                   <Select value={String(settings.maxAdvanceDays ?? 60)} onValueChange={(value) => setSettings({ ...settings, maxAdvanceDays: Number(value) })} options={ADVANCE_OPTIONS} />
                 </Field>
               </div>
-              <p className="mt-2.5 text-[11.5px] text-muted-foreground">A party of {(settings.maxPartySize ?? 20) + 4} sees “call the venue” instead of the request form.</p>
+              <p className="mt-2.5 text-xs text-nokta-ink-muted">A party of {(settings.maxPartySize ?? 20) + 4} sees “call the venue” instead of the request form.</p>
             </RuleCard>
 
             <RuleCard>
-              <h2 className="text-[14.5px] font-semibold text-nokta-ink">Bookings per time slot</h2>
+              <h2 className="text-[15px] font-semibold text-nokta-ink">Bookings per time slot</h2>
               <div className="mt-3 flex flex-wrap items-end gap-4">
                 <Field label="Parties per time" error={validation.errors.slotCapacity}>
                   <Input type="number" min={1} max={50} value={settings.slotCapacity ?? 4} onChange={(event) => setSettings({ ...settings, slotCapacity: Number(event.target.value) })} className="h-9 w-[110px]" />
                 </Field>
-                <p className="max-w-[330px] flex-1 text-[11.5px] leading-[1.5] text-muted-foreground">
+                <p className="max-w-[330px] flex-1 text-xs leading-[1.5] text-nokta-ink-muted">
                   How many separate parties can hold the same time — 6pm, 6:30pm and so on. You still approve every request; the cap only stops a slot being confirmed past what your room can take.
                 </p>
               </div>
@@ -225,7 +225,7 @@ export function OwnerVenueBookingRulesPage() {
 
             <RuleCard>
               <div className="flex items-center justify-between gap-3">
-                <h2 className="text-[14.5px] font-semibold text-nokta-ink">When requests are allowed</h2>
+                <h2 className="text-[15px] font-semibold text-nokta-ink">When requests are allowed</h2>
                 <button
                   type="button"
                   onClick={() => {
@@ -233,7 +233,7 @@ export function OwnerVenueBookingRulesPage() {
                     if (!monday) return;
                     setGroups(Object.fromEntries(DAY_GROUPS.map((group) => [group.key, { ...monday }])));
                   }}
-                  className="text-[12.5px] font-medium text-clay-accent hover:underline"
+                  className="text-[13px] font-medium text-nokta-accent-dark hover:underline"
                 >
                   Copy Mon to all
                 </button>
@@ -243,53 +243,53 @@ export function OwnerVenueBookingRulesPage() {
                   const value = groups[group.key] ?? { startTime: "17:00", endTime: "23:00", isEnabled: false };
                   return (
                     <div key={group.key}>
-                      <div className={cn("flex flex-wrap items-center gap-2 rounded-lg border p-2", !value.isEnabled && "border-dashed bg-[oklch(0.98_0.008_60)]")}>
-                        <span className={cn("w-24 flex-none text-[12.5px]", value.isEnabled ? "text-nokta-ink" : "text-[oklch(0.58_0.02_42)]")}>{group.label}</span>
+                      <div className={cn("flex flex-wrap items-center gap-2 rounded-lg border p-2 border-nokta-border", !value.isEnabled && "border-dashed bg-nokta-hover")}>
+                        <span className={cn("w-24 flex-none text-[13px]", value.isEnabled ? "text-nokta-ink" : "text-nokta-ink-muted")}>{group.label}</span>
                         {value.isEnabled ? (
                           <>
                             <Input type="time" value={value.startTime} onChange={(event) => setGroups({ ...groups, [group.key]: { ...value, startTime: event.target.value } })} className="h-9 w-[120px]" aria-label={`${group.label} start time`} />
-                            <span className="text-muted-foreground">–</span>
+                            <span className="text-nokta-ink-muted">–</span>
                             <Input type="time" value={value.endTime} onChange={(event) => setGroups({ ...groups, [group.key]: { ...value, endTime: event.target.value } })} className="h-9 w-[120px]" aria-label={`${group.label} end time`} />
                           </>
                         ) : (
-                          <span className="flex-1 text-[12.5px] text-[oklch(0.58_0.02_42)]">No requests</span>
+                          <span className="flex-1 text-[13px] text-nokta-ink-muted">No requests</span>
                         )}
                         <button
                           type="button"
                           onClick={() => setGroups({ ...groups, [group.key]: { ...value, isEnabled: !value.isEnabled } })}
-                          className="ml-auto text-[12.5px] font-medium text-clay-accent hover:underline"
+                          className="ml-auto text-[13px] font-medium text-nokta-accent-dark hover:underline"
                         >
                           {value.isEnabled ? "Turn off" : "Turn on"}
                         </button>
                       </div>
-                      {windowErrors[group.key] ? <p className="mt-1 text-xs text-destructive">{windowErrors[group.key]}</p> : null}
-                      {describeGroupMismatch(availability, group) ? <p className="mt-1 text-[11.5px] text-muted-foreground">{describeGroupMismatch(availability, group)}</p> : null}
+                      {windowErrors[group.key] ? <p className="mt-1 text-xs text-nokta-bad-ink">{windowErrors[group.key]}</p> : null}
+                      {describeGroupMismatch(availability, group) ? <p className="mt-1 text-xs text-nokta-ink-muted">{describeGroupMismatch(availability, group)}</p> : null}
                     </div>
                   );
                 })}
               </div>
-              <p className="mt-2.5 text-[11.5px] leading-[1.5] text-muted-foreground">
+              <p className="mt-2.5 text-xs leading-[1.5] text-nokta-ink-muted">
                 Narrower than your opening hours — 23:00 on a Tuesday is open for walk-ins but closed for requests.
               </p>
             </RuleCard>
 
             <RuleCard>
-              <h2 className="text-[14.5px] font-semibold text-nokta-ink">Closures</h2>
+              <h2 className="text-[15px] font-semibold text-nokta-ink">Closures</h2>
               <div className="mt-3 flex flex-col gap-2">
                 {availability.blackoutDates.length ? (
                   availability.blackoutDates.map((closure) => (
-                    <div key={closure.id} className="flex items-center justify-between gap-3 border-b pb-2 last:border-b-0 last:pb-0">
+                    <div key={closure.id} className="flex items-center justify-between gap-3 border-b pb-2 last:border-b-0 last:pb-0 border-nokta-border">
                       <div>
-                        <div className="text-[12.5px] font-medium text-nokta-ink">{closure.blackoutDate}</div>
-                        <div className="text-[11.5px] text-muted-foreground">{closure.reason ?? "Closed all day"}</div>
+                        <div className="text-[13px] font-medium text-nokta-ink">{closure.blackoutDate}</div>
+                        <div className="text-xs text-nokta-ink-muted">{closure.reason ?? "Closed all day"}</div>
                       </div>
-                      <button type="button" onClick={() => handleRemoveClosure(closure.id)} aria-label={`Remove closure on ${closure.blackoutDate}`} className="flex h-11 w-11 items-center justify-center text-muted-foreground hover:text-destructive sm:h-8 sm:w-8">
+                      <button type="button" onClick={() => handleRemoveClosure(closure.id)} aria-label={`Remove closure on ${closure.blackoutDate}`} className="flex h-11 w-11 items-center justify-center text-nokta-ink-muted hover:text-nokta-bad-ink sm:h-8 sm:w-8">
                         <X className="h-4 w-4" />
                       </button>
                     </div>
                   ))
                 ) : (
-                  <p className="text-[12.5px] text-muted-foreground">No closures booked.</p>
+                  <p className="text-[13px] text-nokta-ink-muted">No closures booked.</p>
                 )}
               </div>
               <div className="mt-3 flex flex-wrap items-end gap-2">
@@ -299,33 +299,33 @@ export function OwnerVenueBookingRulesPage() {
                 <Field label="Reason">
                   <Input value={closureReason} placeholder="private hire" onChange={(event) => setClosureReason(event.target.value)} className="h-9 w-[160px]" />
                 </Field>
-                <Button type="button" variant="outline" onClick={handleAddClosure} className="h-9 text-[12.5px]">+ Add</Button>
+                <Button type="button" variant="outline" onClick={handleAddClosure} className="h-9 text-[13px]">+ Add</Button>
               </div>
-              {closureError ? <p className="mt-1 text-xs text-destructive">{closureError}</p> : null}
+              {closureError ? <p className="mt-1 text-xs text-nokta-bad-ink">{closureError}</p> : null}
             </RuleCard>
 
             <RuleCard>
-              <h2 className="text-[14.5px] font-semibold text-nokta-ink">What customers are told</h2>
+              <h2 className="text-[15px] font-semibold text-nokta-ink">What customers are told</h2>
               <Textarea
                 value={settings.bookingInstructions ?? ""}
                 maxLength={140}
                 onChange={(event) => setSettings({ ...settings, bookingInstructions: event.target.value })}
-                className="mt-2 text-[13px]"
+                className="mt-2 text-sm"
                 placeholder="Shown above the request form on your public page."
               />
               <div className="mt-1 flex justify-between gap-3">
-                {validation.errors.bookingInstructions ? <p className="text-xs text-destructive">{validation.errors.bookingInstructions}</p> : <span />}
-                <span className="text-[11px] text-muted-foreground">{(settings.bookingInstructions ?? "").length}/140</span>
+                {validation.errors.bookingInstructions ? <p className="text-xs text-nokta-bad-ink">{validation.errors.bookingInstructions}</p> : <span />}
+                <span className="text-xs text-nokta-ink-muted">{(settings.bookingInstructions ?? "").length}/140</span>
               </div>
             </RuleCard>
 
             <div className="flex flex-wrap items-center gap-2">
-              <Button type="button" onClick={handleSave} disabled={isSaving || !canSave} className="h-[38px] text-[13.5px]">
+              <Button type="button" onClick={handleSave} disabled={isSaving || !canSave} className="h-10 text-sm">
                 {isSaving ? "Saving..." : "Save rules"}
               </Button>
-              <Button type="button" variant="outline" onClick={() => navigate(`/owner/venues/${venue.slug}/bookings`)} className="h-[38px] text-[13.5px]">Cancel</Button>
+              <Button type="button" variant="outline" onClick={() => navigate(`/owner/venues/${venue.slug}/bookings`)} className="h-10 text-sm">Cancel</Button>
             </div>
-            <p className="text-[11.5px] text-muted-foreground">No admin review — these are operational, not public copy.</p>
+            <p className="text-xs text-nokta-ink-muted">No admin review — these are operational, not public copy.</p>
           </div>
       )}
     </>
@@ -333,15 +333,15 @@ export function OwnerVenueBookingRulesPage() {
 }
 
 function RuleCard({ children }: { children: React.ReactNode }) {
-  return <section className="rounded-xl border bg-card px-4 py-[15px]">{children}</section>;
+  return <section className="rounded-2xl border bg-nokta-surface px-4 py-[15px] border-nokta-border">{children}</section>;
 }
 
 function Field({ label, error, children }: { label: string; error?: string; children: React.ReactNode }) {
   return (
     <label className="block">
-      <span className="text-[11.5px] text-muted-foreground">{label}</span>
+      <span className="text-xs text-nokta-ink-muted">{label}</span>
       <div className="mt-1">{children}</div>
-      {error ? <span className="mt-1 block text-xs text-destructive">{error}</span> : null}
+      {error ? <span className="mt-1 block text-xs text-nokta-bad-ink">{error}</span> : null}
     </label>
   );
 }
