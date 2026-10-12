@@ -1,19 +1,25 @@
 import type { FormEvent } from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { AuthForm } from "@/components/auth/AuthForm";
-import { PageContainer } from "@/components/layout/PageContainer";
+import { Link, Navigate, useSearchParams } from "react-router-dom";
+import { AuthError } from "@/components/auth/AuthError";
+import { AuthField, authLinkClass, authSubmitClass } from "@/components/auth/AuthField";
+import { AuthShell } from "@/components/auth/AuthShell";
+import { CheckEmailPanel } from "@/components/auth/CheckEmailPanel";
 import { PageMeta } from "@/components/seo/PageMeta";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { useAuth } from "@/context/AuthContext";
+import { describeAuthError } from "@/lib/authErrors";
+import { getSafeRedirect, withRedirect } from "@/lib/authRedirect";
+
+const MIN_PASSWORD_LENGTH = 8;
 
 export function SignUpPage() {
-  const { signUp } = useAuth();
+  const [searchParams] = useSearchParams();
+  const { user, isLoading, signUp, resendConfirmation } = useAuth();
+  const redirectParam = searchParams.get("redirect");
   const [email, setEmail] = useState("");
   const [submittedEmail, setSubmittedEmail] = useState<string | null>(null);
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const [fieldErrors, setFieldErrors] = useState<{ email?: string; password?: string }>({});
   const [error, setError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -21,79 +27,104 @@ export function SignUpPage() {
     event.preventDefault();
     setError(null);
 
-    if (!email.trim()) {
-      setError("Email is required.");
-      return;
-    }
-
-    if (!password) {
-      setError("Password is required.");
-      return;
-    }
-
-    if (password.length < 8) {
-      setError("Password should be at least 8 characters.");
-      return;
-    }
-
-    if (password !== confirmPassword) {
-      setError("Confirm password must match.");
-      return;
-    }
+    const trimmedEmail = email.trim();
+    const nextFieldErrors = {
+      email: !trimmedEmail ? "Enter your email address." : !trimmedEmail.includes("@") ? "That doesn't look like an email address." : undefined,
+      password: !password
+        ? "Choose a password."
+        : password.length < MIN_PASSWORD_LENGTH
+          ? `Use at least ${MIN_PASSWORD_LENGTH} characters.`
+          : undefined,
+    };
+    setFieldErrors(nextFieldErrors);
+    if (nextFieldErrors.email || nextFieldErrors.password) return;
 
     setIsSubmitting(true);
     try {
-      const nextEmail = email.trim();
-      await signUp(nextEmail, password);
-      setSubmittedEmail(nextEmail);
+      await signUp(trimmedEmail, password, redirectParam ? getSafeRedirect(redirectParam) : undefined);
+      setSubmittedEmail(trimmedEmail);
       setPassword("");
-      setConfirmPassword("");
     } catch (caughtError) {
-      setError(caughtError instanceof Error ? caughtError.message : "Something went wrong. Please try again.");
+      setError(describeAuthError(caughtError));
     } finally {
       setIsSubmitting(false);
     }
   }
 
+  if (!isLoading && user) {
+    return <Navigate replace to={getSafeRedirect(redirectParam)} />;
+  }
+
   return (
     <main>
-      <PageMeta title="Create account | nokta" description="Create a nokta account to save venues, write reviews and suggest missing shisha lounges." canonicalPath="/sign-up" />
-      <PageContainer className="py-12">
-        {submittedEmail ? (
-          <Card className="mx-auto max-w-md">
-            <CardContent className="space-y-5 p-6 text-center">
-              <div>
-                <p className="text-sm text-clay-accent">Check your email</p>
-                <h1 className="mt-2 font-brand text-3xl font-bold tracking-[-0.5px]">Confirm your nokta account</h1>
-                <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                  We sent a confirmation email to {submittedEmail}. Open the link in that email to activate your account, then sign in.
-                </p>
-              </div>
-              <div className="flex flex-col gap-2">
-                <Button asChild>
-                  <Link to="/sign-in">Go to sign in</Link>
-                </Button>
-                <Button variant="outline" onClick={() => setSubmittedEmail(null)}>
-                  Use a different email
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
-        ) : (
-          <AuthForm
-            mode="sign-up"
-            email={email}
-            password={password}
-            confirmPassword={confirmPassword}
-            error={error}
-            isSubmitting={isSubmitting}
-            onEmailChange={setEmail}
-            onPasswordChange={setPassword}
-            onConfirmPasswordChange={setConfirmPassword}
-            onSubmit={handleSubmit}
-          />
-        )}
-      </PageContainer>
+      <PageMeta title="Create account | nokta" description="Create a nokta account to save venues, follow booking requests and share shortlists with your group." canonicalPath="/sign-up" />
+      {submittedEmail ? (
+        <AuthShell
+          title="Check your email"
+          showPerks={false}
+          footer={
+            <p>
+              Confirmed already?{" "}
+              <Link to={withRedirect("/sign-in", redirectParam)} className={authLinkClass}>
+                Sign in
+              </Link>
+            </p>
+          }
+        >
+          <CheckEmailPanel email={submittedEmail} onResend={() => resendConfirmation(submittedEmail)} onChangeEmail={() => setSubmittedEmail(null)}>
+            Open the link in that email to confirm your account. It brings you back here, ready to sign in.
+          </CheckEmailPanel>
+        </AuthShell>
+      ) : (
+        <AuthShell
+          title="Create your account"
+          description="Free, and it takes a minute. Keep your shortlist on every device and follow booking requests as venues reply."
+          footer={
+            <p>
+              Already have an account?{" "}
+              <Link to={withRedirect("/sign-in", redirectParam)} className={authLinkClass}>
+                Sign in
+              </Link>
+            </p>
+          }
+        >
+          <form className="space-y-5" onSubmit={handleSubmit} noValidate>
+            <AuthField
+              label="Email"
+              type="email"
+              autoComplete="email"
+              inputMode="email"
+              autoCapitalize="none"
+              spellCheck={false}
+              value={email}
+              error={fieldErrors.email}
+              onChange={(event) => setEmail(event.target.value)}
+            />
+            <AuthField
+              label="Password"
+              type="password"
+              autoComplete="new-password"
+              minLength={MIN_PASSWORD_LENGTH}
+              value={password}
+              error={fieldErrors.password}
+              hint={`At least ${MIN_PASSWORD_LENGTH} characters.`}
+              onChange={(event) => setPassword(event.target.value)}
+            />
+
+            <AuthError message={error} />
+
+            <button type="submit" className={authSubmitClass} disabled={isSubmitting}>
+              {isSubmitting ? "Creating account…" : "Create account"}
+            </button>
+
+            <p className="text-sm leading-relaxed text-nokta-ink-muted">
+              By creating an account you agree to the{" "}
+              <Link to="/terms" className="underline underline-offset-4 hover:text-nokta-ink">Terms</Link> and{" "}
+              <Link to="/privacy" className="underline underline-offset-4 hover:text-nokta-ink">Privacy policy</Link>.
+            </p>
+          </form>
+        </AuthShell>
+      )}
     </main>
   );
 }

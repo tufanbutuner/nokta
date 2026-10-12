@@ -7,8 +7,11 @@ interface AuthContextValue {
   user: User | null;
   isLoading: boolean;
   signIn: (email: string, password: string) => Promise<void>;
-  signUp: (email: string, password: string) => Promise<void>;
+  signUp: (email: string, password: string, redirect?: string) => Promise<void>;
   signOut: () => Promise<void>;
+  resendConfirmation: (email: string) => Promise<void>;
+  requestPasswordReset: (email: string) => Promise<void>;
+  updatePassword: (password: string) => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextValue | null>(null);
@@ -19,6 +22,14 @@ function ensureSupabase() {
   }
 
   return supabase;
+}
+
+/** The confirmation link lands on sign-in, carrying the page the person was heading for. */
+function confirmationRedirectUrl(redirect?: string) {
+  const url = new URL("/sign-in", window.location.origin);
+  url.searchParams.set("confirmed", "1");
+  if (redirect) url.searchParams.set("redirect", redirect);
+  return url.toString();
 }
 
 export function AuthProvider({ children }: PropsWithChildren) {
@@ -108,13 +119,13 @@ export function AuthProvider({ children }: PropsWithChildren) {
     }
   }, []);
 
-  const signUp = useCallback(async (email: string, password: string) => {
+  const signUp = useCallback(async (email: string, password: string, redirect?: string) => {
     const client = ensureSupabase();
     const { error } = await client.auth.signUp({
       email,
       password,
       options: {
-        emailRedirectTo: `${window.location.origin}/sign-in`,
+        emailRedirectTo: confirmationRedirectUrl(redirect),
       },
     });
 
@@ -132,6 +143,39 @@ export function AuthProvider({ children }: PropsWithChildren) {
     }
   }, []);
 
+  const resendConfirmation = useCallback(async (email: string) => {
+    const client = ensureSupabase();
+    const { error } = await client.auth.resend({
+      type: "signup",
+      email,
+      options: { emailRedirectTo: confirmationRedirectUrl() },
+    });
+
+    if (error) {
+      throw error;
+    }
+  }, []);
+
+  const requestPasswordReset = useCallback(async (email: string) => {
+    const client = ensureSupabase();
+    const { error } = await client.auth.resetPasswordForEmail(email, {
+      redirectTo: `${window.location.origin}/reset-password`,
+    });
+
+    if (error) {
+      throw error;
+    }
+  }, []);
+
+  const updatePassword = useCallback(async (password: string) => {
+    const client = ensureSupabase();
+    const { error } = await client.auth.updateUser({ password });
+
+    if (error) {
+      throw error;
+    }
+  }, []);
+
   const value = useMemo(
     () => ({
       user,
@@ -139,8 +183,11 @@ export function AuthProvider({ children }: PropsWithChildren) {
       signIn,
       signUp,
       signOut,
+      resendConfirmation,
+      requestPasswordReset,
+      updatePassword,
     }),
-    [isLoading, signIn, signOut, signUp, user],
+    [isLoading, requestPasswordReset, resendConfirmation, signIn, signOut, signUp, updatePassword, user],
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

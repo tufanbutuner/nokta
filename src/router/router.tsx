@@ -50,6 +50,8 @@ const RequestBookingPage = lazyPage(() => import("@/pages/RequestBookingPage"), 
 const SavedPage = lazyPage(() => import("@/pages/SavedPage"), "SavedPage");
 const SignInPage = lazyPage(() => import("@/pages/SignInPage"), "SignInPage");
 const SignUpPage = lazyPage(() => import("@/pages/SignUpPage"), "SignUpPage");
+const ForgotPasswordPage = lazyPage(() => import("@/pages/ForgotPasswordPage"), "ForgotPasswordPage");
+const ResetPasswordPage = lazyPage(() => import("@/pages/ResetPasswordPage"), "ResetPasswordPage");
 const SuggestVenuePage = lazyPage(() => import("@/pages/SuggestVenuePage"), "SuggestVenuePage");
 const TermsPage = lazyPage(() => import("@/pages/TermsPage"), "TermsPage");
 const VenueEnquiryPage = lazyPage(() => import("@/pages/VenueEnquiryPage"), "VenueEnquiryPage");
@@ -241,6 +243,8 @@ export const routes: RouteObject[] = [
       },
       { path: "/sign-in", element: routeElement(<SignInPage />) },
       { path: "/sign-up", element: routeElement(<SignUpPage />) },
+      { path: "/forgot-password", element: routeElement(<ForgotPasswordPage />) },
+      { path: "/reset-password", element: routeElement(<ResetPasswordPage />) },
       { path: "/venues/:slug/claim", element: routeElement(<ClaimVenuePage />) },
       { path: "/venues/:slug/request-booking", element: routeElement(<RequestBookingPage />) },
       { path: "/booking-status/:token", element: routeElement(<CustomerBookingStatusPage />) },
