@@ -628,10 +628,19 @@ function buildTags(metadata: PageMetadata, url: string, notFound: boolean): stri
 }
 
 export default async function middleware(request: Request) {
+  const url = new URL(request.url);
+
+  // `/venues/x/` and `/venues/x` both rendered the page, and each nominated itself
+  // as canonical, so Google saw two URLs claiming the same venue and picked one of
+  // them over the sitemap's. One URL per page: collapse the slash for everyone.
+  if (url.pathname !== "/" && url.pathname.endsWith("/")) {
+    url.pathname = url.pathname.replace(/\/+$/, "");
+    return Response.redirect(url, 308);
+  }
+
   const userAgent = request.headers.get("user-agent") ?? "";
   if (!CRAWLER_PATTERN.test(userAgent)) return next();
 
-  const url = new URL(request.url);
   const response = await fetch(new URL("/index.html", url.origin), { headers: { "user-agent": "nokta-middleware" } });
   if (!response.ok) return next();
 
