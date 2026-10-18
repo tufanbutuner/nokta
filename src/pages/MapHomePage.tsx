@@ -67,9 +67,6 @@ export function MapHomePage() {
   const [isExpanded, setIsExpanded] = useState(false);
   const [focus, setFocus] = useState<NoktaMapFocus | null>(null);
   const [wantsLocation, setWantsLocation] = useState(false);
-  // On phones the keyboard eats most of the screen; the sheet steps aside so the search stays visible.
-  const [isSearchFocused, setIsSearchFocused] = useState(false);
-  const hideSheet = isSearchFocused && !isDesktop;
   const cardsRef = useRef<HTMLDivElement>(null);
   const scrollingFromMapRef = useRef(false);
 
@@ -287,11 +284,9 @@ export function MapHomePage() {
               enterKeyHint="search"
               value={draft}
               onChange={(event) => setDraft(event.target.value)}
-              onFocus={() => setIsSearchFocused(true)}
-              onBlur={() => setIsSearchFocused(false)}
               placeholder="Search a venue, area or postcode"
               aria-label="Search a venue, area or postcode"
-              className="h-full min-w-0 flex-1 bg-transparent text-[15px] text-nokta-ink outline-none placeholder:text-nokta-ink-muted"
+              className="h-full min-w-0 flex-1 bg-transparent text-base text-nokta-ink outline-none placeholder:text-nokta-ink-muted"
             />
             {draft || query ? (
               <button type="button" onClick={clearSearch} aria-label="Clear search" className="grid h-8 w-8 shrink-0 place-items-center rounded-full text-nokta-ink-muted hover:text-nokta-ink">
@@ -307,7 +302,7 @@ export function MapHomePage() {
           aria-label="Show venues near me"
           className={cn(
             "absolute right-3.5 z-10 grid h-11 w-11 place-items-center rounded-full border border-nokta-border bg-nokta-surface text-nokta-ink shadow-[0_6px_14px_-8px_rgba(42,33,27,0.45)] transition-[bottom] duration-300 ease-out sm:right-5",
-            isDesktop ? "bottom-8" : isExpanded || hideSheet ? "hidden" : "bottom-[310px]",
+            isDesktop ? "bottom-8" : isExpanded ? "hidden" : "bottom-[310px]",
           )}
         >
           <LocateFixed className={cn("h-[18px] w-[18px]", locationStatus === "loading" && "animate-pulse text-clay-accent")} />
@@ -325,7 +320,6 @@ export function MapHomePage() {
           "absolute inset-x-0 bottom-0 z-20 flex flex-col rounded-t-[20px] bg-nokta-surface shadow-[0_-10px_30px_-14px_rgba(42,33,27,0.35)] transition-[height] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]",
           "lg:relative lg:col-start-1 lg:row-start-1 lg:h-full lg:rounded-none lg:border-r lg:border-nokta-border lg:shadow-none",
           isExpanded ? "h-[88%]" : "h-[296px]",
-          hideSheet && "hidden",
         )}
       >
         <button
