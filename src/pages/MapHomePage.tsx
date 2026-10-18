@@ -8,6 +8,7 @@ import { VenueImage } from "@/components/venues/VenueImage";
 import { brandConfig } from "@/config/brand";
 import { useAppLocation } from "@/context/AppLocationContext";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
+import { useStableViewportHeight } from "@/hooks/useStableViewportHeight";
 import { useVenues } from "@/hooks/useVenues";
 import { trackEvent } from "@/lib/analytics";
 import { DEFAULT_CITY, getActiveCities, getCityByName } from "@/lib/cities";
@@ -52,6 +53,8 @@ export function MapHomePage() {
   const { venues, isLoading } = useVenues();
   const { userLocation, locationStatus, useCurrentLocation } = useAppLocation();
   const isDesktop = useMediaQuery("(min-width: 1024px)");
+  // Held while typing so the keyboard covers the sheet rather than pushing it up the screen.
+  const viewportHeight = useStableViewportHeight();
   // City and search live in the URL so a link (or an old /discover link) lands on the same view.
   // Without one, a visitor we can place sees the city nearest them; London is only the fallback.
   const nearestCity = useMemo(() => getNearestVenueCity(venues, userLocation), [venues, userLocation]);
@@ -255,7 +258,7 @@ export function MapHomePage() {
     : { top: 130, bottom: isExpanded ? 80 : PEEK_HEIGHT, left: 30, right: 30 };
 
   return (
-    <main data-full-viewport className="relative h-[calc(100dvh-65px)] overflow-hidden bg-nokta-map-bg lg:grid lg:grid-cols-[440px_1fr] lg:grid-rows-[minmax(0,1fr)]">
+    <main data-full-viewport className="relative h-[calc(100dvh-65px)] overflow-hidden bg-nokta-map-bg lg:grid lg:grid-cols-[440px_1fr] lg:grid-rows-[minmax(0,1fr)]" style={!isDesktop && viewportHeight ? { height: viewportHeight - 65 } : undefined}>
       <PageMeta
         title={`${brandConfig.appName} - Discover Social Venues Across the UK`}
         description="See what's open near you on one map: shisha lounges and social venues with real prices, opening hours and photos. Request bookings direct."

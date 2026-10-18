@@ -53,10 +53,9 @@ function HomePageLoadingState() {
     <main data-full-viewport className="relative h-[calc(100dvh-65px)] overflow-hidden bg-nokta-map-bg lg:grid lg:grid-cols-[440px_1fr]" role="status" aria-label="Loading places">
       <div className="absolute inset-0 lg:relative lg:col-start-2 lg:row-start-1">
         <div className="absolute inset-x-0 top-0 p-3.5 sm:p-5">
-          <div className="flex h-[50px] items-center gap-2.5 rounded-[14px] border border-nokta-border bg-nokta-surface/95 pl-3.5 pr-1.5 lg:max-w-[460px]">
+          <div className="flex h-[50px] items-center gap-2.5 rounded-[14px] border border-nokta-border bg-nokta-surface/95 px-3.5 lg:max-w-[460px]">
             <Skeleton className="h-[18px] w-[18px] rounded-full" />
             <Skeleton className="h-4 flex-1 max-w-[180px]" />
-            <Skeleton className="ml-auto h-[38px] w-[88px] rounded-full" />
           </div>
         </div>
         <span aria-hidden="true" className="absolute bottom-[310px] right-3.5 h-11 w-11 rounded-full border border-nokta-border bg-nokta-surface sm:right-5 lg:bottom-8" />
