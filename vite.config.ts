@@ -1,11 +1,15 @@
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
-import { defineConfig } from "vite";
+import { defineConfig } from "vitest/config";
 
 const devPort = Number(process.env.PORT ?? 5173);
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+  test: {
+    environment: "node",
+    include: ["src/**/*.test.{ts,tsx}"],
+  },
   build: {
     // The map library stays in its lazy route chunk; warn if it grows past 1.1 MB.
     chunkSizeWarningLimit: 1100,
