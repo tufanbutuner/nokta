@@ -27,7 +27,8 @@ export function VenueMapMarker({ venue, selected }: { venue: Venue; selected?: b
   }, [selected]);
 
   return (
-    <Marker ref={markerRef} position={[venue.latitude, venue.longitude]} icon={getVenueMarkerIcon(selected)}>
+    // Leaflet makes the pin a role="button"; the title gives it an accessible name.
+    <Marker ref={markerRef} position={[venue.latitude, venue.longitude]} icon={getVenueMarkerIcon(selected)} title={venue.name}>
       <Popup closeButton={false}>
         <VenueMapPopup venue={venue} />
       </Popup>
