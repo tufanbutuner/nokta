@@ -5,6 +5,7 @@ let posthog: PostHogClient | null = null;
 let posthogInitialised = false;
 let posthogLoading = false;
 const pendingActions: Array<(client: PostHogClient) => void> = [];
+const POSTHOG_START_DELAY_MS = 3000;
 
 export function initPostHog() {
   const key = import.meta.env.VITE_POSTHOG_PROJECT_TOKEN || import.meta.env.VITE_POSTHOG_KEY;
@@ -28,24 +29,36 @@ export function initPostHog() {
     return;
   }
 
+  // Events queue from here on; the SDK itself waits until a few seconds after load so
+  // its ~190 KB (SDK, recorder, surveys) doesn't compete with the first venue photo on
+  // a phone. The cost: replays start a few seconds in, and a bounce inside that window
+  // sends nothing.
   posthogLoading = true;
-  void import("posthog-js").then(({ default: client }) => {
-    posthog = client;
-    client.init(key, {
-      api_host: host || "https://eu.i.posthog.com",
-      capture_pageview: false,
-      autocapture: false,
-      loaded: () => {
-        posthogInitialised = true;
-        // Stamped on every event, so PostHog agrees with the Supabase side.
-        client.register({ environment: getAnalyticsEnvironment() });
-        for (const action of pendingActions.splice(0)) action(client);
-      },
+  const loadPostHog = () => {
+    void import("posthog-js").then(({ default: client }) => {
+      posthog = client;
+      client.init(key, {
+        api_host: host || "https://eu.i.posthog.com",
+        capture_pageview: false,
+        autocapture: false,
+        loaded: () => {
+          posthogInitialised = true;
+          // Stamped on every event, so PostHog agrees with the Supabase side.
+          client.register({ environment: getAnalyticsEnvironment() });
+          for (const action of pendingActions.splice(0)) action(client);
+        },
+      });
+    }).catch(() => {
+      posthogLoading = false;
+      pendingActions.length = 0;
     });
-  }).catch(() => {
-    posthogLoading = false;
-    pendingActions.length = 0;
-  });
+  };
+  const start = () => setTimeout(() => {
+    if (typeof window.requestIdleCallback === "function") window.requestIdleCallback(loadPostHog, { timeout: 2000 });
+    else loadPostHog();
+  }, POSTHOG_START_DELAY_MS);
+  if (document.readyState === "complete") start();
+  else window.addEventListener("load", start, { once: true });
 }
 
 function withPostHog(action: (client: PostHogClient) => void) {
