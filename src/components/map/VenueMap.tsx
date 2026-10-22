@@ -77,15 +77,15 @@ export function VenueMap({
 
 function VenueMapUserMarker({ userLocation }: { userLocation: UserLocation }) {
   return (
-    <VenueMapMarkerShell position={[userLocation.latitude, userLocation.longitude]}>
+    <VenueMapMarkerShell position={[userLocation.latitude, userLocation.longitude]} title="Your location">
       You are here
     </VenueMapMarkerShell>
   );
 }
 
-function VenueMapMarkerShell({ position, children }: { position: [number, number]; children: ReactNode }) {
+function VenueMapMarkerShell({ position, title, children }: { position: [number, number]; title: string; children: ReactNode }) {
   return (
-    <Marker position={position} icon={userMarkerIcon}>
+    <Marker position={position} icon={userMarkerIcon} title={title}>
       <Popup closeButton={false}>{children}</Popup>
     </Marker>
   );
