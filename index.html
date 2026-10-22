@@ -19,16 +19,14 @@
     <link rel="apple-touch-icon" href="/nokta-favicon-180.png" sizes="180x180" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!--
-      Fonts load from the HTML, not via @import in the bundled CSS. An @import is
-      only discovered after that stylesheet has been fetched and parsed, which put
-      Google Fonts at the end of a four-request critical chain. Declared here they
-      are found in the initial HTML and fetched in parallel with the CSS.
-    -->
+    <!-- The venue list and first photo load from Supabase on the opening view. -->
+    <link rel="preconnect" href="%VITE_SUPABASE_URL%" crossorigin />
+
+    <!-- Fonts can swap in after first paint; the fallback stack remains readable. -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Onest:wght@700&family=Outfit:wght@400;500;600;700&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@700&family=Outfit:wght@400;500;600;700&display=swap" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Onest:wght@700&family=Outfit:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@700&family=Outfit:wght@400;500;600;700&display=swap" /></noscript>
 
     <title>nokta</title>
   </head>

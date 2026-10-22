@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { getVenueImage, getVenueInitials, getVenuePlaceholderGradient, getVenueThumbnailUrl } from "@/lib/venueImages";
 import type { Venue } from "@/types/venue";
@@ -16,6 +16,7 @@ export function VenueImage({
   monogramClassName,
   thumbnailSize,
   priority = false,
+  onReady,
 }: {
   venue: Venue;
   src?: string;
@@ -24,10 +25,15 @@ export function VenueImage({
   monogramClassName?: string;
   thumbnailSize?: number;
   priority?: boolean;
+  onReady?: () => void;
 }) {
   const image = src ?? getVenueImage(venue);
   const [hasFailed, setHasFailed] = useState(false);
   const [useOriginal, setUseOriginal] = useState(false);
+
+  useEffect(() => {
+    if (!image) onReady?.();
+  }, [image, onReady]);
 
   if (!image || hasFailed) {
     return <VenuePlaceholder venue={venue} className={className} monogramClassName={monogramClassName} />;
@@ -42,7 +48,14 @@ export function VenueImage({
     width={thumbnailSize}
     height={thumbnailSize}
     className={className}
-    onError={() => thumbnail !== image && !useOriginal ? setUseOriginal(true) : setHasFailed(true)}
+    onLoad={onReady}
+    onError={() => {
+      if (thumbnail !== image && !useOriginal) setUseOriginal(true);
+      else {
+        setHasFailed(true);
+        onReady?.();
+      }
+    }}
   />;
 }
 

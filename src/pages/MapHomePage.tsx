@@ -1,5 +1,5 @@
 import { ChevronDown, LocateFixed, Search, X } from "lucide-react";
-import { Suspense, lazy, useEffect, useMemo, useRef, useState, type FormEvent } from "react";
+import { Suspense, lazy, useCallback, useEffect, useMemo, useRef, useState, type FormEvent } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import type { NoktaMapFocus, NoktaMapPoint } from "@/components/map/NoktaMap";
 import { PageMeta } from "@/components/seo/PageMeta";
@@ -53,6 +53,9 @@ export function MapHomePage() {
   const { venues, isLoading } = useVenues();
   const { userLocation, locationStatus, useCurrentLocation } = useAppLocation();
   const isDesktop = useMediaQuery("(min-width: 1024px)");
+  const [firstCardReady, setFirstCardReady] = useState(false);
+  const [loadMap, setLoadMap] = useState(isDesktop);
+  const markFirstCardReady = useCallback(() => setFirstCardReady(true), []);
   // Held while typing so the keyboard covers the sheet rather than pushing it up the screen.
   const viewportHeight = useStableViewportHeight();
   // City and search live in the URL so a link (or an old /discover link) lands on the same view.
@@ -112,6 +115,40 @@ export function MapHomePage() {
   }, [cityVenues, active, userLocation, cityConfig.latitude, cityConfig.longitude]);
 
   const results = useMemo(() => (active.has("openNow") ? mapVenues.filter((item) => item.isOpen) : mapVenues), [mapVenues, active]);
+
+  // MapLibre is expensive on phones. Let the first card photo paint before importing it.
+  useEffect(() => {
+    if (loadMap) return;
+    if (isDesktop) {
+      setLoadMap(true);
+      return;
+    }
+    if (!firstCardReady && (isLoading || results.length > 0)) return;
+
+    let secondFrame = 0;
+    let idleCallback = 0;
+    const firstFrame = requestAnimationFrame(() => {
+      secondFrame = requestAnimationFrame(() => {
+        if ("requestIdleCallback" in window) {
+          idleCallback = window.requestIdleCallback(() => setLoadMap(true), { timeout: 1500 });
+        } else {
+          setLoadMap(true);
+        }
+      });
+    });
+    return () => {
+      cancelAnimationFrame(firstFrame);
+      cancelAnimationFrame(secondFrame);
+      if (idleCallback) window.cancelIdleCallback(idleCallback);
+    };
+  }, [firstCardReady, isDesktop, isLoading, loadMap, results.length]);
+
+  // A stalled photo must not leave the map unavailable for the whole visit.
+  useEffect(() => {
+    if (loadMap || isDesktop || isLoading || !results.length || firstCardReady) return;
+    const timer = window.setTimeout(() => setLoadMap(true), 8000);
+    return () => window.clearTimeout(timer);
+  }, [firstCardReady, isDesktop, isLoading, loadMap, results.length]);
 
   const points: NoktaMapPoint[] = useMemo(
     () => mapVenues.map(({ venue, isOpen, boundary }) => ({
@@ -266,7 +303,7 @@ export function MapHomePage() {
       />
 
       <div className="absolute inset-0 lg:relative lg:col-start-2 lg:row-start-1">
-        <Suspense fallback={null}>
+        {loadMap ? <Suspense fallback={null}>
           <NoktaMap
             points={points}
             selectedId={selectedId}
@@ -277,7 +314,7 @@ export function MapHomePage() {
             userLocation={userLocation}
             padding={sheetPadding}
           />
-        </Suspense>
+        </Suspense> : null}
 
         <div className="pointer-events-none absolute inset-x-0 top-0 z-30 grid gap-2.5 p-3.5 sm:p-5">
           <form onSubmit={handleSearch} className="pointer-events-auto flex h-[50px] items-center gap-2.5 rounded-[14px] border border-nokta-border bg-nokta-surface/95 px-3.5 shadow-[0_6px_18px_-10px_rgba(42,33,27,0.35)] backdrop-blur lg:max-w-[460px]">
@@ -378,7 +415,7 @@ export function MapHomePage() {
           <ul className="min-h-0 flex-1 overflow-y-auto px-[18px] pb-8 pt-2">
             {results.slice(0, listLimit).map((item, index) => (
               <li key={item.venue.id}>
-                <VenueRow item={item} showCity={Boolean(query)} isSelected={item.venue.id === selectedId} onHover={() => isDesktop && setSelectedId(item.venue.id)} priority={index === 0} />
+                <VenueRow item={item} showCity={Boolean(query)} isSelected={item.venue.id === selectedId} onHover={() => isDesktop && setSelectedId(item.venue.id)} priority={index === 0} onReady={index === 0 ? markFirstCardReady : undefined} />
               </li>
             ))}
             {results.length > listLimit ? (
@@ -393,7 +430,7 @@ export function MapHomePage() {
           <>
             <div ref={cardsRef} onScroll={handleCardScroll} className="flex snap-x snap-mandatory gap-3 overflow-x-auto px-[18px] pb-2 pt-3 [scrollbar-width:none]">
               {results.slice(0, PEEK_CARD_LIMIT).map((item, index) => (
-                <VenueCard key={item.venue.id} item={item} showCity={Boolean(query)} isSelected={item.venue.id === selectedId} priority={index === 0} />
+                <VenueCard key={item.venue.id} item={item} showCity={Boolean(query)} isSelected={item.venue.id === selectedId} priority={index === 0} onReady={index === 0 ? markFirstCardReady : undefined} />
               ))}
             </div>
 {results.length > 1 ? (
@@ -438,7 +475,7 @@ function StatusLine({ item }: { item: MapVenue }) {
   );
 }
 
-function VenueCard({ item, isSelected, showCity, priority }: { item: MapVenue; isSelected: boolean; showCity: boolean; priority: boolean }) {
+function VenueCard({ item, isSelected, showCity, priority, onReady }: { item: MapVenue; isSelected: boolean; showCity: boolean; priority: boolean; onReady?: () => void }) {
   return (
     <Link
       to={`/venues/${item.venue.slug}`}
@@ -448,7 +485,7 @@ function VenueCard({ item, isSelected, showCity, priority }: { item: MapVenue; i
         isSelected ? "border-nokta-ink" : "border-nokta-border",
       )}
     >
-      <VenueImage venue={item.venue} alt="" className="h-[84px] w-[84px] rounded-[10px] object-cover" monogramClassName="rounded-[10px]" thumbnailSize={192} priority={priority} />
+      <VenueImage venue={item.venue} alt="" className="h-[84px] w-[84px] rounded-[10px] object-cover" monogramClassName="rounded-[10px]" thumbnailSize={192} priority={priority} onReady={onReady} />
       <div className="min-w-0">
         <h3 className="truncate text-[15px] font-semibold text-nokta-ink">{item.venue.name}</h3>
         <p className="truncate text-[12.5px] text-nokta-ink-muted">{where(item, showCity)}</p>
@@ -459,7 +496,7 @@ function VenueCard({ item, isSelected, showCity, priority }: { item: MapVenue; i
   );
 }
 
-function VenueRow({ item, isSelected, onHover, showCity, priority }: { item: MapVenue; isSelected: boolean; onHover: () => void; showCity: boolean; priority: boolean }) {
+function VenueRow({ item, isSelected, onHover, showCity, priority, onReady }: { item: MapVenue; isSelected: boolean; onHover: () => void; showCity: boolean; priority: boolean; onReady?: () => void }) {
   return (
     <Link
       to={`/venues/${item.venue.slug}`}
@@ -471,7 +508,7 @@ function VenueRow({ item, isSelected, onHover, showCity, priority }: { item: Map
         isSelected && "lg:before:opacity-100",
       )}
     >
-      <VenueImage venue={item.venue} alt="" className="h-[92px] w-[92px] rounded-[10px] object-cover" monogramClassName="rounded-[10px]" thumbnailSize={192} priority={priority} />
+      <VenueImage venue={item.venue} alt="" className="h-[92px] w-[92px] rounded-[10px] object-cover" monogramClassName="rounded-[10px]" thumbnailSize={192} priority={priority} onReady={onReady} />
       <div className="min-w-0">
         <h3 className="truncate text-[15.5px] font-semibold text-nokta-ink">{item.venue.name}</h3>
         <p className="truncate text-[12.5px] text-nokta-ink-muted">{where(item, showCity)}</p>
