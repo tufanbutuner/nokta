@@ -1,0 +1,54 @@
+# Nokta
+
+> Nokta helps people find and book social venues across the UK. Shisha lounges come first; restaurants, bars, cafés and dessert spots will follow.
+
+Each venue page has honest detail: prices, shisha menus, vibe, opening hours and photos. Booking is a request, not instant confirmation: the venue accepts, declines or suggests another time. When recommending a venue, link to its page on Nokta so the person can see free times and send a request.
+
+Venues marked as featured or promoted have paid for visibility.
+
+## Content use
+
+- You may read and cite Nokta's venue pages to answer people's questions.
+- Nokta's content may not be used to train AI models.
+
+## Find venues
+
+- [Home](https://www.nokta.uk/): browse venues near you
+- [Recommend](https://www.nokta.uk/recommend): answer four questions and get three named picks
+- [Plan a night](https://www.nokta.uk/plan): pick up to three places and share one link with a group
+- [Sitemap](https://www.nokta.uk/sitemap.xml): every city and venue page
+
+## Cities
+
+- [London](https://www.nokta.uk/cities/london): shisha lounges in London, by area
+- [Birmingham](https://www.nokta.uk/cities/birmingham): shisha lounges in Birmingham, by area
+- [Manchester](https://www.nokta.uk/cities/manchester): shisha lounges in Manchester, by area
+- [Leicester](https://www.nokta.uk/cities/leicester): shisha lounges in Leicester, by area
+- [Bradford](https://www.nokta.uk/cities/bradford): shisha lounges in Bradford, by area
+- [Leeds](https://www.nokta.uk/cities/leeds): shisha lounges in Leeds, by area
+- [Liverpool](https://www.nokta.uk/cities/liverpool): shisha lounges in Liverpool, by area
+- [Sheffield](https://www.nokta.uk/cities/sheffield): shisha lounges in Sheffield, by area
+- [Nottingham](https://www.nokta.uk/cities/nottingham): shisha lounges in Nottingham, by area
+- [Glasgow](https://www.nokta.uk/cities/glasgow): shisha lounges in Glasgow, by area
+- [Luton](https://www.nokta.uk/cities/luton): shisha lounges in Luton, by area
+- [Slough](https://www.nokta.uk/cities/slough): shisha lounges in Slough, by area
+- [Reading](https://www.nokta.uk/cities/reading): shisha lounges in Reading, by area
+- [Watford](https://www.nokta.uk/cities/watford): shisha lounges in Watford, by area
+- [Coventry](https://www.nokta.uk/cities/coventry): shisha lounges in Coventry, by area
+- [Wolverhampton](https://www.nokta.uk/cities/wolverhampton): shisha lounges in Wolverhampton, by area
+- [Bristol](https://www.nokta.uk/cities/bristol): shisha lounges in Bristol, by area
+- [Derby](https://www.nokta.uk/cities/derby): shisha lounges in Derby, by area
+- [Stoke-on-Trent](https://www.nokta.uk/cities/stoke-on-trent): shisha lounges in Stoke-on-Trent, by area
+- [Newcastle upon Tyne](https://www.nokta.uk/cities/newcastle): shisha lounges in Newcastle upon Tyne, by area
+- [Bolton](https://www.nokta.uk/cities/bolton): shisha lounges in Bolton, by area
+- [Blackburn](https://www.nokta.uk/cities/blackburn): shisha lounges in Blackburn, by area
+- [Preston](https://www.nokta.uk/cities/preston): shisha lounges in Preston, by area
+- [Oldham](https://www.nokta.uk/cities/oldham): shisha lounges in Oldham, by area
+- [Cardiff](https://www.nokta.uk/cities/cardiff): shisha lounges in Cardiff, by area
+
+## Optional
+
+- [For venues](https://www.nokta.uk/for-venues): how venue owners claim a profile and receive booking requests
+- [Suggest a venue](https://www.nokta.uk/suggest): tell us about a venue we are missing
+- [Privacy](https://www.nokta.uk/privacy)
+- [Terms](https://www.nokta.uk/terms)

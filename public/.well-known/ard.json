@@ -1,0 +1,16 @@
+{
+  "entries": [
+    {
+      "identifier": "urn:air:nokta.uk:site:llms-txt",
+      "displayName": "Nokta venue guide",
+      "type": "text/markdown",
+      "url": "https://www.nokta.uk/llms.txt",
+      "description": "What Nokta is, how booking requests work, and links to every city's venues.",
+      "representativeQueries": [
+        "find a shisha lounge in London",
+        "shisha lounges in Birmingham open tonight",
+        "where can I book a lounge for a birthday in Manchester"
+      ]
+    }
+  ]
+}
