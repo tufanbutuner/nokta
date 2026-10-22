@@ -16,6 +16,25 @@ export function getVenueImage(venue: Venue): string | undefined {
   return venue.images[0];
 }
 
+/** Request a card-sized copy from Supabase instead of downloading the original photo. */
+export function getVenueThumbnailUrl(image: string, size: number): string {
+  let url: URL;
+  try {
+    url = new URL(image);
+  } catch {
+    return image;
+  }
+  const publicPath = "/storage/v1/object/public/";
+  if (!url.pathname.includes(publicPath) || !url.hostname.endsWith(".supabase.co")) return image;
+
+  url.pathname = url.pathname.replace(publicPath, "/storage/v1/render/image/public/");
+  url.searchParams.set("width", String(size));
+  url.searchParams.set("height", String(size));
+  url.searchParams.set("resize", "cover");
+  url.searchParams.set("quality", "75");
+  return url.toString();
+}
+
 export function getVenueImages(venue: Venue) {
   return [...new Set(venue.images)];
 }

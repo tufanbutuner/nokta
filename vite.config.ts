@@ -28,7 +28,8 @@ export default defineConfig({
 
           if (pkg === "react" || pkg === "react-dom" || pkg === "scheduler") return "vendor-react";
           if (pkg.startsWith("@supabase/")) return "vendor-supabase";
-          if (pkg === "posthog-js" || pkg.startsWith("@vercel/")) return "vendor-analytics";
+          if (pkg === "posthog-js") return "vendor-posthog";
+          if (pkg.startsWith("@vercel/")) return "vendor-analytics";
           if (pkg.startsWith("@radix-ui/") || pkg === "lucide-react") return "vendor-ui";
           return;
         },

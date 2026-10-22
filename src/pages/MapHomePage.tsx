@@ -376,9 +376,9 @@ export function MapHomePage() {
           </div>
         ) : isExpanded || isDesktop ? (
           <ul className="min-h-0 flex-1 overflow-y-auto px-[18px] pb-8 pt-2">
-            {results.slice(0, listLimit).map((item) => (
+            {results.slice(0, listLimit).map((item, index) => (
               <li key={item.venue.id}>
-                <VenueRow item={item} showCity={Boolean(query)} isSelected={item.venue.id === selectedId} onHover={() => isDesktop && setSelectedId(item.venue.id)} />
+                <VenueRow item={item} showCity={Boolean(query)} isSelected={item.venue.id === selectedId} onHover={() => isDesktop && setSelectedId(item.venue.id)} priority={index === 0} />
               </li>
             ))}
             {results.length > listLimit ? (
@@ -392,8 +392,8 @@ export function MapHomePage() {
         ) : (
           <>
             <div ref={cardsRef} onScroll={handleCardScroll} className="flex snap-x snap-mandatory gap-3 overflow-x-auto px-[18px] pb-2 pt-3 [scrollbar-width:none]">
-              {results.slice(0, PEEK_CARD_LIMIT).map((item) => (
-                <VenueCard key={item.venue.id} item={item} showCity={Boolean(query)} isSelected={item.venue.id === selectedId} />
+              {results.slice(0, PEEK_CARD_LIMIT).map((item, index) => (
+                <VenueCard key={item.venue.id} item={item} showCity={Boolean(query)} isSelected={item.venue.id === selectedId} priority={index === 0} />
               ))}
             </div>
 {results.length > 1 ? (
@@ -438,7 +438,7 @@ function StatusLine({ item }: { item: MapVenue }) {
   );
 }
 
-function VenueCard({ item, isSelected, showCity }: { item: MapVenue; isSelected: boolean; showCity: boolean }) {
+function VenueCard({ item, isSelected, showCity, priority }: { item: MapVenue; isSelected: boolean; showCity: boolean; priority: boolean }) {
   return (
     <Link
       to={`/venues/${item.venue.slug}`}
@@ -448,7 +448,7 @@ function VenueCard({ item, isSelected, showCity }: { item: MapVenue; isSelected:
         isSelected ? "border-nokta-ink" : "border-nokta-border",
       )}
     >
-      <VenueImage venue={item.venue} alt="" className="h-[84px] w-[84px] rounded-[10px] object-cover" monogramClassName="rounded-[10px]" />
+      <VenueImage venue={item.venue} alt="" className="h-[84px] w-[84px] rounded-[10px] object-cover" monogramClassName="rounded-[10px]" thumbnailSize={192} priority={priority} />
       <div className="min-w-0">
         <h3 className="truncate text-[15px] font-semibold text-nokta-ink">{item.venue.name}</h3>
         <p className="truncate text-[12.5px] text-nokta-ink-muted">{where(item, showCity)}</p>
@@ -459,7 +459,7 @@ function VenueCard({ item, isSelected, showCity }: { item: MapVenue; isSelected:
   );
 }
 
-function VenueRow({ item, isSelected, onHover, showCity }: { item: MapVenue; isSelected: boolean; onHover: () => void; showCity: boolean }) {
+function VenueRow({ item, isSelected, onHover, showCity, priority }: { item: MapVenue; isSelected: boolean; onHover: () => void; showCity: boolean; priority: boolean }) {
   return (
     <Link
       to={`/venues/${item.venue.slug}`}
@@ -471,7 +471,7 @@ function VenueRow({ item, isSelected, onHover, showCity }: { item: MapVenue; isS
         isSelected && "lg:before:opacity-100",
       )}
     >
-      <VenueImage venue={item.venue} alt="" className="h-[92px] w-[92px] rounded-[10px] object-cover" monogramClassName="rounded-[10px]" />
+      <VenueImage venue={item.venue} alt="" className="h-[92px] w-[92px] rounded-[10px] object-cover" monogramClassName="rounded-[10px]" thumbnailSize={192} priority={priority} />
       <div className="min-w-0">
         <h3 className="truncate text-[15.5px] font-semibold text-nokta-ink">{item.venue.name}</h3>
         <p className="truncate text-[12.5px] text-nokta-ink-muted">{where(item, showCity)}</p>
