@@ -1,11 +1,32 @@
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
+import { existsSync, readFileSync } from "node:fs";
+import type { Plugin } from "vite";
 import { defineConfig } from "vitest/config";
 
 const devPort = Number(process.env.PORT ?? 5173);
 
+/**
+ * Inlines the homepage seed (scripts/generate-home-seed.ts) so the first venue cards
+ * can render before the full list arrives. "<" is escaped so venue text can never
+ * close the script tag.
+ */
+function homeSeed(): Plugin {
+  return {
+    name: "nokta-home-seed",
+    apply: "build",
+    transformIndexHtml(html) {
+      const path = new URL("./.generated/home-seed.json", import.meta.url);
+      const seed = existsSync(path) ? readFileSync(path, "utf8").trim() : "";
+      if (!seed || seed === "[]") return html;
+      const tag = `<script id="home-seed" type="application/json">${seed.replace(/</g, "\\u003c")}</script>`;
+      return html.replace('<div id="root"></div>', `${tag}\n    <div id="root"></div>`);
+    },
+  };
+}
+
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
+  plugins: [react(), tailwindcss(), homeSeed()],
   test: {
     environment: "node",
     include: ["src/**/*.test.{ts,tsx}"],

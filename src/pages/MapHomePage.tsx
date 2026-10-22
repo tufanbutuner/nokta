@@ -12,6 +12,7 @@ import { useStableViewportHeight } from "@/hooks/useStableViewportHeight";
 import { useVenues } from "@/hooks/useVenues";
 import { trackEvent } from "@/lib/analytics";
 import { DEFAULT_CITY, getActiveCities, getCityByName } from "@/lib/cities";
+import { readHomeSeed } from "@/lib/homeSeed";
 import { calculateDistanceMiles, formatDistanceMiles, getNearestVenueCity, getVenueDistanceMiles } from "@/lib/location";
 import { getVenueOpeningBoundary } from "@/lib/openingHours";
 import { cn } from "@/lib/utils";
@@ -82,12 +83,17 @@ export function MapHomePage() {
 
   const cityConfig = getCityByName(city) ?? getActiveCities()[0];
 
+  // Until the full list arrives, the default view draws its cards from the seed baked
+  // into index.html. Open-now and distance are still worked out against the real clock.
+  const isSeeded = isLoading && !requestedCity && !query && !userLocation;
+  const sourceVenues = useMemo(() => (isSeeded ? readHomeSeed() : venues), [isSeeded, venues]);
+
   // A search spans every city (an owner looking for their venue, a name someone was
   // sent); otherwise the map shows the chosen city.
   const cityVenues: MapVenue[] = useMemo(() => {
     const now = new Date();
     const terms = normalise(query).split(/\s+/).filter(Boolean);
-    return venues
+    return sourceVenues
       .filter((venue) => Number.isFinite(venue.latitude) && Number.isFinite(venue.longitude))
       .filter((venue) => (terms.length ? matchesSearch(venue, terms) : venue.city === city))
       .map((venue) => {
@@ -99,7 +105,7 @@ export function MapHomePage() {
           miles: userLocation ? getVenueDistanceMiles(venue, userLocation) : null,
         };
       });
-  }, [venues, city, query, userLocation]);
+  }, [sourceVenues, city, query, userLocation]);
 
   // Every filter except "Open now" shapes the map, so closed venues stay as muted dots;
   // "Open now" narrows only the list and the count.
@@ -123,7 +129,8 @@ export function MapHomePage() {
       setLoadMap(true);
       return;
     }
-    if (!firstCardReady && (isLoading || results.length > 0)) return;
+    // Seeded cards can be ready before the live list; wait for it so the two downloads don't compete.
+    if (isLoading || (!firstCardReady && results.length > 0)) return;
 
     let secondFrame = 0;
     let idleCallback = 0;
@@ -374,7 +381,7 @@ export function MapHomePage() {
 
         <div className="flex shrink-0 items-baseline justify-between gap-3 px-[18px] pb-2.5 pt-1 lg:pt-6">
           <h1 className="text-lg font-semibold tracking-[-0.01em] text-nokta-ink lg:text-[22px]" aria-live="polite">
-            {isLoading ? "Finding places…" : heading}
+            {!isLoading ? heading : results.length ? `${active.has("openNow") ? "Open" : "Places"} ${where}` : "Finding places…"}
           </h1>
           <button type="button" onClick={() => setIsExpanded((value) => !value)} className="text-[13px] font-semibold text-nokta-ink lg:hidden">
             {isExpanded ? "Map" : "List"}
@@ -398,7 +405,7 @@ export function MapHomePage() {
           ))}
         </div>
 
-        {isLoading ? (
+        {isLoading && !results.length ? (
           <div className="flex gap-3 overflow-hidden px-[18px] pb-2 pt-3 lg:flex-col lg:gap-0 lg:pt-2">
             {[0, 1, 2].map((key) => <Skeleton key={key} className="h-[106px] w-[78%] max-w-[330px] shrink-0 rounded-[14px] lg:mb-3 lg:h-[92px] lg:w-full lg:max-w-none lg:rounded-[10px]" />)}
           </div>
@@ -433,7 +440,7 @@ export function MapHomePage() {
                 <VenueCard key={item.venue.id} item={item} showCity={Boolean(query)} isSelected={item.venue.id === selectedId} priority={index === 0} onReady={index === 0 ? markFirstCardReady : undefined} />
               ))}
             </div>
-{results.length > 1 ? (
+{results.length > 1 && !isLoading ? (
             <button type="button" onClick={() => setIsExpanded(true)} className="mx-[18px] flex h-11 items-center justify-between border-t border-nokta-divider text-left text-[14px] font-semibold text-nokta-ink">
               See all {results.length} as a list
               <ChevronDown className="h-4 w-4 -rotate-90" aria-hidden="true" />

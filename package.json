@@ -11,10 +11,11 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc && npm run generate:sitemap && npm run generate:agent-files && vite build",
+    "build": "tsc && npm run generate:sitemap && npm run generate:agent-files && npm run generate:home-seed && vite build",
     "preview": "vite preview",
     "generate:sitemap": "tsx scripts/generate-sitemap.ts",
     "generate:agent-files": "tsx scripts/generate-agent-files.ts",
+    "generate:home-seed": "tsx scripts/generate-home-seed.ts",
     "discover:venues": "tsx scripts/discover-venues.ts",
     "discover:venues:london": "tsx scripts/discover-venues.ts --city=london",
     "discover:venues:tranche1": "tsx scripts/discover-venues.ts --tranche=1",

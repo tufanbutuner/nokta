@@ -13,3 +13,6 @@ video/
 .impeccable/
 london-instagram-dm*
 venue-outreach-*
+
+# Build-time output (homepage seed)
+.generated/
