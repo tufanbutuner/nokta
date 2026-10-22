@@ -22,6 +22,9 @@
     <loc>https://www.nokta.uk/terms</loc>
   </url>
   <url>
+    <loc>https://www.nokta.uk/cities/milton-keynes</loc>
+  </url>
+  <url>
     <loc>https://www.nokta.uk/cities/london</loc>
   </url>
   <url>
@@ -244,6 +247,9 @@
     <loc>https://www.nokta.uk/venues/aura-lounge-birmingham-highgate</loc>
   </url>
   <url>
+    <loc>https://www.nokta.uk/venues/auris-restaurant-and-lounge-bletchley</loc>
+  </url>
+  <url>
     <loc>https://www.nokta.uk/venues/avan-lounge-restaurant-and-shisha-bar-cheetham-hill</loc>
   </url>
   <url>
@@ -346,10 +352,10 @@
     <loc>https://www.nokta.uk/venues/bukhoor-lounge-evington</loc>
   </url>
   <url>
-    <loc>https://www.nokta.uk/venues/cairo-lounge-burmantofts</loc>
+    <loc>https://www.nokta.uk/venues/cairo-lounge-hanley</loc>
   </url>
   <url>
-    <loc>https://www.nokta.uk/venues/cairo-lounge-hanley</loc>
+    <loc>https://www.nokta.uk/venues/cairo-lounge-burmantofts</loc>
   </url>
   <url>
     <loc>https://www.nokta.uk/venues/canalside-lounge-penn-fields</loc>
@@ -461,6 +467,9 @@
   </url>
   <url>
     <loc>https://www.nokta.uk/venues/dubai-shisha-dubai-cafe-town-centre</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/dubai-shisha-lounge-bletchley</loc>
   </url>
   <url>
     <loc>https://www.nokta.uk/venues/dubai-shisha-lounge-birmingham</loc>
@@ -601,13 +610,13 @@
     <loc>https://www.nokta.uk/venues/hukka-lounge-radford</loc>
   </url>
   <url>
-    <loc>https://www.nokta.uk/venues/huqqa-lounge</loc>
-  </url>
-  <url>
     <loc>https://www.nokta.uk/venues/huqqa-lounge-rusholme</loc>
   </url>
   <url>
     <loc>https://www.nokta.uk/venues/huqqa-lounge-london</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/huqqa-lounge</loc>
   </url>
   <url>
     <loc>https://www.nokta.uk/venues/i-boss-lounge-restaurant-bar-pub-and-live-music-longford</loc>
@@ -710,6 +719,9 @@
   </url>
   <url>
     <loc>https://www.nokta.uk/venues/layalina-lounge-kinning-park</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/layaly-lounge-bletchley</loc>
   </url>
   <url>
     <loc>https://www.nokta.uk/venues/lazz-lounge-bristol-meze-bar-bishopston</loc>
@@ -970,6 +982,9 @@
     <loc>https://www.nokta.uk/venues/osiris-lounge-woolwich</loc>
   </url>
   <url>
+    <loc>https://www.nokta.uk/venues/palm-wolverton</loc>
+  </url>
+  <url>
     <loc>https://www.nokta.uk/venues/panda-lounge-burmantofts</loc>
   </url>
   <url>
@@ -1204,6 +1219,9 @@
     <loc>https://www.nokta.uk/venues/soor-lounge-london-best-shisha-and-hookah-bar-near-me-lebanese-restaurant-cocktail-bar</loc>
   </url>
   <url>
+    <loc>https://www.nokta.uk/venues/sora-lounge-bletchley</loc>
+  </url>
+  <url>
     <loc>https://www.nokta.uk/venues/sorrento-lounge-moseley</loc>
   </url>
   <url>
@@ -1330,6 +1348,9 @@
     <loc>https://www.nokta.uk/venues/the-nile-lounge-city-centre</loc>
   </url>
   <url>
+    <loc>https://www.nokta.uk/venues/the-oligarch-milton-keynes</loc>
+  </url>
+  <url>
     <loc>https://www.nokta.uk/venues/the-quay-lounge-limited-finnieston</loc>
   </url>
   <url>
@@ -1433,6 +1454,9 @@
   </url>
   <url>
     <loc>https://www.nokta.uk/venues/zorro-lounge-stocksbridge</loc>
+  </url>
+  <url>
+    <loc>https://www.nokta.uk/venues/zouk-lounge-wolverton</loc>
   </url>
   <url>
     <loc>https://www.nokta.uk/venues/reem-lounge-city-centre</loc>

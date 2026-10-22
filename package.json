@@ -24,6 +24,7 @@
     "seed:venues:birmingham": "tsx scripts/seed-real-venues.ts data/birmingham-venues.seed.json",
     "seed:venues:manchester": "tsx scripts/seed-real-venues.ts data/manchester-venues.seed.json",
     "seed:venues:leicester": "tsx scripts/seed-real-venues.ts data/leicester-venues.seed.json",
+    "seed:venues:milton-keynes": "tsx scripts/seed-real-venues.ts data/milton-keynes-venues.seed.json",
     "check:metadata": "tsx scripts/check-metadata-parity.ts",
     "check:crawler-body": "tsx scripts/check-crawler-body.ts",
     "check:seo": "npm run check:metadata && npm run check:crawler-body",
