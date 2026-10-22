@@ -36,6 +36,10 @@ const URN_REGEX = /^urn:air:([a-zA-Z0-9.-]+)(?::([a-zA-Z0-9._:-]+))?:([a-zA-Z0-9
 describe("buildArdManifest", () => {
   const manifest = buildArdManifest(SITE_URL);
 
+  it("declares specVersion 1.0, which older ARD validators require", () => {
+    expect(manifest.specVersion).toBe("1.0");
+  });
+
   it("has at least one entry", () => {
     expect(manifest.entries.length).toBeGreaterThan(0);
   });
