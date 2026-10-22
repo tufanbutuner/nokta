@@ -20,6 +20,7 @@ Venues marked as featured or promoted have paid for visibility.
 
 ## Cities
 
+- [Milton Keynes](https://www.nokta.uk/cities/milton-keynes): shisha lounges in Milton Keynes, by area
 - [London](https://www.nokta.uk/cities/london): shisha lounges in London, by area
 - [Birmingham](https://www.nokta.uk/cities/birmingham): shisha lounges in Birmingham, by area
 - [Manchester](https://www.nokta.uk/cities/manchester): shisha lounges in Manchester, by area

@@ -1,0 +1,495 @@
+[
+  {
+    "id": "sora-lounge-bletchley",
+    "slug": "sora-lounge-bletchley",
+    "name": "Sora Lounge",
+    "description": "Sora Lounge is a spot for shisha in Bletchley, Milton Keynes with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Milton Keynes",
+    "area": "Bletchley",
+    "address": "140A Queensway, Bletchley, Milton Keynes MK2 2AA",
+    "postcode": "MK2 2AA",
+    "latitude": 51.994301099999994,
+    "longitude": -0.7288519,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "23:30"
+      }
+    ],
+    "website": "http://www.soralounge.co.uk/",
+    "instagram": null,
+    "phone": "07307 877137",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-17T20:33:36.838Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.soralounge.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=7350933461319356681&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "dubai-shisha-lounge-bletchley",
+    "slug": "dubai-shisha-lounge-bletchley",
+    "name": "Dubai Shisha Lounge, Bletchley",
+    "description": "Dubai Shisha Lounge, Bletchley is a spot for shisha in Bletchley, Milton Keynes with late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Milton Keynes",
+    "area": "Bletchley",
+    "address": "3 Wellington Pl, Bletchley, Milton Keynes MK3 5NA",
+    "postcode": "MK3 5NA",
+    "latitude": 51.9918215,
+    "longitude": -0.7370761,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": false,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "https://m.facebook.com/dubaisheeshalounge/?locale2=en_GB",
+    "instagram": null,
+    "phone": "07999 270710",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-17T20:33:36.842Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://m.facebook.com/dubaisheeshalounge/?locale2=en_GB",
+      "otherSource": "https://maps.google.com/?cid=12557849594915316681&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "zouk-lounge-restaurant-best-halal-food-lebanese-turkish-and-italian-restaurant-with-shisha-bar-in-milton-keynes-wolverton",
+    "slug": "zouk-lounge-restaurant-best-halal-food-lebanese-turkish-and-italian-restaurant-with-shisha-bar-in-milton-keynes-wolverton",
+    "name": "Zouk Lounge Restaurant | Best Halal Food | Lebanese/Turkish & Italian restaurant with Shisha Bar in Milton Keynes",
+    "description": "Zouk Lounge Restaurant Best Halal Food Lebanese/Turkish & Italian restaurant with Shisha Bar in Milton Keynes is a spot for shisha in Wolverton, Milton Keynes with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Milton Keynes",
+    "area": "Wolverton",
+    "address": "34 Stratford Rd, Wolverton, Milton Keynes MK12 5LW",
+    "postcode": "MK12 5LW",
+    "latitude": 52.0628232,
+    "longitude": -0.8118322,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "13:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "13:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "13:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "13:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Friday",
+        "open": "13:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "13:00",
+        "close": "00:00"
+      }
+    ],
+    "website": "https://zouklounge.com/?utm_source=GMBwebsite&utm_medium=organic&utm_campaign=Google%20My%20Business",
+    "instagram": null,
+    "phone": "01908 314411",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-17T20:33:36.842Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://zouklounge.com/?utm_source=GMBwebsite&utm_medium=organic&utm_campaign=Google%20My%20Business",
+      "otherSource": "https://maps.google.com/?cid=655838249815969005&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "layaly-lounge-bletchley",
+    "slug": "layaly-lounge-bletchley",
+    "name": "Layaly Lounge",
+    "description": "Layaly Lounge is a spot for shisha in Bletchley, Milton Keynes with food and drinks. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Milton Keynes",
+    "area": "Bletchley",
+    "address": "27D Queensway, Bletchley, Milton Keynes MK2 2FY",
+    "postcode": "MK2 2FY",
+    "latitude": 51.994781499999995,
+    "longitude": -0.7322907,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "https://layaly-lounge.co.uk/",
+    "instagram": null,
+    "phone": "01908 109051",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-17T20:33:36.843Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://layaly-lounge.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=8350930506025663493&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "auris-restaurant-and-lounge-bletchley",
+    "slug": "auris-restaurant-and-lounge-bletchley",
+    "name": "Auris Restaurant & Lounge",
+    "description": "Auris Restaurant & Lounge is a spot for shisha in Bletchley, Milton Keynes with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Milton Keynes",
+    "area": "Bletchley",
+    "address": "156 Queensway, Bletchley, Milton Keynes MK2 2RS",
+    "postcode": "MK2 2RS",
+    "latitude": 51.9947904,
+    "longitude": -0.7286881,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "14:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "15:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "15:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "15:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "15:00",
+        "close": "01:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "15:00",
+        "close": "01:00"
+      }
+    ],
+    "website": "http://aurislounge.co.uk/",
+    "instagram": null,
+    "phone": "01908 990960",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-17T20:33:36.843Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://aurislounge.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=3479527159330517904&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "mk-sports-bar-and-lounge-newport-pagnell",
+    "slug": "mk-sports-bar-and-lounge-newport-pagnell",
+    "name": "MK Sports Bar & Lounge",
+    "description": "MK Sports Bar & Lounge is a spot for shisha in Newport Pagnell, Milton Keynes with drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Milton Keynes",
+    "area": "Newport Pagnell",
+    "address": "79-81, Interchange House, Howard Way, Newport Pagnell MK16 9PY",
+    "postcode": "MK16 9PY",
+    "latitude": 52.079388900000005,
+    "longitude": -0.7033649000000001,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "cocktails",
+      "late_night",
+      "live_sport"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": false,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "football",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "11:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "11:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "11:00",
+        "close": "00:00"
+      }
+    ],
+    "website": "https://www.mksbl.co.uk/",
+    "instagram": null,
+    "phone": "01908 299160",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-17T20:33:36.843Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.mksbl.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=11704720189164728192&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  }
+]

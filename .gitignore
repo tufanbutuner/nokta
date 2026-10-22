@@ -7,3 +7,9 @@ npm-debug.log*
 .vercel
 .env*
 supabase/.temp/
+
+# Local-only work kept out of the repo
+video/
+.impeccable/
+london-instagram-dm*
+venue-outreach-*

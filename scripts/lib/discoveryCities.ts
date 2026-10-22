@@ -31,6 +31,13 @@ export type DiscoveryCity = {
 
 export const DISCOVERY_CITIES: DiscoveryCity[] = [
   {
+    slug: "milton-keynes",
+    radiusKm: 12,
+    tranche: 4,
+    areas: ["Milton Keynes", "Bletchley Milton Keynes", "Wolverton Milton Keynes", "Newport Pagnell"],
+    addressMatchers: ["milton keynes", "bletchley", "wolverton", "newport pagnell"],
+  },
+  {
     slug: "london",
     radiusKm: 45,
     tranche: 1,

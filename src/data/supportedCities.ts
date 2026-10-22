@@ -2,6 +2,15 @@ import type { SupportedCity } from "@/types/city";
 
 export const SUPPORTED_CITIES: SupportedCity[] = [
   {
+    name: "Milton Keynes",
+    slug: "milton-keynes",
+    country: "United Kingdom",
+    latitude: 52.0406,
+    longitude: -0.7594,
+    defaultZoom: 12,
+    isActive: true,
+  },
+  {
     name: "London",
     slug: "london",
     country: "United Kingdom",

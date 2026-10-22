@@ -1,0 +1,791 @@
+[
+  {
+    "id": "the-residence-bar-and-kitchen-milton-keynes",
+    "slug": "the-residence-bar-and-kitchen-milton-keynes",
+    "name": "The Residence Bar & Kitchen",
+    "description": "The Residence Bar & Kitchen is a spot for shisha in Milton Keynes with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Milton Keynes",
+    "area": "Milton Keynes",
+    "address": "2 Rillaton Walk, Milton Keynes MK9 2BQ",
+    "postcode": "MK9 2BQ",
+    "latitude": 52.0374948,
+    "longitude": -0.7621283999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Tuesday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "16:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:00",
+        "close": "02:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "02:00"
+      }
+    ],
+    "website": "https://theresidencebar.co.uk/",
+    "instagram": null,
+    "phone": "01908 764908",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-17T20:33:36.843Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://theresidencebar.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=12166564309318952059&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "enfes-restaurant-bletchley",
+    "slug": "enfes-restaurant-bletchley",
+    "name": "Enfes Restaurant",
+    "description": "Enfes Restaurant is a spot for shisha in Bletchley, Milton Keynes with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Milton Keynes",
+    "area": "Bletchley",
+    "address": "8 Stadium Way W, Bletchley, Milton Keynes MK1 1ST",
+    "postcode": "MK1 1ST",
+    "latitude": 52.01073960000001,
+    "longitude": -0.7348210000000001,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "22:00"
+      }
+    ],
+    "website": "http://www.enfesrestaurant.co.uk/",
+    "instagram": null,
+    "phone": "01908 646463",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-17T20:33:36.843Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.enfesrestaurant.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=16266155845874385056&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "deroka-turkish-mediterranean-restaurant-and-cocktail-bar-milton-keynes-the-hub",
+    "slug": "deroka-turkish-mediterranean-restaurant-and-cocktail-bar-milton-keynes-the-hub",
+    "name": "DeRoka Turkish Mediterranean Restaurant & Cocktail Bar Milton Keynes",
+    "description": "DeRoka Turkish Mediterranean Restaurant & Cocktail Bar Milton Keynes is a spot for shisha in The Hub, Milton Keynes with food and drinks, late opening. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Milton Keynes",
+    "area": "The Hub",
+    "address": "Unit 600a, Chelsea House 3 Holkham Walk, The Hub, Chelsea House, Milton Keynes MK9 2FS",
+    "postcode": "MK9 2FS",
+    "latitude": 52.0372503,
+    "longitude": -0.7631465,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food",
+      "cocktails",
+      "late_night"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": true,
+    "openLate": true,
+    "vibes": [
+      "casual",
+      "groups",
+      "late-night",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Monday",
+        "open": "12:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "22:30"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "00:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "00:00"
+      }
+    ],
+    "website": "https://www.deroka.co.uk/",
+    "instagram": null,
+    "phone": "01908 107981",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-17T20:33:36.844Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.deroka.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=9262034097509660978&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "afghan-chopan-restaurant-bletchley",
+    "slug": "afghan-chopan-restaurant-bletchley",
+    "name": "Afghan Chopan Restaurant",
+    "description": "Afghan Chopan Restaurant is a spot for shisha in Bletchley, Milton Keynes with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Milton Keynes",
+    "area": "Bletchley",
+    "address": "3 Wellington Pl, Bletchley, Milton Keynes MK3 5NA",
+    "postcode": "MK3 5NA",
+    "latitude": 51.9918345,
+    "longitude": -0.7370882,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "17:30",
+        "close": "23:00"
+      },
+      {
+        "day": "Monday",
+        "open": "16:00",
+        "close": "23:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "15:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "23:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "01908 377600",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-17T20:33:36.844Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=11946094465875106235&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "capadocia-turkish-restaurant-newport-pagnell",
+    "slug": "capadocia-turkish-restaurant-newport-pagnell",
+    "name": "Capadocia Turkish Restaurant Newport Pagnell",
+    "description": "Capadocia Turkish Restaurant Newport Pagnell is a spot for shisha in Newport Pagnell, Milton Keynes with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Milton Keynes",
+    "area": "Newport Pagnell",
+    "address": "8 St John St, Newport Pagnell MK16 8HN",
+    "postcode": "MK16 8HN",
+    "latitude": 52.086439299999995,
+    "longitude": -0.7222999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "22:00"
+      }
+    ],
+    "website": "https://www.thecapadocia.co.uk/",
+    "instagram": null,
+    "phone": "01908 612525",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-17T20:33:36.844Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://www.thecapadocia.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=9113568084311171511&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "the-cinnamon-kitchen-and-bar-srilankan-and-indian-newport-pagnell",
+    "slug": "the-cinnamon-kitchen-and-bar-srilankan-and-indian-newport-pagnell",
+    "name": "The Cinnamon Kitchen & Bar Srilankan and Indian",
+    "description": "The Cinnamon Kitchen & Bar Srilankan and Indian is a spot for shisha in Newport Pagnell, Milton Keynes with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Milton Keynes",
+    "area": "Newport Pagnell",
+    "address": "85 High St, Newport Pagnell MK16 8AB",
+    "postcode": "MK16 8AB",
+    "latitude": 52.0862662,
+    "longitude": -0.7244564,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "22:00"
+      }
+    ],
+    "website": "https://cinnamonkitchenbar.co.uk/",
+    "instagram": null,
+    "phone": "01908 711372",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-17T20:33:36.844Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://cinnamonkitchenbar.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=18054526608258501754&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "moza-indian-restaurant-newport-pagnell",
+    "slug": "moza-indian-restaurant-newport-pagnell",
+    "name": "Moza Indian Restaurant, Newport Pagnell",
+    "description": "Moza Indian Restaurant, Newport Pagnell is a spot for shisha in Newport Pagnell, Milton Keynes with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Milton Keynes",
+    "area": "Newport Pagnell",
+    "address": "53 High St, Newport Pagnell MK16 8AU",
+    "postcode": "MK16 8AU",
+    "latitude": 52.0867133,
+    "longitude": -0.7224058999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "17:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "23:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "17:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "http://mozaindian.co.uk/",
+    "instagram": null,
+    "phone": "01908 617771",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-17T20:33:36.844Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://mozaindian.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=15645866579526301878&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "pin-petch-thai-restaurant-newport-pagnell",
+    "slug": "pin-petch-thai-restaurant-newport-pagnell",
+    "name": "Pin Petch Thai Restaurant",
+    "description": "Pin Petch Thai Restaurant is a spot for shisha in Newport Pagnell, Milton Keynes with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Milton Keynes",
+    "area": "Newport Pagnell",
+    "address": "13 High St, Newport Pagnell MK16 8AR",
+    "postcode": "MK16 8AR",
+    "latitude": 52.0871955,
+    "longitude": -0.7204638999999999,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "12:00",
+        "close": "21:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "17:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "12:00",
+        "close": "23:00"
+      }
+    ],
+    "website": "http://www.pinpetchthairestaurant.co.uk/",
+    "instagram": null,
+    "phone": "01908 211211",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-17T20:33:36.844Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "http://www.pinpetchthairestaurant.co.uk/",
+      "otherSource": "https://maps.google.com/?cid=6402413086922076065&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "kolkata-restaurant-newport-pagnell",
+    "slug": "kolkata-restaurant-newport-pagnell",
+    "name": "Kolkata Restaurant",
+    "description": "Kolkata Restaurant is a spot for shisha in Newport Pagnell, Milton Keynes with food. Check the venue website before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Milton Keynes",
+    "area": "Newport Pagnell",
+    "address": "118 High St, Newport Pagnell MK16 8EH",
+    "postcode": "MK16 8EH",
+    "latitude": 52.0855852,
+    "longitude": -0.7271398,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Sunday",
+        "open": "17:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Monday",
+        "open": "17:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "17:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "17:00",
+        "close": "22:00"
+      },
+      {
+        "day": "Friday",
+        "open": "16:30",
+        "close": "22:00"
+      },
+      {
+        "day": "Saturday",
+        "open": "16:30",
+        "close": "22:00"
+      }
+    ],
+    "website": "https://kolkatarestaurant.uk/",
+    "instagram": null,
+    "phone": "01908 210000",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-17T20:33:36.844Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "officialWebsite": "https://kolkatarestaurant.uk/",
+      "otherSource": "https://maps.google.com/?cid=12562000731244311073&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  },
+  {
+    "id": "the-hidden-cafe-newport-pagnell",
+    "slug": "the-hidden-cafe-newport-pagnell",
+    "name": "The Hidden Cafe",
+    "description": "The Hidden Cafe is a spot for shisha in Newport Pagnell, Milton Keynes with food. Check directly with the venue before travelling or booking.",
+    "country": "United Kingdom",
+    "city": "Milton Keynes",
+    "area": "Newport Pagnell",
+    "address": "Howard Way, Newport Pagnell MK16 9PY",
+    "postcode": "MK16 9PY",
+    "latitude": 52.0796323,
+    "longitude": -0.7029285,
+    "rating": null,
+    "priceFrom": null,
+    "priceLevel": 2,
+    "primaryCategory": "shisha_lounge",
+    "secondaryCategories": [
+      "shisha",
+      "groups",
+      "food"
+    ],
+    "indoor": true,
+    "outdoor": false,
+    "food": true,
+    "alcohol": false,
+    "openLate": false,
+    "vibes": [
+      "casual",
+      "groups",
+      "date-night"
+    ],
+    "images": [],
+    "openingHours": [
+      {
+        "day": "Monday",
+        "open": "09:00",
+        "close": "14:30"
+      },
+      {
+        "day": "Tuesday",
+        "open": "08:30",
+        "close": "14:30"
+      },
+      {
+        "day": "Wednesday",
+        "open": "08:30",
+        "close": "14:30"
+      },
+      {
+        "day": "Thursday",
+        "open": "08:30",
+        "close": "14:30"
+      },
+      {
+        "day": "Friday",
+        "open": "08:30",
+        "close": "14:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "09:00",
+        "close": "13:00"
+      }
+    ],
+    "website": null,
+    "instagram": null,
+    "phone": "07494 267491",
+    "businessStatus": "open",
+    "verificationStatus": "partially-verified",
+    "lastVerifiedAt": "2026-10-17T20:33:36.844Z",
+    "dataSources": {
+      "directorySource": "Google Places API Text Search",
+      "otherSource": "https://maps.google.com/?cid=15852097820303999872&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+    },
+    "sourceNotes": "Generated from Google Places Text Search for discovery only. Google ratings and photos are intentionally not imported. Run the photo backfill for real imagery, and verify shisha availability and pricing before public launch."
+  }
+]
