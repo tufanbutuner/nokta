@@ -20,6 +20,8 @@ export interface ArdEntry {
 }
 
 export interface ArdManifest {
+  /** Required by the ARD validator PageSpeed Insights still runs; current ARD ignores it. */
+  specVersion: "1.0";
   entries: ArdEntry[];
 }
 
@@ -64,6 +66,7 @@ export function buildLlmsTxt(siteUrl: string, cities: SupportedCity[]): string {
 
 export function buildArdManifest(siteUrl: string): ArdManifest {
   return {
+    specVersion: "1.0",
     entries: [
       {
         identifier: `urn:air:${PUBLISHER}:site:llms-txt`,
