@@ -11,7 +11,8 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc && npm run generate:sitemap && npm run generate:agent-files && npm run generate:home-seed && vite build",
+    "build": "tsc && npm run generate:sitemap && npm run generate:agent-files && npm run generate:home-seed && npm run build:mcp && vite build",
+    "build:mcp": "vite build --config vite.mcp.config.ts",
     "preview": "vite preview",
     "generate:sitemap": "tsx scripts/generate-sitemap.ts",
     "generate:agent-files": "tsx scripts/generate-agent-files.ts",

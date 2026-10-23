@@ -13,6 +13,7 @@ Venues marked as featured or promoted have paid for visibility.
 
 ## Find venues
 
+- [MCP server](https://www.nokta.uk/mcp): read-only venue search and details for assistants, no sign-in. Tools: search_venues, get_venue_details. Streamable HTTP; server card at https://www.nokta.uk/mcp/server-card
 - [Home](https://www.nokta.uk/): browse venues near you
 - [Recommend](https://www.nokta.uk/recommend): answer four questions and get three named picks
 - [Plan a night](https://www.nokta.uk/plan): pick up to three places and share one link with a group

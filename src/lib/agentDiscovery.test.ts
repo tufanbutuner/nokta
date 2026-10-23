@@ -1,7 +1,8 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { buildArdManifest, buildLlmsTxt } from "@/lib/agentDiscovery";
+import { buildArdManifest, buildLlmsTxt, buildMcpServerCard } from "@/lib/agentDiscovery";
+import { MCP_PROTOCOL_VERSIONS } from "@/lib/mcpServer";
 import type { SupportedCity } from "@/types/city";
 
 const SITE_URL = "https://www.nokta.uk";
@@ -51,6 +52,28 @@ describe("buildArdManifest", () => {
     expect(entry.url.startsWith(`${SITE_URL}/`)).toBe(true);
     expect(entry.representativeQueries.length).toBeGreaterThanOrEqual(2);
     expect(entry.representativeQueries.length).toBeLessThanOrEqual(5);
+  });
+});
+
+// Mirrors the required fields and patterns in the MCP server card schema
+// (modelcontextprotocol/experimental-ext-server-card, schema.json).
+describe("buildMcpServerCard", () => {
+  const card = buildMcpServerCard(SITE_URL, MCP_PROTOCOL_VERSIONS);
+
+  it("meets the server card schema's required fields", () => {
+    expect(card.$schema).toBe("https://static.modelcontextprotocol.io/schemas/v1/server-card.schema.json");
+    expect(card.name).toMatch(/^[a-zA-Z0-9.-]+\/[a-zA-Z0-9._-]+$/);
+    expect(card.version).not.toBe("");
+    expect(card.description).not.toBe("");
+  });
+
+  it("points at the streamable HTTP endpoint the catalog advertises", () => {
+    expect(card.remotes).toEqual([{ type: "streamable-http", url: `${SITE_URL}/mcp`, supportedProtocolVersions: MCP_PROTOCOL_VERSIONS }]);
+    expect(buildArdManifest(SITE_URL).entries).toContainEqual(expect.objectContaining({ type: "application/mcp-server-card+json", url: `${SITE_URL}/mcp/server-card` }));
+  });
+
+  it("is listed in llms.txt", () => {
+    expect(buildLlmsTxt(SITE_URL, cities)).toContain(`(${SITE_URL}/mcp)`);
   });
 });
 
