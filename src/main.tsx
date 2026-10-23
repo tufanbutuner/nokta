@@ -8,6 +8,7 @@ import { VercelSpeedInsights } from "@/components/analytics/VercelSpeedInsights"
 import { AppErrorBoundary } from "@/components/state/AppErrorBoundary";
 import { initPostHog } from "@/lib/posthogClient";
 import { queryClient } from "@/lib/queryClient";
+import { getModelContext } from "@/lib/webMcpSupport";
 import "@/styles.css";
 import { QueryClientProvider } from "@tanstack/react-query";
 import React from "react";
@@ -16,6 +17,9 @@ import { HelmetProvider } from "react-helmet-async";
 import { RouterProvider } from "react-router-dom";
 
 initPostHog();
+
+// WebMCP tools for AI agents. Only browsers with WebMCP download the search code.
+if (getModelContext()) void import("@/services/webMcpService").then(({ startWebMcp }) => startWebMcp());
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
