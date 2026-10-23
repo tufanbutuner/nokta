@@ -1,10 +1,11 @@
 # Assistants may read and cite Nokta to answer people's questions.
 # Nokta's content may not be used to train AI models.
+# Google-Extended is allowed on purpose: Google ties Gemini grounding (citing
+# Nokta in answers) to the same switch as training, and being cited matters more.
 
 User-agent: GPTBot
 User-agent: ClaudeBot
 User-agent: anthropic-ai
-User-agent: Google-Extended
 User-agent: Applebot-Extended
 User-agent: CCBot
 User-agent: meta-externalagent

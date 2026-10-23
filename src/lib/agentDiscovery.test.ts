@@ -108,14 +108,15 @@ function rulesFor(robots: string, userAgent: string): string[] {
 describe("public/robots.txt", () => {
   const robots = readFileSync(join(process.cwd(), "public", "robots.txt"), "utf8");
 
-  it.each(["GPTBot", "ClaudeBot", "Google-Extended", "Applebot-Extended", "CCBot", "meta-externalagent"])(
+  it.each(["GPTBot", "ClaudeBot", "Applebot-Extended", "CCBot", "meta-externalagent"])(
     "blocks the training crawler %s from the whole site",
     (agent) => {
       expect(rulesFor(robots, agent)).toEqual(["disallow: /"]);
     },
   );
 
-  it.each(["OAI-SearchBot", "ChatGPT-User", "Claude-User", "Claude-SearchBot", "PerplexityBot", "Googlebot"])(
+  // Google-Extended controls Gemini grounding as well as training, so it stays allowed.
+  it.each(["OAI-SearchBot", "ChatGPT-User", "Claude-User", "Claude-SearchBot", "PerplexityBot", "Googlebot", "Google-Extended"])(
     "lets the assistant or search fetcher %s read public pages but not private ones",
     (agent) => {
       const rules = rulesFor(robots, agent);
