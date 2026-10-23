@@ -15,10 +15,17 @@ import type { VenuePrimaryCategory } from "@/types/venueCategories";
  *
  * Ordering follows the city page: featured venues first in placement priority
  * order, clearly marked, then every other match by name.
+ *
+ * When nothing matches, the response says so and offers close alternatives:
+ * the same search with one filter loosened, closest change first.
  */
 
 export const DEFAULT_SEARCH_LIMIT = 20;
 const SUMMARY_LENGTH = 220;
+const MAX_ALTERNATIVES = 3;
+const ALTERNATIVE_RESULTS = 3;
+/** How many days after the searched date to look for free times. */
+const LATER_DAYS = 6;
 
 export interface VenueSearchQuery {
   city?: string;
@@ -73,9 +80,19 @@ export interface VenueSearchResult {
   freeTimes?: string[];
 }
 
+export interface VenueSearchAlternative {
+  /** What was loosened, in plain English. */
+  change: string;
+  query: VenueSearchQuery;
+  total: number;
+  results: VenueSearchResult[];
+}
+
 export interface VenueSearchResponse {
   total: number;
   results: VenueSearchResult[];
+  /** Only when nothing matched. */
+  noMatch?: { message: string; alternatives: VenueSearchAlternative[] };
 }
 
 export class VenueSearchQueryError extends Error {}
@@ -90,22 +107,82 @@ export function validateVenueSearchQuery(query: VenueSearchQuery): void {
 
 export function searchVenues(context: VenueSearchContext, query: VenueSearchQuery): VenueSearchResponse {
   validateVenueSearchQuery(query);
+  const search = createSearch(context);
+  const matches = search.find(query);
+  const limit = query.limit ?? DEFAULT_SEARCH_LIMIT;
+  const response: VenueSearchResponse = { total: matches.length, results: matches.slice(0, limit).map(search.toResult) };
+  if (matches.length > 0) return response;
+
+  const alternatives: VenueSearchAlternative[] = [];
+  for (const candidates of getAlternativeQueries(query)) {
+    if (alternatives.length === MAX_ALTERNATIVES) break;
+    const found = candidates.map((candidate) => ({ ...candidate, matches: search.find(candidate.query) })).find((candidate) => candidate.matches.length > 0);
+    if (found) alternatives.push({ change: found.change, query: found.query, total: found.matches.length, results: found.matches.slice(0, ALTERNATIVE_RESULTS).map(search.toResult) });
+  }
+
+  return {
+    ...response,
+    noMatch: {
+      message: alternatives.length ? "No venues matched this search. Here are close alternatives." : "No venues matched this search, and loosening one filter found nothing either. Try another city or fewer filters.",
+      alternatives,
+    },
+  };
+}
+
+interface VenueMatch {
+  venue: Venue;
+  freeTimes: string[] | undefined;
+}
+
+function createSearch(context: VenueSearchContext) {
   const now = context.now ?? new Date();
   const offersByVenue = groupOffersByVenue(context.offers);
   const featuredRank = getFeaturedRank(context.placements);
 
-  const matches = context.venues
-    .filter((venue) => matchesVenueSearchPlaceAndType(venue, query))
-    .filter((venue) => !query.hasOffer || (offersByVenue.get(venue.id)?.length ?? 0) > 0)
-    .map((venue) => ({ venue, freeTimes: query.date ? getFreeTimes(context, venue.id, query, now) : undefined }))
-    .filter(({ freeTimes }) => freeTimes === undefined || freeTimes.length > 0)
-    .sort((a, b) => compareFeatured(featuredRank, a.venue, b.venue) || a.venue.name.localeCompare(b.venue.name));
-
-  const limit = query.limit ?? DEFAULT_SEARCH_LIMIT;
   return {
-    total: matches.length,
-    results: matches.slice(0, limit).map(({ venue, freeTimes }) => toResult(venue, context.siteUrl, featuredRank.has(venue.id), offersByVenue.get(venue.id) ?? [], freeTimes)),
+    find: (query: VenueSearchQuery): VenueMatch[] =>
+      context.venues
+        .filter((venue) => matchesPlaceAndType(venue, query))
+        .filter((venue) => !query.hasOffer || (offersByVenue.get(venue.id)?.length ?? 0) > 0)
+        .map((venue) => ({ venue, freeTimes: query.date ? getFreeTimes(context, venue.id, query, now) : undefined }))
+        .filter(({ freeTimes }) => freeTimes === undefined || freeTimes.length > 0)
+        .sort((a, b) => compareFeatured(featuredRank, a.venue, b.venue) || a.venue.name.localeCompare(b.venue.name)),
+    toResult: ({ venue, freeTimes }: VenueMatch) => toResult(venue, context.siteUrl, featuredRank.has(venue.id), offersByVenue.get(venue.id) ?? [], freeTimes),
   };
+}
+
+type AlternativeQuery = { change: string; query: VenueSearchQuery };
+
+/**
+ * The search with one filter loosened, closest to what was asked first. Each
+ * group is one kind of change; only its first option that finds venues is used,
+ * so six later days cannot crowd out a wider area.
+ */
+function getAlternativeQueries(query: VenueSearchQuery): AlternativeQuery[][] {
+  const base: VenueSearchQuery = { ...query, limit: undefined };
+  const { date } = base;
+  const groups: AlternativeQuery[][] = [];
+  if (date && base.time) groups.push([{ change: `Other free times on ${date}`, query: { ...base, time: undefined } }]);
+  if (date) {
+    groups.push(
+      Array.from({ length: LATER_DAYS }, (_, index) => {
+        const laterDate = addDays(date, index + 1);
+        return { change: `Free on ${laterDate} instead`, query: { ...base, date: laterDate } };
+      }),
+    );
+  }
+  if (base.area) groups.push([{ change: base.city ? `Anywhere in ${base.city}` : "Any area", query: { ...base, area: undefined } }]);
+  if (base.hasOffer) groups.push([{ change: "Without needing an offer", query: { ...base, hasOffer: undefined } }]);
+  if (base.type) groups.push([{ change: "Any venue type", query: { ...base, type: undefined } }]);
+  // Most listings cannot take booking requests yet; they can still be visited or contacted directly.
+  if (date) groups.push([{ change: "Without a date: most of these do not take booking requests on Nokta yet, so check the venue page or contact the venue", query: { ...base, date: undefined, time: undefined, partySize: undefined } }]);
+  if (base.city) groups.push([{ change: "Any city", query: { ...base, city: undefined, area: undefined } }]);
+  return groups;
+}
+
+function addDays(date: string, days: number) {
+  const [year, month, day] = date.split("-").map(Number);
+  return new Date(Date.UTC(year, month - 1, day + days)).toISOString().slice(0, 10);
 }
 
 /**
@@ -128,8 +205,7 @@ export function getFreeTimes(context: Pick<VenueSearchContext, "bookingStates" |
   return getBookingTimeOptions({ availability, selectedDate: query.date, now });
 }
 
-/** Place and type only; the service uses it to load availability just for venues that can match. */
-export function matchesVenueSearchPlaceAndType(venue: Venue, query: Pick<VenueSearchQuery, "city" | "area" | "type">) {
+function matchesPlaceAndType(venue: Venue, query: Pick<VenueSearchQuery, "city" | "area" | "type">) {
   return matchesPlace(venue, query) && matchesType(venue, query.type);
 }
 
