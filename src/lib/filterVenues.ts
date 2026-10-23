@@ -37,7 +37,7 @@ export function filterVenues(venues: Venue[], filters: VenueFilterState): Venue[
   });
 }
 
-function getSecondaryCategoryMatch(category: VenueFilterState["primaryCategories"][number]) {
+export function getSecondaryCategoryMatch(category: VenueFilterState["primaryCategories"][number]) {
   const secondaryCategoryByPrimary = {
     shisha_lounge: "shisha",
     restaurant: "food",
