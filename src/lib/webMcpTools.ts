@@ -28,7 +28,7 @@ export function buildWebMcpTools(deps: WebMcpToolDeps): WebMcpTool[] {
   return [
     {
       name: "search_venues",
-      description: `Find social venues on Nokta (shisha lounges today; restaurants, bars and cafés later) across UK cities. Filter by city, area, venue type, a free date and time, party size, and whether the venue has an offer. Featured venues come first and are marked featured (paid placement); offers are marked promoted (paid). Unclaimed listings have claimed: false. ${BOOKING_NOTE}`,
+      description: `Find social venues on Nokta (shisha lounges today; restaurants, bars and cafés later) across UK cities. Filter by city, area, venue type, a free date and time, party size, and whether the venue has an offer. Featured venues come first and are marked featured (paid placement); offers are marked promoted (paid). Unclaimed listings have claimed: false. When nothing matches, noMatch says so and gives up to three close alternatives, each the same search with one filter loosened. ${BOOKING_NOTE}`,
       inputSchema: {
         type: "object",
         properties: {

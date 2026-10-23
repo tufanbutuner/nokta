@@ -1,6 +1,6 @@
 import { mapVenueBookingBlackoutDateRow, mapVenueBookingSettingsRow, mapVenueBookingWindowRow } from "@/lib/bookingAvailabilityMappers";
 import { supabase, supabaseConfigError } from "@/lib/supabase";
-import { matchesVenueSearchPlaceAndType, searchVenues, validateVenueSearchQuery, type VenueSearchQuery, type VenueSearchResponse } from "@/lib/venueSearch";
+import { searchVenues, validateVenueSearchQuery, type VenueSearchQuery, type VenueSearchResponse } from "@/lib/venueSearch";
 import { getActiveAreaPlacements, getActiveCityPlacements, getActiveHomepagePlacements } from "@/services/featuredPlacementService";
 import { getActiveAreaOffers, getActiveCityOffers, getActiveHomepageOffers } from "@/services/promotedOfferService";
 import { getVenues } from "@/services/venueService";
@@ -23,10 +23,11 @@ export async function searchVenuesForAssistant(query: VenueSearchQuery, siteUrl:
   const city = query.city?.trim() || null;
   const area = query.area?.trim() || null;
 
-  const [venues, placements, offers] = await Promise.all([
+  const [venues, placements, offers, bookingStates] = await Promise.all([
     getSearchableVenues(),
     city && area ? getActiveAreaPlacements({ city, area }) : city ? getActiveCityPlacements(city) : getActiveHomepagePlacements(),
     city && area ? getActiveAreaOffers({ city, area }) : city ? getActiveCityOffers(city) : getActiveHomepageOffers(),
+    query.date ? getAllBookingStates() : null,
   ]);
 
   const searchableIds = new Set(venues.map((venue) => venue.id));
@@ -37,10 +38,12 @@ export async function searchVenuesForAssistant(query: VenueSearchQuery, siteUrl:
     siteUrl,
   };
 
-  if (!query.date) return searchVenues(context, query);
+  if (!query.date || !bookingStates) return searchVenues(context, query);
 
-  const candidateIds = venues.filter((venue) => matchesVenueSearchPlaceAndType(venue, query)).map((venue) => venue.id);
-  const [bookingStates, availability] = await Promise.all([getBookingStates(candidateIds), getVenueAvailabilities(candidateIds, query.date)]);
+  // Availability for every venue that takes booking requests, not just ones matching the area and type,
+  // so a search with no match can suggest a wider area, another type or another city with free times.
+  const liveIds = venues.filter((venue) => bookingStates.get(venue.id) === "live").map((venue) => venue.id);
+  const availability = await getVenueAvailabilities(liveIds, query.date);
   return searchVenues({ ...context, bookingStates, availability }, query);
 }
 
@@ -55,9 +58,25 @@ export async function getBookingStates(venueIds: string[]): Promise<Map<string, 
   const client = ensureSupabase();
   const { data, error } = await client.from("public_venue_booking_states").select("venue_id, state").in("venue_id", venueIds);
   if (error) throw new Error(`Could not load booking status: ${error.message}`);
+  return toBookingStates((data ?? []) as BookingStateRow[]);
+}
 
+/** Every venue's booking state in one small read, so a search across cities need not list ids in the URL. */
+export async function getAllBookingStates(): Promise<Map<string, VenueBookingState>> {
+  const client = ensureSupabase();
+  const { data, error } = await client.from("public_venue_booking_states").select("venue_id, state");
+  if (error) throw new Error(`Could not load booking status: ${error.message}`);
+  return toBookingStates((data ?? []) as BookingStateRow[]);
+}
+
+interface BookingStateRow {
+  venue_id: string;
+  state: string;
+}
+
+function toBookingStates(rows: BookingStateRow[]): Map<string, VenueBookingState> {
   // Same rule as getVenueBookingGate: only the two explicit "cannot take requests" states block.
-  return new Map(((data ?? []) as { venue_id: string; state: string }[]).map((row) => [row.venue_id, row.state === "unclaimed" || row.state === "disabled" ? row.state : "live"]));
+  return new Map(rows.map((row) => [row.venue_id, row.state === "unclaimed" || row.state === "disabled" ? row.state : "live"]));
 }
 
 /**

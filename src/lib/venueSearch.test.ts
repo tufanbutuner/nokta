@@ -77,6 +77,63 @@ describe("searchVenues: free date and time", () => {
   });
 });
 
+describe("searchVenues: no match", () => {
+  const states = new Map<string, VenueBookingState>([["zephyr", "live"], ["mango", "live"], ["amber", "unclaimed"]]);
+  const availability = new Map<string, VenueBookingAvailability | null>([
+    ["zephyr", saturdayAvailability("zephyr")],
+    ["mango", saturdayAvailability("mango")],
+  ]);
+  const withAvailability = context({ bookingStates: states, availability, placements: [placement("mango", 1)] });
+  const changes = (response: ReturnType<typeof searchVenues>) => response.noMatch?.alternatives.map((alternative) => alternative.change);
+
+  it("says nothing matched and offers other times that day, then the search without a date", () => {
+    const response = searchVenues(withAvailability, { city: "London", date: SATURDAY, time: "22:00" });
+    expect(response.total).toBe(0);
+    expect(response.noMatch?.message).toBe("No venues matched this search. Here are close alternatives.");
+    expect(changes(response)).toEqual([`Other free times on ${SATURDAY}`, expect.stringContaining("Without a date")]);
+
+    const [otherTimes] = response.noMatch?.alternatives ?? [];
+    expect(otherTimes.query).toMatchObject({ city: "London", date: SATURDAY, time: undefined });
+    expect(otherTimes.results.map((result) => [result.name, result.featured, result.url])).toEqual([
+      ["Mango Lounge", true, `${SITE_URL}/venues/mango-lounge`],
+      ["Zephyr Lounge", false, `${SITE_URL}/venues/zephyr-lounge`],
+    ]);
+    expect(otherTimes.results[0].freeTimes).toContain("18:00");
+  });
+
+  it("offers only the first later day with free times", () => {
+    const response = searchVenues(withAvailability, { city: "London", date: "2026-10-23" });
+    expect(changes(response)?.[0]).toBe(`Free on ${SATURDAY} instead`);
+    expect(changes(response)?.filter((change) => change?.startsWith("Free on"))).toHaveLength(1);
+  });
+
+  it("widens the area to the whole city", () => {
+    const response = searchVenues(context(), { city: "London", area: "Mayfair" });
+    expect(changes(response)?.[0]).toBe("Anywhere in London");
+    expect(response.noMatch?.alternatives[0].total).toBe(4);
+    expect(response.noMatch?.alternatives[0].results).toHaveLength(3);
+  });
+
+  it("drops the offer filter, then the type", () => {
+    const response = searchVenues(context({ offers: [offer("mango")] }), { city: "London", type: "cafe", hasOffer: true });
+    expect(changes(response)).toEqual(["Without needing an offer", "Any venue type"]);
+    expect(response.noMatch?.alternatives.map((alternative) => alternative.results.map((result) => result.name))).toEqual([["Cafe Nero"], ["Mango Lounge"]]);
+  });
+
+  it("says so when no alternative finds anything either", () => {
+    const response = searchVenues(context({ venues: [] }), { city: "London", type: "cafe" });
+    expect(response).toEqual({
+      total: 0,
+      results: [],
+      noMatch: { message: "No venues matched this search, and loosening one filter found nothing either. Try another city or fewer filters.", alternatives: [] },
+    });
+  });
+
+  it("is left out when something matches", () => {
+    expect(searchVenues(context(), { city: "London" }).noMatch).toBeUndefined();
+  });
+});
+
 describe("searchVenues: results", () => {
   it("links to the venue page, flags unclaimed listings and caps the list", () => {
     const response = searchVenues(context(), { city: "London", type: "shisha_lounge", limit: 1 });
