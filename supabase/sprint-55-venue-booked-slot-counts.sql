@@ -9,8 +9,11 @@
 -- who made them, so it is safe to expose. Counts use the same effective slot as
 -- public.effective_booking_slot (sprint 51) and src/lib/bookingSlot.ts.
 
-create or replace function public.venue_booked_slot_counts(p_venue_ids uuid[], p_from date default current_date)
-returns table (venue_id uuid, slot_date date, slot_time text, taken integer)
+-- venues.id is text, so venue ids are text throughout.
+drop function if exists public.venue_booked_slot_counts(uuid[], date);
+
+create or replace function public.venue_booked_slot_counts(p_venue_ids text[], p_from date default current_date)
+returns table (venue_id text, slot_date date, slot_time text, taken integer)
 language sql
 stable
 security definer
@@ -25,7 +28,7 @@ as $$
    group by b.venue_id, s.slot_date, s.slot_time;
 $$;
 
-revoke execute on function public.venue_booked_slot_counts(uuid[], date) from public;
-grant execute on function public.venue_booked_slot_counts(uuid[], date) to anon, authenticated, service_role;
+revoke execute on function public.venue_booked_slot_counts(text[], date) from public;
+grant execute on function public.venue_booked_slot_counts(text[], date) to anon, authenticated, service_role;
 
 notify pgrst, 'reload schema';
