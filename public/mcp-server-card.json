@@ -1,0 +1,19 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/v1/server-card.schema.json",
+  "name": "uk.nokta/venues",
+  "version": "1.0.0",
+  "title": "Nokta venues",
+  "description": "Search UK social venues on Nokta (shisha lounges first) and read one venue's details: free booking request times, current offers, prices and links. Read-only, no sign-in.",
+  "websiteUrl": "https://www.nokta.uk",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://www.nokta.uk/mcp",
+      "supportedProtocolVersions": [
+        "2025-11-25",
+        "2025-06-18",
+        "2025-03-26"
+      ]
+    }
+  ]
+}

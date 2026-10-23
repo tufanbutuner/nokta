@@ -20,8 +20,8 @@ import { next } from "@vercel/edge";
 export const config = {
   runtime: "nodejs",
   // Skip assets outright: matching them would burn invocations on every file.
-  // Skip /api too: those are server routes, not pages a crawler should ever see.
-  matcher: ["/((?!api/|assets/|_next/|favicon|.*\\.(?:png|jpg|jpeg|gif|svg|ico|webp|css|js|woff2?|xml|txt|json)$).*)"],
+  // Skip /api and /mcp too: those are server routes, not pages a crawler should ever see.
+  matcher: ["/((?!api/|mcp|assets/|_next/|favicon|.*\\.(?:png|jpg|jpeg|gif|svg|ico|webp|css|js|woff2?|xml|txt|json)$).*)"],
 };
 
 const CRAWLER_PATTERN = /whatsapp|facebookexternalhit|facebot|twitterbot|slackbot|slack-imgproxy|linkedinbot|telegrambot|discordbot|pinterest|redditbot|skypeuripreview|googlebot|bingbot|duckduckbot|applebot|yandex|baiduspider|embedly|quora link preview|vkshare|w3c_validator|ia_archiver|bitlybot|nuzzel|outbrain|developers\.google\.com\/\+\/web\/snippet|gptbot|oai-searchbot|chatgpt-user|perplexitybot|claudebot|anthropic-ai/i;
